@@ -443,7 +443,7 @@ export default function BlogArticleSeerChart() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">SEER vs. SEER2: A Quick Note</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              In 2023, the Department of Energy introduced <strong>SEER2</strong> — an updated testing standard that better reflects real-world performance. SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings for the same equipment. A system rated SEER 16 under the old standard would be rated about SEER2 15.3 under the new one.
+              In 2023, the Department of Energy introduced <strong>SEER2</strong> — an updated testing standard that better reflects real-world performance. SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings for the same equipment. A system rated SEER 16 under the old standard would be rated about SEER2 15.3 under the new one. For the full breakdown of what changed and why, see our guide: <Link to="/blog/seer-vs-seer2-explained" className="text-teal-600 hover:text-teal-700 font-medium">SEER vs SEER2 Explained</Link>.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">

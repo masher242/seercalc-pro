@@ -24,6 +24,7 @@ import BlogArticleSmartThermostat from './pages/BlogArticleSmartThermostat';
 import BlogArticleFreeStrategy from './pages/BlogArticleFreeStrategy';
 import BlogArticleAirFilter from './pages/BlogArticleAirFilter';
 import BlogArticleSeerChart from './pages/BlogArticleSeerChart';
+import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
 import { Routes, Route } from 'react-router-dom';
 
 function AppContent() {
@@ -51,6 +52,7 @@ function AppContent() {
         <Route path="/blog/thermostat-setback-strategy" element={<BlogArticleFreeStrategy />} />
         <Route path="/blog/air-filter-electricity-bill" element={<BlogArticleAirFilter />} />
         <Route path="/blog/seer-rating-chart" element={<BlogArticleSeerChart />} />
+        <Route path="/blog/seer-vs-seer2-explained" element={<BlogArticleSeerVsSeer2 />} />
       </Routes>
       <Footer />
     </div>
@@ -96,4 +98,5 @@ export const routes = [
   '/blog/thermostat-setback-strategy',
   '/blog/air-filter-electricity-bill',
   '/blog/seer-rating-chart',
+  '/blog/seer-vs-seer2-explained',
 ];
