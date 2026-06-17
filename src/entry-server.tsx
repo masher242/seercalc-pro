@@ -23,6 +23,7 @@ import BlogArticleWhatIsSEER from './pages/BlogArticleWhatIsSEER';
 import BlogArticleSmartThermostat from './pages/BlogArticleSmartThermostat';
 import BlogArticleFreeStrategy from './pages/BlogArticleFreeStrategy';
 import BlogArticleAirFilter from './pages/BlogArticleAirFilter';
+import BlogArticleSeerChart from './pages/BlogArticleSeerChart';
 import { Routes, Route } from 'react-router-dom';
 
 function AppContent() {
@@ -49,6 +50,7 @@ function AppContent() {
         <Route path="/blog/smart-thermostat-vs-programmable" element={<BlogArticleSmartThermostat />} />
         <Route path="/blog/thermostat-setback-strategy" element={<BlogArticleFreeStrategy />} />
         <Route path="/blog/air-filter-electricity-bill" element={<BlogArticleAirFilter />} />
+        <Route path="/blog/seer-rating-chart" element={<BlogArticleSeerChart />} />
       </Routes>
       <Footer />
     </div>
@@ -93,4 +95,5 @@ export const routes = [
   '/blog/smart-thermostat-vs-programmable',
   '/blog/thermostat-setback-strategy',
   '/blog/air-filter-electricity-bill',
+  '/blog/seer-rating-chart',
 ];
