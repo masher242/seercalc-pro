@@ -50,6 +50,54 @@ export default function BlogArticleWhatIsSEER() {
             "description": "Learn how your AC's SEER rating directly affects your electricity bill — with real cost tables for every rate, from the U.S. average to the most expensive states."
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a SEER rating?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEER stands for Seasonal Energy Efficiency Ratio. It measures how efficiently an air conditioner converts electricity into cooling over an entire cooling season. Higher SEER numbers mean less electricity used and lower bills. A SEER 16 unit uses 37.5% less electricity than a SEER 10 unit to produce the same amount of cooling."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a good SEER rating?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A good SEER rating depends on your electricity rate and climate. At average U.S. rates (17.45¢/kWh), SEER 16 offers the best balance of upfront cost and savings. At high electricity rates (25¢+/kWh) or in hot climates, SEER 18-20 is often the financially correct choice. The current federal minimum for new systems is SEER2 13.4 in northern states and SEER2 14.3 in southern states."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do I find my SEER rating?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The easiest place to find your SEER rating is the yellow EnergyGuide label on your outdoor condenser unit. If there's no label, find the model number on the metal nameplate on the side of the unit and look it up on the manufacturer's website. Your HVAC technician can also confirm it during a service call."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much can I save by upgrading my SEER rating?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Savings depend on your current SEER, new SEER, electricity rate, and usage. At U.S. average rates, upgrading from SEER 10 to SEER 16 saves approximately $353 per year. At high electricity rates like Hawaii (39.8¢/kWh), that same upgrade saves $806 per year. Use a SEER calculator to get personalized numbers based on your exact situation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is SEER2 and how is it different from SEER?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEER2 is the updated efficiency standard introduced in January 2023. It uses more realistic testing conditions (higher static pressure of 0.5 IWC vs 0.1 IWC) that better simulate real-world ductwork. SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings for the same equipment. A system previously rated SEER 16 is now rated approximately SEER2 15.3."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <main className="max-w-4xl mx-auto px-4 py-12">

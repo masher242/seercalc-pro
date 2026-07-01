@@ -46,6 +46,46 @@ export default function BlogArticleHistory() {
             "description": "The fascinating evolution of SEER ratings from the 1970s energy crisis to today's ultra-efficient air conditioning systems."
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "When were SEER ratings introduced?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEER ratings were introduced in 1979 by the U.S. Department of Energy following the 1973 energy crisis. The first mandatory federal minimum was SEER 9 in 1987, rising to SEER 10 in 1992, SEER 13 in 2006, and SEER 14 in 2015. In 2023, SEER was replaced by SEER2, a stricter real-world testing standard."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the minimum SEER rating required in 2026?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "As of 2023, the federal minimum for new split-system air conditioners is SEER2 13.4 in northern states and SEER2 14.3 in southern and southwestern states. These SEER2 values are equivalent to approximately SEER 14 and SEER 15 under the old testing standard."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What caused SEER ratings to improve over the decades?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEER improvements were driven by several technologies: variable-speed compressors (1980s), two-stage cooling, improved heat exchangers with microchannel coil designs, electronically commutated motors (ECM), advanced refrigerants (R-410A replacing R-22), and smart digital controls. Each innovation allowed systems to do more cooling with less electricity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What replaced SEER in 2023?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEER2 replaced SEER on January 1, 2023. SEER2 uses a higher external static pressure (0.5 inches of water column vs 0.1 IWC) during testing to better simulate real-world ductwork resistance. This means SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings for the same physical equipment."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <main className="max-w-4xl mx-auto px-4 py-12">

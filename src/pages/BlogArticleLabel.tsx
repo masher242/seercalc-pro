@@ -81,6 +81,46 @@ export default function BlogArticleLabel() {
             ]
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Where is the SEER rating on my air conditioner?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your SEER rating is printed on the yellow EnergyGuide label attached to the outdoor condenser unit (the large box with the fan outside your home). If there's no label, find the model number on the metal nameplate on the side of the unit and look it up on the manufacturer's website. The SEER rating will be listed in the product specifications."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I find the tonnage of my AC unit from the model number?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tonnage is encoded in your AC's model number as a 2-3 digit number divisible by 6 or 12. Divide that number by 12 to get tons. For example, if you see '24' in the model number, that's a 2-ton unit; '36' is 3 tons; '48' is 4 tons. Residential systems typically range from 1.5 to 5 tons."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I find out how old my air conditioner is?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your AC's age is encoded in the serial number on the metal nameplate. Most manufacturers use the first 4 digits in YYMM format — for example, '1709' means September 2017. Some manufacturers use a letter-based system. Look up your specific manufacturer's serial number decoder online if the YYMM pattern doesn't apply."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What information is on my HVAC nameplate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The HVAC nameplate (on the outdoor condenser unit) typically includes: model number, serial number, manufacturing date, cooling capacity in BTU/hr or tons, SEER rating (on newer units), voltage and amperage requirements, refrigerant type and charge, and the manufacturer's name. The model number encodes tonnage; the serial number encodes the manufacturing date."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <main className="max-w-4xl mx-auto px-4 py-12">

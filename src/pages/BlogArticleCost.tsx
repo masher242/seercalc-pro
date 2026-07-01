@@ -47,6 +47,54 @@ export default function BlogArticleCost() {
             "description": "Comprehensive guide to air conditioner costs in 2026, including pricing by size, SEER rating, brand, and installation factors."
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does a new air conditioner cost in 2026?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A new central air conditioner costs $6,000–$11,500 installed for most homeowners in 2026, with the national average around $5,750–$8,500 for a standard 3-ton replacement. Budget systems start around $3,500; premium high-efficiency units reach $15,000–$18,000+. Equipment is typically 40–50% of the total cost; labor and materials make up the rest."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does it cost to install a 3-ton AC unit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A 3-ton central AC unit costs $5,000–$11,000 installed in 2026 depending on brand and efficiency. Budget brands (Goodman, Amana): $3,100–$5,700. Mid-range (Rheem, Bryant): $4,000–$8,000. Premium (Trane, Carrier, Lennox): $6,000–$15,000. Installation labor alone typically runs $1,500–$3,500 for a straightforward replacement."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does AC installation labor cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AC installation labor costs $1,500–$3,500 for a standard replacement on an existing system with existing ductwork. Complex installations (new ductwork, electrical upgrades, difficult access) can add $2,000–$6,000. Labor typically represents 40–50% of the total installed cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does a higher SEER rating cost more to install?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Higher SEER systems cost more upfront: a SEER2 14.3 (minimum efficiency) system typically costs $1,500–$3,000 less than a SEER2 18+ system of the same brand and tonnage. However, higher SEER systems save money on electricity bills over time. At average U.S. rates, upgrading from SEER 14 to SEER 18 saves approximately $149/year — a payback period of 7–12 years at average rates, 4–6 years in high-rate states."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What time of year is cheapest to buy a new AC?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Fall (September–November) and early spring (February–March) offer the lowest AC prices and shortest wait times. HVAC contractors are less busy during these shoulder seasons and more willing to negotiate. Summer (June–August) is the most expensive and busiest time — emergency installs during heat waves can cost $500–$1,000 more than off-season replacements."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
