@@ -102,6 +102,12 @@ export default function BlogArticleLabel() {
             <p className="text-xl text-gray-600">Your complete visual guide to decoding AC nameplates and understanding what all those numbers mean</p>
           </header>
 
+          {/* Quick Answer — AI/GEO optimized */}
+          <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
+            <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
+            <p className="text-gray-800">Your AC's SEER rating is printed on the yellow EnergyGuide label on the outdoor condenser unit. If there's no label, find the model number on the metal nameplate and look it up on the manufacturer's website. Tonnage is encoded in the model number as a 2-3 digit number divisible by 6 or 12 — divide by 12 to get tons.</p>
+          </div>
+
           <section className="prose prose-lg max-w-none mb-8">
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
               Need to know your air conditioner's SEER rating, tonnage, or age? All that information is printed on a nameplate attached to your outdoor unit—you just need to know how to read it.

@@ -48,6 +48,12 @@ export default function BlogArticleBrands() {
             </p>
           </header>
 
+          {/* Quick Answer — AI/GEO optimized */}
+          <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
+            <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
+            <p className="text-gray-800">The most reliable AC brands in 2026 are <strong>Trane</strong> and <strong>American Standard</strong> (S-tier, 15–20 year lifespan), followed by <strong>Carrier, Lennox, and Daikin</strong> (A-tier). For best budget value, <strong>Goodman</strong> (owned by Daikin) leads. For mini-splits, <strong>Mitsubishi, Daikin, and Fujitsu</strong> are the top three. Installation quality matters more than brand — it accounts for ~80% of system lifespan.</p>
+          </div>
+
           <div className="prose prose-lg max-w-none">
             <section className="mb-12 bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
               <h2 className="text-2xl font-bold text-gray-900 mt-0 mb-4">Introduction</h2>

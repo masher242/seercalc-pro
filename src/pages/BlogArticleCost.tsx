@@ -111,6 +111,12 @@ export default function BlogArticleCost() {
             </p>
           </div>
 
+          {/* Quick Answer — AI/GEO optimized */}
+          <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
+            <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
+            <p className="text-gray-800">A new central AC unit costs <strong>$6,000–$11,500 installed</strong> for most homeowners in 2026, with the national average around $5,750–$8,500 for a standard 3-ton replacement. Budget systems start around $3,500; premium high-efficiency units reach $15,000–$18,000+. Equipment is typically 40–50% of the total cost; labor and materials make up the rest.</p>
+          </div>
+
           <section className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
               Shopping for a new air conditioner in 2026? In the USA, most homeowners pay <strong>$6,000–$11,500</strong> to install a new central AC system, with typical quotes for a 3-ton replacement clustering around <strong>$5,750–$8,500</strong>, and premium high-efficiency systems reaching <strong>$10,000–$18,000+</strong> depending on brand, SEER2 rating, and ductwork.

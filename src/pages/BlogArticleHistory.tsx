@@ -67,6 +67,12 @@ export default function BlogArticleHistory() {
             <p className="text-xl text-gray-600">From the 1970s energy crisis to today's ultra-efficient systems—the story of how SEER transformed cooling</p>
           </header>
 
+          {/* Quick Answer — AI/GEO optimized */}
+          <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
+            <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
+            <p className="text-gray-800">SEER ratings were introduced in 1979 and became federally mandated in 1992 with a minimum of SEER 10. The standard rose to SEER 13 in 2006, then SEER 14 in 2015. In 2023, the DOE replaced SEER with SEER2 — a stricter real-world testing standard — raising minimums to SEER2 13.4 (North) and SEER2 14.3 (South).</p>
+          </div>
+
           <section className="prose prose-lg max-w-none mb-8">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               In 1970, the average American air conditioner had a SEER rating of just 6. Today, the minimum legal standard is 14—more than twice as efficient. This remarkable transformation didn't happen by accident. It's a story of energy crises, government regulation, technological innovation, and billions of dollars in consumer savings.

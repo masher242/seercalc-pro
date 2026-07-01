@@ -71,6 +71,12 @@ export default function BlogArticleWhatIsSEER() {
             <p className="text-xl text-gray-600">The one number that determines how much of your income goes to the utility company every summer</p>
           </header>
 
+          {/* Quick Answer — AI/GEO optimized */}
+          <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
+            <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
+            <p className="text-gray-800">A <strong>SEER rating</strong> (Seasonal Energy Efficiency Ratio) measures how efficiently an air conditioner converts electricity into cooling. Higher numbers mean lower bills: a SEER 16 unit uses 37.5% less electricity than a SEER 10, saving most homeowners $300–$800 per year. The current federal minimum for new systems is SEER2 13.4 in northern states and SEER2 14.3 in southern states.</p>
+          </div>
+
           <section className="prose prose-lg max-w-none">
 
             <h2 className="text-2xl font-bold text-gray-900 mt-2 mb-4">The Bill That Started It All</h2>
