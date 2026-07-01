@@ -24,6 +24,7 @@ import BlogArticleFreeStrategy from './pages/BlogArticleFreeStrategy';
 import BlogArticleAirFilter from './pages/BlogArticleAirFilter';
 import BlogArticleSeerChart from './pages/BlogArticleSeerChart';
 import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
+import BrandTrane from './pages/BrandTrane';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -63,6 +64,7 @@ function AppContent() {
           <Route path="/blog/air-filter-electricity-bill" element={<BlogArticleAirFilter />} />
           <Route path="/blog/seer-rating-chart" element={<BlogArticleSeerChart />} />
           <Route path="/blog/seer-vs-seer2-explained" element={<BlogArticleSeerVsSeer2 />} />
+          <Route path="/brands/trane" element={<BrandTrane />} />
         </Routes>
         <Footer />
       </div>
