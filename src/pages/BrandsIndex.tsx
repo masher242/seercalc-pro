@@ -17,17 +17,107 @@ const liveBrands = [
     updated: 'July 2026',
     live: true,
   },
+  {
+    slug: 'carrier',
+    name: 'Carrier',
+    tier: 'A-Tier (Premium)',
+    tierColor: 'bg-green-100 text-green-800',
+    seer2: 'Up to 21.0 SEER2',
+    reliability: '4/5 Consumer Reports',
+    priceRange: '$3,900–$10,000+ installed',
+    summary: 'Inventor of air conditioning. Unique Consumer Choice warranty lets you opt into 3-year labor coverage. Known Infinity board failure costs and aluminum coil fragility. Bryant offers identical hardware for less.',
+    bestFor: 'Multi-zone installs, coastal buyers, buyers wanting optional labor warranty',
+    readTime: '15 min read',
+    updated: 'July 2026',
+    live: true,
+  },
+  {
+    slug: 'goodman',
+    name: 'Goodman',
+    tier: 'B-Tier (Budget Leader)',
+    tierColor: 'bg-blue-100 text-blue-800',
+    seer2: 'Up to 17.2 SEER2 (R-32)',
+    reliability: 'Mid-tier; improving under Daikin',
+    priceRange: '$3,200–$8,500 installed',
+    summary: 'US budget AC market leader, owned by Daikin. Lifetime compressor warranty on registered units. R-32 refrigerant costs ~6x less to service than R-454B brands in 2026. No labor coverage, no warranty transfer.',
+    bestFor: 'Rental properties, budget buyers, short-to-medium ownership, easy parts access',
+    readTime: '14 min read',
+    updated: 'July 2026',
+    live: true,
+  },
+  {
+    slug: 'lennox',
+    name: 'Lennox',
+    tier: 'S-Tier (Ultra-Premium)',
+    tierColor: 'bg-yellow-100 text-yellow-800',
+    seer2: 'Up to 26.0 SEER2',
+    reliability: 'Top 3 Consumer Reports (heat pumps)',
+    priceRange: '$4,000–$15,000+ installed',
+    summary: 'Highest efficiency in the US market (26.0 SEER2 SL25KCV). Only brand offering free 3-year labor at registration. Worst parts availability of any major brand — proprietary OEM-only, weeks-long waits, boards orphaned on 3-year-old units.',
+    bestFor: 'High-rate electricity markets, maximum efficiency buyers, strong local dealer areas',
+    readTime: '15 min read',
+    updated: 'July 2026',
+    live: true,
+  },
+  {
+    slug: 'american-standard',
+    name: 'American Standard',
+    tier: 'S-Tier (Premium)',
+    tierColor: 'bg-yellow-100 text-yellow-800',
+    seer2: 'Up to 24.0 SEER2',
+    reliability: 'Top tier (same hardware as Trane)',
+    priceRange: '$3,500–$12,000 installed',
+    summary: 'Same factory, same Spine Fin coil, same Climatuff compressor as Trane — at 5–15% lower cost. Platinum 20 flagship actually exceeds Trane XV20i at 24.0 vs 23.6 SEER2. Active CPSC recall on packaged units (July 2025).',
+    bestFor: 'Buyers wanting Trane-grade hardware at lower cost, coastal climates, desert Southwest',
+    readTime: '13 min read',
+    updated: 'July 2026',
+    live: true,
+  },
+  {
+    slug: 'daikin',
+    name: 'Daikin',
+    tier: 'A-Tier (Premium)',
+    tierColor: 'bg-green-100 text-green-800',
+    seer2: 'Up to 24.5 SEER2',
+    reliability: 'Premium tier; world\'s largest HVAC maker',
+    priceRange: '$4,200–$11,000 installed',
+    summary: 'World\'s largest HVAC manufacturer. Same Waller, TX factory as Goodman and Amana. Best standard warranty in the category: 12-year parts + 12-year unit replacement. R-32 refrigerant costs ~6x less to service than R-454B brands. Annual maintenance required for unit replacement warranty.',
+    bestFor: 'Long-stay homeowners, CA/FL/GA buyers, cold-climate heat pump buyers (FIT AURORA)',
+    readTime: '15 min read',
+    updated: 'July 2026',
+    live: true,
+  },
+  {
+    slug: 'rheem',
+    name: 'Rheem',
+    tier: 'B-Tier (Mid-Range)',
+    tierColor: 'bg-blue-100 text-blue-800',
+    seer2: 'Up to 20.5 SEER2',
+    reliability: 'Mid-tier; strong serviceability',
+    priceRange: '$3,000–$8,500 installed',
+    summary: 'Best mid-range value brand. Easy to service by any contractor, Watsco distribution network, 90-day registration window. Known evaporator coil pinhole leak issue with $3,000–$4,000 labor/refrigerant exposure per event since neither is covered under standard warranty.',
+    bestFor: 'Mid-range buyers, easy serviceability, buyers wanting transferable warranty',
+    readTime: '13 min read',
+    updated: 'July 2026',
+    live: true,
+  },
+  {
+    slug: 'mitsubishi',
+    name: 'Mitsubishi Electric',
+    tier: 'S-Tier (Mini-Splits)',
+    tierColor: 'bg-yellow-100 text-yellow-800',
+    seer2: 'Up to 32.2 SEER2',
+    reliability: 'Top-rated CR ductless; ~23% US market share',
+    priceRange: '$2,000–$20,000+ installed',
+    summary: 'Gold standard for residential mini-splits. Highest SEER2 in the US (32.2). H2i Hyper-Heat to -13°F. 12-year warranty with Diamond Contractor. NOTE: No central AC offered. 2025 Comfort app rollout was widely documented as disastrous.',
+    bestFor: 'Cold climates, ductless applications, additions, efficiency-first buyers with strong local dealer',
+    readTime: '15 min read',
+    updated: 'July 2026',
+    live: true,
+  },
 ];
 
-const comingSoon = [
-  { name: 'Carrier', tier: 'A-Tier', seer2: 'Up to 24 SEER2', note: 'Best dealer network in the US' },
-  { name: 'Lennox', tier: 'S-Tier', seer2: 'Up to 28 SEER2', note: 'Highest efficiency available' },
-  { name: 'American Standard', tier: 'S-Tier', seer2: 'Up to 21.5 SEER2', note: 'Same as Trane, lower price' },
-  { name: 'Goodman', tier: 'B-Tier', seer2: 'Up to 17 SEER2', note: 'Best budget brand, Daikin-owned' },
-  { name: 'Rheem', tier: 'B-Tier', seer2: 'Up to 18 SEER2', note: 'Best value in mid-range' },
-  { name: 'Daikin', tier: 'A-Tier', seer2: 'Up to 22 SEER2', note: 'Best warranty, inverter leader' },
-  { name: 'Mitsubishi', tier: 'S-Tier (mini-splits)', seer2: 'Up to 32 SEER2', note: 'Top-ranked ductless brand' },
-];
+const comingSoon: never[] = [];
 
 export default function BrandsIndex() {
   return (
@@ -129,11 +219,12 @@ export default function BrandsIndex() {
         </div>
 
         {/* Coming soon */}
+        {comingSoon.length > 0 && (
         <div className="mb-10">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon</h2>
-          <p className="text-gray-500 text-sm mb-6">Full in-depth reviews in progress, using the same sourced research methodology as the Trane review above.</p>
+          <p className="text-gray-500 text-sm mb-6">Full in-depth reviews in progress, using the same sourced research methodology as the reviews above.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {comingSoon.map(brand => (
+            {comingSoon.map((brand: any) => (
               <div key={brand.name} className="bg-gray-50 rounded-lg border border-gray-200 p-4 flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-0.5">
@@ -147,6 +238,7 @@ export default function BrandsIndex() {
             ))}
           </div>
         </div>
+        )}
 
         {/* How we research */}
         <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 mb-10">

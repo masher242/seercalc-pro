@@ -26,6 +26,13 @@ import BlogArticleSeerChart from './pages/BlogArticleSeerChart';
 import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
 import BrandTrane from './pages/BrandTrane';
 import BrandsIndex from './pages/BrandsIndex';
+import BrandCarrier from './pages/BrandCarrier';
+import BrandGoodman from './pages/BrandGoodman';
+import BrandLennox from './pages/BrandLennox';
+import BrandAmericanStandard from './pages/BrandAmericanStandard';
+import BrandDaikin from './pages/BrandDaikin';
+import BrandRheem from './pages/BrandRheem';
+import BrandMitsubishi from './pages/BrandMitsubishi';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -67,6 +74,13 @@ function AppContent() {
           <Route path="/blog/seer-vs-seer2-explained" element={<BlogArticleSeerVsSeer2 />} />
           <Route path="/brands/trane" element={<BrandTrane />} />
           <Route path="/brands" element={<BrandsIndex />} />
+          <Route path="/brands/carrier" element={<BrandCarrier />} />
+          <Route path="/brands/goodman" element={<BrandGoodman />} />
+          <Route path="/brands/lennox" element={<BrandLennox />} />
+          <Route path="/brands/american-standard" element={<BrandAmericanStandard />} />
+          <Route path="/brands/daikin" element={<BrandDaikin />} />
+          <Route path="/brands/rheem" element={<BrandRheem />} />
+          <Route path="/brands/mitsubishi" element={<BrandMitsubishi />} />
         </Routes>
         <Footer />
       </div>
