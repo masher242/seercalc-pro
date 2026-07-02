@@ -121,7 +121,7 @@ export default function BlogArticleBrands() {
           {/* Quick Answer — AI/GEO optimized */}
           <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
             <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
-            <p className="text-gray-800">The most reliable AC brands in 2026 are <strong>Trane</strong> and <strong>American Standard</strong> (S-tier, 15–20 year lifespan), followed by <strong>Carrier, Lennox, and Daikin</strong> (A-tier). For best budget value, <strong>Goodman</strong> (owned by Daikin) leads. For mini-splits, <strong>Mitsubishi, Daikin, and Fujitsu</strong> are the top three. Installation quality matters more than brand — it accounts for ~80% of system lifespan.</p>
+            <p className="text-gray-800">The most reliable AC brands in 2026 are <strong>Trane</strong> and <strong>American Standard</strong> (S-tier, 15–20 year lifespan), followed by <strong>Carrier, Lennox, and Daikin</strong> (A-tier). For best budget value, <strong>Goodman</strong> (owned by Daikin) leads. For mini-splits, <strong>Mitsubishi, Daikin, and Fujitsu</strong> are the top three. Installation quality matters more than brand — it accounts for ~80% of system lifespan. <strong>Note:</strong> The federal 25C tax credit expired December 31, 2025 — no credit applies to 2026 installations.</p>
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -136,6 +136,31 @@ export default function BlogArticleBrands() {
               <p className="mb-0">
                 This guide cuts through the noise. We evaluated 15+ central AC brands using real 2025–2026 pricing data, manufacturer specifications, warranty documents, Consumer Reports reliability trends, and professional HVAC contractor tier lists to help you make a confident choice.
               </p>
+            </section>
+
+            {/* 2026 Critical Updates */}
+            <section className="mb-12 space-y-4">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">⚠️ Critical Updates for 2026 Buyers</h2>
+
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <p className="text-sm font-bold text-red-800 uppercase tracking-wide mb-1">Federal Tax Credit Expired</p>
+                <p className="text-sm text-gray-700">The Section 25C Energy Efficient Home Improvement Credit — worth up to $2,000 for qualifying heat pumps — <strong>expired December 31, 2025</strong> under the One Big Beautiful Bill Act. No federal tax credit applies to any HVAC installation in 2026, regardless of brand or efficiency rating. Any contractor or website still marketing the $2,000 credit for 2026 installs is wrong. State and utility rebates may still apply — check your state's HEAR program at <strong>dsireusa.org</strong>.</p>
+              </div>
+
+              <div className="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg">
+                <p className="text-sm font-bold text-amber-800 uppercase tracking-wide mb-1">Refrigerant Service Costs Have Surged — Know Which Brand Uses What</p>
+                <p className="text-sm text-gray-700">The EPA's AIM Act required all new HVAC equipment to switch refrigerants in 2025. <strong>Carrier, Trane, Lennox, and Rheem chose R-454B</strong> — which ran $700–$2,800 per 20-lb cylinder in 2026 due to supply shortages. <strong>Goodman, Amana, and Daikin chose R-32</strong> — which runs approximately $449 per 20-lb cylinder. Any service call involving refrigerant (coil leak, recharge) costs significantly more on an R-454B system. Factor this into your long-term cost comparison — especially since refrigerant is NOT covered under any brand's standard warranty.</p>
+              </div>
+
+              <div className="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg">
+                <p className="text-sm font-bold text-amber-800 uppercase tracking-wide mb-1">Active CPSC Recall — Trane & American Standard Packaged Units</p>
+                <p className="text-sm text-gray-700">A July 3, 2025 CPSC recall covers approximately 4,790 <strong>Trane and American Standard gas/electric packaged units</strong> (models 4YCZ5024F1060A, 4YCZ5036F1070A, 4YCZ5036F1090A, 4YCZ5048E1090A, 4YCZ5048E1115A) due to a gas valve failure creating a fire hazard. This affects <strong>packaged units only</strong> — not standard split-system central AC. If you own one of these models, stop using heating mode and call 800-889-0129 for a free repair.</p>
+              </div>
+
+              <div className="bg-gray-50 border-l-4 border-gray-400 p-5 rounded-r-lg">
+                <p className="text-sm font-bold text-gray-700 uppercase tracking-wide mb-1">2026 Industry Price-Fixing Lawsuit</p>
+                <p className="text-sm text-gray-700">In April 2026, a federal class action was filed against Carrier, Trane, Lennox, Daikin, Mitsubishi (METUS), and others alleging coordinated HVAC price increases since January 2020 — with equipment prices rising 53.5% vs. 29.7% general inflation over the same period. All defendants deny wrongdoing. The case is in early stages. It does help explain why comparable systems from competing premium brands are priced so similarly.</p>
+              </div>
             </section>
 
             <nav className="mb-12 bg-gray-50 p-6 rounded-lg">
@@ -262,7 +287,8 @@ export default function BlogArticleBrands() {
                 <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-2 border-yellow-400 rounded-lg p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">S-Tier (Premium)</h3>
                   <p className="font-semibold mb-2">Brands: Lennox, Trane, American Standard</p>
-                  <p className="text-sm">Top reliability, highest efficiency, longest lifespans (15–20 years), premium pricing</p>
+                  <p className="text-sm mb-2">Top reliability, highest efficiency, longest lifespans (15–20 years), premium pricing</p>
+                  <p className="text-xs text-gray-600"><strong>Note:</strong> Within S-Tier, Lennox leads on <em>peak efficiency</em> (SL25KCV at 26.0 SEER2) while Trane and American Standard lead on <em>predicted reliability</em> (Consumer Reports 5/5). They're S-Tier for different reasons — choose based on what matters most to you.</p>
                 </div>
 
                 <div className="bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-400 rounded-lg p-6">
@@ -435,7 +461,7 @@ export default function BlogArticleBrands() {
                     <p className="font-semibold mb-2">What makes Carrier stand out:</p>
                     <ul className="space-y-1 text-sm">
                       <li>✓ <strong>Advanced technology:</strong> Greenspeed® Intelligence with Infinity® System Control</li>
-                      <li>✓ <strong>High efficiency:</strong> Infinity 26 achieves up to 24 SEER2</li>
+                      <li>✓ <strong>High efficiency:</strong> Infinity 26VNA1 achieves up to 21.0 SEER2</li>
                       <li>✓ <strong>Quiet operation:</strong> Sound levels as low as 53–62 dB</li>
                       <li>✓ <strong>Smart integration:</strong> Remote diagnostics, real-time tuning, smart home connectivity</li>
                     </ul>
@@ -453,7 +479,7 @@ export default function BlogArticleBrands() {
                         <span className="font-semibold">$6,000–$10,000</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Infinity (Premium) — Up to 24 SEER2</span>
+                        <span>Infinity (Premium) — Up to 21.0 SEER2</span>
                         <span className="font-semibold">$13,996–$17,500+</span>
                       </div>
                     </div>
@@ -552,6 +578,39 @@ export default function BlogArticleBrands() {
                   <p className="text-sm mb-2"><strong>Best for:</strong> Value-conscious homeowners, mid-range budgets, major brand without premium pricing</p>
                   <div className="bg-blue-100 border-l-4 border-blue-600 p-3 rounded-r mt-3">
                     <p className="text-sm"><strong>Rheem vs Ruud:</strong> They're essentially the same units under different branding. Choose whichever dealer offers better pricing and service in your area.</p>
+                  </div>
+                </div>
+
+                {/* Same Hardware Box */}
+                <div className="bg-teal-50 border-2 border-teal-400 rounded-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">🏭 Same Hardware, Different Badge — Know Your Sibling Brands</h3>
+                  <p className="text-sm text-gray-600 mb-4">Several major HVAC brands share factories, components, and parent companies. Choosing the "value" sibling can save 5–20% for identical hardware:</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse text-sm">
+                      <thead>
+                        <tr className="bg-teal-100">
+                          <th className="border border-teal-200 px-3 py-2 text-left font-semibold">Premium Brand</th>
+                          <th className="border border-teal-200 px-3 py-2 text-left font-semibold">Value Sibling</th>
+                          <th className="border border-teal-200 px-3 py-2 text-left font-semibold">Parent Company</th>
+                          <th className="border border-teal-200 px-3 py-2 text-left font-semibold">Typical Savings</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { premium: 'Trane', value: 'American Standard', parent: 'Trane Technologies', savings: '5–15%' },
+                          { premium: 'Carrier', value: 'Bryant', parent: 'Carrier Global', savings: '10–15%' },
+                          { premium: 'Daikin', value: 'Goodman / Amana', parent: 'Daikin Industries', savings: '30–40%' },
+                          { premium: 'Rheem', value: 'Ruud', parent: 'Paloma Rheem Holdings', savings: 'Varies by dealer' },
+                        ].map((row, i) => (
+                          <tr key={row.premium} className={i % 2 === 0 ? 'bg-white' : 'bg-teal-50'}>
+                            <td className="border border-teal-200 px-3 py-2 font-semibold text-gray-900">{row.premium}</td>
+                            <td className="border border-teal-200 px-3 py-2 text-gray-700">{row.value}</td>
+                            <td className="border border-teal-200 px-3 py-2 text-gray-600 text-xs">{row.parent}</td>
+                            <td className="border border-teal-200 px-3 py-2 text-teal-700 font-semibold">{row.savings}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
 
@@ -777,27 +836,27 @@ export default function BlogArticleBrands() {
                     </tr>
                     <tr className="border-b bg-gray-50">
                       <td className="px-4 py-2 font-semibold">Carrier</td>
-                      <td className="px-4 py-2">24</td>
+                      <td className="px-4 py-2">21.0</td>
                       <td className="px-4 py-2">Variable-speed</td>
-                      <td className="px-4 py-2">Infinity 26</td>
+                      <td className="px-4 py-2">Infinity 26VNA1</td>
                     </tr>
                     <tr className="border-b">
                       <td className="px-4 py-2 font-semibold">Trane</td>
-                      <td className="px-4 py-2">21.5</td>
+                      <td className="px-4 py-2">23.6</td>
                       <td className="px-4 py-2">Variable-speed</td>
                       <td className="px-4 py-2">XV20i</td>
                     </tr>
                     <tr className="border-b bg-gray-50">
                       <td className="px-4 py-2 font-semibold">American Standard</td>
-                      <td className="px-4 py-2">21.5</td>
+                      <td className="px-4 py-2">24.0</td>
                       <td className="px-4 py-2">Variable-speed</td>
-                      <td className="px-4 py-2">Platinum</td>
+                      <td className="px-4 py-2">Platinum 20</td>
                     </tr>
                     <tr className="border-b">
                       <td className="px-4 py-2 font-semibold">Bryant</td>
                       <td className="px-4 py-2">~21</td>
                       <td className="px-4 py-2">Variable-speed</td>
-                      <td className="px-4 py-2">Evolution Extreme</td>
+                      <td className="px-4 py-2">Evolution 191VAN</td>
                     </tr>
                     <tr className="border-b bg-gray-50">
                       <td className="px-4 py-2 font-semibold">Daikin</td>
