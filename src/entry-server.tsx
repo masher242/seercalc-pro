@@ -34,6 +34,8 @@ import BrandAmericanStandard from './pages/BrandAmericanStandard';
 import BrandDaikin from './pages/BrandDaikin';
 import BrandRheem from './pages/BrandRheem';
 import BrandMitsubishi from './pages/BrandMitsubishi';
+import CalculatorsIndex from './pages/CalculatorsIndex';
+import CalculatorRepairVsReplace from './pages/CalculatorRepairVsReplace';
 import { Routes, Route } from 'react-router-dom';
 
 function AppContent() {
@@ -71,6 +73,8 @@ function AppContent() {
         <Route path="/brands/daikin" element={<BrandDaikin />} />
         <Route path="/brands/rheem" element={<BrandRheem />} />
         <Route path="/brands/mitsubishi" element={<BrandMitsubishi />} />
+        <Route path="/calculators" element={<CalculatorsIndex />} />
+        <Route path="/calculators/repair-vs-replace" element={<CalculatorRepairVsReplace />} />
       </Routes>
       <Footer />
     </div>
@@ -126,4 +130,6 @@ export const routes = [
   '/brands/daikin',
   '/brands/rheem',
   '/brands/mitsubishi',
+  '/calculators',
+  '/calculators/repair-vs-replace',
 ];

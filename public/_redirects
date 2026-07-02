@@ -2,4 +2,6 @@
 /blog/*      /blog/:splat.html   200
 /brands      /brands.html        200
 /brands/*    /brands/:splat.html 200
+/calculators      /calculators.html          200
+/calculators/*    /calculators/:splat.html   200
 /*           /index.html        200

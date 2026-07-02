@@ -37,6 +37,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://seercalc.pro/calculators</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://seercalc.pro/calculators/repair-vs-replace</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://seercalc.pro/brands/trane</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>

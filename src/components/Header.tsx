@@ -6,7 +6,7 @@ export default function Header() {
   const location = useLocation();
   const isBlogPage = location.pathname.startsWith('/blog');
   const isBrandsPage = location.pathname.startsWith('/brands');
-  const isCalcPage = location.pathname === '/';
+  const isCalcPage = location.pathname === '/' || location.pathname.startsWith('/calculators');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -20,7 +20,7 @@ export default function Header() {
   useEffect(() => { setMobileOpen(false); }, [location.pathname]);
 
   const navItems = [
-    { to: '/', label: 'Calculator', shortLabel: 'Calc', icon: Calculator, active: isCalcPage },
+    { to: '/calculators', label: 'Calculators', shortLabel: 'Calc', icon: Calculator, active: isCalcPage },
     { to: '/blog', label: 'Efficiency Hub', shortLabel: 'Hub', icon: BookOpen, active: isBlogPage },
     { to: '/brands', label: 'Brand Reviews', shortLabel: 'Brands', icon: Star, active: isBrandsPage },
   ];
