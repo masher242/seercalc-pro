@@ -21,10 +21,18 @@ const liveCalculators = [
     time: '3 min',
     isHome: false,
   },
+  {
+    slug: '/calculators/seer-to-seer2',
+    title: 'SEER to SEER2 Converter',
+    description: 'Convert any SEER rating to SEER2 (or back) to compare old and new systems accurately. Includes a quick-reference table for common ratings and a 2026 regional compliance check.',
+    inputs: 'Your SEER or SEER2 rating, system type (split or mini-split)',
+    bestFor: 'Anyone comparing a pre-2023 system to new quotes, or checking if a quoted system is actually an upgrade',
+    time: '1 min',
+    isHome: false,
+  },
 ];
 
 const comingSoon = [
-  { title: 'SEER to SEER2 Converter', description: 'Convert your old SEER rating to SEER2 and compare apples to apples when shopping new systems.' },
   { title: 'Tax Credit & Rebate Estimator', description: 'See which state and utility rebates you qualify for based on your location, income, and system type.' },
   { title: 'AC Sizing Calculator', description: 'Estimate the right tonnage for your home based on square footage, climate zone, and insulation.' },
 ];

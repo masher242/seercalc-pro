@@ -231,9 +231,16 @@ export default function BlogArticleSeerVsSeer2() {
 
             <p className="text-gray-700 leading-relaxed mb-4">If you need to convert any SEER rating to SEER2:</p>
 
-            <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-6 rounded-r-lg">
-              <p className="text-gray-800 font-medium mb-2">SEER2 ≈ SEER ÷ 1.046</p>
-              <p className="text-gray-800 font-medium">And the reverse: SEER ≈ SEER2 × 1.046</p>
+            <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-4 rounded-r-lg">
+              <p className="text-gray-800 font-medium mb-2">SEER2 ≈ SEER × 0.9485</p>
+              <p className="text-gray-800 font-medium">And the reverse: SEER ≈ SEER2 ÷ 0.9485</p>
+            </div>
+
+            <div className="mb-6">
+              <Link to="/calculators/seer-to-seer2" className="inline-flex items-center gap-2 bg-teal-500 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-teal-600 transition-colors">
+                <Calculator className="w-4 h-4" />
+                Use our free SEER ↔ SEER2 Converter
+              </Link>
             </div>
 
             <p className="text-gray-700 leading-relaxed mb-2">

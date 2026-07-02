@@ -49,6 +49,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://seercalc.pro/calculators/seer-to-seer2</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://seercalc.pro/brands/trane</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>

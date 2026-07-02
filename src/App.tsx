@@ -35,6 +35,7 @@ import BrandRheem from './pages/BrandRheem';
 import BrandMitsubishi from './pages/BrandMitsubishi';
 import CalculatorsIndex from './pages/CalculatorsIndex';
 import CalculatorRepairVsReplace from './pages/CalculatorRepairVsReplace';
+import CalculatorSeerToSeer2 from './pages/CalculatorSeerToSeer2';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -85,6 +86,7 @@ function AppContent() {
           <Route path="/brands/mitsubishi" element={<BrandMitsubishi />} />
           <Route path="/calculators" element={<CalculatorsIndex />} />
           <Route path="/calculators/repair-vs-replace" element={<CalculatorRepairVsReplace />} />
+          <Route path="/calculators/seer-to-seer2" element={<CalculatorSeerToSeer2 />} />
         </Routes>
         <Footer />
       </div>
