@@ -5,114 +5,73 @@ import { ArrowLeft, ArrowRight, Calculator, CheckCircle2, AlertCircle, Info, Rot
 import LeadMagnet from '../components/LeadMagnet';
 
 // ─── Climate zone base BTU/sqft by state ────────────────────────────────────
-const STATE_CLIMATE: Record<string, { zone: number; label: string; baseBtu: number }> = {
-  AL: { zone: 3, label: 'Hot-Humid', baseBtu: 28 },
-  AK: { zone: 7, label: 'Very Cold', baseBtu: 12 },
-  AZ: { zone: 2, label: 'Hot-Dry', baseBtu: 32 },
-  AR: { zone: 3, label: 'Mixed-Humid', baseBtu: 28 },
-  CA: { zone: 3, label: 'Mixed-Dry', baseBtu: 22 },
-  CO: { zone: 5, label: 'Cold', baseBtu: 18 },
-  CT: { zone: 5, label: 'Cold', baseBtu: 18 },
-  DE: { zone: 4, label: 'Mixed-Humid', baseBtu: 22 },
-  FL: { zone: 1, label: 'Very Hot-Humid', baseBtu: 34 },
-  GA: { zone: 3, label: 'Hot-Humid', baseBtu: 28 },
-  HI: { zone: 1, label: 'Very Hot-Humid', baseBtu: 32 },
-  ID: { zone: 5, label: 'Cold', baseBtu: 18 },
-  IL: { zone: 5, label: 'Cold', baseBtu: 18 },
-  IN: { zone: 5, label: 'Cold', baseBtu: 18 },
-  IA: { zone: 5, label: 'Cold', baseBtu: 18 },
-  KS: { zone: 4, label: 'Mixed-Humid', baseBtu: 24 },
-  KY: { zone: 4, label: 'Mixed-Humid', baseBtu: 24 },
-  LA: { zone: 2, label: 'Very Hot-Humid', baseBtu: 32 },
-  ME: { zone: 6, label: 'Cold', baseBtu: 16 },
-  MD: { zone: 4, label: 'Mixed-Humid', baseBtu: 22 },
-  MA: { zone: 5, label: 'Cold', baseBtu: 18 },
-  MI: { zone: 5, label: 'Cold', baseBtu: 16 },
-  MN: { zone: 6, label: 'Very Cold', baseBtu: 16 },
-  MS: { zone: 2, label: 'Very Hot-Humid', baseBtu: 30 },
-  MO: { zone: 4, label: 'Mixed-Humid', baseBtu: 24 },
-  MT: { zone: 6, label: 'Very Cold', baseBtu: 14 },
-  NE: { zone: 5, label: 'Cold', baseBtu: 18 },
-  NV: { zone: 2, label: 'Hot-Dry', baseBtu: 30 },
-  NH: { zone: 5, label: 'Cold', baseBtu: 18 },
-  NJ: { zone: 4, label: 'Mixed-Humid', baseBtu: 22 },
-  NM: { zone: 3, label: 'Hot-Dry', baseBtu: 26 },
-  NY: { zone: 5, label: 'Cold', baseBtu: 18 },
-  NC: { zone: 3, label: 'Mixed-Humid', baseBtu: 26 },
-  ND: { zone: 6, label: 'Very Cold', baseBtu: 14 },
-  OH: { zone: 5, label: 'Cold', baseBtu: 18 },
-  OK: { zone: 3, label: 'Mixed-Humid', baseBtu: 28 },
-  OR: { zone: 4, label: 'Mixed', baseBtu: 18 },
-  PA: { zone: 5, label: 'Cold', baseBtu: 18 },
-  RI: { zone: 5, label: 'Cold', baseBtu: 18 },
-  SC: { zone: 3, label: 'Hot-Humid', baseBtu: 28 },
-  SD: { zone: 6, label: 'Very Cold', baseBtu: 16 },
-  TN: { zone: 4, label: 'Mixed-Humid', baseBtu: 26 },
-  TX: { zone: 2, label: 'Very Hot', baseBtu: 32 },
-  UT: { zone: 5, label: 'Cold', baseBtu: 20 },
-  VT: { zone: 6, label: 'Very Cold', baseBtu: 16 },
-  VA: { zone: 4, label: 'Mixed-Humid', baseBtu: 24 },
-  WA: { zone: 4, label: 'Mixed', baseBtu: 16 },
-  WV: { zone: 5, label: 'Cold', baseBtu: 18 },
-  WI: { zone: 6, label: 'Very Cold', baseBtu: 16 },
-  WY: { zone: 6, label: 'Very Cold', baseBtu: 16 },
-  OTHER: { zone: 2, label: 'Very Hot-Humid', baseBtu: 32 },
+// Base values represent a standard insulated frame home in that climate
+// Additional adjustments are applied on top for construction type, insulation, etc.
+const STATE_CLIMATE: Record<string, { zone: number; label: string; baseBtu: number; climateAdj: number }> = {
+  AL: { zone: 3, label: 'Hot-Humid',      baseBtu: 20, climateAdj: 0.20 },
+  AK: { zone: 7, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.25 },
+  AZ: { zone: 2, label: 'Hot-Dry',        baseBtu: 20, climateAdj: 0.25 },
+  AR: { zone: 3, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.18 },
+  CA: { zone: 3, label: 'Mixed-Dry',      baseBtu: 20, climateAdj: 0.00 },
+  CO: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  CT: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  DE: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.08 },
+  FL: { zone: 1, label: 'Very Hot-Humid', baseBtu: 20, climateAdj: 0.30 },
+  GA: { zone: 3, label: 'Hot-Humid',      baseBtu: 20, climateAdj: 0.20 },
+  HI: { zone: 1, label: 'Very Hot-Humid', baseBtu: 20, climateAdj: 0.25 },
+  ID: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  IL: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  IN: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  IA: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  KS: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.10 },
+  KY: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.10 },
+  LA: { zone: 2, label: 'Very Hot-Humid', baseBtu: 20, climateAdj: 0.28 },
+  ME: { zone: 6, label: 'Cold',           baseBtu: 20, climateAdj: -0.18 },
+  MD: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.08 },
+  MA: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  MI: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.15 },
+  MN: { zone: 6, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.18 },
+  MS: { zone: 2, label: 'Very Hot-Humid', baseBtu: 20, climateAdj: 0.25 },
+  MO: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.10 },
+  MT: { zone: 6, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.20 },
+  NE: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  NV: { zone: 2, label: 'Hot-Dry',        baseBtu: 20, climateAdj: 0.22 },
+  NH: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  NJ: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.08 },
+  NM: { zone: 3, label: 'Hot-Dry',        baseBtu: 20, climateAdj: 0.15 },
+  NY: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  NC: { zone: 3, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.15 },
+  ND: { zone: 6, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.20 },
+  OH: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  OK: { zone: 3, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.20 },
+  OR: { zone: 4, label: 'Mixed',          baseBtu: 20, climateAdj: -0.05 },
+  PA: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  RI: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  SC: { zone: 3, label: 'Hot-Humid',      baseBtu: 20, climateAdj: 0.20 },
+  SD: { zone: 6, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.18 },
+  TN: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.12 },
+  TX: { zone: 2, label: 'Very Hot',       baseBtu: 20, climateAdj: 0.28 },
+  UT: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: 0.00 },
+  VT: { zone: 6, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.18 },
+  VA: { zone: 4, label: 'Mixed-Humid',    baseBtu: 20, climateAdj: 0.10 },
+  WA: { zone: 4, label: 'Mixed',          baseBtu: 20, climateAdj: -0.08 },
+  WV: { zone: 5, label: 'Cold',           baseBtu: 20, climateAdj: -0.10 },
+  WI: { zone: 6, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.18 },
+  WY: { zone: 6, label: 'Very Cold',      baseBtu: 20, climateAdj: -0.18 },
+  OTHER: { zone: 2, label: 'Very Hot-Humid', baseBtu: 20, climateAdj: 0.30 },
+  // ─── International climate zones (self-selected by users outside the US) ───
+  INTL_TROPICAL:    { zone: 1, label: 'Tropical (hot & humid year-round)',   baseBtu: 20, climateAdj: 0.32 },
+  INTL_DESERT:      { zone: 2, label: 'Hot & dry / desert',                  baseBtu: 20, climateAdj: 0.28 },
+  INTL_SUBTROPICAL: { zone: 3, label: 'Subtropical (hot summers, mild winters)', baseBtu: 20, climateAdj: 0.20 },
+  INTL_MEDITERRANEAN:{ zone: 3, label: 'Mediterranean (warm dry summers)',   baseBtu: 20, climateAdj: 0.12 },
+  INTL_TEMPERATE:   { zone: 4, label: 'Temperate (warm summers, cool winters)', baseBtu: 20, climateAdj: 0.05 },
+  INTL_OCEANIC:     { zone: 4, label: 'Oceanic / maritime (mild, rarely hot)', baseBtu: 20, climateAdj: -0.10 },
+  INTL_CONTINENTAL: { zone: 5, label: 'Continental (hot summers, cold winters)', baseBtu: 20, climateAdj: 0.02 },
+  INTL_COLD:        { zone: 6, label: 'Cold / subarctic',                    baseBtu: 20, climateAdj: -0.18 },
 };
 
 // ─── Multiplier tables ────────────────────────────────────────────────────────
 
-const CEILING_MULT: Record<string, number> = {
-  standard: 1.0,   // 8 ft
-  high: 1.15,      // 9–10 ft
-  vaulted: 1.30,   // 12 ft+
-};
-
-const WALL_MULT: Record<string, number> = {
-  frame_uninsulated:    1.25,  // wood frame, no insulation
-  frame_insulated:      1.00,  // wood frame, insulated (baseline)
-  brick_veneer:         0.95,  // some thermal mass benefit
-  stucco_frame:         1.05,  // stucco over frame
-  cmu_uninsulated:      1.20,  // concrete block, no insulation
-  cmu_insulated:        0.90,  // concrete block with insulation — thermal mass helps
-  icf:                  0.75,  // insulated concrete forms — very well insulated
-  log:                  0.90,  // log/timber — natural R + mass
-  manufactured:         1.30,  // thin walls, minimal insulation
-};
-
-const ROOF_MULT: Record<string, number> = {
-  attic_none:         1.40,  // attic with no insulation
-  attic_minimal:      1.20,  // attic, minimal (old fiberglass batts R-11)
-  attic_moderate:     1.00,  // attic, moderate insulation (R-19–30) — baseline
-  attic_good:         0.85,  // attic, good insulation (R-30–49)
-  attic_excellent:    0.70,  // attic, spray foam or R-49+
-  flat_uninsulated:   1.45,  // flat roof, no insulation
-  flat_insulated:     1.10,  // flat roof with insulation
-  cathedral_poor:     1.30,  // cathedral ceiling, poor insulation
-  cathedral_good:     0.95,  // cathedral ceiling, well insulated
-  upper_floor:        0.60,  // another floor above — minimal roof load
-};
-
-const ROOF_COLOR_MULT: Record<string, number> = {
-  dark:    1.12,
-  medium:  1.00,
-  light:   0.88,
-  metal_reflective: 0.82,
-  tile:    0.90,
-};
-
-const SUN_MULT: Record<string, number> = {
-  shaded:  0.88,
-  typical: 1.00,
-  high:    1.15,
-};
-
-const WINDOW_MULT: Record<string, number> = {
-  single:   1.18,
-  double:   1.00,
-  lowE:     0.88,
-};
-
-// ─── Step definitions ─────────────────────────────────────────────────────────
 
 const STATES = [
   ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],
@@ -127,7 +86,19 @@ const STATES = [
   ['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],
   ['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],
   ['VT','Vermont'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],
-  ['WI','Wisconsin'],['WY','Wyoming'],['OTHER','Other / Outside US'],
+  ['WI','Wisconsin'],['WY','Wyoming'],
+];
+
+// International climate zones for users outside the US
+const INTL_CLIMATES: [string, string][] = [
+  ['INTL_TROPICAL', 'Tropical (hot & humid all year)'],
+  ['INTL_DESERT', 'Hot & dry / desert'],
+  ['INTL_SUBTROPICAL', 'Subtropical (hot summers, mild winters)'],
+  ['INTL_MEDITERRANEAN', 'Mediterranean (warm dry summers)'],
+  ['INTL_TEMPERATE', 'Temperate (warm summers, cool winters)'],
+  ['INTL_OCEANIC', 'Oceanic / maritime (mild, rarely hot)'],
+  ['INTL_CONTINENTAL', 'Continental (hot summers, cold winters)'],
+  ['INTL_COLD', 'Cold / subarctic'],
 ];
 
 // ─── Card option type ─────────────────────────────────────────────────────────
@@ -199,36 +170,101 @@ function calcSizing(inputs: {
 }) {
   const climate = STATE_CLIMATE[inputs.state] || STATE_CLIMATE['OTHER'];
 
-  // Base BTU load
+  // Base BTU load — 20 BTU/sqft is a reasonable baseline for an average insulated home
   let btu = inputs.sqft * climate.baseBtu;
 
-  // Apply multipliers
-  btu *= CEILING_MULT[inputs.ceiling] || 1.0;
-  btu *= WALL_MULT[inputs.walls] || 1.0;
-  btu *= ROOF_MULT[inputs.roof] || 1.0;
+  // Additive percentage adjustments — each factor adds or subtracts from base load
+  // Climate zone adjustment (baked into state data)
+  let totalAdj = climate.climateAdj;
 
-  // Roof color only applies if there's a roof above (not upper_floor)
+  // Ceiling height adjustment — additive % of base load
+  const ceilingAdj: Record<string, number> = {
+    standard: 0,
+    high: 0.12,
+    vaulted: 0.25,
+  };
+
+  // Wall adjustment — additive % of base load
+  const wallAdj: Record<string, number> = {
+    frame_insulated:   0,      // baseline
+    frame_uninsulated: 0.15,
+    brick_veneer:      -0.05,
+    stucco_frame:       0.05,
+    cmu_uninsulated:    0.12,  // high thermal mass moderates some of the load
+    cmu_insulated:     -0.10,
+    icf:               -0.25,
+    log:               -0.08,
+    manufactured:       0.20,
+  };
+
+  // Roof adjustment — additive % of base load (roof is big, so larger range)
+  const roofAdj: Record<string, number> = {
+    attic_none:          0.30,
+    attic_minimal:       0.15,
+    attic_moderate:      0,
+    attic_good:         -0.12,
+    attic_excellent:    -0.25,
+    flat_uninsulated:    0.35,
+    flat_insulated:      0.08,
+    cathedral_poor:      0.22,
+    cathedral_good:     -0.05,
+    upper_floor:        -0.35,
+  };
+
+  // Roof color adjustment — additive % of base load
+  const roofColorAdj: Record<string, number> = {
+    dark:              0.08,
+    medium:            0,
+    light:            -0.08,
+    metal_reflective: -0.12,
+    tile:             -0.06,
+  };
+
+  // Sun exposure — additive % of base load
+  const sunAdj: Record<string, number> = {
+    shaded:  -0.10,
+    typical:  0,
+    high:     0.10,
+  };
+
+  // Windows — additive % of base load
+  const windowAdj: Record<string, number> = {
+    single:  0.12,
+    double:  0,
+    lowE:   -0.08,
+  };
+
+  // Sum all percentage adjustments
+  totalAdj += ceilingAdj[inputs.ceiling] || 0;
+  totalAdj += wallAdj[inputs.walls] || 0;
+  totalAdj += roofAdj[inputs.roof] || 0;
   if (inputs.roof !== 'upper_floor') {
-    btu *= ROOF_COLOR_MULT[inputs.roofColor] || 1.0;
+    totalAdj += roofColorAdj[inputs.roofColor] || 0;
   }
+  totalAdj += sunAdj[inputs.sun] || 0;
+  totalAdj += windowAdj[inputs.windows] || 0;
 
-  btu *= SUN_MULT[inputs.sun] || 1.0;
-  btu *= WINDOW_MULT[inputs.windows] || 1.0;
+  // Cap total adjustment to prevent extreme outliers
+  totalAdj = Math.max(-0.40, Math.min(0.65, totalAdj));
+
+  // Apply combined adjustment
+  btu = btu * (1 + totalAdj);
 
   // Occupant load: 400 BTU/hr per person above 2
   const extraOccupants = Math.max(0, inputs.occupants - 2);
   btu += extraOccupants * 400;
 
+  // Absolute safety floor: never size below 12 BTU/sqft — prevents undersizing
+  // from stacked reductions (e.g. upper floor + excellent insulation + shading)
+  btu = Math.max(btu, inputs.sqft * 12);
+
   // Convert to tons
   const tons = btu / 12000;
 
-  // Recommended range: ±0.25 ton, rounded to nearest 0.5
+  // Round to nearest 0.5 ton
   const roundedTons = Math.round(tons * 2) / 2;
   const lowTons = Math.max(1, roundedTons - 0.5);
   const highTons = roundedTons + 0.5;
-
-  // Oversizing flag — warn if high end is more than 1 ton above the center
-  const oversizeRisk = tons < 2.5;
 
   return {
     rawBtu: Math.round(btu),
@@ -237,7 +273,7 @@ function calcSizing(inputs: {
     lowTons,
     highTons,
     climate,
-    oversizeRisk,
+    totalAdjPct: Math.round(totalAdj * 100),
   };
 }
 
@@ -479,13 +515,21 @@ export default function CalculatorACSizing() {
                         <p className="text-xs text-gray-400 mt-1">Total square footage of the space you're cooling</p>
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-1">State / Location</label>
+                        <label className="block text-sm font-semibold text-gray-700 mb-1">Location</label>
                         <select value={sel.state} onChange={e => set('state', e.target.value)} className={inputClass}>
-                          <option value="">Select state...</option>
-                          {STATES.map(([code, name]) => (
-                            <option key={code} value={code}>{name}</option>
-                          ))}
+                          <option value="">Select location...</option>
+                          <optgroup label="United States">
+                            {STATES.map(([code, name]) => (
+                              <option key={code} value={code}>{name}</option>
+                            ))}
+                          </optgroup>
+                          <optgroup label="Outside the US — pick your climate">
+                            {INTL_CLIMATES.map(([code, name]) => (
+                              <option key={code} value={code}>{name}</option>
+                            ))}
+                          </optgroup>
                         </select>
+                        <p className="text-xs text-gray-400 mt-1">US state, or pick your climate type if outside the US</p>
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-1">Number of Occupants</label>
@@ -627,6 +671,11 @@ export default function CalculatorACSizing() {
               <p className="text-gray-600 text-xs">
                 Climate zone: <strong>{result.climate.label}</strong> · Raw calculated load: {result.rawBtu.toLocaleString()} BTU/hr
               </p>
+              <div className="mt-4 pt-4 border-t border-teal-200">
+                <p className="text-xs text-teal-800">
+                  <strong>This is a guide, not a professional quote.</strong> It gives you an approximate range to compare against contractor quotations — because knowledge is power when you're spending thousands. It does not replace a professional on-site Manual J load calculation.
+                </p>
+              </div>
             </div>
 
             {/* Oversizing warning */}
@@ -685,7 +734,7 @@ export default function CalculatorACSizing() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
                 {[
                   { label: 'Square footage', value: `${parseInt(sel.sqft).toLocaleString()} sq ft` },
-                  { label: 'State', value: STATES.find(([c]) => c === sel.state)?.[1] || sel.state },
+                  { label: 'Location', value: STATES.find(([c]) => c === sel.state)?.[1] || INTL_CLIMATES.find(([c]) => c === sel.state)?.[1] || sel.state },
                   { label: 'Climate zone', value: result.climate.label },
                   { label: 'Ceiling height', value: CEILING_OPTIONS.find(o => o.value === sel.ceiling)?.label || '' },
                   { label: 'Wall construction', value: WALL_OPTIONS.find(o => o.value === sel.walls)?.label || '' },
@@ -715,6 +764,7 @@ export default function CalculatorACSizing() {
                     <li>• <strong>Ductwork condition</strong> significantly affects actual performance — leaky or undersized ducts may require a larger unit</li>
                     <li>• <strong>Internal heat gains</strong> (appliances, lighting, open kitchen) are not included — add 0.5 ton for homes with heavy cooking or many electronics</li>
                     <li>• A reputable contractor should always provide a <strong>Manual J calculation</strong> on request — if they won't, that's a red flag</li>
+                    <li>• <strong>Disclaimer:</strong> This tool is provided for general informational and comparison purposes only. Results are approximate and should be used to help you evaluate professional quotations — not as the sole basis for purchasing or installing equipment. seercalc.pro accepts no liability for decisions made using this estimate. Always confirm final sizing with a licensed HVAC professional.</li>
                   </ul>
                 </div>
               </div>
