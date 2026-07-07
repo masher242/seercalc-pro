@@ -36,6 +36,7 @@ import BrandMitsubishi from './pages/BrandMitsubishi';
 import CalculatorsIndex from './pages/CalculatorsIndex';
 import CalculatorRepairVsReplace from './pages/CalculatorRepairVsReplace';
 import CalculatorSeerToSeer2 from './pages/CalculatorSeerToSeer2';
+import CalculatorACSizing from './pages/CalculatorACSizing';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -87,6 +88,7 @@ function AppContent() {
           <Route path="/calculators" element={<CalculatorsIndex />} />
           <Route path="/calculators/repair-vs-replace" element={<CalculatorRepairVsReplace />} />
           <Route path="/calculators/seer-to-seer2" element={<CalculatorSeerToSeer2 />} />
+          <Route path="/calculators/ac-sizing" element={<CalculatorACSizing />} />
         </Routes>
         <Footer />
       </div>

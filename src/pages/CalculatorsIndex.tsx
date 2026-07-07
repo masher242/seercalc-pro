@@ -30,11 +30,19 @@ const liveCalculators = [
     time: '1 min',
     isHome: false,
   },
+  {
+    slug: '/calculators/ac-sizing',
+    title: 'AC Sizing Calculator',
+    description: 'What size AC do you actually need? Answer questions about your home\'s construction, insulation, and sun exposure to get a recommended tonnage range — and sanity-check your contractor\'s quote.',
+    inputs: 'Square footage, state, ceiling height, wall type, attic insulation, roof color, sun exposure, windows',
+    bestFor: 'Homeowners buying a new AC who want to verify their contractor\'s sizing recommendation',
+    time: '4 min',
+    isHome: false,
+  },
 ];
 
 const comingSoon = [
   { title: 'Tax Credit & Rebate Estimator', description: 'See which state and utility rebates you qualify for based on your location, income, and system type.' },
-  { title: 'AC Sizing Calculator', description: 'Estimate the right tonnage for your home based on square footage, climate zone, and insulation.' },
 ];
 
 export default function CalculatorsIndex() {
