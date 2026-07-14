@@ -37,8 +37,8 @@ export default function BrandTrane() {
   return (
     <>
       <Helmet>
-        <title>Trane AC Review 2026: Reliability, Pricing, Models & Warranty | seercalc.pro</title>
-        <meta name="description" content="Trane air conditioner review 2026: 5/5 Consumer Reports reliability, $4,881–$10,414 installed costs, 10-year warranty, known issues with TAM coils and proprietary parts. Is Trane worth the premium?" />
+        <title>Trane AC Review 2026 ⭐ 5/5 Reliability — But Is the Premium Worth It?</title>
+        <meta name="description" content="Trane scores 5/5 Consumer Reports reliability and costs $4,881–$10,414 installed. We cover the full model lineup, the TAM coil issue, proprietary parts lock-in, and whether paying 15–20% more than competitors actually pays off." />
         <meta name="keywords" content="Trane AC review 2026, Trane air conditioner reliability, Trane XV20i, Trane warranty, Trane vs Carrier, Trane price 2026, is Trane a good brand" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/brands/trane" />

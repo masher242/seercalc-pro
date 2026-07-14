@@ -7,8 +7,8 @@ export default function BlogArticleLabel() {
   return (
     <>
       <Helmet>
-        <title>How to Read Your HVAC System's Label and Find Your SEER Rating | seercalc.pro</title>
-        <meta name="description" content="Step-by-step guide to finding and understanding your AC unit's nameplate. Learn how to decode model numbers, find SEER ratings, and identify key system specifications." />
+        <title>Find Your AC's SEER Rating in 2 Minutes 🔍 Nameplate Decoder Guide</title>
+        <meta name="description" content="Walk outside, look at the label on your AC unit, and we'll show you exactly how to decode your SEER rating, tonnage, and age. Includes model number formulas for every major brand." />
         <meta name="keywords" content="HVAC nameplate, AC label guide, find SEER rating, model number decoder, AC unit specifications, how to read HVAC label, air conditioner information" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/blog/how-to-read-hvac-label" />

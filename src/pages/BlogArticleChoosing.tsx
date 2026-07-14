@@ -7,8 +7,8 @@ export default function BlogArticleChoosing() {
   return (
     <>
       <Helmet>
-        <title>How to Choose the Right SEER Rating for Your Home | seercalc.pro</title>
-        <meta name="description" content="SEER 14, 16, 18, or 20+? This complete guide helps you choose the perfect SEER rating based on your climate, budget, and how long you'll stay in your home." />
+        <title>What SEER Rating Should I Get? 🤔 The Answer Depends on 3 Things</title>
+        <meta name="description" content="SEER 14, 16, 18, or 20+? The right choice depends on your climate zone, electricity rate, and how long you plan to stay. We do the payback math for each scenario so you're not guessing." />
         <meta name="keywords" content="choosing SEER rating, best SEER for my home, SEER 16 vs 18, AC efficiency guide, HVAC buying guide, optimal SEER rating, cost vs efficiency" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/blog/choosing-the-right-seer-rating" />

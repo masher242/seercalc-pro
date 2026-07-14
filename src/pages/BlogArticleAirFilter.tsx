@@ -7,8 +7,8 @@ export default function BlogArticleAirFilter() {
   return (
     <>
       <Helmet>
-        <title>Change Your Air Filter, Change Your Bill: The $10 Fix That Pays For Itself | seercalc.pro</title>
-        <meta name="description" content="A clogged air filter can cut AC efficiency by 5–15%, costing $90–$308/year in wasted electricity. Learn how often to change yours, which MERV rating to buy, and what else to maintain." />
+        <title>The $10 Air Filter Fix That Saves $90–$308/Year on AC Bills 💡</title>
+        <meta name="description" content="A clogged air filter cuts your AC efficiency by 5–15% — that's $90–$308/year in wasted electricity. We show how often to change yours, which MERV rating to buy (without choking your system), and what else to maintain." />
         <meta name="keywords" content="how often to change AC filter, MERV rating guide, clogged air filter electricity bill, AC maintenance savings, HVAC filter schedule" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/air-filter-electricity-bill" />

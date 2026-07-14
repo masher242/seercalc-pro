@@ -55,8 +55,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>SEER Calculator - Free HVAC Energy Savings Calculator | seercalc.pro</title>
-        <meta name="description" content="Calculate HVAC energy savings instantly. Free SEER calculator shows annual savings, payback period, and ROI when upgrading your air conditioning system." />
+        <title>SEER Calculator ❄️ See Your Exact AC Savings Before You Buy (Free 2026)</title>
+        <meta name="description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Most homeowners save $300–$800/year upgrading. Free, instant, no email required." />
         <link rel="canonical" href="https://seercalc.pro/" />
       </Helmet>
       <div className="bg-gradient-to-b from-[#F0F9FF] to-white">

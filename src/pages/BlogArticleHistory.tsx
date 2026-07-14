@@ -7,8 +7,8 @@ export default function BlogArticleHistory() {
   return (
     <>
       <Helmet>
-        <title>The History of SEER Ratings: How AC Efficiency Standards Evolved | seercalc.pro</title>
-        <meta name="description" content="From the 1970s energy crisis to today's ultra-efficient systems, discover how SEER ratings transformed air conditioning and saved billions in energy costs." />
+        <title>History of SEER Ratings 📜 From 6 SEER in 1970 to 26+ Today</title>
+        <meta name="description" content="In 1970, the average AC had a SEER of 6 — today's minimum is 14. We trace how energy crises, federal mandates, and inverter technology tripled air conditioning efficiency over five decades." />
         <meta name="keywords" content="SEER history, HVAC efficiency evolution, air conditioner standards, energy efficiency timeline, SEER rating development, AC technology history" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/blog/history-of-seer-ratings" />

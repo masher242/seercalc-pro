@@ -92,8 +92,8 @@ export default function CalculatorSeerToSeer2() {
   return (
     <>
       <Helmet>
-        <title>SEER to SEER2 Converter Calculator 2026 — Free Instant Conversion | seercalc.pro</title>
-        <meta name="description" content="Free SEER to SEER2 converter. Instantly convert any SEER rating to SEER2 (or SEER2 to SEER) to compare old and new AC systems accurately. Includes 2026 regional compliance check." />
+        <title>SEER to SEER2 Converter ⚡ Instant Free Conversion + Compliance Check</title>
+        <meta name="description" content="Convert any SEER rating to SEER2 (or back) in one click — so you can accurately compare your old system to new models. Includes a 2026 regional minimum compliance check for your state." />
         <meta name="keywords" content="SEER to SEER2 converter, SEER2 to SEER conversion, SEER2 calculator, what is my SEER2 equivalent, SEER vs SEER2 conversion calculator 2026" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/calculators/seer-to-seer2" />

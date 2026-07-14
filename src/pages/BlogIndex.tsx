@@ -176,8 +176,8 @@ export default function BlogIndex() {
   return (
     <>
       <Helmet>
-        <title>Efficiency Hub - HVAC Guides & Articles | seercalc.pro</title>
-        <meta name="description" content="Expert guides on HVAC efficiency, SEER ratings, energy savings, and air conditioning systems. Learn how to save money and choose the right AC for your home." />
+        <title>HVAC Efficiency Hub 📚 Guides That Save You Money on AC (2026)</title>
+        <meta name="description" content="No-fluff guides on SEER ratings, AC costs, brand comparisons, tax credits, and energy savings. Written to help you make smarter decisions before spending $5,000–$15,000 on a new system." />
         <meta name="keywords" content="HVAC blog, SEER rating guide, air conditioner efficiency, AC savings tips, energy efficiency articles" />
         <link rel="canonical" href="https://seercalc.pro/blog" />
         <meta property="og:type" content="website" />

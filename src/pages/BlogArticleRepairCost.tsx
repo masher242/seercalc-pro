@@ -7,8 +7,8 @@ export default function BlogArticleRepairCost() {
   return (
     <>
       <Helmet>
-        <title>AC Repair vs Replace: Cost Guide & Decision Calculator 2026 | seercalc.pro</title>
-        <meta name="description" content="AC repair costs $150-$2,500. Learn when to repair vs replace using the $5,000 rule, complete repair cost breakdown, and ROI calculations for replacement." />
+        <title>AC Repair vs Replace 2026 🔧 The $5,000 Rule + Real Cost Breakdown</title>
+        <meta name="description" content="Repair quote in hand? Use the $5,000 rule to decide: multiply your AC's age × repair cost. If it tops $5,000, replace. We show typical repair costs ($150–$2,500) and when replacement actually saves money." />
         <meta name="keywords" content="AC repair cost, air conditioner replacement, $5,000 rule, HVAC repair vs replace, compressor replacement cost, AC repair decision" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/ac-repair-cost-vs-replacement" />

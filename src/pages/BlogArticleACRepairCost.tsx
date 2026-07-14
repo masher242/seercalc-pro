@@ -7,8 +7,8 @@ export default function BlogArticleACRepairCost() {
   return (
     <>
       <Helmet>
-        <title>AC Repair Cost 2026: Average Prices by Problem Type & Repair | seercalc.pro</title>
-        <meta name="description" content="AC repair costs $150-$2,500 depending on the problem. Complete breakdown: no cooling ($200-$2,500), won't turn on ($150-$800), making noise ($150-$1,200), and 15+ common issues." />
+        <title>AC Repair Cost 2026 🛠️ What You Should Actually Pay (by Problem)</title>
+        <meta name="description" content="Know before the tech arrives: AC repairs run $150–$2,500 depending on the issue. We list 15+ common problems with real price ranges — so you can tell if a quote is fair or inflated." />
         <meta name="keywords" content="AC repair cost, air conditioner repair prices, HVAC repair cost, AC not cooling cost, compressor replacement cost, refrigerant recharge cost" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/ac-repair-cost-2026" />

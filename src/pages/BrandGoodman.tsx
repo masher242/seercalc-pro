@@ -39,8 +39,8 @@ export default function BrandGoodman() {
   return (
     <>
       <Helmet>
-        <title>Goodman AC Review 2026: Reliability, Pricing, Warranty & Known Issues | seercalc.pro</title>
-        <meta name="description" content="Goodman air conditioner review 2026: Daikin-owned budget leader, $3,200–$8,500 installed, lifetime compressor warranty, R-32 refrigerant advantage. Known issues: capacitor failures, coil leaks, no labor coverage." />
+        <title>Goodman AC Review 2026 💰 Best Budget Brand? (Honest Pros & Cons)</title>
+        <meta name="description" content="Goodman is the cheapest major brand at $3,200–$8,500 installed — and it's owned by Daikin now. Lifetime compressor warranty sounds great, but no labor coverage, capacitor failures, and coil leaks are real. Full honest review." />
         <meta name="keywords" content="Goodman AC review 2026, is Goodman a good brand, Goodman air conditioner reliability, Goodman warranty 2026, Goodman vs Carrier, Goodman GSXV9 review, best budget AC 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/brands/goodman" />

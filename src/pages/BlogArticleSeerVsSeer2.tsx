@@ -36,8 +36,8 @@ export default function BlogArticleSeerVsSeer2() {
   return (
     <>
       <Helmet>
-        <title>SEER vs SEER2 Explained: What Changed in 2023 & How to Compare Ratings | seercalc.pro</title>
-        <meta name="description" content="SEER2 replaced SEER in 2023 with stricter testing. Learn what changed, how to convert between ratings, new federal minimums by region, and what it means for your wallet." />
+        <title>SEER vs SEER2 Explained ⚡ What Changed & How to Convert (2026 Guide)</title>
+        <meta name="description" content="SEER2 ratings run ~4.5% lower than old SEER for identical hardware. We explain why, give you the conversion formula, and show the new federal minimums by region so you don't get confused by contractor quotes." />
         <meta name="keywords" content="SEER vs SEER2, SEER2 explained, SEER to SEER2 conversion, SEER2 minimum requirements, what is SEER2, SEER2 rating chart" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/seer-vs-seer2-explained" />

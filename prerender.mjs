@@ -42,20 +42,33 @@ async function prerender() {
       const titleStr = helmet.title?.toString() || '';
       const metaStr = helmet.meta?.toString() || '';
       const linkStr = helmet.link?.toString() || '';
+      const scriptStr = helmet.script?.toString() || '';
 
       if (titleStr) {
         pageHtml = pageHtml.replace(/<title[^>]*>.*?<\/title>/, titleStr);
       }
 
-      // Remove existing meta tags that helmet will replace
+      // Remove ALL template meta tags that helmet will replace
+      // This is critical: without this, pages end up with duplicate tags
+      // and Google/social crawlers read the template (homepage) ones first.
       if (metaStr.includes('name="description"')) {
-        pageHtml = pageHtml.replace(/<meta name="description"[^>]*>/, '');
+        pageHtml = pageHtml.replace(/<meta name="description"[^>]*>/g, '');
       }
       if (metaStr.includes('name="keywords"')) {
-        pageHtml = pageHtml.replace(/<meta name="keywords"[^>]*>/, '');
+        pageHtml = pageHtml.replace(/<meta name="keywords"[^>]*>/g, '');
       }
+      // Strip template meta name="title" (non-standard but present)
+      pageHtml = pageHtml.replace(/<meta name="title"[^>]*>/g, '');
+
+      // Strip ALL template OG tags so Helmet's per-page OG tags are the only ones
+      pageHtml = pageHtml.replace(/<meta property="og:[^"]*"[^>]*>/g, '');
+      pageHtml = pageHtml.replace(/<meta property="article:[^"]*"[^>]*>/g, '');
+
+      // Strip ALL template Twitter tags
+      pageHtml = pageHtml.replace(/<meta name="twitter:[^"]*"[^>]*>/g, '');
+
       if (linkStr.includes('rel="canonical"')) {
-        pageHtml = pageHtml.replace(/<link rel="canonical"[^>]*>/, '');
+        pageHtml = pageHtml.replace(/<link rel="canonical"[^>]*>/g, '');
       }
 
       const headTags = [metaStr, linkStr].filter((s) => s.length > 0).join('\n    ');

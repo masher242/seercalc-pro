@@ -7,8 +7,8 @@ export default function BlogArticleFAQ() {
   return (
     <>
       <Helmet>
-        <title>HVAC SEER Calculator FAQ - Common Questions Answered | seercalc.pro</title>
-        <meta name="description" content="Get answers to the most common questions about SEER ratings, HVAC efficiency, energy savings, and using our calculator. Expert answers in plain English." />
+        <title>SEER Rating FAQ ❓ 20+ Questions Answered in Plain English</title>
+        <meta name="description" content="What SEER rating do I need? Is higher always better? Does SEER affect my electric bill? We answer 20+ common questions about AC efficiency ratings — no jargon, real numbers, straight answers." />
         <meta name="keywords" content="SEER calculator FAQ, HVAC questions, air conditioner efficiency, SEER rating explained, AC savings questions, energy efficiency FAQ" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/hvac-seer-calculator-faq" />

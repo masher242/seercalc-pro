@@ -39,8 +39,8 @@ export default function BrandMitsubishi() {
   return (
     <>
       <Helmet>
-        <title>Mitsubishi Electric AC Review 2026: Best Mini-Split Brand? | seercalc.pro</title>
-        <meta name="description" content="Mitsubishi Electric HVAC review 2026: highest SEER2 in US market (32.2), H2i Hyper-Heat to -13°F, 12-year warranty with Diamond Contractor. Comfort app disaster (2025), no central AC offered. Full honest review." />
+        <title>Mitsubishi Mini-Split Review 2026 ❄️ Best Ductless Brand? (32.2 SEER2)</title>
+        <meta name="description" content="Mitsubishi leads the mini-split market with 32.2 SEER2 and Hyper-Heat down to -13°F. But the Comfort app is a disaster and there's no central AC option. We cover what it does best — and where the competition is catching up." />
         <meta name="keywords" content="Mitsubishi Electric mini split review 2026, Mitsubishi METUS review, Mitsubishi MSZ-FS review, Mitsubishi vs Daikin mini split, Mitsubishi Diamond Contractor warranty, H2i Hyper-Heat review 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/brands/mitsubishi" />

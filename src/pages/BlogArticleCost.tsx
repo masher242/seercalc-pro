@@ -7,8 +7,8 @@ export default function BlogArticleCost() {
   return (
     <>
       <Helmet>
-        <title>How Much Does a New AC Unit Cost in 2026? Complete Price Guide | seercalc.pro</title>
-        <meta name="description" content="Central AC costs $5,500-$16,000 installed in 2026. Most 3-ton systems: $6,000-$9,000. Detailed pricing by size, SEER rating, brand. Includes equipment-only vs installed costs." />
+        <title>New AC Unit Cost 2026 💰 Real Prices by Size, Brand & SEER Rating</title>
+        <meta name="description" content="Central AC runs $5,500–$16,000 installed in 2026. Most 3-ton systems land at $6,000–$9,000. We break down equipment-only vs installed costs by brand, tonnage, and efficiency level — so you know if your quote is fair." />
         <meta name="keywords" content="AC unit cost 2026, air conditioner price, new AC cost, HVAC replacement cost, central air installation price, AC cost by SEER rating" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/ac-unit-cost-2026" />

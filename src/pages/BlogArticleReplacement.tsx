@@ -7,8 +7,8 @@ export default function BlogArticleReplacement() {
   return (
     <>
       <Helmet>
-        <title>11 Signs You Need to Replace Your Air Conditioner | When to Replace AC</title>
-        <meta name="description" content="Is your AC dying? Learn the 11 warning signs it's time to replace your air conditioner, repair vs replace decision guide, and how to avoid costly emergency replacement." />
+        <title>11 Signs Your AC Is Dying ⚠️ When to Replace vs Keep Repairing</title>
+        <meta name="description" content="Is your AC running constantly, making weird noises, or costing more every summer? These 11 warning signs tell you when repairing stops making sense — and how to avoid a $3,000 emergency replacement in August." />
         <meta name="keywords" content="when to replace air conditioner, signs AC needs replacing, AC replacement signs, repair or replace AC, air conditioner replacement cost, AC warning signs, when to buy new AC" />
         <link rel="canonical" href="https://seercalc.pro/blog/when-to-replace-air-conditioner" />
 

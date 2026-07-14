@@ -165,8 +165,8 @@ export default function CalculatorRepairVsReplace() {
   return (
     <>
       <Helmet>
-        <title>AC Repair vs. Replace Calculator 2026 — Should You Fix or Replace? | seercalc.pro</title>
-        <meta name="description" content="Free AC repair vs. replace calculator. Enter your repair quote, system age, and efficiency ratings to get a clear recommendation with the math behind it. No email required." />
+        <title>Should I Repair or Replace My AC? 🔧 Free Calculator (2026)</title>
+        <meta name="description" content="Enter your repair quote, system age, and current SEER rating — get a clear fix-or-replace recommendation with the math behind it. No email, no signup, just the answer." />
         <meta name="keywords" content="AC repair vs replace calculator, should I repair or replace my AC, air conditioner repair vs replacement calculator, HVAC repair vs replace 2026" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/calculators/repair-vs-replace" />

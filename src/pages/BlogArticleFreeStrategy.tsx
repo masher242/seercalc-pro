@@ -7,8 +7,8 @@ export default function BlogArticleFreeStrategy() {
   return (
     <>
       <Helmet>
-        <title>The $0 Thermostat Strategy: Cut Your Cooling Bill Without Buying Anything | seercalc.pro</title>
-        <meta name="description" content="The DOE says adjusting your thermostat 7–10°F for 8 hours a day saves 10% on cooling costs. Here's the exact setback schedule, the ceiling fan trick, and the myths that cost you money — all free." />
+        <title>The $0 Thermostat Strategy 🆓 Cut Your AC Bill Without Spending a Dime</title>
+        <meta name="description" content="The DOE says adjusting your thermostat 7–10°F for 8 hours saves 10% on cooling costs. We give you the exact setback schedule, the ceiling fan trick, and bust the myths that quietly cost you money — all free." />
         <meta name="keywords" content="how to lower electricity bill AC, best thermostat temperature to save money, thermostat setback schedule, does raising thermostat save money, AC energy saving tips summer" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/thermostat-setback-strategy" />
