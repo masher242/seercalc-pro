@@ -58,6 +58,22 @@ export default function Home() {
         <title>SEER Calculator ❄️ See Your Exact AC Savings Before You Buy (Free 2026)</title>
         <meta name="description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Most homeowners save $300–$800/year upgrading. Free, instant, no email required." />
         <link rel="canonical" href="https://seercalc.pro/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://seercalc.pro/" />
+        <meta property="og:title" content="SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" />
+        <meta property="og:description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." />
+        <meta property="og:image" content="https://seercalc.pro/logo_final_v1.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SEER Calculator" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://seercalc.pro/" />
+        <meta name="twitter:title" content="SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" />
+        <meta name="twitter:description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." />
+        <meta name="twitter:image" content="https://seercalc.pro/logo_final_v1.png" />
       </Helmet>
       <div className="bg-gradient-to-b from-[#F0F9FF] to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-16 pb-12 sm:pb-12 lg:pb-12 text-center">
