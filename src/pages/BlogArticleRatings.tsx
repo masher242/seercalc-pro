@@ -131,7 +131,7 @@ export default function BlogArticleRatings() {
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">What SEER Measures</h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              SEER measures how efficiently an air conditioner or heat pump cools your home over an entire cooling season.
+              SEER measures how efficiently an air conditioner or heat pump cools your home over an entire cooling season. It's been the industry's core efficiency metric since the 1970s — see our <Link to="/blog/history-of-seer-ratings" className="text-blue-600 hover:text-blue-800 hover:underline font-semibold">history of SEER ratings</Link> for how federal mandates tripled AC efficiency over five decades.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>The formula:</strong></p>

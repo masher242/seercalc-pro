@@ -336,6 +336,9 @@ export default function BlogArticleSmartThermostat() {
               <Link to="/blog/choosing-the-right-seer-rating" className="block p-4 bg-gray-50 rounded-lg hover:bg-teal-50 transition-colors border border-gray-100 hover:border-teal-200">
                 <p className="text-sm font-semibold text-gray-900">How to Choose the Right SEER Rating</p>
               </Link>
+              <Link to="/blog/thermostat-setback-strategy" className="block p-4 bg-gray-50 rounded-lg hover:bg-teal-50 transition-colors border border-gray-100 hover:border-teal-200">
+                <p className="text-sm font-semibold text-gray-900">The $0 Thermostat Setback Strategy</p>
+              </Link>
             </div>
           </div>
         </article>

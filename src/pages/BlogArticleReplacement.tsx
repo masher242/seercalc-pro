@@ -895,6 +895,12 @@ export default function BlogArticleReplacement() {
                 <Link to="/blog/seer-vs-seer2-explained" className="text-blue-600 hover:text-blue-800 hover:underline">
                   → Understanding SEER2 Ratings
                 </Link>
+                <Link to="/blog/ac-repair-cost-vs-replacement" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  → AC Repair Cost vs Replacement: The $5,000 Rule
+                </Link>
+                <Link to="/calculators/repair-vs-replace" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  → Repair vs Replace Calculator
+                </Link>
               </div>
             </div>
 

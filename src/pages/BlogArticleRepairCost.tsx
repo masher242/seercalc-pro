@@ -122,6 +122,7 @@ export default function BlogArticleRepairCost() {
                 <li><strong>Major repairs:</strong> $800-$2,500</li>
                 <li><strong>Average homeowner pays:</strong> $350-$450 per repair</li>
               </ul>
+              <p className="text-gray-700 mt-4">For a deeper breakdown of 15+ specific problems and price ranges, see our <Link to="/blog/ac-repair-cost-2026" className="text-blue-600 hover:text-blue-800 hover:underline font-semibold">full AC repair cost guide</Link>.</p>
             </div>
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Common AC Problems and Repair Costs</h3>
@@ -465,7 +466,7 @@ export default function BlogArticleRepairCost() {
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">At what point is it cheaper to replace an AC than repair it?</h3>
-                <p className="text-gray-700">Use the $5,000 rule: (Repair Cost) × (AC Age) = Decision Number. If result &gt; $5,000: Replace is likely smarter. If result &lt; $5,000: Repair is likely smarter. Additional factors that favor replacement: AC is 15+ years old, R-22 refrigerant, multiple repairs in past 2 years, compressor failure on AC 10+ years old, energy bills climbing significantly.</p>
+                <p className="text-gray-700">Use the $5,000 rule: (Repair Cost) × (AC Age) = Decision Number. If result &gt; $5,000: Replace is likely smarter. If result &lt; $5,000: Repair is likely smarter. Additional factors that favor replacement: AC is 15+ years old, R-22 refrigerant, multiple repairs in past 2 years, compressor failure on AC 10+ years old, energy bills climbing significantly. Want the math done for you? Our <Link to="/calculators/repair-vs-replace" className="text-blue-600 hover:text-blue-800 hover:underline font-semibold">repair vs. replace calculator</Link> plugs in your numbers and gives you a straight answer.</p>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">

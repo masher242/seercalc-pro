@@ -375,7 +375,9 @@ export default function BlogArticleBrands() {
                 </div>
 
                 <div className="bg-white border-2 border-green-400 rounded-lg p-6 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">American Standard — Trane's Affordable Twin</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <Link to="/brands/american-standard" className="hover:text-blue-600 hover:underline">American Standard</Link> — Trane's Affordable Twin
+                  </h3>
                   <p className="mb-4">
                     American Standard and Trane share the same parent company and much of the same engineering. Many HVAC professionals describe American Standard as essentially the same system with a different badge — at a lower price point.
                   </p>
@@ -414,7 +416,9 @@ export default function BlogArticleBrands() {
                 </div>
 
                 <div className="bg-white border-2 border-blue-400 rounded-lg p-6 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Lennox — The Efficiency & Quiet Operation Champion</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <Link to="/brands/lennox" className="hover:text-blue-600 hover:underline">Lennox</Link> — The Efficiency & Quiet Operation Champion
+                  </h3>
                   <p className="mb-4">
                     Lennox consistently leads the industry in maximum efficiency ratings and quiet operation, making it the go-to brand for homeowners who prioritize energy savings and low noise levels.
                   </p>
@@ -542,7 +546,9 @@ export default function BlogArticleBrands() {
 
               <div className="space-y-8">
                 <div className="bg-white border-2 border-blue-300 rounded-lg p-6 shadow-sm">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Rheem & Ruud — Best Value in Mid-Range</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <Link to="/brands/rheem" className="hover:text-blue-600 hover:underline">Rheem</Link> & Ruud — Best Value in Mid-Range
+                  </h3>
                   <p className="mb-4">
                     Rheem and its sister brand Ruud are frequently recommended by contractors as the sweet spot for homeowners who want solid reliability and good efficiency without paying premium-tier prices.
                   </p>
@@ -766,7 +772,9 @@ export default function BlogArticleBrands() {
                 <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-l-4 border-yellow-500 p-6 rounded-r-lg">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="bg-yellow-600 text-white font-bold px-3 py-1 rounded">1</span>
-                    <h3 className="text-xl font-bold text-gray-900">Mitsubishi Electric</h3>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      <Link to="/brands/mitsubishi" className="hover:text-blue-600 hover:underline">Mitsubishi Electric</Link>
+                    </h3>
                   </div>
                   <p className="text-sm mb-2"><strong>Best For:</strong> Maximum quality & cold-climate performance</p>
                   <p className="text-sm">40+ years as mini-split leader; Hyper Heat works to -13°F; quietest indoor units (low-20s dB); 15–20+ year lifespan</p>

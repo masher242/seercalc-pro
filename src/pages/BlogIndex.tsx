@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Clock, Search } from 'lucide-react';
 import { useState } from 'react';
@@ -155,7 +155,6 @@ const getCategoryColors = (category: string) => {
 };
 
 export default function BlogIndex() {
-  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -168,10 +167,6 @@ export default function BlogIndex() {
       article.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-
-  const handleCardClick = (slug: string) => {
-    navigate(`/blog/${slug}`);
-  };
 
   return (
     <>
@@ -237,10 +232,10 @@ export default function BlogIndex() {
 
           <div className="space-y-6">
             {filteredArticles.map((article, index) => (
-              <article
+              <Link
                 key={article.slug}
-                onClick={() => handleCardClick(article.slug)}
-                className={`bg-white rounded-2xl border-2 border-[#E5E7EB] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-[#0066CC] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,102,204,0.12)] transition-all duration-300 cursor-pointer ${
+                to={`/blog/${article.slug}`}
+                className={`block bg-white rounded-2xl border-2 border-[#E5E7EB] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-[#0066CC] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,102,204,0.12)] transition-all duration-300 cursor-pointer ${
                   index === 0 ? 'md:p-8 bg-gradient-to-br from-white to-[#F0F9FF]' : ''
                 }`}
               >
@@ -271,7 +266,7 @@ export default function BlogIndex() {
                   <span>Read Article</span>
                   <span className="text-lg">→</span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 

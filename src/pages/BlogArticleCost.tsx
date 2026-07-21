@@ -211,7 +211,7 @@ export default function BlogArticleCost() {
             <h2 id="cost-by-size" className="text-2xl font-bold text-gray-900 mt-12 mb-4">AC Cost by Size (Tonnage)</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              System size—measured in tons—is the biggest factor affecting price. Larger units cost more but are necessary for bigger homes.
+              System size—measured in tons—is the biggest factor affecting price. Larger units cost more but are necessary for bigger homes. If you're not sure what size you actually need, our <Link to="/calculators/ac-sizing" className="text-blue-600 hover:text-blue-800 hover:underline font-semibold">AC sizing calculator</Link> gives you a recommended tonnage range in seconds — worth checking before you accept a contractor's number.
             </p>
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Complete Size & Cost Chart (2026 USA Prices)</h3>

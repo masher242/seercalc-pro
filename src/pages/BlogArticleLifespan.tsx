@@ -519,6 +519,9 @@ export default function BlogArticleLifespan() {
                 <p className="text-green-700 font-semibold text-sm mt-3 mb-0">
                   Solution: Change filters monthly (peak season) or every 3 months (off-season) | Cost: $2-$10/month | Impact: Can extend lifespan 2-3 years
                 </p>
+                <p className="text-gray-700 text-sm mt-2 mb-0">
+                  See our <Link to="/blog/air-filter-electricity-bill" className="text-blue-600 hover:text-blue-800 hover:underline font-semibold">full breakdown of filter costs vs. electricity savings</Link> for the exact MERV rating to buy and a full maintenance checklist.
+                </p>
               </div>
             </div>
 
