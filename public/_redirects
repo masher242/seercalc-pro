@@ -4,4 +4,4 @@
 /brands/*    /brands/:splat.html 200
 /calculators      /calculators.html          200
 /calculators/*    /calculators/:splat.html   200
-/*           /index.html        200
+/*           /404.html        404

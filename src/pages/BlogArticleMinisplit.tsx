@@ -8,7 +8,7 @@ export default function BlogArticleMinisplit() {
     <>
       <Helmet>
         <title>Mini-Split Cost 2026 ❄️ Ductless AC Pricing by Zone, Brand & Install Type</title>
-        <meta name="description" content="Single-zone mini-split: $3,000–$6,000 installed. Multi-zone: $6,500–$15,000+. We break down equipment-only vs installed costs for Mitsubishi, Daikin, Fujitsu, and budget brands — plus DIY vs pro install savings." />
+        <meta name="description" content="Single-zone mini-split: $3,000–$6,000 installed. Multi-zone: $6,500–$15,000+. Costs by brand — Mitsubishi, Daikin, Fujitsu, and budget lines." />
         <meta name="keywords" content="mini split cost 2026, ductless AC price, mini split installation cost, ductless air conditioner cost, mini split vs central AC cost" />
         <link rel="canonical" href="https://seercalc.pro/blog/mini-split-cost-2026" />
       </Helmet>

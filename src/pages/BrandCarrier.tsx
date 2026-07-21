@@ -40,7 +40,7 @@ export default function BrandCarrier() {
     <>
       <Helmet>
         <title>Carrier AC Review 2026 ❄️ 4/5 Reliability, Unique Warranty — Worth It?</title>
-        <meta name="description" content="Carrier runs $3,900–$10,000+ installed with 4/5 Consumer Reports reliability. Standout: the Consumer Choice warranty with optional labor coverage. Known issue: Infinity control board failures. Full honest breakdown." />
+        <meta name="description" content="Carrier runs $3,900–$10,000+ installed with 4/5 reliability. Standout: Consumer Choice warranty with optional labor. Known issue: board failures." />
         <meta name="keywords" content="Carrier AC review 2026, Carrier Infinity review, Carrier vs Trane, Carrier air conditioner price, Carrier warranty 2026, is Carrier a good brand, Carrier Infinity 26VNA1" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/brands/carrier" />

@@ -56,7 +56,7 @@ export default function Home() {
     <>
       <Helmet>
         <title>SEER Calculator ❄️ See Your Exact AC Savings Before You Buy (Free 2026)</title>
-        <meta name="description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Most homeowners save $300–$800/year upgrading. Free, instant, no email required." />
+        <meta name="description" content="Enter your SEER rating and get personalized savings for your home size, climate, and electric rate. Most save $300–$800/year. Free, instant." />
         <link rel="canonical" href="https://seercalc.pro/" />
 
         <meta property="og:type" content="website" />

@@ -124,7 +124,7 @@ export default function BrandsIndex() {
     <>
       <Helmet>
         <title>AC Brand Reviews 2026 ⭐ Every Major Brand Reviewed (No Sponsored Rankings)</title>
-        <meta name="description" content="Honest, unsponsored reviews of Trane, Carrier, Lennox, Goodman, Rheem, Daikin, Mitsubishi, and American Standard. We compare reliability, warranty fine print, real installed costs, and known issues for each." />
+        <meta name="description" content="Honest, unsponsored reviews of Trane, Carrier, Lennox, Goodman, Rheem, Daikin, Mitsubishi, and American Standard — reliability, cost, and issues." />
         <meta name="keywords" content="HVAC brand reviews 2026, best AC brand, Trane review, Carrier review, Lennox review, Goodman review, air conditioner brand comparison" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/brands" />

@@ -50,7 +50,7 @@ export default function CalculatorsIndex() {
     <>
       <Helmet>
         <title>Free HVAC Calculators 🧮 Savings, Sizing & Repair vs Replace (2026)</title>
-        <meta name="description" content="Four free calculators to arm you before talking to a contractor: SEER savings, AC sizing, repair vs replace, and SEER-to-SEER2 converter. Real numbers, no signup, no email gate." />
+        <meta name="description" content="Four free calculators before you talk to a contractor: SEER savings, AC sizing, repair vs replace, and SEER-to-SEER2. No signup, no email." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/calculators" />
         <meta property="og:type" content="website" />

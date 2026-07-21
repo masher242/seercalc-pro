@@ -8,7 +8,7 @@ export default function BlogArticleBrands() {
     <>
       <Helmet>
         <title>Best AC Brands 2026 🏆 Ranked by Reliability, Price & Warranty</title>
-        <meta name="description" content="We ranked every major AC brand — Trane, Carrier, Lennox, Goodman, Daikin, Rheem — by real reliability data, installed cost, warranty terms, and known issues. No sponsored rankings. Updated July 2026." />
+        <meta name="description" content="Every major AC brand ranked — Trane, Carrier, Lennox, Goodman, Daikin, Rheem — by reliability, installed cost, and warranty. Updated July 2026." />
         <meta name="keywords" content="best AC brands, air conditioner brands 2026, Trane vs Carrier, Lennox reliability, Goodman review, HVAC brand comparison, most reliable AC, AC brand rankings" />
         <link rel="canonical" href="https://seercalc.pro/blog/best-air-conditioner-brands-2026" />
 

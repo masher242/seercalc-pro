@@ -47,7 +47,7 @@ export default function BrandDaikin() {
     <>
       <Helmet>
         <title>Daikin AC Review 2026 🌍 World's Largest HVAC Brand — Best Warranty in the US?</title>
-        <meta name="description" content="Daikin offers the longest warranty in the business (12-year parts + unit replacement) and an R-32 refrigerant edge over competitors still on R-410A. $4,200–$11,000+ installed. We cover the full lineup including the new FIT AURORA heat pump." />
+        <meta name="description" content="Daikin offers the industry's longest warranty (12-yr parts + replacement) and an R-32 refrigerant edge over rivals. $4,200–$11,000+ installed." />
         <meta name="keywords" content="Daikin AC review 2026, Daikin FIT AURORA review, Daikin vs Goodman, Daikin warranty 2026, Daikin DX9VC review, Daikin reliability, best Daikin air conditioner 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/brands/daikin" />

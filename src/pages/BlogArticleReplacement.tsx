@@ -8,7 +8,7 @@ export default function BlogArticleReplacement() {
     <>
       <Helmet>
         <title>11 Signs Your AC Is Dying ⚠️ When to Replace vs Keep Repairing</title>
-        <meta name="description" content="Is your AC running constantly, making weird noises, or costing more every summer? These 11 warning signs tell you when repairing stops making sense — and how to avoid a $3,000 emergency replacement in August." />
+        <meta name="description" content="AC running constantly, making noise, or costing more each summer? 11 warning signs that tell you when repair isn't worth it anymore." />
         <meta name="keywords" content="when to replace air conditioner, signs AC needs replacing, AC replacement signs, repair or replace AC, air conditioner replacement cost, AC warning signs, when to buy new AC" />
         <link rel="canonical" href="https://seercalc.pro/blog/when-to-replace-air-conditioner" />
 
@@ -892,7 +892,7 @@ export default function BlogArticleReplacement() {
                 <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-blue-600 hover:text-blue-800 hover:underline">
                   → 2026 HVAC Tax Credits & Rebates
                 </Link>
-                <Link to="/blog/understanding-seer2-ratings" className="text-blue-600 hover:text-blue-800 hover:underline">
+                <Link to="/blog/seer-vs-seer2-explained" className="text-blue-600 hover:text-blue-800 hover:underline">
                   → Understanding SEER2 Ratings
                 </Link>
               </div>

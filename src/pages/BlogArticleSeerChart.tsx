@@ -100,7 +100,7 @@ export default function BlogArticleSeerChart() {
     <>
       <Helmet>
         <title>SEER Rating Chart 2026 📊 Annual Cost for Every Rating (8 to 25+)</title>
-        <meta name="description" content="One chart, every SEER rating from 8 to 25+, with real dollar costs at your electricity rate. See exactly where the diminishing returns kick in — and which rating is the sweet spot for your climate." />
+        <meta name="description" content="Every SEER rating from 8 to 25+, with real dollar costs at your electricity rate. See where diminishing returns kick in for your climate." />
         <meta name="keywords" content="SEER rating chart, SEER chart 2026, SEER efficiency levels, SEER rating comparison, air conditioner SEER chart, SEER cost comparison" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/seer-rating-chart" />

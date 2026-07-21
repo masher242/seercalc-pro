@@ -166,7 +166,7 @@ export default function CalculatorRepairVsReplace() {
     <>
       <Helmet>
         <title>Should I Repair or Replace My AC? 🔧 Free Calculator (2026)</title>
-        <meta name="description" content="Enter your repair quote, system age, and current SEER rating — get a clear fix-or-replace recommendation with the math behind it. No email, no signup, just the answer." />
+        <meta name="description" content="Enter your repair quote, system age, and SEER rating for a clear fix-or-replace recommendation with the math behind it. No email, no signup." />
         <meta name="keywords" content="AC repair vs replace calculator, should I repair or replace my AC, air conditioner repair vs replacement calculator, HVAC repair vs replace 2026" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/calculators/repair-vs-replace" />

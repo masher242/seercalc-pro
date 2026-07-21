@@ -6,12 +6,14 @@
   NODE_VERSION = "20"
 
 # Fallback redirects (the static dist/_redirects file, generated from public/_redirects,
-# already covers /blog and /blog/* with clean URLs -> matching prerendered .html files).
-# This SPA fallback only catches routes with no prerendered file.
+# already covers /blog, /brands, /calculators and their sub-paths -> matching prerendered
+# .html files). This is just a safety-net duplicate in case _redirects isn't picked up.
+# Anything that reaches this rule is a genuinely unmatched route, so it gets a real
+# 404.html page served with an actual 404 status code (not a soft-404 200).
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404
 
 [[headers]]
   for = "/*"

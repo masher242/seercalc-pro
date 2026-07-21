@@ -8,7 +8,7 @@ export default function BlogArticleRepairCost() {
     <>
       <Helmet>
         <title>AC Repair vs Replace 2026 🔧 The $5,000 Rule + Real Cost Breakdown</title>
-        <meta name="description" content="Repair quote in hand? Use the $5,000 rule to decide: multiply your AC's age × repair cost. If it tops $5,000, replace. We show typical repair costs ($150–$2,500) and when replacement actually saves money." />
+        <meta name="description" content="Repair quote in hand? Use the $5,000 rule: multiply your AC's age by the repair cost. Over $5,000, replace. Typical repair costs included." />
         <meta name="keywords" content="AC repair cost, air conditioner replacement, $5,000 rule, HVAC repair vs replace, compressor replacement cost, AC repair decision" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/ac-repair-cost-vs-replacement" />

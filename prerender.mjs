@@ -60,6 +60,13 @@ async function prerender() {
       // Strip template meta name="title" (non-standard but present)
       pageHtml = pageHtml.replace(/<meta name="title"[^>]*>/g, '');
 
+      // Strip the template's default robots tag whenever the page supplies its own
+      // (e.g. the 404 page's noindex), so pages never end up with two conflicting
+      // robots meta tags in the served HTML.
+      if (metaStr.includes('name="robots"')) {
+        pageHtml = pageHtml.replace(/<meta name="robots"[^>]*>/g, '');
+      }
+
       // Strip ALL template OG tags so Helmet's per-page OG tags are the only ones
       pageHtml = pageHtml.replace(/<meta property="og:[^"]*"[^>]*>/g, '');
       pageHtml = pageHtml.replace(/<meta property="article:[^"]*"[^>]*>/g, '');

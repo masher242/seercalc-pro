@@ -55,7 +55,7 @@ export default function BrandLennox() {
     <>
       <Helmet>
         <title>Lennox AC Review 2026 ⚡ Highest Efficiency (26 SEER2) — But at What Cost?</title>
-        <meta name="description" content="Lennox hits 26.0 SEER2 — the highest in the industry — and includes free 3-year labor coverage. But at $4,000–$15,000+ installed with the worst parts availability of any major brand, is peak efficiency worth the trade-offs?" />
+        <meta name="description" content="Lennox hits 26.0 SEER2, the industry's highest, with free 3-yr labor coverage. $4,000–$15,000+ installed, but parts availability lags rivals." />
         <meta name="keywords" content="Lennox AC review 2026, Lennox SL25KCV review, Lennox vs Trane vs Carrier, Lennox warranty 2026, Lennox parts problems, is Lennox worth it, Lennox iComfort problems" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/brands/lennox" />

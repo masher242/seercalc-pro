@@ -391,7 +391,7 @@ export default function CalculatorACSizing() {
     <>
       <Helmet>
         <title>What Size AC Do I Need? 📐 Free Sizing Calculator (2026)</title>
-        <meta name="description" content="Enter your square footage, climate zone, insulation, and sun exposure — get a recommended tonnage range in seconds. Use it as a sanity-check before accepting any contractor's sizing recommendation." />
+        <meta name="description" content="Enter your square footage, climate zone, insulation, and sun exposure for a recommended AC tonnage — a sanity-check on any contractor quote." />
         <meta name="keywords" content="AC sizing calculator, what size air conditioner do I need, HVAC sizing calculator, how many tons do I need, AC tonnage calculator 2026, Manual J simplified" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://seercalc.pro/calculators/ac-sizing" />

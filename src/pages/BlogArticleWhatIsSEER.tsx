@@ -8,7 +8,7 @@ export default function BlogArticleWhatIsSEER() {
     <>
       <Helmet>
         <title>What Is a SEER Rating? ❄️ How It Affects Your AC Bill (With Cost Tables)</title>
-        <meta name="description" content="Your AC's SEER rating controls how much you pay per hour of cooling. We break it down with real cost tables by state — a 10 SEER vs 20 SEER can mean $500+/year difference. Plain English, no jargon." />
+        <meta name="description" content="Your AC's SEER rating controls how much you pay per hour of cooling. Real cost tables by state — 10 SEER vs 20 SEER can mean $500+/year." />
         <meta name="keywords" content="what is SEER rating, SEER rating explained, AC efficiency rating, SEER rating electricity bill, HVAC energy efficiency, air conditioner SEER" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://seercalc.pro/blog/what-is-seer-rating" />

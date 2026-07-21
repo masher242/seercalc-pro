@@ -38,6 +38,7 @@ import CalculatorsIndex from './pages/CalculatorsIndex';
 import CalculatorRepairVsReplace from './pages/CalculatorRepairVsReplace';
 import CalculatorSeerToSeer2 from './pages/CalculatorSeerToSeer2';
 import CalculatorACSizing from './pages/CalculatorACSizing';
+import NotFound from './pages/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
 function AppContent() {
@@ -79,6 +80,7 @@ function AppContent() {
         <Route path="/calculators/repair-vs-replace" element={<CalculatorRepairVsReplace />} />
         <Route path="/calculators/seer-to-seer2" element={<CalculatorSeerToSeer2 />} />
         <Route path="/calculators/ac-sizing" element={<CalculatorACSizing />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
@@ -138,4 +140,5 @@ export const routes = [
   '/calculators/repair-vs-replace',
   '/calculators/seer-to-seer2',
   '/calculators/ac-sizing',
+  '/404',
 ];
