@@ -11,13 +11,13 @@ export default function BlogArticleHistory() {
         <meta name="description" content="In 1970 the average AC had a SEER of 6 — today's minimum is 14. How energy crises and federal mandates tripled efficiency over five decades." />
         <meta name="keywords" content="SEER history, HVAC efficiency evolution, air conditioner standards, energy efficiency timeline, SEER rating development, AC technology history" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://seercalc.pro/blog/history-of-seer-ratings" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/history-of-seer-ratings" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/history-of-seer-ratings" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/history-of-seer-ratings" />
         <meta property="og:title" content="The Fascinating History of SEER Ratings" />
         <meta property="og:description" content="How a 1970s energy crisis created the efficiency standards that save Americans billions on cooling costs today." />
-        <meta property="og:image" content="https://seercalc.pro/images/blog/seer-history-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/blog/seer-history-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="HVAC History" />
 
@@ -30,17 +30,17 @@ export default function BlogArticleHistory() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "The History of SEER Ratings: How AC Efficiency Standards Evolved",
-            "image": "https://seercalc.pro/images/blog/seer-history.png",
+            "image": "https://airconditionanswers.com/images/blog/seer-history.png",
             "author": {
               "@type": "Organization",
               "name": "The Efficiency Hub"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
+              "name": "airconditionanswers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://seercalc.pro/logo.png"
+                "url": "https://airconditionanswers.com/logo.png"
               }
             },
             "description": "The fascinating evolution of SEER ratings from the 1970s energy crisis to today's ultra-efficient air conditioning systems."

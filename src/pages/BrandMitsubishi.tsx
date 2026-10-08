@@ -43,13 +43,13 @@ export default function BrandMitsubishi() {
         <meta name="description" content="Mitsubishi leads mini-splits with 32.2 SEER2 and Hyper-Heat to -13°F. But the Comfort app is a disaster and there's no central AC option." />
         <meta name="keywords" content="Mitsubishi Electric mini split review 2026, Mitsubishi METUS review, Mitsubishi MSZ-FS review, Mitsubishi vs Daikin mini split, Mitsubishi Diamond Contractor warranty, H2i Hyper-Heat review 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/mitsubishi" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/mitsubishi" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/mitsubishi" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/mitsubishi" />
         <meta property="og:title" content="Mitsubishi Electric Mini-Split Review 2026: Worth the Premium?" />
         <meta property="og:description" content="Highest SEER2 in the US (32.2), H2i Hyper-Heat to -13°F, 12-year Diamond Contractor warranty. But: 2025 Comfort app disaster, no central AC, expensive parts. Full honest review." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/mitsubishi-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/mitsubishi-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Mitsubishi Electric" />
@@ -57,10 +57,10 @@ export default function BrandMitsubishi() {
         <meta property="article:tag" content="Mini-Split Review" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/mitsubishi" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/mitsubishi" />
         <meta name="twitter:title" content="Mitsubishi Electric Mini-Split Review 2026" />
         <meta name="twitter:description" content="Highest SEER2 in US market (32.2). H2i Hyper-Heat to -13°F. 2025 Comfort app disaster. Diamond Contractor warranty dependency. No central AC. Full honest review." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/mitsubishi-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/mitsubishi-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -68,8 +68,8 @@ export default function BrandMitsubishi() {
             "@type": "Review",
             "name": "Mitsubishi Electric HVAC Review 2026",
             "reviewBody": "Mitsubishi Electric (via METUS, a 50/50 JV with Trane Technologies) is the dominant premium mini-split brand in the US, holding approximately 23% of the North American residential ductless market. The MSZ-FS reaches 32.2 SEER2 — the highest verified residential SEER2 in the US market. H2i Hyper-Heat operates at -13°F. The 12-year parts/compressor warranty with Diamond Contractor installation is industry-leading for ductless. Critical note: Mitsubishi does NOT offer conventional central split-system AC — ductless and ducted mini-split only. The 2025 Comfort app rollout (replacing kumo cloud) was a documented disaster affecting thousands of users. Parts are expensive and restricted to authorized channels. Diamond Contractor requirement for 12-year warranty creates geographic warranty access inequality.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "Mitsubishi Electric Mini-Split Systems",

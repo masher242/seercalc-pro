@@ -43,13 +43,13 @@ export default function BrandAmericanStandard() {
         <meta name="description" content="American Standard shares Trane's factory line — same coil, same compressor — at 5–15% lower cost. $3,500–$8,000+ installed. Full comparison." />
         <meta name="keywords" content="American Standard AC review 2026, American Standard vs Trane, American Standard Platinum 20, American Standard reliability, American Standard warranty 2026, is American Standard a good brand" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/american-standard" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/american-standard" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/american-standard" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/american-standard" />
         <meta property="og:title" content="American Standard AC Review 2026: Trane Quality at Lower Cost?" />
         <meta property="og:description" content="Same factory as Trane, same Spine Fin coil, same Climatuff compressor — at 5–15% lower price. Full 2026 review with real pricing, known issues, and who should choose American Standard over Trane." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/american-standard-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/american-standard-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="American Standard" />
@@ -57,10 +57,10 @@ export default function BrandAmericanStandard() {
         <meta property="article:tag" content="Air Conditioner Review" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/american-standard" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/american-standard" />
         <meta name="twitter:title" content="American Standard AC Review 2026: Is It the Same as Trane?" />
         <meta name="twitter:description" content="Same factory, same components, 5–15% lower price. Full review with pricing, known issues, and whether to choose American Standard over Trane." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/american-standard-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/american-standard-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -68,8 +68,8 @@ export default function BrandAmericanStandard() {
             "@type": "Review",
             "name": "American Standard Air Conditioner Review 2026",
             "reviewBody": "American Standard HVAC is manufactured by Trane Technologies at the same Tyler, Texas and Clarksville, Tennessee factories as Trane, using identical Spine Fin all-aluminum coils and Climatuff compressors. The primary buyer advantage is 5–15% lower installed cost vs. Trane for functionally identical hardware. Known issues include aluminum coil leaks (contractor reports of high failure rates), control board failures on new installs, and warranty parts dimension errors on replacements. The Platinum 20 reaches 24.0 SEER2 — actually exceeding Trane's XV20i flagship at 23.6 SEER2. Best for buyers who want Trane-grade hardware without the Trane price premium, in markets where American Standard dealers have strong local presence.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "American Standard Air Conditioners",

@@ -10,9 +10,9 @@ export default function BlogArticleTaxCredits() {
         <title>HVAC Tax Credits & Rebates 2026 💵 Up to $3,200 Federal + State Incentives</title>
         <meta name="description" content="The federal 25C credit gives up to $3,200/year on HVAC equipment; IRA rebates add up to $14,000 more. Every incentive, updated for 2026." />
         <meta name="keywords" content="HVAC tax credits 2026, air conditioner rebates, heat pump incentives, federal tax credit, state rebates, utility incentives, energy efficiency rebates" />
-        <link rel="canonical" href="https://seercalc.pro/blog/hvac-tax-credits-rebates-2026" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/hvac-tax-credits-rebates-2026" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/hvac-tax-credits-rebates-2026" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/hvac-tax-credits-rebates-2026" />
         <meta property="og:title" content="2026 HVAC Tax Credits & Rebates: Save Up to $3,600+" />
         <meta property="og:description" content="Save $500-$3,600+ on HVAC upgrades in 2026. Complete guide to federal tax credits, state rebates, and utility incentives." />
         <meta name="twitter:card" content="summary_large_image" />

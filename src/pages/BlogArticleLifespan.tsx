@@ -10,9 +10,9 @@ export default function BlogArticleLifespan() {
         <title>How Long Do Air Conditioners Last? ⏳ Lifespan by Brand & Type (2026)</title>
         <meta name="description" content="Average AC lifespan is 15–20 years but varies by brand — Trane and Carrier skew higher, Goodman lower. Lifespan by brand, type, and climate." />
         <meta name="keywords" content="air conditioner lifespan, how long do AC units last, AC longevity by brand, central air lifespan, mini-split lifespan, HVAC replacement, AC maintenance" />
-        <link rel="canonical" href="https://seercalc.pro/blog/how-long-do-air-conditioners-last" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/how-long-do-air-conditioners-last" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/how-long-do-air-conditioners-last" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/how-long-do-air-conditioners-last" />
         <meta property="og:title" content="How Long Do Air Conditioners Last? Lifespan by Brand & Type 2026" />
         <meta property="og:description" content="Air conditioners last 15-20 years on average. Learn AC lifespan by brand, type, climate, and how to maximize longevity." />
         <meta name="twitter:card" content="summary_large_image" />

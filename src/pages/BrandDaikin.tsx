@@ -50,13 +50,13 @@ export default function BrandDaikin() {
         <meta name="description" content="Daikin offers the industry's longest warranty (12-yr parts + replacement) and an R-32 refrigerant edge over rivals. $4,200–$11,000+ installed." />
         <meta name="keywords" content="Daikin AC review 2026, Daikin FIT AURORA review, Daikin vs Goodman, Daikin warranty 2026, Daikin DX9VC review, Daikin reliability, best Daikin air conditioner 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/daikin" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/daikin" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/daikin" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/daikin" />
         <meta property="og:title" content="Daikin AC Review 2026: Best Warranty, R-32 Advantage & FIT AURORA" />
         <meta property="og:description" content="World's largest HVAC maker. 12-year parts + unit replacement warranty. R-32 refrigerant costs ~6x less to service than R-454B brands. New FIT AURORA cold-climate heat pump to -20°F. Full honest 2026 review." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/daikin-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/daikin-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Daikin" />
@@ -64,10 +64,10 @@ export default function BrandDaikin() {
         <meta property="article:tag" content="Air Conditioner Review" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/daikin" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/daikin" />
         <meta name="twitter:title" content="Daikin AC Review 2026: Best Warranty & R-32 Advantage" />
         <meta name="twitter:description" content="World's largest HVAC maker. 12-year parts + unit replacement warranty. R-32 refrigerant ~6x cheaper to service. FIT AURORA to -20°F. Full 2026 review." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/daikin-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/daikin-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -75,8 +75,8 @@ export default function BrandDaikin() {
             "@type": "Review",
             "name": "Daikin Air Conditioner Review 2026",
             "reviewBody": "Daikin is the world's largest HVAC manufacturer by revenue (~$31B) and the parent company of Goodman and Amana. All three brands are manufactured at the same 4.2 million sq ft Waller, Texas facility. Daikin is the premium tier — priced 30–40% above Goodman for the same factory origin. Key advantages: 12-year parts + 12-year unit replacement warranty (best standard warranty in the category), R-32 refrigerant (~$449/20 lbs vs. R-454B at $700–$2,800), DX9VC up to 24.5 SEER2, new FIT AURORA cold-climate heat pump to -20°F. Key trade-offs: annual maintenance required to preserve unit replacement warranty, Daikin One+ thermostat has documented temperature inaccuracy issues, dealer network thinner than Goodman in some regions. $8.5M CPSC civil fine in June 2026 for delayed PTAC safety disclosure.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "Daikin Air Conditioners",

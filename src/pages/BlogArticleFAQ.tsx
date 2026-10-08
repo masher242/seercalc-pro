@@ -11,13 +11,13 @@ export default function BlogArticleFAQ() {
         <meta name="description" content="What SEER rating do I need? Is higher always better? Does it affect my bill? 20+ common AC efficiency questions, answered in plain English." />
         <meta name="keywords" content="SEER calculator FAQ, HVAC questions, air conditioner efficiency, SEER rating explained, AC savings questions, energy efficiency FAQ" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/hvac-seer-calculator-faq" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/hvac-seer-calculator-faq" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/hvac-seer-calculator-faq" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/hvac-seer-calculator-faq" />
         <meta property="og:title" content="HVAC SEER Calculator FAQ - Your Questions Answered" />
         <meta property="og:description" content="Everything you need to know about SEER ratings, HVAC efficiency, and calculating your energy savings." />
-        <meta property="og:image" content="https://seercalc.pro/images/blog/faq-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/blog/faq-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="HVAC" />
         <meta property="article:tag" content="SEER" />
@@ -25,10 +25,10 @@ export default function BlogArticleFAQ() {
         <meta property="article:tag" content="FAQ" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/hvac-seer-calculator-faq" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/hvac-seer-calculator-faq" />
         <meta name="twitter:title" content="HVAC SEER Calculator FAQ" />
         <meta name="twitter:description" content="Common questions about SEER ratings and HVAC efficiency answered." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/blog/faq-twitter.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/blog/faq-twitter.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({

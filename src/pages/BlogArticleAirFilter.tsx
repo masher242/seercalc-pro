@@ -11,10 +11,10 @@ export default function BlogArticleAirFilter() {
         <meta name="description" content="A clogged air filter cuts AC efficiency 5–15% — $90–$308/year wasted. We cover change frequency, the right MERV rating, and more upkeep tips." />
         <meta name="keywords" content="how often to change AC filter, MERV rating guide, clogged air filter electricity bill, AC maintenance savings, HVAC filter schedule" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/air-filter-electricity-bill" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/air-filter-electricity-bill" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/air-filter-electricity-bill" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/air-filter-electricity-bill" />
         <meta property="og:title" content="Change Your Air Filter, Change Your Bill: The $10 Fix That Pays for Itself" />
         <meta property="og:description" content="A dirty filter can reduce AC efficiency by 5–15%. Here's the full maintenance breakdown, MERV guide, and annual cost of neglect." />
         <meta property="article:author" content="The Efficiency Hub" />
@@ -25,7 +25,7 @@ export default function BlogArticleAirFilter() {
         <meta property="article:tag" content="Energy Savings" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/air-filter-electricity-bill" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/air-filter-electricity-bill" />
         <meta name="twitter:title" content="Change Your Air Filter, Change Your Bill" />
         <meta name="twitter:description" content="A $10 filter can recover 5–15% of AC efficiency. Here's the real math — and the other maintenance items that matter." />
 
@@ -41,10 +41,10 @@ export default function BlogArticleAirFilter() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
+              "name": "airconditionanswers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://seercalc.pro/logo.png"
+                "url": "https://airconditionanswers.com/logo.png"
               }
             },
             "description": "A clogged air filter can reduce AC efficiency by 5–15%, costing $90–$308/year in wasted electricity. Here's the full maintenance schedule, MERV rating guide, and the quick DIY tasks that protect your system."

@@ -11,10 +11,10 @@ export default function BlogArticleSmartThermostat() {
         <meta name="description" content="A $200 smart thermostat can save $180–$500/year on cooling — but only with the right usage pattern. Real savings compared for both types." />
         <meta name="keywords" content="smart thermostat vs programmable, thermostat savings, smart thermostat ROI, programmable thermostat savings, Nest vs programmable thermostat, HVAC savings thermostat" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/smart-thermostat-vs-programmable" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/smart-thermostat-vs-programmable" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/smart-thermostat-vs-programmable" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/smart-thermostat-vs-programmable" />
         <meta property="og:title" content="Smart Thermostat vs Programmable: Which Saves More on AC Bills?" />
         <meta property="og:description" content="Smart thermostats cost $200+ but can save $180-$500/year on cooling bills. Learn whether upgrading is worth it in high-rate areas." />
         <meta property="article:author" content="The Efficiency Hub" />
@@ -25,7 +25,7 @@ export default function BlogArticleSmartThermostat() {
         <meta property="article:tag" content="HVAC" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/smart-thermostat-vs-programmable" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/smart-thermostat-vs-programmable" />
         <meta name="twitter:title" content="Smart Thermostat vs Programmable: Which Saves More?" />
         <meta name="twitter:description" content="Smart thermostats cost $200+ but can save $180-$500/year. Is the upgrade worth it for you?" />
 
@@ -41,10 +41,10 @@ export default function BlogArticleSmartThermostat() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
+              "name": "airconditionanswers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://seercalc.pro/logo.png"
+                "url": "https://airconditionanswers.com/logo.png"
               }
             },
             "description": "Smart thermostats cost $200+ but can save $180-$500/year on cooling bills. Learn whether upgrading from a programmable thermostat is worth it, especially in high-rate areas."

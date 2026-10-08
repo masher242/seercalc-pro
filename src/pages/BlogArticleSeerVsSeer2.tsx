@@ -40,13 +40,13 @@ export default function BlogArticleSeerVsSeer2() {
         <meta name="description" content="SEER2 ratings run ~4.5% lower than old SEER for identical hardware. Why it happens, the conversion formula, and new federal minimums by region." />
         <meta name="keywords" content="SEER vs SEER2, SEER2 explained, SEER to SEER2 conversion, SEER2 minimum requirements, what is SEER2, SEER2 rating chart" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/seer-vs-seer2-explained" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/seer-vs-seer2-explained" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/seer-vs-seer2-explained" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/seer-vs-seer2-explained" />
         <meta property="og:title" content="SEER vs SEER2: What Changed, Why It Matters, and How to Compare (2026 Guide)" />
         <meta property="og:description" content="SEER2 replaced SEER in 2023 with stricter testing. Learn what changed, how to convert ratings, and federal minimums by region." />
-        <meta property="og:image" content="https://seercalc.pro/images/blog/seer-vs-seer2-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/blog/seer-vs-seer2-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="HVAC Education" />
         <meta property="article:tag" content="SEER" />
@@ -54,10 +54,10 @@ export default function BlogArticleSeerVsSeer2() {
         <meta property="article:tag" content="HVAC" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/seer-vs-seer2-explained" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/seer-vs-seer2-explained" />
         <meta name="twitter:title" content="SEER vs SEER2: What Changed and How to Compare Ratings" />
         <meta name="twitter:description" content="SEER2 replaced SEER in 2023. Learn what changed, how to convert ratings, and what it means for your wallet." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/blog/seer-vs-seer2-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/blog/seer-vs-seer2-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -70,10 +70,10 @@ export default function BlogArticleSeerVsSeer2() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
+              "name": "airconditionanswers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://seercalc.pro/logo.png"
+                "url": "https://airconditionanswers.com/logo.png"
               }
             },
             "description": "SEER2 replaced SEER in 2023 with stricter testing. Learn what changed, how to convert between ratings, new federal minimums by region, and what it means for your wallet."

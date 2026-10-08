@@ -11,10 +11,10 @@ export default function BlogArticleRepairCost() {
         <meta name="description" content="Repair quote in hand? Use the $5,000 rule: multiply your AC's age by the repair cost. Over $5,000, replace. Typical repair costs included." />
         <meta name="keywords" content="AC repair cost, air conditioner replacement, $5,000 rule, HVAC repair vs replace, compressor replacement cost, AC repair decision" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/ac-repair-cost-vs-replacement" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/ac-repair-cost-vs-replacement" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/ac-repair-cost-vs-replacement" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/ac-repair-cost-vs-replacement" />
         <meta property="og:title" content="AC Repair Cost vs Replacement: The $5,000 Rule Explained (2026 Guide)" />
         <meta property="og:description" content="Complete guide to AC repair costs and when to replace. Includes the $5,000 rule calculator and repair cost breakdown by component." />
         <meta property="article:published_time" content="2026-01-03T10:00:00Z" />
@@ -25,7 +25,7 @@ export default function BlogArticleRepairCost() {
         <meta property="article:tag" content="HVAC Cost" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/ac-repair-cost-vs-replacement" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/ac-repair-cost-vs-replacement" />
         <meta name="twitter:title" content="AC Repair vs Replace: The $5,000 Rule" />
         <meta name="twitter:description" content="Complete repair cost guide and decision framework for 2026." />
 
@@ -40,7 +40,7 @@ export default function BlogArticleRepairCost() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro"
+              "name": "airconditionanswers.com"
             },
             "datePublished": "2026-01-03",
             "dateModified": "2026-01-03",

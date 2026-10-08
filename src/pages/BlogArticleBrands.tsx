@@ -10,14 +10,14 @@ export default function BlogArticleBrands() {
         <title>Best AC Brands 2026 🏆 Ranked by Reliability, Price & Warranty</title>
         <meta name="description" content="Every major AC brand ranked — Trane, Carrier, Lennox, Goodman, Daikin, Rheem — by reliability, installed cost, and warranty. Updated July 2026." />
         <meta name="keywords" content="best AC brands, air conditioner brands 2026, Trane vs Carrier, Lennox reliability, Goodman review, HVAC brand comparison, most reliable AC, AC brand rankings" />
-        <link rel="canonical" href="https://seercalc.pro/blog/best-air-conditioner-brands-2026" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/best-air-conditioner-brands-2026" />
 
         <meta property="og:title" content="Best AC Brands 2026: Reliability Rankings & Expert Reviews" />
         <meta property="og:description" content="Trane, Carrier, Lennox, or Goodman? Compare 15+ air conditioner brands by reliability, SEER2 efficiency, warranty, price, and customer satisfaction." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/best-air-conditioner-brands-2026" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/best-air-conditioner-brands-2026" />
         <meta property="article:published_time" content="2026-01-04T00:00:00Z" />
-        <meta property="article:author" content="seercalc.pro" />
+        <meta property="article:author" content="airconditionanswers.com" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Best AC Brands 2026: Reliability Rankings & Expert Reviews" />
@@ -30,8 +30,8 @@ export default function BlogArticleBrands() {
             "author": { "@type": "Organization", "name": "The Efficiency Hub" },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
-              "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" }
+              "name": "airconditionanswers.com",
+              "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" }
             },
             "description": "Trane, Carrier, Lennox, or Goodman? Compare 15+ air conditioner brands by reliability, SEER2 efficiency, warranty, price, and customer satisfaction. Updated for 2026."
           })}

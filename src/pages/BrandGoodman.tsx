@@ -43,13 +43,13 @@ export default function BrandGoodman() {
         <meta name="description" content="Goodman is the cheapest major brand at $3,200–$8,500 installed, now owned by Daikin. Lifetime compressor warranty, but no labor coverage." />
         <meta name="keywords" content="Goodman AC review 2026, is Goodman a good brand, Goodman air conditioner reliability, Goodman warranty 2026, Goodman vs Carrier, Goodman GSXV9 review, best budget AC 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/goodman" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/goodman" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/goodman" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/goodman" />
         <meta property="og:title" content="Goodman AC Review 2026: Is the Budget King Still Worth It?" />
         <meta property="og:description" content="Daikin-owned Goodman is the US budget AC leader. Lifetime compressor warranty, R-32 refrigerant advantage, lowest installed costs. Full 2026 review with real pricing and known issues." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/goodman-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/goodman-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Goodman" />
@@ -57,10 +57,10 @@ export default function BrandGoodman() {
         <meta property="article:tag" content="Budget AC" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/goodman" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/goodman" />
         <meta name="twitter:title" content="Goodman AC Review 2026: Is the Budget King Still Worth It?" />
         <meta name="twitter:description" content="Lifetime compressor warranty, R-32 refrigerant advantage, lowest installed costs. Full 2026 review with real pricing, known issues, and who Goodman is actually best for." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/goodman-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/goodman-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -68,8 +68,8 @@ export default function BrandGoodman() {
             "@type": "Review",
             "name": "Goodman Air Conditioner Review 2026",
             "reviewBody": "Goodman is the US budget AC market leader, owned by Daikin (world's largest HVAC manufacturer). Manufactured at the same 4.2M sq ft Waller, Texas facility as Daikin and Amana. The lifetime compressor warranty on registered units is exceptional for a budget brand. Goodman's choice of R-32 refrigerant gives it a meaningful service cost advantage over Carrier, Trane, and Lennox (R-454B). Known issues: capacitor failures, evaporator coil leaks within 3-4 years on some units, and no labor coverage under warranty. Best for rental properties, budget-constrained buyers, and anyone who wants open wholesale parts access.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "Goodman Air Conditioners",

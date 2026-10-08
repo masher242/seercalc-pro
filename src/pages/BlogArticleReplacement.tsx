@@ -10,14 +10,14 @@ export default function BlogArticleReplacement() {
         <title>11 Signs Your AC Is Dying ⚠️ When to Replace vs Keep Repairing</title>
         <meta name="description" content="AC running constantly, making noise, or costing more each summer? 11 warning signs that tell you when repair isn't worth it anymore." />
         <meta name="keywords" content="when to replace air conditioner, signs AC needs replacing, AC replacement signs, repair or replace AC, air conditioner replacement cost, AC warning signs, when to buy new AC" />
-        <link rel="canonical" href="https://seercalc.pro/blog/when-to-replace-air-conditioner" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/when-to-replace-air-conditioner" />
 
         <meta property="og:title" content="11 Signs You Need to Replace Your Air Conditioner | When to Replace AC" />
         <meta property="og:description" content="Is your AC dying? Learn the 11 warning signs it's time to replace your air conditioner, repair vs replace decision guide, and how to avoid costly emergency replacement." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/when-to-replace-air-conditioner" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/when-to-replace-air-conditioner" />
         <meta property="article:published_time" content="2026-01-03T00:00:00Z" />
-        <meta property="article:author" content="seercalc.pro" />
+        <meta property="article:author" content="airconditionanswers.com" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="11 Signs You Need to Replace Your Air Conditioner | When to Replace AC" />

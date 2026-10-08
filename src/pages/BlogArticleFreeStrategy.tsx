@@ -11,10 +11,10 @@ export default function BlogArticleFreeStrategy() {
         <meta name="description" content="The DOE says a 7–10°F thermostat setback for 8 hours saves 10% on cooling. The exact schedule, the ceiling fan trick, and the myths that cost you." />
         <meta name="keywords" content="how to lower electricity bill AC, best thermostat temperature to save money, thermostat setback schedule, does raising thermostat save money, AC energy saving tips summer" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/thermostat-setback-strategy" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/thermostat-setback-strategy" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/thermostat-setback-strategy" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/thermostat-setback-strategy" />
         <meta property="og:title" content="The $0 Thermostat Strategy: Cut Your Cooling Bill Without Buying Anything" />
         <meta property="og:description" content="The DOE says adjusting your thermostat 7–10°F for 8 hours/day saves approximately 10% annually. Here's the full free strategy." />
         <meta property="article:author" content="The Efficiency Hub" />
@@ -25,7 +25,7 @@ export default function BlogArticleFreeStrategy() {
         <meta property="article:tag" content="AC Tips" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/thermostat-setback-strategy" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/thermostat-setback-strategy" />
         <meta name="twitter:title" content="The $0 Thermostat Strategy: Cut Your Cooling Bill Without Buying Anything" />
         <meta name="twitter:description" content="10% savings on cooling costs — no new equipment required. Here's the exact setpoint schedule and the myths to stop believing." />
 
@@ -41,10 +41,10 @@ export default function BlogArticleFreeStrategy() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
+              "name": "airconditionanswers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://seercalc.pro/logo.png"
+                "url": "https://airconditionanswers.com/logo.png"
               }
             },
             "description": "The DOE estimates adjusting your thermostat 7–10°F for 8 hours a day saves approximately 10% annually on heating and cooling. Here's the full free strategy, including setpoint schedules, the ceiling fan trick, and myths to stop believing."

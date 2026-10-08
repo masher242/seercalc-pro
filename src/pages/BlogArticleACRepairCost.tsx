@@ -11,10 +11,10 @@ export default function BlogArticleACRepairCost() {
         <meta name="description" content="AC repairs run $150–$2,500 depending on the issue. 15+ common problems with real price ranges, so you can tell if a quote is fair." />
         <meta name="keywords" content="AC repair cost, air conditioner repair prices, HVAC repair cost, AC not cooling cost, compressor replacement cost, refrigerant recharge cost" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/ac-repair-cost-2026" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/ac-repair-cost-2026" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/ac-repair-cost-2026" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/ac-repair-cost-2026" />
         <meta property="og:title" content="How Much Does AC Repair Cost? Complete 2026 Price Guide by Problem" />
         <meta property="og:description" content="Complete AC repair cost breakdown by specific problem type. Know exactly what you should pay for 20+ common AC issues." />
         <meta property="article:published_time" content="2026-01-04T10:00:00Z" />
@@ -25,7 +25,7 @@ export default function BlogArticleACRepairCost() {
         <meta property="article:tag" content="HVAC Cost" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/ac-repair-cost-2026" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/ac-repair-cost-2026" />
         <meta name="twitter:title" content="AC Repair Cost 2026: Complete Price Guide by Problem" />
         <meta name="twitter:description" content="Detailed AC repair costs for 20+ common problems. Know fair pricing and avoid overcharges." />
 
@@ -40,7 +40,7 @@ export default function BlogArticleACRepairCost() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro"
+              "name": "airconditionanswers.com"
             },
             "datePublished": "2026-01-04",
             "dateModified": "2026-01-04",

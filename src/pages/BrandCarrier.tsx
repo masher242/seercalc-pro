@@ -43,13 +43,13 @@ export default function BrandCarrier() {
         <meta name="description" content="Carrier runs $3,900–$10,000+ installed with 4/5 reliability. Standout: Consumer Choice warranty with optional labor. Known issue: board failures." />
         <meta name="keywords" content="Carrier AC review 2026, Carrier Infinity review, Carrier vs Trane, Carrier air conditioner price, Carrier warranty 2026, is Carrier a good brand, Carrier Infinity 26VNA1" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/carrier" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/carrier" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/carrier" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/carrier" />
         <meta property="og:title" content="Carrier AC Review 2026: Reliability, Pricing, Models & Warranty" />
         <meta property="og:description" content="Is Carrier worth the premium in 2026? Full review with real pricing, model lineup, Consumer Choice warranty details, known Infinity board issues, and who should (and shouldn't) buy Carrier." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/carrier-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/carrier-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Carrier" />
@@ -57,10 +57,10 @@ export default function BrandCarrier() {
         <meta property="article:tag" content="Air Conditioner Review" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/carrier" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/carrier" />
         <meta name="twitter:title" content="Carrier AC Review 2026: Reliability, Pricing & Warranty" />
         <meta name="twitter:description" content="Is Carrier worth the premium in 2026? Full review with pricing, Infinity model details, Consumer Choice warranty, and known issues." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/carrier-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/carrier-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -68,8 +68,8 @@ export default function BrandCarrier() {
             "@type": "Review",
             "name": "Carrier Air Conditioner Review 2026",
             "reviewBody": "Carrier earns Consumer Reports 4/5 predicted reliability and 5/5 owner satisfaction. Its unique Consumer Choice warranty lets buyers choose between a 10-year parts-only warranty or a 5-year parts + 3-year labor warranty — the only major brand offering manufacturer labor coverage as a standard option. Known issues include expensive Infinity inverter board failures, aluminum condenser coil fragility, and warranty denial from missed registration. Pricing runs $3,900–$10,000+ installed for central AC. Bryant offers identical hardware at 10–15% less.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "Carrier Air Conditioners",

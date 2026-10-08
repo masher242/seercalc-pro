@@ -127,9 +127,9 @@ export default function BrandsIndex() {
         <meta name="description" content="Honest, unsponsored reviews of Trane, Carrier, Lennox, Goodman, Rheem, Daikin, Mitsubishi, and American Standard — reliability, cost, and issues." />
         <meta name="keywords" content="HVAC brand reviews 2026, best AC brand, Trane review, Carrier review, Lennox review, Goodman review, air conditioner brand comparison" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://seercalc.pro/brands" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://seercalc.pro/brands" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands" />
         <meta property="og:title" content="HVAC Brand Reviews 2026: Reliability, Pricing & Warranty Compared" />
         <meta property="og:description" content="In-depth reviews of the top HVAC brands. Compare Trane, Carrier, Lennox, Goodman and more by reliability, warranty, pricing, and known issues." />
       </Helmet>

@@ -11,13 +11,13 @@ export default function BlogArticleLabel() {
         <meta name="description" content="Look at the label on your AC unit and we'll show you how to decode the SEER rating, tonnage, and age — with model formulas for every brand." />
         <meta name="keywords" content="HVAC nameplate, AC label guide, find SEER rating, model number decoder, AC unit specifications, how to read HVAC label, air conditioner information" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://seercalc.pro/blog/how-to-read-hvac-label" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/how-to-read-hvac-label" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/how-to-read-hvac-label" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/how-to-read-hvac-label" />
         <meta property="og:title" content="How to Read Your HVAC System's Label - Complete Guide" />
         <meta property="og:description" content="Decode your AC unit's nameplate and find crucial information like SEER rating, tonnage, and model number." />
-        <meta property="og:image" content="https://seercalc.pro/images/blog/hvac-label-guide-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/blog/hvac-label-guide-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="HVAC Guides" />
 
@@ -31,7 +31,7 @@ export default function BlogArticleLabel() {
             "@type": "HowTo",
             "name": "How to Read Your HVAC System's Label",
             "description": "Learn to find and decode your air conditioning system's nameplate to discover SEER rating, tonnage, and specifications",
-            "image": "https://seercalc.pro/images/blog/hvac-label-guide.png",
+            "image": "https://airconditionanswers.com/images/blog/hvac-label-guide.png",
             "totalTime": "PT10M",
             "tool": [
               {

@@ -103,13 +103,13 @@ export default function BlogArticleSeerChart() {
         <meta name="description" content="Every SEER rating from 8 to 25+, with real dollar costs at your electricity rate. See where diminishing returns kick in for your climate." />
         <meta name="keywords" content="SEER rating chart, SEER chart 2026, SEER efficiency levels, SEER rating comparison, air conditioner SEER chart, SEER cost comparison" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/seer-rating-chart" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/seer-rating-chart" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/seer-rating-chart" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/seer-rating-chart" />
         <meta property="og:title" content="The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained (2026)" />
         <meta property="og:description" content="See annual costs, efficiency tiers, and savings comparisons for every SEER rating from 8 to 25+." />
-        <meta property="og:image" content="https://seercalc.pro/images/blog/seer-rating-chart-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/blog/seer-rating-chart-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="HVAC Education" />
         <meta property="article:tag" content="SEER" />
@@ -117,10 +117,10 @@ export default function BlogArticleSeerChart() {
         <meta property="article:tag" content="Energy Efficiency" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/seer-rating-chart" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/seer-rating-chart" />
         <meta name="twitter:title" content="The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained" />
         <meta name="twitter:description" content="Annual costs, efficiency tiers, and savings comparisons for every SEER rating from 8 to 25+." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/blog/seer-rating-chart-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/blog/seer-rating-chart-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -133,10 +133,10 @@ export default function BlogArticleSeerChart() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
+              "name": "airconditionanswers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://seercalc.pro/logo.png"
+                "url": "https://airconditionanswers.com/logo.png"
               }
             },
             "description": "Complete SEER rating chart from 8 to 25+. See annual costs, efficiency tiers, savings comparisons, and which SEER rating is right for your climate and budget."

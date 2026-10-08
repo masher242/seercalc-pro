@@ -43,13 +43,13 @@ export default function BrandRheem() {
         <meta name="description" content="Rheem sits in the sweet spot at $3,000–$8,500 installed with up to 20.5 SEER2. Watch for evaporator coil pinhole leaks within 3–5 years." />
         <meta name="keywords" content="Rheem AC review 2026, Rheem Endeavor Line review, Rheem vs Carrier, Rheem reliability 2026, Rheem warranty 2026, is Rheem a good brand, Rheem RA20AZ review" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/rheem" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/rheem" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/rheem" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/rheem" />
         <meta property="og:title" content="Rheem AC Review 2026: Best Mid-Range Value?" />
         <meta property="og:description" content="Rheem's Endeavor Line hits up to 20.5 SEER2 at mid-range prices. 90-day registration window (longest after Carrier). Known evaporator coil leak issue with high labor cost exposure. Full 2026 review." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/rheem-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/rheem-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Rheem" />
@@ -57,10 +57,10 @@ export default function BrandRheem() {
         <meta property="article:tag" content="Air Conditioner Review" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/rheem" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/rheem" />
         <meta name="twitter:title" content="Rheem AC Review 2026: Best Mid-Range Value?" />
         <meta name="twitter:description" content="Up to 20.5 SEER2 at mid-range prices. 90-day registration window. Known coil leak issues. Full honest 2026 review." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/rheem-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/rheem-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -68,8 +68,8 @@ export default function BrandRheem() {
             "@type": "Review",
             "name": "Rheem Air Conditioner Review 2026",
             "reviewBody": "Rheem is a privately held mid-range HVAC brand owned by Paloma Rheem Holdings (Japan) and manufactured in Fort Smith, Arkansas. The Endeavor Line (rebranded in 2023) reaches up to 20.5 SEER2 on the Prestige series using R-454B refrigerant. Rheem's 90-day registration window matches Carrier's industry-leading standard. Key strengths: easy serviceability (any tech can work on them), Watsco distribution network, and the Fujitsu General acquisition (2025) adding ductless expertise. Known issue: evaporator coil pinhole leaks documented within 3–5 years, with $3,000–$4,000 out-of-pocket labor exposure since refrigerant and labor are not covered. Also owns Friedrich (ductless) and Ruud (identical hardware, contractor channel). DOE civil penalty of $1.05M in 2024 for commercial unit energy standard noncompliance.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "Rheem Air Conditioners",

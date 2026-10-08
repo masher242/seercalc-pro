@@ -52,9 +52,9 @@ export default function CalculatorsIndex() {
         <title>Free HVAC Calculators 🧮 Savings, Sizing & Repair vs Replace (2026)</title>
         <meta name="description" content="Four free calculators before you talk to a contractor: SEER savings, AC sizing, repair vs replace, and SEER-to-SEER2. No signup, no email." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://seercalc.pro/calculators" />
+        <link rel="canonical" href="https://airconditionanswers.com/calculators" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://seercalc.pro/calculators" />
+        <meta property="og:url" content="https://airconditionanswers.com/calculators" />
         <meta property="og:title" content="Free HVAC Calculators — Savings, Repair vs. Replace & More" />
         <meta property="og:description" content="Free HVAC calculators to help you make smarter decisions before spending $6,000–$15,000 on a new AC system." />
       </Helmet>

@@ -82,7 +82,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 pt-6 text-center">
           <p className="text-gray-600 text-sm">
-            © 2026 <span className="font-semibold text-gray-900">seercalc.pro</span> — HVAC SEER Savings Calculator
+            © 2026 <span className="font-semibold text-gray-900">airconditionanswers.com</span> — HVAC SEER Savings Calculator
           </p>
           <p className="text-gray-500 text-xs mt-2">
             Estimates based on industry-standard calculations. Actual savings may vary.

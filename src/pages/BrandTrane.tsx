@@ -41,13 +41,13 @@ export default function BrandTrane() {
         <meta name="description" content="Trane scores 5/5 for reliability and costs $4,881–$10,414 installed. We cover the TAM coil issue, parts lock-in, and if the premium pays off." />
         <meta name="keywords" content="Trane AC review 2026, Trane air conditioner reliability, Trane XV20i, Trane warranty, Trane vs Carrier, Trane price 2026, is Trane a good brand" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/trane" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/trane" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/trane" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/trane" />
         <meta property="og:title" content="Trane AC Review 2026: Reliability, Pricing, Models & Warranty" />
         <meta property="og:description" content="Is Trane worth the premium? Consumer Reports 5/5 reliability, $4,881–$10,414 installed costs, known TAM coil issues, and who should (and shouldn't) buy Trane in 2026." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/trane-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/trane-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Trane" />
@@ -55,10 +55,10 @@ export default function BrandTrane() {
         <meta property="article:tag" content="Air Conditioner Review" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/trane" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/trane" />
         <meta name="twitter:title" content="Trane AC Review 2026: Reliability, Pricing & Warranty" />
         <meta name="twitter:description" content="Is Trane worth the premium in 2026? Full review with real pricing, model lineup, known issues, and warranty terms." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/trane-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/trane-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -66,8 +66,8 @@ export default function BrandTrane() {
             "@type": "Review",
             "name": "Trane Air Conditioner Review 2026",
             "reviewBody": "Trane earns Consumer Reports' highest predicted reliability score (5/5) and has won America's Most Trusted HVAC Brand for 12 consecutive years. The Spine Fin all-aluminum coil is a genuine differentiator in coastal climates. Known issues include TAM evaporator coil leaks (~1-in-15 rate), proprietary parts scarcity, and communicating system complexity on XV-series units. Pricing runs $4,881–$10,414 installed for central AC.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "Trane Air Conditioners",

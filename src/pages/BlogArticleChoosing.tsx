@@ -11,13 +11,13 @@ export default function BlogArticleChoosing() {
         <meta name="description" content="SEER 14, 16, 18, or 20+? The right pick depends on climate, electricity rate, and how long you'll stay. Payback math for each scenario." />
         <meta name="keywords" content="choosing SEER rating, best SEER for my home, SEER 16 vs 18, AC efficiency guide, HVAC buying guide, optimal SEER rating, cost vs efficiency" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://seercalc.pro/blog/choosing-the-right-seer-rating" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/choosing-the-right-seer-rating" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/choosing-the-right-seer-rating" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/choosing-the-right-seer-rating" />
         <meta property="og:title" content="The Complete Guide to Choosing the Right SEER Rating" />
         <meta property="og:description" content="Find your perfect SEER rating sweet spot—balancing efficiency, cost, and payback period." />
-        <meta property="og:image" content="https://seercalc.pro/images/blog/choosing-seer-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/blog/choosing-seer-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -30,7 +30,7 @@ export default function BlogArticleChoosing() {
             "@type": "HowTo",
             "name": "How to Choose the Right SEER Rating for Your Home",
             "description": "Step-by-step guide to selecting the optimal SEER rating for your climate and situation",
-            "image": "https://seercalc.pro/images/blog/choosing-seer.png",
+            "image": "https://airconditionanswers.com/images/blog/choosing-seer.png",
             "totalTime": "PT15M",
             "step": [
               {

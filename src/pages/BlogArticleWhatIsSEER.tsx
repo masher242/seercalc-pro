@@ -11,13 +11,13 @@ export default function BlogArticleWhatIsSEER() {
         <meta name="description" content="Your AC's SEER rating controls how much you pay per hour of cooling. Real cost tables by state — 10 SEER vs 20 SEER can mean $500+/year." />
         <meta name="keywords" content="what is SEER rating, SEER rating explained, AC efficiency rating, SEER rating electricity bill, HVAC energy efficiency, air conditioner SEER" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/what-is-seer-rating" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/what-is-seer-rating" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/what-is-seer-rating" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/what-is-seer-rating" />
         <meta property="og:title" content="What Is a SEER Rating? Your Guide to Lower AC Bills in 2026" />
         <meta property="og:description" content="Learn how your AC's SEER rating directly affects your electricity bill — with real cost tables for every rate." />
-        <meta property="og:image" content="https://seercalc.pro/images/blog/what-is-seer-rating-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/blog/what-is-seer-rating-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="HVAC Guides" />
         <meta property="article:tag" content="SEER" />
@@ -25,10 +25,10 @@ export default function BlogArticleWhatIsSEER() {
         <meta property="article:tag" content="Energy Efficiency" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/what-is-seer-rating" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/what-is-seer-rating" />
         <meta name="twitter:title" content="What Is a SEER Rating? Your Guide to Lower AC Bills" />
         <meta name="twitter:description" content="How your AC's SEER rating directly affects your electricity bill — with real cost tables." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/blog/what-is-seer-rating-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/blog/what-is-seer-rating-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -41,10 +41,10 @@ export default function BlogArticleWhatIsSEER() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro",
+              "name": "airconditionanswers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://seercalc.pro/logo.png"
+                "url": "https://airconditionanswers.com/logo.png"
               }
             },
             "description": "Learn how your AC's SEER rating directly affects your electricity bill — with real cost tables for every rate, from the U.S. average to the most expensive states."

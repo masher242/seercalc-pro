@@ -96,9 +96,9 @@ export default function CalculatorSeerToSeer2() {
         <meta name="description" content="Convert any SEER rating to SEER2 (or back) in one click to compare your old system to new models. Includes a 2026 regional compliance check." />
         <meta name="keywords" content="SEER to SEER2 converter, SEER2 to SEER conversion, SEER2 calculator, what is my SEER2 equivalent, SEER vs SEER2 conversion calculator 2026" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://seercalc.pro/calculators/seer-to-seer2" />
+        <link rel="canonical" href="https://airconditionanswers.com/calculators/seer-to-seer2" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://seercalc.pro/calculators/seer-to-seer2" />
+        <meta property="og:url" content="https://airconditionanswers.com/calculators/seer-to-seer2" />
         <meta property="og:title" content="SEER to SEER2 Converter — Free Instant Conversion" />
         <meta property="og:description" content="Convert any SEER rating to SEER2 instantly. Compare old and new AC systems on equal footing. Includes 2026 regional compliance check." />
 

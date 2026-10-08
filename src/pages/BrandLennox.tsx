@@ -58,13 +58,13 @@ export default function BrandLennox() {
         <meta name="description" content="Lennox hits 26.0 SEER2, the industry's highest, with free 3-yr labor coverage. $4,000–$15,000+ installed, but parts availability lags rivals." />
         <meta name="keywords" content="Lennox AC review 2026, Lennox SL25KCV review, Lennox vs Trane vs Carrier, Lennox warranty 2026, Lennox parts problems, is Lennox worth it, Lennox iComfort problems" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/brands/lennox" />
+        <link rel="canonical" href="https://airconditionanswers.com/brands/lennox" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/brands/lennox" />
+        <meta property="og:url" content="https://airconditionanswers.com/brands/lennox" />
         <meta property="og:title" content="Lennox AC Review 2026: Is the Most Efficient Brand Worth the Premium?" />
         <meta property="og:description" content="Highest efficiency (26.0 SEER2), free 3-year labor warranty, but worst parts availability and most expensive installed costs. Full honest review." />
-        <meta property="og:image" content="https://seercalc.pro/images/brands/lennox-review-og.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/images/brands/lennox-review-og.png" />
         <meta property="article:author" content="The Efficiency Hub" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Lennox" />
@@ -72,10 +72,10 @@ export default function BrandLennox() {
         <meta property="article:tag" content="Air Conditioner Review" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/brands/lennox" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/brands/lennox" />
         <meta name="twitter:title" content="Lennox AC Review 2026: Is It Worth the Premium?" />
         <meta name="twitter:description" content="26.0 SEER2 max efficiency, free 3-year labor warranty, but worst parts availability of any major brand. Full 2026 review." />
-        <meta name="twitter:image" content="https://seercalc.pro/images/brands/lennox-review-og.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/lennox-review-og.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -83,8 +83,8 @@ export default function BrandLennox() {
             "@type": "Review",
             "name": "Lennox Air Conditioner Review 2026",
             "reviewBody": "Lennox offers the highest efficiency central AC in the US residential market (SL25KCV at 26.0 SEER2) and is the only major brand providing free 3-year labor coverage at registration. However, Lennox has the worst parts availability of any major brand — proprietary ecosystem, OEM-only parts, weeks-long waits, costs 3x generic equivalents, and control boards orphaned on units as young as 3 years old. The iComfort thermostat lock-in ($1,300–$2,000 replacement) adds further dependency. Best for: maximum-efficiency seekers in high-rate markets with strong local Lennox dealer presence. Avoid if: your area has thin Lennox dealer coverage, you value serviceability, or you're budget-constrained.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://seercalc.pro" },
-            "publisher": { "@type": "Organization", "name": "seercalc.pro", "logo": { "@type": "ImageObject", "url": "https://seercalc.pro/logo.png" } },
+            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
+            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
             "itemReviewed": {
               "@type": "Product",
               "name": "Lennox Air Conditioners",

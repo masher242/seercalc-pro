@@ -394,9 +394,9 @@ export default function CalculatorACSizing() {
         <meta name="description" content="Enter your square footage, climate zone, insulation, and sun exposure for a recommended AC tonnage — a sanity-check on any contractor quote." />
         <meta name="keywords" content="AC sizing calculator, what size air conditioner do I need, HVAC sizing calculator, how many tons do I need, AC tonnage calculator 2026, Manual J simplified" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://seercalc.pro/calculators/ac-sizing" />
+        <link rel="canonical" href="https://airconditionanswers.com/calculators/ac-sizing" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://seercalc.pro/calculators/ac-sizing" />
+        <meta property="og:url" content="https://airconditionanswers.com/calculators/ac-sizing" />
         <meta property="og:title" content="AC Sizing Calculator — What Size Air Conditioner Do I Need?" />
         <meta property="og:description" content="Get a recommended AC tonnage range based on your home's size, climate, wall construction, attic insulation, and sun exposure. Free, no email required." />
 
@@ -764,7 +764,7 @@ export default function CalculatorACSizing() {
                     <li>• <strong>Ductwork condition</strong> significantly affects actual performance — leaky or undersized ducts may require a larger unit</li>
                     <li>• <strong>Internal heat gains</strong> (appliances, lighting, open kitchen) are not included — add 0.5 ton for homes with heavy cooking or many electronics</li>
                     <li>• A reputable contractor should always provide a <strong>Manual J calculation</strong> on request — if they won't, that's a red flag</li>
-                    <li>• <strong>Disclaimer:</strong> This tool is provided for general informational and comparison purposes only. Results are approximate and should be used to help you evaluate professional quotations — not as the sole basis for purchasing or installing equipment. seercalc.pro accepts no liability for decisions made using this estimate. Always confirm final sizing with a licensed HVAC professional.</li>
+                    <li>• <strong>Disclaimer:</strong> This tool is provided for general informational and comparison purposes only. Results are approximate and should be used to help you evaluate professional quotations — not as the sole basis for purchasing or installing equipment. airconditionanswers.com accepts no liability for decisions made using this estimate. Always confirm final sizing with a licensed HVAC professional.</li>
                   </ul>
                 </div>
               </div>

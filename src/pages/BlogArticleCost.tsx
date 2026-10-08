@@ -11,10 +11,10 @@ export default function BlogArticleCost() {
         <meta name="description" content="Central AC runs $5,500–$16,000 installed in 2026, most 3-ton systems $6,000–$9,000. Costs broken down by brand, tonnage, and efficiency." />
         <meta name="keywords" content="AC unit cost 2026, air conditioner price, new AC cost, HVAC replacement cost, central air installation price, AC cost by SEER rating" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://seercalc.pro/blog/ac-unit-cost-2026" />
+        <link rel="canonical" href="https://airconditionanswers.com/blog/ac-unit-cost-2026" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://seercalc.pro/blog/ac-unit-cost-2026" />
+        <meta property="og:url" content="https://airconditionanswers.com/blog/ac-unit-cost-2026" />
         <meta property="og:title" content="How Much Does a New AC Unit Cost in 2026? Complete Price Guide" />
         <meta property="og:description" content="Detailed AC pricing guide: costs by size, SEER rating, brand, and region. Get accurate estimates for your 2026 AC replacement." />
         <meta property="article:published_time" content="2026-01-02T10:00:00Z" />
@@ -25,7 +25,7 @@ export default function BlogArticleCost() {
         <meta property="article:tag" content="HVAC Pricing" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://seercalc.pro/blog/ac-unit-cost-2026" />
+        <meta name="twitter:url" content="https://airconditionanswers.com/blog/ac-unit-cost-2026" />
         <meta name="twitter:title" content="How Much Does a New AC Unit Cost in 2026?" />
         <meta name="twitter:description" content="Complete AC pricing guide with costs by size, SEER, and brand." />
 
@@ -40,7 +40,7 @@ export default function BlogArticleCost() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "seercalc.pro"
+              "name": "airconditionanswers.com"
             },
             "datePublished": "2026-01-02",
             "dateModified": "2026-01-02",
