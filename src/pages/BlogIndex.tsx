@@ -5,6 +5,30 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: 'how-much-does-it-cost-to-run-ac',
+    title: 'How Much Does It Cost to Run an Air Conditioner? (By Size, SEER and State)',
+    description: 'What central air, window units and mini-splits cost per hour, month and year at real electricity rates, with a breakdown for all 50 states and DC.',
+    date: '2026-10-08',
+    readTime: '8 min read',
+    category: 'HVAC Guides'
+  },
+  {
+    slug: 'seer-rating-chart',
+    title: 'The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained',
+    description: 'Annual cost for every SEER rating from 8 to 25+ at average and high electricity rates, plus where the diminishing returns kick in.',
+    date: '2026-06-17',
+    readTime: '10 min read',
+    category: 'HVAC Education'
+  },
+  {
+    slug: 'seer-vs-seer2-explained',
+    title: 'SEER vs SEER2: What Changed, Why It Matters, and How to Compare',
+    description: 'Why every AC efficiency number dropped in 2023, how to convert between SEER and SEER2, and the federal minimums by region.',
+    date: '2026-06-17',
+    readTime: '9 min read',
+    category: 'HVAC Education'
+  },
+  {
     slug: 'air-filter-electricity-bill',
     title: 'Change Your Air Filter, Change Your Bill: The $10 Fix That Pays for Itself Every Month',
     description: "A clogged air filter reduces AC efficiency by 5–15%, costing $90–$308/year in wasted electricity. Learn how often to change yours, which MERV rating to use, and what else to maintain.",

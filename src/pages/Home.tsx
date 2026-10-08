@@ -8,13 +8,15 @@ import LeadMagnet from '../components/LeadMagnet';
 import { CalculatorInputs, CalculationResults } from '../types';
 import { calculateSavings } from '../utils/calculations';
 import { saveInputs, loadInputs } from '../utils/localStorage';
+import { US_RATE } from '../data/acCost';
 
 const DEFAULT_INPUTS: CalculatorInputs = {
   currentSEER: 10,
   newSEER: 16,
   tonnage: 2.5,
   hoursPerYear: 1200,
-  electricityRate: 0.13,
+  // U.S. average residential rate from the EIA data file (src/data/stateRates.json)
+  electricityRate: Math.round(US_RATE * 10000) / 10000,
   upgradeCost: 0
 };
 
@@ -25,8 +27,17 @@ export default function Home() {
 
   useEffect(() => {
     const savedInputs = loadInputs();
-    if (savedInputs) {
-      setInputs(savedInputs);
+    // Links from the cost pages can pre-fill the calculator, e.g. /?rate=0.1745&hours=1500
+    const params = new URLSearchParams(window.location.search);
+    const rate = Number(params.get('rate'));
+    const hours = Number(params.get('hours'));
+    const fromLink: Partial<CalculatorInputs> = {};
+    if (rate > 0 && rate < 2) fromLink.electricityRate = rate;
+    if (hours > 0 && hours <= 8760) fromLink.hoursPerYear = Math.round(hours);
+    if (savedInputs || Object.keys(fromLink).length) {
+      const merged = { ...DEFAULT_INPUTS, ...(savedInputs ?? {}), ...fromLink };
+      setInputs(merged);
+      if (Object.keys(fromLink).length) saveInputs(merged);
     }
   }, []);
 
