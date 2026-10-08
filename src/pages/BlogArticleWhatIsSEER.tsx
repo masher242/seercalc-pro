@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleWhatIsSEER() {
   return (
@@ -18,7 +20,7 @@ export default function BlogArticleWhatIsSEER() {
         <meta property="og:title" content="What Is a SEER Rating? Your Guide to Lower AC Bills in 2026" />
         <meta property="og:description" content="Learn how your AC's SEER rating directly affects your electricity bill — with real cost tables for every rate." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/what-is-seer-rating-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="HVAC Guides" />
         <meta property="article:tag" content="SEER" />
         <meta property="article:tag" content="HVAC" />
@@ -35,18 +37,9 @@ export default function BlogArticleWhatIsSEER() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "What Is a SEER Rating — and Why Your Wallet Cares",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airconditionanswers.com/logo.png"
-              }
-            },
+            "dateModified": "2026-02-12",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "description": "Learn how your AC's SEER rating directly affects your electricity bill — with real cost tables for every rate, from the U.S. average to the most expensive states."
           })}
         </script>
@@ -117,6 +110,7 @@ export default function BlogArticleWhatIsSEER() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">What Is a SEER Rating — and Why Your Wallet Cares</h1>
             <p className="text-xl text-gray-600">The one number that determines how much of your income goes to the utility company every summer</p>
+            <ArticleByline updated="2026-02-12" />
           </header>
 
           {/* Quick Answer — AI/GEO optimized */}
@@ -138,7 +132,7 @@ export default function BlogArticleWhatIsSEER() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              If you've opened a summer electricity bill and felt your stomach drop, you already understand the problem. Air conditioning accounts for roughly 19% of all U.S. household electricity use. That's nearly one-fifth of your entire electric bill, all summer long. For homeowners in high-rate states — Hawaii, California, Massachusetts, the Northeast — and for anyone running commercial cooling, that percentage translates into real financial pain every single month. I built SeerCalc.Pro because I needed this tool for myself, and I figured I wasn't alone.
+              If you've opened a summer electricity bill and felt your stomach drop, you already understand the problem. Air conditioning accounts for roughly 19% of all U.S. household electricity use. That's nearly one-fifth of your entire electric bill, all summer long. For homeowners in high-rate states — Hawaii, California, Massachusetts, the Northeast — and for anyone running commercial cooling, that percentage translates into real financial pain every single month. I built AirConditionAnswers because I needed this tool for myself, and I figured I wasn't alone.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -403,7 +397,7 @@ export default function BlogArticleWhatIsSEER() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              The good news: you can calculate exactly where you stand right now, before spending anything. Plug in your current SEER rating, your electricity rate, and your estimated usage, and SeerCalc.Pro will show you your annual cooling cost and the precise savings you'd see from upgrading.
+              The good news: you can calculate exactly where you stand right now, before spending anything. Plug in your current SEER rating, your electricity rate, and your estimated usage, and our calculator will show you your annual cooling cost and the precise savings you'd see from upgrading.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleRatings() {
   return (
@@ -18,7 +20,7 @@ export default function BlogArticleRatings() {
         <meta property="og:title" content="SEER vs EER vs HSPF: Understanding HVAC Efficiency Ratings" />
         <meta property="og:description" content="The complete guide to understanding SEER, EER, HSPF, and other HVAC efficiency metrics." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/ratings-comparison-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="HVAC Education" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -31,18 +33,9 @@ export default function BlogArticleRatings() {
             "@type": "Article",
             "headline": "SEER vs EER vs HSPF: HVAC Efficiency Ratings Explained",
             "image": "https://airconditionanswers.com/images/blog/ratings-comparison.png",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airconditionanswers.com/logo.png"
-              }
-            },
+            "dateModified": "2025-11-09",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "description": "Comprehensive guide explaining the differences between SEER, EER, HSPF, and other HVAC efficiency metrics."
           })}
         </script>
@@ -65,6 +58,7 @@ export default function BlogArticleRatings() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">SEER vs EER vs HSPF: HVAC Efficiency Ratings Explained</h1>
             <p className="text-xl text-gray-600">Your complete guide to understanding every HVAC efficiency acronym and which ratings matter most</p>
+            <ArticleByline updated="2025-11-09" />
           </header>
 
           <section className="prose prose-lg max-w-none mb-8">

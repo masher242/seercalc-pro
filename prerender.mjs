@@ -78,7 +78,10 @@ async function prerender() {
         pageHtml = pageHtml.replace(/<link rel="canonical"[^>]*>/g, '');
       }
 
-      const headTags = [metaStr, linkStr].filter((s) => s.length > 0).join('\n    ');
+      // scriptStr carries each page's JSON-LD (Article, FAQPage, Review...). It must be
+      // written into the static HTML, or crawlers that don't run JavaScript (GPTBot,
+      // PerplexityBot, ClaudeBot, Bingbot's first pass) never see it.
+      const headTags = [metaStr, linkStr, scriptStr].filter((s) => s.length > 0).join('\n    ');
       if (headTags) {
         pageHtml = pageHtml.replace('</head>', `    ${headTags}\n  </head>`);
       }

@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import { Clock, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { articleJsonLd } from '../data/site';
 
 export default function BlogArticleMinisplit() {
   return (
@@ -11,6 +13,14 @@ export default function BlogArticleMinisplit() {
         <meta name="description" content="Single-zone mini-split: $3,000–$6,000 installed. Multi-zone: $6,500–$15,000+. Costs by brand — Mitsubishi, Daikin, Fujitsu, and budget lines." />
         <meta name="keywords" content="mini split cost 2026, ductless AC price, mini split installation cost, ductless air conditioner cost, mini split vs central AC cost" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/mini-split-cost-2026" />
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd({
+            path: '/blog/mini-split-cost-2026',
+            headline: 'Mini-Split AC Cost 2026: Complete Ductless System Pricing Guide',
+            description: 'Single-zone mini-split: $3,000–$6,000 installed. Multi-zone: $6,500–$15,000+. Costs by brand — Mitsubishi, Daikin, Fujitsu, and budget lines.',
+            dateModified: '2026-01-02',
+          }))}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
@@ -31,6 +41,7 @@ export default function BlogArticleMinisplit() {
               </div>
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Mini-Split AC Cost 2026: Complete Ductless System Pricing Guide</h1>
               <p className="text-xl text-gray-600">Detailed pricing for single-zone, multi-zone, and whole-home ductless systems—plus brands, installation, efficiency, and savings</p>
+              <ArticleByline updated="2026-01-02" />
             </header>
 
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-3 border-blue-500 rounded-xl p-6 mb-8 shadow-md">

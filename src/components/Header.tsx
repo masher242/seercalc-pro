@@ -32,7 +32,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link to="/" className="flex flex-col hover:opacity-80 transition-opacity flex-shrink-0">
-            <img src="/logo_final_transparent.png" alt="SeerCalc.pro" className="h-9 lg:h-12 w-auto" />
+            <img src="/logo_final_transparent.png" alt="AirConditionAnswers" className="h-9 lg:h-12 w-auto" />
             <p className="hidden sm:block text-[13px] font-medium text-gray-500 mt-1 tracking-wide">
               Smarter HVAC. Lower Bills.
             </p>

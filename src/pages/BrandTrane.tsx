@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Shield, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { series: 'XV20i', tier: 'Premier', compressor: 'Variable-speed', seer2: 'Up to 23.6', warranty: '12-yr compressor (registered)', note: 'TruComfort, ComfortLink II' },
@@ -48,7 +50,7 @@ export default function BrandTrane() {
         <meta property="og:title" content="Trane AC Review 2026: Reliability, Pricing, Models & Warranty" />
         <meta property="og:description" content="Is Trane worth the premium? Consumer Reports 5/5 reliability, $4,881–$10,414 installed costs, known TAM coil issues, and who should (and shouldn't) buy Trane in 2026." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/trane-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Trane" />
         <meta property="article:tag" content="HVAC" />
@@ -66,8 +68,9 @@ export default function BrandTrane() {
             "@type": "Review",
             "name": "Trane Air Conditioner Review 2026",
             "reviewBody": "Trane earns Consumer Reports' highest predicted reliability score (5/5) and has won America's Most Trusted HVAC Brand for 12 consecutive years. The Spine Fin all-aluminum coil is a genuine differentiator in coastal climates. Known issues include TAM evaporator coil leaks (~1-in-15 rate), proprietary parts scarcity, and communicating system complexity on XV-series units. Pricing runs $4,881–$10,414 installed for central AC.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "Trane Air Conditioners",
@@ -161,6 +164,7 @@ export default function BrandTrane() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Trane Air Conditioners: 2026 Review</h1>
             <p className="text-xl text-gray-600">Reliability, pricing, model lineup, warranty terms, known issues — everything you need before signing a contract</p>
+            <ArticleByline />
           </header>
 
           {/* Quick Answer Box */}

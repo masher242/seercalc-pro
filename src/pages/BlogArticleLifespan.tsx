@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Clock, AlertTriangle, CheckCircle, XCircle, Wrench } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { articleJsonLd } from '../data/site';
 
 export default function BlogArticleLifespan() {
   return (
@@ -18,6 +20,14 @@ export default function BlogArticleLifespan() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How Long Do Air Conditioners Last? Lifespan by Brand & Type 2026" />
         <meta name="twitter:description" content="Complete guide to air conditioner lifespan by brand, type, and climate." />
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd({
+            path: '/blog/how-long-do-air-conditioners-last',
+            headline: 'How Long Does an Air Conditioner Last? (By Brand, Type, and Climate)',
+            description: 'Average AC lifespan is 15–20 years but varies by brand — Trane and Carrier skew higher, Goodman lower. Lifespan by brand, type, and climate.',
+            dateModified: '2026-01-03',
+          }))}
+        </script>
       </Helmet>
 
       <article className="max-w-4xl mx-auto px-4 py-12">
@@ -36,6 +46,7 @@ export default function BlogArticleLifespan() {
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How Long Does an Air Conditioner Last? (By Brand, Type, and Climate)</h1>
+          <ArticleByline />
         </header>
 
         <div className="prose prose-lg max-w-none">

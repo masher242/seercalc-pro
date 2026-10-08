@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, DollarSign, AlertTriangle, CheckCircle, XCircle, Calendar } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { articleJsonLd } from '../data/site';
 
 export default function BlogArticleTaxCredits() {
   return (
@@ -18,6 +20,14 @@ export default function BlogArticleTaxCredits() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="2026 HVAC Tax Credits & Rebates: Save Up to $3,600+" />
         <meta name="twitter:description" content="Complete guide to saving money on HVAC upgrades in 2026." />
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd({
+            path: '/blog/hvac-tax-credits-rebates-2026',
+            headline: '2025-2026 HVAC Tax Credits & Rebates: Complete Guide (United States)',
+            description: 'The federal 25C credit gives up to $3,200/year on HVAC equipment; IRA rebates add up to $14,000 more. Every incentive, updated for 2026.',
+            dateModified: '2026-01-02',
+          }))}
+        </script>
       </Helmet>
 
       <article className="max-w-4xl mx-auto px-4 py-12">
@@ -33,6 +43,7 @@ export default function BlogArticleTaxCredits() {
             <span>13 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">2025-2026 HVAC Tax Credits & Rebates: Complete Guide (United States)</h1>
+          <ArticleByline />
         </header>
 
         <div className="prose prose-lg max-w-none">

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { articleJsonLd } from '../data/site';
 
 export default function BlogArticleChoosing() {
   return (
@@ -18,7 +20,7 @@ export default function BlogArticleChoosing() {
         <meta property="og:title" content="The Complete Guide to Choosing the Right SEER Rating" />
         <meta property="og:description" content="Find your perfect SEER rating sweet spot—balancing efficiency, cost, and payback period." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/choosing-seer-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Choose the Right SEER Rating" />
@@ -66,6 +68,14 @@ export default function BlogArticleChoosing() {
             ]
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd({
+            path: '/blog/choosing-the-right-seer-rating',
+            headline: 'The Complete Guide to Choosing the Right SEER Rating for Your Home',
+            description: "SEER 14, 16, 18, or 20+? The right pick depends on climate, electricity rate, and how long you'll stay. Payback math for each scenario.",
+            dateModified: '2025-11-10',
+          }))}
+        </script>
       </Helmet>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
@@ -85,6 +95,7 @@ export default function BlogArticleChoosing() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">The Complete Guide to Choosing the Right SEER Rating for Your Home</h1>
             <p className="text-xl text-gray-600">How to find your perfect efficiency sweet spot—balancing savings, cost, and payback period</p>
+            <ArticleByline updated="2025-11-10" />
           </header>
 
           <section className="prose prose-lg max-w-none mb-8">

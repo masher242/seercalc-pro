@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { AUTHOR, SITE_EMAIL } from '../data/site';
 
 export default function Footer() {
   return (
@@ -64,8 +65,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3">Resources</h3>
+            <h3 className="font-semibold text-gray-900 mb-3">About &amp; Resources</h3>
             <ul className="space-y-2 text-sm">
+              <li>
+                <Link to={AUTHOR.path} className="text-gray-600 hover:text-teal-600 transition-colors">
+                  About {AUTHOR.name}
+                </Link>
+              </li>
+              <li>
+                <a href={`mailto:${SITE_EMAIL}`} className="text-gray-600 hover:text-teal-600 transition-colors">
+                  {SITE_EMAIL}
+                </a>
+              </li>
               <li>
                 <a href="https://www.energystar.gov" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
                   ENERGY STAR
@@ -82,7 +93,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 pt-6 text-center">
           <p className="text-gray-600 text-sm">
-            © 2026 <span className="font-semibold text-gray-900">airconditionanswers.com</span> — HVAC SEER Savings Calculator
+            © 2026 <span className="font-semibold text-gray-900">AirConditionAnswers.com</span> — Free AC calculators and buying guides
           </p>
           <p className="text-gray-500 text-xs mt-2">
             Estimates based on industry-standard calculations. Actual savings may vary.

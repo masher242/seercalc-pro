@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleAirFilter() {
   return (
@@ -17,7 +19,7 @@ export default function BlogArticleAirFilter() {
         <meta property="og:url" content="https://airconditionanswers.com/blog/air-filter-electricity-bill" />
         <meta property="og:title" content="Change Your Air Filter, Change Your Bill: The $10 Fix That Pays for Itself" />
         <meta property="og:description" content="A dirty filter can reduce AC efficiency by 5–15%. Here's the full maintenance breakdown, MERV guide, and annual cost of neglect." />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:published_time" content="2026-02-05" />
         <meta property="article:section" content="HVAC Guides" />
         <meta property="article:tag" content="Air Filter" />
@@ -35,18 +37,9 @@ export default function BlogArticleAirFilter() {
             "@type": "Article",
             "headline": "Change Your Air Filter, Change Your Bill: The $10 Fix That Pays for Itself Every Month",
             "datePublished": "2026-02-05",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airconditionanswers.com/logo.png"
-              }
-            },
+            "dateModified": "2026-02-05",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "description": "A clogged air filter can reduce AC efficiency by 5–15%, costing $90–$308/year in wasted electricity. Here's the full maintenance schedule, MERV rating guide, and the quick DIY tasks that protect your system."
           })}
         </script>
@@ -70,6 +63,7 @@ export default function BlogArticleAirFilter() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Change Your Air Filter, Change Your Bill: The $10 Fix That Pays for Itself Every Month</h1>
             <p className="text-xl text-gray-600">It's the cheapest, fastest, most overlooked efficiency upgrade in your home — and skipping it is quietly costing you hundreds of dollars a year.</p>
+            <ArticleByline />
           </header>
 
           <section className="prose prose-lg max-w-none">

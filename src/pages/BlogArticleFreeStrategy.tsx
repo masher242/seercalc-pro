@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleFreeStrategy() {
   return (
@@ -17,7 +19,7 @@ export default function BlogArticleFreeStrategy() {
         <meta property="og:url" content="https://airconditionanswers.com/blog/thermostat-setback-strategy" />
         <meta property="og:title" content="The $0 Thermostat Strategy: Cut Your Cooling Bill Without Buying Anything" />
         <meta property="og:description" content="The DOE says adjusting your thermostat 7–10°F for 8 hours/day saves approximately 10% annually. Here's the full free strategy." />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:published_time" content="2026-01-29" />
         <meta property="article:section" content="HVAC Guides" />
         <meta property="article:tag" content="Thermostat" />
@@ -35,18 +37,9 @@ export default function BlogArticleFreeStrategy() {
             "@type": "Article",
             "headline": "The $0 Thermostat Strategy: How to Cut Your Cooling Bill Without Buying Anything",
             "datePublished": "2026-01-29",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airconditionanswers.com/logo.png"
-              }
-            },
+            "dateModified": "2026-01-29",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "description": "The DOE estimates adjusting your thermostat 7–10°F for 8 hours a day saves approximately 10% annually on heating and cooling. Here's the full free strategy, including setpoint schedules, the ceiling fan trick, and myths to stop believing."
           })}
         </script>
@@ -70,6 +63,7 @@ export default function BlogArticleFreeStrategy() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">The $0 Thermostat Strategy: How to Cut Your Cooling Bill Without Buying Anything</h1>
             <p className="text-xl text-gray-600">Before you spend a dollar on new equipment, there's a strategy that costs nothing — and it can reduce your cooling bill by 10% or more starting tonight</p>
+            <ArticleByline />
           </header>
 
           <section className="prose prose-lg max-w-none">

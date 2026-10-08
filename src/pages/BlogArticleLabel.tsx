@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { articleJsonLd } from '../data/site';
 
 export default function BlogArticleLabel() {
   return (
@@ -18,7 +20,7 @@ export default function BlogArticleLabel() {
         <meta property="og:title" content="How to Read Your HVAC System's Label - Complete Guide" />
         <meta property="og:description" content="Decode your AC unit's nameplate and find crucial information like SEER rating, tonnage, and model number." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/hvac-label-guide-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="HVAC Guides" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -121,6 +123,14 @@ export default function BlogArticleLabel() {
             ]
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd({
+            path: '/blog/how-to-read-hvac-label',
+            headline: "How to Read Your HVAC System's Label (and Find Your SEER Rating)",
+            description: "Look at the label on your AC unit and we'll show you how to decode the SEER rating, tonnage, and age — with model formulas for every brand.",
+            dateModified: '2025-11-10',
+          }))}
+        </script>
       </Helmet>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
@@ -140,6 +150,7 @@ export default function BlogArticleLabel() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">How to Read Your HVAC System's Label (and Find Your SEER Rating)</h1>
             <p className="text-xl text-gray-600">Your complete visual guide to decoding AC nameplates and understanding what all those numbers mean</p>
+            <ArticleByline updated="2025-11-10" />
           </header>
 
           {/* Quick Answer — AI/GEO optimized */}

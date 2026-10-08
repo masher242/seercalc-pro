@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { model: 'GXV6S', tier: 'Mid-High', compressor: 'Variable-Speed Inverter', seer2: 'Up to 17.2', refrigerant: 'R-32', note: 'Side discharge; top of new R-32 lineup' },
@@ -50,7 +52,7 @@ export default function BrandGoodman() {
         <meta property="og:title" content="Goodman AC Review 2026: Is the Budget King Still Worth It?" />
         <meta property="og:description" content="Daikin-owned Goodman is the US budget AC leader. Lifetime compressor warranty, R-32 refrigerant advantage, lowest installed costs. Full 2026 review with real pricing and known issues." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/goodman-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Goodman" />
         <meta property="article:tag" content="HVAC" />
@@ -68,8 +70,9 @@ export default function BrandGoodman() {
             "@type": "Review",
             "name": "Goodman Air Conditioner Review 2026",
             "reviewBody": "Goodman is the US budget AC market leader, owned by Daikin (world's largest HVAC manufacturer). Manufactured at the same 4.2M sq ft Waller, Texas facility as Daikin and Amana. The lifetime compressor warranty on registered units is exceptional for a budget brand. Goodman's choice of R-32 refrigerant gives it a meaningful service cost advantage over Carrier, Trane, and Lennox (R-454B). Known issues: capacitor failures, evaporator coil leaks within 3-4 years on some units, and no labor coverage under warranty. Best for rental properties, budget-constrained buyers, and anyone who wants open wholesale parts access.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "Goodman Air Conditioners",
@@ -160,6 +163,7 @@ export default function BrandGoodman() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Goodman Air Conditioners: 2026 Review</h1>
             <p className="text-xl text-gray-600">The US budget AC market leader — owned by the world's largest HVAC manufacturer. Real pricing, lifetime compressor warranty details, R-32 refrigerant advantage, and honest known issues</p>
+            <ArticleByline />
           </header>
 
           {/* Quick Answer */}

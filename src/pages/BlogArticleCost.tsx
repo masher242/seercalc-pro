@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleCost() {
   return (
@@ -19,7 +21,7 @@ export default function BlogArticleCost() {
         <meta property="og:description" content="Detailed AC pricing guide: costs by size, SEER rating, brand, and region. Get accurate estimates for your 2026 AC replacement." />
         <meta property="article:published_time" content="2026-01-02T10:00:00Z" />
         <meta property="article:modified_time" content="2026-01-02T10:00:00Z" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Buying Guide" />
         <meta property="article:tag" content="AC Cost" />
         <meta property="article:tag" content="HVAC Pricing" />
@@ -34,14 +36,8 @@ export default function BlogArticleCost() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "How Much Does a New AC Unit Cost in 2026? Complete Price Guide",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com"
-            },
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "datePublished": "2026-01-02",
             "dateModified": "2026-01-02",
             "description": "Comprehensive guide to air conditioner costs in 2026, including pricing by size, SEER rating, brand, and installation factors."
@@ -114,6 +110,7 @@ export default function BlogArticleCost() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">How Much Does a New AC Unit Cost in 2026? (Complete Price Guide)</h1>
             <p className="text-xl text-gray-600">Detailed USA pricing by size, SEER rating, and brand—plus hidden costs, rebates, and ROI calculations</p>
+            <ArticleByline updated="2026-01-02" />
           </header>
 
           <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-6 mb-8">
