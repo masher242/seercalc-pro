@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* Keep scrolled-to content (calculator results, #anchors) clear of the pinned
+     header + calculator bar. */
+  html {
+    scroll-padding-top: 9rem;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
   }

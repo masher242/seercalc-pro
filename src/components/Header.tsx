@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { BookOpen, Star, Calculator, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import CalculatorBar, { showCalculatorBar } from './CalculatorBar';
 
 export default function Header() {
   const location = useLocation();
@@ -71,6 +72,8 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      {showCalculatorBar(location.pathname) && <CalculatorBar />}
 
       {/* Mobile dropdown */}
       {mobileOpen && (
