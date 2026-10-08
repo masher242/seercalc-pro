@@ -71,6 +71,16 @@ export default function AcCostIndex() {
           </div>
         </div>
 
+        <Link
+          to="/ac-cost/caribbean"
+          className="flex items-center justify-between gap-3 rounded-lg border border-teal-200 bg-teal-50 px-4 py-3 mb-6 hover:border-teal-400 transition-colors"
+        >
+          <span className="text-sm text-gray-800">
+            <strong>Outside the U.S.?</strong> See what AC costs to run in the Bahamas, Jamaica, Puerto Rico and 5 more Caribbean countries.
+          </span>
+          <span className="text-sm font-semibold text-teal-700 whitespace-nowrap">Caribbean →</span>
+        </Link>
+
         <div className="flex items-center gap-2 mb-3 text-sm">
           <span className="text-gray-500">Sort by:</span>
           {(['cost', 'name'] as const).map((k) => (

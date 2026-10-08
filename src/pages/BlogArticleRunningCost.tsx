@@ -264,6 +264,8 @@ export default function BlogArticleRunningCost() {
           </div>
           <p className={p}>
             <Link to="/ac-cost" className={a}>See all 50 states and DC →</Link>
+            <span className="mx-2 text-gray-300">|</span>
+            <Link to="/ac-cost/caribbean" className={a}>Costs in the Caribbean →</Link>
           </p>
 
           <h2 className={h2}>What makes your AC cost more (or less)</h2>

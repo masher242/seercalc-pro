@@ -40,6 +40,7 @@ import CalculatorACSizing from './pages/CalculatorACSizing';
 import AboutMarkCurant from './pages/AboutMarkCurant';
 import AcCostIndex from './pages/AcCostIndex';
 import AcCostState from './pages/AcCostState';
+import AcCostCaribbean from './pages/AcCostCaribbean';
 import BlogArticleRunningCost from './pages/BlogArticleRunningCost';
 import NotFound from './pages/NotFound';
 
@@ -96,6 +97,7 @@ function AppContent() {
           <Route path="/calculators/ac-sizing" element={<CalculatorACSizing />} />
           <Route path="/about/mark-curant" element={<AboutMarkCurant />} />
           <Route path="/ac-cost" element={<AcCostIndex />} />
+          <Route path="/ac-cost/caribbean" element={<AcCostCaribbean />} />
           <Route path="/ac-cost/:state" element={<AcCostState />} />
           <Route path="/blog/how-much-does-it-cost-to-run-ac" element={<BlogArticleRunningCost />} />
           <Route path="*" element={<NotFound />} />
