@@ -9,7 +9,7 @@ export default function BlogArticleWhatIsSEER() {
   return (
     <>
       <Helmet>
-        <title>What Is a SEER Rating? ❄️ How It Affects Your AC Bill (With Cost Tables)</title>
+        <title>What Is a SEER Rating? ❄️ How It Affects Your AC Bill</title>
         <meta name="description" content="Your AC's SEER rating controls how much you pay per hour of cooling. Real cost tables by state — 10 SEER vs 20 SEER can mean $500+/year." />
         <meta name="keywords" content="what is SEER rating, SEER rating explained, AC efficiency rating, SEER rating electricity bill, HVAC energy efficiency, air conditioner SEER" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -152,7 +152,7 @@ export default function BlogArticleWhatIsSEER() {
             <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700">
               <li><strong>Older systems (pre-2006):</strong> Often SEER 8–10</li>
               <li><strong>Current federal minimum (as of 2023):</strong> SEER2 13.4–14.3, depending on your region</li>
-              <li><strong>ENERGY STAR certified:</strong> SEER 14 minimum</li>
+              <li><strong>ENERGY STAR certified:</strong> at least 15.2 SEER2 and 12.0 EER2 for a split central AC (roughly SEER 16)</li>
               <li><strong>High-efficiency systems:</strong> SEER 16–20</li>
               <li><strong>Premium systems:</strong> SEER 22–25+</li>
             </ul>

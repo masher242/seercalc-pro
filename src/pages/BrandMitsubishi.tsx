@@ -41,7 +41,7 @@ export default function BrandMitsubishi() {
   return (
     <>
       <Helmet>
-        <title>Mitsubishi Mini-Split Review 2026 ❄️ Best Ductless Brand? (32.2 SEER2)</title>
+        <title>Mitsubishi Mini-Split Review 2026 ❄️ Best Ductless Brand?</title>
         <meta name="description" content="Mitsubishi leads mini-splits with 32.2 SEER2 and Hyper-Heat to -13°F. But the Comfort app is a disaster and there's no central AC option." />
         <meta name="keywords" content="Mitsubishi Electric mini split review 2026, Mitsubishi METUS review, Mitsubishi MSZ-FS review, Mitsubishi vs Daikin mini split, Mitsubishi Diamond Contractor warranty, H2i Hyper-Heat review 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

@@ -9,7 +9,7 @@ export default function BlogArticleReplacement() {
   return (
     <>
       <Helmet>
-        <title>11 Signs Your AC Is Dying ⚠️ When to Replace vs Keep Repairing</title>
+        <title>11 Signs Your AC Is Dying ⚠️ When to Replace vs Repair</title>
         <meta name="description" content="AC running constantly, making noise, or costing more each summer? 11 warning signs that tell you when repair isn't worth it anymore." />
         <meta name="keywords" content="when to replace air conditioner, signs AC needs replacing, AC replacement signs, repair or replace AC, air conditioner replacement cost, AC warning signs, when to buy new AC" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/when-to-replace-air-conditioner" />
@@ -572,7 +572,7 @@ export default function BlogArticleReplacement() {
                     <span className="font-semibold text-red-700">$2,000</span>
                   </div>
                   <div className="flex justify-between items-center pb-2 border-b border-red-200">
-                    <span>Missed rebates & tax credits</span>
+                    <span>Missed rebates</span>
                     <span className="font-semibold text-red-700">$2,500</span>
                   </div>
                   <div className="flex justify-between items-center pt-3">
@@ -735,7 +735,7 @@ export default function BlogArticleReplacement() {
                     <li>• Efficiency has degraded 20-30% - costing you $200-$400/year in wasted electricity</li>
                     <li>• Modern ACs are 40-60% more efficient - you'll save $300-$500/year</li>
                     <li>• Could fail anytime - emergency replacement costs $2,000-$4,000 more</li>
-                    <li>• Federal tax credit: 30% (up to $2,000) - free money</li>
+                    <li>• Utility rebates may lower the cost (the federal tax credit ended December 31, 2025)</li>
                     <li>• ROI: 5-8 years - replacement pays for itself through energy savings</li>
                   </ul>
                 </div>
@@ -765,7 +765,7 @@ export default function BlogArticleReplacement() {
                       <li>• High-efficiency (SEER 20+): $8,000-$12,000</li>
                     </ul>
                   </div>
-                  <p className="text-sm"><strong>After rebates:</strong> Federal credit (-$2,000) + Utility rebate (-$300 to -$1,000) = <strong>Net cost: $1,200-$9,000</strong></p>
+                  <p className="text-sm"><strong>After rebates:</strong> No federal tax credit for systems installed after December 31, 2025. A utility rebate (often $300 to $1,000, where offered) brings the <strong>net cost to roughly $2,500-$11,700</strong></p>
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">

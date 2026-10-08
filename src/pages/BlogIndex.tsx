@@ -70,10 +70,10 @@ const articles = [
   },
   {
     slug: 'hvac-tax-credits-rebates-2026',
-    title: '2026 HVAC Tax Credits & Rebates: Complete Guide (United States)',
-    description: 'Save $500-$3,600+ on HVAC upgrades in 2026. Complete guide to federal tax credits (30%, max $2,000), state rebates, utility incentives, and how to stack them',
-    date: '2026-01-02',
-    readTime: '13 min read',
+    title: 'HVAC Tax Credits & Rebates in 2026: The Federal Credit Is Gone. Here\'s What\'s Left.',
+    description: 'The federal 25C credit ended for systems installed after Dec 31, 2025. What still pays in 2026: state heat pump rebates (HEEHRA), utility rebates and promotions.',
+    date: '2026-10-08',
+    readTime: '8 min read',
     category: 'Buying Guide'
   },
   {
@@ -171,7 +171,7 @@ export default function BlogIndex() {
   return (
     <>
       <Helmet>
-        <title>HVAC Efficiency Hub 📚 Guides That Save You Money on AC (2026)</title>
+        <title>HVAC Efficiency Hub 📚 Guides That Save You Money on AC</title>
         <meta name="description" content="No-fluff guides on SEER ratings, AC costs, brand comparisons, tax credits, and energy savings — before you spend $5,000–$15,000 on a system." />
         <meta name="keywords" content="HVAC blog, SEER rating guide, air conditioner efficiency, AC savings tips, energy efficiency articles" />
         <link rel="canonical" href="https://airconditionanswers.com/blog" />

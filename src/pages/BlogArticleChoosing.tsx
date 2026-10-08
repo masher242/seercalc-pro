@@ -9,7 +9,7 @@ export default function BlogArticleChoosing() {
   return (
     <>
       <Helmet>
-        <title>What SEER Rating Should I Get? 🤔 The Answer Depends on 3 Things</title>
+        <title>What SEER Rating Should I Get? 🤔 It Depends on 3 Things</title>
         <meta name="description" content="SEER 14, 16, 18, or 20+? The right pick depends on climate, electricity rate, and how long you'll stay. Payback math for each scenario." />
         <meta name="keywords" content="choosing SEER rating, best SEER for my home, SEER 16 vs 18, AC efficiency guide, HVAC buying guide, optimal SEER rating, cost vs efficiency" />
         <meta name="robots" content="index, follow" />
@@ -63,7 +63,7 @@ export default function BlogArticleChoosing() {
               {
                 "@type": "HowToStep",
                 "name": "Factor in Rebates",
-                "text": "Research available rebates and tax credits that can reduce upfront costs."
+                "text": "Check utility rebates and, for heat pumps, state rebate programs that can reduce upfront costs. The federal tax credit ended for systems installed after December 31, 2025."
               }
             ]
           })}
@@ -266,27 +266,30 @@ export default function BlogArticleChoosing() {
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Factor 5: Available Rebates and Incentives</h3>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              Rebates can dramatically change the cost-benefit equation.
+              Rebates can change the cost-benefit equation, but the biggest one is gone: the federal 25C tax credit
+              ended for systems installed after December 31, 2025. In 2026, the money comes from your utility and, for
+              heat pumps, your state.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>Federal Tax Credits (2024-2032):</strong></p>
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>What's available in 2026:</strong></p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-              <li>Up to 30% of equipment + installation costs</li>
-              <li>Maximum $2,000 for central AC</li>
-              <li>Requirements: Must meet ENERGY STAR criteria (typically SEER 16+)</li>
-              <li>Impact: Can reduce effective cost by $1,000-$2,000</li>
+              <li><strong>Utility rebates:</strong> vary by utility; many require ENERGY STAR certification (15.2 SEER2 and 12.0 EER2 for a split central AC) or a minimum SEER2 tier</li>
+              <li><strong>State heat pump rebates (HEEHRA):</strong> income-qualified, up to $8,000 for a heat pump where your state has launched; cooling-only AC doesn't qualify</li>
+              <li><strong>No federal tax credit</strong> for any AC or heat pump installed in 2026</li>
             </ul>
 
             <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-              <p className="font-bold text-gray-900 mb-3">Example with Rebates:</p>
-              <p className="text-gray-700 mb-2">SEER 18 system costs $2,000 more than SEER 14, but you receive:</p>
+              <p className="font-bold text-gray-900 mb-3">Example with a utility rebate:</p>
+              <p className="text-gray-700 mb-2">A SEER 18 system costs $2,000 more than a SEER 14. If your utility pays an $800 rebate for the higher tier:</p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-2">
-                <li>$600 federal tax credit</li>
-                <li>$800 utility rebate</li>
-                <li>Net additional cost: $600</li>
-                <li>Annual savings: $350</li>
-                <li>New payback: 1.7 years (excellent!)</li>
+                <li>Net additional cost: $1,200</li>
+                <li>Annual savings at a high electricity rate (about 40¢/kWh, 3-ton, 1,500 hours/year): about $340</li>
+                <li>Payback: about 3.5 years</li>
               </ul>
+              <p className="text-gray-700 text-sm mb-0">
+                At the U.S. average rate (17.45¢/kWh) the same upgrade saves about $150 a year, so payback stretches to
+                about 8 years. See the <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-teal-600 hover:text-teal-700 font-medium">2026 tax credit and rebate guide</Link>.
+              </p>
             </div>
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Factor 6: Your Home's Characteristics</h3>

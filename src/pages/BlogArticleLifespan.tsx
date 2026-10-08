@@ -9,7 +9,7 @@ export default function BlogArticleLifespan() {
   return (
     <>
       <Helmet>
-        <title>How Long Do Air Conditioners Last? ⏳ Lifespan by Brand & Type (2026)</title>
+        <title>How Long Do Air Conditioners Last? ⏳ By Brand & Type</title>
         <meta name="description" content="Average AC lifespan is 15–20 years but varies by brand — Trane and Carrier skew higher, Goodman lower. Lifespan by brand, type, and climate." />
         <meta name="keywords" content="air conditioner lifespan, how long do AC units last, AC longevity by brand, central air lifespan, mini-split lifespan, HVAC replacement, AC maintenance" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/how-long-do-air-conditioners-last" />
@@ -880,7 +880,7 @@ export default function BlogArticleLifespan() {
                 <ul className="list-disc list-inside text-gray-700 text-sm space-y-1 ml-4 mb-2">
                   <li>Efficiency has degraded 20-30% (costing you $200-$400/year extra in electricity)</li>
                   <li>Modern units are 40-60% more efficient (SEER 16+ vs old SEER 8-10)</li>
-                  <li>Federal tax credit covers 30% of replacement (up to $2,000)</li>
+                  <li>Utility rebates may lower the cost (the federal tax credit ended December 31, 2025)</li>
                   <li>Likely using R-22 refrigerant (expensive to repair)</li>
                   <li>Could fail anytime (emergency replacement costs more)</li>
                   <li>Parts becoming hard to find</li>
@@ -1001,7 +1001,7 @@ export default function BlogArticleLifespan() {
           <div className="border-t border-gray-300 pt-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Calculate Your Replacement ROI</h3>
             <p className="text-gray-700 mb-6">
-              Wondering if it's time to replace? Calculate annual savings with new efficient system, payback period on replacement cost, total cost of ownership comparison, and net cost after federal tax credits and rebates.
+              Wondering if it's time to replace? Calculate the annual savings from a new efficient system and the payback period on the replacement cost.
             </p>
             <Link
               to="/"

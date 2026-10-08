@@ -41,7 +41,7 @@ export default function BrandGoodman() {
   return (
     <>
       <Helmet>
-        <title>Goodman AC Review 2026 💰 Best Budget Brand? (Honest Pros & Cons)</title>
+        <title>Goodman AC Review 2026 💰 Best Budget Brand? Pros & Cons</title>
         <meta name="description" content="Goodman is the cheapest major brand at $3,200–$8,500 installed, now owned by Daikin. Lifetime compressor warranty, but no labor coverage." />
         <meta name="keywords" content="Goodman AC review 2026, is Goodman a good brand, Goodman air conditioner reliability, Goodman warranty 2026, Goodman vs Carrier, Goodman GSXV9 review, best budget AC 2026" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

@@ -9,7 +9,7 @@ export default function BlogArticleBrands() {
   return (
     <>
       <Helmet>
-        <title>Best AC Brands 2026 🏆 Ranked by Reliability, Price & Warranty</title>
+        <title>Best AC Brands 2026 🏆 Ranked by Reliability & Price</title>
         <meta name="description" content="Every major AC brand ranked — Trane, Carrier, Lennox, Goodman, Daikin, Rheem — by reliability, installed cost, and warranty. Updated July 2026." />
         <meta name="keywords" content="best AC brands, air conditioner brands 2026, Trane vs Carrier, Lennox reliability, Goodman review, HVAC brand comparison, most reliable AC, AC brand rankings" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/best-air-conditioner-brands-2026" />
@@ -273,7 +273,7 @@ export default function BlogArticleBrands() {
               </div>
 
               <p className="text-sm text-gray-600">
-                <strong>Note:</strong> The 2025 minimum efficiency for new AC installations is 14.3 SEER2 in southern states and 13.4 SEER2 in northern states.
+                <strong>Note:</strong> The current federal minimum for a new central AC is 14.3 SEER2 in southeastern and southwestern states and 13.4 SEER2 in northern states. ENERGY STAR certification requires at least 15.2 SEER2 and 12.0 EER2 for a split system.
               </p>
             </section>
 

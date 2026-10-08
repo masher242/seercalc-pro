@@ -9,7 +9,7 @@ export default function BlogArticleCost() {
   return (
     <>
       <Helmet>
-        <title>New AC Unit Cost 2026 💰 Real Prices by Size, Brand & SEER Rating</title>
+        <title>New AC Unit Cost 2026 💰 Prices by Size, Brand & SEER</title>
         <meta name="description" content="Central AC runs $5,500–$16,000 installed in 2026, most 3-ton systems $6,000–$9,000. Costs broken down by brand, tonnage, and efficiency." />
         <meta name="keywords" content="AC unit cost 2026, air conditioner price, new AC cost, HVAC replacement cost, central air installation price, AC cost by SEER rating" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -198,7 +198,7 @@ export default function BlogArticleCost() {
                 <li><a href="#regional-pricing" className="text-blue-600 hover:text-blue-700">Regional Price Variations</a></li>
                 <li><a href="#cost-factors" className="text-blue-600 hover:text-blue-700">What Affects AC Pricing?</a></li>
                 <li><a href="#financing" className="text-blue-600 hover:text-blue-700">Financing Options</a></li>
-                <li><a href="#rebates" className="text-blue-600 hover:text-blue-700">Rebates & Tax Credits</a></li>
+                <li><Link to="/blog/hvac-tax-credits-rebates-2026" className="text-blue-600 hover:text-blue-700">Rebates & Tax Credits (2026 update) →</Link></li>
                 <li><a href="#roi" className="text-blue-600 hover:text-blue-700">Calculate Your ROI</a></li>
                 <li><a href="#save-money" className="text-blue-600 hover:text-blue-700">How to Save Money</a></li>
                 <li><a href="#faq" className="text-blue-600 hover:text-blue-700">Frequently Asked Questions</a></li>
@@ -620,7 +620,7 @@ export default function BlogArticleCost() {
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Are there tax credits for new AC units in 2026?</h3>
-                <p className="text-gray-700"><strong>Yes, but with limits.</strong> Federal 25C credit: 30% of cost (standard AC limited to $1,200 cap shared with other residential energy property; heat pumps get separate $2,000 cap). ENERGY STAR Most Efficient required (SEER2 ≥16). Plus state/utility rebates of $200-$1,500+. Heat pumps can qualify for up to $3,200 federal + $8,000+ state rebates. <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-blue-600 underline">See full tax credit guide</Link>.</p>
+                <p className="text-gray-700"><strong>No federal tax credit.</strong> The 25C credit (30% of cost, up to $600 for a central AC or $2,000 for a heat pump) ended for systems installed after December 31, 2025. What remains in 2026: utility rebates, which often require ENERGY STAR certification (15.2 SEER2 / 12.0 EER2 for a split AC), and income-qualified state HEEHRA rebates of up to $8,000 for heat pumps (not cooling-only AC) where your state has launched. <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-blue-600 underline">See the 2026 tax credit and rebate guide</Link>.</p>
               </div>
             </div>
 

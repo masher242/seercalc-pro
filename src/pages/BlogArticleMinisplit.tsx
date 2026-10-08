@@ -9,7 +9,7 @@ export default function BlogArticleMinisplit() {
   return (
     <>
       <Helmet>
-        <title>Mini-Split Cost 2026 ❄️ Ductless AC Pricing by Zone, Brand & Install Type</title>
+        <title>Mini-Split Cost 2026 ❄️ Ductless Pricing by Zone & Brand</title>
         <meta name="description" content="Single-zone mini-split: $3,000–$6,000 installed. Multi-zone: $6,500–$15,000+. Costs by brand — Mitsubishi, Daikin, Fujitsu, and budget lines." />
         <meta name="keywords" content="mini split cost 2026, ductless AC price, mini split installation cost, ductless air conditioner cost, mini split vs central AC cost" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/mini-split-cost-2026" />
@@ -119,7 +119,7 @@ export default function BlogArticleMinisplit() {
                   <li><a href="#operating-costs" className="text-blue-600 hover:text-blue-700">Operating Costs & Efficiency</a></li>
                   <li><a href="#hidden-costs" className="text-blue-600 hover:text-blue-700">Hidden Costs to Budget For</a></li>
                   <li><a href="#regional-pricing" className="text-blue-600 hover:text-blue-700">Regional Price Variations</a></li>
-                  <li><a href="#rebates" className="text-blue-600 hover:text-blue-700">Rebates & Tax Credits</a></li>
+                  <li><Link to="/blog/hvac-tax-credits-rebates-2026" className="text-blue-600 hover:text-blue-700">Rebates & Tax Credits (2026 update) →</Link></li>
                   <li><a href="#roi" className="text-blue-600 hover:text-blue-700">Calculate Your ROI</a></li>
                   <li><a href="#save-money" className="text-blue-600 hover:text-blue-700">How to Save Money</a></li>
                   <li><a href="#faq" className="text-blue-600 hover:text-blue-700">Frequently Asked Questions</a></li>

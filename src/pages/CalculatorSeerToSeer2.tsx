@@ -11,8 +11,8 @@ const SPLIT_FACTOR = 0.9485;
 const MINI_SPLIT_FACTOR = 1.0;
 
 const REGIONAL_MINIMUMS = [
-  { region: 'North (CT, IL, IN, ME, MA, MI, MN, NH, NJ, NY, OH, PA, RI, VT, WI)', minSeer2: 13.4, minSeer: 14.1 },
-  { region: 'South & Southwest (AL, AR, AZ, DC, DE, FL, GA, HI, KY, LA, MD, MS, MO, NC, NM, NV, OK, SC, TN, TX, UT, VA, WV)', minSeer2: 14.3, minSeer: 15.1 },
+  { region: 'North (all other states, e.g. CO, IL, MI, MN, MO, NY, OH, PA, UT, WA, WV)', minSeer2: 13.4, minSeer: 14.1 },
+  { region: 'Southeast & Southwest (AL, AR, AZ, CA, DC, DE, FL, GA, HI, KY, LA, MD, MS, NC, NM, NV, OK, SC, TN, TX, VA, Puerto Rico); Southwest states also need 11.7 EER2', minSeer2: 14.3, minSeer: 15.1 },
 ];
 
 const COMMON_RATINGS = [
@@ -92,7 +92,7 @@ export default function CalculatorSeerToSeer2() {
   return (
     <>
       <Helmet>
-        <title>SEER to SEER2 Converter ⚡ Instant Free Conversion + Compliance Check</title>
+        <title>SEER to SEER2 Converter ⚡ Free, With Compliance Check</title>
         <meta name="description" content="Convert any SEER rating to SEER2 (or back) in one click to compare your old system to new models. Includes a 2026 regional compliance check." />
         <meta name="keywords" content="SEER to SEER2 converter, SEER2 to SEER conversion, SEER2 calculator, what is my SEER2 equivalent, SEER vs SEER2 conversion calculator 2026" />
         <meta name="robots" content="index, follow" />
@@ -400,7 +400,7 @@ export default function CalculatorSeerToSeer2() {
               { q: "What is the difference between SEER and SEER2?", a: "Both measure seasonal cooling efficiency, but SEER2 uses more realistic test conditions. SEER tests use 0.1 inches of water column (IWC) external static pressure — essentially no ductwork resistance. SEER2 uses 0.5 IWC, which better simulates actual home ductwork. This makes SEER2 ratings about 4.5–5% lower for the same physical equipment. SEER2 became required for all new equipment on January 1, 2023." },
               { q: "Is SEER 16 the same as SEER2 15?", a: "Nearly identical. SEER 16 converts to SEER2 15.2. If you see SEER2 15 on a new system and your old system was SEER 16, you're getting essentially the same efficiency — not an upgrade, not a downgrade. Make sure the contractor is comparing apples to apples." },
               { q: "Why did SEER change to SEER2?", a: "The Department of Energy updated the testing standard because the old SEER tests were too optimistic. Real-world ductwork creates significantly more resistance than the old 0.1 IWC test pressure assumed. SEER2's 0.5 IWC pressure better reflects how systems actually perform in homes — giving buyers a more accurate picture of real-world efficiency." },
-              { q: "What is the minimum SEER2 I can buy in 2026?", a: "13.4 SEER2 in northern states, 14.3 SEER2 in southern and southwestern states. Any new split-system AC or heat pump installed in 2026 must meet or exceed these thresholds. Contractors cannot legally install new equipment below these minimums, even if older non-compliant equipment is still sitting in a warehouse." },
+              { q: "What is the minimum SEER2 I can buy in 2026?", a: "13.4 SEER2 in northern states, 14.3 SEER2 in southern and southwestern states. Those regional minimums apply to central air conditioners; split-system heat pumps must reach 14.3 SEER2 (and 7.5 HSPF2) in every region. Contractors cannot legally install new equipment below these minimums, even if older non-compliant equipment is still sitting in a warehouse." },
               { q: "Do I need to convert SEER to SEER2 for tax credit purposes?", a: "The federal 25C Energy Efficient Home Improvement Credit expired December 31, 2025 — no federal tax credit applies to 2026 installations regardless of SEER2 rating. For state and utility rebate programs, check requirements at dsireusa.org — these typically specify SEER2 minimums for eligible equipment." },
             ].map((item, i) => (
               <div key={i} className="bg-gray-50 rounded-lg p-5 border border-gray-200">
