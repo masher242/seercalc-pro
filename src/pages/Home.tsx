@@ -110,7 +110,7 @@ export default function Home() {
                 Visit Efficiency Hub
               </span>
               <span className="hidden sm:block text-[13px] text-gray-600 font-normal">
-                Learn about savings, brands, tax credits & maintenance
+                Learn about savings, costs, brands & maintenance
               </span>
             </div>
           </Link>
@@ -155,11 +155,6 @@ export default function Home() {
             <ResultsSection results={results} onStartOver={handleStartOver} />
           </div>
         )}
-
-        <div data-advanced-options className="hidden mt-8 bg-white rounded-lg p-6 shadow-lg">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">Advanced Options</h3>
-          <p className="text-gray-600">Coming soon: Climate zone adjustments, rebate finder, and more...</p>
-        </div>
 
         <div className="mt-12 bg-teal-50 rounded-lg p-6 border border-teal-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Want to Learn More?</h2>

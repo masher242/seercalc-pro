@@ -41,10 +41,6 @@ const liveCalculators = [
   },
 ];
 
-const comingSoon = [
-  { title: 'Tax Credit & Rebate Estimator', description: 'See which state and utility rebates you qualify for based on your location, income, and system type.' },
-];
-
 export default function CalculatorsIndex() {
   return (
     <>
@@ -118,25 +114,11 @@ export default function CalculatorsIndex() {
           ))}
         </div>
 
-        {/* Coming soon */}
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon</h2>
-          <p className="text-gray-500 text-sm mb-5">More tools in development.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {comingSoon.map(calc => (
-              <div key={calc.title} className="bg-gray-50 rounded-lg border border-gray-200 p-4">
-                <p className="font-semibold text-gray-700 text-sm mb-1">{calc.title}</p>
-                <p className="text-xs text-gray-500">{calc.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Why these calculators */}
         <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
           <h2 className="text-lg font-bold text-gray-900 mb-3">Why These Calculators Exist</h2>
           <p className="text-sm text-gray-600 leading-relaxed">
-            The HVAC industry doesn't make it easy to compare systems objectively. SEER and SEER2 ratings aren't directly comparable. Repair vs. replace decisions involve multiple variables that contractors rarely walk you through. Rebate eligibility varies by state, utility, and income. These tools exist to give you the same analysis a good HVAC engineer would do — in under 5 minutes, for free.
+            The HVAC industry doesn't make it easy to compare systems objectively. SEER and SEER2 ratings aren't directly comparable. Repair vs. replace decisions involve multiple variables that contractors rarely walk you through. These tools exist to give you the same analysis a good HVAC engineer would do — in under 5 minutes, for free.
           </p>
         </div>
 
