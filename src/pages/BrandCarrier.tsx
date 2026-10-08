@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { series: '26VNA1', name: 'Infinity 21', tier: 'Premier', compressor: 'Variable-speed Greenspeed®', seer2: 'Up to 21.0', sound: '55 dBA', note: 'Flagship; ComfortLink II; 25–100% capacity' },
@@ -50,7 +52,7 @@ export default function BrandCarrier() {
         <meta property="og:title" content="Carrier AC Review 2026: Reliability, Pricing, Models & Warranty" />
         <meta property="og:description" content="Is Carrier worth the premium in 2026? Full review with real pricing, model lineup, Consumer Choice warranty details, known Infinity board issues, and who should (and shouldn't) buy Carrier." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/carrier-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Carrier" />
         <meta property="article:tag" content="HVAC" />
@@ -68,8 +70,9 @@ export default function BrandCarrier() {
             "@type": "Review",
             "name": "Carrier Air Conditioner Review 2026",
             "reviewBody": "Carrier earns Consumer Reports 4/5 predicted reliability and 5/5 owner satisfaction. Its unique Consumer Choice warranty lets buyers choose between a 10-year parts-only warranty or a 5-year parts + 3-year labor warranty — the only major brand offering manufacturer labor coverage as a standard option. Known issues include expensive Infinity inverter board failures, aluminum condenser coil fragility, and warranty denial from missed registration. Pricing runs $3,900–$10,000+ installed for central AC. Bryant offers identical hardware at 10–15% less.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "Carrier Air Conditioners",
@@ -160,6 +163,7 @@ export default function BrandCarrier() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Carrier Air Conditioners: 2026 Review</h1>
             <p className="text-xl text-gray-600">The brand that invented air conditioning — reliability data, pricing, Consumer Choice warranty, and what the Infinity system actually costs when it breaks</p>
+            <ArticleByline />
           </header>
 
           {/* Quick Answer */}

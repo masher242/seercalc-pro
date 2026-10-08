@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { model: 'MSZ-FS', name: 'Deluxe', tier: 'Ultra-Premium', type: 'Wall-mount ductless', seer2: '32.2', hyper: 'Yes (to -13°F)', note: '3D i-see Sensor®; dual vane; triple filtration; highest SEER2 in US residential market' },
@@ -50,7 +52,7 @@ export default function BrandMitsubishi() {
         <meta property="og:title" content="Mitsubishi Electric Mini-Split Review 2026: Worth the Premium?" />
         <meta property="og:description" content="Highest SEER2 in the US (32.2), H2i Hyper-Heat to -13°F, 12-year Diamond Contractor warranty. But: 2025 Comfort app disaster, no central AC, expensive parts. Full honest review." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/mitsubishi-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Mitsubishi Electric" />
         <meta property="article:tag" content="HVAC" />
@@ -68,8 +70,9 @@ export default function BrandMitsubishi() {
             "@type": "Review",
             "name": "Mitsubishi Electric HVAC Review 2026",
             "reviewBody": "Mitsubishi Electric (via METUS, a 50/50 JV with Trane Technologies) is the dominant premium mini-split brand in the US, holding approximately 23% of the North American residential ductless market. The MSZ-FS reaches 32.2 SEER2 — the highest verified residential SEER2 in the US market. H2i Hyper-Heat operates at -13°F. The 12-year parts/compressor warranty with Diamond Contractor installation is industry-leading for ductless. Critical note: Mitsubishi does NOT offer conventional central split-system AC — ductless and ducted mini-split only. The 2025 Comfort app rollout (replacing kumo cloud) was a documented disaster affecting thousands of users. Parts are expensive and restricted to authorized channels. Diamond Contractor requirement for 12-year warranty creates geographic warranty access inequality.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "Mitsubishi Electric Mini-Split Systems",
@@ -152,6 +155,7 @@ export default function BrandMitsubishi() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Mitsubishi Electric Mini-Splits: 2026 Review</h1>
             <p className="text-xl text-gray-600">The gold standard for residential ductless — 32.2 SEER2, H2i Hyper-Heat to -13°F, 12-year Diamond warranty. And a 2025 app disaster, expensive parts, and a warranty that depends on finding the right installer</p>
+            <ArticleByline />
           </header>
 
           {/* Critical note */}

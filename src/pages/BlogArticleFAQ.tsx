@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { articleJsonLd } from '../data/site';
 
 export default function BlogArticleFAQ() {
   return (
@@ -18,7 +20,7 @@ export default function BlogArticleFAQ() {
         <meta property="og:title" content="HVAC SEER Calculator FAQ - Your Questions Answered" />
         <meta property="og:description" content="Everything you need to know about SEER ratings, HVAC efficiency, and calculating your energy savings." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/faq-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="HVAC" />
         <meta property="article:tag" content="SEER" />
         <meta property="article:tag" content="HVAC" />
@@ -134,6 +136,14 @@ export default function BlogArticleFAQ() {
             ]
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd({
+            path: '/blog/hvac-seer-calculator-faq',
+            headline: 'HVAC SEER Calculator FAQ: Your Questions Answered',
+            description: 'What SEER rating do I need? Is higher always better? Does it affect my bill? 20+ common AC efficiency questions, answered in plain English.',
+            dateModified: '2025-11-10',
+          }))}
+        </script>
       </Helmet>
 
       <article className="max-w-4xl mx-auto px-4 py-12">
@@ -152,6 +162,7 @@ export default function BlogArticleFAQ() {
             <span>•</span>
             <span>12 min read</span>
           </div>
+          <ArticleByline />
         </header>
 
         <section id="intro" className="prose prose-lg max-w-none mb-12">

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { model: 'DX9VC / DC9VS', tier: 'Ultra-Premium', compressor: 'Variable-Speed Inverter', seer2: 'Up to 24.5', refrigerant: 'R-32', note: 'Top central AC; ComfortNet compatible' },
@@ -57,7 +59,7 @@ export default function BrandDaikin() {
         <meta property="og:title" content="Daikin AC Review 2026: Best Warranty, R-32 Advantage & FIT AURORA" />
         <meta property="og:description" content="World's largest HVAC maker. 12-year parts + unit replacement warranty. R-32 refrigerant costs ~6x less to service than R-454B brands. New FIT AURORA cold-climate heat pump to -20°F. Full honest 2026 review." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/daikin-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Daikin" />
         <meta property="article:tag" content="HVAC" />
@@ -75,8 +77,9 @@ export default function BrandDaikin() {
             "@type": "Review",
             "name": "Daikin Air Conditioner Review 2026",
             "reviewBody": "Daikin is the world's largest HVAC manufacturer by revenue (~$31B) and the parent company of Goodman and Amana. All three brands are manufactured at the same 4.2 million sq ft Waller, Texas facility. Daikin is the premium tier — priced 30–40% above Goodman for the same factory origin. Key advantages: 12-year parts + 12-year unit replacement warranty (best standard warranty in the category), R-32 refrigerant (~$449/20 lbs vs. R-454B at $700–$2,800), DX9VC up to 24.5 SEER2, new FIT AURORA cold-climate heat pump to -20°F. Key trade-offs: annual maintenance required to preserve unit replacement warranty, Daikin One+ thermostat has documented temperature inaccuracy issues, dealer network thinner than Goodman in some regions. $8.5M CPSC civil fine in June 2026 for delayed PTAC safety disclosure.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "Daikin Air Conditioners",
@@ -159,6 +162,7 @@ export default function BrandDaikin() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Daikin Air Conditioners: 2026 Review</h1>
             <p className="text-xl text-gray-600">The world's largest HVAC manufacturer — same Waller, TX factory as Goodman and Amana, but with the best standard warranty in the category, R-32 refrigerant advantage, and the new FIT AURORA cold-climate heat pump</p>
+            <ArticleByline />
           </header>
 
           {/* Quick Answer */}

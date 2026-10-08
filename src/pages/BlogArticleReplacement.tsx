@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, AlertTriangle, DollarSign, Calendar, ThermometerSun, Wrench, TrendingUp, CheckCircle2, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { articleJsonLd } from '../data/site';
 
 export default function BlogArticleReplacement() {
   return (
@@ -17,11 +19,19 @@ export default function BlogArticleReplacement() {
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://airconditionanswers.com/blog/when-to-replace-air-conditioner" />
         <meta property="article:published_time" content="2026-01-03T00:00:00Z" />
-        <meta property="article:author" content="airconditionanswers.com" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="11 Signs You Need to Replace Your Air Conditioner | When to Replace AC" />
         <meta name="twitter:description" content="Is your AC dying? Learn the 11 warning signs it's time to replace your air conditioner and how to avoid costly emergency replacement." />
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd({
+            path: '/blog/when-to-replace-air-conditioner',
+            headline: "When to Replace Your Air Conditioner: 11 Warning Signs It's Time",
+            description: "AC running constantly, making noise, or costing more each summer? 11 warning signs that tell you when repair isn't worth it anymore.",
+            dateModified: '2026-01-03',
+          }))}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -46,6 +56,7 @@ export default function BlogArticleReplacement() {
             <p className="text-xl text-gray-600 leading-relaxed">
               Your air conditioner is making strange noises. Your electric bills are climbing. Some rooms are hot while others are freezing. Is it time to replace your AC, or can you squeeze out a few more years?
             </p>
+            <ArticleByline />
           </header>
 
           <div className="prose prose-lg max-w-none">

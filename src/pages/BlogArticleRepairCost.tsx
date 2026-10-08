@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleRepairCost() {
   return (
@@ -19,7 +21,7 @@ export default function BlogArticleRepairCost() {
         <meta property="og:description" content="Complete guide to AC repair costs and when to replace. Includes the $5,000 rule calculator and repair cost breakdown by component." />
         <meta property="article:published_time" content="2026-01-03T10:00:00Z" />
         <meta property="article:modified_time" content="2026-01-03T10:00:00Z" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Maintenance" />
         <meta property="article:tag" content="AC Repair" />
         <meta property="article:tag" content="HVAC Cost" />
@@ -34,14 +36,8 @@ export default function BlogArticleRepairCost() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "AC Repair Cost vs Replacement: The $5,000 Rule Explained (2026 Guide)",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com"
-            },
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "datePublished": "2026-01-03",
             "dateModified": "2026-01-03",
             "description": "Comprehensive guide to AC repair costs and the repair vs replace decision, including the $5,000 rule formula and detailed cost breakdowns."
@@ -66,6 +62,7 @@ export default function BlogArticleRepairCost() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">AC Repair Cost vs Replacement: The $5,000 Rule Explained (2026 Guide)</h1>
             <p className="text-xl text-gray-600">Complete repair cost breakdown, the $5,000 rule formula, and step-by-step decision framework to know exactly when to repair and when to replace</p>
+            <ArticleByline updated="2026-01-03" />
           </header>
 
           <section className="prose prose-lg max-w-none">

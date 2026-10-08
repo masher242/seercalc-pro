@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { model: 'RA20AZ / RA19AY', series: 'Endeavor Prestige', tier: 'Premium', compressor: 'Variable-Speed Inverter', seer2: 'Up to 20.0–20.5', refrigerant: 'R-454B', note: 'EcoNet enabled; ENERGY STAR; top of line' },
@@ -50,7 +52,7 @@ export default function BrandRheem() {
         <meta property="og:title" content="Rheem AC Review 2026: Best Mid-Range Value?" />
         <meta property="og:description" content="Rheem's Endeavor Line hits up to 20.5 SEER2 at mid-range prices. 90-day registration window (longest after Carrier). Known evaporator coil leak issue with high labor cost exposure. Full 2026 review." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/rheem-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Rheem" />
         <meta property="article:tag" content="HVAC" />
@@ -68,8 +70,9 @@ export default function BrandRheem() {
             "@type": "Review",
             "name": "Rheem Air Conditioner Review 2026",
             "reviewBody": "Rheem is a privately held mid-range HVAC brand owned by Paloma Rheem Holdings (Japan) and manufactured in Fort Smith, Arkansas. The Endeavor Line (rebranded in 2023) reaches up to 20.5 SEER2 on the Prestige series using R-454B refrigerant. Rheem's 90-day registration window matches Carrier's industry-leading standard. Key strengths: easy serviceability (any tech can work on them), Watsco distribution network, and the Fujitsu General acquisition (2025) adding ductless expertise. Known issue: evaporator coil pinhole leaks documented within 3–5 years, with $3,000–$4,000 out-of-pocket labor exposure since refrigerant and labor are not covered. Also owns Friedrich (ductless) and Ruud (identical hardware, contractor channel). DOE civil penalty of $1.05M in 2024 for commercial unit energy standard noncompliance.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "Rheem Air Conditioners",
@@ -152,6 +155,7 @@ export default function BrandRheem() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Rheem Air Conditioners: 2026 Review</h1>
             <p className="text-xl text-gray-600">The mid-range value leader — easy to service, broad parts access, up to 20.5 SEER2. And a coil leak issue that can cost $3,000–$4,000 out of pocket even under warranty</p>
+            <ArticleByline />
           </header>
 
           {/* Quick Answer */}

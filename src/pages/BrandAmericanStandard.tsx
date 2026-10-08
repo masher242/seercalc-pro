@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { model: 'Platinum 20 (4A7C6)', series: 'Platinum', tier: 'Premium', compressor: 'Variable-Speed (AccuComfort™)', seer2: 'Up to 24.0', refrigerant: 'R-454B', note: 'Flagship; ENERGY STAR Most Efficient' },
@@ -50,7 +52,7 @@ export default function BrandAmericanStandard() {
         <meta property="og:title" content="American Standard AC Review 2026: Trane Quality at Lower Cost?" />
         <meta property="og:description" content="Same factory as Trane, same Spine Fin coil, same Climatuff compressor — at 5–15% lower price. Full 2026 review with real pricing, known issues, and who should choose American Standard over Trane." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/american-standard-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="American Standard" />
         <meta property="article:tag" content="HVAC" />
@@ -68,8 +70,9 @@ export default function BrandAmericanStandard() {
             "@type": "Review",
             "name": "American Standard Air Conditioner Review 2026",
             "reviewBody": "American Standard HVAC is manufactured by Trane Technologies at the same Tyler, Texas and Clarksville, Tennessee factories as Trane, using identical Spine Fin all-aluminum coils and Climatuff compressors. The primary buyer advantage is 5–15% lower installed cost vs. Trane for functionally identical hardware. Known issues include aluminum coil leaks (contractor reports of high failure rates), control board failures on new installs, and warranty parts dimension errors on replacements. The Platinum 20 reaches 24.0 SEER2 — actually exceeding Trane's XV20i flagship at 23.6 SEER2. Best for buyers who want Trane-grade hardware without the Trane price premium, in markets where American Standard dealers have strong local presence.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "American Standard Air Conditioners",
@@ -160,6 +163,7 @@ export default function BrandAmericanStandard() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">American Standard Air Conditioners: 2026 Review</h1>
             <p className="text-xl text-gray-600">Same factory as Trane, same Spine Fin coil, same Climatuff compressor — at 5–15% lower cost. Full review with real pricing, known issues, and when to choose American Standard over Trane</p>
+            <ArticleByline />
           </header>
 
           {/* Quick Answer */}

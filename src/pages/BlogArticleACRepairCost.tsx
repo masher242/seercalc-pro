@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleACRepairCost() {
   return (
@@ -19,7 +21,7 @@ export default function BlogArticleACRepairCost() {
         <meta property="og:description" content="Complete AC repair cost breakdown by specific problem type. Know exactly what you should pay for 20+ common AC issues." />
         <meta property="article:published_time" content="2026-01-04T10:00:00Z" />
         <meta property="article:modified_time" content="2026-01-04T10:00:00Z" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Maintenance" />
         <meta property="article:tag" content="AC Repair" />
         <meta property="article:tag" content="HVAC Cost" />
@@ -34,14 +36,8 @@ export default function BlogArticleACRepairCost() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "How Much Does AC Repair Cost? Complete 2026 Price Guide by Problem",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com"
-            },
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "datePublished": "2026-01-04",
             "dateModified": "2026-01-04",
             "description": "Comprehensive guide to AC repair costs broken down by specific problem type, with pricing for 20+ common issues."
@@ -66,6 +62,7 @@ export default function BlogArticleACRepairCost() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">How Much Does AC Repair Cost? Complete 2026 Price Guide by Problem</h1>
             <p className="text-xl text-gray-600">AC repair costs $150-$2,500 depending on the problem. Complete breakdown by specific issue so you know exactly what you should pay</p>
+            <ArticleByline updated="2026-01-04" />
           </header>
 
           <section className="prose prose-lg max-w-none">

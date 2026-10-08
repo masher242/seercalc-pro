@@ -63,17 +63,33 @@ export default function Home() {
         <meta property="og:url" content="https://airconditionanswers.com/" />
         <meta property="og:title" content="SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" />
         <meta property="og:description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." />
-        <meta property="og:image" content="https://airconditionanswers.com/logo_final_v1.png" />
+        <meta property="og:image" content="https://airconditionanswers.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="SEER Calculator" />
+        <meta property="og:site_name" content="AirConditionAnswers" />
         <meta property="og:locale" content="en_US" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://airconditionanswers.com/" />
         <meta name="twitter:title" content="SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" />
         <meta name="twitter:description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." />
-        <meta name="twitter:image" content="https://airconditionanswers.com/logo_final_v1.png" />
+        <meta name="twitter:image" content="https://airconditionanswers.com/og-image.png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "@id": "https://airconditionanswers.com/#calculator",
+            "name": "SEER Savings Calculator",
+            "url": "https://airconditionanswers.com/",
+            "description": "Free calculator that estimates annual cooling cost and savings from upgrading an air conditioner, based on SEER rating, unit size, hours of use and electricity rate.",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Any",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "publisher": { "@id": "https://airconditionanswers.com/#organization" },
+            "creator": { "@id": "https://airconditionanswers.com/about/mark-curant#person" }
+          })}
+        </script>
       </Helmet>
       <div className="bg-gradient-to-b from-[#F0F9FF] to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-16 pb-12 sm:pb-12 lg:pb-12 text-center">

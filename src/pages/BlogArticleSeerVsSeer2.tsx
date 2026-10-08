@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const conversionChart = [
   { seer: 10, seer2: 9.6, note: 'Old pre-2006 systems' },
@@ -47,7 +49,7 @@ export default function BlogArticleSeerVsSeer2() {
         <meta property="og:title" content="SEER vs SEER2: What Changed, Why It Matters, and How to Compare (2026 Guide)" />
         <meta property="og:description" content="SEER2 replaced SEER in 2023 with stricter testing. Learn what changed, how to convert ratings, and federal minimums by region." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/seer-vs-seer2-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="HVAC Education" />
         <meta property="article:tag" content="SEER" />
         <meta property="article:tag" content="SEER2" />
@@ -64,18 +66,9 @@ export default function BlogArticleSeerVsSeer2() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "SEER vs SEER2: What Changed, Why It Matters, and How to Compare (2026 Guide)",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airconditionanswers.com/logo.png"
-              }
-            },
+            "dateModified": "2026-06-17",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "description": "SEER2 replaced SEER in 2023 with stricter testing. Learn what changed, how to convert between ratings, new federal minimums by region, and what it means for your wallet."
           })}
         </script>
@@ -98,6 +91,7 @@ export default function BlogArticleSeerVsSeer2() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">SEER vs SEER2: What Changed, Why It Matters, and How to Compare (2026 Guide)</h1>
             <p className="text-xl text-gray-600">Why every air conditioner's efficiency number dropped overnight — and why that's actually good news</p>
+            <ArticleByline updated="2026-06-17" />
           </header>
 
           <section className="prose prose-lg max-w-none">

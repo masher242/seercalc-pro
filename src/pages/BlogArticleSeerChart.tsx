@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const avgRateUpgrades = [
   { from: 8, to: 14, annual: 505, ten: 5050, fifteen: 7575 },
@@ -110,7 +112,7 @@ export default function BlogArticleSeerChart() {
         <meta property="og:title" content="The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained (2026)" />
         <meta property="og:description" content="See annual costs, efficiency tiers, and savings comparisons for every SEER rating from 8 to 25+." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/seer-rating-chart-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="HVAC Education" />
         <meta property="article:tag" content="SEER" />
         <meta property="article:tag" content="HVAC" />
@@ -127,18 +129,9 @@ export default function BlogArticleSeerChart() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained (2026)",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airconditionanswers.com/logo.png"
-              }
-            },
+            "dateModified": "2026-06-17",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "description": "Complete SEER rating chart from 8 to 25+. See annual costs, efficiency tiers, savings comparisons, and which SEER rating is right for your climate and budget."
           })}
         </script>
@@ -161,6 +154,7 @@ export default function BlogArticleSeerChart() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained (2026)</h1>
             <p className="text-xl text-gray-600">Every SEER rating, what it costs you per year, and exactly how much upgrading could save</p>
+            <ArticleByline updated="2026-06-17" />
           </header>
 
           <section className="prose prose-lg max-w-none">

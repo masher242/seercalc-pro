@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
   { model: 'SL25KCV', series: 'Dave Lennox Signature®', tier: 'Ultra-Premium', compressor: 'Variable-Capacity', seer2: '26.0', refrigerant: 'R-454B', note: 'Highest-efficiency central AC in US market; launched Oct 2024' },
@@ -65,7 +67,7 @@ export default function BrandLennox() {
         <meta property="og:title" content="Lennox AC Review 2026: Is the Most Efficient Brand Worth the Premium?" />
         <meta property="og:description" content="Highest efficiency (26.0 SEER2), free 3-year labor warranty, but worst parts availability and most expensive installed costs. Full honest review." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/lennox-review-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
         <meta property="article:tag" content="Lennox" />
         <meta property="article:tag" content="HVAC" />
@@ -83,8 +85,9 @@ export default function BrandLennox() {
             "@type": "Review",
             "name": "Lennox Air Conditioner Review 2026",
             "reviewBody": "Lennox offers the highest efficiency central AC in the US residential market (SL25KCV at 26.0 SEER2) and is the only major brand providing free 3-year labor coverage at registration. However, Lennox has the worst parts availability of any major brand — proprietary ecosystem, OEM-only parts, weeks-long waits, costs 3x generic equivalents, and control boards orphaned on units as young as 3 years old. The iComfort thermostat lock-in ($1,300–$2,000 replacement) adds further dependency. Best for: maximum-efficiency seekers in high-rate markets with strong local Lennox dealer presence. Avoid if: your area has thin Lennox dealer coverage, you value serviceability, or you're budget-constrained.",
-            "author": { "@type": "Organization", "name": "The Efficiency Hub", "url": "https://airconditionanswers.com" },
-            "publisher": { "@type": "Organization", "name": "airconditionanswers.com", "logo": { "@type": "ImageObject", "url": "https://airconditionanswers.com/logo.png" } },
+            "dateModified": "2026-07-01",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "itemReviewed": {
               "@type": "Product",
               "name": "Lennox Air Conditioners",
@@ -175,6 +178,7 @@ export default function BrandLennox() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Lennox Air Conditioners: 2026 Review</h1>
             <p className="text-xl text-gray-600">The highest-efficiency brand in the US — and the most proprietary. Real pricing, free labor warranty details, the iComfort problem, and the parts availability crisis that contractors won't stop talking about</p>
+            <ArticleByline />
           </header>
 
           {/* Quick Answer */}

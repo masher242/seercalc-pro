@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import ArticleByline from '../components/ArticleByline';
+import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 export default function BlogArticleHistory() {
   return (
@@ -18,7 +20,7 @@ export default function BlogArticleHistory() {
         <meta property="og:title" content="The Fascinating History of SEER Ratings" />
         <meta property="og:description" content="How a 1970s energy crisis created the efficiency standards that save Americans billions on cooling costs today." />
         <meta property="og:image" content="https://airconditionanswers.com/images/blog/seer-history-og.png" />
-        <meta property="article:author" content="The Efficiency Hub" />
+        <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="HVAC History" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -31,18 +33,9 @@ export default function BlogArticleHistory() {
             "@type": "Article",
             "headline": "The History of SEER Ratings: How AC Efficiency Standards Evolved",
             "image": "https://airconditionanswers.com/images/blog/seer-history.png",
-            "author": {
-              "@type": "Organization",
-              "name": "The Efficiency Hub"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "airconditionanswers.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airconditionanswers.com/logo.png"
-              }
-            },
+            "dateModified": "2025-11-09",
+            "author": AUTHOR_REF,
+            "publisher": PUBLISHER_REF,
             "description": "The fascinating evolution of SEER ratings from the 1970s energy crisis to today's ultra-efficient air conditioning systems."
           })}
         </script>
@@ -105,6 +98,7 @@ export default function BlogArticleHistory() {
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">The History of SEER Ratings: How AC Efficiency Standards Evolved</h1>
             <p className="text-xl text-gray-600">From the 1970s energy crisis to today's ultra-efficient systems—the story of how SEER transformed cooling</p>
+            <ArticleByline updated="2025-11-09" />
           </header>
 
           {/* Quick Answer — AI/GEO optimized */}
