@@ -39,8 +39,12 @@ import CalculatorRepairVsReplace from './pages/CalculatorRepairVsReplace';
 import CalculatorSeerToSeer2 from './pages/CalculatorSeerToSeer2';
 import CalculatorACSizing from './pages/CalculatorACSizing';
 import AboutMarkCurant from './pages/AboutMarkCurant';
+import AcCostIndex from './pages/AcCostIndex';
+import AcCostState from './pages/AcCostState';
+import BlogArticleRunningCost from './pages/BlogArticleRunningCost';
 import NotFound from './pages/NotFound';
 import { Routes, Route } from 'react-router-dom';
+import { STATES } from './data/acCost';
 
 function AppContent() {
   return (
@@ -82,6 +86,9 @@ function AppContent() {
         <Route path="/calculators/seer-to-seer2" element={<CalculatorSeerToSeer2 />} />
         <Route path="/calculators/ac-sizing" element={<CalculatorACSizing />} />
         <Route path="/about/mark-curant" element={<AboutMarkCurant />} />
+        <Route path="/ac-cost" element={<AcCostIndex />} />
+        <Route path="/ac-cost/:state" element={<AcCostState />} />
+        <Route path="/blog/how-much-does-it-cost-to-run-ac" element={<BlogArticleRunningCost />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
@@ -143,5 +150,8 @@ export const routes = [
   '/calculators/seer-to-seer2',
   '/calculators/ac-sizing',
   '/about/mark-curant',
+  '/ac-cost',
+  ...STATES.map((s) => `/ac-cost/${s.slug}`),
+  '/blog/how-much-does-it-cost-to-run-ac',
   '/404',
 ];

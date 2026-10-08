@@ -9,7 +9,8 @@ type TimePeriod = 'day' | 'week' | 'month' | 'year';
 
 export default function CoolingUsageInput({ annualHours, onAnnualHoursChange }: CoolingUsageInputProps) {
   const [timePeriod, setTimePeriod] = useState<TimePeriod>('day');
-  const [inputValue, setInputValue] = useState(4);
+  // Start from the hours the calculator already has (saved inputs or a pre-filled link)
+  const [inputValue, setInputValue] = useState(() => Math.round((annualHours / 365) * 10) / 10);
 
   const conversions = {
     day: 365,
@@ -39,10 +40,19 @@ export default function CoolingUsageInput({ annualHours, onAnnualHoursChange }: 
     year: 'hours per year'
   };
 
+  // Keep the field in step when annual hours change from outside (e.g. saved inputs load)
   useEffect(() => {
-    const calculated = Math.round(inputValue * conversions[timePeriod]);
-    onAnnualHoursChange(calculated);
-  }, [inputValue, timePeriod, onAnnualHoursChange, conversions]);
+    if (Math.round(inputValue * conversions[timePeriod]) !== annualHours) {
+      setInputValue(Math.round((annualHours / conversions[timePeriod]) * 10) / 10);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [annualHours]);
+
+  // Only report a new annual total when the user changes the value
+  const updateValue = (value: number) => {
+    setInputValue(value);
+    onAnnualHoursChange(Math.round(value * conversions[timePeriod]));
+  };
 
   const handleTimePeriodChange = (newPeriod: TimePeriod) => {
     const currentAnnual = inputValue * conversions[timePeriod];
@@ -53,7 +63,7 @@ export default function CoolingUsageInput({ annualHours, onAnnualHoursChange }: 
   };
 
   const handlePresetClick = (value: number) => {
-    setInputValue(value);
+    updateValue(value);
   };
 
   return (
@@ -85,7 +95,7 @@ export default function CoolingUsageInput({ annualHours, onAnnualHoursChange }: 
           <input
             type="number"
             value={inputValue}
-            onChange={(e) => setInputValue(parseFloat(e.target.value) || 0)}
+            onChange={(e) => updateValue(parseFloat(e.target.value) || 0)}
             min={limits[timePeriod].min}
             max={limits[timePeriod].max}
             step={limits[timePeriod].step}
@@ -97,7 +107,7 @@ export default function CoolingUsageInput({ annualHours, onAnnualHoursChange }: 
         <input
           type="range"
           value={inputValue}
-          onChange={(e) => setInputValue(parseFloat(e.target.value))}
+          onChange={(e) => updateValue(parseFloat(e.target.value) || 0)}
           min={limits[timePeriod].min}
           max={limits[timePeriod].max}
           step={limits[timePeriod].step}

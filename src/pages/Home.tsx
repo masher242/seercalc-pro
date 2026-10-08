@@ -25,8 +25,17 @@ export default function Home() {
 
   useEffect(() => {
     const savedInputs = loadInputs();
-    if (savedInputs) {
-      setInputs(savedInputs);
+    // Links from the cost pages can pre-fill the calculator, e.g. /?rate=0.1745&hours=1500
+    const params = new URLSearchParams(window.location.search);
+    const rate = Number(params.get('rate'));
+    const hours = Number(params.get('hours'));
+    const fromLink: Partial<CalculatorInputs> = {};
+    if (rate > 0 && rate < 2) fromLink.electricityRate = rate;
+    if (hours > 0 && hours <= 8760) fromLink.hoursPerYear = Math.round(hours);
+    if (savedInputs || Object.keys(fromLink).length) {
+      const merged = { ...DEFAULT_INPUTS, ...(savedInputs ?? {}), ...fromLink };
+      setInputs(merged);
+      if (Object.keys(fromLink).length) saveInputs(merged);
     }
   }, []);
 

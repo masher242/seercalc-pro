@@ -36,6 +36,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/ac-cost" className="text-gray-600 hover:text-teal-600 transition-colors">
+                  AC Running Cost by State
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog/hvac-seer-calculator-faq" className="text-gray-600 hover:text-teal-600 transition-colors">
                   HVAC FAQ
                 </Link>
