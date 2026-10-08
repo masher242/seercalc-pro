@@ -67,14 +67,32 @@ def main(path):
         sys.exit(f'Parse problem: missing={missing} us={us} as_of={as_of}')
 
     root = pathlib.Path(__file__).resolve().parents[1]
+    json_path = root / 'src/data/stateRates.json'
+    states_sorted = dict(sorted(rates.items()))
+    if json_path.exists():
+        prev = json.loads(json_path.read_text())
+        if prev.get('asOf') == as_of and prev.get('us') == us and prev.get('states') == states_sorted:
+            print(f'No change: already have {as_of} rates.')
+            return
+
+    today = __import__('datetime').date.today().isoformat()
+    # Tell search engines the cost pages changed
+    sitemap = root / 'public/sitemap.xml'
+    if sitemap.exists():
+        sm = sitemap.read_text()
+        sm = re.sub(
+            r'(<loc>https://airconditionanswers\.com(?:/ac-cost[^<]*|/blog/how-much-does-it-cost-to-run-ac)</loc>\s*<lastmod>)[^<]+',
+            rf'\g<1>{today}', sm)
+        sitemap.write_text(sm)
+
     out = {
         'asOf': as_of,
-        'updated': __import__('datetime').date.today().isoformat(),
+        'updated': today,
         'source': 'U.S. Energy Information Administration, Electric Power Monthly, Table 5.6.A (residential, cents/kWh)',
         'us': us,
-        'states': dict(sorted(rates.items())),
+        'states': states_sorted,
     }
-    (root / 'src/data/stateRates.json').write_text(json.dumps(out, indent=2) + '\n')
+    json_path.write_text(json.dumps(out, indent=2) + '\n')
 
     name_by_abbr = {v: k for k, v in ABBR.items()}
     with open(root / 'public/data/residential-electricity-rates-by-state.csv', 'w', newline='') as f:

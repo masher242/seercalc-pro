@@ -1,0 +1,64 @@
+# Monthly: download EIA's latest state electricity prices, rebuild the rate data that
+# every AC cost page reads from, and open a pull request if anything changed.
+# Netlify builds a preview for the PR; merging it publishes the new numbers sitewide.
+#
+# One-time setup: GitHub repo → Settings → Actions → General → Workflow permissions →
+# tick "Allow GitHub Actions to create and approve pull requests".
+
+name: Update electricity rates
+
+on:
+  schedule:
+    # EIA's Electric Power Monthly usually comes out in the last week of the month.
+    - cron: '0 14 28 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install openpyxl==3.1.5
+
+      - name: Download EIA Table 5.6.A
+        run: |
+          curl --fail --location --retry 3 --retry-delay 20 \
+            -A "Mozilla/5.0 (compatible; AirConditionAnswers rate updater)" \
+            -o /tmp/table_5_06_a.xlsx \
+            https://www.eia.gov/electricity/monthly/xls/table_5_06_a.xlsx
+
+      - name: Rebuild rate data
+        id: rates
+        run: |
+          python3 scripts/update-state-rates.py /tmp/table_5_06_a.xlsx | tee /tmp/rates.log
+          echo "summary=$(tail -1 /tmp/rates.log)" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request if rates changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/electricity-rates
+          delete-branch: true
+          commit-message: "Update state electricity rates from EIA (${{ steps.rates.outputs.summary }})"
+          title: "Update electricity rates: ${{ steps.rates.outputs.summary }}"
+          body: |
+            Automatic monthly update from EIA Electric Power Monthly, Table 5.6.A.
+
+            **${{ steps.rates.outputs.summary }}**
+
+            Updates `src/data/stateRates.json` (read by the AC running-cost guide, the state index,
+            all 51 state pages and the calculator default), the downloadable CSV, and sitemap dates
+            for those pages. Check the Netlify preview, then merge to publish.
+          add-paths: |
+            src/data/stateRates.json
+            public/data/residential-electricity-rates-by-state.csv
+            public/sitemap.xml

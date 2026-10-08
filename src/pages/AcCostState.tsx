@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, MapPin, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
+import StateCostEstimator from '../components/StateCostEstimator';
 import LeadMagnet from '../components/LeadMagnet';
 import NotFound from './NotFound';
 import { articleJsonLd, SITE_URL } from '../data/site';
@@ -137,6 +138,8 @@ export default function AcCostState() {
               </div>
             ))}
           </div>
+
+          <StateCostEstimator key={s.slug} stateName={s.name} stateRate={s.rate} stateHours={s.hours} />
 
           <h2 className={h2}>Cost to run AC in {s.name} by system size</h2>
           <p className={p}>

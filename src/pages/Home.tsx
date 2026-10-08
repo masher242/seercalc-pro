@@ -8,13 +8,15 @@ import LeadMagnet from '../components/LeadMagnet';
 import { CalculatorInputs, CalculationResults } from '../types';
 import { calculateSavings } from '../utils/calculations';
 import { saveInputs, loadInputs } from '../utils/localStorage';
+import { US_RATE } from '../data/acCost';
 
 const DEFAULT_INPUTS: CalculatorInputs = {
   currentSEER: 10,
   newSEER: 16,
   tonnage: 2.5,
   hoursPerYear: 1200,
-  electricityRate: 0.13,
+  // U.S. average residential rate from the EIA data file (src/data/stateRates.json)
+  electricityRate: Math.round(US_RATE * 10000) / 10000,
   upgradeCost: 0
 };
 
