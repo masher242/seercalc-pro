@@ -9,7 +9,7 @@ export default function BlogArticleAirFilter() {
   return (
     <>
       <Helmet>
-        <title>The $10 Air Filter Fix That Saves $90–$308/Year on AC Bills 💡</title>
+        <title>The $10 Air Filter Fix That Saves $90–$308/Year 💡</title>
         <meta name="description" content="A clogged air filter cuts AC efficiency 5–15% — $90–$308/year wasted. We cover change frequency, the right MERV rating, and more upkeep tips." />
         <meta name="keywords" content="how often to change AC filter, MERV rating guide, clogged air filter electricity bill, AC maintenance savings, HVAC filter schedule" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

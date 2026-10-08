@@ -101,7 +101,7 @@ export default function BlogArticleSeerChart() {
   return (
     <>
       <Helmet>
-        <title>SEER Rating Chart 2026 📊 Annual Cost for Every Rating (8 to 25+)</title>
+        <title>SEER Rating Chart 2026 📊 Annual Cost for SEER 8 to 25+</title>
         <meta name="description" content="Every SEER rating from 8 to 25+, with real dollar costs at your electricity rate. See where diminishing returns kick in for your climate." />
         <meta name="keywords" content="SEER rating chart, SEER chart 2026, SEER efficiency levels, SEER rating comparison, air conditioner SEER chart, SEER cost comparison" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -262,7 +262,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Single-speed compressor, PSC (permanent split capacitor) blower motors. Basic on/off operation — the system runs at 100% capacity whenever it's on, even when the house only needs 30% cooling.</p>
-            <p className="text-gray-700 leading-relaxed mb-6"><strong>What to do:</strong> If your system is 15+ years old and still running at SEER 10-12, start planning for replacement. The efficiency gap between your system and modern equipment is enormous. Check current <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-teal-600 hover:text-teal-700 font-medium">tax credits and rebates</Link> — you may qualify for $2,000+ in federal incentives.</p>
+            <p className="text-gray-700 leading-relaxed mb-6"><strong>What to do:</strong> If your system is 15+ years old and still running at SEER 10-12, start planning for replacement. The efficiency gap between your system and modern equipment is enormous. Check current <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-teal-600 hover:text-teal-700 font-medium">rebates</Link>: the federal tax credit ended December 31, 2025, but your utility may still offer a rebate, and heat pumps may qualify for a state rebate.</p>
 
             <hr className="my-8 border-gray-200" />
 
@@ -321,7 +321,7 @@ export default function BlogArticleSeerChart() {
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Often available with two-stage compressors and variable-speed blower motors. Better humidity control than single-stage units. Quieter operation.</p>
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Typical installed cost:</strong> $4,500-$7,000 (3-ton system)</p>
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>ENERGY STAR certified:</strong> Yes — ENERGY STAR requires minimum SEER 14 (SEER2 13.4).</p>
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>ENERGY STAR certified:</strong> Often, but check the model. SEER 16 is about 15.3 SEER2, just over ENERGY STAR's 15.2 SEER2 threshold for a split central AC, and the unit also needs at least 12.0 EER2.</p>
             <p className="text-gray-700 leading-relaxed mb-6"><strong>Best for:</strong> Most homeowners in moderate to hot climates. Best balance of upfront cost and long-term savings. If you're only going to look at one tier, this is it.</p>
 
             <hr className="my-8 border-gray-200" />

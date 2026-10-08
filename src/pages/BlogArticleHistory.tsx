@@ -318,12 +318,12 @@ export default function BlogArticleHistory() {
 
             <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The Future: Where Are SEER Ratings Headed?</h2>
 
-            <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">2028-2032: Expected Further Increases</h3>
-            <p className="text-gray-700 leading-relaxed mb-4">The DOE typically reviews standards every 6 years. Experts anticipate:</p>
+            <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">What's Next for Federal Standards</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">As of 2026, the 2023 SEER2 minimums are still the law, and no stricter standard has been finalized. Here's where things stand:</p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-              <li><strong>Minimum SEER2 16-17</strong> by 2028 or 2030</li>
-              <li>Continued differentiation between climate regions</li>
-              <li>Possible incentives for SEER2 20+ systems</li>
+              <li><strong>Current minimums:</strong> 13.4 SEER2 in the North and 14.3 SEER2 in the Southeast and Southwest for central AC; 14.3 SEER2 and 7.5 HSPF2 for split heat pumps everywhere</li>
+              <li><strong>Regional standards stay:</strong> hotter regions keep higher minimums because the AC runs more hours there</li>
+              <li><strong>Federal tax credits ended:</strong> the 25C credit for efficient equipment ended for systems installed after December 31, 2025, so efficiency now has to pay for itself through lower bills and utility rebates</li>
             </ul>
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Emerging Technologies</h3>

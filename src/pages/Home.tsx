@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>SEER Calculator ❄️ See Your Exact AC Savings Before You Buy (Free 2026)</title>
+        <title>SEER Calculator ❄️ See Your AC Savings Before You Buy (Free)</title>
         <meta name="description" content="Enter your SEER rating and get personalized savings for your home size, climate, and electric rate. Most save $300–$800/year. Free, instant." />
         <link rel="canonical" href="https://airconditionanswers.com/" />
 

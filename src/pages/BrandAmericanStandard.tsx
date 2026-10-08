@@ -41,7 +41,7 @@ export default function BrandAmericanStandard() {
   return (
     <>
       <Helmet>
-        <title>American Standard AC Review 2026 🏷️ Same as Trane, 5–15% Cheaper?</title>
+        <title>American Standard AC Review 2026 🏷️ Trane for Less?</title>
         <meta name="description" content="American Standard shares Trane's factory line — same coil, same compressor — at 5–15% lower cost. $3,500–$8,000+ installed. Full comparison." />
         <meta name="keywords" content="American Standard AC review 2026, American Standard vs Trane, American Standard Platinum 20, American Standard reliability, American Standard warranty 2026, is American Standard a good brand" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

@@ -41,7 +41,7 @@ export default function BrandRheem() {
   return (
     <>
       <Helmet>
-        <title>Rheem AC Review 2026 🔶 Mid-Range Value King or Coil Leak Risk?</title>
+        <title>Rheem AC Review 2026 🔶 Mid-Range Value or Coil Leak Risk?</title>
         <meta name="description" content="Rheem sits in the sweet spot at $3,000–$8,500 installed with up to 20.5 SEER2. Watch for evaporator coil pinhole leaks within 3–5 years." />
         <meta name="keywords" content="Rheem AC review 2026, Rheem Endeavor Line review, Rheem vs Carrier, Rheem reliability 2026, Rheem warranty 2026, is Rheem a good brand, Rheem RA20AZ review" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

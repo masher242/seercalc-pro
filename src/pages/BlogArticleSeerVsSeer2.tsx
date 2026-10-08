@@ -24,9 +24,9 @@ const conversionChart = [
 ];
 
 const regionalMinimums = [
-  { region: 'North (most northern states)', min: '13.4 SEER2', old: '~14 SEER' },
-  { region: 'Southeast (VA, NC, SC, GA, FL, AL, MS, LA, AR, TN, KY)', min: '14.3 SEER2', old: '~15 SEER' },
-  { region: 'Southwest (NV, AZ, NM, TX, OK, CA — parts)', min: '14.3 SEER2', old: '~15 SEER' },
+  { region: 'North (all states not listed below)', min: '13.4 SEER2', old: '~14 SEER' },
+  { region: 'Southeast (AL, AR, DE, FL, GA, HI, KY, LA, MD, MS, NC, OK, SC, TN, TX, VA, DC, Puerto Rico and other territories)', min: '14.3 SEER2 (13.8 for 45,000+ Btu/h)', old: '~15 SEER' },
+  { region: 'Southwest (AZ, CA, NM, NV)', min: '14.3 SEER2 (13.8 for 45,000+ Btu/h), plus 11.7 EER2 (9.8 EER2 if 15.2+ SEER2)', old: '~15 SEER' },
 ];
 
 const heatPumpMinimums = [
@@ -38,7 +38,7 @@ export default function BlogArticleSeerVsSeer2() {
   return (
     <>
       <Helmet>
-        <title>SEER vs SEER2 Explained ⚡ What Changed & How to Convert (2026 Guide)</title>
+        <title>SEER vs SEER2 Explained ⚡ What Changed & How to Convert</title>
         <meta name="description" content="SEER2 ratings run ~4.5% lower than old SEER for identical hardware. Why it happens, the conversion formula, and new federal minimums by region." />
         <meta name="keywords" content="SEER vs SEER2, SEER2 explained, SEER to SEER2 conversion, SEER2 minimum requirements, what is SEER2, SEER2 rating chart" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -473,24 +473,24 @@ export default function BlogArticleSeerVsSeer2() {
 
             <hr className="my-8 border-gray-200" />
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">ENERGY STAR and Tax Credit Implications</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">ENERGY STAR and Rebate Implications</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              The shift to SEER2 also affects which systems qualify for ENERGY STAR certification and federal tax credits.
+              The shift to SEER2 also affects which systems qualify for ENERGY STAR certification, and that still matters for utility rebates.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>ENERGY STAR Requirements (2026):</strong></p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              To earn the ENERGY STAR label under current standards, a central air conditioner must meet <strong>SEER2 14.3</strong> or higher (equivalent to approximately SEER 15), plus additional EER2 requirements depending on system type.
+              To earn the ENERGY STAR label, a split central air conditioner must reach at least <strong>15.2 SEER2 and 12.0 EER2</strong> (roughly 16 on the old SEER scale). Packaged units need 15.2 SEER2 and 11.5 EER2. Split heat pumps need 15.2 SEER2 plus 7.8 HSPF2 for heating. ENERGY STAR is still running in 2026, with management moving from EPA to the Department of Energy.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>Federal Tax Credits (25C / Inflation Reduction Act):</strong></p>
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>Federal Tax Credits: ended</strong></p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Under the Inflation Reduction Act, you can claim a <strong>30% tax credit (up to $2,000/year)</strong> on qualifying high-efficiency HVAC equipment. To qualify for the highest credits, systems generally need to meet or exceed ENERGY STAR's "Most Efficient" criteria, which require higher SEER2 ratings than the basic ENERGY STAR threshold.
+              The federal 25C credit (30% of cost, up to $600 for a central AC or $2,000 for a heat pump) <strong>ended for systems installed after December 31, 2025</strong>. No federal tax credit applies to a system installed in 2026, whatever its SEER2 rating. Incentives now come from utilities, which often require ENERGY STAR certification or a minimum SEER2, and from income-qualified state HEEHRA rebates for heat pumps.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              <strong>What this means for you:</strong> When shopping, ask specifically whether the quoted system qualifies for ENERGY STAR certification and federal tax credits. The SEER2 rating alone determines eligibility — not the old SEER number. A contractor quoting you "16 SEER" might be describing a system that qualifies, or might not, depending on the actual SEER2 rating.
+              <strong>What this means for you:</strong> When shopping, ask whether the quoted system is ENERGY STAR certified and whether it qualifies for your utility's rebate. The SEER2 rating determines eligibility — not the old SEER number. A contractor quoting you "16 SEER" might be describing a system that qualifies, or might not, depending on the actual SEER2 rating.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">

@@ -9,7 +9,7 @@ export default function BlogArticleRatings() {
   return (
     <>
       <Helmet>
-        <title>SEER vs EER vs HSPF ⚡ Which AC Rating Actually Matters to You?</title>
+        <title>SEER vs EER vs HSPF ⚡ Which AC Rating Matters Most?</title>
         <meta name="description" content="SEER measures seasonal cooling efficiency, EER measures peak heat, HSPF measures heating. Which rating matters most for your climate." />
         <meta name="keywords" content="SEER vs EER, HSPF rating, HVAC efficiency ratings, energy efficiency ratio, seasonal energy efficiency, heat pump efficiency, AC efficiency comparison" />
         <meta name="robots" content="index, follow" />

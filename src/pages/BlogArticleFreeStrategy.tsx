@@ -9,7 +9,7 @@ export default function BlogArticleFreeStrategy() {
   return (
     <>
       <Helmet>
-        <title>The $0 Thermostat Strategy 🆓 Cut Your AC Bill Without Spending a Dime</title>
+        <title>The $0 Thermostat Strategy 🆓 Cut Your AC Bill for Free</title>
         <meta name="description" content="The DOE says a 7–10°F thermostat setback for 8 hours saves 10% on cooling. The exact schedule, the ceiling fan trick, and the myths that cost you." />
         <meta name="keywords" content="how to lower electricity bill AC, best thermostat temperature to save money, thermostat setback schedule, does raising thermostat save money, AC energy saving tips summer" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

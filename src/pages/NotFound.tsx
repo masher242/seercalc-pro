@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | SEER Calculator</title>
+        <title>Page Not Found | AirConditionAnswers</title>
         <meta name="description" content="This page doesn't exist. Head back to the SEER calculator, our brand reviews, or our HVAC guides." />
         <meta name="robots" content="noindex, follow" />
       </Helmet>

@@ -114,7 +114,7 @@ export default function BlogArticleFAQ() {
                 "name": "Are there rebates for high-efficiency HVAC systems?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, many utility companies, states, and the federal government offer rebates and tax credits for high-efficiency HVAC systems. Federal tax credits can cover up to 30% of installation costs (up to specific limits). Utility rebates range from $200-$1,000+. State and local programs vary. Check www.energystar.gov and your utility company's website for current offers in your area."
+                  "text": "Yes, but not federal tax credits: the federal 25C credit ended for systems installed after December 31, 2025. In 2026, many utilities offer rebates for high-efficiency systems (often requiring ENERGY STAR certification), and some states offer income-qualified HEEHRA rebates of up to $8,000 for heat pumps. State and local programs vary. Check www.energystar.gov and your utility company's website for current offers in your area."
                 }
               },
               {
@@ -436,16 +436,16 @@ export default function BlogArticleFAQ() {
 
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-3">Are there rebates for high-efficiency HVAC systems?</h3>
-            <p className="text-gray-700 leading-relaxed mb-4"><strong>Yes!</strong> Multiple programs can significantly reduce your upfront cost:</p>
+            <p className="text-gray-700 leading-relaxed mb-4"><strong>Yes, but not from the federal government anymore.</strong> Here's what's available in 2026:</p>
 
             <div className="space-y-6 mb-6">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                <p className="text-lg font-semibold text-gray-900 mb-3">Federal Tax Credits (2024-2032):</p>
+                <p className="text-lg font-semibold text-gray-900 mb-3">Federal Tax Credit: ended</p>
                 <ul className="space-y-2 list-disc list-inside">
-                  <li className="text-gray-700">Up to 30% of installation cost</li>
-                  <li className="text-gray-700">Maximum $2,000 for air conditioners</li>
-                  <li className="text-gray-700">Must meet ENERGY STAR requirements</li>
-                  <li className="text-gray-700">Includes equipment and labor</li>
+                  <li className="text-gray-700">The 25C credit (30% of cost, up to $600 for a central AC or $2,000 for a heat pump) ended for systems installed after December 31, 2025</li>
+                  <li className="text-gray-700">No federal tax credit applies to any AC or heat pump installed in 2026</li>
+                  <li className="text-gray-700">Systems installed by December 31, 2025 can still be claimed on your 2025 return (IRS Form 5695)</li>
+                  <li className="text-gray-700">Details: <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-blue-600 hover:underline">2026 tax credit and rebate guide</Link></li>
                 </ul>
               </div>
 
@@ -463,7 +463,7 @@ export default function BlogArticleFAQ() {
                 <p className="text-lg font-semibold text-gray-900 mb-3">State and Local Programs:</p>
                 <ul className="space-y-2 list-disc list-inside">
                   <li className="text-gray-700">Vary widely by location</li>
-                  <li className="text-gray-700">Some states offer additional tax credits</li>
+                  <li className="text-gray-700">State-run HEEHRA rebates: up to $8,000 for a heat pump for income-qualified households, where your state has launched (cooling-only AC doesn't qualify)</li>
                   <li className="text-gray-700">Low-income programs provide higher rebates</li>
                   <li className="text-gray-700">May include financing options</li>
                 </ul>

@@ -9,7 +9,7 @@ export default function BlogArticleRepairCost() {
   return (
     <>
       <Helmet>
-        <title>AC Repair vs Replace 2026 🔧 The $5,000 Rule + Real Cost Breakdown</title>
+        <title>AC Repair vs Replace 2026 🔧 The $5,000 Rule Explained</title>
         <meta name="description" content="Repair quote in hand? Use the $5,000 rule: multiply your AC's age by the repair cost. Over $5,000, replace. Typical repair costs included." />
         <meta name="keywords" content="AC repair cost, air conditioner replacement, $5,000 rule, HVAC repair vs replace, compressor replacement cost, AC repair decision" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -325,7 +325,7 @@ export default function BlogArticleRepairCost() {
                 <li><strong>R-22 Refrigerant + Leak</strong> - Phased out in 2020, recharge costs $450-$2,400</li>
                 <li><strong>Compressor Failure (Age 10+ Years)</strong> - Heart of the system, $1,500-$2,800 repair</li>
                 <li><strong>Energy Bills Climbing</strong> - 10%+ increase year-over-year, efficiency degraded</li>
-                <li><strong>Available Rebates Make Replacement Affordable</strong> - Federal credit 30% (up to $2,000 for qualifying heat pumps), utility rebates $300-$1,500</li>
+                <li><strong>Rebates Lower the Replacement Cost</strong> - Utility rebates, and state HEEHRA rebates for heat pumps if you qualify by income (the federal tax credit ended December 31, 2025)</li>
               </ul>
             </div>
 
@@ -412,21 +412,21 @@ export default function BlogArticleRepairCost() {
               <div className="bg-green-50 p-6 rounded-lg border border-green-300">
                 <h4 className="text-lg font-bold text-gray-900 mb-3">Option B: Replace Now</h4>
                 <div className="space-y-2 text-gray-700 mb-4">
-                  <p><strong>Year 0:</strong> $3,600 (net after rebates)</p>
+                  <p><strong>Year 0:</strong> $5,400 (planned replacement, installed)</p>
                   <p><strong>Years 1-4:</strong> $1,800 (lower electricity)</p>
                   <p><strong>Repairs:</strong> $0 (under warranty)</p>
                 </div>
-                <p className="text-xl font-bold text-green-700">4-year total: $5,400</p>
+                <p className="text-xl font-bold text-green-700">4-year total: $7,200</p>
               </div>
             </div>
 
             <div className="bg-green-100 border-2 border-green-500 rounded-lg p-6 mb-6">
-              <p className="text-xl font-bold text-green-900 mb-2">Savings by replacing now: $6,290</p>
+              <p className="text-xl font-bold text-green-900 mb-2">Savings by replacing now: $4,490</p>
               <p className="text-gray-800">Plus: New system has 11-16 more years of life</p>
             </div>
 
             <p className="text-sm text-gray-600 italic mb-8">
-              <strong>Note on rebates and tax credits:</strong> Examples shown use current federal 25C tax credit (30% up to $2,000 for qualifying heat pumps and high-efficiency systems) and typical utility rebates ($300-$1,500). Always verify the latest IRS guidelines and local incentive programs for your installation year, as amounts and eligibility can change.
+              <strong>Note on incentives:</strong> The federal 25C tax credit ended for systems installed after December 31, 2025, so these examples use installed prices with no federal credit. A utility rebate, or a state HEEHRA rebate for a heat pump if you qualify by income, would lower the replacement cost further. Check your utility and state programs for your installation year.
             </p>
 
             <h2 id="scenarios" className="text-2xl font-bold text-gray-900 mt-12 mb-4">Real-World Repair vs Replace Scenarios</h2>
@@ -447,8 +447,8 @@ export default function BlogArticleRepairCost() {
                 <p className="text-gray-700 mb-2"><strong>System:</strong> 16-year-old Trane, SEER 12</p>
                 <p className="text-gray-700 mb-2"><strong>Issue:</strong> Compressor failure, $2,400 repair quote</p>
                 <p className="text-gray-700 mb-2"><strong>$5,000 rule:</strong> $2,400 × 16 = $38,400 → REPLACE</p>
-                <p className="text-gray-700 mb-3"><strong>Replacement cost:</strong> $4,000 net (after $2,800 in credits/rebates)</p>
-                <p className="text-green-700 font-bold">15-year savings: $2,150 profit (extra $1,600 for replacement pays back in 6.4 years, saves $250/year on electricity)</p>
+                <p className="text-gray-700 mb-3"><strong>Replacement cost:</strong> $6,800 installed ($6,000 if their utility pays an $800 rebate)</p>
+                <p className="text-green-700 font-bold">Why replace anyway: a $2,400 compressor on a 16-year-old system buys a few more years at best, after which they'd pay for the replacement too. Replacing now avoids paying for both, and the new system saves about $250/year on electricity.</p>
                 <p className="text-gray-800 mt-2"><strong>Result:</strong> Saved money long-term, has reliable cooling for 15-20 years, lower electric bills.</p>
               </div>
             </div>
@@ -532,7 +532,7 @@ export default function BlogArticleRepairCost() {
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-6">
               <li>Compare total cost of ownership</li>
               <li>Calculate energy savings</li>
-              <li>Factor in rebates and tax credits</li>
+              <li>Factor in utility and state rebates</li>
               <li>Determine payback period</li>
               <li>Make data-driven decision</li>
             </ul>

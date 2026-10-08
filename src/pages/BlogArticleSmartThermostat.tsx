@@ -9,7 +9,7 @@ export default function BlogArticleSmartThermostat() {
   return (
     <>
       <Helmet>
-        <title>Smart Thermostat vs Programmable 🌡️ Which Actually Saves More?</title>
+        <title>Smart vs Programmable Thermostat 🌡️ Which Saves More?</title>
         <meta name="description" content="A $200 smart thermostat can save $180–$500/year on cooling — but only with the right usage pattern. Real savings compared for both types." />
         <meta name="keywords" content="smart thermostat vs programmable, thermostat savings, smart thermostat ROI, programmable thermostat savings, Nest vs programmable thermostat, HVAC savings thermostat" />
         <meta name="robots" content="index, follow, max-image-preview:large" />

@@ -9,7 +9,7 @@ export default function BlogArticleACRepairCost() {
   return (
     <>
       <Helmet>
-        <title>AC Repair Cost 2026 🛠️ What You Should Actually Pay (by Problem)</title>
+        <title>AC Repair Cost 2026 🛠️ What You Should Pay, by Problem</title>
         <meta name="description" content="AC repairs run $150–$2,500 depending on the issue. 15+ common problems with real price ranges, so you can tell if a quote is fair." />
         <meta name="keywords" content="AC repair cost, air conditioner repair prices, HVAC repair cost, AC not cooling cost, compressor replacement cost, refrigerant recharge cost" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
