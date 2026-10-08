@@ -4,7 +4,7 @@
 export const SITE_URL = 'https://airconditionanswers.com';
 export const SITE_NAME = 'AirConditionAnswers';
 export const SITE_EMAIL = 'hello@airconditionanswers.com';
-export const LOGO_URL = `${SITE_URL}/logo_final_transparent.png`;
+export const LOGO_URL = `${SITE_URL}/logo.png`;
 
 export const AUTHOR = {
   name: 'Mark Curant',
