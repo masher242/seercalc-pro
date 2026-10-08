@@ -41,6 +41,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/ac-cost/caribbean" className="text-gray-600 hover:text-teal-600 transition-colors">
+                  AC Cost in the Caribbean
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog/hvac-seer-calculator-faq" className="text-gray-600 hover:text-teal-600 transition-colors">
                   HVAC FAQ
                 </Link>

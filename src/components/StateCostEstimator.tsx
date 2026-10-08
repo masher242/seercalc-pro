@@ -127,7 +127,7 @@ export default function StateCostEstimator({ stateName, stateRate, stateHours }:
       </div>
 
       <p className="text-xs text-gray-500 mt-4">
-        Starts from {stateName}'s average residential rate and typical cooling hours. Want payback on a quote?{' '}
+        Starts from {stateName.endsWith('s') ? `${stateName}'` : `${stateName}'s`} average residential rate and typical cooling hours. Want payback on a quote?{' '}
         <Link to={calcLink} className="font-semibold text-teal-700 hover:underline">Open the full calculator with these numbers →</Link>
       </p>
     </section>
