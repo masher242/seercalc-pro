@@ -31,11 +31,16 @@ export default function Header() {
         <div className="flex items-center justify-between h-20 lg:h-[80px]">
 
           {/* Logo */}
-          <Link to="/" className="flex flex-col hover:opacity-80 transition-opacity flex-shrink-0">
-            <img src="/logo_final_transparent.png" alt="AirConditionAnswers" className="h-9 lg:h-12 w-auto" />
-            <p className="hidden sm:block text-[13px] font-medium text-gray-500 mt-1 tracking-wide">
-              Smarter HVAC. Lower Bills.
-            </p>
+          <Link
+            to="/"
+            aria-label="AirConditionAnswers home"
+            className="flex items-center gap-2.5 hover:opacity-80 transition-opacity flex-shrink-0"
+          >
+            <img src="/logo-icon.png" alt="" width={65} height={48} className="h-10 lg:h-12 w-auto" />
+            <span className="font-extrabold tracking-tight leading-[1.02] text-[19px] lg:text-[21px] text-[#17204d]">
+              AirCondition
+              <span className="block text-[#12a89e]">Answers</span>
+            </span>
           </Link>
 
           {/* Desktop nav */}
