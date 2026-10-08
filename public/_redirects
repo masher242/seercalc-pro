@@ -1,4 +1,7 @@
 # Domain move: send every old seercalc.pro URL to the same path on airconditionanswers.com
+# Serve robots.txt directly on the old domain so Google can always read it
+https://seercalc.pro/robots.txt       /robots.txt  200!
+https://www.seercalc.pro/robots.txt   /robots.txt  200!
 https://seercalc.pro/*            https://airconditionanswers.com/:splat  301!
 https://www.seercalc.pro/*        https://airconditionanswers.com/:splat  301!
 http://seercalc.pro/*             https://airconditionanswers.com/:splat  301!
