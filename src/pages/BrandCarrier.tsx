@@ -67,19 +67,16 @@ export default function BrandCarrier() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "Carrier Air Conditioner Review 2026",
-            "reviewBody": "Carrier earns Consumer Reports 4/5 predicted reliability and 5/5 owner satisfaction. Its unique Consumer Choice warranty lets buyers choose between a 10-year parts-only warranty or a 5-year parts + 3-year labor warranty — the only major brand offering manufacturer labor coverage as a standard option. Known issues include expensive Infinity inverter board failures, aluminum condenser coil fragility, and warranty denial from missed registration. Pricing runs $3,900–$10,000+ installed for central AC. Bryant offers identical hardware at 10–15% less.",
+            "@type": "Article",
+            "headline": "Carrier Air Conditioner Review 2026",
+            "description": "Carrier earns Consumer Reports 4/5 predicted reliability and 5/5 owner satisfaction. Its unique Consumer Choice warranty lets buyers choose between a 10-year parts-only warranty or a 5-year parts + 3-year labor warranty — the only major brand offering manufacturer labor coverage as a standard option. Known issues include expensive Infinity inverter board failures, aluminum condenser coil fragility, and warranty denial from missed registration. Pricing runs $3,900–$10,000+ installed for central AC. Bryant offers identical hardware at 10–15% less.",
+            "url": "https://airconditionanswers.com/brands/carrier",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/carrier",
+            "image": "https://airconditionanswers.com/images/brands/carrier-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "Carrier Air Conditioners",
-              "brand": { "@type": "Brand", "name": "Carrier" },
-              "manufacturer": { "@type": "Organization", "name": "Carrier Global Corporation" }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "4.3", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "Carrier" }
           })}
         </script>
         <script type="application/ld+json">

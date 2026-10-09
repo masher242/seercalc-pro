@@ -82,19 +82,16 @@ export default function BrandLennox() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "Lennox Air Conditioner Review 2026",
-            "reviewBody": "Lennox offers the highest efficiency central AC in the US residential market (SL25KCV at 26.0 SEER2) and is the only major brand providing free 3-year labor coverage at registration. However, Lennox has the worst parts availability of any major brand — proprietary ecosystem, OEM-only parts, weeks-long waits, costs 3x generic equivalents, and control boards orphaned on units as young as 3 years old. The iComfort thermostat lock-in ($1,300–$2,000 replacement) adds further dependency. Best for: maximum-efficiency seekers in high-rate markets with strong local Lennox dealer presence. Avoid if: your area has thin Lennox dealer coverage, you value serviceability, or you're budget-constrained.",
+            "@type": "Article",
+            "headline": "Lennox Air Conditioner Review 2026",
+            "description": "Lennox offers the highest efficiency central AC in the US residential market (SL25KCV at 26.0 SEER2) and is the only major brand providing free 3-year labor coverage at registration. However, Lennox has the worst parts availability of any major brand — proprietary ecosystem, OEM-only parts, weeks-long waits, costs 3x generic equivalents, and control boards orphaned on units as young as 3 years old. The iComfort thermostat lock-in ($1,300–$2,000 replacement) adds further dependency. Best for: maximum-efficiency seekers in high-rate markets with strong local Lennox dealer presence. Avoid if: your area has thin Lennox dealer coverage, you value serviceability, or you're budget-constrained.",
+            "url": "https://airconditionanswers.com/brands/lennox",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/lennox",
+            "image": "https://airconditionanswers.com/images/brands/lennox-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "Lennox Air Conditioners",
-              "brand": { "@type": "Brand", "name": "Lennox" },
-              "manufacturer": { "@type": "Organization", "name": "Lennox International Inc." }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "3.9", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "Lennox" }
           })}
         </script>
         <script type="application/ld+json">

@@ -67,19 +67,16 @@ export default function BrandAmericanStandard() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "American Standard Air Conditioner Review 2026",
-            "reviewBody": "American Standard HVAC is manufactured by Trane Technologies at the same Tyler, Texas and Clarksville, Tennessee factories as Trane, using identical Spine Fin all-aluminum coils and Climatuff compressors. The primary buyer advantage is 5–15% lower installed cost vs. Trane for functionally identical hardware. Known issues include aluminum coil leaks (contractor reports of high failure rates), control board failures on new installs, and warranty parts dimension errors on replacements. The Platinum 20 reaches 24.0 SEER2 — actually exceeding Trane's XV20i flagship at 23.6 SEER2. Best for buyers who want Trane-grade hardware without the Trane price premium, in markets where American Standard dealers have strong local presence.",
+            "@type": "Article",
+            "headline": "American Standard Air Conditioner Review 2026",
+            "description": "American Standard HVAC is manufactured by Trane Technologies at the same Tyler, Texas and Clarksville, Tennessee factories as Trane, using identical Spine Fin all-aluminum coils and Climatuff compressors. The primary buyer advantage is 5–15% lower installed cost vs. Trane for functionally identical hardware. Known issues include aluminum coil leaks (contractor reports of high failure rates), control board failures on new installs, and warranty parts dimension errors on replacements. The Platinum 20 reaches 24.0 SEER2 — actually exceeding Trane's XV20i flagship at 23.6 SEER2. Best for buyers who want Trane-grade hardware without the Trane price premium, in markets where American Standard dealers have strong local presence.",
+            "url": "https://airconditionanswers.com/brands/american-standard",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/american-standard",
+            "image": "https://airconditionanswers.com/images/brands/american-standard-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "American Standard Air Conditioners",
-              "brand": { "@type": "Brand", "name": "American Standard" },
-              "manufacturer": { "@type": "Organization", "name": "Trane Technologies plc" }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "4.3", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "American Standard" }
           })}
         </script>
         <script type="application/ld+json">
