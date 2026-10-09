@@ -67,19 +67,16 @@ export default function BrandMitsubishi() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "Mitsubishi Electric HVAC Review 2026",
-            "reviewBody": "Mitsubishi Electric (via METUS, a 50/50 JV with Trane Technologies) is the dominant premium mini-split brand in the US, holding approximately 23% of the North American residential ductless market. The MSZ-FS reaches 32.2 SEER2 — the highest verified residential SEER2 in the US market. H2i Hyper-Heat operates at -13°F. The 12-year parts/compressor warranty with Diamond Contractor installation is industry-leading for ductless. Critical note: Mitsubishi does NOT offer conventional central split-system AC — ductless and ducted mini-split only. The 2025 Comfort app rollout (replacing kumo cloud) was a documented disaster affecting thousands of users. Parts are expensive and restricted to authorized channels. Diamond Contractor requirement for 12-year warranty creates geographic warranty access inequality.",
+            "@type": "Article",
+            "headline": "Mitsubishi Electric HVAC Review 2026",
+            "description": "Mitsubishi Electric (via METUS, a 50/50 JV with Trane Technologies) is the dominant premium mini-split brand in the US, holding approximately 23% of the North American residential ductless market. The MSZ-FS reaches 32.2 SEER2 — the highest verified residential SEER2 in the US market. H2i Hyper-Heat operates at -13°F. The 12-year parts/compressor warranty with Diamond Contractor installation is industry-leading for ductless. Critical note: Mitsubishi does NOT offer conventional central split-system AC — ductless and ducted mini-split only. The 2025 Comfort app rollout (replacing kumo cloud) was a documented disaster affecting thousands of users. Parts are expensive and restricted to authorized channels. Diamond Contractor requirement for 12-year warranty creates geographic warranty access inequality.",
+            "url": "https://airconditionanswers.com/brands/mitsubishi",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/mitsubishi",
+            "image": "https://airconditionanswers.com/images/brands/mitsubishi-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "Mitsubishi Electric Mini-Split Systems",
-              "brand": { "@type": "Brand", "name": "Mitsubishi Electric" },
-              "manufacturer": { "@type": "Organization", "name": "Mitsubishi Electric Trane HVAC US LLC (METUS)" }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "4.4", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "Mitsubishi Electric" }
           })}
         </script>
         <script type="application/ld+json">

@@ -65,19 +65,16 @@ export default function BrandTrane() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "Trane Air Conditioner Review 2026",
-            "reviewBody": "Trane earns Consumer Reports' highest predicted reliability score (5/5) and has won America's Most Trusted HVAC Brand for 12 consecutive years. The Spine Fin all-aluminum coil is a genuine differentiator in coastal climates. Known issues include TAM evaporator coil leaks (~1-in-15 rate), proprietary parts scarcity, and communicating system complexity on XV-series units. Pricing runs $4,881–$10,414 installed for central AC.",
+            "@type": "Article",
+            "headline": "Trane Air Conditioner Review 2026",
+            "description": "Trane earns Consumer Reports' highest predicted reliability score (5/5) and has won America's Most Trusted HVAC Brand for 12 consecutive years. The Spine Fin all-aluminum coil is a genuine differentiator in coastal climates. Known issues include TAM evaporator coil leaks (~1-in-15 rate), proprietary parts scarcity, and communicating system complexity on XV-series units. Pricing runs $4,881–$10,414 installed for central AC.",
+            "url": "https://airconditionanswers.com/brands/trane",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/trane",
+            "image": "https://airconditionanswers.com/images/brands/trane-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "Trane Air Conditioners",
-              "brand": { "@type": "Brand", "name": "Trane" },
-              "manufacturer": { "@type": "Organization", "name": "Trane Technologies plc" }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "Trane" }
           })}
         </script>
         <script type="application/ld+json">

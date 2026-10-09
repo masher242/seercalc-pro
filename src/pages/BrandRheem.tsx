@@ -67,19 +67,16 @@ export default function BrandRheem() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "Rheem Air Conditioner Review 2026",
-            "reviewBody": "Rheem is a privately held mid-range HVAC brand owned by Paloma Rheem Holdings (Japan) and manufactured in Fort Smith, Arkansas. The Endeavor Line (rebranded in 2023) reaches up to 20.5 SEER2 on the Prestige series using R-454B refrigerant. Rheem's 90-day registration window matches Carrier's industry-leading standard. Key strengths: easy serviceability (any tech can work on them), Watsco distribution network, and the Fujitsu General acquisition (2025) adding ductless expertise. Known issue: evaporator coil pinhole leaks documented within 3–5 years, with $3,000–$4,000 out-of-pocket labor exposure since refrigerant and labor are not covered. Also owns Friedrich (ductless) and Ruud (identical hardware, contractor channel). DOE civil penalty of $1.05M in 2024 for commercial unit energy standard noncompliance.",
+            "@type": "Article",
+            "headline": "Rheem Air Conditioner Review 2026",
+            "description": "Rheem is a privately held mid-range HVAC brand owned by Paloma Rheem Holdings (Japan) and manufactured in Fort Smith, Arkansas. The Endeavor Line (rebranded in 2023) reaches up to 20.5 SEER2 on the Prestige series using R-454B refrigerant. Rheem's 90-day registration window matches Carrier's industry-leading standard. Key strengths: easy serviceability (any tech can work on them), Watsco distribution network, and the Fujitsu General acquisition (2025) adding ductless expertise. Known issue: evaporator coil pinhole leaks documented within 3–5 years, with $3,000–$4,000 out-of-pocket labor exposure since refrigerant and labor are not covered. Also owns Friedrich (ductless) and Ruud (identical hardware, contractor channel). DOE civil penalty of $1.05M in 2024 for commercial unit energy standard noncompliance.",
+            "url": "https://airconditionanswers.com/brands/rheem",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/rheem",
+            "image": "https://airconditionanswers.com/images/brands/rheem-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "Rheem Air Conditioners",
-              "brand": { "@type": "Brand", "name": "Rheem" },
-              "manufacturer": { "@type": "Organization", "name": "Rheem Manufacturing Company" }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "3.9", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "Rheem" }
           })}
         </script>
         <script type="application/ld+json">

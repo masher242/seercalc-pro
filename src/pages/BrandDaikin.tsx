@@ -74,19 +74,16 @@ export default function BrandDaikin() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "Daikin Air Conditioner Review 2026",
-            "reviewBody": "Daikin is the world's largest HVAC manufacturer by revenue (~$31B) and the parent company of Goodman and Amana. All three brands are manufactured at the same 4.2 million sq ft Waller, Texas facility. Daikin is the premium tier — priced 30–40% above Goodman for the same factory origin. Key advantages: 12-year parts + 12-year unit replacement warranty (best standard warranty in the category), R-32 refrigerant (~$449/20 lbs vs. R-454B at $700–$2,800), DX9VC up to 24.5 SEER2, new FIT AURORA cold-climate heat pump to -20°F. Key trade-offs: annual maintenance required to preserve unit replacement warranty, Daikin One+ thermostat has documented temperature inaccuracy issues, dealer network thinner than Goodman in some regions. $8.5M CPSC civil fine in June 2026 for delayed PTAC safety disclosure.",
+            "@type": "Article",
+            "headline": "Daikin Air Conditioner Review 2026",
+            "description": "Daikin is the world's largest HVAC manufacturer by revenue (~$31B) and the parent company of Goodman and Amana. All three brands are manufactured at the same 4.2 million sq ft Waller, Texas facility. Daikin is the premium tier — priced 30–40% above Goodman for the same factory origin. Key advantages: 12-year parts + 12-year unit replacement warranty (best standard warranty in the category), R-32 refrigerant (~$449/20 lbs vs. R-454B at $700–$2,800), DX9VC up to 24.5 SEER2, new FIT AURORA cold-climate heat pump to -20°F. Key trade-offs: annual maintenance required to preserve unit replacement warranty, Daikin One+ thermostat has documented temperature inaccuracy issues, dealer network thinner than Goodman in some regions. $8.5M CPSC civil fine in June 2026 for delayed PTAC safety disclosure.",
+            "url": "https://airconditionanswers.com/brands/daikin",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/daikin",
+            "image": "https://airconditionanswers.com/images/brands/daikin-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "Daikin Air Conditioners",
-              "brand": { "@type": "Brand", "name": "Daikin" },
-              "manufacturer": { "@type": "Organization", "name": "Daikin Comfort Technologies North America" }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "4.2", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "Daikin" }
           })}
         </script>
         <script type="application/ld+json">

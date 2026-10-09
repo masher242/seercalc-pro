@@ -67,19 +67,16 @@ export default function BrandGoodman() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Review",
-            "name": "Goodman Air Conditioner Review 2026",
-            "reviewBody": "Goodman is the US budget AC market leader, owned by Daikin (world's largest HVAC manufacturer). Manufactured at the same 4.2M sq ft Waller, Texas facility as Daikin and Amana. The lifetime compressor warranty on registered units is exceptional for a budget brand. Goodman's choice of R-32 refrigerant gives it a meaningful service cost advantage over Carrier, Trane, and Lennox (R-454B). Known issues: capacitor failures, evaporator coil leaks within 3-4 years on some units, and no labor coverage under warranty. Best for rental properties, budget-constrained buyers, and anyone who wants open wholesale parts access.",
+            "@type": "Article",
+            "headline": "Goodman Air Conditioner Review 2026",
+            "description": "Goodman is the US budget AC market leader, owned by Daikin (world's largest HVAC manufacturer). Manufactured at the same 4.2M sq ft Waller, Texas facility as Daikin and Amana. The lifetime compressor warranty on registered units is exceptional for a budget brand. Goodman's choice of R-32 refrigerant gives it a meaningful service cost advantage over Carrier, Trane, and Lennox (R-454B). Known issues: capacitor failures, evaporator coil leaks within 3-4 years on some units, and no labor coverage under warranty. Best for rental properties, budget-constrained buyers, and anyone who wants open wholesale parts access.",
+            "url": "https://airconditionanswers.com/brands/goodman",
+            "mainEntityOfPage": "https://airconditionanswers.com/brands/goodman",
+            "image": "https://airconditionanswers.com/images/brands/goodman-review-og.png",
             "dateModified": "2026-07-01",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "itemReviewed": {
-              "@type": "Product",
-              "name": "Goodman Air Conditioners",
-              "brand": { "@type": "Brand", "name": "Goodman" },
-              "manufacturer": { "@type": "Organization", "name": "Daikin Comfort Technologies North America" }
-            },
-            "reviewRating": { "@type": "Rating", "ratingValue": "3.8", "bestRating": "5", "worstRating": "1" }
+            "about": { "@type": "Brand", "name": "Goodman" }
           })}
         </script>
         <script type="application/ld+json">
