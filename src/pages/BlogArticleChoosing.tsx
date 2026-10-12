@@ -344,6 +344,12 @@ export default function BlogArticleChoosing() {
               </ul>
             </div>
 
+            <p className="text-gray-700 mb-6">
+              Deciding between the two most common upgrade levels? See{' '}
+              <Link to="/blog/16-vs-18-seer" className="text-teal-600 hover:text-teal-700 font-medium">16 vs 18 SEER: is the upgrade worth it?</Link>{' '}
+              for the payback math by state.
+            </p>
+
             <div className="bg-green-50 border border-green-300 rounded-lg p-6 mb-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3">SEER 18-19: High Efficiency</h3>
               <p className="text-gray-700 mb-3"><strong>What you get:</strong></p>

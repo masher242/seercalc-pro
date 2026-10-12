@@ -5,6 +5,14 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: '16-vs-18-seer',
+    title: '16 vs 18 SEER: Is the Upgrade Worth the Extra Cost?',
+    description: 'An 18 SEER AC uses 11% less electricity than a 16. The payback math by state and in the Caribbean, plus what the efficiency number doesn\'t tell you.',
+    date: '2026-10-12',
+    readTime: '9 min read',
+    category: 'HVAC Education'
+  },
+  {
     slug: 'how-much-does-it-cost-to-run-ac',
     title: 'How Much Does It Cost to Run an Air Conditioner? (By Size, SEER and State)',
     description: 'What central air, window units and mini-splits cost per hour, month and year at real electricity rates, with a breakdown for all 50 states and DC.',
