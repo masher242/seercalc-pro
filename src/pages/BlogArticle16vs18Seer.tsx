@@ -334,8 +334,9 @@ export default function BlogArticle16vs18Seer() {
           <p className={p}>
             This is the one I learned the hard way. Where outages, brownouts and surges are common (island grids, rural lines,
             hurricane country), the control boards in any modern AC are exposed, and a variable-speed system has more
-            electronics to lose. If you're buying the 18 in that kind of place, budget for surge protection on the outdoor
-            unit too.
+            electronics to lose. If you're buying the 18 in that kind of place, budget for surge and voltage protection on
+            the outdoor unit too. See{' '}
+            <Link to="/blog/protect-air-conditioner-power-surges-outages" className={a}>how to protect your AC from surges, brownouts and outages</Link>.
           </p>
           <h3 className={h3}>The installation matters more than the label</h3>
           <p className={p}>
