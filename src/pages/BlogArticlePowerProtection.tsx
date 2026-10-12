@@ -154,8 +154,9 @@ export default function BlogArticlePowerProtection() {
               is turned off, so a surge or lightning strike on the line has nothing running to damage.
             </li>
             <li>
-              <strong>Surge protection on refrigeration.</strong> We've lost refrigerators and their compressors to brownouts,
-              so that equipment now has surge protectors.
+              <strong>Voltage protection on refrigeration.</strong> We've lost refrigerators and their compressors to
+              brownouts, so that equipment now runs through appliance protectors that watch the voltage: when it drops, they
+              cut power, and they wait a few minutes before reconnecting.
             </li>
           </ul>
           <p className={p}>
@@ -210,10 +211,10 @@ export default function BlogArticlePowerProtection() {
           </p>
           <div className="bg-amber-50 border-l-4 border-amber-400 p-5 mb-6 rounded-r-lg">
             <p className="text-gray-800 leading-relaxed">
-              <strong>If you've lost equipment to brownouts</strong> (as we have with refrigeration), check what's protecting
-              it now. If it's a plain surge protector, it's guarding against the wrong thing. Look for a unit that lists{' '}
-              <em>under-voltage</em> or <em>brownout</em> protection with a restart delay. The same applies to refrigerators,
-              freezers and anything else with a compressor.
+              <strong>What to look for on the box:</strong> <em>under-voltage</em> or <em>brownout</em> protection and a{' '}
+              <em>restart delay</em>, not just a joule rating. That's what the protectors on our refrigeration do, and it's
+              what a compressor needs. A plain surge strip won't cut power when voltage sags. The same goes for
+              refrigerators, freezers, ice machines and anything else with a compressor.
             </p>
           </div>
 
