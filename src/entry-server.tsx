@@ -26,6 +26,7 @@ import BlogArticleAirFilter from './pages/BlogArticleAirFilter';
 import BlogArticleSeerChart from './pages/BlogArticleSeerChart';
 import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
 import BlogArticle16vs18Seer from './pages/BlogArticle16vs18Seer';
+import BlogArticlePowerProtection from './pages/BlogArticlePowerProtection';
 import BrandTrane from './pages/BrandTrane';
 import BrandsIndex from './pages/BrandsIndex';
 import BrandCarrier from './pages/BrandCarrier';
@@ -76,6 +77,7 @@ function AppContent() {
         <Route path="/blog/seer-rating-chart" element={<BlogArticleSeerChart />} />
         <Route path="/blog/seer-vs-seer2-explained" element={<BlogArticleSeerVsSeer2 />} />
         <Route path="/blog/16-vs-18-seer" element={<BlogArticle16vs18Seer />} />
+        <Route path="/blog/protect-air-conditioner-power-surges-outages" element={<BlogArticlePowerProtection />} />
         <Route path="/brands/trane" element={<BrandTrane />} />
         <Route path="/brands" element={<BrandsIndex />} />
         <Route path="/brands/carrier" element={<BrandCarrier />} />
@@ -161,5 +163,6 @@ export const routes = [
   ...COUNTRIES.map((c) => `/ac-cost/${c.slug}`),
   '/blog/how-much-does-it-cost-to-run-ac',
   '/blog/16-vs-18-seer',
+  '/blog/protect-air-conditioner-power-surges-outages',
   '/404',
 ];

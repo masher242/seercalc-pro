@@ -5,6 +5,14 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: 'protect-air-conditioner-power-surges-outages',
+    title: 'How to Protect Your Air Conditioner from Power Surges, Brownouts and Outages',
+    description: 'Surge protectors, voltage monitors, delay timers, soft starters and generators: what each one protects against, what it costs, and a hurricane checklist.',
+    date: '2026-10-12',
+    readTime: '10 min read',
+    category: 'HVAC Guides'
+  },
+  {
     slug: '16-vs-18-seer',
     title: '16 vs 18 SEER: Is the Upgrade Worth the Extra Cost?',
     description: 'An 18 SEER AC uses 11% less electricity than a 16. The payback math by state and in the Caribbean, plus what the efficiency number doesn\'t tell you.',
