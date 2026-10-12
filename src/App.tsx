@@ -24,6 +24,7 @@ import BlogArticleFreeStrategy from './pages/BlogArticleFreeStrategy';
 import BlogArticleAirFilter from './pages/BlogArticleAirFilter';
 import BlogArticleSeerChart from './pages/BlogArticleSeerChart';
 import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
+import BlogArticle16vs18Seer from './pages/BlogArticle16vs18Seer';
 import BrandTrane from './pages/BrandTrane';
 import BrandsIndex from './pages/BrandsIndex';
 import BrandCarrier from './pages/BrandCarrier';
@@ -82,6 +83,7 @@ function AppContent() {
           <Route path="/blog/air-filter-electricity-bill" element={<BlogArticleAirFilter />} />
           <Route path="/blog/seer-rating-chart" element={<BlogArticleSeerChart />} />
           <Route path="/blog/seer-vs-seer2-explained" element={<BlogArticleSeerVsSeer2 />} />
+          <Route path="/blog/16-vs-18-seer" element={<BlogArticle16vs18Seer />} />
           <Route path="/brands/trane" element={<BrandTrane />} />
           <Route path="/brands" element={<BrandsIndex />} />
           <Route path="/brands/carrier" element={<BrandCarrier />} />
