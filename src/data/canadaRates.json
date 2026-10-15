@@ -1,0 +1,115 @@
+{
+  "_readme": "Residential electricity prices for the Canada cost pages, from Hydro-Québec's annual Comparison of Electricity Prices in Major North American Cities. Bills are in Canadian dollars, before taxes, for 1,000 and 2,000 kWh a month. Update every number from the new edition each year (rates in effect April 1), then bump 'updated'. usdPerCad converts to US dollars for the U.S. comparison only. hours are our estimate of full-load cooling hours a year for a central AC.",
+  "updated": "2026-10-14",
+  "edition": "2025",
+  "ratesInEffect": "April 1, 2025",
+  "source": "Hydro-Québec, Comparison of Electricity Prices in Major North American Cities (rates in effect April 1, 2025)",
+  "sourceUrl": "https://www.hydroquebec.com/data/documents-donnees/pdf/comparaison-prix-2025-en.pdf",
+  "usdPerCad": 0.703,
+  "usdPerCadAsOf": "October 1, 2026",
+  "provinces": [
+    {
+      "name": "Quebec",
+      "slug": "quebec",
+      "abbr": "QC",
+      "utility": "Hydro-Québec",
+      "hours": 700,
+      "cities": [{ "name": "Montréal", "bill1000": 82.90, "bill2000": 181.92 }],
+      "note": "Hydro-Québec's residential rate charges a lower price for a first daily block of electricity and a higher one above it, so the kilowatt-hours an air conditioner adds on top of normal use cost more than the average. Even so, Quebec has the cheapest residential power in the comparison."
+    },
+    {
+      "name": "Ontario",
+      "slug": "ontario",
+      "abbr": "ON",
+      "utility": "local distributors such as Toronto Hydro and Hydro Ottawa",
+      "hours": 800,
+      "cities": [
+        { "name": "Toronto", "bill1000": 155.69, "bill2000": 271.26 },
+        { "name": "Ottawa", "bill1000": 143.51, "bill2000": 256.44 }
+      ],
+      "note": "Ontario bills include a fixed monthly delivery charge, so the average price per kWh falls as you use more. Many Ontario households are on time-of-use pricing: running the AC hardest outside on-peak hours, or pre-cooling the house before them, lowers the bill."
+    },
+    {
+      "name": "Alberta",
+      "slug": "alberta",
+      "abbr": "AB",
+      "utility": "retailers and distributors such as ENMAX (Calgary) and EPCOR (Edmonton)",
+      "hours": 400,
+      "cities": [
+        { "name": "Calgary", "bill1000": 229.04, "bill2000": 422.23 },
+        { "name": "Edmonton", "bill1000": 220.02, "bill2000": 412.33 }
+      ],
+      "note": "Alberta has a competitive electricity market, so the energy price depends on the retailer and plan you choose, and delivery charges are added on top. Alberta has the highest residential prices in the comparison, but its short, dry summers mean most homes run central AC far fewer hours than in Ontario or Manitoba."
+    },
+    {
+      "name": "British Columbia",
+      "slug": "british-columbia",
+      "abbr": "BC",
+      "utility": "BC Hydro",
+      "hours": 400,
+      "cities": [{ "name": "Vancouver", "bill1000": 126.02, "bill2000": 260.48 }],
+      "note": "At the April 2025 rates in this comparison, BC Hydro's residential rate had two steps, with usage above a threshold billed at a higher price, so the kilowatt-hours an air conditioner adds cost more than the average. Cooling hours here are for the coast; the Interior (Kelowna, Kamloops) has much hotter summers and runs AC far more."
+    },
+    {
+      "name": "Manitoba",
+      "slug": "manitoba",
+      "abbr": "MB",
+      "utility": "Manitoba Hydro",
+      "hours": 700,
+      "cities": [{ "name": "Winnipeg", "bill1000": 105.33, "bill2000": 201.20 }],
+      "note": "Manitoba Hydro generates almost all of its power from hydro dams, which keeps rates among the lowest in North America. Winnipeg's summers are warm enough that central AC gets real use."
+    },
+    {
+      "name": "Saskatchewan",
+      "slug": "saskatchewan",
+      "abbr": "SK",
+      "utility": "SaskPower",
+      "hours": 500,
+      "cities": [{ "name": "Regina", "bill1000": 178.94, "bill2000": 327.89 }],
+      "note": "SaskPower generates much of its electricity from natural gas and coal, and its residential prices are among the higher ones in Canada."
+    },
+    {
+      "name": "Nova Scotia",
+      "slug": "nova-scotia",
+      "abbr": "NS",
+      "utility": "Nova Scotia Power",
+      "hours": 400,
+      "cities": [{ "name": "Halifax", "bill1000": 204.78, "bill2000": 390.39 }],
+      "note": "Nova Scotia has some of the highest residential prices in eastern Canada. Many homes cool with a ductless heat pump that also heats in winter, so its efficiency rating matters for the whole year, not just summer."
+    },
+    {
+      "name": "New Brunswick",
+      "slug": "new-brunswick",
+      "abbr": "NB",
+      "utility": "NB Power",
+      "hours": 500,
+      "cities": [{ "name": "Moncton", "bill1000": 166.08, "bill2000": 302.61 }],
+      "note": "NB Power supplies most of the province. Ductless heat pumps are common for both heating and cooling, so a high-efficiency unit pays back across the whole year."
+    },
+    {
+      "name": "Prince Edward Island",
+      "slug": "prince-edward-island",
+      "abbr": "PE",
+      "utility": "Maritime Electric",
+      "hours": 400,
+      "cities": [{ "name": "Charlottetown", "bill1000": 196.87, "bill2000": 369.17 }],
+      "note": "Maritime Electric supplies most of the island. Ductless heat pumps are widely used for both heating and cooling, so efficiency pays back year-round, not just in summer."
+    },
+    {
+      "name": "Newfoundland and Labrador",
+      "slug": "newfoundland-and-labrador",
+      "abbr": "NL",
+      "utility": "Newfoundland Power",
+      "hours": 300,
+      "cities": [{ "name": "St. John's", "bill1000": 155.86, "bill2000": 296.08 }],
+      "note": "St. John's has one of the coolest summers of any Canadian city, so air conditioning runs few hours a year. A ductless heat pump that also heats in winter usually makes more financial sense than a cooling-only unit."
+    }
+  ],
+  "usCities": [
+    { "name": "Seattle, WA", "near": "Vancouver", "bill1000": 189.74 },
+    { "name": "Detroit, MI", "near": "Toronto", "bill1000": 296.18 },
+    { "name": "Boston, MA", "near": "Halifax", "bill1000": 478.69 },
+    { "name": "Chicago, IL", "near": "Winnipeg", "bill1000": 243.30 },
+    { "name": "New York, NY", "near": "Montréal", "bill1000": 524.83 }
+  ]
+}

@@ -11,13 +11,15 @@ interface Props {
   stateRate: number;
   /** typical annual cooling hours for the state */
   stateHours: number;
+  /** money formatter; defaults to US dollars */
+  money?: (n: number, digits?: number) => string;
 }
 
 /**
  * "Your numbers" box on each state page. Starts from the state's EIA rate and typical
  * hours (from stateRates.json via acCost.ts), and recalculates as the visitor changes inputs.
  */
-export default function StateCostEstimator({ stateName, stateRate, stateHours }: Props) {
+export default function StateCostEstimator({ stateName, stateRate, stateHours, money = usd }: Props) {
   const [tons, setTons] = useState(3);
   const [currentSeer, setCurrentSeer] = useState(10);
   const [newSeer, setNewSeer] = useState(16);
@@ -105,24 +107,24 @@ export default function StateCostEstimator({ stateName, stateRate, stateHours }:
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3" aria-live="polite">
         <div className="rounded-lg bg-white border border-gray-200 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Your AC now (SEER {currentSeer})</p>
-          <p className="text-2xl font-bold text-gray-900 mt-1">{usd(nowYear)}<span className="text-sm font-medium text-gray-500">/yr</span></p>
+          <p className="text-2xl font-bold text-gray-900 mt-1">{money(nowYear)}<span className="text-sm font-medium text-gray-500">/yr</span></p>
           <p className="text-xs text-gray-500 mt-1">
-            {usd(costPerHour(tons, currentSeer, rate), 2)}/hr · {usd(costPerHour(tons, currentSeer, rate) * SUMMER_MONTH_HOURS)} summer month
+            {money(costPerHour(tons, currentSeer, rate), 2)}/hr · {money(costPerHour(tons, currentSeer, rate) * SUMMER_MONTH_HOURS)} summer month
           </p>
         </div>
         <div className="rounded-lg bg-white border border-gray-200 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">New system (SEER {newSeer})</p>
-          <p className="text-2xl font-bold text-gray-900 mt-1">{usd(newYear)}<span className="text-sm font-medium text-gray-500">/yr</span></p>
+          <p className="text-2xl font-bold text-gray-900 mt-1">{money(newYear)}<span className="text-sm font-medium text-gray-500">/yr</span></p>
           <p className="text-xs text-gray-500 mt-1">
-            {usd(costPerHour(tons, newSeer, rate), 2)}/hr · {usd(costPerHour(tons, newSeer, rate) * SUMMER_MONTH_HOURS)} summer month
+            {money(costPerHour(tons, newSeer, rate), 2)}/hr · {money(costPerHour(tons, newSeer, rate) * SUMMER_MONTH_HOURS)} summer month
           </p>
         </div>
         <div className={`rounded-lg p-4 ${saving >= 0 ? 'bg-[#17204d] text-white' : 'bg-amber-50 border border-amber-200 text-gray-900'}`}>
           <p className={`text-xs font-semibold uppercase tracking-wide ${saving >= 0 ? 'text-teal-200' : 'text-amber-700'}`}>
             {saving >= 0 ? 'You would save' : 'Extra cost'}
           </p>
-          <p className="text-2xl font-bold mt-1">{usd(Math.abs(saving))}<span className={`text-sm font-medium ${saving >= 0 ? 'text-teal-100' : 'text-gray-500'}`}>/yr</span></p>
-          <p className={`text-xs mt-1 ${saving >= 0 ? 'text-teal-100' : 'text-gray-600'}`}>{usd(Math.abs(saving) * 10)} over 10 years</p>
+          <p className="text-2xl font-bold mt-1">{money(Math.abs(saving))}<span className={`text-sm font-medium ${saving >= 0 ? 'text-teal-100' : 'text-gray-500'}`}>/yr</span></p>
+          <p className={`text-xs mt-1 ${saving >= 0 ? 'text-teal-100' : 'text-gray-600'}`}>{money(Math.abs(saving) * 10)} over 10 years</p>
         </div>
       </div>
 
