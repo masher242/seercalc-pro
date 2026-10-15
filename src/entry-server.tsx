@@ -46,6 +46,7 @@ import AcCostIndex from './pages/AcCostIndex';
 import AcCostState from './pages/AcCostState';
 import AcCostCaribbean from './pages/AcCostCaribbean';
 import AcCostCanada from './pages/AcCostCanada';
+import AcCostEurope from './pages/AcCostEurope';
 import TroubleshootingHub from './pages/TroubleshootingHub';
 import TroubleshootingSymptom from './pages/TroubleshootingSymptom';
 import AcCostProvince from './pages/AcCostProvince';
@@ -55,6 +56,7 @@ import { Routes, Route } from 'react-router-dom';
 import { STATES } from './data/acCost';
 import { COUNTRIES } from './data/caribbean';
 import { PROVINCES } from './data/canada';
+import { EU_COUNTRIES } from './data/europe';
 import { SYMPTOMS } from './data/troubleshooting';
 
 function AppContent() {
@@ -105,6 +107,7 @@ function AppContent() {
         <Route path="/ac-cost" element={<AcCostIndex />} />
         <Route path="/ac-cost/caribbean" element={<AcCostCaribbean />} />
         <Route path="/ac-cost/canada" element={<AcCostCanada />} />
+        <Route path="/ac-cost/europe" element={<AcCostEurope />} />
         <Route path="/ac-cost/canada/:province" element={<AcCostProvince />} />
         <Route path="/ac-cost/:state" element={<AcCostState />} />
         <Route path="/blog/how-much-does-it-cost-to-run-ac" element={<BlogArticleRunningCost />} />
@@ -175,6 +178,8 @@ export const routes = [
   ...COUNTRIES.map((c) => `/ac-cost/${c.slug}`),
   '/ac-cost/canada',
   ...PROVINCES.map((p) => `/ac-cost/canada/${p.slug}`),
+  '/ac-cost/europe',
+  ...EU_COUNTRIES.map((c) => `/ac-cost/${c.slug}`),
   '/blog/how-much-does-it-cost-to-run-ac',
   '/blog/16-vs-18-seer',
   '/blog/14-vs-16-seer',

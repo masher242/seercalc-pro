@@ -7,6 +7,8 @@ import LeadMagnet from '../components/LeadMagnet';
 import NotFound from './NotFound';
 import AcCostCountry from './AcCostCountry';
 import { getCountry } from '../data/caribbean';
+import { getEuCountry } from '../data/europe';
+import AcCostEuropeCountry from './AcCostEuropeCountry';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import {
   getState, STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, BAND_HOURS, BAND_LABEL,
@@ -25,7 +27,9 @@ export default function AcCostState() {
   const s = getState(slug);
   if (!s) {
     const country = getCountry(slug);
-    return country ? <AcCostCountry c={country} /> : <NotFound />;
+    if (country) return <AcCostCountry c={country} />;
+    const eu = getEuCountry(slug);
+    return eu ? <AcCostEuropeCountry c={eu} /> : <NotFound />;
   }
 
   const path = `/ac-cost/${s.slug}`;

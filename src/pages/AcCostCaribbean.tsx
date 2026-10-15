@@ -168,8 +168,9 @@ export default function AcCostCaribbean() {
             <li><strong>Protect the equipment.</strong> Voltage protectors and a surge protector at the panel guard against brownouts and spikes. Each country page covers this in more detail.</li>
           </ul>
           <p className="text-sm text-gray-600 mb-4">
-            Also see <Link to="/ac-cost/canada" className={a}>what AC costs to run in Canada</Link> and{' '}
-            <Link to="/ac-cost" className={a}>in every U.S. state</Link>.
+            Also see what AC costs to run in <Link to="/ac-cost/canada" className={a}>Canada</Link>,{' '}
+            <Link to="/ac-cost/europe" className={a}>Europe</Link> and{' '}
+            <Link to="/ac-cost" className={a}>every U.S. state</Link>.
           </p>
 
           <h2 className={h2}>Frequently asked questions</h2>

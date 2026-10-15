@@ -45,6 +45,7 @@ import AcCostIndex from './pages/AcCostIndex';
 import AcCostState from './pages/AcCostState';
 import AcCostCaribbean from './pages/AcCostCaribbean';
 import AcCostCanada from './pages/AcCostCanada';
+import AcCostEurope from './pages/AcCostEurope';
 import TroubleshootingHub from './pages/TroubleshootingHub';
 import TroubleshootingSymptom from './pages/TroubleshootingSymptom';
 import AcCostProvince from './pages/AcCostProvince';
@@ -111,6 +112,7 @@ function AppContent() {
           <Route path="/ac-cost" element={<AcCostIndex />} />
           <Route path="/ac-cost/caribbean" element={<AcCostCaribbean />} />
           <Route path="/ac-cost/canada" element={<AcCostCanada />} />
+          <Route path="/ac-cost/europe" element={<AcCostEurope />} />
           <Route path="/ac-cost/canada/:province" element={<AcCostProvince />} />
           <Route path="/ac-cost/:state" element={<AcCostState />} />
           <Route path="/blog/how-much-does-it-cost-to-run-ac" element={<BlogArticleRunningCost />} />
