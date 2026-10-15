@@ -45,6 +45,8 @@ import AcCostIndex from './pages/AcCostIndex';
 import AcCostState from './pages/AcCostState';
 import AcCostCaribbean from './pages/AcCostCaribbean';
 import AcCostCanada from './pages/AcCostCanada';
+import TroubleshootingHub from './pages/TroubleshootingHub';
+import TroubleshootingSymptom from './pages/TroubleshootingSymptom';
 import AcCostProvince from './pages/AcCostProvince';
 import BlogArticleRunningCost from './pages/BlogArticleRunningCost';
 import NotFound from './pages/NotFound';
@@ -104,6 +106,8 @@ function AppContent() {
           <Route path="/calculators/seer-to-seer2" element={<CalculatorSeerToSeer2 />} />
           <Route path="/calculators/ac-sizing" element={<CalculatorACSizing />} />
           <Route path="/about/mark-curant" element={<AboutMarkCurant />} />
+          <Route path="/troubleshooting" element={<TroubleshootingHub />} />
+          <Route path="/troubleshooting/:symptom" element={<TroubleshootingSymptom />} />
           <Route path="/ac-cost" element={<AcCostIndex />} />
           <Route path="/ac-cost/caribbean" element={<AcCostCaribbean />} />
           <Route path="/ac-cost/canada" element={<AcCostCanada />} />

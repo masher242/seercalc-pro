@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Star, Calculator, Menu, X } from 'lucide-react';
+import { BookOpen, Star, Calculator, Wrench, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import CalculatorBar, { showCalculatorBar } from './CalculatorBar';
 
@@ -7,6 +7,7 @@ export default function Header() {
   const location = useLocation();
   const isBlogPage = location.pathname.startsWith('/blog');
   const isBrandsPage = location.pathname.startsWith('/brands');
+  const isFixPage = location.pathname.startsWith('/troubleshooting');
   const isCalcPage = location.pathname === '/' || location.pathname.startsWith('/calculators');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Header() {
 
   const navItems = [
     { to: '/calculators', label: 'Calculators', shortLabel: 'Calc', icon: Calculator, active: isCalcPage },
+    { to: '/troubleshooting', label: 'Troubleshooting', shortLabel: 'Fix', icon: Wrench, active: isFixPage },
     { to: '/blog', label: 'Efficiency Hub', shortLabel: 'Hub', icon: BookOpen, active: isBlogPage },
     { to: '/brands', label: 'Brand Reviews', shortLabel: 'Brands', icon: Star, active: isBrandsPage },
   ];
@@ -45,7 +47,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-2">
+          <nav className="hidden lg:flex items-center gap-2">
             {navItems.map(({ to, label, icon: Icon, active }) => (
               <Link
                 key={to}
@@ -64,7 +66,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
@@ -77,7 +79,7 @@ export default function Header() {
 
       {/* Mobile dropdown */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1">
+        <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1">
           {navItems.map(({ to, label, icon: Icon, active }) => (
             <Link
               key={to}
