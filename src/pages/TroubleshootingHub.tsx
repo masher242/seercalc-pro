@@ -121,6 +121,7 @@ export default function TroubleshootingHub() {
             match the problem. A lot of service calls come down to a cheap part or a clogged drain, and a "you need a new
             system" verdict sometimes turns out to be a capacitor. These pages are the checks I'd do before picking up the phone,
             and what I'd want to know before agreeing to a price.
+            {' '}My son, who's studying for his HVAC certification, now helps with a lot of this troubleshooting.
           </p>
 
           <h2 className={h2}>Before you agree to a repair</h2>
