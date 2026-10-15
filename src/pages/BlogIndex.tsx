@@ -5,6 +5,14 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: '14-vs-16-seer',
+    title: '14 vs 16 SEER: Is the Upgrade Worth the Extra Cost?',
+    description: 'A 16 SEER AC uses 12.5% less electricity than a 14. The payback math by state, why the South is different, and how 16 SEER lines up with ENERGY STAR.',
+    date: '2026-10-14',
+    readTime: '8 min read',
+    category: 'HVAC Education'
+  },
+  {
     slug: 'protect-air-conditioner-power-surges-outages',
     title: 'How to Protect Your Air Conditioner from Power Surges, Brownouts and Outages',
     description: 'Surge protectors, voltage monitors, delay timers, soft starters and generators: what each one protects against, what it costs, and a hurricane checklist.',
