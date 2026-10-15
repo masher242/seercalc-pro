@@ -172,6 +172,13 @@ export default function TroubleshootingSymptom() {
             for the full list.
           </p>
 
+          {s.fromExperience && (
+            <div className="rounded-lg border-l-4 border-[#17204d] bg-slate-50 p-5 mb-4">
+              <p className="text-sm font-bold uppercase tracking-wide text-[#17204d] mb-1">From our own units</p>
+              <p className="text-gray-700 leading-relaxed">{s.fromExperience}</p>
+            </div>
+          )}
+
           <h2 className={h2}>Step by step</h2>
           <ol className="space-y-4 mb-4">
             {s.steps.map((st, i) => (

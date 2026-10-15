@@ -95,7 +95,8 @@ export default function AboutMarkCurant() {
               at the same time. He saw how much maintenance, repairs and installation cost, and how much of it you can
               understand, check or do yourself, and he's considering HVAC as a career. He isn't certified yet, so he
               doesn't handle refrigerant or licensed work, but he helps with routine maintenance and troubleshooting
-              along the way.
+              along the way. He has spotted failed capacitors (one of the cheapest fixes there is), cleaned units and
+              replaced condensate pumps.
             </p>
             <p>
               Years of paying those bills and protecting that equipment taught him that the biggest cooling costs
