@@ -397,7 +397,8 @@ export default function BlogArticle16vs18Seer() {
             </div>
           </div>
           <p className={p}>
-            Comparing other steps? See the <Link to="/blog/seer-rating-chart" className={a}>SEER rating chart</Link> for every
+            Comparing other steps? See <Link to="/blog/14-vs-16-seer" className={a}>14 vs 16 SEER</Link> for the step up from
+            the minimum, the <Link to="/blog/seer-rating-chart" className={a}>SEER rating chart</Link> for every
             rating from 8 to 25, and <Link to="/blog/choosing-the-right-seer-rating" className={a}>choosing the right SEER rating</Link>{' '}
             for the bigger picture.
           </p>

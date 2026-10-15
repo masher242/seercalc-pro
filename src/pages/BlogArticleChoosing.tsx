@@ -345,8 +345,9 @@ export default function BlogArticleChoosing() {
             </div>
 
             <p className="text-gray-700 mb-6">
-              Deciding between the two most common upgrade levels? See{' '}
-              <Link to="/blog/16-vs-18-seer" className="text-teal-600 hover:text-teal-700 font-medium">16 vs 18 SEER: is the upgrade worth it?</Link>{' '}
+              Deciding between upgrade levels? See{' '}
+              <Link to="/blog/14-vs-16-seer" className="text-teal-600 hover:text-teal-700 font-medium">14 vs 16 SEER</Link> and{' '}
+              <Link to="/blog/16-vs-18-seer" className="text-teal-600 hover:text-teal-700 font-medium">16 vs 18 SEER</Link>{' '}
               for the payback math by state.
             </p>
 
