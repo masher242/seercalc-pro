@@ -40,6 +40,8 @@ export interface Symptom {
   steps: Step[];
   /** extra warning specific to this symptom, shown with the standard safety box */
   safetyNote?: string;
+  /** a short first-person note from Mark's own experience, shown after the causes table */
+  fromExperience?: string;
   callPro: string[];
   quoteFlags: string[];
   faqs: { q: string; a: string }[];
@@ -77,6 +79,7 @@ export const COST = {
 export const SYMPTOMS: Symptom[] = [
   {
     slug: 'ac-blowing-warm-air',
+    fromExperience: 'My son, who\'s studying for his HVAC certification, cleans our units: clearing debris from around the outdoor unit and rinsing the coil with the power off. It costs nothing, and a dirty coil is one of the most common reasons an AC struggles on hot afternoons.',
     name: 'AC blowing warm air',
     title: 'AC Blowing Warm Air? Causes, Fixes and Repair Costs',
     h1: 'AC Blowing Warm Air? Causes, What to Check and What Repairs Cost',
@@ -241,6 +244,7 @@ export const SYMPTOMS: Symptom[] = [
   },
   {
     slug: 'ac-leaking-water',
+    fromExperience: 'My son has replaced condensate pumps on our units. It\'s a manageable job for someone handy, as long as the power is off and the new pump matches the old one\'s capacity and connections. If water keeps appearing after the drain line is clear, check the pump.',
     name: 'AC leaking water',
     title: 'AC Leaking Water Inside? Causes, Fixes and Costs',
     h1: 'AC Leaking Water Inside? Causes and How to Fix It',
@@ -293,6 +297,7 @@ export const SYMPTOMS: Symptom[] = [
   },
   {
     slug: 'ac-outdoor-unit-not-running',
+    fromExperience: 'My son, who\'s studying for his HVAC certification, has identified failed capacitors on our units. It\'s one of the cheapest repairs on this list and a common reason an outdoor unit hums without starting, so ask the technician to test it before anything more expensive. A capacitor holds a dangerous charge, so the replacement itself is a job for someone trained.',
     name: 'Outdoor unit not running',
     title: 'AC Outdoor Unit Not Running? Causes and Repair Costs',
     h1: 'AC Outdoor Unit Not Running? Why the Fan or Compressor Won\'t Start',
