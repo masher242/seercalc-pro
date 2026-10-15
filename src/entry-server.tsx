@@ -46,6 +46,8 @@ import AcCostIndex from './pages/AcCostIndex';
 import AcCostState from './pages/AcCostState';
 import AcCostCaribbean from './pages/AcCostCaribbean';
 import AcCostCanada from './pages/AcCostCanada';
+import TroubleshootingHub from './pages/TroubleshootingHub';
+import TroubleshootingSymptom from './pages/TroubleshootingSymptom';
 import AcCostProvince from './pages/AcCostProvince';
 import BlogArticleRunningCost from './pages/BlogArticleRunningCost';
 import NotFound from './pages/NotFound';
@@ -53,6 +55,7 @@ import { Routes, Route } from 'react-router-dom';
 import { STATES } from './data/acCost';
 import { COUNTRIES } from './data/caribbean';
 import { PROVINCES } from './data/canada';
+import { SYMPTOMS } from './data/troubleshooting';
 
 function AppContent() {
   return (
@@ -97,6 +100,8 @@ function AppContent() {
         <Route path="/calculators/seer-to-seer2" element={<CalculatorSeerToSeer2 />} />
         <Route path="/calculators/ac-sizing" element={<CalculatorACSizing />} />
         <Route path="/about/mark-curant" element={<AboutMarkCurant />} />
+        <Route path="/troubleshooting" element={<TroubleshootingHub />} />
+        <Route path="/troubleshooting/:symptom" element={<TroubleshootingSymptom />} />
         <Route path="/ac-cost" element={<AcCostIndex />} />
         <Route path="/ac-cost/caribbean" element={<AcCostCaribbean />} />
         <Route path="/ac-cost/canada" element={<AcCostCanada />} />
@@ -174,5 +179,7 @@ export const routes = [
   '/blog/16-vs-18-seer',
   '/blog/14-vs-16-seer',
   '/blog/protect-air-conditioner-power-surges-outages',
+  '/troubleshooting',
+  ...SYMPTOMS.map((s) => `/troubleshooting/${s.slug}`),
   '/404',
 ];

@@ -51,6 +51,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/troubleshooting" className="text-gray-600 hover:text-teal-600 transition-colors">
+                  AC Troubleshooting
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog/hvac-seer-calculator-faq" className="text-gray-600 hover:text-teal-600 transition-colors">
                   HVAC FAQ
                 </Link>
@@ -88,7 +93,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href={`mailto:${SITE_EMAIL}`} className="text-gray-600 hover:text-teal-600 transition-colors">
+                <a href={`mailto:${SITE_EMAIL}`} className="text-gray-600 hover:text-teal-600 transition-colors break-all">
                   {SITE_EMAIL}
                 </a>
               </li>

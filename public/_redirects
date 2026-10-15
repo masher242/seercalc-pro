@@ -15,6 +15,8 @@ http://www.seercalc.pro/*         https://airconditionanswers.com/:splat  301!
 /calculators/*    /calculators/:splat.html   200
 /ac-cost      /ac-cost.html       200
 /ac-cost/*    /ac-cost/:splat.html 200
+/troubleshooting      /troubleshooting.html          200
+/troubleshooting/*    /troubleshooting/:splat.html   200
 /about        /about/mark-curant  301
 /about/*      /about/:splat.html  200
 /*           /404.html        404
