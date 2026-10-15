@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { MapPin } from 'lucide-react';
 import { SITE_URL } from '../data/site';
+import USCostMap from '../components/USCostMap';
 import {
   STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, REF_TONS, REF_SEER,
   annualCost, costPerHour, usd, cents,
@@ -14,8 +15,8 @@ const td = 'border-b border-gray-100 px-3 py-2.5 text-gray-700';
 export default function AcCostIndex() {
   const [sort, setSort] = useState<'cost' | 'name'>('cost');
   const rows = [...STATES].sort((a, b) => (sort === 'cost' ? a.rank - b.rank : a.name.localeCompare(b.name)));
-  const title = 'Cost to Run AC by State 🗺️ Rates & Yearly Costs (2026)';
-  const description = `What it costs to run central air in all 50 states and DC, from each state's average residential electricity rate (EIA, ${RATES_AS_OF}). Per hour, per year, and how your state compares.`;
+  const title = 'Cost to Run AC by State: Map, Rates & Yearly Costs';
+  const description = `What it costs to run central air in all 50 states and DC, from each state's average residential electricity rate (EIA, ${RATES_AS_OF}). Interactive map, per-hour and yearly costs, and how your state compares.`;
 
   return (
     <>
@@ -70,6 +71,8 @@ export default function AcCostIndex() {
             </p>
           </div>
         </div>
+
+        <USCostMap />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
           <Link
