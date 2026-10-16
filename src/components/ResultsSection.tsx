@@ -41,7 +41,7 @@ export default function ResultsSection({ results, onStartOver }: ResultsSectionP
       <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl shadow-lg p-6 md:p-8 mb-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
           <TrendingDown className="w-7 h-7 text-green-600" />
-          Your Savings Results
+          Your Estimated Savings
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -100,19 +100,35 @@ export default function ResultsSection({ results, onStartOver }: ResultsSectionP
               <Calendar className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
               <div>
                 <div className="text-sm text-gray-600 mb-1">Payback Period</div>
-                <div className="text-3xl font-bold text-gray-900">{results.paybackYears.toFixed(1)} years</div>
+                <div className="text-3xl font-bold text-gray-900">
+                  {Number.isFinite(results.paybackYears) ? `${results.paybackYears.toFixed(1)} years` : 'Never'}
+                </div>
+                <div className="text-xs text-gray-500 mt-1">
+                  {Number.isFinite(results.paybackYears) ? 'upgrade cost ÷ yearly savings' : 'the new system doesn\'t save energy'}
+                </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-md flex items-start gap-3">
               <DollarSign className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
               <div>
-                <div className="text-sm text-gray-600 mb-1">10-Year ROI</div>
-                <div className="text-3xl font-bold text-gray-900">{results.roi.toFixed(0)}%</div>
+                <div className="text-sm text-gray-600 mb-1">10-Year Net Return</div>
+                <div className={`text-3xl font-bold ${results.roi < 0 ? 'text-red-600' : 'text-gray-900'}`}>
+                  {results.roi > 0 ? '+' : ''}{results.roi.toFixed(0)}%
+                </div>
+                <div className="text-xs text-gray-500 mt-1">
+                  (10-year savings − upgrade cost) ÷ upgrade cost{results.roi < 0 ? ' — not repaid within 10 years on energy alone' : ''}
+                </div>
               </div>
             </div>
           </div>
         )}
+
+        <p className="text-xs text-gray-600 mb-6 leading-relaxed">
+          <strong>These are estimates.</strong> They use full-load cooling hours and today's electricity rate, so
+          your real bill will move with the weather, your thermostat, how well the system is installed and future
+          rate changes. Savings over 5 and 10 years assume today's rate stays the same.
+        </p>
 
         <div className="bg-white rounded-lg p-6 shadow-md mb-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">

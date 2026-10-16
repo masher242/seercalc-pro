@@ -1227,7 +1227,7 @@ export default function BlogArticleBrands() {
             <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-lg p-8 text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Calculate Your Energy Savings</h2>
               <p className="text-xl mb-6">
-                Compare SEER2 ratings and see exactly how much you'll save with different brands
+                Compare SEER2 ratings and see roughly how much you'll save with different brands
               </p>
               <Link
                 to="/"

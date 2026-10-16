@@ -682,7 +682,7 @@ export default function BrandCarrier() {
           {/* CTA */}
           <div className="mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200">
             <h3 className="text-lg font-bold text-gray-900 mb-2">Calculate Carrier Savings vs. Your Current System</h3>
-            <p className="text-gray-600 mb-4 text-sm">Enter your current SEER rating and a Carrier system's SEER2 to see exactly how much you'd save on electricity — at your actual local rate.</p>
+            <p className="text-gray-600 mb-4 text-sm">Enter your current SEER rating and a Carrier system's SEER2 to estimate how much you'd save on electricity — at your actual local rate.</p>
             <Link to="/" className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors">
               <Calculator className="w-4 h-4" />
               Calculate My Savings

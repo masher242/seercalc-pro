@@ -458,7 +458,7 @@ export default function BlogArticleChoosing() {
 
           <div className="bg-blue-50 rounded-lg p-6 border border-blue-200 mt-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-3">Use Our Calculator to Compare Options</h2>
-            <p className="text-gray-700 mb-4">Ready to see exactly how much each SEER level will save you? Our calculator lets you compare multiple SEER ratings side-by-side.</p>
+            <p className="text-gray-700 mb-4">Ready to estimate how much each SEER level will save you? Our calculator lets you compare multiple SEER ratings side-by-side.</p>
             <Link
               to="/"
               className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"

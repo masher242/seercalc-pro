@@ -6,7 +6,7 @@ const liveCalculators = [
   {
     slug: '/',
     title: 'SEER Savings Calculator',
-    description: 'Enter your current SEER rating and a new system\'s SEER2 to see exact annual electricity savings at your local rate — with payback period.',
+    description: 'Enter your current SEER rating and a new system\'s SEER2 to estimate annual electricity savings at your local rate — with payback period.',
     inputs: 'Current SEER, new SEER2, electricity rate, cooling hours',
     bestFor: 'Anyone comparing new AC systems or curious how much their old system is costing them',
     time: '2 min',
@@ -15,7 +15,7 @@ const liveCalculators = [
   {
     slug: '/calculators/repair-vs-replace',
     title: 'AC Repair vs. Replace Calculator',
-    description: 'Should you pay for the repair or buy a new system? Enter your repair quote, system age, and efficiency ratings to get a clear recommendation with the math behind it.',
+    description: 'Should you pay for the repair or buy a new system? Enter your repair quote, system age, and efficiency ratings to get a suggested answer with the math behind it.',
     inputs: 'System age, repair cost, current SEER, new system cost, new SEER2, electricity rate',
     bestFor: 'Homeowners facing a repair bill who want to know if replacement makes more financial sense',
     time: '3 min',
@@ -71,7 +71,7 @@ export default function CalculatorsIndex() {
         {/* Quick Answer */}
         <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-10">
           <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Most Popular</p>
-          <p className="text-gray-800">The <strong>SEER Savings Calculator</strong> shows exactly how much your old AC is costing you vs. a new system — at your specific electricity rate. The <strong>Repair vs. Replace Calculator</strong> tells you whether to pay that repair bill or put the money toward a new system.</p>
+          <p className="text-gray-800">The <strong>SEER Savings Calculator</strong> estimates how much your old AC is costing you vs. a new system — at your specific electricity rate. The <strong>Repair vs. Replace Calculator</strong> helps you decide whether to pay that repair bill or put the money toward a new system.</p>
         </div>
 
         {/* Live calculators */}

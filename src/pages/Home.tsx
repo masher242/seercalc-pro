@@ -74,7 +74,7 @@ export default function Home() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://airconditionanswers.com/" />
-        <meta property="og:title" content="SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" />
+        <meta property="og:title" content="SEER Calculator ❄️ Estimate Your AC Savings Before You Buy" />
         <meta property="og:description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." />
         <meta property="og:image" content="https://airconditionanswers.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
@@ -84,7 +84,7 @@ export default function Home() {
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://airconditionanswers.com/" />
-        <meta name="twitter:title" content="SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" />
+        <meta name="twitter:title" content="SEER Calculator ❄️ Estimate Your AC Savings Before You Buy" />
         <meta name="twitter:description" content="Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." />
         <meta name="twitter:image" content="https://airconditionanswers.com/og-image.png" />
         <script type="application/ld+json">

@@ -371,7 +371,7 @@ export default function BlogArticleWhatIsSEER() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              The good news: you can calculate exactly where you stand right now, before spending anything. Plug in your current SEER rating, your electricity rate, and your estimated usage, and our calculator will show you your annual cooling cost and the precise savings you'd see from upgrading.
+              The good news: you can estimate where you stand right now, before spending anything. Plug in your current SEER rating, your electricity rate, and your estimated usage, and our calculator will show you your annual cooling cost and the estimated savings you'd see from upgrading.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -386,7 +386,7 @@ export default function BlogArticleWhatIsSEER() {
 
           <div className="mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200">
             <h3 className="text-lg font-bold text-gray-900 mb-2">Ready to See Your Numbers?</h3>
-            <p className="text-gray-600 mb-4 text-sm">Enter your current SEER, electricity rate, and usage to calculate exactly how much you could save by upgrading.</p>
+            <p className="text-gray-600 mb-4 text-sm">Enter your current SEER, electricity rate, and usage to estimate how much you could save by upgrading.</p>
             <Link
               to="/"
               className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors"

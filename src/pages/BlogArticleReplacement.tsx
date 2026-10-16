@@ -886,7 +886,7 @@ export default function BlogArticleReplacement() {
             <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-lg p-8 text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Calculate Your Replacement ROI</h2>
               <p className="text-xl mb-6">
-                See exactly how much you'll save with a new efficient AC
+                See roughly how much you'll save with a new efficient AC
               </p>
               <Link
                 to="/"
