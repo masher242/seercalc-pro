@@ -12,7 +12,7 @@ import {
 } from '../data/europe';
 
 const PATH = '/ac-cost/europe';
-const TITLE = 'Cost to Run AC in Europe: Spain, France, Portugal, UK';
+const TITLE = 'Cost to Run AC in Europe: 8 Countries, City by City';
 const HEADLINE = 'What It Costs to Run Air Conditioning in Europe';
 
 const th = 'border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap';
@@ -27,12 +27,12 @@ export default function AcCostEurope() {
     const hrs = c.cities.map((x) => x.hours);
     return `${money(c.currency, yearCost(EU_REF_KW, EU_REF_SEER, Math.min(...hrs), c.rate))}–${money(c.currency, yearCost(EU_REF_KW, EU_REF_SEER, Math.max(...hrs), c.rate))}`;
   };
-  const description = `What a 3.5 kW split air conditioner costs to run per hour and per year in Spain, France, Portugal and the UK, city by city, at current electricity prices, in euros and pounds.`;
+  const description = `What a 3.5 kW split air conditioner costs to run per hour and per year in Spain, Italy, Greece, Cyprus, Malta, Portugal, France and the UK, city by city, at current electricity prices, in euros and pounds.`;
 
   const faqs = [
     {
       q: 'Where in Europe is air conditioning most expensive to run?',
-      a: `Per kWh, ${ranked[0].inName} has the highest price of the countries we track (${unitPrice(ranked[0])}/kWh). But yearly cost depends far more on climate: in southern Spain and Portugal the AC runs several times as many hours as in Paris or London, so cooling costs the most there over a year.`,
+      a: `Per kWh, ${ranked[0].inName} has the highest price of the countries we track (${unitPrice(ranked[0])}/kWh). But yearly cost depends far more on climate: in Cyprus, Malta and the south of Spain, Italy and Greece the AC runs several times as many hours as in Paris or London, so cooling costs the most there over a year. The map above shows the yearly cost for every EU country.`,
     },
     {
       q: 'Is European SEER the same as U.S. SEER?',
@@ -91,8 +91,8 @@ export default function AcCostEurope() {
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{HEADLINE}</h1>
             <p className="text-xl text-gray-600">
-              Electricity prices, hourly and yearly cooling costs, and what an efficient unit saves, in Spain, France,
-              Portugal and the UK.
+              Electricity prices, hourly and yearly cooling costs, and what an efficient unit saves, in Spain, Italy,
+              Greece, Cyprus, Malta, Portugal, France and the UK, plus a map of every EU country.
             </p>
             <ArticleByline updated={EUROPE_UPDATED} />
           </header>
@@ -107,8 +107,9 @@ export default function AcCostEurope() {
                   {i < ranked.length - 2 ? ', ' : i === ranked.length - 2 ? ' and ' : ''}
                 </span>
               ))}
-              . The UK has the highest price per kWh, but climate decides the yearly bill: the AC runs several times
-              longer in Seville or the Alentejo than in Paris, and many times longer than in London.
+              . {ranked[0].name === 'United Kingdom' ? 'The UK' : ranked[0].name} has the highest price per kWh of these{' '}
+              {ranked.length}, but climate decides the yearly bill: the AC runs several times longer in Nicosia, Valletta or
+              Seville than in Paris, and many times longer than in London.
             </p>
           </div>
 
@@ -166,9 +167,10 @@ export default function AcCostEurope() {
           <h2 className={h2}>Climate matters more than price</h2>
           <p className={p}>
             The EU energy label assumes an air conditioner runs about 350 full-load hours a year, based on an average
-            European climate. Real homes vary far more than that. Our estimates run from about 1,200 hours in Seville and
-            900 in Évora down to 250 in Paris and 30 in Edinburgh. That's why the yearly cost in Seville can be several times
-            the cost in Paris, even though a kWh costs about the same.
+            European climate. Real homes vary far more than that. Our estimates run from about 1,600 hours in Nicosia and
+            1,200 in Seville down to 250 in Paris and 30 in Edinburgh. That's why the yearly cost in Seville can be several times
+            the cost in Paris, even though a kWh costs about the same, and why Malta, with some of the cheapest power in
+            Europe, still spends more on cooling than Germany.
           </p>
 
           <h2 className={h2}>Split or portable?</h2>

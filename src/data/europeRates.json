@@ -156,6 +156,159 @@
         "Under the price cap you also pay a daily standing charge of 54.83p, but that's fixed: running the AC only adds the unit rate. The price cap changes every three months, and fixed-price deals can be cheaper or dearer. The government has removed VAT from electricity bills from October 1, 2026 to March 31, 2027, and the cap figures already reflect that.",
         "Few UK homes have air conditioning, so the realistic choice in a heatwave is usually a portable unit or a single wall-mounted split. Time-of-use tariffs with cheap overnight rates don't help much, because cooling is needed in the afternoon and evening."
       ]
+    },
+    {
+      "name": "Italy",
+      "slug": "italy",
+      "currency": "EUR",
+      "rateNote": "average household price, all taxes and fixed charges included",
+      "asOf": "first half of 2026",
+      "source": "Eurostat, electricity prices for household consumers (nrg_pc_204), 2,500–4,999 kWh a year, all taxes and levies",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table",
+      "rate": 0.3142,
+      "cities": [
+        {
+          "name": "Palermo",
+          "hours": 1050
+        },
+        {
+          "name": "Bari",
+          "hours": 850
+        },
+        {
+          "name": "Naples",
+          "hours": 850
+        },
+        {
+          "name": "Rome",
+          "hours": 750
+        },
+        {
+          "name": "Florence",
+          "hours": 650
+        },
+        {
+          "name": "Bologna",
+          "hours": 600
+        },
+        {
+          "name": "Milan",
+          "hours": 550
+        },
+        {
+          "name": "Turin",
+          "hours": 400
+        }
+      ],
+      "refCity": "Rome",
+      "tariff": [
+        "Since July 2024 most Italian households buy electricity on the free market. Those who didn't pick a supplier were moved to the Servizio a Tutele Graduali, a transitional service that runs until March 31, 2027, while vulnerable customers (for example people over 75) can stay on regulated terms.",
+        "Many offers price electricity by time band: F1 is weekdays 8:00–19:00, F2 is weekday early mornings and evenings plus Saturday daytime, and F3 is nights, Sundays and holidays. Weekday afternoon AC falls in F1, usually the dearest band, so a two-band (bi-orario) offer suits homes that cool mostly in the evening and at weekends.",
+        "The figure here is Eurostat's average, which spreads fixed charges over every kWh. Northern cities like Milan and Turin have short, humid summers; the south and the islands run AC for much of the year."
+      ]
+    },
+    {
+      "name": "Greece",
+      "slug": "greece",
+      "currency": "EUR",
+      "rateNote": "average household price, all taxes and fixed charges included",
+      "asOf": "first half of 2026",
+      "source": "Eurostat, electricity prices for household consumers (nrg_pc_204), 2,500–4,999 kWh a year, all taxes and levies",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table",
+      "rate": 0.2401,
+      "cities": [
+        {
+          "name": "Rhodes",
+          "hours": 1050
+        },
+        {
+          "name": "Athens",
+          "hours": 1000
+        },
+        {
+          "name": "Heraklion",
+          "hours": 950
+        },
+        {
+          "name": "Patras",
+          "hours": 800
+        },
+        {
+          "name": "Thessaloniki",
+          "hours": 750
+        },
+        {
+          "name": "Ioannina",
+          "hours": 400
+        }
+      ],
+      "refCity": "Athens",
+      "tariff": [
+        "Greek electricity offers are colour-coded: blue tariffs have a fixed price, green tariffs are variable and follow the monthly wholesale market price, and yellow tariffs are more flexible still. Most households are on green tariffs, so a hot month with high wholesale prices can push the cost of running AC above the average shown here.",
+        "On a fixed (blue) tariff the price per kWh doesn't change with the market, which makes a summer AC bill easier to predict.",
+        "The figure here is Eurostat's average, which spreads fixed charges over every kWh."
+      ]
+    },
+    {
+      "name": "Cyprus",
+      "slug": "cyprus",
+      "currency": "EUR",
+      "rateNote": "average household price, all taxes and fixed charges included",
+      "asOf": "first half of 2026",
+      "source": "Eurostat, electricity prices for household consumers (nrg_pc_204), 2,500–4,999 kWh a year, all taxes and levies",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table",
+      "rate": 0.2688,
+      "cities": [
+        {
+          "name": "Nicosia",
+          "hours": 1600
+        },
+        {
+          "name": "Larnaca",
+          "hours": 1450
+        },
+        {
+          "name": "Limassol",
+          "hours": 1450
+        },
+        {
+          "name": "Paphos",
+          "hours": 1300
+        }
+      ],
+      "refCity": "Nicosia",
+      "tariff": [
+        "Almost all homes buy electricity from the Electricity Authority of Cyprus (EAC). Its price per kWh includes a fuel adjustment that moves with the cost of the fuel oil it burns, so bills follow world oil prices.",
+        "VAT on household electricity is 9% (instead of the standard 19%) until March 31, 2027.",
+        "Cyprus has the longest cooling season in the EU. Inland Nicosia is hotter in summer than the coast, so the AC runs longer there than in Limassol or Paphos.",
+        "The figure here is Eurostat's average, which spreads fixed charges over every kWh."
+      ]
+    },
+    {
+      "name": "Malta",
+      "slug": "malta",
+      "currency": "EUR",
+      "rateNote": "average household price, all taxes and fixed charges included",
+      "asOf": "first half of 2026",
+      "source": "Eurostat, electricity prices for household consumers (nrg_pc_204), 2,500–4,999 kWh a year, all taxes and levies",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table",
+      "rate": 0.1268,
+      "cities": [
+        {
+          "name": "Valletta",
+          "hours": 1400
+        },
+        {
+          "name": "Gozo",
+          "hours": 1300
+        }
+      ],
+      "refCity": "Valletta",
+      "tariff": [
+        "Enemalta charges by how much you've used so far in the year, VAT included: €0.1047/kWh for the first 2,000 kWh, €0.1298 up to 6,000, €0.1607 up to 10,000, €0.3420 up to 20,000 and €0.6076 above that, plus a yearly service charge of €65 (single-phase). Prices have been held at these levels for years.",
+        "Because the bands count the whole year's use, a home that runs several AC units through the summer can pass 10,000 kWh, after which each extra kWh costs more than twice the average shown here. Keeping total use under that line is the biggest saving.",
+        "An eco-reduction lowers the bill for low users: 25% off for a single person using under 2,000 kWh a year, and 25% off the first 1,000 kWh plus 15% off the next 750 per person for larger households that stay under 1,750 kWh per person."
+      ]
     }
   ]
 }
