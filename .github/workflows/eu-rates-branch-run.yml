@@ -24,7 +24,7 @@ jobs:
           curl -sS -o /dev/null -w "eurostat http %{http_code}\n" "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_204?freq=S&siec=E7000&nrg_cons=KWH2500-4999&unit=KWH&tax=I_TAX&currency=EUR&time=2026-S1" > eu-refresh.log 2>&1
           python3 scripts/update-eu-rates.py >> eu-refresh.log 2>&1
           echo "exit $?" >> eu-refresh.log
-          cat eu-refresh.log
+          while IFS= read -r line; do echo "::notice title=refresh::$line"; done < eu-refresh.log
       - name: Commit result to this branch
         run: |
           git config user.name "github-actions[bot]"
@@ -32,4 +32,7 @@ jobs:
           git add src/data/euHouseholdRates.json eu-refresh.log
           git diff --cached --quiet && exit 0
           git commit -m "Refresh EU prices from Eurostat (branch run)"
-          git push
+          git status -sb | head -1 | sed 's/^/::notice title=git::/'
+          git push origin HEAD:eu-latest > push.log 2>&1; rc=$?
+          while IFS= read -r line; do echo "::notice title=push::$line"; done < push.log
+          exit $rc
