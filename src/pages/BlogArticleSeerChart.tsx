@@ -143,7 +143,7 @@ export default function BlogArticleSeerChart() {
               </span>
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained (2026)</h1>
-            <p className="text-xl text-gray-600">Every SEER rating, what it costs you per year, and exactly how much upgrading could save</p>
+            <p className="text-xl text-gray-600">Every SEER rating, what it costs you per year, and roughly how much upgrading could save</p>
             <ArticleByline updated="2026-06-17" />
           </header>
 
@@ -233,7 +233,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Single-speed compressor, basic controls, no efficiency features.</p>
-            <p className="text-gray-700 leading-relaxed mb-6"><strong>What to do:</strong> Replace immediately. Even a minimum-efficiency new system cuts your costs nearly in half. Use our calculator to see your exact savings.</p>
+            <p className="text-gray-700 leading-relaxed mb-6"><strong>What to do:</strong> Replace immediately. Even a minimum-efficiency new system cuts your costs nearly in half. Use our calculator to estimate your savings.</p>
 
             <hr className="my-8 border-gray-200" />
 
@@ -534,7 +534,7 @@ export default function BlogArticleSeerChart() {
 
           <div className="mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200">
             <h3 className="text-lg font-bold text-gray-900 mb-2">Ready to See Your Numbers?</h3>
-            <p className="text-gray-600 mb-4 text-sm">Enter your current SEER, electricity rate, and usage to calculate exactly how much you could save by upgrading.</p>
+            <p className="text-gray-600 mb-4 text-sm">Enter your current SEER, electricity rate, and usage to estimate how much you could save by upgrading.</p>
             <Link
               to="/"
               className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors"

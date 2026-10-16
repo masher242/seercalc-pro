@@ -219,7 +219,7 @@ export default function BlogArticleMinisplit() {
 
               <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl p-8 my-10 text-center">
                 <h3 className="text-2xl font-bold mb-3">Calculate Mini-Split Savings</h3>
-                <p className="mb-6">See exactly how much you'll save on electricity with a high-efficiency mini-split vs your current system.</p>
+                <p className="mb-6">See roughly how much you'll save on electricity with a high-efficiency mini-split vs your current system.</p>
                 <Link to="/" className="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
                   Use the SEER Calculator →
                 </Link>

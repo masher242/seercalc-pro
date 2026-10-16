@@ -488,7 +488,7 @@ export default function CalculatorRepairVsReplace() {
                   <li>→ Ask each contractor for the <strong>AHRI Reference Number</strong> of the matched system to verify the quoted SEER2</li>
                   <li>→ Register your new system within <strong>60–90 days</strong> to activate the full manufacturer warranty</li>
                   <li>→ Compare brands in our <Link to="/brands" className="text-teal-600 underline font-medium">Brand Reviews</Link></li>
-                  <li>→ <Link to="/" className="text-teal-600 underline font-medium">Calculate exact savings</Link> for the specific SEER2 system you're being quoted</li>
+                  <li>→ <Link to="/" className="text-teal-600 underline font-medium">Estimate your savings</Link> for the specific SEER2 system you're being quoted</li>
                 </ul>
               ) : results.recommendation === 'repair' ? (
                 <ul className="space-y-2 text-sm text-gray-700">
@@ -509,7 +509,7 @@ export default function CalculatorRepairVsReplace() {
 
             {/* CTA */}
             <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
-              <p className="text-gray-700 font-semibold mb-2">Replacing? See exactly how much you'd save on electricity.</p>
+              <p className="text-gray-700 font-semibold mb-2">Replacing? See roughly how much you'd save on electricity.</p>
               <p className="text-sm text-gray-500 mb-4">Enter your current SEER and new system's SEER2 to calculate annual savings at your electricity rate.</p>
               <Link to="/" className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors">
                 <Calculator className="w-4 h-4" />
