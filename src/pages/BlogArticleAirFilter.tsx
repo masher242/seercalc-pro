@@ -4,13 +4,25 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { getState, annualCost, usd, cents, US_RATE, RATES_AS_OF } from '../data/acCost';
+
+// 3-ton SEER 14 system, 2,000 full-load hours a year. 5–15% is DOE's range for replacing a
+// dirty, clogged filter; a filter that is only slightly dusty saves far less.
+const BASE = (rate: number) => annualCost(3, 14, 2000, rate);
+const CA = getState('california')!;
+const HI = getState('hawaii')!;
+const FILTER_ROWS = [
+  { label: `U.S. average (${cents(US_RATE)}/kWh)`, rate: US_RATE, highlight: false },
+  { label: `California (${cents(CA.rate)}/kWh)`, rate: CA.rate, highlight: false },
+  { label: `Hawaii (${cents(HI.rate)}/kWh)`, rate: HI.rate, highlight: true },
+];
 
 export default function BlogArticleAirFilter() {
   return (
     <>
       <Helmet>
-        <title>The $10 Air Filter Fix That Saves $90–$308/Year 💡</title>
-        <meta name="description" content="A clogged air filter cuts AC efficiency 5–15% — $90–$308/year wasted. We cover change frequency, the right MERV rating, and more upkeep tips." />
+        <title>The $10 Air Filter Fix: Up to 15% Off AC Energy 💡</title>
+        <meta name="description" content="DOE: swapping a clogged air filter can cut AC energy use 5–15%. We cover change frequency, the right MERV rating, and more upkeep tips." />
         <meta name="keywords" content="how often to change AC filter, MERV rating guide, clogged air filter electricity bill, AC maintenance savings, HVAC filter schedule" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/air-filter-electricity-bill" />
@@ -18,7 +30,7 @@ export default function BlogArticleAirFilter() {
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://airconditionanswers.com/blog/air-filter-electricity-bill" />
         <meta property="og:title" content="Change Your Air Filter, Change Your Bill: The $10 Fix That Pays for Itself" />
-        <meta property="og:description" content="A dirty filter can reduce AC efficiency by 5–15%. Here's the full maintenance breakdown, MERV guide, and annual cost of neglect." />
+        <meta property="og:description" content="Replacing a clogged filter can cut AC energy use by 5–15%, per DOE. Here's the full maintenance breakdown, MERV guide, and annual cost of neglect." />
         <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:published_time" content="2026-02-05" />
         <meta property="article:section" content="HVAC Guides" />
@@ -29,7 +41,7 @@ export default function BlogArticleAirFilter() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://airconditionanswers.com/blog/air-filter-electricity-bill" />
         <meta name="twitter:title" content="Change Your Air Filter, Change Your Bill" />
-        <meta name="twitter:description" content="A $10 filter can recover 5–15% of AC efficiency. Here's the real math — and the other maintenance items that matter." />
+        <meta name="twitter:description" content="Replacing a clogged $10 filter can cut AC energy use 5–15%. Here's the real math — and the other maintenance items that matter." />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -40,7 +52,7 @@ export default function BlogArticleAirFilter() {
             "dateModified": "2026-02-05",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "description": "A clogged air filter can reduce AC efficiency by 5–15%, costing $90–$308/year in wasted electricity. Here's the full maintenance schedule, MERV rating guide, and the quick DIY tasks that protect your system."
+            "description": "Replacing a clogged air filter can lower AC energy use by 5–15% (U.S. DOE). Here's the full maintenance schedule, MERV rating guide, and the quick DIY tasks that protect your system."
           })}
         </script>
       </Helmet>
@@ -73,7 +85,7 @@ export default function BlogArticleAirFilter() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-8">
-              The U.S. Department of Energy estimates that a clogged filter can reduce HVAC efficiency by 5–15%. On an average household cooling bill, that's $45–$135 a year wasted on airflow restriction. At Hawaii's 39.8¢/kWh, it's closer to $103–$308 a year. For a filter that costs $10–$25 at any hardware store, replacing it is one of the highest-ROI maintenance tasks in homeownership.
+              The U.S. Department of Energy says replacing a dirty, clogged filter with a clean one can lower an air conditioner's energy use by 5–15%. For a 3-ton system running 2,000 hours a year at the U.S. average rate, that's about {usd(BASE(US_RATE) * 0.05)}–{usd(BASE(US_RATE) * 0.15)} a year; at Hawaii's {cents(HI.rate)}/kWh, about {usd(BASE(HI.rate) * 0.05)}–{usd(BASE(HI.rate) * 0.15)}. That's for a filter that was genuinely clogged; swapping a lightly dusty one saves much less. For a filter that costs $10–$25 at any hardware store, replacing it is one of the highest-ROI maintenance tasks in homeownership.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -98,7 +110,7 @@ export default function BlogArticleAirFilter() {
 
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Annual Cost of a Dirty Filter</h2>
 
-            <p className="text-gray-600 text-sm mb-4 italic">Assuming a typical 5–15% efficiency loss on a standard central AC system.</p>
+            <p className="text-gray-600 text-sm mb-4 italic">If the old filter was clogged: DOE's 5–15% range, applied to a 3-ton SEER 14 system running 2,000 hours a year. Rates: EIA, {RATES_AS_OF}. Estimates.</p>
 
             <div className="overflow-x-auto mb-8">
               <table className="w-full border-collapse text-sm">
@@ -110,29 +122,21 @@ export default function BlogArticleAirFilter() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">U.S. average (17.45¢/kWh)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$900/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-red-600 font-medium">$45–$135/yr</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">California (30¢/kWh)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$1,548/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-red-600 font-medium">$77–$232/yr</td>
-                  </tr>
-                  <tr className="bg-amber-50 hover:bg-amber-100">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-800 font-medium">Hawaii (39.8¢/kWh)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-800 font-medium">~$2,053/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-red-700 font-bold">$103–$308/yr</td>
-                  </tr>
+                  {FILTER_ROWS.map((r) => (
+                    <tr key={r.label} className={r.highlight ? 'bg-amber-50 hover:bg-amber-100' : 'hover:bg-gray-50'}>
+                      <td className={`border border-gray-200 px-4 py-3 ${r.highlight ? 'text-gray-800 font-medium' : 'text-gray-700'}`}>{r.label}</td>
+                      <td className={`border border-gray-200 px-4 py-3 ${r.highlight ? 'text-gray-800 font-medium' : 'text-gray-700'}`}>~{usd(BASE(r.rate))}/yr</td>
+                      <td className={`border border-gray-200 px-4 py-3 ${r.highlight ? 'text-red-700 font-bold' : 'text-red-600 font-medium'}`}>{usd(BASE(r.rate) * 0.05)}–{usd(BASE(r.rate) * 0.15)}/yr</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
 
             <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg">
-              <p className="text-gray-800 font-medium mb-2">Annual ROI on a $15 filter:</p>
+              <p className="text-gray-800 font-medium mb-2">What a $15 filter is worth:</p>
               <p className="text-gray-700 text-sm leading-relaxed">
-                At the U.S. average, a single $15 filter change can return $45–$135 in avoided waste — roughly a 3x to 9x return in the first year. In Hawaii, that same $15 filter returns 7x to 20x. It is, mathematically, one of the best investments in your home.
+                If your filter was clogged, a $15 replacement can avoid roughly {usd(BASE(US_RATE) * 0.05)}–{usd(BASE(US_RATE) * 0.15)} of wasted electricity a year at the U.S. average rate, and more where power costs more. Even at the low end, few home upkeep tasks pay back as cheaply.
               </p>
             </div>
 
@@ -231,7 +235,7 @@ export default function BlogArticleAirFilter() {
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-8">
               <p className="text-sm font-semibold text-gray-900 mb-2">The sweet spot for most homes: MERV 8–11</p>
               <p className="text-sm text-gray-700 leading-relaxed">
-                High enough to capture pet dander, mold, and most allergens. Low enough that your blower motor isn't fighting the filter. Going above MERV 13 on a standard residential system can actually raise your bill by forcing the blower to overwork — the opposite of what you want.
+                High enough to capture pet dander, mold, and most allergens. Low enough that your blower motor isn't fighting the filter. Many systems handle MERV 13 without trouble, but a dense filter on a system that wasn't designed for it can restrict airflow. If you want MERV 13 or higher, ask your technician whether your blower and return ducts can take it.
               </p>
             </div>
 

@@ -4,13 +4,24 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { getState, annualCost, usd, cents, US_RATE, RATES_AS_OF } from '../data/acCost';
+
+// Setback table: 3-ton SEER 14 system, 2,000 full-load hours a year (always on at 72°F).
+// The 10% is DOE's "up to 10%" for an 8-hour 7–10°F setback; 15% and 20% are our rough estimates.
+const HI = getState('hawaii')!;
+const BASE = (rate: number) => annualCost(3, 14, 2000, rate);
+const SETBACK_ROWS = [
+  { label: '78°F when home, 85°F when away (8 hrs/day)', share: 0.10 },
+  { label: '78°F home, 85°F away, 82°F sleeping', share: 0.15 },
+  { label: 'Full setback schedule (all three setpoints)', share: 0.20, highlight: true },
+];
 
 export default function BlogArticleFreeStrategy() {
   return (
     <>
       <Helmet>
         <title>The $0 Thermostat Strategy 🆓 Cut Your AC Bill for Free</title>
-        <meta name="description" content="The DOE says a 7–10°F thermostat setback for 8 hours saves 10% on cooling. The exact schedule, the ceiling fan trick, and the myths that cost you." />
+        <meta name="description" content="The DOE says a 7–10°F thermostat setback for 8 hours a day can save up to 10% a year on heating and cooling. The exact schedule, the ceiling fan trick, and the myths that cost you." />
         <meta name="keywords" content="how to lower electricity bill AC, best thermostat temperature to save money, thermostat setback schedule, does raising thermostat save money, AC energy saving tips summer" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/thermostat-setback-strategy" />
@@ -18,7 +29,7 @@ export default function BlogArticleFreeStrategy() {
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://airconditionanswers.com/blog/thermostat-setback-strategy" />
         <meta property="og:title" content="The $0 Thermostat Strategy: Cut Your Cooling Bill Without Buying Anything" />
-        <meta property="og:description" content="The DOE says adjusting your thermostat 7–10°F for 8 hours/day saves approximately 10% annually. Here's the full free strategy." />
+        <meta property="og:description" content="The DOE says adjusting your thermostat 7–10°F for 8 hours/day can save up to 10% a year. Here's the full free strategy." />
         <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:published_time" content="2026-01-29" />
         <meta property="article:section" content="HVAC Guides" />
@@ -29,7 +40,7 @@ export default function BlogArticleFreeStrategy() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://airconditionanswers.com/blog/thermostat-setback-strategy" />
         <meta name="twitter:title" content="The $0 Thermostat Strategy: Cut Your Cooling Bill Without Buying Anything" />
-        <meta name="twitter:description" content="10% savings on cooling costs — no new equipment required. Here's the exact setpoint schedule and the myths to stop believing." />
+        <meta name="twitter:description" content="Up to 10% off heating and cooling costs — no new equipment required. Here's the exact setpoint schedule and the myths to stop believing." />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -40,7 +51,7 @@ export default function BlogArticleFreeStrategy() {
             "dateModified": "2026-01-29",
             "author": AUTHOR_REF,
             "publisher": PUBLISHER_REF,
-            "description": "The DOE estimates adjusting your thermostat 7–10°F for 8 hours a day saves approximately 10% annually on heating and cooling. Here's the full free strategy, including setpoint schedules, the ceiling fan trick, and myths to stop believing."
+            "description": "The DOE estimates adjusting your thermostat 7–10°F for 8 hours a day can save up to 10% a year on heating and cooling. Here's the full free strategy, including setpoint schedules, the ceiling fan trick, and myths to stop believing."
           })}
         </script>
       </Helmet>
@@ -62,7 +73,7 @@ export default function BlogArticleFreeStrategy() {
               <span className="text-gray-400">January 29, 2026</span>
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">The $0 Thermostat Strategy: How to Cut Your Cooling Bill Without Buying Anything</h1>
-            <p className="text-xl text-gray-600">Before you spend a dollar on new equipment, there's a strategy that costs nothing — and it can reduce your cooling bill by 10% or more starting tonight</p>
+            <p className="text-xl text-gray-600">Before you spend a dollar on new equipment, there's a strategy that costs nothing — and it can cut your cooling bill by up to about 10% starting tonight</p>
             <ArticleByline />
           </header>
 
@@ -73,7 +84,7 @@ export default function BlogArticleFreeStrategy() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-8">
-              The U.S. Department of Energy estimates that simply adjusting your thermostat by 7–10°F for 8 hours a day can save approximately 10% annually on heating and cooling. At average U.S. rates, that's around $90/year from a single behavior change. At high electricity rates — Hawaii, California, or anywhere paying 30¢/kWh or more — 10% is $200+. When you're paying a premium for every kilowatt-hour, you stop treating the thermostat as a "set it and forget it" device. You start treating it like a faucet — something you turn down when you don't need it and up when you do.
+              The U.S. Department of Energy estimates that simply adjusting your thermostat by 7–10°F for 8 hours a day can save up to 10% a year on heating and cooling. For a typical 3-ton system that runs a lot (2,000 hours a year), 10% of the cooling bill is about {usd(BASE(US_RATE) * 0.1)} a year at the U.S. average rate and about {usd(BASE(0.30) * 0.1)} at 30¢/kWh. Less AC use means smaller savings. When you're paying a premium for every kilowatt-hour, you stop treating the thermostat as a "set it and forget it" device. You start treating it like a faucet — something you turn down when you don't need it and up when you do.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -146,7 +157,7 @@ export default function BlogArticleFreeStrategy() {
 
             <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">Estimated Cooling Savings by Setpoint Discipline</h3>
 
-            <p className="text-gray-600 text-sm mb-4 italic">Baseline: SEER 14 system, summer cooling only</p>
+            <p className="text-gray-600 text-sm mb-4 italic">Baseline: 3-ton SEER 14 system running 2,000 hours a year, summer cooling only. These are estimates.</p>
 
             <div className="overflow-x-auto mb-6">
               <table className="w-full border-collapse text-sm">
@@ -160,30 +171,22 @@ export default function BlogArticleFreeStrategy() {
                 <tbody>
                   <tr className="hover:bg-gray-50">
                     <td className="border border-gray-200 px-4 py-3 text-gray-700">Always on at 72°F (no schedule)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$900/yr avg · $2,053/yr Hawaii</td>
+                    <td className="border border-gray-200 px-4 py-3 text-gray-700">{usd(BASE(US_RATE))}/yr avg · {usd(BASE(HI.rate))}/yr Hawaii</td>
                     <td className="border border-gray-200 px-4 py-3 text-gray-500">—</td>
                   </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">78°F when home, 85°F when away (8 hrs/day)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$810/yr avg · ~$1,848/yr Hawaii</td>
-                    <td className="border border-gray-200 px-4 py-3 text-teal-700 font-medium">~$90/yr avg · ~$205/yr Hawaii</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">78°F home, 85°F away, 82°F sleeping</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$765/yr avg · ~$1,744/yr Hawaii</td>
-                    <td className="border border-gray-200 px-4 py-3 text-teal-700 font-medium">~$135/yr avg · ~$309/yr Hawaii</td>
-                  </tr>
-                  <tr className="bg-teal-50 hover:bg-teal-100">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-800 font-medium">Full setback schedule (all three setpoints)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-800 font-medium">~$720/yr avg · ~$1,641/yr Hawaii</td>
-                    <td className="border border-gray-200 px-4 py-3 text-teal-700 font-bold">~$180/yr avg · ~$412/yr Hawaii</td>
-                  </tr>
+                  {SETBACK_ROWS.map((r) => (
+                    <tr key={r.label} className={r.highlight ? 'bg-teal-50 hover:bg-teal-100' : 'hover:bg-gray-50'}>
+                      <td className={`border border-gray-200 px-4 py-3 ${r.highlight ? 'text-gray-800 font-medium' : 'text-gray-700'}`}>{r.label}</td>
+                      <td className={`border border-gray-200 px-4 py-3 ${r.highlight ? 'text-gray-800 font-medium' : 'text-gray-700'}`}>~{usd(BASE(US_RATE) * (1 - r.share))}/yr avg · ~{usd(BASE(HI.rate) * (1 - r.share))}/yr Hawaii</td>
+                      <td className={`border border-gray-200 px-4 py-3 text-teal-700 ${r.highlight ? 'font-bold' : 'font-medium'}`}>~{usd(BASE(US_RATE) * r.share)}/yr avg · ~{usd(BASE(HI.rate) * r.share)}/yr Hawaii ({Math.round(r.share * 100)}%)</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
 
             <p className="text-gray-500 text-sm italic mb-8">
-              Hawaii column uses 39.8¢/kWh (EIA, January 2026). Average rate column uses 17.45¢/kWh.
+              Rates: U.S. average {cents(US_RATE)}/kWh and Hawaii {cents(HI.rate)}/kWh (EIA, {RATES_AS_OF}). The 10% row follows DOE's “up to 10%” figure; the 15% and 20% rows are our rough estimates for adding more setback hours. Your savings depend on your climate, your house and how long it's empty.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -191,20 +194,20 @@ export default function BlogArticleFreeStrategy() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Every Degree Matters — Here's the Math</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              Every 1°F increase in your cooling setpoint saves approximately 3% on your cooling energy. This isn't a rough estimate — it's a real physical relationship based on the reduced temperature differential between indoors and outdoors. The smaller the gap between inside and outside, the less work your compressor has to do.
+              A common rule of thumb is that each 1°F you raise the cooling setpoint saves roughly 3% of cooling energy. Treat it as a rough guide, not a law: the real figure depends on your climate, humidity, insulation and how hard the AC is working. The reason it works is simple: the smaller the gap between inside and outside, the less heat leaks in and the less your compressor has to run.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              Here's what that looks like in practice. If your cooling bill is $400/month and you raise the thermostat just 2°F — say, from 72°F to 74°F — you save approximately 6%, or $24/month. Over a 6-month cooling season, that's <strong>$144 saved without replacing a single component</strong>. At 40¢/kWh (Hawaii or equivalent), that same 2°F shift saves roughly $55/month.
+              Here's what that looks like in practice. If your cooling bill is $400/month and you raise the thermostat just 2°F — say, from 72°F to 74°F — the rule of thumb puts the saving at about 6%, or roughly $24/month. Over a 6-month cooling season, that's <strong>around $144 without replacing a single component</strong>. The percentage is the same at any electricity rate; the dollars are bigger where the bill is bigger.
             </p>
 
             <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg">
               <p className="text-gray-800 font-medium mb-2">Quick savings formula:</p>
               <p className="text-gray-700 font-mono text-sm bg-white rounded p-3 border border-teal-200">
-                Savings % ≈ degrees raised × 3%
+                Savings % ≈ degrees raised × 3% (rule of thumb)
               </p>
               <p className="text-gray-600 text-sm mt-3">
-                Example: raising the setpoint 4°F ≈ 12% reduction in cooling energy. At $400/month, that's $48/month back in your pocket.
+                Example: raising the setpoint 4°F ≈ 12% less cooling energy. At $400/month, that's roughly $48/month. Your results will vary.
               </p>
             </div>
 
@@ -217,7 +220,7 @@ export default function BlogArticleFreeStrategy() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              The math here is obvious: a ceiling fan draws roughly 15–75 watts. Your central AC compressor draws 3,000–5,000 watts. Spending a fraction of a watt-hour to keep the fan running while raising the AC setpoint 4°F is one of the best energy trades available in any home. Apply the formula: 4 degrees × 3% = a 12% reduction in cooling energy, with no loss in comfort.
+              The math here is obvious: a ceiling fan draws roughly 15–75 watts. Your central AC compressor draws 3,000–5,000 watts. Running a fan that uses about 1–2% of the AC's power so you can raise the setpoint 4°F is one of the best energy trades in any home. By the rule of thumb above, 4 degrees × 3% ≈ 12% less cooling energy, with little or no loss in comfort.
             </p>
 
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-8">
