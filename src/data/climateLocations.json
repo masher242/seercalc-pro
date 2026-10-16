@@ -1,0 +1,763 @@
+{
+ "_readme": "Places whose climate (cooling degree days) is fetched by scripts/update-climate.py. id prefixes: us:STATE (largest metro), cb:country (capital), ca:PROV:city, eu:country:city (cities on our pages), eucap:ISO2 (capital, for EU countries without a page). admin1 / query help the geocoder pick the right place.",
+ "locations": [
+  {
+   "id": "us:AL",
+   "name": "Birmingham",
+   "country": "US",
+   "admin1": "Alabama"
+  },
+  {
+   "id": "us:AK",
+   "name": "Anchorage",
+   "country": "US",
+   "admin1": "Alaska"
+  },
+  {
+   "id": "us:AZ",
+   "name": "Phoenix",
+   "country": "US",
+   "admin1": "Arizona"
+  },
+  {
+   "id": "us:AR",
+   "name": "Little Rock",
+   "country": "US",
+   "admin1": "Arkansas"
+  },
+  {
+   "id": "us:CA",
+   "name": "Los Angeles",
+   "country": "US",
+   "admin1": "California"
+  },
+  {
+   "id": "us:CO",
+   "name": "Denver",
+   "country": "US",
+   "admin1": "Colorado"
+  },
+  {
+   "id": "us:CT",
+   "name": "Hartford",
+   "country": "US",
+   "admin1": "Connecticut"
+  },
+  {
+   "id": "us:DE",
+   "name": "Wilmington",
+   "country": "US",
+   "admin1": "Delaware"
+  },
+  {
+   "id": "us:DC",
+   "name": "Washington",
+   "country": "US",
+   "admin1": "District of Columbia"
+  },
+  {
+   "id": "us:FL",
+   "name": "Orlando",
+   "country": "US",
+   "admin1": "Florida"
+  },
+  {
+   "id": "us:GA",
+   "name": "Atlanta",
+   "country": "US",
+   "admin1": "Georgia"
+  },
+  {
+   "id": "us:HI",
+   "name": "Honolulu",
+   "country": "US",
+   "admin1": "Hawaii"
+  },
+  {
+   "id": "us:ID",
+   "name": "Boise",
+   "country": "US",
+   "admin1": "Idaho"
+  },
+  {
+   "id": "us:IL",
+   "name": "Chicago",
+   "country": "US",
+   "admin1": "Illinois"
+  },
+  {
+   "id": "us:IN",
+   "name": "Indianapolis",
+   "country": "US",
+   "admin1": "Indiana"
+  },
+  {
+   "id": "us:IA",
+   "name": "Des Moines",
+   "country": "US",
+   "admin1": "Iowa"
+  },
+  {
+   "id": "us:KS",
+   "name": "Wichita",
+   "country": "US",
+   "admin1": "Kansas"
+  },
+  {
+   "id": "us:KY",
+   "name": "Louisville",
+   "country": "US",
+   "admin1": "Kentucky"
+  },
+  {
+   "id": "us:LA",
+   "name": "New Orleans",
+   "country": "US",
+   "admin1": "Louisiana"
+  },
+  {
+   "id": "us:ME",
+   "name": "Portland",
+   "country": "US",
+   "admin1": "Maine"
+  },
+  {
+   "id": "us:MD",
+   "name": "Baltimore",
+   "country": "US",
+   "admin1": "Maryland"
+  },
+  {
+   "id": "us:MA",
+   "name": "Boston",
+   "country": "US",
+   "admin1": "Massachusetts"
+  },
+  {
+   "id": "us:MI",
+   "name": "Detroit",
+   "country": "US",
+   "admin1": "Michigan"
+  },
+  {
+   "id": "us:MN",
+   "name": "Minneapolis",
+   "country": "US",
+   "admin1": "Minnesota"
+  },
+  {
+   "id": "us:MS",
+   "name": "Jackson",
+   "country": "US",
+   "admin1": "Mississippi"
+  },
+  {
+   "id": "us:MO",
+   "name": "St. Louis",
+   "country": "US",
+   "admin1": "Missouri"
+  },
+  {
+   "id": "us:MT",
+   "name": "Billings",
+   "country": "US",
+   "admin1": "Montana"
+  },
+  {
+   "id": "us:NE",
+   "name": "Omaha",
+   "country": "US",
+   "admin1": "Nebraska"
+  },
+  {
+   "id": "us:NV",
+   "name": "Las Vegas",
+   "country": "US",
+   "admin1": "Nevada"
+  },
+  {
+   "id": "us:NH",
+   "name": "Manchester",
+   "country": "US",
+   "admin1": "New Hampshire"
+  },
+  {
+   "id": "us:NJ",
+   "name": "Newark",
+   "country": "US",
+   "admin1": "New Jersey"
+  },
+  {
+   "id": "us:NM",
+   "name": "Albuquerque",
+   "country": "US",
+   "admin1": "New Mexico"
+  },
+  {
+   "id": "us:NY",
+   "name": "New York",
+   "country": "US",
+   "admin1": "New York"
+  },
+  {
+   "id": "us:NC",
+   "name": "Charlotte",
+   "country": "US",
+   "admin1": "North Carolina"
+  },
+  {
+   "id": "us:ND",
+   "name": "Fargo",
+   "country": "US",
+   "admin1": "North Dakota"
+  },
+  {
+   "id": "us:OH",
+   "name": "Columbus",
+   "country": "US",
+   "admin1": "Ohio"
+  },
+  {
+   "id": "us:OK",
+   "name": "Oklahoma City",
+   "country": "US",
+   "admin1": "Oklahoma"
+  },
+  {
+   "id": "us:OR",
+   "name": "Portland",
+   "country": "US",
+   "admin1": "Oregon"
+  },
+  {
+   "id": "us:PA",
+   "name": "Philadelphia",
+   "country": "US",
+   "admin1": "Pennsylvania"
+  },
+  {
+   "id": "us:RI",
+   "name": "Providence",
+   "country": "US",
+   "admin1": "Rhode Island"
+  },
+  {
+   "id": "us:SC",
+   "name": "Columbia",
+   "country": "US",
+   "admin1": "South Carolina"
+  },
+  {
+   "id": "us:SD",
+   "name": "Sioux Falls",
+   "country": "US",
+   "admin1": "South Dakota"
+  },
+  {
+   "id": "us:TN",
+   "name": "Nashville",
+   "country": "US",
+   "admin1": "Tennessee"
+  },
+  {
+   "id": "us:TX",
+   "name": "Dallas",
+   "country": "US",
+   "admin1": "Texas"
+  },
+  {
+   "id": "us:UT",
+   "name": "Salt Lake City",
+   "country": "US",
+   "admin1": "Utah"
+  },
+  {
+   "id": "us:VT",
+   "name": "Burlington",
+   "country": "US",
+   "admin1": "Vermont"
+  },
+  {
+   "id": "us:VA",
+   "name": "Richmond",
+   "country": "US",
+   "admin1": "Virginia"
+  },
+  {
+   "id": "us:WA",
+   "name": "Seattle",
+   "country": "US",
+   "admin1": "Washington"
+  },
+  {
+   "id": "us:WV",
+   "name": "Charleston",
+   "country": "US",
+   "admin1": "West Virginia"
+  },
+  {
+   "id": "us:WI",
+   "name": "Milwaukee",
+   "country": "US",
+   "admin1": "Wisconsin"
+  },
+  {
+   "id": "us:WY",
+   "name": "Cheyenne",
+   "country": "US",
+   "admin1": "Wyoming"
+  },
+  {
+   "id": "cb:bahamas",
+   "name": "Nassau",
+   "country": "BS"
+  },
+  {
+   "id": "cb:jamaica",
+   "name": "Kingston",
+   "country": "JM"
+  },
+  {
+   "id": "cb:barbados",
+   "name": "Bridgetown",
+   "country": "BB"
+  },
+  {
+   "id": "cb:trinidad-and-tobago",
+   "name": "Port of Spain",
+   "country": "TT"
+  },
+  {
+   "id": "cb:cayman-islands",
+   "name": "George Town",
+   "country": "KY"
+  },
+  {
+   "id": "cb:bermuda",
+   "name": "Hamilton",
+   "country": "BM"
+  },
+  {
+   "id": "cb:puerto-rico",
+   "name": "San Juan",
+   "country": "PR"
+  },
+  {
+   "id": "cb:dominican-republic",
+   "name": "Santo Domingo",
+   "country": "DO"
+  },
+  {
+   "id": "ca:QC:Montréal",
+   "name": "Montréal",
+   "country": "CA",
+   "admin1": "Quebec"
+  },
+  {
+   "id": "ca:ON:Toronto",
+   "name": "Toronto",
+   "country": "CA",
+   "admin1": "Ontario"
+  },
+  {
+   "id": "ca:ON:Ottawa",
+   "name": "Ottawa",
+   "country": "CA",
+   "admin1": "Ontario"
+  },
+  {
+   "id": "ca:AB:Calgary",
+   "name": "Calgary",
+   "country": "CA",
+   "admin1": "Alberta"
+  },
+  {
+   "id": "ca:AB:Edmonton",
+   "name": "Edmonton",
+   "country": "CA",
+   "admin1": "Alberta"
+  },
+  {
+   "id": "ca:BC:Vancouver",
+   "name": "Vancouver",
+   "country": "CA",
+   "admin1": "British Columbia"
+  },
+  {
+   "id": "ca:MB:Winnipeg",
+   "name": "Winnipeg",
+   "country": "CA",
+   "admin1": "Manitoba"
+  },
+  {
+   "id": "ca:SK:Regina",
+   "name": "Regina",
+   "country": "CA",
+   "admin1": "Saskatchewan"
+  },
+  {
+   "id": "ca:NS:Halifax",
+   "name": "Halifax",
+   "country": "CA",
+   "admin1": "Nova Scotia"
+  },
+  {
+   "id": "ca:NB:Moncton",
+   "name": "Moncton",
+   "country": "CA",
+   "admin1": "New Brunswick"
+  },
+  {
+   "id": "ca:PE:Charlottetown",
+   "name": "Charlottetown",
+   "country": "CA",
+   "admin1": "Prince Edward Island"
+  },
+  {
+   "id": "ca:NL:St. John's",
+   "name": "St. John's",
+   "country": "CA",
+   "admin1": "Newfoundland and Labrador"
+  },
+  {
+   "id": "eu:spain:Seville",
+   "name": "Seville",
+   "query": "Seville",
+   "country": "ES"
+  },
+  {
+   "id": "eu:spain:Valencia",
+   "name": "Valencia",
+   "query": "Valencia",
+   "country": "ES"
+  },
+  {
+   "id": "eu:spain:Madrid",
+   "name": "Madrid",
+   "query": "Madrid",
+   "country": "ES"
+  },
+  {
+   "id": "eu:spain:Málaga",
+   "name": "Málaga",
+   "query": "Málaga",
+   "country": "ES"
+  },
+  {
+   "id": "eu:spain:Barcelona",
+   "name": "Barcelona",
+   "query": "Barcelona",
+   "country": "ES"
+  },
+  {
+   "id": "eu:spain:Bilbao",
+   "name": "Bilbao",
+   "query": "Bilbao",
+   "country": "ES"
+  },
+  {
+   "id": "eu:france:Marseille",
+   "name": "Marseille",
+   "query": "Marseille",
+   "country": "FR"
+  },
+  {
+   "id": "eu:france:Nice",
+   "name": "Nice",
+   "query": "Nice",
+   "country": "FR"
+  },
+  {
+   "id": "eu:france:Lyon",
+   "name": "Lyon",
+   "query": "Lyon",
+   "country": "FR"
+  },
+  {
+   "id": "eu:france:Bordeaux",
+   "name": "Bordeaux",
+   "query": "Bordeaux",
+   "country": "FR"
+  },
+  {
+   "id": "eu:france:Paris",
+   "name": "Paris",
+   "query": "Paris",
+   "country": "FR"
+  },
+  {
+   "id": "eu:france:Lille",
+   "name": "Lille",
+   "query": "Lille",
+   "country": "FR"
+  },
+  {
+   "id": "eu:portugal:Évora",
+   "name": "Évora",
+   "query": "Évora",
+   "country": "PT"
+  },
+  {
+   "id": "eu:portugal:Faro",
+   "name": "Faro",
+   "query": "Faro",
+   "country": "PT"
+  },
+  {
+   "id": "eu:portugal:Lisbon",
+   "name": "Lisbon",
+   "query": "Lisbon",
+   "country": "PT"
+  },
+  {
+   "id": "eu:portugal:Porto",
+   "name": "Porto",
+   "query": "Porto",
+   "country": "PT"
+  },
+  {
+   "id": "eu:united-kingdom:London",
+   "name": "London",
+   "query": "London",
+   "country": "GB"
+  },
+  {
+   "id": "eu:united-kingdom:Birmingham",
+   "name": "Birmingham",
+   "query": "Birmingham",
+   "country": "GB"
+  },
+  {
+   "id": "eu:united-kingdom:Manchester",
+   "name": "Manchester",
+   "query": "Manchester",
+   "country": "GB"
+  },
+  {
+   "id": "eu:united-kingdom:Edinburgh",
+   "name": "Edinburgh",
+   "query": "Edinburgh",
+   "country": "GB"
+  },
+  {
+   "id": "eu:italy:Palermo",
+   "name": "Palermo",
+   "query": "Palermo",
+   "country": "IT"
+  },
+  {
+   "id": "eu:italy:Bari",
+   "name": "Bari",
+   "query": "Bari",
+   "country": "IT"
+  },
+  {
+   "id": "eu:italy:Naples",
+   "name": "Naples",
+   "query": "Naples",
+   "country": "IT"
+  },
+  {
+   "id": "eu:italy:Rome",
+   "name": "Rome",
+   "query": "Rome",
+   "country": "IT"
+  },
+  {
+   "id": "eu:italy:Florence",
+   "name": "Florence",
+   "query": "Florence",
+   "country": "IT"
+  },
+  {
+   "id": "eu:italy:Bologna",
+   "name": "Bologna",
+   "query": "Bologna",
+   "country": "IT"
+  },
+  {
+   "id": "eu:italy:Milan",
+   "name": "Milan",
+   "query": "Milan",
+   "country": "IT"
+  },
+  {
+   "id": "eu:italy:Turin",
+   "name": "Turin",
+   "query": "Turin",
+   "country": "IT"
+  },
+  {
+   "id": "eu:greece:Rhodes",
+   "name": "Rhodes",
+   "query": "Rhodes",
+   "country": "GR"
+  },
+  {
+   "id": "eu:greece:Athens",
+   "name": "Athens",
+   "query": "Athens",
+   "country": "GR"
+  },
+  {
+   "id": "eu:greece:Heraklion",
+   "name": "Heraklion",
+   "query": "Heraklion",
+   "country": "GR"
+  },
+  {
+   "id": "eu:greece:Patras",
+   "name": "Patras",
+   "query": "Patras",
+   "country": "GR"
+  },
+  {
+   "id": "eu:greece:Thessaloniki",
+   "name": "Thessaloniki",
+   "query": "Thessaloniki",
+   "country": "GR"
+  },
+  {
+   "id": "eu:greece:Ioannina",
+   "name": "Ioannina",
+   "query": "Ioannina",
+   "country": "GR"
+  },
+  {
+   "id": "eu:cyprus:Nicosia",
+   "name": "Nicosia",
+   "query": "Nicosia",
+   "country": "CY"
+  },
+  {
+   "id": "eu:cyprus:Larnaca",
+   "name": "Larnaca",
+   "query": "Larnaca",
+   "country": "CY"
+  },
+  {
+   "id": "eu:cyprus:Limassol",
+   "name": "Limassol",
+   "query": "Limassol",
+   "country": "CY"
+  },
+  {
+   "id": "eu:cyprus:Paphos",
+   "name": "Paphos",
+   "query": "Paphos",
+   "country": "CY"
+  },
+  {
+   "id": "eu:malta:Valletta",
+   "name": "Valletta",
+   "query": "Valletta",
+   "country": "MT"
+  },
+  {
+   "id": "eu:malta:Gozo",
+   "name": "Gozo",
+   "query": "Victoria",
+   "country": "MT"
+  },
+  {
+   "id": "eucap:AT",
+   "name": "Vienna",
+   "country": "AT"
+  },
+  {
+   "id": "eucap:BE",
+   "name": "Brussels",
+   "country": "BE"
+  },
+  {
+   "id": "eucap:BG",
+   "name": "Sofia",
+   "country": "BG"
+  },
+  {
+   "id": "eucap:HR",
+   "name": "Zagreb",
+   "country": "HR"
+  },
+  {
+   "id": "eucap:CZ",
+   "name": "Prague",
+   "country": "CZ"
+  },
+  {
+   "id": "eucap:DK",
+   "name": "Copenhagen",
+   "country": "DK"
+  },
+  {
+   "id": "eucap:EE",
+   "name": "Tallinn",
+   "country": "EE"
+  },
+  {
+   "id": "eucap:FI",
+   "name": "Helsinki",
+   "country": "FI"
+  },
+  {
+   "id": "eucap:DE",
+   "name": "Berlin",
+   "country": "DE"
+  },
+  {
+   "id": "eucap:HU",
+   "name": "Budapest",
+   "country": "HU"
+  },
+  {
+   "id": "eucap:IE",
+   "name": "Dublin",
+   "country": "IE"
+  },
+  {
+   "id": "eucap:LV",
+   "name": "Riga",
+   "country": "LV"
+  },
+  {
+   "id": "eucap:LT",
+   "name": "Vilnius",
+   "country": "LT"
+  },
+  {
+   "id": "eucap:LU",
+   "name": "Luxembourg",
+   "country": "LU"
+  },
+  {
+   "id": "eucap:NL",
+   "name": "Amsterdam",
+   "country": "NL"
+  },
+  {
+   "id": "eucap:PL",
+   "name": "Warsaw",
+   "country": "PL"
+  },
+  {
+   "id": "eucap:RO",
+   "name": "Bucharest",
+   "country": "RO"
+  },
+  {
+   "id": "eucap:SK",
+   "name": "Bratislava",
+   "country": "SK"
+  },
+  {
+   "id": "eucap:SI",
+   "name": "Ljubljana",
+   "country": "SI"
+  },
+  {
+   "id": "eucap:SE",
+   "name": "Stockholm",
+   "country": "SE"
+  }
+ ]
+}
