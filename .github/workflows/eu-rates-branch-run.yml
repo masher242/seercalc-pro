@@ -30,7 +30,5 @@ jobs:
           python3 - <<'PY'
           import json
           d = json.load(open('src/data/euHouseholdRates.json'))
-          print(f"::notice title=data::meta {d['period']} avg={d.get('euAverage')} avgPeriod={d.get('euAveragePeriod')}")
-          for k, v in d['countries'].items():
-              print(f"::notice title=data::{k} {v['price']} {v.get('period', '')} {v['name']}")
+          print("::notice title=data::" + json.dumps(d, separators=(',', ':'), ensure_ascii=True))
           PY
