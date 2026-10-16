@@ -25,8 +25,8 @@ const RATE_ROWS = [
   { label: CA.name, rate: CA.rate, highlight: false },
   { label: MA.name, rate: MA.rate, highlight: false },
   { label: HI.name, rate: HI.rate, highlight: true },
-  { label: 'Author\'s country, residential (editor\'s own bill)', rate: 0.317, highlight: false },
-  { label: 'Author\'s country, commercial (editor\'s own bill)', rate: 0.345, highlight: false },
+  { label: 'High-cost island nation, residential', rate: 0.317, highlight: false },
+  { label: 'High-cost island nation, commercial', rate: 0.345, highlight: false },
 ];
 const TABLE_SEERS = [10, 14, 18, 20];
 const TOP10 = [...STATES].sort((a, b) => b.rate - a.rate).slice(0, 10);
