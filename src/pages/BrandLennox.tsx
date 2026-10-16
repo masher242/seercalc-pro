@@ -4,6 +4,11 @@ import { ArrowLeft, Calculator, Clock, CheckCircle2, AlertCircle, Star } from 'l
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { annualCost, usd, cents, US_RATE, RATES_AS_OF } from '../data/acCost';
+
+// SL25KCV (26.0 SEER2) vs Carrier Infinity (21.0 SEER2): 3-ton, 1,500 full-load hours a year.
+const LX_AVG = annualCost(3, 21, 1500, US_RATE) - annualCost(3, 26, 1500, US_RATE);
+const LX_HIGH = annualCost(3, 21, 1500, 0.35) - annualCost(3, 26, 1500, 0.35);
 
 const modelLineup = [
   { model: 'SL25KCV', series: 'Dave Lennox Signature®', tier: 'Ultra-Premium', compressor: 'Variable-Capacity', seer2: '26.0', refrigerant: 'R-454B', note: 'Highest-efficiency central AC in US market; launched Oct 2024' },
@@ -525,7 +530,7 @@ export default function BrandLennox() {
               </div>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>The efficiency math:</strong> The SL25KCV at 26.0 SEER2 vs. a Carrier Infinity at 21.0 SEER2 — the Lennox uses approximately 19% less electricity for the same cooling output. At the US average rate (17.45¢/kWh) on a 3-ton system running 1,500 hours/year, that gap is worth roughly <strong>$100–$130 per year</strong>. At Hawaii or California rates (35¢+/kWh), it's <strong>$200–$260 per year</strong>. At a $5,000–$7,000 installed premium over Carrier, the payback period at average rates is 38–70 years. At high electricity rates, it drops to 19–35 years — still longer than the system's expected lifespan. The SL25KCV is an efficiency statement, not a purely financial decision. Buy it because you want the best, not because it pencils out.
+                <strong>The efficiency math:</strong> The SL25KCV at 26.0 SEER2 vs. a Carrier Infinity at 21.0 SEER2 — the Lennox uses approximately 19% less electricity for the same cooling output. At the U.S. average rate ({cents(US_RATE)}/kWh, {RATES_AS_OF}) on a 3-ton system running 1,500 full-load hours a year, that gap is worth about <strong>{usd(LX_AVG)} a year</strong>. At 35¢/kWh (California-level prices), it's about <strong>{usd(LX_HIGH)} a year</strong>. At a $5,000–$7,000 installed premium over Carrier, the payback at average rates is roughly {Math.round(5000 / LX_AVG)}–{Math.round(7000 / LX_AVG)} years, and at 35¢/kWh roughly {Math.round(5000 / LX_HIGH)}–{Math.round(7000 / LX_HIGH)} years — longer than the system's expected lifespan either way. (Estimates: savings = tons × 12 × hours × (1 ÷ 21 − 1 ÷ 26) × price.) The SL25KCV is an efficiency statement, not a purely financial decision. Buy it because you want the best, not because it pencils out.
               </p>
             </div>
 
@@ -593,7 +598,7 @@ export default function BrandLennox() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">9. Frequently Asked Questions</h2>
               <div className="space-y-5">
                 {[
-                  { q: "Is Lennox worth the extra cost over Carrier or Trane?", a: "For most buyers in average-rate climates: no — the efficiency premium (26.0 vs. 21.0 SEER2 vs. Carrier) saves roughly $100–$130/year at average electricity rates. At a $5,000–$7,000 installed premium, payback exceeds the system's expected lifespan. For buyers in high-rate markets (Hawaii, California, Northeast) planning to stay 15+ years with strong local dealer support: potentially yes. Run the numbers with our SEER calculator using your specific electricity rate." },
+                  { q: "Is Lennox worth the extra cost over Carrier or Trane?", a: `Not on energy savings alone. The efficiency premium (26.0 vs. 21.0 SEER2 vs. Carrier) saves about ${usd(LX_AVG)} a year at the U.S. average electricity rate for a 3-ton system running 1,500 hours, and about ${usd(LX_HIGH)} at 35¢/kWh. At a $5,000–$7,000 installed premium, the payback is longer than the system's expected lifespan even at high rates. Buy it for comfort, quietness and top efficiency, with a strong local Lennox dealer, not to save money. Run your own numbers with our SEER calculator.` },
                   { q: "What is the most efficient Lennox AC in 2026?", a: "The SL25KCV (Dave Lennox Signature Collection) at 26.0 SEER2 — the highest efficiency rating of any central air conditioner in the US residential market as of 2026. It requires the iComfort S30 thermostat for full functionality and runs $9,000–$15,000+ installed." },
                   { q: "What is Lennox's Warranty Your Way program?", a: "When you register within 60 days, you choose Option A (maximum parts years, no labor) or Option B (fewer parts years plus 3 years of FREE labor coverage). Lennox is the only major brand offering manufacturer labor coverage at registration without a paid plan. For Signature systems, Option B gives 10-year parts + 3-year free labor. California, Florida, Georgia (new in 2026), and Quebec receive full coverage without registration." },
                   { q: "Why do contractors dislike Lennox?", a: "The consistent complaint across contractor forums is proprietary parts availability — OEM-only sourcing, weeks-long waits, costs 3x generic equivalents, and control boards redesigned so frequently that parts for 3-year-old units can become unavailable. Three out of four contractors in representative discussions rated Lennox negatively, specifically citing parts challenges. This doesn't mean Lennox equipment is bad — it means servicing it is difficult and expensive compared to Goodman (open wholesale) or Carrier (broad distribution)." },

@@ -3,12 +3,19 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useCallback } from 'react';
 import { ArrowLeft, Calculator, ArrowRight, RefreshCw } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import { annualCost, usd, cents, US_RATE } from '../data/acCost';
 
 // Conversion constants per DOE methodology
 // SEER2 = SEER × M where M = 0.9485 for split-system ACs and heat pumps
 // For mini-splits / ductless: M = 1.0 (no duct pressure change)
 const SPLIT_FACTOR = 0.9485;
 const MINI_SPLIT_FACTOR = 1.0;
+
+// Worked example for the shopping callout: old SEER 16 vs a quoted SEER2 17,
+// 3-ton system, 1,500 cooling hours a year, U.S. average rate.
+const OLD16_AS_SEER2 = 16 * SPLIT_FACTOR;
+const EX_LESS = Math.round((1 - OLD16_AS_SEER2 / 17) * 100);
+const EX_SAVE = annualCost(3, OLD16_AS_SEER2, 1500, US_RATE) - annualCost(3, 17, 1500, US_RATE);
 
 const REGIONAL_MINIMUMS = [
   { region: 'North (all other states, e.g. CO, IL, MI, MN, MO, NY, OH, PA, UT, WA, WV)', minSeer2: 13.4, minSeer: 14.1 },
@@ -387,7 +394,7 @@ export default function CalculatorSeerToSeer2() {
             If your current system is rated at SEER 16 and a contractor quotes you a new system at SEER2 15.2, you might think you're getting a <em>less efficient</em> system. You're not — SEER2 15.2 and SEER 16 are the same physical efficiency, just measured differently.
           </p>
           <p className="text-sm text-gray-700 leading-relaxed">
-            Conversely, if you're comparing a quoted SEER2 17 system to your old SEER 16 system, you're getting a genuine 8% efficiency improvement — worth approximately $80–$120/year at average US electricity rates on a 3-ton system.
+            Conversely, if you're comparing a quoted SEER2 17 system to your old SEER 16 system (about SEER2 {OLD16_AS_SEER2.toFixed(1)}), the new one uses about {EX_LESS}% less electricity for the same cooling. For a 3-ton system running 1,500 hours a year at the U.S. average of {cents(US_RATE)}/kWh, that's roughly {usd(EX_SAVE)} a year. Hotter climates and higher rates save more; run your own numbers in the <Link to="/" className="text-teal-700 hover:underline">SEER savings calculator</Link>.
           </p>
         </div>
 

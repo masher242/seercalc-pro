@@ -4,61 +4,50 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { getState, annualCost, annualKwh, usd, cents, US_RATE, RATES_AS_OF } from '../data/acCost';
 
-const avgRateUpgrades = [
-  { from: 8, to: 14, annual: 505, ten: 5050, fifteen: 7575 },
-  { from: 8, to: 16, annual: 589, ten: 5890, fifteen: 8835 },
-  { from: 10, to: 14, annual: 269, ten: 2690, fifteen: 4035 },
-  { from: 10, to: 16, annual: 353, ten: 3530, fifteen: 5295 },
-  { from: 10, to: 18, annual: 418, ten: 4180, fifteen: 6270 },
-  { from: 10, to: 20, annual: 471, ten: 4710, fifteen: 7065 },
-  { from: 13, to: 16, annual: 136, ten: 1360, fifteen: 2040 },
-  { from: 13, to: 18, annual: 201, ten: 2010, fifteen: 3015 },
-  { from: 13, to: 20, annual: 254, ten: 2540, fifteen: 3810 },
-  { from: 14, to: 16, annual: 84, ten: 840, fifteen: 1260 },
-  { from: 14, to: 18, annual: 149, ten: 1490, fifteen: 2235 },
-  { from: 14, to: 20, annual: 202, ten: 2020, fifteen: 3030 },
-  { from: 16, to: 20, annual: 118, ten: 1180, fifteen: 1770 },
-  { from: 20, to: 25, annual: 94, ten: 940, fifteen: 1410 },
-];
+// Every dollar figure on this page is computed from these: a 3-ton central AC
+// running 1,500 full-load hours a year, at the newest EIA residential rates
+// (U.S. average, and Hawaii as the high-rate example).
+const TONS = 3;
+const HRS = 1500;
+const HI = getState('hawaii')!;
+const AVG = US_RATE;
+const HIGH = HI.rate;
+const cost = (seer: number, rate: number) => annualCost(TONS, seer, HRS, rate);
+const save = (from: number, to: number, rate: number) => cost(from, rate) - cost(to, rate);
+/** Years for the energy savings to repay an upfront price premium. */
+const yrs = (premium: number, from: number, to: number, rate: number) => Math.round(premium / save(from, to, rate));
 
-const highRateUpgrades = [
-  { from: 8, to: 14, annual: 1152, ten: 11520, fifteen: 17280 },
-  { from: 8, to: 16, annual: 1344, ten: 13440, fifteen: 20160 },
-  { from: 10, to: 14, annual: 614, ten: 6140, fifteen: 9210 },
-  { from: 10, to: 16, annual: 806, ten: 8060, fifteen: 12090 },
-  { from: 10, to: 18, annual: 955, ten: 9550, fifteen: 14325 },
-  { from: 10, to: 20, annual: 1074, ten: 10740, fifteen: 16110 },
-  { from: 13, to: 16, annual: 310, ten: 3100, fifteen: 4650 },
-  { from: 13, to: 18, annual: 459, ten: 4590, fifteen: 6885 },
-  { from: 13, to: 20, annual: 578, ten: 5780, fifteen: 8670 },
-  { from: 14, to: 16, annual: 192, ten: 1920, fifteen: 2880 },
-  { from: 14, to: 18, annual: 341, ten: 3410, fifteen: 5115 },
-  { from: 14, to: 20, annual: 460, ten: 4600, fifteen: 6900 },
-  { from: 16, to: 20, annual: 268, ten: 2680, fifteen: 4020 },
-  { from: 20, to: 25, annual: 215, ten: 2150, fifteen: 3225 },
-];
+const UPGRADE_PAIRS: [number, number][] = [[8, 14], [8, 16], [10, 14], [10, 16], [10, 18], [10, 20], [13, 16], [13, 18], [13, 20], [14, 16], [14, 18], [14, 20], [16, 20], [20, 25]];
+const upgrades = (rate: number) =>
+  UPGRADE_PAIRS.map(([from, to]) => {
+    const annual = save(from, to, rate);
+    return { from, to, annual, ten: annual * 10, fifteen: annual * 15 };
+  });
+const avgRateUpgrades = upgrades(AVG);
+const highRateUpgrades = upgrades(HIGH);
 
 const chartRows = [
-  { seer: 8, tier: 'Very Low', kwh: 6750, avg: 1178, high: 2687, era: 'Pre-1992 systems' },
-  { seer: 9, tier: 'Very Low', kwh: 6000, avg: 1047, high: 2388, era: 'Early 1990s systems' },
-  { seer: 10, tier: 'Low', kwh: 5400, avg: 942, high: 2149, era: '1992-2006 minimum' },
-  { seer: 11, tier: 'Low', kwh: 4909, avg: 857, high: 1954, era: 'Budget models, early 2000s' },
-  { seer: 12, tier: 'Low-Moderate', kwh: 4500, avg: 785, high: 1791, era: 'Standard models, 2000s' },
-  { seer: 13, tier: 'Moderate', kwh: 4154, avg: 725, high: 1653, era: '2006-2023 minimum (North)' },
-  { seer: 14, tier: 'Standard', kwh: 3857, avg: 673, high: 1535, era: 'Current minimum (North)' },
-  { seer: 15, tier: 'Good', kwh: 3600, avg: 628, high: 1433, era: 'Current minimum (South)' },
-  { seer: 16, tier: 'Good', kwh: 3375, avg: 589, high: 1343, era: 'Popular mid-range choice' },
-  { seer: 17, tier: 'High', kwh: 3176, avg: 554, high: 1264, era: 'High-efficiency single-stage' },
-  { seer: 18, tier: 'High', kwh: 3000, avg: 524, high: 1194, era: 'Two-stage systems' },
-  { seer: 19, tier: 'High', kwh: 2842, avg: 496, high: 1131, era: 'Premium two-stage' },
-  { seer: 20, tier: 'Very High', kwh: 2700, avg: 471, high: 1075, era: 'Variable-speed entry' },
-  { seer: 21, tier: 'Very High', kwh: 2571, avg: 449, high: 1023, era: 'Variable-speed standard' },
-  { seer: 22, tier: 'Ultra High', kwh: 2455, avg: 428, high: 977, era: 'Premium variable-speed' },
-  { seer: 23, tier: 'Ultra High', kwh: 2348, avg: 410, high: 935, era: 'Top-tier residential' },
-  { seer: 24, tier: 'Ultra High', kwh: 2250, avg: 393, high: 896, era: 'Elite residential' },
-  { seer: 25, tier: 'Maximum', kwh: 2160, avg: 377, high: 860, era: 'Highest efficiency available' },
-];
+  { seer: 8, tier: 'Very Low', era: 'Pre-1992 systems' },
+  { seer: 9, tier: 'Very Low', era: 'Early 1990s systems' },
+  { seer: 10, tier: 'Low', era: '1992-2006 minimum' },
+  { seer: 11, tier: 'Low', era: 'Budget models, early 2000s' },
+  { seer: 12, tier: 'Low-Moderate', era: 'Standard models, 2000s' },
+  { seer: 13, tier: 'Moderate', era: '2006-2023 minimum (North)' },
+  { seer: 14, tier: 'Standard', era: 'Current minimum (North)' },
+  { seer: 15, tier: 'Good', era: 'Current minimum (South)' },
+  { seer: 16, tier: 'Good', era: 'Popular mid-range choice' },
+  { seer: 17, tier: 'High', era: 'High-efficiency single-stage' },
+  { seer: 18, tier: 'High', era: 'Two-stage systems' },
+  { seer: 19, tier: 'High', era: 'Premium two-stage' },
+  { seer: 20, tier: 'Very High', era: 'Variable-speed entry' },
+  { seer: 21, tier: 'Very High', era: 'Variable-speed standard' },
+  { seer: 22, tier: 'Ultra High', era: 'Premium variable-speed' },
+  { seer: 23, tier: 'Ultra High', era: 'Top-tier residential' },
+  { seer: 24, tier: 'Ultra High', era: 'Elite residential' },
+  { seer: 25, tier: 'Maximum', era: 'Highest efficiency available' },
+].map((r) => ({ ...r, kwh: annualKwh(TONS, r.seer, HRS), avg: cost(r.seer, AVG), high: cost(r.seer, HIGH) }));
 
 const seer2Conversions = [
   { seer: 14, seer2: 13.4 },
@@ -86,9 +75,9 @@ function UpgradeSavingsTable({ rows }: { rows: typeof avgRateUpgrades }) {
           {rows.map((row) => (
             <tr key={`${row.from}-${row.to}`} className="hover:bg-gray-50">
               <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">SEER {row.from} → SEER {row.to}</td>
-              <td className="border border-gray-200 px-4 py-3 text-gray-700">${row.annual.toLocaleString()}/year</td>
-              <td className="border border-gray-200 px-4 py-3 text-gray-700">${row.ten.toLocaleString()}</td>
-              <td className="border border-gray-200 px-4 py-3 text-gray-700">${row.fifteen.toLocaleString()}</td>
+              <td className="border border-gray-200 px-4 py-3 text-gray-700">{usd(row.annual)}/year</td>
+              <td className="border border-gray-200 px-4 py-3 text-gray-700">{usd(row.ten)}</td>
+              <td className="border border-gray-200 px-4 py-3 text-gray-700">{usd(row.fifteen)}</td>
             </tr>
           ))}
         </tbody>
@@ -174,7 +163,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              This chart answers all of those questions with real numbers. We've calculated annual costs at both the national average electricity rate (17.45¢/kWh) and high rates (39.8¢/kWh for Hawaii and similar high-cost areas) so you can see exactly where your system falls — and exactly what upgrading could save you.
+              This chart answers all of those questions with real numbers. We've calculated annual costs at both the national average electricity rate ({cents(AVG)}/kWh) and a high rate ({cents(HIGH)}/kWh, Hawaii's average, similar to many islands and high-cost areas), using EIA figures for {RATES_AS_OF} so you can see exactly where your system falls — and exactly what upgrading could save you.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -182,7 +171,7 @@ export default function BlogArticleSeerChart() {
             <h2 className="text-2xl font-bold text-gray-900 mt-2 mb-4">The Complete SEER Rating Chart</h2>
 
             <p className="text-sm text-gray-500 italic mb-4">
-              All costs based on a 3-ton system running 1,500 hours/year. Your costs will vary based on system size, usage hours, and local electricity rates. Use our calculator for personalized numbers.
+              All costs are estimates for a 3-ton system running 1,500 full-load hours a year. Your costs will vary based on system size, usage hours, and local electricity rates. Use our calculator for personalized numbers.
             </p>
 
             <div className="overflow-x-auto mb-6">
@@ -192,8 +181,8 @@ export default function BlogArticleSeerChart() {
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">SEER Rating</th>
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Efficiency Level</th>
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual kWh</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual Cost (17.45¢/kWh)</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual Cost (39.8¢/kWh)</th>
+                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual Cost at U.S. average ({cents(AVG)}/kWh)</th>
+                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual Cost at Hawaii rate ({cents(HIGH)}/kWh)</th>
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Typical Era/Application</th>
                   </tr>
                 </thead>
@@ -202,9 +191,9 @@ export default function BlogArticleSeerChart() {
                     <tr key={row.seer} className="hover:bg-gray-50">
                       <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">{row.seer} SEER</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">{row.tier}</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">{row.kwh.toLocaleString()}</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">${row.avg.toLocaleString()}</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">${row.high.toLocaleString()}</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">{Math.round(row.kwh).toLocaleString()}</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">{usd(row.avg)}</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">{usd(row.high)}</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">{row.era}</td>
                     </tr>
                   ))}
@@ -217,7 +206,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              <strong>Example:</strong> Upgrading from SEER 10 ($942/year) to SEER 16 ($589/year) saves approximately <strong>$353 per year</strong> at average rates. At Hawaii rates? That same upgrade saves <strong>$806 per year</strong>.
+              <strong>Example:</strong> Upgrading from SEER 10 ({usd(cost(10, AVG))}/year) to SEER 16 ({usd(cost(16, AVG))}/year) saves approximately <strong>{usd(save(10, 16, AVG))} per year</strong> at average rates. At Hawaii rates? That same upgrade saves <strong>{usd(save(10, 16, HIGH))} per year</strong>.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -239,7 +228,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              At high electricity rates, a SEER 8 system costs <strong>$2,687/year</strong> to run. Upgrading to even a basic SEER 14 saves over <strong>$1,150 per year</strong>. If you still have a SEER 8 or 9 system, replacement isn't just recommended — it's one of the best financial decisions you can make.
+              At high electricity rates, a SEER 8 system costs about <strong>{usd(cost(8, HIGH))}/year</strong> to run. Upgrading to even a basic SEER 14 saves about <strong>{usd(save(8, 14, HIGH))} per year</strong>. If you still have a SEER 8 or 9 system, replacement isn't just recommended — it's one of the best financial decisions you can make.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Single-speed compressor, basic controls, no efficiency features.</p>
@@ -258,7 +247,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              At average rates, a SEER 10 costs $942/year. A SEER 12 costs $785/year. The difference between the two is $157 annually — noticeable but not dramatic. The real savings come from jumping to a modern system: upgrading from SEER 10 to SEER 16 saves <strong>$353/year</strong> at average rates and <strong>$806/year</strong> at high rates.
+              At average rates, a SEER 10 costs {usd(cost(10, AVG))}/year. A SEER 12 costs {usd(cost(12, AVG))}/year. The difference between the two is {usd(save(10, 12, AVG))} annually — noticeable but not dramatic. The real savings come from jumping to a modern system: upgrading from SEER 10 to SEER 16 saves <strong>{usd(save(10, 16, AVG))}/year</strong> at average rates and <strong>{usd(save(10, 16, HIGH))}/year</strong> at high rates.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Single-speed compressor, PSC (permanent split capacitor) blower motors. Basic on/off operation — the system runs at 100% capacity whenever it's on, even when the house only needs 30% cooling.</p>
@@ -277,7 +266,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              At average rates, a SEER 13 costs $725/year — $217 less than a SEER 10. At high rates, $1,653/year — still a significant bill.
+              At average rates, a SEER 13 costs {usd(cost(13, AVG))}/year — {usd(save(10, 13, AVG))} less than a SEER 10. At high rates, {usd(cost(13, HIGH))}/year — still a significant bill.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Mostly single-speed compressors with some two-stage options at the upper end. Improved coil designs and better refrigerants (R-410A) compared to older systems.</p>
@@ -296,7 +285,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              These systems meet the legal minimum. They cost less upfront than higher-efficiency models. And for mild climates where the AC runs only a few months, they can make financial sense. At average rates, a SEER 14 costs $673/year. At high rates, $1,535/year.
+              These systems meet the legal minimum. They cost less upfront than higher-efficiency models. And for mild climates where the AC runs only a few months, they can make financial sense. At average rates, a SEER 14 costs {usd(cost(14, AVG))}/year. At high rates, {usd(cost(14, HIGH))}/year.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Typically single-stage compressors with ECM (electronically commutated motor) blower motors, which are more efficient than older PSC motors. Some SEER 15 units offer two-stage operation.</p>
@@ -312,11 +301,11 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              SEER 16 is where the cost-to-savings ratio gets interesting. It's 14% more efficient than a SEER 14, which translates to real savings — $84/year at average rates, $192/year at high rates. Over the 15-20 year lifespan of the unit, that's $1,260-$3,840 in total savings.
+              SEER 16 is where the cost-to-savings ratio gets interesting. It's 14% more efficient than a SEER 14, which translates to {usd(save(14, 16, AVG))}/year at average rates and {usd(save(14, 16, HIGH))}/year at high rates. Over a 15–20 year lifespan, that's roughly {usd(save(14, 16, AVG) * 15)}–{usd(save(14, 16, HIGH) * 20)} in total, before any change in rates.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              The upfront cost premium over a SEER 14 is typically $800-$1,500. At high electricity rates, a SEER 16 pays back that premium in <strong>4-8 years</strong> and then saves you money for the remaining 10-15 years of its life.
+              The upfront cost premium over a SEER 14 is typically $800-$1,500. At high electricity rates, a SEER 16 pays back that premium in about <strong>{yrs(800, 14, 16, HIGH)}–{yrs(1500, 14, 16, HIGH)} years</strong>. At the U.S. average rate it takes about {yrs(800, 14, 16, AVG)}–{yrs(1500, 14, 16, AVG)} years, so the case rests on heavy use, a high rate or a rebate.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Often available with two-stage compressors and variable-speed blower motors. Better humidity control than single-stage units. Quieter operation.</p>
@@ -337,7 +326,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              At average rates, a SEER 18 saves $149/year compared to SEER 14. At high rates, that's $341/year — or <strong>$5,115 over 15 years</strong>.
+              At average rates, a SEER 18 saves {usd(save(14, 18, AVG))}/year compared to SEER 14. At high rates, that's {usd(save(14, 18, HIGH))}/year — or <strong>{usd(save(14, 18, HIGH) * 15)} over 15 years</strong>.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Two-stage compressors, variable-speed blower motors, advanced coil designs. Some SEER 19 models use inverter-driven compressors (continuously variable rather than two fixed speeds).</p>
@@ -357,13 +346,13 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              At average rates, a SEER 20 saves $202/year compared to SEER 14. At high rates, <strong>$460/year — or $6,900 over 15 years</strong>.
+              At average rates, a SEER 20 saves {usd(save(14, 20, AVG))}/year compared to SEER 14. At high rates, <strong>{usd(save(14, 20, HIGH))}/year — or {usd(save(14, 20, HIGH) * 15)} over 15 years</strong>.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Variable-speed inverter compressors, communicating controls (system components talk to each other for optimal performance), advanced refrigerant management.</p>
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Typical installed cost:</strong> $7,000-$11,000 (3-ton system)</p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              <strong>The diminishing returns question:</strong> Moving from SEER 14 to SEER 20 saves $202/year at average rates. Moving from SEER 20 to SEER 25 saves only an additional $94/year. The biggest efficiency gains happen in the jump from old systems to modern ones — each additional SEER point above 20 delivers less incremental savings.
+              <strong>The diminishing returns question:</strong> Moving from SEER 14 to SEER 20 saves {usd(save(14, 20, AVG))}/year at average rates. Moving from SEER 20 to SEER 25 saves only an additional {usd(save(20, 25, AVG))}/year. The biggest efficiency gains happen in the jump from old systems to modern ones — each additional SEER point above 20 delivers less incremental savings.
             </p>
             <p className="text-gray-700 leading-relaxed mb-6"><strong>Best for:</strong> Homeowners in very hot climates who run AC heavily, those with high electricity rates where every percentage point matters, comfort-focused buyers who want the best indoor environment, and environmentally conscious buyers looking to minimize energy use.</p>
 
@@ -380,11 +369,11 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              At average rates, a SEER 25 saves $296/year compared to SEER 14. But compared to SEER 20, the additional savings are only $94/year. That means the extra $2,000-$5,000 in upfront cost takes <strong>21-53 years</strong> to pay back at average rates — longer than the system will last.
+              At average rates, a SEER 25 saves {usd(save(14, 25, AVG))}/year compared to SEER 14. But compared to SEER 20, the additional savings are only {usd(save(20, 25, AVG))}/year. That means the extra $2,000-$5,000 in upfront cost takes <strong>{yrs(2000, 20, 25, AVG)}–{yrs(5000, 20, 25, AVG)} years</strong> to pay back at average rates — longer than the system will last.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              At high rates, the math improves: SEER 25 saves $675/year compared to SEER 14, and $215/year compared to SEER 20. The payback on the upgrade from SEER 20 to SEER 25 drops to <strong>9-23 years</strong> — borderline justifiable.
+              At high rates, the math improves: SEER 25 saves {usd(save(14, 25, HIGH))}/year compared to SEER 14, and {usd(save(20, 25, HIGH))}/year compared to SEER 20. The payback on the upgrade from SEER 20 to SEER 25 drops to <strong>{yrs(2000, 20, 25, HIGH)}–{yrs(5000, 20, 25, HIGH)} years</strong> — borderline at best.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Advanced inverter compressors with variable refrigerant flow, communicating controls, premium components throughout. Often paired with communicating thermostats for optimal system coordination.</p>
@@ -399,11 +388,11 @@ export default function BlogArticleSeerChart() {
               Here's the chart that really matters — how much you save by upgrading FROM your current system TO a new one.
             </p>
 
-            <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">Annual Savings When Upgrading (Average U.S. Rate: 17.45¢/kWh)</h3>
+            <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">Annual Savings When Upgrading (Average U.S. Rate: {cents(AVG)}/kWh)</h3>
 
             <UpgradeSavingsTable rows={avgRateUpgrades} />
 
-            <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">Annual Savings When Upgrading (High Rate: 39.8¢/kWh)</h3>
+            <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">Annual Savings When Upgrading (High Rate: Hawaii, {cents(HIGH)}/kWh)</h3>
 
             <UpgradeSavingsTable rows={highRateUpgrades} />
 
@@ -423,13 +412,13 @@ export default function BlogArticleSeerChart() {
 
             <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700">
               <li><strong>SEER 8-10 → SEER 14-16:</strong> Massive savings (30-40% reduction in cooling costs). Almost always worth it.</li>
-              <li><strong>SEER 13-14 → SEER 16-18:</strong> Solid savings (15-25% reduction). Worth it in hot climates and high-rate areas. Payback typically 4-8 years.</li>
-              <li><strong>SEER 16-18 → SEER 20:</strong> Moderate savings (10-15% reduction). Worth it if you run AC heavily or have high rates. Payback 6-12 years.</li>
+              <li><strong>SEER 13-14 → SEER 16-18:</strong> Solid savings (15-25% reduction). Worth it in hot climates and high-rate areas. Payback on a $800–$1,500 premium ranges from about {yrs(800, 14, 16, HIGH)} years at high rates to {yrs(1500, 14, 16, AVG)} years at the average rate.</li>
+              <li><strong>SEER 16-18 → SEER 20:</strong> Moderate savings (10-15% reduction). Worth it mainly if you run AC heavily or have high rates. On a premium of about $2,500, payback is roughly {yrs(2500, 16, 20, HIGH)} years at high rates and {yrs(2500, 16, 20, AVG)} at the average rate.</li>
               <li><strong>SEER 20 → SEER 25:</strong> Small incremental savings (5-8% additional reduction). Rarely justified on cost alone. Payback often exceeds system lifespan at average rates.</li>
             </ul>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              <strong>The rule of thumb:</strong> Every SEER point matters more when you're starting from a low rating. Going from SEER 10 to SEER 11 saves roughly $85/year at average rates. Going from SEER 22 to SEER 23 saves only about $18/year.
+              <strong>The rule of thumb:</strong> Every SEER point matters more when you're starting from a low rating. Going from SEER 10 to SEER 11 saves roughly {usd(save(10, 11, AVG))}/year at average rates. Going from SEER 22 to SEER 23 saves only about {usd(save(22, 23, AVG))}/year.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -483,7 +472,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              <strong>If your rate is 15-25¢/kWh</strong> and you live in a moderate to hot climate (most of the U.S.), SEER 16-18 is the sweet spot. The payback period is 4-8 years, and you get 10-15 years of savings after that.
+              <strong>If your rate is 15-25¢/kWh</strong> and you live in a moderate to hot climate (most of the U.S.), SEER 16 is usually the sensible pick. Its premium over SEER 14 takes roughly {yrs(800, 14, 16, 0.25)}–{yrs(1500, 14, 16, 0.15)} years to repay at these rates on 1,500 hours a year; more hours shorten that. SEER 18 pays off mainly with heavy use.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -506,7 +495,7 @@ export default function BlogArticleSeerChart() {
             </div>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              Our baseline assumptions: 3-ton system, 1,500 cooling hours/year. We used 17.45¢/kWh (the U.S. national average per the EIA, January 2026) and 39.8¢/kWh (Hawaii's average rate) for comparison. Your actual costs will vary based on your system size, how many hours you run it, and your local rate. For personalized numbers based on YOUR situation, use our free calculator.
+              Our baseline assumptions: 3-ton system, 1,500 cooling hours/year. We used {cents(AVG)}/kWh (the U.S. national average per the EIA, {RATES_AS_OF}) and {cents(HIGH)}/kWh (Hawaii's average rate) for comparison. These figures update when EIA publishes new rates. Your actual costs will vary based on your system size, how many hours you run it, and your local rate. For personalized numbers based on YOUR situation, use our free calculator.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -524,7 +513,7 @@ export default function BlogArticleSeerChart() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Is SEER 16 worth the upgrade from SEER 14?</h3>
-                <p className="text-gray-700 leading-relaxed">At average U.S. rates, SEER 16 saves about $84/year over SEER 14. The upfront premium is typically $800-$1,500, so payback is 10-18 years. At high rates (30¢+/kWh), payback drops to 4-8 years — much more compelling.</p>
+                <p className="text-gray-700 leading-relaxed">At average U.S. rates, SEER 16 saves about {usd(save(14, 16, AVG))}/year over SEER 14 (3-ton, 1,500 hours). The upfront premium is typically $800-$1,500, so payback is about {yrs(800, 14, 16, AVG)}–{yrs(1500, 14, 16, AVG)} years. At Hawaii's rate it drops to about {yrs(800, 14, 16, HIGH)}–{yrs(1500, 14, 16, HIGH)} years — much more compelling.</p>
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">What's the most efficient SEER rating available?</h3>

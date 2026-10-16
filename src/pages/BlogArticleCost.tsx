@@ -4,6 +4,20 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { getState, annualCost, usd, cents, RATES_AS_OF, US_RATE } from '../data/acCost';
+
+// Efficiency upgrade example: 2.5-ton system in Arizona at the current state rate and our cooling-hours estimate.
+const AZ = getState('arizona')!;
+const US_SAVE = annualCost(3, 14, 1500, US_RATE) - annualCost(3, 18, 1500, US_RATE);
+const HIGH_SAVE = annualCost(3, 14, 1500, 0.3) - annualCost(3, 18, 1500, 0.3);
+const UPGRADES = [
+  { to: 16, extra: 1250 },
+  { to: 18, extra: 4500 },
+  { to: 20, extra: 6000 },
+].map((u) => {
+  const save = annualCost(2.5, 14.3, AZ.hours, AZ.rate) - annualCost(2.5, u.to, AZ.hours, AZ.rate);
+  return { ...u, save, years: u.extra / save };
+});
 
 export default function BlogArticleCost() {
   return (
@@ -77,7 +91,7 @@ export default function BlogArticleCost() {
                 "name": "Does a higher SEER rating cost more to install?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Higher SEER systems cost more upfront: a SEER2 14.3 (minimum efficiency) system typically costs $1,500–$3,000 less than a SEER2 18+ system of the same brand and tonnage. However, higher SEER systems save money on electricity bills over time. At average U.S. rates, upgrading from SEER 14 to SEER 18 saves approximately $149/year — a payback period of 7–12 years at average rates, 4–6 years in high-rate states."
+                  "text": `Yes. Higher SEER systems cost more upfront: a SEER2 14.3 (minimum efficiency) system typically costs $1,500–$3,000 less than a SEER2 18+ system of the same brand and tonnage. They save money on electricity over time, but slowly: for a 3-ton system running 1,500 full-load hours a year, going from SEER 14 to SEER 18 saves about ${usd(US_SAVE)} a year at the U.S. average rate (${cents(US_RATE)}/kWh, ${RATES_AS_OF}), so the extra $1,500–$3,000 takes roughly ${Math.round(1500 / US_SAVE)}–${Math.round(3000 / US_SAVE)} years to pay back, or ${Math.round(1500 / HIGH_SAVE)}–${Math.round(3000 / HIGH_SAVE)} years at 30¢/kWh. These are estimates.`
                 }
               },
               {
@@ -424,7 +438,9 @@ export default function BlogArticleCost() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-2">
-              <strong>Scenario:</strong> 2.5 ton system, Phoenix AZ (2,000 cooling hours/year), $0.13/kWh electricity
+              <strong>Scenario:</strong> 2.5-ton system in Arizona, {AZ.hours.toLocaleString()} full-load cooling hours a year (our
+              estimate for a hot climate), at Arizona's average electricity price of {cents(AZ.rate)}/kWh ({RATES_AS_OF}, EIA).
+              Estimates: savings = tons × 12 × hours × (1 ÷ old SEER2 − 1 ÷ new SEER2) × price.
             </p>
 
             <div className="overflow-x-auto mb-6">
@@ -438,30 +454,20 @@ export default function BlogArticleCost() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td className="border border-gray-300 px-4 py-2">SEER2 14.3 → 16</td>
-                    <td className="border border-gray-300 px-4 py-2">+$1,250</td>
-                    <td className="border border-gray-300 px-4 py-2">$187/year</td>
-                    <td className="border border-gray-300 px-4 py-2">6.7 years</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border border-gray-300 px-4 py-2">SEER2 14.3 → 18</td>
-                    <td className="border border-gray-300 px-4 py-2">+$4,500</td>
-                    <td className="border border-gray-300 px-4 py-2">$375/year</td>
-                    <td className="border border-gray-300 px-4 py-2">12 years</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-gray-300 px-4 py-2">SEER2 14.3 → 20</td>
-                    <td className="border border-gray-300 px-4 py-2">+$6,000</td>
-                    <td className="border border-gray-300 px-4 py-2">$468/year</td>
-                    <td className="border border-gray-300 px-4 py-2">12.8 years</td>
-                  </tr>
+                  {UPGRADES.map((u, i) => (
+                    <tr key={u.to} className={i % 2 ? 'bg-gray-50' : ''}>
+                      <td className="border border-gray-300 px-4 py-2">SEER2 14.3 → {u.to}</td>
+                      <td className="border border-gray-300 px-4 py-2">+{usd(u.extra)}</td>
+                      <td className="border border-gray-300 px-4 py-2">about {usd(u.save)}/year</td>
+                      <td className="border border-gray-300 px-4 py-2">about {Math.round(u.years)} years</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              <strong>Important:</strong> Jumping from basic 14.3 SEER2 to 18–20 SEER2 variable-speed systems can add $2,000–$5,000+ depending on brand and local labor. In hot climates with high usage, SEER2 16-17 often offers the best payback (6-10 years). Ultra-high efficiency (20+) makes sense mainly for very hot climates or very high electricity rates. In mild climates, stick with SEER2 14.3-16.
+              <strong>Important:</strong> Jumping from basic 14.3 SEER2 to 18–20 SEER2 variable-speed systems can add $2,000–$5,000+ depending on brand and local labor. In hot climates, the smallest step up (to about SEER2 16) usually pays back fastest, about {Math.round(UPGRADES[0].years)} years in Arizona at today's prices, sooner where electricity costs more. Ultra-high efficiency (20+) makes sense mainly for very hot climates or very high electricity rates. In mild climates, stick with SEER2 14.3-16.
             </p>
 
             <div className="bg-blue-50 rounded-lg p-6 border border-blue-200 mb-8">
@@ -605,7 +611,7 @@ export default function BlogArticleCost() {
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Is it worth upgrading to a higher SEER rating?</h3>
-                <p className="text-gray-700">It depends on your climate and electricity rates. In hot climates (1,500+ cooling hours/year), upgrading from SEER2 14.3 to SEER2 16 typically pays back in 6-8 years. Jumping to variable-speed 18-20 SEER2 adds $2,000-$5,000+ to cost and may take 10-15 years to pay back unless electricity rates are very high. In mild climates, stick with SEER2 14.3-16. Use our calculator to see your specific payback period.</p>
+                <p className="text-gray-700">It depends on your climate and electricity rates. In a hot state like Arizona, upgrading from SEER2 14.3 to SEER2 16 for about $1,250 more pays back in about {Math.round(UPGRADES[0].years)} years at today's prices, sooner where electricity costs more. Jumping to variable-speed 18–20 SEER2 adds $2,000–$5,000+ and can take 20 years or more to pay back unless electricity is very expensive. In mild climates, stick with SEER2 14.3-16. Use our calculator to see your specific payback period.</p>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">

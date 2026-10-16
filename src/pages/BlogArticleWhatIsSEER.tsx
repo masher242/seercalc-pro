@@ -4,6 +4,38 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { STATES, getState, annualCost, usd, cents, US_RATE, RATES_AS_OF } from '../data/acCost';
+
+// Every figure in the cost tables comes from these: a 3-ton central AC running
+// 2,000 full-load hours a year, at the newest EIA residential rates.
+const TONS = 3;
+const HRS = 2000;
+const yr = (seer: number, rate: number) => annualCost(TONS, seer, HRS, rate);
+const HI = getState('hawaii')!;
+const CA = getState('california')!;
+const MA = getState('massachusetts')!;
+const US_COST_ROWS = [
+  { seer: 10, label: 'SEER 10 (older system)' },
+  { seer: 14, label: 'SEER 14 (about today\'s northern minimum)' },
+  { seer: 18, label: 'SEER 18 (high efficiency)' },
+  { seer: 20, label: 'SEER 20 (premium efficiency)' },
+];
+const RATE_ROWS = [
+  { label: 'U.S. average', rate: US_RATE, highlight: false },
+  { label: CA.name, rate: CA.rate, highlight: false },
+  { label: MA.name, rate: MA.rate, highlight: false },
+  { label: HI.name, rate: HI.rate, highlight: true },
+  { label: 'Author\'s country, residential (editor\'s own bill)', rate: 0.317, highlight: false },
+  { label: 'Author\'s country, commercial (editor\'s own bill)', rate: 0.345, highlight: false },
+];
+const TABLE_SEERS = [10, 14, 18, 20];
+const TOP10 = [...STATES].sort((a, b) => b.rate - a.rate).slice(0, 10);
+const HI_GAP = yr(10, HI.rate) - yr(18, HI.rate);
+const CA_GAP = yr(10, CA.rate) - yr(18, CA.rate);
+const MA_GAP = yr(10, MA.rate) - yr(18, MA.rate);
+const HI_14_18 = yr(14, HI.rate) - yr(18, HI.rate);
+const US_10_16 = yr(10, US_RATE) - yr(16, US_RATE);
+const HI_10_16 = yr(10, HI.rate) - yr(16, HI.rate);
 
 export default function BlogArticleWhatIsSEER() {
   return (
@@ -61,7 +93,7 @@ export default function BlogArticleWhatIsSEER() {
                 "name": "What is a good SEER rating?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A good SEER rating depends on your electricity rate and climate. At average U.S. rates (17.45¢/kWh), SEER 16 offers the best balance of upfront cost and savings. At high electricity rates (25¢+/kWh) or in hot climates, SEER 18-20 is often the financially correct choice. The current federal minimum for new systems is SEER2 13.4 in northern states and SEER2 14.3 in southern states."
+                  "text": `A good SEER rating depends on your electricity rate and climate. At average U.S. rates (${cents(US_RATE)}/kWh, EIA ${RATES_AS_OF}), SEER 16 offers the best balance of upfront cost and savings. At high electricity rates (25¢+/kWh) or in hot climates, SEER 18-20 is often the financially correct choice. The current federal minimum for new systems is SEER2 13.4 in northern states and SEER2 14.3 in southern states.`
                 }
               },
               {
@@ -77,7 +109,7 @@ export default function BlogArticleWhatIsSEER() {
                 "name": "How much can I save by upgrading my SEER rating?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Savings depend on your current SEER, new SEER, electricity rate, and usage. At U.S. average rates, upgrading from SEER 10 to SEER 16 saves approximately $353 per year. At high electricity rates like Hawaii (39.8¢/kWh), that same upgrade saves $806 per year. Use a SEER calculator to get personalized numbers based on your exact situation."
+                  "text": `Savings depend on your current SEER, new SEER, electricity rate, and usage. For a 3-ton system running 2,000 full-load hours a year at the U.S. average rate (${cents(US_RATE)}/kWh), upgrading from SEER 10 to SEER 16 saves about ${usd(US_10_16)} a year. At Hawaii's rate (${cents(HI.rate)}/kWh), the same upgrade saves about ${usd(HI_10_16)}. Fewer cooling hours means proportionally less. These are estimates; use a SEER calculator with your own numbers.`
                 }
               },
               {
@@ -116,7 +148,7 @@ export default function BlogArticleWhatIsSEER() {
           {/* Quick Answer — AI/GEO optimized */}
           <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
             <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
-            <p className="text-gray-800">A <strong>SEER rating</strong> (Seasonal Energy Efficiency Ratio) measures how efficiently an air conditioner converts electricity into cooling. Higher numbers mean lower bills: a SEER 16 unit uses 37.5% less electricity than a SEER 10, saving most homeowners $300–$800 per year. The current federal minimum for new systems is SEER2 13.4 in northern states and SEER2 14.3 in southern states.</p>
+            <p className="text-gray-800">A <strong>SEER rating</strong> (Seasonal Energy Efficiency Ratio) measures how efficiently an air conditioner converts electricity into cooling. Higher numbers mean lower bills: a SEER 16 unit uses 37.5% less electricity than a SEER 10, which for a typical 3-ton system can mean a few hundred dollars a year, more in hot, high-rate places. The current federal minimum for new systems is SEER2 13.4 in northern states and SEER2 14.3 in southern states.</p>
           </div>
 
           <section className="prose prose-lg max-w-none">
@@ -166,14 +198,14 @@ export default function BlogArticleWhatIsSEER() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">What Does My SEER Rating Actually Cost Me?</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              Let's make this concrete. The U.S. national average residential electricity rate is currently <strong>17.45¢/kWh</strong> (EIA, January 2026). But "average" hides an enormous range — and if you're not average, your costs can be dramatically higher.
+              Let's make this concrete. The U.S. national average residential electricity rate is currently <strong>{cents(US_RATE)}/kWh</strong> (EIA, {RATES_AS_OF}). But "average" hides an enormous range — and if you're not average, your costs can be dramatically higher.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              The tables below use a typical <strong>3-ton central air conditioner</strong> running approximately <strong>2,100 hours per year</strong> (about 7 hours a day from May through September). This is a realistic scenario for a 1,500–1,800 sq ft home in a warm climate.
+              The tables below use a typical <strong>3-ton central air conditioner</strong> running approximately <strong>2,000 full-load hours per year</strong> (roughly 8 hours a day over an 8-month cooling season). That's a realistic scenario for a 1,500–1,800 sq ft home in a warm climate. These are estimates; your hours depend on your climate and thermostat.
             </p>
 
-            <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">At the U.S. National Average Rate (17.45¢/kWh)</h3>
+            <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">At the U.S. National Average Rate ({cents(US_RATE)}/kWh)</h3>
 
             <div className="overflow-x-auto mb-8">
               <table className="w-full border-collapse text-sm">
@@ -181,30 +213,17 @@ export default function BlogArticleWhatIsSEER() {
                   <tr className="bg-teal-50">
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">SEER Rating</th>
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual Cooling Cost</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Monthly Avg (6-month season)</th>
+                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Monthly Avg (8-month season)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER 10 (older system)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">~$1,258/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$210/mo</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER 14 (federal minimum)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">~$898/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$150/mo</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER 18 (high efficiency)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">~$699/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$117/mo</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER 20 (premium efficiency)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">~$629/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">~$105/mo</td>
-                  </tr>
+                  {US_COST_ROWS.map((r) => (
+                    <tr key={r.seer} className="hover:bg-gray-50">
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">{r.label}</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">~{usd(yr(r.seer, US_RATE))}/yr</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">~{usd(yr(r.seer, US_RATE) / 8)}/mo</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -212,7 +231,7 @@ export default function BlogArticleWhatIsSEER() {
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4">At High Electricity Rates — The Real Story</h3>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              This is the table that matters if you're not in an average-rate state. It uses the same 3-ton unit, same 2,100 hours/year — just a different rate on your bill.
+              This is the table that matters if you're not in an average-rate state. It uses the same 3-ton unit, same 2,000 hours/year — just a different rate on your bill.
             </p>
 
             <div className="overflow-x-auto mb-6">
@@ -227,58 +246,24 @@ export default function BlogArticleWhatIsSEER() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">U.S. Average — 17.45¢/kWh</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,258/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$898/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$699/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$629/yr</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">California — 30.3¢/kWh</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$2,186/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,561/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,215/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,094/yr</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">Massachusetts — 31.2¢/kWh</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$2,251/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,608/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,251/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,126/yr</td>
-                  </tr>
-                  <tr className="bg-amber-50 hover:bg-amber-100">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">Hawaii — 39.8¢/kWh</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$2,874/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$2,053/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$1,597/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$1,437/yr</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">Expensive foreign nation (residential) — 31.7¢/kWh</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$2,287/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,634/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,271/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,144/yr</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">Expensive foreign nation (commercial) — 34.5¢/kWh</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$2,491/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,779/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,384/yr</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">$1,246/yr</td>
-                  </tr>
+                  {RATE_ROWS.map((r) => (
+                    <tr key={r.label} className={r.highlight ? 'bg-amber-50 hover:bg-amber-100' : 'hover:bg-gray-50'}>
+                      <td className={`border border-gray-200 px-4 py-3 text-gray-700 ${r.highlight ? 'font-medium' : ''}`}>{r.label} — {cents(r.rate)}/kWh</td>
+                      {TABLE_SEERS.map((seer) => (
+                        <td key={seer} className={`border border-gray-200 px-4 py-3 text-gray-700 ${r.highlight ? 'font-medium' : ''}`}>{usd(yr(seer, r.rate))}/yr</td>
+                      ))}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              Look at the Hawaii row. At SEER 10, a single residential unit is costing nearly <strong>$2,874 a year just in cooling electricity</strong>. For a business running multiple systems — say, three 5-ton units across a retail floor — multiply that figure accordingly. This is why SEER isn't just a number on a sticker. At high rates, it's a line item on your profit-and-loss statement.
+              Look at the Hawaii row. At SEER 10, a single residential unit costs about <strong>{usd(yr(10, HI.rate))} a year just in cooling electricity</strong>. For a business running multiple systems — say, three 5-ton units across a retail floor — multiply that figure accordingly. This is why SEER isn't just a number on a sticker. At high rates, it's a line item on your profit-and-loss statement.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              The difference between keeping a SEER 10 system and upgrading to SEER 18 in Hawaii is over <strong>$1,277 per year</strong> — from a <em>single</em> residential unit. In states like California and Massachusetts, that gap is still $900–$1,000 per year. That's real money, every year, for the life of the system.
+              The difference between keeping a SEER 10 system and upgrading to SEER 18 in Hawaii is about <strong>{usd(HI_GAP)} per year</strong> — from a <em>single</em> residential unit running 2,000 hours. In California and Massachusetts, that gap is about {usd(Math.min(CA_GAP, MA_GAP))}–{usd(Math.max(CA_GAP, MA_GAP))} per year. That's real money, every year, for the life of the system.
             </p>
 
             <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">The Savings Formula</h3>
@@ -317,11 +302,11 @@ export default function BlogArticleWhatIsSEER() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">What's a Good SEER Rating? It Depends on Your Rate.</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              "Good" is relative to what electricity costs you. The federal minimum for new air conditioners installed after January 2023 is <strong>SEER2 13.4</strong> in northern states and <strong>SEER2 14.3</strong> in southern and southwestern states, where cooling demand is higher. ENERGY STAR certification requires at least SEER 14 under the legacy rating system. These minimums exist to keep the least efficient systems off the market — not to tell you what offers the best value for your situation.
+              "Good" is relative to what electricity costs you. The federal minimum for new air conditioners installed after January 2023 is <strong>SEER2 13.4</strong> in northern states and <strong>SEER2 14.3</strong> in southern and southwestern states, where cooling demand is higher. ENERGY STAR certification for a split central AC requires at least 15.2 SEER2 (about 16 SEER on the old scale). These minimums exist to keep the least efficient systems off the market — not to tell you what offers the best value for your situation.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              If your electricity rate is above 25¢/kWh, every SEER point has significant dollar value. In Hawaii or other high-rate locations, upgrading from SEER 14 to SEER 18 might cost an extra $1,500–$2,500 upfront — but the annual savings of $400–$600+ produce a <strong>payback period of just 3–4 years</strong>, followed by 12–15 more years of pure savings. If you're in a mild climate and run AC only a few months per year, SEER 14–16 may be perfectly adequate. If you're in a hot climate or running commercial systems — or both — SEER 18–20 is almost always the financially correct choice over a system's lifetime.
+              If your electricity rate is above 25¢/kWh, every SEER point has significant dollar value. In Hawaii or other high-rate locations, upgrading from SEER 14 to SEER 18 might cost an extra $1,500–$2,500 upfront — and at Hawaii's rate the annual savings for a 3-ton system running 2,000 hours are about {usd(HI_14_18)}, a <strong>payback of roughly {Math.round(1500 / HI_14_18)}–{Math.round(2500 / HI_14_18)} years</strong>. Fewer hours or a lower rate stretch that out. If you're in a mild climate and run AC only a few months per year, SEER 14–16 may be perfectly adequate. If you're in a hot climate or running commercial systems — or both — SEER 18–20 is often worth pricing out; run your own numbers before deciding.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -340,7 +325,7 @@ export default function BlogArticleWhatIsSEER() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Where Does Your State Fall? Top 10 Most Expensive U.S. Rates</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              Not sure which table applies to you? Here are the ten most expensive U.S. states for residential electricity as of January 2026:
+              Not sure which table applies to you? Here are the ten most expensive U.S. states for residential electricity as of {RATES_AS_OF}:
             </p>
 
             <div className="overflow-x-auto mb-4">
@@ -349,22 +334,11 @@ export default function BlogArticleWhatIsSEER() {
                   <tr className="bg-teal-50">
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Rank</th>
                     <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">State</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Rate (Jan 2026)</th>
+                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Rate ({RATES_AS_OF})</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    { rank: 1, state: 'Hawaii', rate: '39.8¢/kWh' },
-                    { rank: 2, state: 'Massachusetts', rate: '31.2¢/kWh' },
-                    { rank: 3, state: 'Maine', rate: '30.7¢/kWh' },
-                    { rank: 4, state: 'California', rate: '30.3¢/kWh' },
-                    { rank: 5, state: 'Rhode Island', rate: '30.1¢/kWh' },
-                    { rank: 6, state: 'New York', rate: '28.4¢/kWh' },
-                    { rank: 7, state: 'Connecticut', rate: '28.3¢/kWh' },
-                    { rank: 8, state: 'New Hampshire', rate: '26.3¢/kWh' },
-                    { rank: 9, state: 'Alaska', rate: '25.5¢/kWh' },
-                    { rank: 10, state: 'Maryland', rate: '20.6¢/kWh' },
-                  ].map((row) => (
+                  {TOP10.map((st, i) => ({ rank: i + 1, state: st.name, rate: `${cents(st.rate)}/kWh` })).map((row) => (
                     <tr key={row.rank} className="hover:bg-gray-50">
                       <td className="border border-gray-200 px-4 py-3 text-gray-500">{row.rank}</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">{row.state}</td>
@@ -374,14 +348,14 @@ export default function BlogArticleWhatIsSEER() {
                   <tr className="bg-teal-50 font-semibold">
                     <td className="border border-gray-200 px-4 py-3 text-gray-500">—</td>
                     <td className="border border-gray-200 px-4 py-3 text-gray-900">U.S. National Average</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-900">17.45¢/kWh</td>
+                    <td className="border border-gray-200 px-4 py-3 text-gray-900">{cents(US_RATE)}/kWh</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <p className="text-sm text-gray-500 mb-6 italic">
-              Source: U.S. Energy Information Administration (EIA), January 2026 residential rates.
+              Source: U.S. Energy Information Administration (EIA), {RATES_AS_OF} residential rates. Includes Washington, D.C.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -405,7 +379,7 @@ export default function BlogArticleWhatIsSEER() {
             </p>
 
             <p className="text-gray-500 text-sm italic mb-6">
-              Because at 40¢/kWh, every single SEER point is worth hundreds of dollars — and your wallet definitely cares about that.
+              Because at Hawaii-level rates, each SEER point can be worth a hundred dollars or more a year — and your wallet definitely cares about that.
             </p>
 
           </section>

@@ -4,6 +4,17 @@ import { ArrowLeft, Calculator } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { articleJsonLd } from '../data/site';
+import { getState, annualCost, usd, cents, RATES_AS_OF } from '../data/acCost';
+
+/** Worked examples: computed from the current state rate and our cooling-hours estimate, so they stay current. */
+const EXAMPLES = [
+  { city: 'Phoenix', slug: 'arizona', abbr: 'AZ', tons: 2.5, from: 10, to: 16 },
+  { city: 'Chicago', slug: 'illinois', abbr: 'IL', tons: 2.5, from: 10, to: 16 },
+  { city: 'Miami', slug: 'florida', abbr: 'FL', tons: 3, from: 13, to: 18 },
+].map((e) => {
+  const st = getState(e.slug)!;
+  return { ...e, rate: st.rate, hours: st.hours, saves: annualCost(e.tons, e.from, st.hours, st.rate) - annualCost(e.tons, e.to, st.hours, st.rate) };
+});
 
 export default function BlogArticleFAQ() {
   return (
@@ -227,30 +238,45 @@ export default function BlogArticleFAQ() {
                 <li className="text-gray-700"><strong>Electricity rates</strong> - Higher rates mean more dollar savings per kWh saved</li>
               </ol>
 
-              <p className="text-lg font-semibold text-gray-900 mb-3">Real-world examples:</p>
-              <ul className="space-y-2 mb-4">
-                <li className="text-gray-700">Phoenix, AZ (2.5 ton, 2000 hrs/year, $0.13/kWh): 10→16 SEER saves $780/year</li>
-                <li className="text-gray-700">Chicago, IL (2.5 ton, 800 hrs/year, $0.15/kWh): 10→16 SEER saves $360/year</li>
-                <li className="text-gray-700">Miami, FL (3 ton, 2400 hrs/year, $0.12/kWh): 13→18 SEER saves $650/year</li>
+              <p className="text-lg font-semibold text-gray-900 mb-3">Worked examples:</p>
+              <ul className="space-y-2 mb-2">
+                {EXAMPLES.map((e) => (
+                  <li key={e.city} className="text-gray-700">
+                    {e.city}, {e.abbr} ({e.tons} ton, {e.hours.toLocaleString()} full-load cooling hours a year,{' '}
+                    {cents(e.rate)}/kWh state average): {e.from}→{e.to} SEER saves about <strong>{usd(e.saves)} a year</strong>
+                  </li>
+                ))}
               </ul>
+              <p className="text-sm text-gray-500 mb-4">
+                Estimates. Savings = tons × 12 × hours × (1 ÷ old SEER − 1 ÷ new SEER) × price per kWh. Prices are state
+                averages for {RATES_AS_OF} (EIA); cooling hours are our estimate for each state's climate. Your own hours and
+                rate will differ, so try the <Link to="/" className="text-teal-600 hover:text-teal-700 font-medium">calculator</Link>.
+              </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">How long does a high-SEER system take to pay for itself?</h3>
-              <p className="text-gray-700 leading-relaxed mb-4">Payback periods typically range from <strong>5-15 years</strong>. Here's how to think about it:</p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                It depends on how much extra you pay for the higher rating, your electricity price and how many hours your AC
+                runs. Small steps up usually pay back within the system's life; big jumps often don't unless power is
+                expensive or the AC runs most of the year. Our{' '}
+                <Link to="/blog/14-vs-16-seer" className="text-teal-600 hover:text-teal-700 font-medium">14 vs 16 SEER</Link> and{' '}
+                <Link to="/blog/16-vs-18-seer" className="text-teal-600 hover:text-teal-700 font-medium">16 vs 18 SEER</Link>{' '}
+                comparisons work it out state by state. As a guide:
+              </p>
 
               <div className="mb-6">
-                <p className="text-lg font-semibold text-gray-900 mb-3">Fast payback (5-8 years):</p>
+                <p className="text-lg font-semibold text-gray-900 mb-3">Faster payback (often under 10 years):</p>
                 <ul className="space-y-2 list-disc list-inside">
                   <li className="text-gray-700">Replacing very old systems (8-10 SEER)</li>
                   <li className="text-gray-700">Hot climates with 1,500+ cooling hours annually</li>
                   <li className="text-gray-700">High electricity rates ($0.15+/kWh)</li>
-                  <li className="text-gray-700">Moderate SEER upgrades (to 16-18)</li>
+                  <li className="text-gray-700">Small upgrades (for example 14 → 16 SEER) at a modest price premium</li>
                 </ul>
               </div>
 
               <div className="mb-4">
-                <p className="text-lg font-semibold text-gray-900 mb-3">Slower payback (10-15 years):</p>
+                <p className="text-lg font-semibold text-gray-900 mb-3">Slower payback (15 years or more, sometimes longer than the system lasts):</p>
                 <ul className="space-y-2 list-disc list-inside">
                   <li className="text-gray-700">Replacing newer systems (13-14 SEER)</li>
                   <li className="text-gray-700">Mild climates with under 1,000 cooling hours</li>
@@ -259,7 +285,7 @@ export default function BlogArticleFAQ() {
                 </ul>
               </div>
 
-              <p className="text-gray-700 leading-relaxed">Remember: Even with a 12-year payback, you're getting 3-8 more years of savings since AC systems last 15-20 years.</p>
+              <p className="text-gray-700 leading-relaxed">A central AC typically lasts 15–20 years, so a payback longer than that means the upgrade is mainly about comfort, not money.</p>
             </div>
 
             <div>

@@ -4,6 +4,14 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { articleJsonLd } from '../data/site';
+import { US_RATE, RATES_AS_OF, cents, usd, annualCost } from '../data/acCost';
+
+// Worked example: 2.5-ton, 1,500 hours, SEER 13 → 18, about $3,000 extra.
+const EX_KWH = 2.5 * 12 * 1500 * (1 / 13 - 1 / 18);
+const EX_PREMIUM = 3000;
+const EX = [0.1, 0.15, 0.25].map((r) => ({ r, save: EX_KWH * r, years: EX_PREMIUM / (EX_KWH * r) }));
+// Rebate example: 3-ton, 1,500 hours, SEER 14 → 18 at the U.S. average.
+const REB_US = annualCost(3, 14, 1500, US_RATE) - annualCost(3, 18, 1500, US_RATE);
 
 export default function BlogArticleChoosing() {
   return (
@@ -178,42 +186,53 @@ export default function BlogArticleChoosing() {
               The higher your electricity cost, the more valuable efficiency becomes.
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>Low Rates ($0.08-$0.12/kWh):</strong></p>
+            <p className="text-gray-700 leading-relaxed mb-4 text-sm">
+              Price bands use each state's average residential rate for {RATES_AS_OF} (EIA); the U.S. average is{' '}
+              {cents(US_RATE)}/kWh. See <Link to="/ac-cost" className="text-teal-600 hover:text-teal-700 font-medium">every state's rate</Link>.
+            </p>
+
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>Lower rates (under about 15¢/kWh):</strong></p>
             <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-              <li>States: Louisiana, Washington, Idaho, Arkansas, parts of Texas</li>
-              <li>Strategy: Moderate SEER (15-16) is usually sufficient</li>
-              <li>Why: Even significant kWh savings translate to modest dollar savings</li>
+              <li>States such as Louisiana, Nevada, Utah, Idaho, Tennessee and Kentucky</li>
+              <li>Strategy: the minimum-efficiency or a moderate system (about 15–16 SEER) is usually enough</li>
+              <li>Why: even sizeable kWh savings add up to modest dollar savings</li>
             </ul>
 
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>Average Rates ($0.12-$0.16/kWh):</strong></p>
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>Average rates (about 15–22¢/kWh):</strong></p>
             <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-              <li>Most of the US</li>
-              <li>Strategy: SEER 16-17 balances cost and savings</li>
-              <li>Why: Typical payback periods of 6-10 years</li>
+              <li>Most of the U.S., including Florida, Texas, Arizona and Georgia</li>
+              <li>Strategy: about 16 SEER (15.2 SEER2) balances cost and savings</li>
+              <li>Why: a 14 → 16 step usually pays back within the system's life; bigger jumps often don't (see our{' '}
+                <Link to="/blog/14-vs-16-seer" className="text-teal-600 hover:text-teal-700 font-medium">14 vs 16</Link> and{' '}
+                <Link to="/blog/16-vs-18-seer" className="text-teal-600 hover:text-teal-700 font-medium">16 vs 18</Link> comparisons)</li>
             </ul>
 
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>High Rates ($0.16-$0.25/kWh):</strong></p>
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>High rates (about 22–35¢/kWh):</strong></p>
             <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-              <li>States: California, Hawaii, Connecticut, Massachusetts, New York</li>
-              <li>Strategy: Invest in SEER 18-20</li>
-              <li>Why: Every kWh saved is worth significantly more; payback is faster</li>
+              <li>States: California, New York, Massachusetts, Connecticut, Maine, Rhode Island, New Hampshire, Alaska</li>
+              <li>Strategy: consider 18 SEER or higher if you run AC a lot</li>
+              <li>Why: every kWh saved is worth more, but many of these states have short cooling seasons, so check your hours</li>
             </ul>
 
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>Very High Rates ($0.25+/kWh):</strong></p>
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>Very high rates (35¢/kWh and up):</strong></p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-              <li>Hawaii, parts of Alaska, some California utilities</li>
-              <li>Strategy: Maximum SEER you can afford (20-24)</li>
-              <li>Why: Efficiency upgrades pay back in 3-5 years</li>
+              <li>Hawaii, and many Caribbean islands</li>
+              <li>Strategy: the most efficient system you can afford</li>
+              <li>Why: with AC running much of the year, even a 16 → 18 upgrade can pay back in about 4–6 years</li>
             </ul>
 
             <div className="bg-gray-100 rounded-lg p-6 mb-6">
               <p className="font-bold text-gray-900 mb-3">📊 Example Impact:</p>
-              <p className="text-gray-700 mb-2">Upgrading from SEER 13 to SEER 18 (2.5 ton unit, 1,500 hours/year):</p>
+              <p className="text-gray-700 mb-2">
+                Upgrading from SEER 13 to SEER 18 (2.5-ton unit, 1,500 full-load hours a year) saves about{' '}
+                {Math.round(EX_KWH).toLocaleString()} kWh a year. If the SEER 18 system costs about {usd(EX_PREMIUM)} more:
+              </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                <li>At $0.10/kWh: Saves $275/year → 11-year payback</li>
-                <li>At $0.15/kWh: Saves $413/year → 7-year payback</li>
-                <li>At $0.25/kWh: Saves $688/year → 4-year payback</li>
+                {EX.map((e) => (
+                  <li key={e.r}>At {Math.round(e.r * 100)}¢/kWh: saves about {usd(e.save)} a year → about {Math.round(e.years)}-year payback</li>
+                ))}
               </ul>
+              <p className="text-sm text-gray-500 mt-2 mb-0">Estimate: kWh saved = tons × 12 × hours × (1 ÷ 13 − 1 ÷ 18).</p>
             </div>
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Factor 3: How Long You'll Stay in Your Home</h3>
@@ -287,8 +306,8 @@ export default function BlogArticleChoosing() {
                 <li>Payback: about 3.5 years</li>
               </ul>
               <p className="text-gray-700 text-sm mb-0">
-                At the U.S. average rate (17.45¢/kWh) the same upgrade saves about $150 a year, so payback stretches to
-                about 8 years. See the <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-teal-600 hover:text-teal-700 font-medium">2026 tax credit and rebate guide</Link>.
+                At the U.S. average rate ({cents(US_RATE)}/kWh, {RATES_AS_OF}) the same upgrade saves about {usd(REB_US)} a year, so
+                payback stretches to about {Math.round(1200 / REB_US)} years. See the <Link to="/blog/hvac-tax-credits-rebates-2026" className="text-teal-600 hover:text-teal-700 font-medium">2026 tax credit and rebate guide</Link>.
               </p>
             </div>
 

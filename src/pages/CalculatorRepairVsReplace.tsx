@@ -3,8 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useCallback } from 'react';
 import { ArrowLeft, Calculator, CheckCircle2, AlertCircle, Info } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import { US_RATE, RATES_AS_OF } from '../data/acCost';
 
-const US_AVG_RATE = 17.45;
+const US_AVG_RATE = +(US_RATE * 100).toFixed(2);
 const US_AVG_HOURS = 1200;
 
 interface Inputs {
@@ -348,7 +349,7 @@ export default function CalculatorRepairVsReplace() {
                     onChange={e => handleChange('electricityRate', e.target.value)}
                     className={inputClass}
                   />
-                  <p className="text-xs text-gray-400 mt-1">Check your electric bill — US average is 17.45¢</p>
+                  <p className="text-xs text-gray-400 mt-1">Check your electric bill — U.S. average is {US_AVG_RATE}¢ (EIA, {RATES_AS_OF})</p>
                 </div>
                 <div>
                   <label className={labelClass}>Annual Cooling Hours</label>
