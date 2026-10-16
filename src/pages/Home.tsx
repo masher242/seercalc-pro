@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { BookOpen } from 'lucide-react';
 import CalculatorForm from '../components/CalculatorForm';
+import { USCostMapPreview } from '../components/USCostMap';
+import { REGIONS } from '../components/RegionBar';
 import ResultsSection from '../components/ResultsSection';
 import LeadMagnet from '../components/LeadMagnet';
 import { CalculatorInputs, CalculationResults } from '../types';
@@ -166,6 +168,38 @@ export default function Home() {
             <ResultsSection results={results} onStartOver={handleStartOver} />
           </div>
         )}
+
+        <section aria-labelledby="cost-map-teaser" className="mt-12 rounded-lg border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-teal-50 p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-wider text-orange-700 mb-2">AC cost map</p>
+              <h2 id="cost-map-teaser" className="text-2xl font-bold text-gray-900 mb-3">What does AC cost where you live?</h2>
+              <p className="text-gray-700 mb-4">
+                See every state's electricity rate and what a year of air conditioning costs there, on one map.
+                Also covers the Caribbean and Canada.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {REGIONS.map(({ to, label, icon: Icon }) => (
+                  <Link
+                    key={to}
+                    to={to === '/ac-cost' ? '/ac-cost#map' : to}
+                    className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors ${
+                      to === '/ac-cost'
+                        ? 'bg-teal-500 text-white hover:bg-teal-600'
+                        : 'bg-white text-gray-800 border border-gray-200 hover:border-teal-400 hover:text-teal-700'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {to === '/ac-cost' ? 'Open the U.S. map' : label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <Link to="/ac-cost#map" aria-label="Open the U.S. AC cost map" className="block rounded-lg bg-white/70 p-3 hover:shadow-md transition-shadow">
+              <USCostMapPreview className="w-full h-auto" />
+            </Link>
+          </div>
+        </section>
 
         <div className="mt-12 bg-teal-50 rounded-lg p-6 border border-teal-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Want to Learn More?</h2>
