@@ -121,12 +121,12 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
 
   const title = `Cost to Run AC in ${c.inName === 'the United Kingdom' ? 'the UK' : c.inName} ❄️ ${unitPrice(c)}/kWh`;
   const headline = `How Much Does It Cost to Run Air Conditioning in ${c.inName}?`;
-  const description = `At ${unitPrice(c)}/kWh (${c.asOf}), a 3.5 kW split air conditioner costs about ${m(perHour, 2)} an hour to run in ${c.inName}, and ${m(yearCost(EU_REF_KW, EU_REF_SEER, cool.hours, rate))}–${m(yearCost(EU_REF_KW, EU_REF_SEER, hot.hours, rate))} a year from ${cool.name} to ${hot.name}.`;
+  const description = `At ${unitPrice(c)}/kWh (${c.asOf}), a 3.5 kW (12,000 BTU) split air conditioner costs about ${m(perHour, 2)} an hour to run in ${c.inName}, and ${m(yearCost(EU_REF_KW, EU_REF_SEER, cool.hours, rate))}–${m(yearCost(EU_REF_KW, EU_REF_SEER, hot.hours, rate))} a year from ${cool.name} to ${hot.name}.`;
 
   const faqs = [
     {
       q: `How much does it cost to run air conditioning per hour in ${c.inName}?`,
-      a: `About ${m(perHour, 2)} an hour for a typical 3.5 kW split unit (EU SEER ${EU_REF_SEER}, energy class A++), at ${unitPrice(c)}/kWh. A 2.5 kW bedroom unit costs about ${m(hourCost(2.5, EU_REF_SEER, rate), 2)} an hour, and a portable air conditioner about ${m(portableHour, 2)} an hour.`,
+      a: `About ${m(perHour, 2)} an hour for a typical 3.5 kW (12,000 BTU) split unit (EU SEER ${EU_REF_SEER}, energy class A++), which uses about ${(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour, at ${unitPrice(c)}/kWh. A 2.5 kW (9,000 BTU) bedroom unit costs about ${m(hourCost(2.5, EU_REF_SEER, rate), 2)} an hour, and a portable air conditioner about ${m(portableHour, 2)} an hour.`,
     },
     {
       q: `How much does air conditioning cost per month in ${c.inName}?`,
@@ -199,8 +199,8 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
           <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg">
             <p className="text-sm font-bold uppercase tracking-wide text-teal-800 mb-2">Quick answer</p>
             <p className="text-gray-800 leading-relaxed">
-              At <strong>{unitPrice(c)} per kWh</strong> ({c.asOf}), a typical 3.5 kW split air conditioner (energy class
-              A++) costs about <strong>{m(perHour, 2)} an hour</strong> to run in {c.inName}, or {m(month)} for a month at 8
+              At <strong>{unitPrice(c)} per kWh</strong> ({c.asOf}), a typical 3.5 kW (12,000 BTU) split air conditioner
+              (energy class A++), which uses about {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour, costs about <strong>{m(perHour, 2)} an hour</strong> to run in {c.inName}, or {m(month)} for a month at 8
               hours a day. Over a year it comes to about <strong>{m(refYear)} in {c.ref.name}</strong>
               {hot.name === c.ref.name
                 ? <>, the hottest city we list, and {m(yearCost(EU_REF_KW, EU_REF_SEER, cool.hours, rate))} in {cool.name}.</>
@@ -211,7 +211,7 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
             {[
-              { label: 'Per hour', value: m(perHour, 2), note: '3.5 kW split, SEER 6.1' },
+              { label: 'Per hour', value: m(perHour, 2), note: `3.5 kW (12,000 BTU) split, uses ${(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh` },
               { label: 'Per month', value: m(month), note: '8 hrs/day × 30 days' },
               { label: `Per year, ${c.ref.name}`, value: m(refYear), note: `${c.ref.hours.toLocaleString()} cooling hours` },
             ].map((k) => (

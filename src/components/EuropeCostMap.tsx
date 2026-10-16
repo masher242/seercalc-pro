@@ -164,7 +164,8 @@ export default function EuropeCostMap() {
           <p className="text-sm text-gray-500">
             {metric === 'year' ? (
               <>
-                One {EU_REF_KW} kW split air conditioner (energy class A++), run for the typical cooling hours of each
+                One {EU_REF_KW} kW (12,000 BTU) split air conditioner (energy class A++, uses about{' '}
+                {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour), run for the typical cooling hours of each
                 country's climate, at its household electricity price.
               </>
             ) : (

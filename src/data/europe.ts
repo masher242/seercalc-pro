@@ -64,12 +64,12 @@ export function getEuCountry(slug: string | undefined) {
   return EU_COUNTRIES.find((c) => c.slug === slug);
 }
 
-/** Split-system cooling capacities sold in Europe, kW. */
+/** Split-system cooling capacities sold in Europe, kW (cooling output, not electricity used), with the BTU size they're sold as elsewhere. */
 export const EU_SIZES = [
-  { kw: 2.5, label: '2.5 kW', use: 'bedroom or small room' },
-  { kw: 3.5, label: '3.5 kW', use: 'living room' },
-  { kw: 5, label: '5 kW', use: 'large room or open-plan space' },
-  { kw: 7, label: '7 kW', use: 'small apartment (multi-split)' },
+  { kw: 2.5, label: '2.5 kW (9,000 BTU)', use: 'bedroom or small room' },
+  { kw: 3.5, label: '3.5 kW (12,000 BTU)', use: 'living room' },
+  { kw: 5, label: '5 kW (18,000 BTU)', use: 'large room or open-plan space' },
+  { kw: 7, label: '7 kW (24,000 BTU)', use: 'small apartment (multi-split)' },
 ];
 
 /** EU energy label (cooling) thresholds for SEER, units under 12 kW. */

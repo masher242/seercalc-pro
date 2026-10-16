@@ -100,7 +100,8 @@ export default function AcCostEurope() {
           <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg">
             <p className="text-sm font-bold uppercase tracking-wide text-teal-800 mb-2">Quick answer</p>
             <p className="text-gray-800 leading-relaxed">
-              A typical 3.5 kW split air conditioner costs about{' '}
+              A typical 3.5 kW (12,000 BTU) split air conditioner, which uses about{' '}
+              {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour, costs about{' '}
               {ranked.map((c, i) => (
                 <span key={c.slug}>
                   <strong>{money(c.currency, hourCost(EU_REF_KW, EU_REF_SEER, c.rate), 2)}</strong> an hour in {c.inName}
@@ -130,7 +131,10 @@ export default function AcCostEurope() {
                   <th className={th}>Country</th>
                   <th className={th}>Price per kWh</th>
                   <th className={th}>In U.S. cents</th>
-                  <th className={th}>3.5 kW per hour</th>
+                  <th className={th}>
+                    Per hour
+                    <span className="block text-xs font-normal text-gray-500">3.5 kW / 12,000 BTU unit</span>
+                  </th>
                   <th className={th}>Per year (by city)</th>
                   <th className={th}>As of</th>
                 </tr>
@@ -158,7 +162,10 @@ export default function AcCostEurope() {
             </table>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            A 3.5 kW split unit at EU SEER {EU_REF_SEER} (energy class A++). The yearly range runs from the coolest to the
+            Costs are for a 3.5 kW (12,000 BTU) split unit at EU SEER {EU_REF_SEER} (energy class A++). The 3.5 kW is the
+            cooling it delivers, not the electricity it uses: an A++ unit moves about {EU_REF_SEER} units of heat for every
+            unit of electricity, so it uses about {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh an hour. Per hour = that times the
+            price per kWh. The yearly range runs from the coolest to the
             hottest city we list for each country. Each country uses the price that best matches what AC adds to a bill,
             and the source differs by country (see each page). U.S. cents use €1 = ${USD_PER_EUR.toFixed(3)} and{' '}
             {`£1 = $${(USD_PER_EUR / GBP_PER_EUR).toFixed(3)}`} ({FX_AS_OF}).
