@@ -21,16 +21,21 @@ interface Row {
   slug?: string;
   /** true for the UK, which comes from Ofgem rather than Eurostat */
   separate?: boolean;
+  /** set when this country's newest Eurostat figure is older than the map's period */
+  olderPeriod?: string;
 }
+
+type EuEntry = { name: string; price: number; periodLabel?: string };
 
 const pageSlug = (name: string) => EU_COUNTRIES.find((c) => c.name === name)?.slug;
 const inName = (slug: string) => EU_COUNTRIES.find((c) => c.slug === slug)?.inName ?? slug;
 
 const EU_ROWS: Row[] = (() => {
-  const list = Object.entries(eu.countries as Record<string, { name: string; price: number }>).map(([iso, c]) => ({
+  const list = Object.entries(eu.countries as Record<string, EuEntry>).map(([iso, c]) => ({
     iso,
     name: c.name,
     price: c.price,
+    olderPeriod: c.periodLabel,
     rank: 0,
     slug: pageSlug(c.name),
   }));
@@ -47,11 +52,24 @@ const UK: Row | null = ukPage
 const ROWS: Row[] = UK ? [...EU_ROWS, UK] : EU_ROWS;
 const BY_ISO = Object.fromEntries(ROWS.map((r) => [r.iso, r])) as Record<string, Row>;
 const EU_COUNT = EU_ROWS.length;
+/** Countries still on an older half-year, e.g. "Latvia (July to December 2025)". */
+const OLDER = EU_ROWS.filter((r) => r.olderPeriod).sort((a, b) => a.name.localeCompare(b.name));
+const olderList = OLDER.map((r) => `${r.name} (${r.olderPeriod})`).join(', ');
 
 /** Too small to tap on the map: buttons under it instead. */
 const SMALL = ['LU', 'MT', 'CY'];
 /** No abbreviation drawn on these (too small, or have a button). */
 const NO_LABEL = new Set([...SMALL, 'SI', 'BE', 'NL']);
+
+const HALF = { '1': 'January to June', '2': 'July to December' } as Record<string, string>;
+/** "2025-S2" → "July to December 2025" */
+const halfLabel = (period: string) => {
+  const [year, half] = period.split('-S');
+  return `${HALF[half]} ${year}`;
+};
+const avgPeriod = (eu as { euAveragePeriod?: string }).euAveragePeriod;
+/** Shown after the EU average when it covers an older half-year than the map. */
+const avgNote = avgPeriod && avgPeriod !== eu.period ? `, ${halfLabel(avgPeriod)}; not yet published for ${eu.periodLabel}` : '';
 
 const binOf = (v: number) => {
   const i = BREAKS.findIndex((b) => v < b);
@@ -79,8 +97,9 @@ export default function EuropeCostMap() {
     <section id="map" aria-labelledby="eu-map-heading" className="mb-10 scroll-mt-40">
       <h2 id="eu-map-heading" className="text-2xl font-bold text-gray-900 mb-1">Map: electricity prices across Europe</h2>
       <p className="text-sm text-gray-500 mb-3">
-        Average household price per kWh, all taxes included, {eu.periodLabel} (Eurostat). EU average{' '}
-        {eur(eu.euAverage)} (about {usCents(eu.euAverage)} in U.S. money; the U.S. average is {cents(US_RATE)}).
+        Average household price per kWh, all taxes included, {eu.periodLabel} (Eurostat)
+        {OLDER.length > 0 && <>; newest available for {olderList}</>}. EU average{' '}
+        {eur(eu.euAverage)} (about {usCents(eu.euAverage)} in U.S. money{avgNote}). U.S. average: {cents(US_RATE)}.
       </p>
 
       <div className="-mx-3 sm:mx-0 rounded-lg border border-gray-200 bg-white p-1.5 sm:p-3">
@@ -184,6 +203,7 @@ export default function EuropeCostMap() {
               </p>
               <p className="text-sm text-gray-700">
                 {eur(shown.price)} per kWh · about {usCents(shown.price)} in U.S. money
+                {shown.olderPeriod && ` · figure for ${shown.olderPeriod}, the newest available`}
                 {shown.separate && ' · Ofgem price cap, see note below'}
               </p>
             </div>
@@ -227,6 +247,7 @@ export default function EuropeCostMap() {
                     ) : (
                       r.name
                     )}
+                    {r.olderPeriod && <span className="text-xs text-gray-500"> ({r.olderPeriod})</span>}
                   </td>
                   <td className="px-2 py-1.5 text-gray-700">{eur(r.price)}</td>
                   <td className="px-2 py-1.5 text-gray-700">{usCents(r.price)}</td>
@@ -253,7 +274,9 @@ export default function EuropeCostMap() {
         <a href={eu.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
           Eurostat nrg_pc_204
         </a>
-        , households using 2,500–4,999 kWh a year, {eu.periodLabel}. These are averages over the whole bill, so they
+        , households using 2,500–4,999 kWh a year, {eu.periodLabel}. Each country shows its newest
+        half-year from Eurostat; a country that hasn't reported the latest half-year yet keeps its previous figure
+        until it does{OLDER.length > 0 ? ` (now: ${olderList})` : ''}. These are averages over the whole bill, so they
         can differ from the tariff on our country pages, which use each country's latest rate (France's regulated EDF
         price, for example). The UK (striped) left this series after Brexit; it shows the Ofgem price cap unit rate
         {ukPage ? ` for ${ukPage.asOf}` : ''}, converted at £1 = €{(1 / GBP_PER_EUR).toFixed(3)}, which is measured

@@ -1,0 +1,55 @@
+# Monthly: fetch Eurostat household electricity prices (EU-27) for the Europe price map
+# and open a pull request if anything changed. Each country gets its newest half-year;
+# a country that hasn't reported the latest half-year keeps its previous figure.
+# Eurostat publishes twice a year (around April/May and October/November), so most
+# months this finds nothing new and does nothing.
+#
+# Uses the same one-time setting as update-electricity-rates.yml ("Allow GitHub
+# Actions to create and approve pull requests").
+
+name: Update EU electricity prices
+
+on:
+  schedule:
+    - cron: '0 14 5 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch Eurostat nrg_pc_204 and rebuild map data
+        id: rates
+        run: |
+          python3 scripts/update-eu-rates.py | tee /tmp/eu.log
+          echo "summary=$(tail -1 /tmp/eu.log)" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request if prices changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/eu-electricity-prices
+          delete-branch: true
+          commit-message: "Update EU household electricity prices (${{ steps.rates.outputs.summary }})"
+          title: "Update EU electricity prices: ${{ steps.rates.outputs.summary }}"
+          body: |
+            Automatic update from Eurostat dataset nrg_pc_204 (households, 2,500–4,999 kWh/year,
+            all taxes, EUR/kWh).
+
+            **${{ steps.rates.outputs.summary }}**
+
+            Updates `src/data/euHouseholdRates.json`, read by the Europe price map on
+            /ac-cost/europe. If Spain's figure changed, also update Spain's `rate` and `asOf` in
+            `src/data/europeRates.json` (its page uses the same Eurostat series). Check the
+            Netlify preview, then merge to publish.
+          add-paths: |
+            src/data/euHouseholdRates.json

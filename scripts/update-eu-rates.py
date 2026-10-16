@@ -2,11 +2,15 @@
 """Refresh src/data/euHouseholdRates.json (the Europe price map) from Eurostat.
 
 Source: dataset nrg_pc_204, households, band DC (2,500-4,999 kWh a year), all taxes
-and levies included, EUR per kWh. With no --period, picks the newest half-year that
-has a value for all 27 EU countries, so no country is left blank on the map.
+and levies included, EUR per kWh.
 
-    python3 scripts/update-eu-rates.py              # newest complete half-year
-    python3 scripts/update-eu-rates.py --period 2025-S2
+Each country gets its newest published half-year. When a country hasn't reported the
+newest half-year yet (Latvia was missing from 2026-S1 in October 2026), it keeps its
+previous figure and that country's own period is stored, so the map can flag it.
+A country more than one year behind the newest half-year stops the update.
+
+    python3 scripts/update-eu-rates.py                             # newest per country
+    python3 scripts/update-eu-rates.py --period 2025-S2            # one half-year for all
     python3 scripts/update-eu-rates.py --from-file response.json   # saved API response
 
 Adapted from a script prepared with Manus (Oct 2026). Eurostat's API needs no key.
@@ -63,14 +67,25 @@ def decode(dataset: dict) -> list[dict]:
     return rows
 
 
+def label(period: str) -> str:
+    year, half = period_key(period)
+    return f"{MONTHS[half]} {year}"
+
+
 def period_key(period: str) -> tuple[int, int]:
     year, half = period.split("-S")
     return int(year), int(half)
 
 
+def halves(period: str) -> int:
+    """Half-years since year 0, so periods can be subtracted."""
+    year, half = period_key(period)
+    return year * 2 + half
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--period", help="half-year, e.g. 2025-S2 (default: newest complete for the EU-27)")
+    ap.add_argument("--period", help="use one half-year for every country, e.g. 2025-S2 (default: newest per country)")
     ap.add_argument("--from-file", type=Path, help="read a saved API response instead of downloading")
     args = ap.parse_args()
 
@@ -84,48 +99,55 @@ def main() -> None:
             dataset = json.load(resp)
     rows = decode(dataset)
 
+    eu_rows = [r for r in rows if r["geo"] in EU27]
     if args.period:
-        period = args.period
-    else:
-        seen: dict[str, set[str]] = {}
-        for r in rows:
-            if r["geo"] in EU27:
-                seen.setdefault(r["time"], set()).add(r["geo"])
-        complete = [p for p, geos in seen.items() if geos == EU27]
-        if not complete:
-            raise SystemExit("No half-year has all 27 EU countries; nothing changed.")
-        period = max(complete, key=period_key)
-
-    picked = [r for r in rows if r["time"] == period]
-    eu = {r["geo"]: r for r in picked if r["geo"] in EU27}
-    missing = sorted(EU27 - eu.keys())
+        eu_rows = [r for r in eu_rows if r["time"] == args.period]
+    newest: dict[str, dict] = {}
+    for r in eu_rows:
+        cur = newest.get(r["geo"])
+        if cur is None or period_key(r["time"]) > period_key(cur["time"]):
+            newest[r["geo"]] = r
+    missing = sorted(EU27 - newest.keys())
     if missing:
-        raise SystemExit(f"{period} is missing {', '.join(missing)}; nothing changed.")
-    avg = next((r["value"] for r in picked if r["geo"] == EU_AGGREGATE), None)
+        raise SystemExit(f"No figure at all for {', '.join(missing)}; nothing changed.")
+    period = max((r["time"] for r in newest.values()), key=period_key)
+    stale = [g for g, r in newest.items() if halves(period) - halves(r["time"]) > 2]
+    if stale:
+        raise SystemExit(f"{', '.join(sorted(stale))} more than a year behind {period}; nothing changed.")
+    eu = newest
+    behind = sorted(g for g, r in newest.items() if r["time"] != period)
+
+    aggregate = sorted((r for r in rows if r["geo"] == EU_AGGREGATE), key=lambda r: period_key(r["time"]))
+    avg_row = next((r for r in aggregate if r["time"] == period), aggregate[-1] if aggregate else None)
 
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     countries = {
-        TO_ISO2.get(g, g): {"name": r["geo_label"], "price": round(float(r["value"]), 4)}
+        TO_ISO2.get(g, g): {
+            "name": r["geo_label"],
+            "price": round(float(r["value"]), 4),
+            **({"period": r["time"], "periodLabel": label(r["time"])} if r["time"] != period else {}),
+        }
         for g, r in sorted(eu.items(), key=lambda kv: kv[1]["geo_label"])
     }
     if old.get("period") == period and old.get("countries") == countries:
         print(f"Already up to date ({period}).")
         return
 
-    year, half = period_key(period)
     new = dict(old)
     new.update({
         "period": period,
-        "periodLabel": f"{MONTHS[half]} {year}",
+        "periodLabel": label(period),
         "updated": dt.date.today().isoformat(),
         "countries": countries,
     })
-    if avg is not None:
-        new["euAverage"] = round(float(avg), 4)
+    if avg_row is not None:
+        new["euAverage"] = round(float(avg_row["value"]), 4)
+        new["euAveragePeriod"] = avg_row["time"]
     else:
         print("Note: no EU-27 average in the response; euAverage left as it was.")
     OUT.write_text(json.dumps(new, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {OUT.name}: {period}, {len(countries)} countries.")
+    names = ", ".join(f"{eu[g]['geo_label']} ({eu[g]['time']})" for g in behind)
+    print(f"EU household prices {period}" + (f", older figure for {names}" if behind else ", all 27 countries"))
 
 
 if __name__ == "__main__":
