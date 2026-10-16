@@ -1,0 +1,176 @@
+{
+  "_readme": "Cooling degree days (Eurostat nrg_chdd_a) per country: cdd = average of the latest 10 published years (from-to); latest = the newest single year. Used to estimate typical AC hours on the Europe map. Refresh with scripts/update-eu-cooling.py.",
+  "source": "Eurostat, Cooling and heating degree days by country - annual data (nrg_chdd_a)",
+  "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table?lang=en",
+  "updated": "2026-10-16",
+  "countries": {
+    "AT": {
+      "cdd": 29.9,
+      "from": 2016,
+      "to": 2025,
+      "latest": 25.4
+    },
+    "BE": {
+      "cdd": 23.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 26.3
+    },
+    "BG": {
+      "cdd": 201.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 251.2
+    },
+    "CY": {
+      "cdd": 762.2,
+      "from": 2016,
+      "to": 2025,
+      "latest": 854.2
+    },
+    "CZ": {
+      "cdd": 24.2,
+      "from": 2016,
+      "to": 2025,
+      "latest": 13.0
+    },
+    "DE": {
+      "cdd": 24.9,
+      "from": 2016,
+      "to": 2025,
+      "latest": 19.2
+    },
+    "DK": {
+      "cdd": 2.1,
+      "from": 2016,
+      "to": 2025,
+      "latest": 0.1
+    },
+    "EE": {
+      "cdd": 9.3,
+      "from": 2016,
+      "to": 2025,
+      "latest": 0.7
+    },
+    "GR": {
+      "cdd": 368.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 409.4
+    },
+    "ES": {
+      "cdd": 301.1,
+      "from": 2016,
+      "to": 2025,
+      "latest": 386.9
+    },
+    "FI": {
+      "cdd": 2.7,
+      "from": 2016,
+      "to": 2025,
+      "latest": 4.9
+    },
+    "FR": {
+      "cdd": 73.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 100.5
+    },
+    "HR": {
+      "cdd": 183.2,
+      "from": 2016,
+      "to": 2025,
+      "latest": 178.9
+    },
+    "HU": {
+      "cdd": 139.0,
+      "from": 2016,
+      "to": 2025,
+      "latest": 126.2
+    },
+    "IE": {
+      "cdd": 0.0,
+      "from": 2016,
+      "to": 2025,
+      "latest": 0.0
+    },
+    "IT": {
+      "cdd": 276.0,
+      "from": 2016,
+      "to": 2025,
+      "latest": 287.4
+    },
+    "LT": {
+      "cdd": 14.4,
+      "from": 2016,
+      "to": 2025,
+      "latest": 0.0
+    },
+    "LU": {
+      "cdd": 18.0,
+      "from": 2016,
+      "to": 2025,
+      "latest": 21.8
+    },
+    "LV": {
+      "cdd": 10.1,
+      "from": 2016,
+      "to": 2025,
+      "latest": 0.1
+    },
+    "MT": {
+      "cdd": 712.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 727.3
+    },
+    "NL": {
+      "cdd": 18.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 17.1
+    },
+    "PL": {
+      "cdd": 27.0,
+      "from": 2016,
+      "to": 2025,
+      "latest": 6.8
+    },
+    "PT": {
+      "cdd": 236.1,
+      "from": 2016,
+      "to": 2025,
+      "latest": 297.8
+    },
+    "RO": {
+      "cdd": 135.6,
+      "from": 2016,
+      "to": 2025,
+      "latest": 144.3
+    },
+    "SE": {
+      "cdd": 0.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 0.2
+    },
+    "SI": {
+      "cdd": 74.9,
+      "from": 2016,
+      "to": 2025,
+      "latest": 73.9
+    },
+    "SK": {
+      "cdd": 53.5,
+      "from": 2016,
+      "to": 2025,
+      "latest": 30.4
+    },
+    "GB": {
+      "cdd": 1.8,
+      "from": 2016,
+      "to": 2025,
+      "latest": 1.9
+    }
+  }
+}
