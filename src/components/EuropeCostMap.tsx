@@ -76,6 +76,11 @@ const COUNT = ROWS.length;
 /** Countries still on an older half-year, e.g. "Latvia (July to December 2025)". */
 const OLDER = EU_ROWS.filter((r) => r.olderPeriod).sort((a, b) => a.name.localeCompare(b.name));
 const olderList = OLDER.map((r) => `${r.name} (${r.olderPeriod})`).join(', ');
+/** "Spain, France, … and the UK" — the countries with their own page (they anchor the hours fit). */
+const PAGE_LIST = (() => {
+  const names = EU_COUNTRIES.map((c) => (c.name === 'United Kingdom' ? 'UK' : c.name));
+  return names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}` : names.join('');
+})();
 const cddYears = (() => {
   const spans = new Set(Object.values(CDD).map((c) => `${c.from}–${c.to}`));
   return [...spans].join(', ');
@@ -357,7 +362,7 @@ export default function EuropeCostMap() {
         <a href={cooling.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
           Eurostat cooling degree days
         </a>{' '}
-        ({cddYears} average), scaled to match the city-by-city estimates on our Spain, France, Portugal and UK pages
+        ({cddYears} average), scaled to match the city-by-city estimates on our {PAGE_LIST} pages
         (about {Math.round(FIT_A)} hours plus {FIT_B.toFixed(1)} per cooling degree day). They're country averages: the
         south of Spain or Italy runs AC far longer than the north, so see the country pages for cities. Yearly cost is
         for one {EU_REF_KW} kW unit at EU SEER {EU_REF_SEER}; homes with several units pay more. U.S. money uses €1 = $
