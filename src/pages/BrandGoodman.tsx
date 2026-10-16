@@ -6,7 +6,8 @@ import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
-  { model: 'GXV6S', tier: 'Mid-High', compressor: 'Variable-Speed Inverter', seer2: 'Up to 17.2', refrigerant: 'R-32', note: 'Side discharge; top of new R-32 lineup' },
+  { model: 'GXV9S', tier: 'Premium', compressor: 'Variable-Speed Inverter', seer2: 'Up to 19', refrigerant: 'R-32', note: 'Top of the R-32 lineup' },
+  { model: 'GXV6S', tier: 'Mid-High', compressor: 'Variable-Speed Inverter', seer2: 'Up to 17.2', refrigerant: 'R-32', note: 'Side discharge' },
   { model: 'GLXT7C', tier: 'Mid-High', compressor: 'Two-Stage', seer2: 'Up to 17.2', refrigerant: 'R-32', note: 'Cube style' },
   { model: 'GLXS5B', tier: 'Mid', compressor: 'Single-Stage (high-eff)', seer2: 'Up to 16.5', refrigerant: 'R-32', note: 'Cube style' },
   { model: 'GLXS4M', tier: 'Mid', compressor: 'Single-Stage', seer2: 'Up to 15.2', refrigerant: 'R-32', note: '' },
@@ -180,7 +181,7 @@ export default function BrandGoodman() {
               <p className="text-xs text-gray-500 mt-1">Mid-tier; improving under Daikin</p>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
-              <p className="text-2xl font-bold text-teal-600">17.2</p>
+              <p className="text-2xl font-bold text-teal-600">19</p>
               <p className="text-xs font-semibold text-gray-500 uppercase mt-1">Max SEER2</p>
               <p className="text-xs text-gray-500 mt-1">New R-32 lineup (2025)</p>
             </div>
@@ -489,7 +490,7 @@ export default function BrandGoodman() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-red-800 mb-1">⚠️ Register within 60 days</p>
-                  <p className="text-sm text-gray-700">The 60-day clock starts when the unit is first turned on. Miss it and coverage drops to 5-year limited. Register online at <strong>goodmanmfg.com/product-registration</strong>. Don't trust your contractor to do it — register yourself.</p>
+                  <p className="text-sm text-gray-700">The 60-day clock starts on the installation date. Miss it and coverage drops to 5-year limited. Register online at <strong>goodmanmfg.com/product-registration</strong>. Don't trust your contractor to do it — register yourself.</p>
                 </div>
                 <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-amber-800 mb-1">⚠️ No warranty transfer</p>
@@ -592,7 +593,7 @@ export default function BrandGoodman() {
                     <AlertCircle className="w-5 h-5 text-gray-500" />Consider other brands if you...
                   </h3>
                   <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• Want peak efficiency — new R-32 lineup tops at 17.2 SEER2; Lennox reaches 26 SEER2, Daikin reaches 24.5 SEER2, Trane reaches 23.6 SEER2</li>
+                    <li>• Want peak efficiency — new R-32 lineup tops at 19 SEER2 (GXV9S); Lennox reaches 26 SEER2, Daikin reaches 22.5 SEER2, Trane reaches 23.6 SEER2</li>
                     <li>• Live in a coastal or high-humidity climate where coil quality is critical — premium brands' coil specs are more robust</li>
                     <li>• Want the warranty to transfer if you sell your home — Goodman's warranty is non-transferable; Carrier and Lennox both offer transferable coverage</li>
                     <li>• Need cold-climate heat pump performance — Goodman mini-splits are rated to 5°F minimum; Mitsubishi Hyper-Heat operates to -13°F</li>

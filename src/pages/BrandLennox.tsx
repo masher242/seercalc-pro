@@ -51,7 +51,7 @@ const tonnagePricing = [
 ];
 
 const competitorComparison = [
-  { brand: 'Goodman', maxSeer2: '17.2', installed3ton: '$3,200–$6,500', parts: 'Open wholesale', labor: 'No', proprietary: 'No', tier: 'Budget' },
+  { brand: 'Goodman', maxSeer2: '19', installed3ton: '$3,200–$6,500', parts: 'Open wholesale', labor: 'No', proprietary: 'No', tier: 'Budget' },
   { brand: 'Carrier', maxSeer2: '21.0', installed3ton: '$4,500–$10,000', parts: 'Good availability', labor: 'Option B (enrolled dealers)', proprietary: 'Infinity boards', tier: 'Premium' },
   { brand: 'Trane', maxSeer2: '23.6', installed3ton: '$4,580–$10,414', parts: 'Proprietary issues', labor: 'No', proprietary: 'Yes — documented', tier: 'Premium' },
   { brand: 'Lennox', maxSeer2: '26.0', installed3ton: '$4,000–$15,000+', parts: 'Worst — OEM only', labor: 'Yes (free 3yr with reg)', proprietary: 'Yes — worst in category', tier: 'Ultra-premium', highlight: true },

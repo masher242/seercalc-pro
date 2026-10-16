@@ -290,7 +290,7 @@ export default function BlogArticleRepairCost() {
             <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-bold text-yellow-900 mb-3">Important: Refrigerant Recharge</h3>
               <p className="text-gray-800 mb-4">
-                <strong>R-410A (Modern Systems):</strong> $150-$750 total
+                <strong>R-410A (most 2010–2025 systems):</strong> $150-$750 total
               </p>
               <p className="text-gray-800 mb-4">
                 <strong>R-22 (Freon - Older Systems):</strong> $450-$2,400 total (phased out, expensive)

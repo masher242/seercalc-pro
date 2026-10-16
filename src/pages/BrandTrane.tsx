@@ -441,7 +441,7 @@ export default function BrandTrane() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-red-800 mb-2">⚠️ Critical: Register within 60 days</p>
-                  <p className="text-sm text-gray-700">The registration clock starts when the unit is <strong>first energized (turned on)</strong> — not the contract date. Miss the 60-day window and your 10-year warranty drops to 5 years with no exceptions. Set a calendar reminder for Day 55.</p>
+                  <p className="text-sm text-gray-700">The registration clock starts on the <strong>installation date</strong> — not the contract date. Miss the 60-day window and your 10-year warranty drops to 5 years with no exceptions. Set a calendar reminder for Day 55.</p>
                 </div>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-blue-800 mb-2">Warranty transfer: $99</p>

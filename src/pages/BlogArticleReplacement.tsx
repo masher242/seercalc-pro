@@ -747,7 +747,7 @@ export default function BlogArticleReplacement() {
                     <li>Look for sticker on side of outdoor unit</li>
                     <li>Find "refrigerant" or "charge" section</li>
                     <li>Says "R-22" or "HCFC-22" → You have R-22</li>
-                    <li>Says "R-410A" → You have modern refrigerant (good)</li>
+                    <li>Says "R-410A" → still widely serviced, though new R-410A equipment is no longer made; newer systems use R-32 or R-454B</li>
                   </ol>
                   <p className="text-sm"><strong>Or:</strong> Any AC installed before 2010 likely has R-22.</p>
                   <p className="text-sm mt-2">If you have R-22 and develop a leak, <strong>replace the system</strong> rather than pay $1,500-$3,000 for repair + recharge.</p>
