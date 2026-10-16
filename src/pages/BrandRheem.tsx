@@ -6,7 +6,7 @@ import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
-  { model: 'RA20AZ / RA19AY', series: 'Endeavor Prestige', tier: 'Premium', compressor: 'Variable-Speed Inverter', seer2: 'Up to 20.0–20.5', refrigerant: 'R-454B', note: 'EcoNet enabled; ENERGY STAR; top of line' },
+  { model: 'RA19AY / RA18AZ', series: 'Endeavor Prestige', tier: 'Premium', compressor: 'Variable-Speed Inverter', seer2: 'Up to 20', refrigerant: 'R-454B', note: 'EcoNet enabled; ENERGY STAR; top of line' },
   { model: 'RA17AY', series: 'Endeavor Classic Plus', tier: 'Mid-High', compressor: 'Two-Stage', seer2: 'Up to 17.0', refrigerant: 'R-454B', note: 'ENERGY STAR certified' },
   { model: 'RA16AY', series: 'Endeavor Classic Plus', tier: 'Mid', compressor: 'Two-Stage Scroll', seer2: '17.0 / 12 EER2', refrigerant: 'R-454B', note: 'ENERGY STAR certified' },
   { model: 'RA15AZ', series: 'Endeavor Classic Plus', tier: 'Mid', compressor: 'Two-Stage', seer2: '~15–16', refrigerant: 'R-454B', note: '' },
@@ -26,12 +26,12 @@ const tonnagePricing = [
 const seriesPricing = [
   { series: 'Endeavor Classic (entry)', installed: '$3,000–$4,000', seer2: '13.4–15.2' },
   { series: 'Endeavor Classic Plus (mid)', installed: '$4,000–$6,000', seer2: '15.2–17.0' },
-  { series: 'Endeavor Prestige (premium)', installed: '$6,000–$8,500', seer2: '18.0–20.5' },
+  { series: 'Endeavor Prestige (premium)', installed: '$6,000–$8,500', seer2: '18.0–20' },
 ];
 
 const competitorComparison = [
-  { brand: 'Goodman', maxSeer2: '17.2', installed3ton: '$3,200–$6,200', refrigerant: 'R-32', laborWarranty: 'No', tier: 'Budget' },
-  { brand: 'Rheem', maxSeer2: '20.5', installed3ton: '$3,400–$7,200', refrigerant: 'R-454B', laborWarranty: 'No (Protection Plus paid)', tier: 'Mid', highlight: true },
+  { brand: 'Goodman', maxSeer2: '19', installed3ton: '$3,200–$6,200', refrigerant: 'R-32', laborWarranty: 'No', tier: 'Budget' },
+  { brand: 'Rheem', maxSeer2: '20', installed3ton: '$3,400–$7,200', refrigerant: 'R-454B', laborWarranty: 'No (Protection Plus paid)', tier: 'Mid', highlight: true },
   { brand: 'Carrier', maxSeer2: '21.0', installed3ton: '$4,500–$10,000', refrigerant: 'R-454B', laborWarranty: 'Option B (enrolled dealers)', tier: 'Premium' },
   { brand: 'Trane', maxSeer2: '23.6', installed3ton: '$4,580–$10,414', refrigerant: 'R-454B', laborWarranty: 'No', tier: 'Premium' },
   { brand: 'Daikin', maxSeer2: '24.5', installed3ton: '$5,000–$8,500', refrigerant: 'R-32', laborWarranty: 'Asure (paid)', tier: 'Premium' },
@@ -42,15 +42,15 @@ export default function BrandRheem() {
     <>
       <Helmet>
         <title>Rheem AC Review 2026 🔶 Mid-Range Value or Coil Leak Risk?</title>
-        <meta name="description" content="Rheem sits in the sweet spot at $3,000–$8,500 installed with up to 20.5 SEER2. Watch for evaporator coil pinhole leaks within 3–5 years." />
-        <meta name="keywords" content="Rheem AC review 2026, Rheem Endeavor Line review, Rheem vs Carrier, Rheem reliability 2026, Rheem warranty 2026, is Rheem a good brand, Rheem RA20AZ review" />
+        <meta name="description" content="Rheem sits in the sweet spot at $3,000–$8,500 installed with up to 20 SEER2. Watch for evaporator coil pinhole leaks within 3–5 years." />
+        <meta name="keywords" content="Rheem AC review 2026, Rheem Endeavor Line review, Rheem vs Carrier, Rheem reliability 2026, Rheem warranty 2026, is Rheem a good brand, Rheem RA19AY review" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://airconditionanswers.com/brands/rheem" />
 
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://airconditionanswers.com/brands/rheem" />
         <meta property="og:title" content="Rheem AC Review 2026: Best Mid-Range Value?" />
-        <meta property="og:description" content="Rheem's Endeavor Line hits up to 20.5 SEER2 at mid-range prices. 90-day registration window (longest after Carrier). Known evaporator coil leak issue with high labor cost exposure. Full 2026 review." />
+        <meta property="og:description" content="Rheem's Endeavor Line hits up to 20 SEER2 at mid-range prices. 90-day registration window (longest after Carrier). Known evaporator coil leak issue with high labor cost exposure. Full 2026 review." />
         <meta property="og:image" content="https://airconditionanswers.com/images/brands/rheem-review-og.png" />
         <meta property="article:author" content="https://airconditionanswers.com/about/mark-curant" />
         <meta property="article:section" content="Brand Reviews" />
@@ -61,7 +61,7 @@ export default function BrandRheem() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://airconditionanswers.com/brands/rheem" />
         <meta name="twitter:title" content="Rheem AC Review 2026: Best Mid-Range Value?" />
-        <meta name="twitter:description" content="Up to 20.5 SEER2 at mid-range prices. 90-day registration window. Known coil leak issues. Full honest 2026 review." />
+        <meta name="twitter:description" content="Up to 20 SEER2 at mid-range prices. 90-day registration window. Known coil leak issues. Full honest 2026 review." />
         <meta name="twitter:image" content="https://airconditionanswers.com/images/brands/rheem-review-og.png" />
 
         <script type="application/ld+json">
@@ -69,7 +69,7 @@ export default function BrandRheem() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Rheem Air Conditioner Review 2026",
-            "description": "Rheem is a privately held mid-range HVAC brand owned by Paloma Rheem Holdings (Japan) and manufactured in Fort Smith, Arkansas. The Endeavor Line (rebranded in 2023) reaches up to 20.5 SEER2 on the Prestige series using R-454B refrigerant. Rheem's 90-day registration window matches Carrier's industry-leading standard. Key strengths: easy serviceability (any tech can work on them), Watsco distribution network, and the Fujitsu General acquisition (2025) adding ductless expertise. Known issue: evaporator coil pinhole leaks documented within 3–5 years, with $3,000–$4,000 out-of-pocket labor exposure since refrigerant and labor are not covered. Also owns Friedrich (ductless) and Ruud (identical hardware, contractor channel). DOE civil penalty of $1.05M in 2024 for commercial unit energy standard noncompliance.",
+            "description": "Rheem is a privately held mid-range HVAC brand owned by Paloma Rheem Holdings (Japan) and manufactured in Fort Smith, Arkansas. The Endeavor Line (rebranded in 2023) reaches up to 20 SEER2 on the Prestige series using R-454B refrigerant. Rheem's 90-day registration window matches Carrier's industry-leading standard. Key strengths: easy serviceability (any tech can work on them), Watsco distribution network, and the Fujitsu General acquisition (2025) adding ductless expertise. Known issue: evaporator coil pinhole leaks documented within 3–5 years, with $3,000–$4,000 out-of-pocket labor exposure since refrigerant and labor are not covered. Also owns Friedrich (ductless) and Ruud (identical hardware, contractor channel). DOE civil penalty of $1.05M in 2024 for commercial unit energy standard noncompliance.",
             "url": "https://airconditionanswers.com/brands/rheem",
             "mainEntityOfPage": "https://airconditionanswers.com/brands/rheem",
             "image": "https://airconditionanswers.com/images/brands/rheem-review-og.png",
@@ -89,7 +89,7 @@ export default function BrandRheem() {
                 "name": "Is Rheem a good air conditioner brand?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, particularly for mid-range buyers. Rheem sits between Goodman (budget) and Carrier/Trane (premium) in both price and positioning. Key strengths: universal serviceability (any licensed tech can work on them), excellent Watsco distribution network for parts, up to 20.5 SEER2 on the Prestige series, and a 90-day registration window matching Carrier's industry-leading standard. Main known issue: evaporator coil pinhole leaks documented within 3–5 years on some units, with significant out-of-pocket labor and refrigerant exposure since neither is covered under standard warranty. Expected lifespan: 12–20 years with proper maintenance."
+                  "text": "Yes, particularly for mid-range buyers. Rheem sits between Goodman (budget) and Carrier/Trane (premium) in both price and positioning. Key strengths: universal serviceability (any licensed tech can work on them), excellent Watsco distribution network for parts, up to 20 SEER2 on the Prestige series, and a 90-day registration window matching Carrier's industry-leading standard. Main known issue: evaporator coil pinhole leaks documented within 3–5 years on some units, with significant out-of-pocket labor and refrigerant exposure since neither is covered under standard warranty. Expected lifespan: 12–20 years with proper maintenance."
                 }
               },
               {
@@ -151,14 +151,14 @@ export default function BrandRheem() {
               <span className="text-gray-400">Updated July 2026</span>
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Rheem Air Conditioners: 2026 Review</h1>
-            <p className="text-xl text-gray-600">The mid-range value leader — easy to service, broad parts access, up to 20.5 SEER2. And a coil leak issue that can cost $3,000–$4,000 out of pocket even under warranty</p>
+            <p className="text-xl text-gray-600">The mid-range value leader — easy to service, broad parts access, up to 20 SEER2. And a coil leak issue that can cost $3,000–$4,000 out of pocket even under warranty</p>
             <ArticleByline />
           </header>
 
           {/* Quick Answer */}
           <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
             <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
-            <p className="text-gray-800"><strong>Rheem is the best mid-range value brand</strong> — priced above Goodman but below Carrier and Trane, with broad Watsco distribution making it easy for any licensed tech to service. The Endeavor Prestige reaches <strong>20.5 SEER2</strong>. The <strong>90-day registration window</strong> matches Carrier's industry-leading standard. Main known issue: evaporator coil pinhole leaks documented within 3–5 years, with <strong>$3,000–$4,000 labor and refrigerant exposure</strong> per event since neither is covered under warranty. Also: Rheem is the same hardware as <strong>Ruud</strong> (contractor channel, different label). <strong>Best for:</strong> buyers who want above-budget-tier reliability, easy serviceability, and no premium brand markup.</p>
+            <p className="text-gray-800"><strong>Rheem is the best mid-range value brand</strong> — priced above Goodman but below Carrier and Trane, with broad Watsco distribution making it easy for any licensed tech to service. The Endeavor Prestige reaches <strong>20 SEER2</strong>. The <strong>90-day registration window</strong> matches Carrier's industry-leading standard. Main known issue: evaporator coil pinhole leaks documented within 3–5 years, with <strong>$3,000–$4,000 labor and refrigerant exposure</strong> per event since neither is covered under warranty. Also: Rheem is the same hardware as <strong>Ruud</strong> (contractor channel, different label). <strong>Best for:</strong> buyers who want above-budget-tier reliability, easy serviceability, and no premium brand markup.</p>
           </div>
 
           {/* Scorecard */}
@@ -172,9 +172,9 @@ export default function BrandRheem() {
               <p className="text-xs text-gray-500 mt-1">Mid-tier; strong serviceability</p>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
-              <p className="text-2xl font-bold text-teal-600">20.5</p>
+              <p className="text-2xl font-bold text-teal-600">20</p>
               <p className="text-xs font-semibold text-gray-500 uppercase mt-1">Max SEER2</p>
-              <p className="text-xs text-gray-500 mt-1">RA20AZ Prestige</p>
+              <p className="text-xs text-gray-500 mt-1">RA19AY Prestige</p>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
               <p className="text-2xl font-bold text-teal-600">90 days</p>
@@ -548,7 +548,7 @@ export default function BrandRheem() {
                     <li>• Want a 90-day registration window — Rheem ties with Carrier for the longest in the category, vs. 60 days at Trane, Lennox, Goodman, and Daikin</li>
                     <li>• Want transferable warranty coverage when you sell — Rheem transfers, unlike Goodman</li>
                     <li>• Use an EcoNet-compatible smart home and want ecobee thermostat compatibility without a proprietary lock-in</li>
-                    <li>• Are buying in a mild or dry climate where the 20.5 SEER2 Prestige gives meaningful efficiency at a reasonable price premium over entry models</li>
+                    <li>• Are buying in a mild or dry climate where the 20 SEER2 Prestige gives meaningful efficiency at a reasonable price premium over entry models</li>
                     <li>• Want a heat pump option with good cold-weather performance — RP19AY (up to 19 SEER2 / 11 HSPF2) qualifies for 2025 25C heat pump credits on prior-year installs</li>
                   </ul>
                 </div>
@@ -558,7 +558,7 @@ export default function BrandRheem() {
                   </h3>
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li>• Are budget-constrained — Goodman delivers competitive performance at lower installed cost, with R-32 refrigerant service savings to boot</li>
-                    <li>• Want maximum efficiency — 20.5 SEER2 max trails Lennox (26.0), Daikin (24.5), Trane (23.6), and Carrier (21.0)</li>
+                    <li>• Want maximum efficiency — 20 SEER2 max trails Lennox (26.0), Daikin (22.5), Trane (23.6), and Carrier (21.0)</li>
                     <li>• Are in a humid coastal climate with high coil stress — the documented coil leak pattern is a real risk; Trane's Spine Fin coil has a better coastal track record</li>
                     <li>• Want the lowest refrigerant service costs — Goodman/Daikin R-32 systems are significantly cheaper to service than Rheem's R-454B</li>
                     <li>• Need cold-climate ductless heat pump performance — Mitsubishi Hyper-Heat or Daikin FIT AURORA outperform Rheem mini-splits in extreme cold</li>
@@ -575,7 +575,7 @@ export default function BrandRheem() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">8. Frequently Asked Questions</h2>
               <div className="space-y-5">
                 {[
-                  { q: "Is Rheem a good air conditioner brand?", a: "Yes, particularly for mid-range buyers. Rheem sits between Goodman (budget) and Carrier/Trane (premium) in both price and reliability perception. Key strengths: universal serviceability, Watsco distribution network, up to 20.5 SEER2 on the Prestige series, 90-day registration window. Main known issue: evaporator coil pinhole leaks documented within 3–5 years on some units, with $3,000–$4,000 out-of-pocket labor and refrigerant exposure since neither is covered standard. Expected lifespan: 12–20 years with proper maintenance." },
+                  { q: "Is Rheem a good air conditioner brand?", a: "Yes, particularly for mid-range buyers. Rheem sits between Goodman (budget) and Carrier/Trane (premium) in both price and reliability perception. Key strengths: universal serviceability, Watsco distribution network, up to 20 SEER2 on the Prestige series, 90-day registration window. Main known issue: evaporator coil pinhole leaks documented within 3–5 years on some units, with $3,000–$4,000 out-of-pocket labor and refrigerant exposure since neither is covered standard. Expected lifespan: 12–20 years with proper maintenance." },
                   { q: "Is Rheem the same as Ruud?", a: "Yes. Rheem and Ruud are manufactured on the same production lines at the same Fort Smith, Arkansas facility. Model numbers start with R for Rheem and U for Ruud, but the hardware is identical. Ruud is the contractor-facing channel brand; Rheem is the consumer brand. If your contractor quotes Ruud, you're getting Rheem." },
                   { q: "What is Rheem's warranty in 2026?", a: "10-year parts warranty when registered within 90 days of installation (dropping to 5 years without registration). Select Prestige and Classic Plus models include a conditional 10-year unit replacement warranty. Labor and refrigerant are NOT covered under the standard warranty. The Protection Plus plan (paid, through Equiguard Inc.) adds labor coverage. Warranty transfers to subsequent homeowners." },
                   { q: "What is the Rheem Endeavor Line?", a: "Rheem rebranded all residential AC lines under the Endeavor® Line name in 2023. It's a marketing umbrella — the same Classic, Classic Plus, and Prestige hardware tiers exist under new branding. Endeavor Classic (entry, single-stage), Endeavor Classic Plus (mid, two-stage), Endeavor Prestige (premium, variable-speed). All current models use R-454B refrigerant." },

@@ -6,7 +6,7 @@ import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
 
 const modelLineup = [
-  { model: 'DX9VC / DC9VS', tier: 'Ultra-Premium', compressor: 'Variable-Speed Inverter', seer2: 'Up to 24.5', refrigerant: 'R-32', note: 'Top central AC; ComfortNet compatible' },
+  { model: 'DX9VC / DC9VS', tier: 'Ultra-Premium', compressor: 'Variable-Speed Inverter', seer2: 'Up to 22.5', refrigerant: 'R-32', note: 'Top central AC; ComfortNet compatible' },
   { model: 'DX7TC / DC7TC', tier: 'Premium', compressor: 'Two-Stage', seer2: '~19.0', refrigerant: 'R-32', note: '' },
   { model: 'DX6VS / DC6VS', tier: 'Premium', compressor: 'Variable-Speed', seer2: '~19.0', refrigerant: 'R-32', note: 'FIT platform' },
   { model: 'DX5SE / DC5SE', tier: 'Mid', compressor: 'Single-Stage (high-eff)', seer2: '15.2', refrigerant: 'R-32', note: '' },
@@ -34,7 +34,7 @@ const tonnagePricing = [
 ];
 
 const brandComparison = [
-  { factor: 'Max SEER2 (central AC)', daikin: '24.5 (DX9VC)', goodman: '17.2 (R-32)', amana: 'Similar to Goodman', trane: '23.6 (XV20i)' },
+  { factor: 'Max SEER2 (central AC)', daikin: '22.5 (DX9VC)', goodman: '19 (GXV9S, R-32)', amana: 'Similar to Goodman', trane: '23.6 (XV20i)' },
   { factor: 'Refrigerant', daikin: 'R-32 (all new)', goodman: 'R-32 (all new)', amana: 'R-32 (all new)', trane: 'R-454B' },
   { factor: 'Parts warranty (registered)', daikin: '12 years', goodman: '10 years', amana: '10 years', trane: '10 years' },
   { factor: 'Unit replacement warranty', daikin: '12 yr (premium) / 6 yr (mid)', goodman: '10 yr (select models)', amana: 'Varies — verify 2025 changes', trane: 'Not offered' },
@@ -76,7 +76,7 @@ export default function BrandDaikin() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Daikin Air Conditioner Review 2026",
-            "description": "Daikin is the world's largest HVAC manufacturer by revenue (~$31B) and the parent company of Goodman and Amana. All three brands are manufactured at the same 4.2 million sq ft Waller, Texas facility. Daikin is the premium tier — priced 30–40% above Goodman for the same factory origin. Key advantages: 12-year parts + 12-year unit replacement warranty (best standard warranty in the category), R-32 refrigerant (~$449/20 lbs vs. R-454B at $700–$2,800), DX9VC up to 24.5 SEER2, new FIT AURORA cold-climate heat pump to -20°F. Key trade-offs: annual maintenance required to preserve unit replacement warranty, Daikin One+ thermostat has documented temperature inaccuracy issues, dealer network thinner than Goodman in some regions. $8.5M CPSC civil fine in June 2026 for delayed PTAC safety disclosure.",
+            "description": "Daikin is the world's largest HVAC manufacturer by revenue (~$31B) and the parent company of Goodman and Amana. All three brands are manufactured at the same 4.2 million sq ft Waller, Texas facility. Daikin is the premium tier — priced 30–40% above Goodman for the same factory origin. Key advantages: 12-year parts + 12-year unit replacement warranty (best standard warranty in the category), R-32 refrigerant (~$449/20 lbs vs. R-454B at $700–$2,800), DX9VC up to 22.5 SEER2, new FIT AURORA cold-climate heat pump to -20°F. Key trade-offs: annual maintenance required to preserve unit replacement warranty, Daikin One+ thermostat has documented temperature inaccuracy issues, dealer network thinner than Goodman in some regions. $8.5M CPSC civil fine in June 2026 for delayed PTAC safety disclosure.",
             "url": "https://airconditionanswers.com/brands/daikin",
             "mainEntityOfPage": "https://airconditionanswers.com/brands/daikin",
             "image": "https://airconditionanswers.com/images/brands/daikin-review-og.png",
@@ -96,7 +96,7 @@ export default function BrandDaikin() {
                 "name": "Is Daikin a good air conditioner brand?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Daikin is the world's largest HVAC manufacturer by revenue (~$31B globally) and manufactures all of its North American residential equipment at the same Waller, Texas facility as Goodman and Amana. The 12-year parts plus 12-year unit replacement warranty is the best standard warranty in the major HVAC category. R-32 refrigerant costs roughly 6x less to service than R-454B brands (Carrier, Trane, Lennox) in 2026. The DX9VC flagship reaches 24.5 SEER2. Trade-offs: annual maintenance is required to preserve the unit replacement warranty, the Daikin One+ thermostat has documented temperature inaccuracy issues, and the dealer network is thinner than Goodman's open wholesale model in some areas."
+                  "text": "Yes. Daikin is the world's largest HVAC manufacturer by revenue (~$31B globally) and manufactures all of its North American residential equipment at the same Waller, Texas facility as Goodman and Amana. The 12-year parts plus 12-year unit replacement warranty is the best standard warranty in the major HVAC category. R-32 refrigerant costs roughly 6x less to service than R-454B brands (Carrier, Trane, Lennox) in 2026. The DX9VC flagship reaches 22.5 SEER2. Trade-offs: annual maintenance is required to preserve the unit replacement warranty, the Daikin One+ thermostat has documented temperature inaccuracy issues, and the dealer network is thinner than Goodman's open wholesale model in some areas."
                 }
               },
               {
@@ -165,7 +165,7 @@ export default function BrandDaikin() {
           {/* Quick Answer */}
           <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
             <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
-            <p className="text-gray-800"><strong>Daikin is the premium tier above Goodman and Amana</strong> — same Waller, Texas factory, stronger warranty, higher price. The <strong>12-year parts + 12-year unit replacement warranty</strong> is the best standard coverage of any major HVAC brand. R-32 refrigerant costs ~6x less to service than R-454B brands in 2026. The DX9VC flagship reaches <strong>24.5 SEER2</strong>. The new <strong>FIT AURORA</strong> cold-climate heat pump operates to -20°F. Installed costs run <strong>$4,200–$11,000+</strong> — 30–40% above Goodman for the same factory origin. <strong>Key trap:</strong> annual maintenance documentation required to activate the unit replacement warranty. <strong>Best for:</strong> long-stay homeowners, California/Florida/Georgia buyers (no registration needed), cold-climate heat pump buyers.</p>
+            <p className="text-gray-800"><strong>Daikin is the premium tier above Goodman and Amana</strong> — same Waller, Texas factory, stronger warranty, higher price. The <strong>12-year parts + 12-year unit replacement warranty</strong> is the best standard coverage of any major HVAC brand. R-32 refrigerant costs ~6x less to service than R-454B brands in 2026. The DX9VC flagship reaches <strong>22.5 SEER2</strong>. The new <strong>FIT AURORA</strong> cold-climate heat pump operates to -20°F. Installed costs run <strong>$4,200–$11,000+</strong> — 30–40% above Goodman for the same factory origin. <strong>Key trap:</strong> annual maintenance documentation required to activate the unit replacement warranty. <strong>Best for:</strong> long-stay homeowners, California/Florida/Georgia buyers (no registration needed), cold-climate heat pump buyers.</p>
           </div>
 
           {/* Scorecard */}
@@ -179,7 +179,7 @@ export default function BrandDaikin() {
               <p className="text-xs text-gray-500 mt-1">Premium tier; improving</p>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
-              <p className="text-2xl font-bold text-teal-600">24.5</p>
+              <p className="text-2xl font-bold text-teal-600">22.5</p>
               <p className="text-xs font-semibold text-gray-500 uppercase mt-1">Max SEER2</p>
               <p className="text-xs text-gray-500 mt-1">DX9VC flagship</p>
             </div>
@@ -448,7 +448,7 @@ export default function BrandDaikin() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-red-800 mb-1">⚠️ Register within 60 days</p>
-                  <p className="text-sm text-gray-700">Clock starts at first energization (turn-on). Without registration: parts coverage drops to 5 years; unit replacement not available. Register at <strong>goodmanmfg.com/product-registration</strong> (same portal for Daikin residential).</p>
+                  <p className="text-sm text-gray-700">Clock starts on the installation date. Without registration: parts coverage drops to 5 years; unit replacement not available. Register at <strong>goodmanmfg.com/product-registration</strong> (same portal for Daikin residential).</p>
                 </div>
                 <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-teal-800 mb-1">No registration needed in 4 states</p>
@@ -538,7 +538,7 @@ export default function BrandDaikin() {
 
               <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 mb-4">
                 <p className="text-sm font-semibold text-teal-800 mb-1">When is the Daikin premium worth it over Goodman?</p>
-                <p className="text-sm text-gray-700">The 12-year unit replacement warranty (vs. Goodman's 10-year on select models) is the clearest justification — particularly if you plan to stay in the home 10–15 years and will document annual maintenance. The 24.5 SEER2 DX9VC also exceeds Goodman's 17.2 SEER2 ceiling significantly at the premium tier. If you want maximum efficiency from the Daikin family without paying Lennox or Trane prices, Daikin's DX9VC is a compelling option. If budget matters and you'll maintain the system, Goodman delivers 80% of the value at 60–70% of the cost.</p>
+                <p className="text-sm text-gray-700">The 12-year unit replacement warranty (vs. Goodman's 10-year on select models) is the clearest justification — particularly if you plan to stay in the home 10–15 years and will document annual maintenance. The 22.5 SEER2 DX9VC also tops Goodman's 19 SEER2 ceiling (GXV9S) at the premium tier. If you want maximum efficiency from the Daikin family without paying Lennox or Trane prices, Daikin's DX9VC is a compelling option. If budget matters and you'll maintain the system, Goodman delivers 80% of the value at 60–70% of the cost.</p>
               </div>
             </div>
 
@@ -558,7 +558,7 @@ export default function BrandDaikin() {
                     <li>• Are in California, Florida, Georgia, or Quebec — you get full warranty coverage without registration paperwork</li>
                     <li>• Want cold-climate heat pump capability — the new FIT AURORA to -20°F competes directly with Mitsubishi Hyper-Heat at a potentially lower installed cost</li>
                     <li>• Want the R-32 service cost advantage without the Goodman budget positioning — Daikin gives you the same refrigerant economics at a premium tier</li>
-                    <li>• Are in a hot/humid climate and want high efficiency — the DX9VC at 24.5 SEER2 is competitive with Trane's best at a similar price point</li>
+                    <li>• Are in a hot/humid climate and want high efficiency — the DX9VC at 22.5 SEER2 is close to Trane's best (23.6) at a similar price point</li>
                     <li>• Have access to a strong local Daikin Comfort Pro dealer with Asure plan availability</li>
                   </ul>
                 </div>
@@ -585,7 +585,7 @@ export default function BrandDaikin() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">9. Frequently Asked Questions</h2>
               <div className="space-y-5">
                 {[
-                  { q: "Is Daikin the same as Goodman?", a: "They share the same parent company (Daikin Industries) and the same Waller, Texas factory, but they are different product tiers. Daikin is the premium brand — stronger warranty (12-year vs. 10-year), higher-end model specs (DX9VC at 24.5 SEER2 vs. Goodman's 17.2 SEER2 R-32 ceiling), tighter dealer network, and 30–40% higher installed cost. Same factory origin, meaningfully different product positioning." },
+                  { q: "Is Daikin the same as Goodman?", a: "They share the same parent company (Daikin Industries) and the same Waller, Texas factory, but they are different product tiers. Daikin is the premium brand — stronger warranty (12-year vs. 10-year), higher-end model specs (DX9VC at 22.5 SEER2 vs. Goodman's 19 SEER2 R-32 ceiling), tighter dealer network, and 30–40% higher installed cost. Same factory origin, meaningfully different product positioning." },
                   { q: "What is Daikin's warranty in 2026?", a: "12-year parts + 12-year unit replacement on premium models when registered within 60 days. Mid-tier models: 12-year parts + 6-year unit replacement. Entry models: 12-year parts only. Labor is NOT included — Asure extended service plans add labor coverage (paid, through Authorized Asure Dealers only). Critical fine print: the 12-year unit replacement warranty requires documented annual maintenance to activate." },
                   { q: "Does the Daikin warranty require annual maintenance?", a: "Yes — for the unit replacement provision specifically. The 12-year unit replacement warranty requires documented annual maintenance records. Skip a maintenance year and Daikin can deny a unit replacement claim. The parts warranty doesn't have this requirement, but the unit replacement — the most valuable part of the Daikin warranty advantage — does. Keep every maintenance receipt for the life of the system." },
                   { q: "What is the Daikin FIT AURORA?", a: "The FIT AURORA (DH9VS) is Daikin's new cold-climate residential heat pump launched at AHR Expo in January 2026. It reaches up to 21.0 SEER2 / 10.0 HSPF2, uses R-32 refrigerant, and is rated for heating operation down to -20°F — meeting the DOE Cold Climate Heat Pump Challenge specification. Available in 2–5 ton configurations, it competes directly with Mitsubishi Hyper-Heat for whole-home cold-climate applications." },

@@ -4,6 +4,7 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import EditorialNote from '../components/EditorialNote';
 
 export default function BlogArticleACRepairCost() {
   return (
@@ -381,7 +382,7 @@ export default function BlogArticleACRepairCost() {
 
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
               <h4 className="font-bold text-gray-900 mb-3">R-22 vs R-410A Cost Impact</h4>
-              <p className="text-gray-700 mb-2"><strong>R-410A (modern systems):</strong></p>
+              <p className="text-gray-700 mb-2"><strong>R-410A (most systems installed 2010–2025):</strong></p>
               <ul className="list-disc pl-6 text-gray-700 space-y-1 mb-3">
                 <li>Refrigerant: $100-$400 for typical recharge</li>
                 <li>Leak repair + recharge: $400-$1,000</li>
@@ -392,7 +393,7 @@ export default function BlogArticleACRepairCost() {
                 <li>Cost: $90-$250 per pound</li>
                 <li>Leak repair + recharge: $860-$2,500+</li>
               </ul>
-              <p className="text-red-700 font-bold">Recommendation: If R-22 leak, replace system</p>
+              <p className="text-red-700 font-bold">Recommendation: if an R-22 system is leaking, replacement is usually the better value, especially if it's 15+ years old. Get a price for both before deciding.</p>
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Common AC Problems Quick Reference</h2>
@@ -596,6 +597,11 @@ export default function BlogArticleACRepairCost() {
                 <li>If &lt; $5,000: Repair makes sense</li>
               </ul>
             </div>
+            <EditorialNote>
+              The $5,000 rule is an industry rule of thumb, not a standard or a study result. Use it as a starting
+              point, alongside the system's condition, efficiency, refrigerant and how long you plan to stay.
+            </EditorialNote>
+
 
             <div className="bg-gray-50 rounded-lg p-6 mb-6">
               <h4 className="font-bold text-gray-900 mb-3">Examples:</h4>
@@ -617,7 +623,7 @@ export default function BlogArticleACRepairCost() {
               <ol className="list-decimal pl-6 text-gray-700 space-y-3">
                 <li><strong>AC is 15+ years old</strong> - Any repair over $500 doesn't make sense. Near end of lifespan (15-20 years), modern units often 20-40% more efficient in real-world energy use</li>
                 <li><strong>Repair exceeds 50% of replacement cost</strong> - If repair is $2,500 and replacement is $5,500 (45% ratio), lean toward replace</li>
-                <li><strong>R-22 refrigerant + leak</strong> - Recharge costs $660-$1,900 (up to $2,400 on large systems), will leak again, better to replace with modern R-410A system</li>
+                <li><strong>R-22 refrigerant + leak</strong> - Recharge costs $660-$1,900 (up to $2,400 on large systems), likely to leak again; usually better to replace. New systems use R-32 or R-454B, because new R-410A air conditioners could no longer be made after January 1, 2025</li>
                 <li><strong>Compressor failure + age 10+ years</strong> - Compressor costs $1,500-$3,000. If AC is 12+ years, other components failing soon, replace entire system</li>
                 <li><strong>Multiple repairs in past 2 years</strong> - Pattern of failures, total repair costs approaching replacement, replace before next failure</li>
               </ol>
@@ -643,12 +649,12 @@ export default function BlogArticleACRepairCost() {
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">How much does it cost to recharge AC refrigerant?</h3>
-                <p className="text-gray-700">$100-$2,400 depending on refrigerant type. R-410A (modern): $50-$150 per pound, typical recharge 2-5 pounds = $100-$750 total. R-22 (older, phased out): $90-$250 per pound, typical recharge $660-$1,900, up to $2,400 on large systems. IMPORTANT: AC systems are sealed. If you need refrigerant, you have a leak. Just adding refrigerant without fixing the leak is wasting money. Total cost (leak repair + recharge): $400-$2,400.</p>
+                <p className="text-gray-700">$100-$2,400 depending on refrigerant type. R-410A (most 2010–2025 systems): $50-$150 per pound, typical recharge 2-5 pounds = $100-$750 total. R-22 (older, phased out): $90-$250 per pound, typical recharge $660-$1,900, up to $2,400 on large systems. IMPORTANT: AC systems are sealed. If you need refrigerant, you have a leak. Just adding refrigerant without fixing the leak is wasting money. Total cost (leak repair + recharge): $400-$2,400.</p>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Is it worth repairing a 10-year-old air conditioner?</h3>
-                <p className="text-gray-700">It depends on the repair cost. Use the $5,000 rule: (Repair Cost) × (Age) = Decision Number. If &gt; $5,000, consider replacement. Examples: $300 repair × 10 years = $3,000 → REPAIR ✅ | $600 repair × 10 years = $6,000 → REPLACE ❌ | $1,000 repair × 10 years = $10,000 → REPLACE ❌. Additional factors: Compressor failure → Replace (even at 10 years), R-22 refrigerant leak → Replace, Multiple recent repairs → Replace.</p>
+                <p className="text-gray-700">It depends on the repair cost. Use the $5,000 rule: (Repair Cost) × (Age) = Decision Number. If &gt; $5,000, consider replacement. Examples: $300 repair × 10 years = $3,000 → REPAIR ✅ | $600 repair × 10 years = $6,000 → REPLACE ❌ | $1,000 repair × 10 years = $10,000 → REPLACE ❌. Additional factors: Compressor failure → Replace (even at 10 years), R-22 refrigerant leak → usually replace, Multiple recent repairs → Replace.</p>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">

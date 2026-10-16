@@ -4,6 +4,7 @@ import { ArrowLeft, Clock, AlertTriangle, CheckCircle, XCircle, Wrench } from 'l
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { articleJsonLd } from '../data/site';
+import EditorialNote from '../components/EditorialNote';
 
 export default function BlogArticleLifespan() {
   return (
@@ -727,6 +728,11 @@ export default function BlogArticleLifespan() {
                 <li><strong>If result &lt; $5,000:</strong> Repair</li>
               </ul>
             </div>
+            <EditorialNote>
+              The $5,000 rule is an industry rule of thumb, not a standard or a study result. Use it as a starting
+              point, alongside the system's condition, efficiency, refrigerant and how long you plan to stay.
+            </EditorialNote>
+
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Examples:</h3>
             <div className="space-y-4 mb-6">

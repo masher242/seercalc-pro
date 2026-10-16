@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Star, Clock } from 'lucide-react';
+import EditorialNote from '../components/EditorialNote';
 
 const liveBrands = [
   {
@@ -36,7 +37,7 @@ const liveBrands = [
     name: 'Goodman',
     tier: 'B-Tier (Budget Leader)',
     tierColor: 'bg-blue-100 text-blue-800',
-    seer2: 'Up to 17.2 SEER2 (R-32)',
+    seer2: 'Up to 19 SEER2 (R-32)',
     reliability: 'Mid-tier; improving under Daikin',
     priceRange: '$3,200–$8,500 installed',
     summary: 'US budget AC market leader, owned by Daikin. Lifetime compressor warranty on registered units. R-32 refrigerant costs ~6x less to service than R-454B brands in 2026. No labor coverage, no warranty transfer.',
@@ -78,7 +79,7 @@ const liveBrands = [
     name: 'Daikin',
     tier: 'A-Tier (Premium)',
     tierColor: 'bg-green-100 text-green-800',
-    seer2: 'Up to 24.5 SEER2',
+    seer2: 'Up to 22.5 SEER2',
     reliability: 'Premium tier; world\'s largest HVAC maker',
     priceRange: '$4,200–$11,000 installed',
     summary: 'World\'s largest HVAC manufacturer. Same Waller, TX factory as Goodman and Amana. Best standard warranty in the category: 12-year parts + 12-year unit replacement. R-32 refrigerant costs ~6x less to service than R-454B brands. Annual maintenance required for unit replacement warranty.',
@@ -92,7 +93,7 @@ const liveBrands = [
     name: 'Rheem',
     tier: 'B-Tier (Mid-Range)',
     tierColor: 'bg-blue-100 text-blue-800',
-    seer2: 'Up to 20.5 SEER2',
+    seer2: 'Up to 20 SEER2',
     reliability: 'Mid-tier; strong serviceability',
     priceRange: '$3,000–$8,500 installed',
     summary: 'Best mid-range value brand. Easy to service by any contractor, Watsco distribution network, 90-day registration window. Known evaporator coil pinhole leak issue with $3,000–$4,000 labor/refrigerant exposure per event since neither is covered under standard warranty.',
@@ -151,7 +152,7 @@ export default function BrandsIndex() {
         {/* Quick Answer */}
         <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-10">
           <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
-          <p className="text-gray-800">The most reliable central AC brands in 2026 are <strong>Trane and American Standard</strong> (5/5 Consumer Reports), followed by <strong>Carrier and Lennox</strong>. For best budget value: <strong>Goodman</strong> (Daikin-owned). For mini-splits: <strong>Mitsubishi Electric</strong>. But brand matters less than installer quality — roughly 80% of a system's lifespan depends on installation, not the badge on the unit.</p>
+          <p className="text-gray-800">The most reliable central AC brands in 2026 are <strong>Trane and American Standard</strong> (5/5 Consumer Reports), followed by <strong>Carrier and Lennox</strong>. For best budget value: <strong>Goodman</strong> (Daikin-owned). For mini-splits: <strong>Mitsubishi Electric</strong>. But in our view, and that of most contractors, installer quality matters more than the badge on the unit.</p>
         </div>
 
         {/* Tier overview */}
@@ -167,6 +168,11 @@ export default function BrandsIndex() {
             </div>
           ))}
         </div>
+
+                <EditorialNote kind="Our ranking">
+          Tiers are our editorial ranking, weighing published reliability ratings, warranty terms, price and
+          ease of service. They are opinion, not test results.
+        </EditorialNote>
 
         {/* Live reviews */}
         <div className="mb-10">

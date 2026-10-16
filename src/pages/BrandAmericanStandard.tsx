@@ -425,7 +425,7 @@ export default function BrandAmericanStandard() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-red-800 mb-1">⚠️ Register within 60 days</p>
-                  <p className="text-sm text-gray-700">Clock starts when the unit is turned on. Without registration, warranty drops from 10 to 5 years. Register online at americanstandardair.com or call 1-800-554-8005. Do it yourself — don't trust your contractor.</p>
+                  <p className="text-sm text-gray-700">Clock starts on the installation date. Without registration, warranty drops from 10 to 5 years. Register online at americanstandardair.com or call 1-800-554-8005. Do it yourself — don't trust your contractor.</p>
                 </div>
                 <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
                   <p className="text-sm font-semibold text-teal-800 mb-1">Warranty transfers — with a fee</p>

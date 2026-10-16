@@ -517,8 +517,8 @@ export default function BlogArticleRatings() {
 
             <p className="text-gray-700 leading-relaxed mb-4"><strong>Maintenance factors:</strong></p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-              <li><strong>Dirty filters:</strong> Reduce efficiency 5-15%</li>
-              <li><strong>Dirty coils:</strong> Reduce efficiency 20-30%</li>
+              <li><strong>Clogged filters:</strong> replacing one can cut AC energy use 5-15% (U.S. DOE)</li>
+              <li><strong>Dirty coils:</strong> reduce airflow and heat transfer, so the system runs longer; the dirtier they are, the bigger the loss</li>
               <li><strong>Low refrigerant:</strong> Drops efficiency significantly</li>
             </ul>
 

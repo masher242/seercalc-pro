@@ -4,6 +4,7 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import EditorialNote from '../components/EditorialNote';
 
 export default function BlogArticleRepairCost() {
   return (
@@ -178,6 +179,11 @@ export default function BlogArticleRepairCost() {
                 <li><strong>If result &lt; $5,000:</strong> Repair the AC</li>
               </ul>
             </div>
+            <EditorialNote>
+              The $5,000 rule is an industry rule of thumb, not a standard or a study result. Use it as a starting
+              point, alongside the system's condition, efficiency, refrigerant and how long you plan to stay.
+            </EditorialNote>
+
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Why This Formula Works</h3>
 
@@ -290,7 +296,7 @@ export default function BlogArticleRepairCost() {
             <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-bold text-yellow-900 mb-3">Important: Refrigerant Recharge</h3>
               <p className="text-gray-800 mb-4">
-                <strong>R-410A (Modern Systems):</strong> $150-$750 total
+                <strong>R-410A (most 2010–2025 systems):</strong> $150-$750 total
               </p>
               <p className="text-gray-800 mb-4">
                 <strong>R-22 (Freon - Older Systems):</strong> $450-$2,400 total (phased out, expensive)
@@ -325,7 +331,7 @@ export default function BlogArticleRepairCost() {
                 <li><strong>R-22 Refrigerant + Leak</strong> - Phased out in 2020, recharge costs $450-$2,400</li>
                 <li><strong>Compressor Failure (Age 10+ Years)</strong> - Heart of the system, $1,500-$2,800 repair</li>
                 <li><strong>Energy Bills Climbing</strong> - 10%+ increase year-over-year, efficiency degraded</li>
-                <li><strong>Rebates Lower the Replacement Cost</strong> - Utility rebates, and state HEEHRA rebates for heat pumps if you qualify by income (the federal tax credit ended December 31, 2025)</li>
+                <li><strong>Rebates Lower the Replacement Cost</strong> - Utility rebates, and state HEEHRA rebates for heat pumps if you qualify by income and aren't replacing gas or oil equipment (the federal tax credit ended December 31, 2025)</li>
               </ul>
             </div>
 

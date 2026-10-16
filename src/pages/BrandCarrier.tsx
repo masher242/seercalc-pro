@@ -433,7 +433,7 @@ export default function BrandCarrier() {
 
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
                 <p className="text-sm font-semibold text-red-800 mb-1">⚠️ Critical: 90-day registration window</p>
-                <p className="text-sm text-gray-700">The clock starts when the unit is <strong>first turned on</strong>, not when you sign the contract. Miss the 90-day window and your warranty drops to 5 years parts-only with no option for labor coverage — and no exceptions. Register yourself at carrier.com; don't rely on your contractor. The $13,000 out-of-pocket documented case above was entirely caused by a missed registration.</p>
+                <p className="text-sm text-gray-700">The clock starts on the <strong>installation date</strong>, not when you sign the contract. Ask your installer for the install date in writing and register promptly. Miss the 90-day window and your warranty drops to 5 years parts-only with no option for labor coverage — and no exceptions. Register yourself at carrier.com; don't rely on your contractor. The $13,000 out-of-pocket documented case above was entirely caused by a missed registration.</p>
               </div>
 
               <div className="overflow-x-auto mb-6">
