@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { STATE_PATHS, STATE_CENTROIDS } from '../data/usStatePaths';
+import { RAMP, INK } from '../data/mapColors';
 import {
   STATES, US_RATE, REF_TONS, REF_SEER, RATES_AS_OF,
   annualCost, costPerHour, usd, cents, type StateCost,
@@ -8,10 +9,6 @@ import {
 
 type Metric = 'rate' | 'year';
 
-/** Sequential ramp, light → dark (low → high cost). */
-const RAMP = ['#fdebd3', '#f9c58a', '#f0924a', '#cf5a24', '#8f2f14'];
-/** Text color that stays readable on each ramp step. */
-const INK = ['#5b3412', '#5b3412', '#3b1d0a', '#ffffff', '#ffffff'];
 
 interface MetricDef {
   label: string;
