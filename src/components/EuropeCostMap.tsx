@@ -164,7 +164,8 @@ export default function EuropeCostMap() {
           <p className="text-sm text-gray-500">
             {metric === 'year' ? (
               <>
-                One {EU_REF_KW} kW split air conditioner (energy class A++), run for the typical cooling hours of each
+                One {EU_REF_KW} kW (12,000 BTU) split air conditioner (energy class A++, uses about{' '}
+                {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour), run for the typical cooling hours of each
                 country's climate, at its household electricity price.
               </>
             ) : (
@@ -315,8 +316,8 @@ export default function EuropeCostMap() {
               <tr className="text-left text-gray-900">
                 <th className="px-2 py-2 font-semibold">#</th>
                 <th className="px-2 py-2 font-semibold">Country</th>
-                <th className="px-2 py-2 font-semibold">AC per year</th>
-                <th className="px-2 py-2 font-semibold whitespace-nowrap">Cooling hours</th>
+                <th className="px-2 py-2 font-semibold">Cost per year, one 3.5 kW unit</th>
+                <th className="px-2 py-2 font-semibold">Hours AC runs per year</th>
                 <th className="px-2 py-2 font-semibold">Per kWh</th>
                 <th className="px-2 py-2 font-semibold">In U.S. cents</th>
               </tr>

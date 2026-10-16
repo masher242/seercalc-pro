@@ -15,7 +15,7 @@ const PATH = '/ac-cost/europe';
 const TITLE = 'Cost to Run AC in Europe: 8 Countries, City by City';
 const HEADLINE = 'What It Costs to Run Air Conditioning in Europe';
 
-const th = 'border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap';
+const th = 'border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900';
 const td = 'border border-gray-200 px-3 py-2.5 text-gray-700';
 const h2 = 'text-2xl font-bold text-gray-900 mt-10 mb-4';
 const p = 'text-gray-700 leading-relaxed mb-4';
@@ -100,7 +100,8 @@ export default function AcCostEurope() {
           <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg">
             <p className="text-sm font-bold uppercase tracking-wide text-teal-800 mb-2">Quick answer</p>
             <p className="text-gray-800 leading-relaxed">
-              A typical 3.5 kW split air conditioner costs about{' '}
+              A typical 3.5 kW (12,000 BTU) split air conditioner, which uses about{' '}
+              {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour, costs about{' '}
               {ranked.map((c, i) => (
                 <span key={c.slug}>
                   <strong>{money(c.currency, hourCost(EU_REF_KW, EU_REF_SEER, c.rate), 2)}</strong> an hour in {c.inName}
@@ -123,16 +124,43 @@ export default function AcCostEurope() {
           <EuropeCostMap />
 
           <h2 className={h2}>Cost to run AC by country</h2>
+          <div className="rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800">
+            <p className="font-bold text-gray-900 mb-2">What this table shows</p>
+            <p className="mb-2">
+              Every cost is for <strong>one 3.5 kW wall-mounted split air conditioner</strong>, the usual size for a living
+              room. 3.5 kW is how much <em>cooling</em> it puts out, about <strong>12,000 BTU, or 1 ton</strong>. It is not the
+              electricity it uses: an efficient (A++) unit uses only about{' '}
+              <strong>{(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity for each hour it runs</strong>.
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Electricity price:</strong> what households pay for 1 kWh in that country, taxes included.</li>
+              <li>
+                <strong>Cost per hour:</strong> one hour of the AC running at full power, so{' '}
+                {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh × the price.
+              </li>
+              <li>
+                <strong>Cost per year:</strong> the cost per hour × how many hours a year the AC runs. That depends on the
+                climate, so we show the range from the coolest to the hottest city we list in each country (for example,
+                Turin to Palermo in Italy). A home with two or three units pays two or three times as much.
+              </li>
+            </ul>
+          </div>
           <div className="overflow-x-auto mb-3">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
                   <th className={th}>Country</th>
-                  <th className={th}>Price per kWh</th>
-                  <th className={th}>In U.S. cents</th>
-                  <th className={th}>3.5 kW per hour</th>
-                  <th className={th}>Per year (by city)</th>
-                  <th className={th}>As of</th>
+                  <th className={th}>Electricity price per kWh</th>
+                  <th className={th}>Same price in U.S. cents</th>
+                  <th className={th}>
+                    Cost per hour of AC
+                    <span className="block text-xs font-normal text-gray-500">one 3.5 kW (12,000 BTU) unit</span>
+                  </th>
+                  <th className={th}>
+                    Cost per year of AC
+                    <span className="block text-xs font-normal text-gray-500">coolest to hottest city</span>
+                  </th>
+                  <th className={th}>Price date</th>
                 </tr>
               </thead>
               <tbody>
@@ -158,8 +186,8 @@ export default function AcCostEurope() {
             </table>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            A 3.5 kW split unit at EU SEER {EU_REF_SEER} (energy class A++). The yearly range runs from the coolest to the
-            hottest city we list for each country. Each country uses the price that best matches what AC adds to a bill,
+            The unit is rated EU SEER {EU_REF_SEER} (energy class A++): it moves about {EU_REF_SEER} units of heat for every
+            unit of electricity, which is why 3.5 kW of cooling takes only about {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh. Each country uses the price that best matches what AC adds to a bill,
             and the source differs by country (see each page). U.S. cents use €1 = ${USD_PER_EUR.toFixed(3)} and{' '}
             {`£1 = $${(USD_PER_EUR / GBP_PER_EUR).toFixed(3)}`} ({FX_AS_OF}).
           </p>

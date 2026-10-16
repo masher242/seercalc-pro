@@ -121,12 +121,12 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
 
   const title = `Cost to Run AC in ${c.inName === 'the United Kingdom' ? 'the UK' : c.inName} ❄️ ${unitPrice(c)}/kWh`;
   const headline = `How Much Does It Cost to Run Air Conditioning in ${c.inName}?`;
-  const description = `At ${unitPrice(c)}/kWh (${c.asOf}), a 3.5 kW split air conditioner costs about ${m(perHour, 2)} an hour to run in ${c.inName}, and ${m(yearCost(EU_REF_KW, EU_REF_SEER, cool.hours, rate))}–${m(yearCost(EU_REF_KW, EU_REF_SEER, hot.hours, rate))} a year from ${cool.name} to ${hot.name}.`;
+  const description = `At ${unitPrice(c)}/kWh (${c.asOf}), a 3.5 kW (12,000 BTU) split air conditioner costs about ${m(perHour, 2)} an hour to run in ${c.inName}, and ${m(yearCost(EU_REF_KW, EU_REF_SEER, cool.hours, rate))}–${m(yearCost(EU_REF_KW, EU_REF_SEER, hot.hours, rate))} a year from ${cool.name} to ${hot.name}.`;
 
   const faqs = [
     {
       q: `How much does it cost to run air conditioning per hour in ${c.inName}?`,
-      a: `About ${m(perHour, 2)} an hour for a typical 3.5 kW split unit (EU SEER ${EU_REF_SEER}, energy class A++), at ${unitPrice(c)}/kWh. A 2.5 kW bedroom unit costs about ${m(hourCost(2.5, EU_REF_SEER, rate), 2)} an hour, and a portable air conditioner about ${m(portableHour, 2)} an hour.`,
+      a: `About ${m(perHour, 2)} an hour for a typical 3.5 kW (12,000 BTU) split unit (EU SEER ${EU_REF_SEER}, energy class A++), which uses about ${(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour, at ${unitPrice(c)}/kWh. A 2.5 kW (9,000 BTU) bedroom unit costs about ${m(hourCost(2.5, EU_REF_SEER, rate), 2)} an hour, and a portable air conditioner about ${m(portableHour, 2)} an hour.`,
     },
     {
       q: `How much does air conditioning cost per month in ${c.inName}?`,
@@ -199,8 +199,8 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
           <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg">
             <p className="text-sm font-bold uppercase tracking-wide text-teal-800 mb-2">Quick answer</p>
             <p className="text-gray-800 leading-relaxed">
-              At <strong>{unitPrice(c)} per kWh</strong> ({c.asOf}), a typical 3.5 kW split air conditioner (energy class
-              A++) costs about <strong>{m(perHour, 2)} an hour</strong> to run in {c.inName}, or {m(month)} for a month at 8
+              At <strong>{unitPrice(c)} per kWh</strong> ({c.asOf}), a typical 3.5 kW (12,000 BTU) split air conditioner
+              (energy class A++), which uses about {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity an hour, costs about <strong>{m(perHour, 2)} an hour</strong> to run in {c.inName}, or {m(month)} for a month at 8
               hours a day. Over a year it comes to about <strong>{m(refYear)} in {c.ref.name}</strong>
               {hot.name === c.ref.name
                 ? <>, the hottest city we list, and {m(yearCost(EU_REF_KW, EU_REF_SEER, cool.hours, rate))} in {cool.name}.</>
@@ -211,7 +211,7 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
             {[
-              { label: 'Per hour', value: m(perHour, 2), note: '3.5 kW split, SEER 6.1' },
+              { label: 'Per hour', value: m(perHour, 2), note: `3.5 kW (12,000 BTU) split, uses ${(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh` },
               { label: 'Per month', value: m(month), note: '8 hrs/day × 30 days' },
               { label: `Per year, ${c.ref.name}`, value: m(refYear), note: `${c.ref.hours.toLocaleString()} cooling hours` },
             ].map((k) => (
@@ -227,17 +227,20 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
 
           <h2 className={h2}>Yearly cost by city</h2>
           <p className={p}>
-            How long the AC runs matters as much as the price of power, and that varies hugely across {c.inName}. A 3.5 kW
-            split unit at SEER {EU_REF_SEER}:
+            How long the AC runs matters as much as the price of power, and that varies hugely across {c.inName}. This table
+            is for <strong>one 3.5 kW (12,000 BTU, about 1 ton) split unit</strong>, energy class A++, which uses about{' '}
+            {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh of electricity for each hour it runs. <strong>Hours per year</strong> is
+            our estimate of how long it runs at full power in each city's climate, and <strong>cost per year</strong> is those
+            hours × {(EU_REF_KW / EU_REF_SEER).toFixed(2)} kWh × {unitPrice(c)}.
           </p>
           <div className="overflow-x-auto mb-3">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
                   <th className={th}>City</th>
-                  <th className={th}>Cooling hours/yr</th>
-                  <th className={th}>Per year</th>
-                  <th className={th}>Portable unit, same hours</th>
+                  <th className={th}>Hours the AC runs per year</th>
+                  <th className={th}>Cost per year, 3.5 kW split unit</th>
+                  <th className={th}>Cost per year, portable unit (same hours)</th>
                 </tr>
               </thead>
               <tbody>
@@ -259,17 +262,19 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
 
           <h2 className={h2}>Cost by unit size</h2>
           <p className={p}>
-            In Europe, air conditioners are sold by cooling capacity in kW. Costs at SEER {EU_REF_SEER} and {unitPrice(c)}/kWh:
+            In Europe, air conditioners are sold by how much cooling they put out, in kW (the BTU size is in brackets). A bigger
+            unit cools a bigger space but uses more electricity. All at energy class A++ (SEER {EU_REF_SEER}) and{' '}
+            {unitPrice(c)}/kWh:
           </p>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>Unit</th>
+                  <th className={th}>Unit size (cooling output)</th>
                   <th className={th}>Typical use</th>
-                  <th className={th}>Per hour</th>
-                  <th className={th}>Per month (8 hrs/day)</th>
-                  <th className={th}>Per year, {c.ref.name}</th>
+                  <th className={th}>Cost per hour of running</th>
+                  <th className={th}>Cost per month (8 hours a day)</th>
+                  <th className={th}>Cost per year in {c.ref.name} ({c.ref.hours.toLocaleString()} hours)</th>
                 </tr>
               </thead>
               <tbody>
@@ -295,17 +300,18 @@ export default function AcCostEuropeCountry({ c }: { c: EuCountry }) {
 
           <h2 className={h2}>What a more efficient unit saves</h2>
           <p className={p}>
-            The energy label shows the unit's seasonal efficiency (SEER) and class. Yearly cost of a 3.5 kW unit in{' '}
-            {c.ref.name} ({c.ref.hours.toLocaleString()} hours):
+            The energy label shows the unit's seasonal efficiency (SEER) and class: the higher the SEER, the less electricity
+            it needs for the same cooling. Yearly cost of one 3.5 kW (12,000 BTU) unit in{' '}
+            {c.ref.name} ({c.ref.hours.toLocaleString()} hours a year):
           </p>
           <div className="overflow-x-auto mb-3">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>EU SEER</th>
+                  <th className={th}>Efficiency (EU SEER)</th>
                   <th className={th}>Energy class</th>
-                  <th className={th}>Per year</th>
-                  <th className={th}>Saved vs SEER 4.6</th>
+                  <th className={th}>Cost per year</th>
+                  <th className={th}>Saved per year vs an old SEER 4.6 unit</th>
                 </tr>
               </thead>
               <tbody>
