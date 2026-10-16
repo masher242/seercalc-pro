@@ -293,7 +293,7 @@ export default function BlogArticleChoosing() {
             <p className="text-gray-700 leading-relaxed mb-2"><strong>What's available in 2026:</strong></p>
             <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
               <li><strong>Utility rebates:</strong> vary by utility; many require ENERGY STAR certification (15.2 SEER2 and 12.0 EER2 for a split central AC) or a minimum SEER2 tier</li>
-              <li><strong>State heat pump rebates (HEEHRA):</strong> income-qualified, up to $8,000 for a heat pump where your state has launched; cooling-only AC doesn't qualify</li>
+              <li><strong>State heat pump rebates (HEEHRA):</strong> income-qualified, up to $8,000 for a heat pump where your state has launched; cooling-only AC doesn't qualify, and since May 2026 neither does replacing gas or oil equipment</li>
               <li><strong>No federal tax credit</strong> for any AC or heat pump installed in 2026</li>
             </ul>
 

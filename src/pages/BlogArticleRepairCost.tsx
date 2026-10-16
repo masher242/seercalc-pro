@@ -325,7 +325,7 @@ export default function BlogArticleRepairCost() {
                 <li><strong>R-22 Refrigerant + Leak</strong> - Phased out in 2020, recharge costs $450-$2,400</li>
                 <li><strong>Compressor Failure (Age 10+ Years)</strong> - Heart of the system, $1,500-$2,800 repair</li>
                 <li><strong>Energy Bills Climbing</strong> - 10%+ increase year-over-year, efficiency degraded</li>
-                <li><strong>Rebates Lower the Replacement Cost</strong> - Utility rebates, and state HEEHRA rebates for heat pumps if you qualify by income (the federal tax credit ended December 31, 2025)</li>
+                <li><strong>Rebates Lower the Replacement Cost</strong> - Utility rebates, and state HEEHRA rebates for heat pumps if you qualify by income and aren't replacing gas or oil equipment (the federal tax credit ended December 31, 2025)</li>
               </ul>
             </div>
 

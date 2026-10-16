@@ -6,7 +6,7 @@ import ArticleByline from '../components/ArticleByline';
 import { articleJsonLd } from '../data/site';
 
 const PATH = '/blog/hvac-tax-credits-rebates-2026';
-const UPDATED = '2026-10-08';
+const UPDATED = '2026-10-16';
 const TITLE = 'HVAC Tax Credits 2026 💵 Federal Credit Ended: What\'s Left';
 const HEADLINE = 'HVAC Tax Credits & Rebates in 2026: The Federal Credit Is Gone. Here\'s What\'s Left.';
 const DESCRIPTION =
@@ -18,16 +18,17 @@ const changes = [
   { item: 'Electrical panel upgrade (25C)', before: '30%, up to $600', now: 'Ended' },
   { item: 'Home energy audit (25C)', before: '30%, up to $150', now: 'Ended' },
   { item: 'Geothermal heat pump (25D)', before: '30%, no dollar cap', now: 'Ended for installs completed after Dec 31, 2025' },
-  { item: 'State heat pump rebates (HEEHRA)', before: 'Rolling out by state', now: 'Still available where your state has launched' },
+  { item: 'State heat pump rebates (HEEHRA)', before: 'Rolling out by state', now: 'Still available where your state has launched; since DOE\'s May 2026 guidance, not for replacing gas or other fossil-fuel equipment' },
   { item: 'Utility rebates', before: 'Varies by utility', now: 'Still available — varies by utility' },
 ];
 
 const heehra = [
-  { item: 'Heat pump for heating and cooling', low: 'Up to $8,000', moderate: 'Up to $4,000' },
+  { item: 'Heat pump for heating and cooling', low: 'Up to $8,000', moderate: 'Up to $8,000' },
   { item: 'Electrical panel upgrade', low: 'Up to $4,000', moderate: 'Up to $4,000' },
   { item: 'Electrical wiring', low: 'Up to $2,500', moderate: 'Up to $2,500' },
   { item: 'Insulation, air sealing, ventilation', low: 'Up to $1,600', moderate: 'Up to $1,600' },
-  { item: 'Maximum per household', low: '$14,000', moderate: '$7,000' },
+  { item: 'Maximum per household', low: '$14,000', moderate: '$14,000' },
+  { item: 'Share of project cost covered', low: 'Up to 100%', moderate: 'Up to 50%' },
 ];
 
 const faqs = [
@@ -37,7 +38,7 @@ const faqs = [
   },
   {
     q: 'Is there a federal tax credit for a heat pump in 2026?',
-    a: 'No. The 25C heat pump credit (30%, up to $2,000) ended for heat pumps placed in service after December 31, 2025, and the 25D credit for geothermal heat pumps ended for installations completed after the same date. Low- and moderate-income households may still qualify for a state-run HEEHRA heat pump rebate of up to $8,000.',
+    a: 'No. The 25C heat pump credit (30%, up to $2,000) ended for heat pumps placed in service after December 31, 2025, and the 25D credit for geothermal heat pumps ended for installations completed after the same date. Low- and moderate-income households may still qualify for a state-run HEEHRA heat pump rebate of up to $8,000, but under Department of Energy guidance issued May 29, 2026, the rebate can no longer be used to replace gas, oil, propane or other fossil-fuel equipment. In practice it now helps mainly homes upgrading existing electric heating or cooling.',
   },
   {
     q: 'I paid a deposit in 2025 but the system was installed in 2026. Can I claim the credit?',
@@ -61,6 +62,8 @@ const sources = [
   { label: 'IRS — FAQs on the accelerated termination of energy credits under P.L. 119-21 (Aug. 2025)', url: 'https://www.irs.gov/newsroom/treasury-irs-issue-faqs-to-address-the-accelerated-termination-of-several-energy-provisions-under-obbb' },
   { label: 'Congressional Research Service — Expiration and carryforward rules for the Residential Clean Energy Credit (IN12611)', url: 'https://www.everycrsreport.com/reports/IN12611.html' },
   { label: 'U.S. Department of Energy — 2023 central air conditioner and heat pump standards FAQ', url: 'https://www1.eere.energy.gov/buildings/appliance_standards/pdfs/2023_CAC_Standards_FAQ_10-5-2022_Final.pdf' },
+  { label: 'U.S. Department of Energy — Program Notice 26-2, Home Energy Rebates (May 29, 2026)', url: 'https://www.energy.gov/documents/program-notice-26-2' },
+  { label: 'North Carolina DEQ — HEAR updates and program changes (example of a state applying the 2026 guidance)', url: 'https://www.deq.nc.gov/energy-climate/state-energy-office/energy-saver-north-carolina/hear-updates-and-program-changes' },
   { label: 'ENERGY STAR — Rebate Finder', url: 'https://www.energystar.gov/rebate-finder' },
   { label: 'DSIRE — Database of State Incentives for Renewables & Efficiency', url: 'https://www.dsireusa.org' },
 ];
@@ -135,7 +138,8 @@ export default function BlogArticleTaxCredits() {
                 Energy Efficient Home Improvement Credit (Section 25C) paid 30% of the cost, up to $600 for a central AC
                 and $2,000 for a heat pump. It ended for equipment placed in service after December 31, 2025, under the
                 One Big Beautiful Bill Act (P.L. 119-21). What still pays in 2026: state-run HEEHRA rebates for heat
-                pumps (income-qualified, up to $8,000), utility rebates, and manufacturer promotions.
+                pumps (income-qualified, up to $8,000, and since DOE's May 2026 guidance only when replacing electric
+                equipment, not gas or oil), utility rebates, and manufacturer promotions.
               </p>
             </div>
 
@@ -236,9 +240,24 @@ export default function BlogArticleTaxCredits() {
               </table>
             </div>
             <p className="text-sm text-gray-500 italic mb-4">
-              Federal maximums. States can set lower amounts. Rebates are also capped at a share of project cost,
-              typically 100% for lower-income and 50% for moderate-income households.
+              Federal maximums (ENERGY STAR / DOE). The dollar caps are the same for both income groups; what differs
+              is the share of the project cost: up to 100% at or below 80% AMI, up to 50% at 80–150% AMI. States
+              can set lower amounts.
             </p>
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-4">
+              <p className="font-bold text-gray-900 mb-2">May 2026 change: no rebates for replacing gas or oil equipment</p>
+              <p className="text-gray-700 leading-relaxed mb-2">
+                On May 29, 2026, the Department of Energy told states (Program Notice 26-2) that HEEHRA rebates may no
+                longer pay for replacing a gas, oil, propane or other fossil-fuel appliance. Upgrades from existing
+                electric equipment, such as an old electric furnace or heat pump to a new heat pump, can still
+                qualify. States had until September 1, 2026 to put the change in place, and some now also require
+                insulation or air sealing first.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-0">
+                <strong>What it means for you:</strong> if your home is heated with gas or oil, don't count on a HEEHRA
+                rebate for a heat pump. Check your state energy office's current rules before you get quotes.
+              </p>
+            </div>
             <p className={p}>
               <strong>Who has it:</strong> availability depends entirely on your state. More than 20 states had
               launched programs by mid-2026. California's single-family funding ran out in February 2026 and moved to

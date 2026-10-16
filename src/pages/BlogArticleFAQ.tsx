@@ -125,7 +125,7 @@ export default function BlogArticleFAQ() {
                 "name": "Are there rebates for high-efficiency HVAC systems?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, but not federal tax credits: the federal 25C credit ended for systems installed after December 31, 2025. In 2026, many utilities offer rebates for high-efficiency systems (often requiring ENERGY STAR certification), and some states offer income-qualified HEEHRA rebates of up to $8,000 for heat pumps. State and local programs vary. Check www.energystar.gov and your utility company's website for current offers in your area."
+                  "text": "Yes, but not federal tax credits: the federal 25C credit ended for systems installed after December 31, 2025. In 2026, many utilities offer rebates for high-efficiency systems (often requiring ENERGY STAR certification), and some states offer income-qualified HEEHRA rebates of up to $8,000 for heat pumps (since May 2026, not when replacing gas or oil equipment). State and local programs vary. Check www.energystar.gov and your utility company's website for current offers in your area."
                 }
               },
               {
@@ -489,7 +489,7 @@ export default function BlogArticleFAQ() {
                 <p className="text-lg font-semibold text-gray-900 mb-3">State and Local Programs:</p>
                 <ul className="space-y-2 list-disc list-inside">
                   <li className="text-gray-700">Vary widely by location</li>
-                  <li className="text-gray-700">State-run HEEHRA rebates: up to $8,000 for a heat pump for income-qualified households, where your state has launched (cooling-only AC doesn't qualify)</li>
+                  <li className="text-gray-700">State-run HEEHRA rebates: up to $8,000 for a heat pump for income-qualified households, where your state has launched (cooling-only AC doesn't qualify, and since May 2026 replacing gas or oil equipment doesn't either)</li>
                   <li className="text-gray-700">Low-income programs provide higher rebates</li>
                   <li className="text-gray-700">May include financing options</li>
                 </ul>
