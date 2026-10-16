@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
+import EuropeCostMap from '../components/EuropeCostMap';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import { US_RATE, RATES_AS_OF, cents } from '../data/acCost';
 import {
@@ -117,6 +118,8 @@ export default function AcCostEurope() {
             homes weren't built for air conditioning, and a portable unit bought in a heatwave can be the most expensive
             way to cool a room. These pages put numbers on both.
           </p>
+
+          <EuropeCostMap />
 
           <h2 className={h2}>Cost to run AC by country</h2>
           <div className="overflow-x-auto mb-3">
