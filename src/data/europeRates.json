@@ -1,0 +1,158 @@
+{
+  "_readme": "Electricity prices for the Europe AC cost pages. rate is the price per kWh in local currency that running an air conditioner adds to a bill (see rateNote for exactly what it is). Each country has its own source and date: update rate, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for a split AC (the EU energy label assumes 350 for an average European climate). usdPerEur and gbpPerEur are for the U.S./UK comparisons only.",
+  "updated": "2026-10-15",
+  "usdPerEur": 1.116,
+  "gbpPerEur": 0.847,
+  "fxAsOf": "October 14, 2026",
+  "countries": [
+    {
+      "name": "Spain",
+      "slug": "spain",
+      "currency": "EUR",
+      "rate": 0.2669,
+      "rateNote": "average household price, all taxes and fixed charges included",
+      "asOf": "second half of 2025",
+      "source": "Eurostat, electricity prices for household consumers (nrg_pc_204), 2,500–4,999 kWh a year, all taxes and levies",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table",
+      "cities": [
+        {
+          "name": "Seville",
+          "hours": 1200
+        },
+        {
+          "name": "Valencia",
+          "hours": 900
+        },
+        {
+          "name": "Madrid",
+          "hours": 800
+        },
+        {
+          "name": "Málaga",
+          "hours": 800
+        },
+        {
+          "name": "Barcelona",
+          "hours": 700
+        },
+        {
+          "name": "Bilbao",
+          "hours": 200
+        }
+      ],
+      "refCity": "Madrid",
+      "tariff": [
+        "Most Spanish homes are on a time-of-use tariff (2.0TD). On weekdays, 10:00–14:00 and 18:00–22:00 are the peak (punta) hours, 08:00–10:00, 14:00–18:00 and 22:00–24:00 are mid (llano), and nights and weekends are off-peak (valle). Afternoon and evening AC falls in the peak and mid periods, so pre-cooling in the morning and setting the thermostat a little higher at peak saves money.",
+        "On the regulated PVPC tariff the energy price changes every hour with the wholesale market, so a hot week with high demand can cost more than the average shown here. The figure here is Eurostat's average, which also spreads fixed power charges over every kWh."
+      ]
+    },
+    {
+      "name": "France",
+      "slug": "france",
+      "currency": "EUR",
+      "rate": 0.2001,
+      "rateNote": "price per kWh on EDF's regulated Tarif Bleu (Base option), tax included",
+      "asOf": "rates in effect August 1, 2026",
+      "source": "EDF Tarif Bleu regulated tariff (TRVE), Base option, price per kWh including tax, from August 1, 2026",
+      "sourceUrl": "https://www.fournisseurs-electricite.com/edf/tarifs/bleu-reglemente",
+      "cities": [
+        {
+          "name": "Marseille",
+          "hours": 550
+        },
+        {
+          "name": "Nice",
+          "hours": 500
+        },
+        {
+          "name": "Lyon",
+          "hours": 400
+        },
+        {
+          "name": "Bordeaux",
+          "hours": 350
+        },
+        {
+          "name": "Paris",
+          "hours": 250
+        },
+        {
+          "name": "Lille",
+          "hours": 100
+        }
+      ],
+      "refCity": "Paris",
+      "tariff": [
+        "The Tarif Bleu also has a fixed monthly subscription (about €15.86 a month at 6 kVA), which doesn't change with how much you run the AC. On the off-peak option (heures pleines / heures creuses), peak kWh cost €0.2142 and off-peak €0.1589, so a timer that pre-cools during off-peak hours helps.",
+        "On the Tempo option, the expensive red days only fall between November and March, so summer cooling runs on cheaper blue and white days."
+      ]
+    },
+    {
+      "name": "Portugal",
+      "slug": "portugal",
+      "currency": "EUR",
+      "rate": 0.2105,
+      "rateNote": "price per kWh on the regulated simple tariff (6.9 kVA) with 23% VAT, which applies to use above 200 kWh a month",
+      "asOf": "October 2026",
+      "source": "Regulated tariff (SU Eletricidade, ERSE), simple tariff at 6.9 kVA: €0.1711/kWh before VAT (Selectra, updated October 13, 2026), plus 23% VAT",
+      "sourceUrl": "https://selectra.pt/energia/precos/tarifa-regulada-eletricidade",
+      "cities": [
+        {
+          "name": "Évora",
+          "hours": 900
+        },
+        {
+          "name": "Faro",
+          "hours": 700
+        },
+        {
+          "name": "Lisbon",
+          "hours": 500
+        },
+        {
+          "name": "Porto",
+          "hours": 250
+        }
+      ],
+      "refCity": "Lisbon",
+      "tariff": [
+        "VAT is what makes AC more expensive than it looks. For contracted power up to 6.9 kVA, the first 200 kWh in each 30-day period are taxed at 6% (300 kWh for large families), and everything above at 23%. Air conditioning usually pushes a summer bill past that line, so the extra kWh it uses pay the full 23%.",
+        "On the two-period tariff (bi-horário), off-peak (vazio) kWh cost €0.1143 and peak (fora de vazio) €0.2045 before VAT, so running the AC harder in the cheaper hours helps. Most households are on the free market, where prices are usually close to the regulated tariff."
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "slug": "united-kingdom",
+      "currency": "GBP",
+      "rate": 0.2632,
+      "rateNote": "Ofgem price cap unit rate (Direct Debit, GB average, no VAT)",
+      "asOf": "October 1 to December 31, 2026",
+      "source": "Ofgem energy price cap, electricity unit rate, Direct Debit, GB average, October 1 to December 31, 2026",
+      "sourceUrl": "https://ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-unit-rates-and-standing-charges",
+      "cities": [
+        {
+          "name": "London",
+          "hours": 150
+        },
+        {
+          "name": "Birmingham",
+          "hours": 100
+        },
+        {
+          "name": "Manchester",
+          "hours": 60
+        },
+        {
+          "name": "Edinburgh",
+          "hours": 30
+        }
+      ],
+      "refCity": "London",
+      "article": "the",
+      "tariff": [
+        "Under the price cap you also pay a daily standing charge of 54.83p, but that's fixed: running the AC only adds the unit rate. The price cap changes every three months, and fixed-price deals can be cheaper or dearer. The government has removed VAT from electricity bills from October 1, 2026 to March 31, 2027, and the cap figures already reflect that.",
+        "Few UK homes have air conditioning, so the realistic choice in a heatwave is usually a portable unit or a single wall-mounted split. Time-of-use tariffs with cheap overnight rates don't help much, because cooling is needed in the afternoon and evening."
+      ]
+    }
+  ]
+}

@@ -176,7 +176,7 @@ export default function Home() {
               <h2 id="cost-map-teaser" className="text-2xl font-bold text-gray-900 mb-3">What does AC cost where you live?</h2>
               <p className="text-gray-700 mb-4">
                 See every state's electricity rate and what a year of air conditioning costs there, on one map.
-                Also covers the Caribbean and Canada.
+                Also covers the Caribbean, Canada and Europe.
               </p>
               <div className="flex flex-wrap gap-2">
                 {REGIONS.map(({ to, label, icon: Icon }) => (

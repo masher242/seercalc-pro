@@ -74,7 +74,7 @@ export default function AcCostIndex() {
 
         <USCostMap />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
           <Link
             to="/ac-cost/caribbean"
             className="flex items-center justify-between gap-3 rounded-lg border border-teal-200 bg-teal-50 px-4 py-3 hover:border-teal-400 transition-colors"
@@ -92,6 +92,15 @@ export default function AcCostIndex() {
               <strong>Canada:</strong> all 10 provinces, in Canadian dollars.
             </span>
             <span className="text-sm font-semibold text-teal-700 whitespace-nowrap">Canada →</span>
+          </Link>
+          <Link
+            to="/ac-cost/europe"
+            className="flex items-center justify-between gap-3 rounded-lg border border-teal-200 bg-teal-50 px-4 py-3 hover:border-teal-400 transition-colors"
+          >
+            <span className="text-sm text-gray-800">
+              <strong>Europe:</strong> Spain, France, Portugal and the UK, in euros and pounds.
+            </span>
+            <span className="text-sm font-semibold text-teal-700 whitespace-nowrap">Europe →</span>
           </Link>
         </div>
 

@@ -1,8 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import { Map as MapIcon, Palmtree, Leaf } from 'lucide-react';
+import { Map as MapIcon, Palmtree, Leaf, Landmark } from 'lucide-react';
 import { STATES } from '../data/acCost';
 import { COUNTRIES } from '../data/caribbean';
+import { EU_COUNTRIES } from '../data/europe';
 
 /**
  * Pinned row under the header on every /ac-cost page, so readers can jump between
@@ -11,6 +12,7 @@ import { COUNTRIES } from '../data/caribbean';
  */
 const STATE_SLUGS = new Set(STATES.map((s) => s.slug));
 const CARIBBEAN_SLUGS = new Set(COUNTRIES.map((c) => c.slug));
+const EUROPE_SLUGS = new Set(EU_COUNTRIES.map((c) => c.slug));
 
 const slugOf = (pathname: string) => pathname.replace(/^\/ac-cost\/?/, '').split('/')[0];
 
@@ -35,6 +37,13 @@ export const REGIONS = [
     short: 'Canada',
     icon: Leaf,
     match: (p: string) => slugOf(p) === 'canada',
+  },
+  {
+    to: '/ac-cost/europe',
+    label: 'Europe',
+    short: 'Europe',
+    icon: Landmark,
+    match: (p: string) => slugOf(p) === 'europe' || EUROPE_SLUGS.has(slugOf(p)),
   },
 ];
 
