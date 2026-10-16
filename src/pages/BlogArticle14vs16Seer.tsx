@@ -7,6 +7,7 @@ import LeadMagnet from '../components/LeadMagnet';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import { STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, annualCost, usd, cents } from '../data/acCost';
 import { COUNTRIES } from '../data/caribbean';
+import { SEER2_FACTOR } from '../data/seer2';
 
 const PATH = '/blog/14-vs-16-seer';
 const TITLE = '14 vs 16 SEER: Is the Upgrade Worth It? (Payback Math)';
@@ -22,7 +23,7 @@ const PREMIUM_LOW = 300;
 const PREMIUM_HIGH = 1500;
 const LIFE = 15;
 /** SEER → SEER2 for ducted split systems (same factor as our converter). */
-const SPLIT_FACTOR = 0.9485;
+const SPLIT_FACTOR = SEER2_FACTOR;
 /** Cheapest SEER that can be installed new in the Southeast/Southwest (14.3 SEER2). */
 const SOUTH_BASE = 15;
 /** States where the 14.3 SEER2 minimum applies (DOE Southeast + Southwest regions). */

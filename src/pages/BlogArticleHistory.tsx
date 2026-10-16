@@ -73,7 +73,7 @@ export default function BlogArticleHistory() {
                 "name": "What replaced SEER in 2023?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "SEER2 replaced SEER on January 1, 2023. SEER2 uses a higher external static pressure (0.5 inches of water column vs 0.1 IWC) during testing to better simulate real-world ductwork resistance. This means SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings for the same physical equipment."
+                  "text": "SEER2 replaced SEER on January 1, 2023. SEER2 uses a higher external static pressure (0.5 inches of water column vs 0.1 IWC) during testing to better simulate real-world ductwork resistance. This means SEER2 ratings are approximately 5% lower than equivalent SEER ratings for the same physical equipment."
                 }
               }
             ]

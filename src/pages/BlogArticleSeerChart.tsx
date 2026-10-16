@@ -4,6 +4,7 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { toSeer2 } from '../data/seer2';
 import { getState, annualCost, annualKwh, usd, cents, US_RATE, RATES_AS_OF } from '../data/acCost';
 
 // Every dollar figure on this page is computed from these: a 3-ton central AC
@@ -50,13 +51,13 @@ const chartRows = [
 ].map((r) => ({ ...r, kwh: annualKwh(TONS, r.seer, HRS), avg: cost(r.seer, AVG), high: cost(r.seer, HIGH) }));
 
 const seer2Conversions = [
-  { seer: 14, seer2: 13.4 },
-  { seer: 15, seer2: 14.3 },
-  { seer: 16, seer2: 15.3 },
-  { seer: 18, seer2: 17.2 },
-  { seer: 20, seer2: 19.1 },
-  { seer: 22, seer2: 21.0 },
-  { seer: 25, seer2: 23.9 },
+  { seer: 14, seer2: toSeer2(14) },
+  { seer: 15, seer2: toSeer2(15) },
+  { seer: 16, seer2: toSeer2(16) },
+  { seer: 18, seer2: toSeer2(18) },
+  { seer: 20, seer2: toSeer2(20) },
+  { seer: 22, seer2: toSeer2(22) },
+  { seer: 25, seer2: toSeer2(25) },
 ];
 
 function UpgradeSavingsTable({ rows }: { rows: typeof avgRateUpgrades }) {
@@ -310,7 +311,7 @@ export default function BlogArticleSeerChart() {
 
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Technology:</strong> Often available with two-stage compressors and variable-speed blower motors. Better humidity control than single-stage units. Quieter operation.</p>
             <p className="text-gray-700 leading-relaxed mb-2"><strong>Typical installed cost:</strong> $4,500-$7,000 (3-ton system)</p>
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>ENERGY STAR certified:</strong> Often, but check the model. SEER 16 is about 15.3 SEER2, just over ENERGY STAR's 15.2 SEER2 threshold for a split central AC, and the unit also needs at least 12.0 EER2.</p>
+            <p className="text-gray-700 leading-relaxed mb-2"><strong>ENERGY STAR certified:</strong> Often, but check the model. SEER 16 is about 15.2 SEER2, right at ENERGY STAR's 15.2 SEER2 threshold for a split central AC, and the unit also needs at least 12.0 EER2.</p>
             <p className="text-gray-700 leading-relaxed mb-6"><strong>Best for:</strong> Most homeowners in moderate to hot climates. Best balance of upfront cost and long-term savings. If you're only going to look at one tier, this is it.</p>
 
             <hr className="my-8 border-gray-200" />
@@ -426,7 +427,7 @@ export default function BlogArticleSeerChart() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">SEER vs. SEER2: A Quick Note</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              In 2023, the Department of Energy introduced <strong>SEER2</strong> — an updated testing standard that better reflects real-world performance. SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings for the same equipment. A system rated SEER 16 under the old standard would be rated about SEER2 15.3 under the new one. For the full breakdown of what changed and why, see our guide: <Link to="/blog/seer-vs-seer2-explained" className="text-teal-600 hover:text-teal-700 font-medium">SEER vs SEER2 Explained</Link>. Weighing an upgrade? See <Link to="/blog/14-vs-16-seer" className="text-teal-600 hover:text-teal-700 font-medium">14 vs 16 SEER</Link> and <Link to="/blog/16-vs-18-seer" className="text-teal-600 hover:text-teal-700 font-medium">16 vs 18 SEER</Link>.
+              In 2023, the Department of Energy introduced <strong>SEER2</strong> — an updated testing standard that better reflects real-world performance. SEER2 ratings are approximately 5% lower than equivalent SEER ratings for the same equipment. A system rated SEER 16 under the old standard would be rated about SEER2 15.2 under the new one. For the full breakdown of what changed and why, see our guide: <Link to="/blog/seer-vs-seer2-explained" className="text-teal-600 hover:text-teal-700 font-medium">SEER vs SEER2 Explained</Link>. Weighing an upgrade? See <Link to="/blog/14-vs-16-seer" className="text-teal-600 hover:text-teal-700 font-medium">14 vs 16 SEER</Link> and <Link to="/blog/16-vs-18-seer" className="text-teal-600 hover:text-teal-700 font-medium">16 vs 18 SEER</Link>.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -517,7 +518,7 @@ export default function BlogArticleSeerChart() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">What's the most efficient SEER rating available?</h3>
-                <p className="text-gray-700 leading-relaxed">Some residential systems now exceed SEER 25 (SEER2 23.9+). Mini-split ductless systems can reach SEER 30-38 in some configurations. However, the highest-rated systems are significantly more expensive and the incremental savings over SEER 20 are modest.</p>
+                <p className="text-gray-700 leading-relaxed">Some residential systems now exceed SEER 25 (SEER2 23.8+). Mini-split ductless systems can reach SEER 30-38 in some configurations. However, the highest-rated systems are significantly more expensive and the incremental savings over SEER 20 are modest.</p>
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Does a higher SEER rating cool my house faster?</h3>
@@ -525,7 +526,7 @@ export default function BlogArticleSeerChart() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">How does SEER relate to SEER2?</h3>
-                <p className="text-gray-700 leading-relaxed">SEER2 is the updated testing standard introduced in 2023. SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings. A SEER 16 system is approximately SEER2 15.3.</p>
+                <p className="text-gray-700 leading-relaxed">SEER2 is the updated testing standard introduced in 2023. SEER2 ratings are approximately 5% lower than equivalent SEER ratings. A SEER 16 system is approximately SEER2 15.2.</p>
               </div>
             </div>
 

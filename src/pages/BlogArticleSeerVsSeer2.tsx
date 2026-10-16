@@ -4,23 +4,33 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import { SEER2_FACTOR, toSeer2 } from '../data/seer2';
+import { getState, annualCost, usd, cents, US_RATE, RATES_AS_OF } from '../data/acCost';
+
+const HI = getState('hawaii')!;
+// Savings example: 3-ton, 1,500 full-load hours, SEER 10 vs the old-SEER-16 equivalent.
+const exCost = (seer: number, rate: number) => annualCost(3, seer, 1500, rate);
+const EX_RATES = [
+  { label: `At average U.S. rates (${cents(US_RATE)}/kWh, EIA ${RATES_AS_OF})`, rate: US_RATE },
+  { label: `At high rates (Hawaii, ${cents(HI.rate)}/kWh)`, rate: HI.rate },
+];
 
 const conversionChart = [
-  { seer: 10, seer2: 9.6, note: 'Old pre-2006 systems' },
-  { seer: 11, seer2: 10.5, note: 'Early 2000s budget units' },
-  { seer: 12, seer2: 11.5, note: 'Common 2000s standard' },
-  { seer: 13, seer2: 12.4, note: '2006-2023 minimum (North)' },
-  { seer: 14, seer2: 13.4, note: 'Current minimum (North)' },
-  { seer: 15, seer2: 14.3, note: 'Current minimum (South)' },
-  { seer: 16, seer2: 15.3, note: 'Popular mid-range' },
-  { seer: 17, seer2: 16.2, note: 'High-efficiency single-stage' },
-  { seer: 18, seer2: 17.2, note: 'Two-stage systems' },
-  { seer: 19, seer2: 18.1, note: 'Premium two-stage' },
-  { seer: 20, seer2: 19.1, note: 'Variable-speed entry' },
-  { seer: 21, seer2: 20.1, note: 'Variable-speed standard' },
-  { seer: 22, seer2: 21.0, note: 'Premium variable-speed' },
-  { seer: 24, seer2: 22.9, note: 'Elite residential' },
-  { seer: 25, seer2: 23.9, note: 'Maximum efficiency' },
+  { seer: 10, seer2: toSeer2(10), note: 'Old pre-2006 systems' },
+  { seer: 11, seer2: toSeer2(11), note: 'Early 2000s budget units' },
+  { seer: 12, seer2: toSeer2(12), note: 'Common 2000s standard' },
+  { seer: 13, seer2: toSeer2(13), note: '2006-2023 minimum (North)' },
+  { seer: 14, seer2: toSeer2(14), note: 'Current minimum (North)' },
+  { seer: 15, seer2: toSeer2(15), note: 'Current minimum (South)' },
+  { seer: 16, seer2: toSeer2(16), note: 'Popular mid-range' },
+  { seer: 17, seer2: toSeer2(17), note: 'High-efficiency single-stage' },
+  { seer: 18, seer2: toSeer2(18), note: 'Two-stage systems' },
+  { seer: 19, seer2: toSeer2(19), note: 'Premium two-stage' },
+  { seer: 20, seer2: toSeer2(20), note: 'Variable-speed entry' },
+  { seer: 21, seer2: toSeer2(21), note: 'Variable-speed standard' },
+  { seer: 22, seer2: toSeer2(22), note: 'Premium variable-speed' },
+  { seer: 24, seer2: toSeer2(24), note: 'Elite residential' },
+  { seer: 25, seer2: toSeer2(25), note: 'Maximum efficiency' },
 ];
 
 const regionalMinimums = [
@@ -39,7 +49,7 @@ export default function BlogArticleSeerVsSeer2() {
     <>
       <Helmet>
         <title>SEER vs SEER2 Explained ⚡ What Changed & How to Convert</title>
-        <meta name="description" content="SEER2 ratings run ~4.5% lower than old SEER for identical hardware. Why it happens, the conversion formula, and new federal minimums by region." />
+        <meta name="description" content="SEER2 ratings run ~5% lower than old SEER for identical hardware. Why it happens, the conversion formula, and new federal minimums by region." />
         <meta name="keywords" content="SEER vs SEER2, SEER2 explained, SEER to SEER2 conversion, SEER2 minimum requirements, what is SEER2, SEER2 rating chart" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://airconditionanswers.com/blog/seer-vs-seer2-explained" />
@@ -98,7 +108,7 @@ export default function BlogArticleSeerVsSeer2() {
 
             <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg">
               <p className="text-gray-800">
-                <strong>In 30 seconds:</strong> SEER2 is the updated efficiency rating standard that replaced SEER on January 1, 2023. The same air conditioner scores about 4.5% lower under SEER2 because the new test simulates real-world conditions more accurately. A system previously rated SEER 16 is now rated approximately SEER2 15.3 — it didn't get less efficient, the test just got more honest. New federal minimums are SEER2 13.4 in northern states and SEER2 14.3 in southern states. To convert: divide the old SEER number by 1.046.
+                <strong>In 30 seconds:</strong> SEER2 is the updated efficiency rating standard that replaced SEER on January 1, 2023. The same air conditioner scores about 5% lower under SEER2 because the new test simulates real-world conditions more accurately. A system previously rated SEER 16 is now rated approximately SEER2 15.2 — it didn't get less efficient, the test just got more honest. New federal minimums are SEER2 13.4 in northern states and SEER2 14.3 in southern states. To convert: multiply the old SEER number by 0.95.
               </p>
             </div>
 
@@ -165,7 +175,7 @@ export default function BlogArticleSeerVsSeer2() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              The result: <strong>the same air conditioner scores about 4.5% lower</strong> under SEER2 because the test is harder — more realistic, but harder. A system that earned SEER 16 under the old test now earns approximately <strong>SEER2 15.3</strong> under the new test.
+              The result: <strong>the same air conditioner scores about 5% lower</strong> under SEER2 because the test is harder — more realistic, but harder. A system that earned SEER 16 under the old test now earns approximately <strong>SEER2 15.2</strong> under the new test.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -189,7 +199,7 @@ export default function BlogArticleSeerVsSeer2() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              SEER2 closes that gap. The numbers are lower, but they're more honest. When you buy a SEER2 15.3 system today, the performance you get in your home will be much closer to what that number promises.
+              SEER2 closes that gap. The numbers are lower, but they're more honest. When you buy a SEER2 15.2 system today, the performance you get in your home will be much closer to what that number promises.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -226,8 +236,8 @@ export default function BlogArticleSeerVsSeer2() {
             <p className="text-gray-700 leading-relaxed mb-4">If you need to convert any SEER rating to SEER2:</p>
 
             <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-4 rounded-r-lg">
-              <p className="text-gray-800 font-medium mb-2">SEER2 ≈ SEER × 0.9485</p>
-              <p className="text-gray-800 font-medium">And the reverse: SEER ≈ SEER2 ÷ 0.9485</p>
+              <p className="text-gray-800 font-medium mb-2">SEER2 ≈ SEER × {SEER2_FACTOR}</p>
+              <p className="text-gray-800 font-medium">And the reverse: SEER ≈ SEER2 ÷ {SEER2_FACTOR}</p>
             </div>
 
             <div className="mb-6">
@@ -238,11 +248,11 @@ export default function BlogArticleSeerVsSeer2() {
             </div>
 
             <p className="text-gray-700 leading-relaxed mb-2">
-              <strong>Example:</strong> Your contractor quotes a SEER2 15.3 system. What's that in old SEER terms?
+              <strong>Example:</strong> Your contractor quotes a SEER2 15.2 system. What's that in old SEER terms?
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              15.3 × 1.046 = <strong>16.0 SEER</strong>. It's essentially a SEER 16 system under the old rating. Same equipment. Different test. Lower number.
+              15.2 ÷ 0.95 = <strong>16.0 SEER</strong>. It's essentially a SEER 16 system under the old rating. Same equipment. Different test. Lower number.
             </p>
 
             <hr className="my-8 border-gray-200" />
@@ -330,7 +340,7 @@ export default function BlogArticleSeerVsSeer2() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              Contractor A is using the old SEER rating (maybe from older marketing materials or habit). Contractor B is using the current SEER2 rating. A 16 SEER system is approximately 15.3 SEER2 — so a quote of 15.2 SEER2 is virtually identical.
+              Contractor A is using the old SEER rating (maybe from older marketing materials or habit). Contractor B is using the current SEER2 rating. A 16 SEER system is approximately 15.2 SEER2 — so a quote of 15.2 SEER2 is the same efficiency.
             </p>
 
             <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">How to Protect Yourself:</h3>
@@ -359,7 +369,7 @@ export default function BlogArticleSeerVsSeer2() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              Under SEER2, the same system is rated 15.3. The savings you calculate from that number are <strong>closer to what you'll actually get.</strong> The system didn't get worse. Your savings estimate just got more accurate.
+              Under SEER2, the same system is rated 15.2. The savings you calculate from that number are <strong>closer to what you'll actually get.</strong> The system didn't get worse. Your savings estimate just got more accurate.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -369,68 +379,41 @@ export default function BlogArticleSeerVsSeer2() {
             <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">Real-World Savings Example</h3>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              Let's say you're replacing a 15-year-old SEER 10 system with a new SEER2 15.3 system (equivalent to the old SEER 16). Using a 3-ton system, 1,500 hours/year:
+              Let's say you're replacing a 15-year-old SEER 10 system with a new SEER2 15.2 system (equivalent to the old SEER 16). Using a 3-ton system, 1,500 hours/year:
             </p>
 
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>At average U.S. rates (17.45¢/kWh):</strong></p>
-
-            <div className="overflow-x-auto mb-6">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="bg-teal-50">
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">System</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Rating</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual Cost</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">Old system</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER 10</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$942/year</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">New system</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER2 15.3 (~SEER 16)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$589/year</td>
-                  </tr>
-                  <tr className="bg-teal-50 font-semibold">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-900" colSpan={2}>Annual savings</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-900">$353/year</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p className="text-gray-700 leading-relaxed mb-2"><strong>At high rates (39.8¢/kWh):</strong></p>
-
-            <div className="overflow-x-auto mb-6">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="bg-teal-50">
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">System</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Rating</th>
-                    <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual Cost</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">Old system</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER 10</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$2,149/year</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">New system</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER2 15.3 (~SEER 16)</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">$1,343/year</td>
-                  </tr>
-                  <tr className="bg-teal-50 font-semibold">
-                    <td className="border border-gray-200 px-4 py-3 text-gray-900" colSpan={2}>Annual savings</td>
-                    <td className="border border-gray-200 px-4 py-3 text-gray-900">$806/year</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            {EX_RATES.map(({ label, rate }) => (
+              <div key={label}>
+                <p className="text-gray-700 leading-relaxed mb-2"><strong>{label}:</strong></p>
+                <div className="overflow-x-auto mb-6">
+                  <table className="w-full border-collapse text-sm">
+                    <thead>
+                      <tr className="bg-teal-50">
+                        <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">System</th>
+                        <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Rating</th>
+                        <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">Annual cost (estimate)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-200 px-4 py-3 text-gray-700">Old system</td>
+                        <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER 10</td>
+                        <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">{usd(exCost(10, rate))}/year</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-200 px-4 py-3 text-gray-700">New system</td>
+                        <td className="border border-gray-200 px-4 py-3 text-gray-700">SEER2 {toSeer2(16)} (~SEER 16)</td>
+                        <td className="border border-gray-200 px-4 py-3 text-gray-700 font-medium">{usd(exCost(16, rate))}/year</td>
+                      </tr>
+                      <tr className="bg-teal-50 font-semibold">
+                        <td className="border border-gray-200 px-4 py-3 text-gray-900" colSpan={2}>Annual savings</td>
+                        <td className="border border-gray-200 px-4 py-3 text-gray-900">{usd(exCost(10, rate) - exCost(16, rate))}/year</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
 
             <p className="text-gray-700 leading-relaxed mb-4">
               The savings are real regardless of which rating system you use. The SEER2 number is just a more honest starting point.
@@ -503,12 +486,12 @@ export default function BlogArticleSeerVsSeer2() {
 
             <div className="space-y-6 mb-6">
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Is a SEER2 15.3 system worse than an old SEER 16 system?</h3>
-                <p className="text-gray-700 leading-relaxed">No. They're the same system. SEER2 15.3 is approximately equal to the old SEER 16. The equipment is identical — only the testing method changed. The lower number reflects a more realistic performance estimate, not a worse product.</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Is a SEER2 15.2 system worse than an old SEER 16 system?</h3>
+                <p className="text-gray-700 leading-relaxed">No. They're the same system. SEER2 15.2 is approximately equal to the old SEER 16. The equipment is identical — only the testing method changed. The lower number reflects a more realistic performance estimate, not a worse product.</p>
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Can I still compare my old SEER 10 system to a new SEER2 system?</h3>
-                <p className="text-gray-700 leading-relaxed">Yes, but convert to the same rating first. Divide your old SEER rating by 1.046 to get the SEER2 equivalent (SEER 10 ≈ SEER2 9.6). Then compare directly to the new system's SEER2 rating. Or use our calculator — it handles both rating systems.</p>
+                <p className="text-gray-700 leading-relaxed">Yes, but convert to the same rating first. Multiply your old SEER rating by 0.95 to get the SEER2 equivalent (SEER 10 ≈ SEER2 9.5). Then compare directly to the new system's SEER2 rating. Or use our calculator — it handles both rating systems.</p>
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Do I need to replace my AC because of SEER2?</h3>
@@ -548,8 +531,8 @@ export default function BlogArticleSeerVsSeer2() {
 
             <ol className="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
               <li><strong>Know your current system's efficiency.</strong> Whether it's rated in SEER or SEER2, find the number so you have a baseline.</li>
-              <li><strong>Convert to the same standard before comparing.</strong> Use our conversion chart above or the formula: SEER2 ≈ SEER ÷ 1.046.</li>
-              <li><strong>Focus on the savings, not the rating number.</strong> A jump from SEER 10 to SEER2 15.3 saves you just as much money as the old "SEER 10 to SEER 16" comparison. The dollars don't change — only the label did.</li>
+              <li><strong>Convert to the same standard before comparing.</strong> Use our conversion chart above or the formula: SEER2 ≈ SEER × 0.95.</li>
+              <li><strong>Focus on the savings, not the rating number.</strong> A jump from SEER 10 to SEER2 15.2 saves you just as much money as the old "SEER 10 to SEER 16" comparison. The dollars don't change — only the label did.</li>
               <li><strong>Run the numbers for YOUR situation.</strong> Your savings depend on your electricity rate, your climate, your usage, and your system size — not just the SEER2 rating.</li>
             </ol>
 

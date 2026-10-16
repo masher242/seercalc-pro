@@ -7,6 +7,7 @@ import LeadMagnet from '../components/LeadMagnet';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import { STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, annualCost, usd, cents } from '../data/acCost';
 import { COUNTRIES } from '../data/caribbean';
+import { SEER2_FACTOR } from '../data/seer2';
 
 const PATH = '/blog/16-vs-18-seer';
 const TITLE = '16 vs 18 SEER: Is the Upgrade Worth It? (Payback Math)';
@@ -22,7 +23,7 @@ const PREMIUM_LOW = 1000;
 const PREMIUM_HIGH = 2500;
 const LIFE = 15;
 /** SEER → SEER2 for ducted split systems (same factor as our converter). */
-const SPLIT_FACTOR = 0.9485;
+const SPLIT_FACTOR = SEER2_FACTOR;
 
 const th = 'border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900';
 const td = 'border border-gray-200 px-3 py-2.5 text-gray-700';

@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useCallback } from 'react';
 import { ArrowLeft, Calculator, ArrowRight, RefreshCw } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
+import { SEER2_FACTOR } from '../data/seer2';
 import { annualCost, usd, cents, US_RATE } from '../data/acCost';
 
-// Conversion constants per DOE methodology
-// SEER2 = SEER × M where M = 0.9485 for split-system ACs and heat pumps
-// For mini-splits / ductless: M = 1.0 (no duct pressure change)
-const SPLIT_FACTOR = 0.9485;
+// SEER2 ≈ SEER × 0.95 for ducted split ACs and heat pumps (one factor site-wide, see data/seer2.ts).
+// Ductless mini-splits: ratings barely change, so we show them as roughly equal.
+const SPLIT_FACTOR = SEER2_FACTOR;
 const MINI_SPLIT_FACTOR = 1.0;
 
 // Worked example for the shopping callout: old SEER 16 vs a quoted SEER2 17,
@@ -119,7 +119,7 @@ export default function CalculatorSeerToSeer2() {
                 "name": "How do I convert SEER to SEER2?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "To convert SEER to SEER2 for a standard split-system air conditioner or heat pump, multiply the SEER rating by 0.9485. For example, SEER 16 × 0.9485 = SEER2 15.2. For ductless mini-splits, the conversion factor is 1.0 (SEER and SEER2 are equivalent). SEER2 was introduced in January 2023 and uses more realistic duct pressure conditions, which is why SEER2 ratings are slightly lower than equivalent SEER ratings for ducted systems."
+                  "text": "To convert SEER to SEER2 for a standard split-system air conditioner or heat pump, multiply the SEER rating by 0.95. For example, SEER 16 × 0.95 = SEER2 15.2. For ductless mini-splits the two numbers are nearly the same; check the model's AHRI listing for its SEER2. SEER2 was introduced in January 2023 and uses more realistic duct pressure conditions, which is why SEER2 ratings are slightly lower than equivalent SEER ratings for ducted systems."
                 }
               },
               {
@@ -135,7 +135,7 @@ export default function CalculatorSeerToSeer2() {
                 "name": "Is SEER 16 the same as SEER2 15?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "SEER 16 converts to approximately SEER2 15.2 (16 × 0.9485 = 15.18). So yes, SEER 16 and SEER2 15 refer to essentially the same physical equipment efficiency — just measured under different test standards. When comparing a pre-2023 system rated at SEER 16 to a new system rated at SEER2 15.2, they are equivalent in real-world efficiency."
+                  "text": "SEER 16 converts to approximately SEER2 15.2 (16 × 0.95 = 15.2). So yes, SEER 16 and SEER2 15 refer to essentially the same physical equipment efficiency — just measured under different test standards. When comparing a pre-2023 system rated at SEER 16 to a new system rated at SEER2 15.2, they are equivalent in real-world efficiency."
                 }
               },
               {
@@ -177,7 +177,7 @@ export default function CalculatorSeerToSeer2() {
         {/* Quick Answer */}
         <div className="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg mb-8 text-sm">
           <p className="font-semibold text-teal-800 mb-1">The Quick Formula</p>
-          <p className="text-gray-700"><strong>SEER2 = SEER × 0.9485</strong> for split-system central AC and heat pumps. So SEER 16 ≈ SEER2 15.2. For ductless mini-splits, SEER and SEER2 are the same number. SEER2 was introduced January 2023 — all new systems are now rated in SEER2.</p>
+          <p className="text-gray-700"><strong>SEER2 ≈ SEER × 0.95</strong> for split-system central AC and heat pumps. So SEER 16 ≈ SEER2 15.2. For ductless mini-splits, SEER and SEER2 are nearly the same; check the AHRI listing for the exact SEER2. SEER2 was introduced January 2023 — all new systems are now rated in SEER2.</p>
         </div>
 
         {/* Main converter */}
@@ -292,8 +292,8 @@ export default function CalculatorSeerToSeer2() {
                 </div>
                 <p className="text-sm text-center text-gray-600">
                   {systemType === 'split'
-                    ? `${result.seer} SEER × 0.9485 = ${result.seer2} SEER2`
-                    : `For ductless mini-splits, SEER and SEER2 are equivalent (factor = 1.0)`
+                    ? `${result.seer} SEER × ${SPLIT_FACTOR} = ${result.seer2} SEER2`
+                    : `For ductless mini-splits, SEER and SEER2 are nearly the same; check the AHRI listing for the exact SEER2`
                   }
                 </p>
               </div>
@@ -403,7 +403,7 @@ export default function CalculatorSeerToSeer2() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">SEER vs. SEER2 — Common Questions</h2>
           <div className="space-y-4">
             {[
-              { q: "How do I convert SEER to SEER2?", a: "Multiply SEER by 0.9485 for split-system central AC or heat pumps. SEER2 = SEER × 0.9485. For example: SEER 16 × 0.9485 = SEER2 15.2. For ductless mini-splits, SEER and SEER2 are the same — the factor is 1.0 because mini-splits don't have ductwork." },
+              { q: "How do I convert SEER to SEER2?", a: "Multiply SEER by 0.95 for split-system central AC or heat pumps: SEER2 ≈ SEER × 0.95. For example: SEER 16 × 0.95 = SEER2 15.2. For ductless mini-splits, SEER and SEER2 are nearly the same because there is little or no ductwork; check the AHRI listing for the exact SEER2." },
               { q: "What is the difference between SEER and SEER2?", a: "Both measure seasonal cooling efficiency, but SEER2 uses more realistic test conditions. SEER tests use 0.1 inches of water column (IWC) external static pressure — essentially no ductwork resistance. SEER2 uses 0.5 IWC, which better simulates actual home ductwork. This makes SEER2 ratings about 4.5–5% lower for the same physical equipment. SEER2 became required for all new equipment on January 1, 2023." },
               { q: "Is SEER 16 the same as SEER2 15?", a: "Nearly identical. SEER 16 converts to SEER2 15.2. If you see SEER2 15 on a new system and your old system was SEER 16, you're getting essentially the same efficiency — not an upgrade, not a downgrade. Make sure the contractor is comparing apples to apples." },
               { q: "Why did SEER change to SEER2?", a: "The Department of Energy updated the testing standard because the old SEER tests were too optimistic. Real-world ductwork creates significantly more resistance than the old 0.1 IWC test pressure assumed. SEER2's 0.5 IWC pressure better reflects how systems actually perform in homes — giving buyers a more accurate picture of real-world efficiency." },

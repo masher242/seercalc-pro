@@ -117,7 +117,7 @@ export default function BlogArticleWhatIsSEER() {
                 "name": "What is SEER2 and how is it different from SEER?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "SEER2 is the updated efficiency standard introduced in January 2023. It uses more realistic testing conditions (higher static pressure of 0.5 IWC vs 0.1 IWC) that better simulate real-world ductwork. SEER2 ratings are approximately 4.5% lower than equivalent SEER ratings for the same equipment. A system previously rated SEER 16 is now rated approximately SEER2 15.3."
+                  "text": "SEER2 is the updated efficiency standard introduced in January 2023. It uses more realistic testing conditions (higher static pressure of 0.5 IWC vs 0.1 IWC) that better simulate real-world ductwork. SEER2 ratings are approximately 5% lower than equivalent SEER ratings for the same equipment. A system previously rated SEER 16 is now rated approximately SEER2 15.2."
                 }
               }
             ]
