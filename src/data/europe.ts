@@ -24,6 +24,11 @@ export interface EuCountry {
   sourceUrl: string;
   cities: City[];
   refCity: string;
+  /** UK only: daily standing charge (local currency) and Ofgem's typical yearly kWh, used to
+   * spread the standing charge per kWh for the Europe map */
+  standingChargePerDay?: number;
+  typicalKwh?: number;
+  typicalKwhSource?: string;
   tariff: string[];
   article?: string;
   /** name as used mid-sentence, e.g. "the United Kingdom" */

@@ -127,6 +127,9 @@
       "rate": 0.2632,
       "rateNote": "Ofgem price cap unit rate (Direct Debit, GB average, no VAT)",
       "asOf": "October 1 to December 31, 2026",
+      "standingChargePerDay": 0.5483,
+      "typicalKwh": 2500,
+      "typicalKwhSource": "Ofgem typical domestic consumption value (medium, electricity), from July 1, 2026",
       "source": "Ofgem energy price cap, electricity unit rate, Direct Debit, GB average, October 1 to December 31, 2026",
       "sourceUrl": "https://ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-unit-rates-and-standing-charges",
       "cities": [
