@@ -69,7 +69,7 @@ export default function USCostMap() {
   const pick = (abbr: string) => setSelected((cur) => (cur === abbr ? null : abbr));
 
   return (
-    <section aria-labelledby="map-heading" className="mb-10">
+    <section id="map" aria-labelledby="map-heading" className="mb-10 scroll-mt-40">
       <div className="flex flex-wrap items-end justify-between gap-3 mb-3">
         <div>
           <h2 id="map-heading" className="text-xl sm:text-2xl font-bold text-gray-900">
@@ -231,5 +231,24 @@ export default function USCostMap() {
         )}
       </div>
     </section>
+  );
+}
+
+/** Small, non-interactive version of the yearly-cost map (homepage teaser). */
+export function USCostMapPreview({ className = '' }: { className?: string }) {
+  const def = METRICS.year;
+  return (
+    <svg viewBox="0 0 975 610" className={className} aria-hidden="true" focusable="false">
+      {STATES.map((s) => (
+        <path
+          key={s.abbr}
+          d={STATE_PATHS[s.abbr]}
+          fill={RAMP[binOf(def, def.value(s))]}
+          stroke="#ffffff"
+          strokeWidth={1.5}
+          strokeLinejoin="round"
+        />
+      ))}
+    </svg>
   );
 }
