@@ -93,7 +93,7 @@ export function money(currency: EuCountry['currency'], n: number, digits = 0) {
   return n.toLocaleString('en-GB', { style: 'currency', currency, minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
 
-/** Price per kWh as shown on the pages, e.g. "€0.2669" or "26.32p". */
+/** Price per kWh as shown on the pages, e.g. "€0.2509" or "26.32p". */
 export function unitPrice(c: Pick<EuCountry, 'currency' | 'rate'>) {
   return c.currency === 'GBP' ? `${(c.rate * 100).toFixed(2)}p` : `€${c.rate.toFixed(4)}`;
 }

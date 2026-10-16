@@ -1,6 +1,6 @@
 {
   "_readme": "Electricity prices for the Europe AC cost pages. rate is the price per kWh in local currency that running an air conditioner adds to a bill (see rateNote for exactly what it is). Each country has its own source and date: update rate, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for a split AC (the EU energy label assumes 350 for an average European climate). usdPerEur and gbpPerEur are for the U.S./UK comparisons only.",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "usdPerEur": 1.116,
   "gbpPerEur": 0.847,
   "fxAsOf": "October 14, 2026",
@@ -9,9 +9,9 @@
       "name": "Spain",
       "slug": "spain",
       "currency": "EUR",
-      "rate": 0.2669,
+      "rate": 0.2509,
       "rateNote": "average household price, all taxes and fixed charges included",
-      "asOf": "second half of 2025",
+      "asOf": "first half of 2026",
       "source": "Eurostat, electricity prices for household consumers (nrg_pc_204), 2,500–4,999 kWh a year, all taxes and levies",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table",
       "cities": [

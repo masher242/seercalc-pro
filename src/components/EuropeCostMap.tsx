@@ -61,6 +61,16 @@ const SMALL = ['LU', 'MT', 'CY'];
 /** No abbreviation drawn on these (too small, or have a button). */
 const NO_LABEL = new Set([...SMALL, 'SI', 'BE', 'NL']);
 
+const HALF = { '1': 'January to June', '2': 'July to December' } as Record<string, string>;
+/** "2025-S2" → "July to December 2025" */
+const halfLabel = (period: string) => {
+  const [year, half] = period.split('-S');
+  return `${HALF[half]} ${year}`;
+};
+const avgPeriod = (eu as { euAveragePeriod?: string }).euAveragePeriod;
+/** Shown after the EU average when it covers an older half-year than the map. */
+const avgNote = avgPeriod && avgPeriod !== eu.period ? `, ${halfLabel(avgPeriod)}; not yet published for ${eu.periodLabel}` : '';
+
 const binOf = (v: number) => {
   const i = BREAKS.findIndex((b) => v < b);
   return i === -1 ? BREAKS.length : i;
@@ -89,7 +99,7 @@ export default function EuropeCostMap() {
       <p className="text-sm text-gray-500 mb-3">
         Average household price per kWh, all taxes included, {eu.periodLabel} (Eurostat)
         {OLDER.length > 0 && <>; newest available for {olderList}</>}. EU average{' '}
-        {eur(eu.euAverage)} (about {usCents(eu.euAverage)} in U.S. money; the U.S. average is {cents(US_RATE)}).
+        {eur(eu.euAverage)} (about {usCents(eu.euAverage)} in U.S. money{avgNote}). U.S. average: {cents(US_RATE)}.
       </p>
 
       <div className="-mx-3 sm:mx-0 rounded-lg border border-gray-200 bg-white p-1.5 sm:p-3">
