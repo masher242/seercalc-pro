@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Star, Clock } from 'lucide-react';
+import EditorialNote from '../components/EditorialNote';
 
 const liveBrands = [
   {
@@ -151,7 +152,7 @@ export default function BrandsIndex() {
         {/* Quick Answer */}
         <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-10">
           <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
-          <p className="text-gray-800">The most reliable central AC brands in 2026 are <strong>Trane and American Standard</strong> (5/5 Consumer Reports), followed by <strong>Carrier and Lennox</strong>. For best budget value: <strong>Goodman</strong> (Daikin-owned). For mini-splits: <strong>Mitsubishi Electric</strong>. But brand matters less than installer quality — roughly 80% of a system's lifespan depends on installation, not the badge on the unit.</p>
+          <p className="text-gray-800">The most reliable central AC brands in 2026 are <strong>Trane and American Standard</strong> (5/5 Consumer Reports), followed by <strong>Carrier and Lennox</strong>. For best budget value: <strong>Goodman</strong> (Daikin-owned). For mini-splits: <strong>Mitsubishi Electric</strong>. But in our view, and that of most contractors, installer quality matters more than the badge on the unit.</p>
         </div>
 
         {/* Tier overview */}
@@ -167,6 +168,11 @@ export default function BrandsIndex() {
             </div>
           ))}
         </div>
+
+                <EditorialNote kind="Our ranking">
+          Tiers are our editorial ranking, weighing published reliability ratings, warranty terms, price and
+          ease of service. They are opinion, not test results.
+        </EditorialNote>
 
         {/* Live reviews */}
         <div className="mb-10">

@@ -4,6 +4,7 @@ import { ArrowLeft, AlertTriangle, DollarSign, Calendar, ThermometerSun, Wrench,
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { articleJsonLd } from '../data/site';
+import EditorialNote from '../components/EditorialNote';
 
 export default function BlogArticleReplacement() {
   return (
@@ -403,6 +404,11 @@ export default function BlogArticleReplacement() {
                 <p className="text-lg"><strong>If result &gt; $5,000:</strong> Replace</p>
                 <p className="text-lg"><strong>If result &lt; $5,000:</strong> Repair</p>
               </div>
+            <EditorialNote>
+              The $5,000 rule is an industry rule of thumb, not a standard or a study result. Use it as a starting
+              point, alongside the system's condition, efficiency, refrigerant and how long you plan to stay.
+            </EditorialNote>
+
 
               <div className="space-y-4">
                 <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
@@ -447,7 +453,7 @@ export default function BlogArticleReplacement() {
 
               <div className="space-y-6">
                 <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Age 1-7 Years: Almost Always Repair</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Age 1-7 Years: Usually Repair</h3>
                   <p className="mb-3"><strong>Why:</strong> Should be under warranty, modern systems are reliable, lots of life left</p>
                   <p className="text-sm"><strong>Typical repairs:</strong> Capacitor ($150-$400), Contactor ($150-$300), Fan motor ($400-$800)</p>
                   <p className="font-semibold text-green-700 mt-2">Action: Repair confidently</p>

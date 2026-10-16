@@ -4,6 +4,7 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import EditorialNote from '../components/EditorialNote';
 
 export default function BlogArticleACRepairCost() {
   return (
@@ -596,6 +597,11 @@ export default function BlogArticleACRepairCost() {
                 <li>If &lt; $5,000: Repair makes sense</li>
               </ul>
             </div>
+            <EditorialNote>
+              The $5,000 rule is an industry rule of thumb, not a standard or a study result. Use it as a starting
+              point, alongside the system's condition, efficiency, refrigerant and how long you plan to stay.
+            </EditorialNote>
+
 
             <div className="bg-gray-50 rounded-lg p-6 mb-6">
               <h4 className="font-bold text-gray-900 mb-3">Examples:</h4>

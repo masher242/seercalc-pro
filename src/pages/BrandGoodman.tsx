@@ -616,7 +616,7 @@ export default function BrandGoodman() {
 
               <div className="bg-teal-50 border border-teal-200 rounded-lg p-5 mb-6">
                 <p className="text-sm font-semibold text-teal-800 mb-2">The 80/20 rule applies here more than anywhere</p>
-                <p className="text-sm text-gray-700">Roughly 80% of a system's lifespan depends on installation quality — proper sizing (Manual J calculation), correct refrigerant charge, clean line set installation, verified airflow. A Goodman installed properly by an experienced contractor will dramatically outperform a Trane installed carelessly. Before spending $3,000 more on a brand upgrade, spend that energy verifying your installer's quality. Ask for references. Ask if they do Manual J calculations. Ask how they verify refrigerant charge. Those answers matter more than the badge on the unit.</p>
+                <p className="text-sm text-gray-700">Installation quality matters more than the brand for how long a system lasts — proper sizing (Manual J calculation), correct refrigerant charge, clean line set installation, verified airflow. A Goodman installed properly by an experienced contractor will dramatically outperform a Trane installed carelessly. Before spending $3,000 more on a brand upgrade, spend that energy verifying your installer's quality. Ask for references. Ask if they do Manual J calculations. Ask how they verify refrigerant charge. Those answers matter more than the badge on the unit.</p>
               </div>
 
               <p className="text-gray-700 leading-relaxed mb-4">

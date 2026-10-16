@@ -158,7 +158,8 @@ export const SYMPTOMS: Symptom[] = [
     causes: [
       { cause: 'Thermostat batteries, settings or schedule', signs: 'Blank screen, "Heat" or "Off" mode, a schedule holding a higher temperature', who: 'DIY', cost: '$0–$10' },
       { cause: 'Failed thermostat', signs: 'Screen on and set correctly, but nothing starts; works with a test jumper (pro)', who: 'DIY or pro', cost: COST.thermostat },
-      { cause: 'Tripped breaker or blown fuse', signs: 'Breaker in the middle or off position; fuse in the outdoor disconnect blown', who: 'DIY or pro', cost: '$0 to reset; service call if it trips again' },
+      { cause: 'Tripped breaker', signs: 'Breaker in the middle or off position', who: 'DIY', cost: '$0 to reset once; service call if it trips again' },
+      { cause: 'Blown fuse in the outdoor disconnect', signs: 'Breaker fine but the outdoor unit has no power; the disconnect box holds cartridge fuses', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
       { cause: 'Service switch off or panel door open', signs: 'Switch by the indoor unit off; the blower door has a safety switch that cuts power when it isn\'t seated', who: 'DIY', cost: '$0' },
       { cause: 'Full drain pan (float switch)', signs: 'Water in the drain pan or a secondary pan; the system shuts off to prevent a leak', who: 'DIY or pro', cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: 'ac-leaking-water' },
       { cause: 'Blown low-voltage fuse or failed transformer', signs: 'Thermostat dead even with fresh batteries; often after a surge or a wiring short', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
@@ -203,7 +204,7 @@ export const SYMPTOMS: Symptom[] = [
       'Low refrigerant from a leak',
       'A dirty indoor (evaporator) coil',
       'A weak or failing blower motor',
-      'Running the AC on cool nights (below about 60°F outside)',
+      'Running the AC on cool nights (below about 60°F outside; check your manual for your unit\'s limit)',
     ],
     firstChecks: [
       'Turn cooling off now. Running a frozen coil can send liquid refrigerant back to the compressor and damage it.',
@@ -318,7 +319,8 @@ export const SYMPTOMS: Symptom[] = [
       'Look: is the fan on top spinning? Is the compressor (the round tank inside) running?',
     ],
     causes: [
-      { cause: 'Tripped breaker or blown disconnect fuse', signs: 'Completely silent, breaker tripped', who: 'DIY or pro', cost: '$0 to reset; service call if it trips again' },
+      { cause: 'Tripped breaker', signs: 'Completely silent, breaker tripped', who: 'DIY', cost: '$0 to reset once; service call if it trips again' },
+      { cause: 'Blown fuse in the disconnect box', signs: 'Completely silent, breaker fine; fuses in the disconnect box beside the unit', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
       { cause: 'Failed capacitor', signs: 'Humming, fan not spinning or starting slowly; a bulging or leaking capacitor', who: 'Pro', cost: COST.capacitor },
       { cause: 'Failed or stuck contactor', signs: 'Silent while the thermostat calls, or a click with no start; burnt or pitted contacts, sometimes ants', who: 'Pro', cost: COST.contactor },
       { cause: 'Failed condenser fan motor', signs: 'Compressor runs but the fan doesn\'t spin; unit gets very hot and shuts off', who: 'Pro', cost: COST.condenserFan },

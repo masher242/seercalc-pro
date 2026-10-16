@@ -4,6 +4,7 @@ import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import EditorialNote from '../components/EditorialNote';
 
 export default function BlogArticleRepairCost() {
   return (
@@ -178,6 +179,11 @@ export default function BlogArticleRepairCost() {
                 <li><strong>If result &lt; $5,000:</strong> Repair the AC</li>
               </ul>
             </div>
+            <EditorialNote>
+              The $5,000 rule is an industry rule of thumb, not a standard or a study result. Use it as a starting
+              point, alongside the system's condition, efficiency, refrigerant and how long you plan to stay.
+            </EditorialNote>
+
 
             <h3 className="text-xl font-bold text-gray-900 mt-8 mb-3">Why This Formula Works</h3>
 

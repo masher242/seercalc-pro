@@ -5,6 +5,7 @@ import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { articleJsonLd } from '../data/site';
 import { getState, annualCost, usd, cents, RATES_AS_OF } from '../data/acCost';
+import EditorialNote from '../components/EditorialNote';
 
 /** Worked examples: computed from the current state rate and our cooling-hours estimate, so they stay current. */
 const EXAMPLES = [
@@ -381,6 +382,11 @@ export default function BlogArticleFAQ() {
               <p className="text-lg font-semibold text-gray-900 bg-gray-50 p-4 rounded-lg mb-4">Repair Cost × System Age in Years</p>
 
               <p className="text-gray-700 leading-relaxed mb-4">If the result exceeds $5,000, replace the system instead of repairing.</p>
+              <EditorialNote>
+                The $5,000 rule is an industry rule of thumb, not a standard or a study result. Use it as a starting
+                point, alongside the system's condition, efficiency, refrigerant and how long you plan to stay.
+              </EditorialNote>
+
 
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-4">
                 <p className="text-lg font-semibold text-gray-900 mb-3">Examples:</p>

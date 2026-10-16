@@ -4,6 +4,7 @@ import { ArrowLeft, Award, DollarSign, Shield, ThermometerSun, TrendingUp, Check
 import LeadMagnet from '../components/LeadMagnet';
 import ArticleByline from '../components/ArticleByline';
 import { AUTHOR_REF, PUBLISHER_REF } from '../data/site';
+import EditorialNote from '../components/EditorialNote';
 
 export default function BlogArticleBrands() {
   return (
@@ -85,7 +86,7 @@ export default function BlogArticleBrands() {
                 "name": "What's more important — AC brand or installer quality?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Installer quality wins every time. Approximately 80% of an air conditioner's lifespan depends on installation quality, while only 20% depends on the brand. A mid-range system installed perfectly by an experienced contractor will outperform a premium brand installed carelessly. Always prioritize finding a qualified, licensed installer over maximizing brand tier."
+                  "text": "Installer quality wins every time. Contractors widely agree that installation quality affects an air conditioner's lifespan more than the brand does (the oft-quoted \"80/20\" split is a rule of thumb, not a measured figure). A mid-range system installed perfectly by an experienced contractor will outperform a premium brand installed carelessly. Always prioritize finding a qualified, licensed installer over maximizing brand tier."
                 }
               }
             ]
@@ -121,7 +122,7 @@ export default function BlogArticleBrands() {
           {/* Quick Answer — AI/GEO optimized */}
           <div className="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-lg mb-8">
             <p className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2">Quick Answer</p>
-            <p className="text-gray-800">The most reliable AC brands in 2026 are <strong>Trane</strong> and <strong>American Standard</strong> (S-tier, 15–20 year lifespan), followed by <strong>Carrier, Lennox, and Daikin</strong> (A-tier). For best budget value, <strong>Goodman</strong> (owned by Daikin) leads. For mini-splits, <strong>Mitsubishi, Daikin, and Fujitsu</strong> are the top three. Installation quality matters more than brand — it accounts for ~80% of system lifespan. <strong>Note:</strong> The federal 25C tax credit expired December 31, 2025 — no credit applies to 2026 installations.</p>
+            <p className="text-gray-800">The most reliable AC brands in 2026 are <strong>Trane</strong> and <strong>American Standard</strong> (S-tier, 15–20 year lifespan), followed by <strong>Carrier, Lennox, and Daikin</strong> (A-tier). For best budget value, <strong>Goodman</strong> (owned by Daikin) leads. For mini-splits, <strong>Mitsubishi, Daikin, and Fujitsu</strong> are the top three. Installation quality matters more than brand — a common contractor view, not a measured figure. <strong>Note:</strong> The federal 25C tax credit expired December 31, 2025 — no credit applies to 2026 installations.</p>
           </div>
 
           <div className="prose prose-lg max-w-none">
@@ -283,6 +284,11 @@ export default function BlogArticleBrands() {
                 3. Brand Tier Overview
               </h2>
 
+              <EditorialNote kind="Our ranking">
+                Tiers are our editorial ranking, weighing published reliability ratings, warranty terms, price and
+                ease of service. They are opinion, not test results.
+              </EditorialNote>
+
               <div className="space-y-4">
                 <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 border-2 border-yellow-400 rounded-lg p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">S-Tier (Premium)</h3>
@@ -317,9 +323,9 @@ export default function BlogArticleBrands() {
               </div>
 
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mt-6">
-                <p className="font-bold mb-2">The 80/20 Rule:</p>
+                <p className="font-bold mb-2">Installer over brand:</p>
                 <p className="text-sm">
-                  About 80% of a system's lifespan depends on installation quality, while only 20% depends on the brand name. A mid-tier AC installed perfectly will outperform a premium brand installed poorly. <strong>Always prioritize installer quality.</strong>
+                  Installation quality affects a system's lifespan more than the brand name does — a common contractor rule of thumb, not a measured figure. A mid-tier AC installed perfectly will outperform a premium brand installed poorly. <strong>Always prioritize installer quality.</strong>
                 </p>
               </div>
             </section>
