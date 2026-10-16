@@ -1,13 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Star, Calculator, Wrench, Menu, X } from 'lucide-react';
+import { BookOpen, Star, Calculator, Wrench, Map as MapIcon, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import CalculatorBar, { showCalculatorBar } from './CalculatorBar';
+import RegionBar, { showRegionBar } from './RegionBar';
 
 export default function Header() {
   const location = useLocation();
   const isBlogPage = location.pathname.startsWith('/blog');
   const isBrandsPage = location.pathname.startsWith('/brands');
   const isFixPage = location.pathname.startsWith('/troubleshooting');
+  const isCostPage = location.pathname.startsWith('/ac-cost');
   const isCalcPage = location.pathname === '/' || location.pathname.startsWith('/calculators');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,6 +25,7 @@ export default function Header() {
 
   const navItems = [
     { to: '/calculators', label: 'Calculators', shortLabel: 'Calc', icon: Calculator, active: isCalcPage },
+    { to: '/ac-cost', label: 'AC Costs', shortLabel: 'Costs', icon: MapIcon, active: isCostPage },
     { to: '/troubleshooting', label: 'Troubleshooting', shortLabel: 'Fix', icon: Wrench, active: isFixPage },
     { to: '/blog', label: 'Efficiency Hub', shortLabel: 'Hub', icon: BookOpen, active: isBlogPage },
     { to: '/brands', label: 'Brand Reviews', shortLabel: 'Brands', icon: Star, active: isBrandsPage },
@@ -52,7 +55,7 @@ export default function Header() {
               <Link
                 key={to}
                 to={to}
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-semibold border-2 transition-all duration-200 text-[14px] ${
+                className={`inline-flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-lg font-semibold border-2 transition-all duration-200 text-[14px] ${
                   active
                     ? 'bg-teal-500 text-white border-teal-500'
                     : 'bg-white text-gray-700 border-gray-200 hover:border-teal-400 hover:text-teal-600 hover:shadow-sm'
@@ -76,6 +79,7 @@ export default function Header() {
       </div>
 
       {showCalculatorBar(location.pathname) && <CalculatorBar />}
+      {showRegionBar(location.pathname) && <RegionBar />}
 
       {/* Mobile dropdown */}
       {mobileOpen && (
