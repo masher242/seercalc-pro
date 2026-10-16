@@ -162,8 +162,10 @@ export default function AcCostCanada() {
           </div>
           <p className="text-sm text-gray-500 mb-4">
             Canadian cents per kWh, before GST/HST and provincial taxes, at {CANADA_RATES_DATE} rates. "Avg. price" is the
-            average for a home using 1,000 kWh a month. "AC's extra kWh" is what each kWh between 1,000 and 2,000 a month
-            costs, which is closer to what running the air conditioner adds to a bill. The U.S. average ({cents(US_RATE)} US,{' '}
+            average for a home using 1,000 kWh a month, and it's what the per-hour and per-year columns use: the same
+            basis (an average residential price) we use for the U.S., Europe and the Caribbean, so regions compare like
+            with like. "AC's extra kWh" is what each kWh between 1,000 and 2,000 a month costs, shown for reference; it's a
+            closer guide to what the air conditioner adds to your own bill. The U.S. average ({cents(US_RATE)} US,{' '}
             {RATES_AS_OF}) is converted at US${USD_PER_CAD.toFixed(3)} per C$ ({USD_PER_CAD_AS_OF}). Territories aren't in the
             comparison.
           </p>

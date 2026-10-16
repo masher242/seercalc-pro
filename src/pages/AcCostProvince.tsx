@@ -180,7 +180,9 @@ export default function AcCostProvince() {
             Air conditioning is added on top of a home's normal use, so the price of those extra kilowatt-hours matters
             most. In {pr.city.name}, each kWh between 1,000 and 2,000 a month costs {cents(pr.city.extraRate)}
             {extraHigher ? ', more than the average' : extraLower ? ', less than the average, because fixed charges are already covered' : ', about the same as the average'}.
-            At that price, a 3-ton AC's season would cost about {cad(yearExtra)} rather than {cad(year)}.
+            At that price, a 3-ton AC's season would cost about {cad(yearExtra)} rather than {cad(year)}. The other figures
+            on this page use the average price, the same basis we use for every region on the site, so {pr.name} can be
+            compared like with like with U.S. states, Europe and the Caribbean.
           </p>
 
           <h2 className={h2}>Cost to run AC in {pr.name} by system size</h2>

@@ -121,6 +121,7 @@ export default function AcCostCaribbean() {
                   <th className={th}>3-ton per hour</th>
                   <th className={th}>Per year</th>
                   <th className={th}>As of</th>
+                  <th className={th}>Price includes</th>
                 </tr>
               </thead>
               <tbody>
@@ -132,6 +133,7 @@ export default function AcCostCaribbean() {
                     <td className={td}>{usd(costPerHour(REF_TONS, REF_SEER, c.usdRate), 2)}</td>
                     <td className={td}>{usd(annualCost(REF_TONS, REF_SEER, c.hours, c.usdRate))} <span className="text-xs text-gray-400">({c.hours.toLocaleString()} hrs)</span></td>
                     <td className={`${td} text-xs text-gray-500`}>{c.asOf}</td>
+                    <td className={`${td} text-xs text-gray-500`}>{c.basis}</td>
                   </tr>
                 ))}
                 <tr className="bg-gray-50">
@@ -141,13 +143,16 @@ export default function AcCostCaribbean() {
                   <td className={td}>{usd(costPerHour(REF_TONS, REF_SEER, US_RATE), 2)}</td>
                   <td className={td}>{usd(annualCost(REF_TONS, REF_SEER, 1500, US_RATE))} <span className="text-xs text-gray-400">(1,500 hrs)</span></td>
                   <td className={`${td} text-xs text-gray-500`}>{RATES_AS_OF}</td>
+                  <td className={`${td} text-xs text-gray-500`}>Average residential price (EIA)</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            Rates are all-in household prices including fuel charges, taxes and fees, from each country's source (listed on
-            its page). Island rates move with fuel prices, so each one shows the date it applies to. We're working on the
+            Each rate is the newest we could source for that country, so dates differ. Where a utility tariff is the
+            newest source, the rate covers the per-kWh energy and fuel charges (plus taxes where noted) but not the fixed
+            monthly charge, so the "Price includes" column says what's in each one. Rates from GlobalPetrolPrices are
+            all-in averages. Island rates move with fuel prices, and the source for each is listed on its page. We're working on the
             U.S. Virgin Islands and Turks &amp; Caicos and will add them once we have a current, sourced rate.
           </p>
 

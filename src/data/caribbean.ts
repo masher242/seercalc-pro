@@ -14,6 +14,8 @@ export interface Country {
   asOf: string;
   utility: string;
   source: string;
+  /** short note on what the price includes, shown in tables */
+  basis: string;
   sourceUrl: string;
   /** typical full-load cooling hours per year (our estimate) */
   hours: number;
