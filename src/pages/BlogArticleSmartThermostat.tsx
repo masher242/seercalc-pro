@@ -136,7 +136,7 @@ export default function BlogArticleSmartThermostat() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How Much Can Each Actually Save?</h2>
 
             <p className="text-gray-700 leading-relaxed mb-4">
-              The U.S. Department of Energy says a setback of 7–10°F for 8 hours a day can save up to 10% a year on heating and cooling, and a programmable thermostat is the easy way to do it — if you actually program it and stick to the schedule. That's real money, but notice the word "properly." If you've never programmed yours, you're getting zero benefit.
+              The U.S. Department of Energy says a setback of 7–10°F for 8 hours a day can save up to 10% a year on heating and cooling, and a programmable thermostat is the easy way to do it — if you actually program it and stick to the schedule. That's real money, but only if you use the schedule. If you've never programmed yours, you're getting zero benefit.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
