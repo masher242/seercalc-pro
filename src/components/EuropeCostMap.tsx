@@ -316,8 +316,8 @@ export default function EuropeCostMap() {
               <tr className="text-left text-gray-900">
                 <th className="px-2 py-2 font-semibold">#</th>
                 <th className="px-2 py-2 font-semibold">Country</th>
-                <th className="px-2 py-2 font-semibold">AC per year</th>
-                <th className="px-2 py-2 font-semibold whitespace-nowrap">Cooling hours</th>
+                <th className="px-2 py-2 font-semibold">Cost per year, one 3.5 kW unit</th>
+                <th className="px-2 py-2 font-semibold">Hours AC runs per year</th>
                 <th className="px-2 py-2 font-semibold">Per kWh</th>
                 <th className="px-2 py-2 font-semibold">In U.S. cents</th>
               </tr>
