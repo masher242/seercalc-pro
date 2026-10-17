@@ -5,7 +5,7 @@ import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
 import NotFound from './NotFound';
 import { articleJsonLd, SITE_URL } from '../data/site';
-import { getSymptom, SYMPTOMS, GROUPS, TROUBLESHOOTING_UPDATED, COST, Who } from '../data/troubleshooting';
+import { getSymptom, SYMPTOMS, GROUPS, TROUBLESHOOTING_FIRST, COST, Who } from '../data/troubleshooting';
 
 const th = 'border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900';
 const td = 'border border-gray-200 px-3 py-2.5 text-gray-700 align-top';
@@ -26,6 +26,8 @@ export default function TroubleshootingSymptom() {
 
   const path = `/troubleshooting/${s.slug}`;
   const group = GROUPS.find((g) => g.id === s.group)!;
+  const published = s.published ?? TROUBLESHOOTING_FIRST;
+  const updated = s.updated ?? TROUBLESHOOTING_FIRST;
   const related = s.related.map((r) => SYMPTOMS.find((x) => x.slug === r)).filter(Boolean) as typeof SYMPTOMS;
 
   return (
@@ -42,7 +44,7 @@ export default function TroubleshootingSymptom() {
         <meta property="article:author" content={`${SITE_URL}/about/mark-curant`} />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">
-          {JSON.stringify(articleJsonLd({ path, headline: s.h1, description: s.description, datePublished: TROUBLESHOOTING_UPDATED, dateModified: TROUBLESHOOTING_UPDATED }))}
+          {JSON.stringify(articleJsonLd({ path, headline: s.h1, description: s.description, datePublished: published, dateModified: updated }))}
         </script>
         <script type="application/ld+json">
           {JSON.stringify({
@@ -79,7 +81,7 @@ export default function TroubleshootingSymptom() {
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{s.h1}</h1>
             <p className="text-xl text-gray-600">{s.summary}</p>
-            <ArticleByline updated={TROUBLESHOOTING_UPDATED} />
+            <ArticleByline updated={updated} />
           </header>
 
           <div className="bg-teal-50 border-l-4 border-teal-500 p-6 mb-6 rounded-r-lg">

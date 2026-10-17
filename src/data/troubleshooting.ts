@@ -1,9 +1,12 @@
 // AC troubleshooting pages: one entry per symptom. The hub (/troubleshooting) and every
 // symptom page (/troubleshooting/{slug}) render from this file. Repair costs match the
 // ranges in the repair-cost articles (/blog/ac-repair-cost-2026, /blog/ac-repair-cost-vs-replacement);
-// update both together.
+// update both together. Figures not in those articles name their source in a comment.
 
-export const TROUBLESHOOTING_UPDATED = '2026-10-14';
+/** Hub date; also the default for symptom pages without their own `updated`. */
+export const TROUBLESHOOTING_UPDATED = '2026-10-17';
+/** Date the first six symptom pages were published (default `published`/`updated`). */
+export const TROUBLESHOOTING_FIRST = '2026-10-14';
 
 export type Who = 'DIY' | 'DIY or pro' | 'Pro';
 
@@ -46,16 +49,23 @@ export interface Symptom {
   quoteFlags: string[];
   faqs: { q: string; a: string }[];
   related: string[];
+  /** YYYY-MM-DD; defaults to TROUBLESHOOTING_FIRST */
+  published?: string;
+  /** YYYY-MM-DD; defaults to TROUBLESHOOTING_FIRST */
+  updated?: string;
   /** optional closing section, e.g. prevention */
   extra?: { heading: string; paragraphs: string[]; link?: { to: string; label: string } };
 }
 
-export type GroupId = 'not-cooling' | 'wont-run' | 'water-ice';
+export type GroupId = 'not-cooling' | 'wont-run' | 'cycling' | 'water-ice' | 'noise-smell' | 'mini-split';
 
 export const GROUPS: { id: GroupId; name: string; blurb: string }[] = [
   { id: 'not-cooling', name: 'Not cooling', blurb: 'It runs, but the air isn\'t cold or the house won\'t cool down.' },
   { id: 'wont-run', name: 'Won\'t run', blurb: 'Nothing happens, or part of the system stays off.' },
+  { id: 'cycling', name: 'Runs too much or too little', blurb: 'Short cycling, running nonstop, or a house that stays clammy.' },
   { id: 'water-ice', name: 'Water and ice', blurb: 'Leaks, a full drain pan, or ice on the coil or lines.' },
+  { id: 'noise-smell', name: 'Noises and smells', blurb: 'Buzzing, banging, hissing, or a musty or burning smell.' },
+  { id: 'mini-split', name: 'Ductless mini-splits', blurb: 'Error codes, blinking lights and resets on wall-mounted units.' },
 ];
 
 /** Repair cost ranges used across these pages (U.S., installed, 2026). */
@@ -74,6 +84,13 @@ export const COST = {
   condensatePump: '$150–$400',
   condenserClean: '$100–$300',
   filter: '$5–$20',
+  electrical: '$150–$600',
+  coilDuctCleaning: '$100–$600',
+  burningRepair: '$150–$800',
+  breakerTrip: '$150–$1,000',
+  ductSealing: '$500–$2,000',
+  /** Homewyse national estimate, May 2026 ($2,774–$3,285 per unit installed) */
+  dehumidifier: '$2,800–$3,300',
 };
 
 export const SYMPTOMS: Symptom[] = [
@@ -158,7 +175,7 @@ export const SYMPTOMS: Symptom[] = [
     causes: [
       { cause: 'Thermostat batteries, settings or schedule', signs: 'Blank screen, "Heat" or "Off" mode, a schedule holding a higher temperature', who: 'DIY', cost: '$0–$10' },
       { cause: 'Failed thermostat', signs: 'Screen on and set correctly, but nothing starts; works with a test jumper (pro)', who: 'DIY or pro', cost: COST.thermostat },
-      { cause: 'Tripped breaker', signs: 'Breaker in the middle or off position', who: 'DIY', cost: '$0 to reset once; service call if it trips again' },
+      { cause: 'Tripped breaker', signs: 'Breaker in the middle or off position', who: 'DIY', cost: '$0 to reset once; service call if it trips again', see: 'ac-tripping-breaker' },
       { cause: 'Blown fuse in the outdoor disconnect', signs: 'Breaker fine but the outdoor unit has no power; the disconnect box holds cartridge fuses', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
       { cause: 'Service switch off or panel door open', signs: 'Switch by the indoor unit off; the blower door has a safety switch that cuts power when it isn\'t seated', who: 'DIY', cost: '$0' },
       { cause: 'Full drain pan (float switch)', signs: 'Water in the drain pan or a secondary pan; the system shuts off to prevent a leak', who: 'DIY or pro', cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: 'ac-leaking-water' },
@@ -319,7 +336,7 @@ export const SYMPTOMS: Symptom[] = [
       'Look: is the fan on top spinning? Is the compressor (the round tank inside) running?',
     ],
     causes: [
-      { cause: 'Tripped breaker', signs: 'Completely silent, breaker tripped', who: 'DIY', cost: '$0 to reset once; service call if it trips again' },
+      { cause: 'Tripped breaker', signs: 'Completely silent, breaker tripped', who: 'DIY', cost: '$0 to reset once; service call if it trips again', see: 'ac-tripping-breaker' },
       { cause: 'Blown fuse in the disconnect box', signs: 'Completely silent, breaker fine; fuses in the disconnect box beside the unit', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
       { cause: 'Failed capacitor', signs: 'Humming, fan not spinning or starting slowly; a bulging or leaking capacitor', who: 'Pro', cost: COST.capacitor },
       { cause: 'Failed or stuck contactor', signs: 'Silent while the thermostat calls, or a click with no start; burnt or pitted contacts, sometimes ants', who: 'Pro', cost: COST.contactor },
@@ -377,7 +394,7 @@ export const SYMPTOMS: Symptom[] = [
     causes: [
       { cause: 'Restart delay', signs: 'Indoor fan may run; outdoor unit starts after a few minutes', who: 'DIY', cost: '$0' },
       { cause: 'Thermostat reset or lost settings', signs: 'Blank or flashing screen, wrong mode or clock', who: 'DIY', cost: '$0–$10' },
-      { cause: 'Tripped breaker', signs: 'Breaker in the middle position', who: 'DIY or pro', cost: '$0 to reset; service call if it trips again' },
+      { cause: 'Tripped breaker', signs: 'Breaker in the middle position', who: 'DIY or pro', cost: '$0 to reset; service call if it trips again', see: 'ac-tripping-breaker' },
       { cause: 'Blown low-voltage fuse or transformer', signs: 'Thermostat has no power even with new batteries', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
       { cause: 'Failed capacitor', signs: 'Outdoor unit hums but doesn\'t start', who: 'Pro', cost: COST.capacitor, see: 'ac-outdoor-unit-not-running' },
       { cause: 'Damaged control board', signs: 'Blinking error lights on the board, no response to the thermostat; common after lightning or surges', who: 'Pro', cost: `${COST.serviceCall} service call plus the board` },
@@ -413,6 +430,449 @@ export const SYMPTOMS: Symptom[] = [
       ],
       link: { to: '/blog/protect-air-conditioner-power-surges-outages', label: 'How to protect your AC from power surges, brownouts and outages' },
     },
+  },
+  {
+    slug: 'ac-making-noise',
+    published: '2026-10-17',
+    updated: '2026-10-17',
+    name: 'AC making noise',
+    title: 'AC Making Noise? What Buzzing, Banging and Hissing Mean',
+    h1: 'AC Making a Strange Noise? What Each Sound Means and What to Do',
+    description: "Buzzing, clicking, hissing, banging, squealing or rattling from your air conditioner? What each sound usually means, which ones to turn the AC off for, and what repairs cost.",
+    group: 'noise-smell',
+    summary: 'Buzzing, clicking, hissing, banging, squealing or rattling from the indoor or outdoor unit.',
+    quick: [
+      "Buzzing or humming at the outdoor unit: a failing capacitor or contactor, or a motor that can't start",
+      'Rattling: a loose panel or screw, or debris in the fan',
+      'Squealing or grinding: worn fan or blower motor bearings, or a slipping belt on older blowers',
+      'Hissing: a refrigerant leak (a short hiss right after shut-off is normal)',
+      'Gurgling or bubbling: a partly clogged or dried-out condensate drain',
+      'Banging or clanking: a loose or broken part, or a failing compressor',
+      'Screaming or loud whistling from the outdoor unit: dangerously high pressure. Turn it off now.',
+    ],
+    firstChecks: [
+      'Find where it comes from: the outdoor unit, the indoor unit (air handler or furnace), the ducts or one vent.',
+      'Notice when: only at start-up or shut-down, the whole time it runs, or only on hot afternoons.',
+      "With power off at the disconnect, look through the outdoor unit's top grille for sticks, leaves or anything touching the fan.",
+      "Check that the filter door and the indoor unit's panels are seated and their screws are tight.",
+    ],
+    causes: [
+      { cause: 'Normal operating sounds', signs: 'A click at the thermostat or outdoor unit when it starts and stops, a short whoosh or hiss as pressures even out after shut-off, a steady hum while running, ducts ticking as they cool', who: 'DIY', cost: '$0' },
+      { cause: 'Failing capacitor', signs: "Outdoor unit hums or buzzes but the fan doesn't spin, or starts slowly", who: 'Pro', cost: COST.capacitor, see: 'ac-outdoor-unit-not-running' },
+      { cause: 'Failing contactor or loose wiring', signs: 'Buzzing or chattering at the outdoor unit, rapid clicking, sometimes insects nesting in the contactor', who: 'Pro', cost: COST.electrical },
+      { cause: 'Loose panel, screw or debris', signs: 'Rattling or vibration that stops when you press on a panel; sticks or leaves in the fan', who: 'DIY', cost: '$0' },
+      { cause: 'Worn outdoor fan motor', signs: 'Squealing, screeching or grinding from the top of the outdoor unit; fan slow to get up to speed', who: 'Pro', cost: COST.condenserFan },
+      { cause: 'Worn blower motor or belt (indoor)', signs: 'Squealing or grinding from the indoor unit whenever the fan runs; belt-drive blowers on older systems squeal when the belt slips', who: 'Pro', cost: `${COST.serviceCall} for a belt, ${COST.blower} for a motor` },
+      { cause: 'Refrigerant leak', signs: 'Continuous hissing near the copper lines or coil, cooling getting worse, ice on the lines', who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: 'Partly clogged or dried-out drain', signs: 'Gurgling or bubbling near the indoor unit while it runs', who: 'DIY or pro', cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: 'ac-leaking-water' },
+      { cause: 'Ducts flexing or a restricted return', signs: 'Popping or booming in the ducts when the blower starts or stops; whistling at a grille', who: 'DIY or pro', cost: '$0 (new filter, open vents) to duct work' },
+      { cause: 'Failing compressor or a broken internal part', signs: 'Loud banging, clanking or knocking from the outdoor unit, often at start-up', who: 'Pro', cost: COST.compressor },
+      { cause: 'Dangerously high pressure', signs: 'Screaming or a high-pitched whistle from the outdoor unit', who: 'Pro', cost: 'Depends on the cause; turn it off first' },
+    ],
+    steps: [
+      { title: 'Pin down where and when', text: 'Stand by each part of the system while it runs. Note whether the sound comes at start-up, the whole time, or at shut-off. That alone narrows most noises to one or two causes.' },
+      { title: 'Turn it off for the serious ones', text: "Screaming, grinding, banging, or buzzing while the outdoor fan sits still: switch the system off at the thermostat and the disconnect. Those sounds mean a part is failing, and running it can damage the compressor." },
+      { title: 'Clear the outdoor unit', text: "With power off at the disconnect, clear leaves, grass and sticks from around and on top of the unit. Don't reach into the fan or take the top grille off. Keep plants at least 2 feet away." },
+      { title: 'Tighten what you can reach', text: "Press on the outdoor unit's side panels and the indoor unit's doors while it runs. If the rattle stops, a panel is loose; tighten its screws with the power off. Make sure the filter is seated and its door closed." },
+      { title: 'Record it for the technician', text: 'Take a short video with sound, and note when it happens. A technician who hears the sound before arriving can bring the likely part and diagnose it faster.' },
+    ],
+    safetyNote: "Never reach into the outdoor fan or remove its grille with the power on. Turn off the disconnect first and wait for the blades to stop completely.",
+    callPro: [
+      'Screaming, grinding, banging or clanking',
+      "Buzzing or humming while the outdoor fan doesn't spin",
+      'Continuous hissing near the refrigerant lines',
+      'Any noise that comes with a tripped breaker or a burning smell',
+    ],
+    quoteFlags: [
+      "A new compressor or system quoted for a buzz before anyone has tested the capacitor and contactor",
+      'A refrigerant recharge for a hiss with no leak search',
+      'A fan motor replaced without testing the capacitor that starts it',
+    ],
+    faqs: [
+      { q: 'Why is my AC making a buzzing noise?', a: "Most often it's an electrical part at the outdoor unit: a failing capacitor or contactor, or loose wiring. If the fan isn't spinning while it buzzes, turn the system off, because the motor is trying and failing to start and will overheat. Electrical repairs like these typically cost $150–$600." },
+      { q: 'Is it normal for an AC to click?', a: "A single click when the system starts and stops is normal: it's the thermostat and a relay switching. Rapid or continuous clicking, or a click with nothing starting, points to a failing contactor, relay or control board." },
+      { q: 'Why is my AC making a hissing sound?', a: 'A short hiss or whoosh right after the system shuts off is usually normal, as the refrigerant pressures even out. A continuous hiss near the lines or coil can be a refrigerant leak, especially if cooling is getting worse or ice forms on the lines. Have it checked.' },
+      { q: 'What does it mean when an AC is screaming?', a: 'A scream or high-pitched whistle from the outdoor unit can mean dangerously high pressure inside the compressor or a serious refrigerant leak. Turn the system off at the thermostat and the disconnect right away and call a technician.' },
+    ],
+    related: ['ac-outdoor-unit-not-running', 'ac-smells', 'ac-short-cycling'],
+  },
+  {
+    slug: 'ac-smells',
+    published: '2026-10-17',
+    updated: '2026-10-17',
+    name: 'AC smells bad',
+    title: 'AC Smells Bad? Musty, Burning and Other Odors Explained',
+    h1: 'Bad Smell From Your AC? What Musty, Burning and Other Odors Mean',
+    description: "What a musty, burning, rotten-egg, sewage or chemical smell from your air conditioner usually means, which smells are an emergency, and how to get rid of the rest.",
+    group: 'noise-smell',
+    summary: 'A musty, burning, rotten-egg, sour or chemical smell when the AC runs.',
+    quick: [
+      'Musty or mildew: mold or bacteria on the indoor coil, in the drain pan, on the filter or in the ducts',
+      'Burning or electrical: an overheating motor or wiring. Turn the system off.',
+      'Rotten eggs: a natural gas leak (from a gas furnace or another appliance) or a dead animal in the ducts',
+      'Dirty socks: bacteria growing on the indoor coil, common on heat pumps',
+      'Sewage: a dried-out drain trap letting sewer gas in',
+      'Dusty burning on the first heating day of the season: dust burning off, usually gone within an hour',
+    ],
+    firstChecks: [
+      'Burning, electrical or rotten-egg smell: follow the safety box above before doing anything else.',
+      'Air filter: a damp, dirty filter can smell musty. Replace it.',
+      'Drain pan and drain line: standing water under the indoor unit grows mold and bacteria.',
+      'Every vent, or one room? A smell at every vent points to the indoor unit; one vent points to that duct.',
+    ],
+    causes: [
+      { cause: 'Mold or mildew on the coil, pan or ducts', signs: 'Musty smell, strongest when the system starts; visible dark growth on the coil or in the pan', who: 'DIY or pro', cost: `$0 (filter, drain) to ${COST.coilDuctCleaning} cleaning` },
+      { cause: 'Clogged drain or standing water', signs: 'Musty or sour smell, water in the drain pan', who: 'DIY or pro', cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: 'ac-leaking-water' },
+      { cause: 'Dirty filter', signs: 'Musty or dusty smell, filter gray or damp', who: 'DIY', cost: COST.filter },
+      { cause: 'Overheating motor or wiring', signs: 'Burning plastic or electrical smell, sometimes with buzzing or a tripped breaker', who: 'Pro', cost: COST.burningRepair },
+      { cause: 'Dust burning off heating parts', signs: 'Dusty burning smell the first time the heat runs each season, fading within an hour', who: 'DIY', cost: '$0' },
+      { cause: 'Natural gas leak (not from the AC)', signs: 'Rotten-egg smell near a gas furnace, water heater or other gas appliance', who: 'Pro', cost: 'Call your gas utility first' },
+      { cause: 'Dead animal in the ducts or unit', signs: 'Rotten smell getting stronger, often worst at one vent', who: 'Pro', cost: `${COST.serviceCall} service call plus removal and cleaning` },
+      { cause: '"Dirty sock" bacteria on the coil', signs: 'Smell of dirty socks or sweat, often when a heat pump switches modes', who: 'Pro', cost: COST.coilDuctCleaning },
+      { cause: 'Sewer gas from a dry drain trap', signs: 'Sewage smell near the indoor unit or a floor drain the condensate runs to', who: 'DIY or pro', cost: "$0 (refill the trap) to a plumber's visit" },
+      { cause: 'Refrigerant leak', signs: "A faint sweet or chemical smell with cooling getting worse; many refrigerants have little smell, so this is a weak sign", who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+    ],
+    steps: [
+      { title: 'Rule out the dangerous smells', text: "Burning or electrical: turn the system off at the thermostat and the breaker, and call. Rotten eggs: don't touch switches; leave and call the gas utility from outside. Then come back to the rest of these steps." },
+      { title: 'Replace the filter', text: 'A damp, dirty filter is the cheapest cause to rule out. If the smell fades within a day, that was it.' },
+      { title: 'Check the drain pan and line', text: 'With power off, look in the pan under the indoor unit. Standing water means the drain is clogged: clear it with a wet/dry vacuum on the outside end, then pour a cup of distilled white vinegar into the cleanout. See the leaking water page for details.' },
+      { title: 'Look at the coil if you can', text: 'Many indoor units have a removable access panel in front of the coil. With power off, look for dark growth on the coil or in the pan. Visible mold on the coil is a job for a professional cleaning.' },
+      { title: 'Refill dry drain traps', text: "For a sewage smell, pour a quart of water into any floor drain near the indoor unit, and into the condensate line's trap if it has one. Traps that dry out let sewer gas back into the house." },
+    ],
+    safetyNote: "If you smell rotten eggs (natural gas), don't switch anything on or off. Get everyone out, then call your gas utility or 911 from outside. If a carbon monoxide alarm sounds, get outside and call for help. Your air conditioner doesn't burn gas, but a gas furnace often shares the same ducts and blower.",
+    callPro: [
+      'Any burning or electrical smell',
+      'A rotten smell that keeps getting stronger, especially at one vent',
+      'A musty smell that returns after a new filter and a clear drain',
+      'Visible mold on the coil, in the pan or inside the ducts',
+    ],
+    quoteFlags: [
+      'Whole-house duct cleaning sold as the cure for a musty smell before anyone checks the coil, drain pan and drain line',
+      'A UV light or air purifier sold as the only fix for mold, without fixing the moisture that feeds it',
+      'Refrigerant added for a smell, with no leak search',
+    ],
+    faqs: [
+      { q: 'Why does my AC smell musty?', a: "Usually because mold or bacteria are growing where moisture collects: on the indoor coil, in the drain pan, on a damp filter or in the ducts. Replace the filter, clear the drain and check the pan. If the smell comes back, have the coil cleaned. Keeping indoor humidity below 60% (EPA's guideline) slows the growth." },
+      { q: 'Is a burning smell from my AC dangerous?', a: 'It can be. An electrical or burning-plastic smell can mean an overheating motor or wiring, so turn the system off at the thermostat and breaker and call a technician. The one usually harmless exception is a dusty smell the first time the heat runs each season.' },
+      { q: 'Why does my AC smell like rotten eggs?', a: "Natural gas has a rotten-egg odor added to it, so treat that smell as a possible gas leak: leave the house and call your gas utility from outside. Your AC doesn't use gas, but a gas furnace often shares its ducts. If the gas company finds no leak, a dead animal in the ductwork is the next most likely cause." },
+      { q: 'Should I get my air ducts cleaned for a bad smell?', a: "Usually not first. The EPA says duct cleaning isn't something most homes need routinely, and suggests considering it when there's visible mold growth inside the ducts, signs of rodents or insects, or so much dust and debris that it blows out of the vents. Most AC smells come from the coil, drain pan or filter." },
+    ],
+    related: ['ac-leaking-water', 'ac-high-humidity', 'ac-making-noise'],
+  },
+  {
+    slug: 'ac-short-cycling',
+    published: '2026-10-17',
+    updated: '2026-10-17',
+    name: 'AC short cycling',
+    title: 'AC Short Cycling? Why It Turns On and Off Too Often',
+    h1: 'AC Short Cycling? Why Your Air Conditioner Keeps Turning On and Off',
+    description: "AC runs a few minutes, shuts off, then starts again? The causes, from an oversized unit to a dirty coil or a badly placed thermostat, what to check first and what fixes cost.",
+    group: 'cycling',
+    summary: 'It runs for a few minutes, shuts off, then starts again soon after.',
+    quick: [
+      'An oversized system that cools the air near the thermostat too fast',
+      'A clogged filter or a frozen coil',
+      'The thermostat sits near a supply vent, a sunny window or a heat source',
+      'A dirty outdoor coil making the system overheat and trip a safety switch',
+      'Low refrigerant tripping the low-pressure switch',
+      'A backed-up drain tripping the float switch',
+      'An electrical fault: capacitor, contactor or control board',
+    ],
+    firstChecks: [
+      "Time it on a warm afternoon: how long it runs, how long it stays off. Repeated runs of under about 10 minutes, while the house still isn't at the set temperature, are the classic sign (a rule of thumb, not a precise limit).",
+      "Air filter: replace it if it's dirty.",
+      'Thermostat: is it in sunlight, above a lamp or TV, near the kitchen, or in the path of a supply vent?',
+      'Look for ice on the copper lines, and check the outdoor coil is clean and clear.',
+    ],
+    causes: [
+      { cause: 'Oversized system', signs: 'Cools fast then shuts off, house feels clammy, has done it since the system was installed', who: 'Pro', cost: '$0 now; size correctly when you replace it' },
+      { cause: 'Clogged filter', signs: 'Weak airflow, filter gray or matted', who: 'DIY', cost: COST.filter },
+      { cause: 'Frozen coil', signs: 'Ice on the lines, weak airflow, shuts off and on', who: 'DIY or pro', cost: 'Depends on the cause', see: 'ac-frozen-coil' },
+      { cause: 'Thermostat location or a failing thermostat', signs: 'Shuts off while other rooms are still warm; thermostat in sun, near a vent or a heat source', who: 'DIY or pro', cost: `$0 (move the heat source) to ${COST.thermostat}` },
+      { cause: 'Dirty outdoor coil (overheating)', signs: 'Shuts off on hot afternoons and restarts later; fins matted with dirt or grass', who: 'DIY or pro', cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
+      { cause: 'Low refrigerant (low-pressure switch)', signs: 'Cooling getting worse over weeks, ice, short runs', who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: 'Float switch on a backed-up drain', signs: 'Shuts off with water in the pan, restarts as it drains', who: 'DIY or pro', cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: 'ac-leaking-water' },
+      { cause: 'Electrical fault', signs: 'Starts and stops at random, clicking or buzzing at the outdoor unit', who: 'Pro', cost: `${COST.capacitor} capacitor, ${COST.contactor} contactor, more for a control board` },
+    ],
+    steps: [
+      { title: 'Time the cycles', text: 'On a warm afternoon, note when it starts and stops for an hour. Write down the indoor temperature too. Short runs while the house is still warm point to a fault; short runs once it\'s at the set temperature point to oversizing or the thermostat.' },
+      { title: 'Fix the airflow', text: 'Fit a new filter, open all supply vents and clear the return grilles. Restricted airflow is a common cause and the cheapest to fix.' },
+      { title: 'Check the thermostat', text: "Replace its batteries and look at where it sits. A thermostat in sunlight or in the stream of a supply vent shuts the system off early. Some thermostats have a cycle-rate (cycles per hour) setting; check it against the thermostat's manual for air conditioning." },
+      { title: 'Clean the outdoor coil', text: "With power off at the disconnect, clear debris and rinse the fins gently from the outside with a garden hose. A coil that can't shed heat trips the system's high-pressure or overload protection." },
+      { title: 'Look for ice and water', text: 'Ice on the copper lines means a frozen coil. Water in the drain pan means the float switch may be cutting the power. Each has its own page linked in the table above.' },
+    ],
+    callPro: [
+      'Short cycling continues with a new filter, a clean coil and the thermostat ruled out',
+      'Ice on the lines or the coil',
+      'The outdoor unit shuts off on hot afternoons and restarts later',
+      'Clicking or buzzing each time it starts or stops',
+    ],
+    quoteFlags: [
+      'A new system quoted for short cycling before the filter, refrigerant charge, safety switches and thermostat are checked',
+      'A bigger unit recommended to fix comfort problems: an oversized system short cycles more, not less',
+      'A refrigerant top-up with no leak search',
+    ],
+    faqs: [
+      { q: 'What causes an AC to short cycle?', a: 'The most common causes are a clogged filter or frozen coil, a thermostat in a bad spot, a dirty outdoor coil tripping a safety switch, low refrigerant, and a system that is too big for the house. Start with the filter, the thermostat location and the outdoor coil, which you can check yourself.' },
+      { q: 'How long should an AC run each cycle?', a: "It depends on the weather. As a rough guide, a correctly sized single-stage system on a warm day runs at least 10 minutes at a time, longer as it gets hotter, and on the hottest days it may run almost nonstop. Variable-speed systems are designed to run for long periods at low speed." },
+      { q: 'Is short cycling bad for my AC?', a: 'Yes. Starting is the hardest moment for a compressor, so frequent starts wear it faster. Short runs also waste energy and remove little humidity, because the coil shuts off before it has drained much moisture.' },
+      { q: 'Can an oversized AC cause short cycling?', a: "Yes. An oversized system cools the air near the thermostat quickly and shuts off before the rest of the house, and before it has removed much humidity. There's no cheap fix; the answer is a correctly sized system (a Manual J load calculation) at replacement. Check yours with the AC sizing calculator." },
+    ],
+    related: ['ac-running-constantly', 'ac-high-humidity', 'ac-frozen-coil'],
+    extra: {
+      heading: 'If your system is oversized',
+      paragraphs: [
+        "Oversizing is common, because replacing a unit with one the same size as the old one (or bigger, to be safe) skips the load calculation. If your system has short cycled since the day it was installed and everything else checks out, it's probably too big for the house.",
+        'You can soften the effect: keep the fan on Auto, use a thermostat with a dehumidify setting, and keep the filter and coil clean. At replacement, ask for a Manual J load calculation, and consider a two-stage or variable-speed system, which runs at low output most of the time.',
+      ],
+      link: { to: '/calculators/ac-sizing', label: 'the AC sizing calculator' },
+    },
+  },
+  {
+    slug: 'ac-running-constantly',
+    published: '2026-10-17',
+    updated: '2026-10-17',
+    name: 'AC running nonstop',
+    title: "AC Running Constantly? When It's Normal and When It's Not",
+    h1: "AC Running Nonstop? When It's Normal and How to Find the Problem",
+    description: "Air conditioner never shuts off? When nonstop running is normal on hot days, the checks that find the problem when it isn't, a simple thermometer test, and what fixes cost.",
+    group: 'cycling',
+    summary: "It runs and runs without shutting off, or never reaches the set temperature.",
+    quick: [
+      'Very hot weather: on the hottest days a correctly sized system can run almost nonstop',
+      'The thermostat set very low, or the fan set to On',
+      'A clogged filter or a dirty outdoor coil',
+      'Low refrigerant from a leak',
+      'Leaky ducts in a hot attic or crawlspace',
+      'A system that is too small or worn out',
+      'A stuck contactor: the outdoor unit keeps running even with the thermostat off',
+    ],
+    firstChecks: [
+      'Fan or whole system? If only the indoor fan runs, set the thermostat fan to Auto instead of On.',
+      'Set the thermostat to Off. If the outdoor unit keeps running, switch it off at the disconnect and call: the contactor is stuck.',
+      "Check the weather. Systems are sized for typical hot days where you live; on hotter days it's normal for them to run for long stretches and for the house to sit a few degrees above the setting.",
+      'Filter and outdoor coil: replace a dirty filter, and look for matted fins outside.',
+    ],
+    causes: [
+      { cause: 'Extreme heat', signs: 'Runs nonstop only on the hottest afternoons and catches up in the evening', who: 'DIY', cost: '$0' },
+      { cause: 'Thermostat set very low, or fan on On', signs: 'Set more than about 20°F below the outdoor temperature, or the fan never stops between cycles', who: 'DIY', cost: '$0' },
+      { cause: 'Clogged filter', signs: 'Weak airflow, filter gray or matted', who: 'DIY', cost: COST.filter },
+      { cause: 'Dirty outdoor coil', signs: 'Fins matted with dirt, grass or lint; struggles most on hot afternoons', who: 'DIY or pro', cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
+      { cause: 'Low refrigerant (a leak)', signs: 'Air not very cold, cooling worse over weeks, ice on the lines', who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: 'Leaky or uninsulated ducts', signs: 'Rooms far from the unit stay warm; ducts in a hot attic; dust streaks at duct joints', who: 'Pro', cost: `${COST.ductSealing} duct sealing` },
+      { cause: 'Stuck contactor', signs: 'Outdoor unit keeps running with the thermostat off', who: 'Pro', cost: COST.contactor },
+      { cause: 'Undersized or worn-out system', signs: "Never keeps up on ordinary summer days; system old or added rooms since it was sized", who: 'Pro', cost: 'Replacement; compare with the repair vs replace calculator' },
+      { cause: 'Heat coming in', signs: 'Sun on big windows, a hot attic with little insulation, oven or dryer running in the afternoon', who: 'DIY', cost: '$0 (blinds) and up' },
+    ],
+    steps: [
+      { title: 'Check the settings', text: "Cool, fan on Auto, and a sensible temperature. Each degree lower adds run time, and setting it very low doesn't cool the house faster." },
+      { title: 'Do the Off test', text: 'Set the thermostat to Off and go outside. If the outdoor unit is still running after a minute, turn it off at the disconnect. A stuck contactor runs the compressor nonstop and needs a technician.' },
+      { title: 'Replace the filter and rinse the coil', text: 'A new filter and a clean outdoor coil restore airflow and heat transfer, the two things a system needs to keep up.' },
+      { title: 'Measure the temperature split', text: "After 15 minutes of running, put a thermometer at a return grille and at the supply vent nearest the indoor unit. A difference of roughly 15–20°F is typical (a rule of thumb; humid weather lowers it). Much less points to low refrigerant, a dirty coil or a failing compressor; much more points to low airflow." },
+      { title: 'Cut the heat coming in', text: 'Close blinds on sunny windows, avoid the oven and dryer in the afternoon, and check that the attic has insulation. Less heat in means shorter run times.' },
+    ],
+    callPro: [
+      'The outdoor unit runs with the thermostat off',
+      'The temperature split is well under about 15°F',
+      'Ice on the lines or the coil',
+      "It runs nonstop on mild days and still doesn't reach the setting",
+    ],
+    quoteFlags: [
+      'A bigger system recommended before anyone checks the refrigerant charge, airflow and ducts',
+      'A refrigerant top-up with no leak search',
+      "Duct cleaning sold as the fix for long run times: cleaning doesn't seal leaks",
+    ],
+    faqs: [
+      { q: 'Is it normal for my AC to run all day in hot weather?', a: "Yes, on the hottest days. Air conditioners are sized for typical hot weather where you live, so above that they run for long stretches and the house may sit a few degrees above the setting until evening. It's a problem if it also runs nonstop on ordinary days." },
+      { q: 'How do I know if my AC running constantly is a problem?', a: "Signs of a real fault: it runs nonstop on mild days, never gets within a few degrees of the setting, the air from the vents isn't much colder than the room (a split well under about 15°F), there's ice on the lines, or the outdoor unit keeps running with the thermostat off." },
+      { q: 'Does running nonstop damage an AC?', a: "Long runs aren't harmful in themselves; starting and stopping is harder on a compressor than running. But nonstop running costs more, and if it's caused by low refrigerant, a dirty coil or a stuck contactor, that underlying fault can damage the compressor." },
+      { q: 'Why does my outdoor unit keep running when the thermostat is off?', a: "Usually the contactor, the switch that turns the outdoor unit on and off, has stuck closed. Turn the unit off at the disconnect beside it and call a technician. A contactor typically costs $150–$300 to replace." },
+    ],
+    related: ['ac-blowing-warm-air', 'ac-short-cycling', 'ac-frozen-coil'],
+  },
+  {
+    slug: 'ac-tripping-breaker',
+    published: '2026-10-17',
+    updated: '2026-10-17',
+    name: 'AC tripping the breaker',
+    title: 'AC Keeps Tripping the Breaker? Causes and What to Do',
+    h1: 'AC Keeps Tripping the Breaker? Why It Happens and What to Do',
+    description: "AC keeps tripping its breaker? What the timing tells you, the causes from a dirty coil to a failing capacitor or compressor, and why you shouldn't keep resetting it.",
+    group: 'wont-run',
+    summary: 'The breaker for the AC trips when it starts, after it runs a while, or on hot afternoons.',
+    quick: [
+      'A dirty outdoor coil or blocked airflow making the compressor draw more current',
+      'A failing capacitor, so the motors struggle to start',
+      'A compressor that is hard to start or failing',
+      'A failed outdoor fan motor',
+      'A short in the wiring or a motor (trips instantly)',
+      'A worn breaker or a loose connection at the panel',
+    ],
+    firstChecks: [
+      'Which breaker: the outdoor unit, or the indoor unit (air handler or furnace)?',
+      'When it trips: the instant you reset it, when the compressor starts, or after running for a while on hot afternoons.',
+      'Look at the panel and the disconnect beside the outdoor unit: scorch marks, a burning smell or a hot breaker mean stop and call.',
+      'Outdoor coil and filter: matted fins outside or a clogged filter inside make the motors work harder.',
+    ],
+    causes: [
+      { cause: 'Dirty outdoor coil or blocked airflow', signs: 'Trips after running a while, mostly on hot afternoons; fins matted or plants crowding the unit', who: 'DIY or pro', cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
+      { cause: 'Failing capacitor', signs: 'Trips as the outdoor unit tries to start; humming before it trips', who: 'Pro', cost: COST.capacitor },
+      { cause: 'Hard-starting or failing compressor', signs: 'Trips the moment the compressor starts; lights dim; system over about 10 years old', who: 'Pro', cost: `$30–$80 hard-start kit part plus labor; ${COST.compressor} for a compressor` },
+      { cause: 'Failed outdoor fan motor', signs: "Fan doesn't spin, unit gets very hot, then the breaker trips", who: 'Pro', cost: COST.condenserFan },
+      { cause: 'Short in wiring or a motor', signs: 'Trips instantly every time you reset it', who: 'Pro', cost: `${COST.breakerTrip} to find and repair` },
+      { cause: 'Worn breaker or loose connection', signs: "Breaker warm, buzzing or tripping with no other symptom; the system runs fine on a tester's meter", who: 'Pro', cost: "An electrician's visit plus the breaker" },
+      { cause: 'Indoor blower strain', signs: "The indoor unit's breaker trips; clogged filter or a failing blower motor", who: 'DIY or pro', cost: `${COST.filter} filter, ${COST.blower} blower motor` },
+    ],
+    steps: [
+      { title: 'Reset once, properly', text: 'Turn the thermostat off. Push the tripped breaker firmly to Off, then back to On. Wait 5–10 minutes before setting the thermostat to Cool, so the compressor doesn\'t start against high pressure.' },
+      { title: 'Watch when it trips', text: 'Instantly on reset points to a short: leave it off. At start-up points to the capacitor or compressor. After a while on hot afternoons points to a dirty coil, a failing fan motor or airflow. Tell the technician which it was.' },
+      { title: 'Clean the coil and replace the filter', text: 'With power off at the disconnect, rinse the outdoor coil from the outside and clear plants back 2 feet. Fit a new indoor filter. These are the only causes you can fix yourself.' },
+      { title: 'If it trips again, leave it off', text: "A breaker trips to protect the wiring from overheating. Resetting it over and over can damage the compressor and, in the worst case, start a fire. One reset, then call." },
+      { title: 'Check the breaker size, not by guessing', text: "The outdoor unit's nameplate lists the maximum fuse or breaker size (often \"MAX FUSE/BKR\"). The breaker should not be larger than that. Never fit a bigger breaker to stop the trips; that only removes the protection." },
+    ],
+    safetyNote: "Never replace the breaker with a larger one to stop it tripping. Breakers are sized to the wiring and the unit; a bigger one lets the wires overheat. Panel work is for a licensed electrician.",
+    callPro: [
+      'It trips again after one reset',
+      'It trips the instant you reset it',
+      'A burning smell, scorch marks, or a breaker that feels hot or buzzes',
+      'The lights dim and it trips as the compressor starts',
+    ],
+    quoteFlags: [
+      'A new system quoted before the capacitor, fan motor and compressor have been tested',
+      'A larger breaker offered as the fix',
+      'For a failed compressor on a system over about 10 years old, compare the quote with replacement before agreeing',
+    ],
+    faqs: [
+      { q: 'Why does my AC keep tripping the breaker?', a: 'Most often because the outdoor unit is drawing more current than it should: a dirty coil or blocked airflow on hot days, a failing capacitor that makes the motors struggle to start, or a compressor that is wearing out. A breaker that trips instantly on reset usually means a short circuit.' },
+      { q: 'Is it safe to keep resetting the AC breaker?', a: "No. Reset it once. If it trips again, leave it off and call a technician. The breaker is doing its job by cutting power to something that's overheating or shorted, and repeated resets can damage the compressor or start a fire." },
+      { q: 'Can a dirty filter cause the AC breaker to trip?', a: "It can strain the indoor blower motor, which can trip the indoor unit's breaker. A dirty outdoor coil is the more common cause of the outdoor unit's breaker tripping, especially on hot afternoons." },
+      { q: 'What size breaker does my AC need?', a: 'The outdoor unit\'s nameplate lists the minimum circuit ampacity and the maximum fuse or breaker size. The breaker must not exceed that maximum. If you think the breaker is the wrong size, have an electrician check it against the nameplate and the wiring.' },
+    ],
+    related: ['ac-outdoor-unit-not-running', 'ac-not-turning-on', 'ac-not-working-after-power-outage'],
+  },
+  {
+    slug: 'ac-high-humidity',
+    published: '2026-10-17',
+    updated: '2026-10-17',
+    name: 'House humid with the AC on',
+    title: 'AC Not Removing Humidity? Why the House Feels Clammy',
+    h1: 'House Humid With the AC On? Why It Feels Clammy and How to Fix It',
+    description: "The temperature is fine but the house feels damp and sticky? Why an air conditioner stops removing humidity, the free fixes to try first, and when a dehumidifier makes sense.",
+    group: 'cycling',
+    summary: 'The temperature is fine, but the air feels damp, sticky or cold and clammy.',
+    quick: [
+      'The thermostat fan set to On, which blows the moisture on the coil back into the house',
+      'An oversized system that shuts off before it removes much moisture',
+      'A clogged filter or a dirty indoor coil',
+      'The blower set to a high speed that suits dry climates',
+      'Leaky return ducts pulling in humid air from an attic, crawlspace or outdoors',
+      'Low refrigerant',
+      'Moisture from inside: showers, cooking, laundry, a damp crawlspace or basement',
+    ],
+    firstChecks: [
+      'Measure it: a digital hygrometer costs about $10–$20. The EPA recommends keeping indoor humidity below 60%, ideally 30–50%.',
+      'Thermostat fan on Auto, not On.',
+      "Air filter: replace it if it's dirty.",
+      'Run bathroom and kitchen exhaust fans, and look for damp in a crawlspace or basement.',
+    ],
+    causes: [
+      { cause: 'Fan set to On', signs: 'Humidity rises soon after the compressor stops; fan never stops', who: 'DIY', cost: '$0' },
+      { cause: 'Oversized system', signs: 'Short runs, cool but clammy, has done it since installation', who: 'Pro', cost: '$0 now; size correctly when you replace it', see: 'ac-short-cycling' },
+      { cause: 'Clogged filter or dirty indoor coil', signs: 'Weak airflow, filter gray, musty smell', who: 'DIY or pro', cost: `${COST.filter} filter, ${COST.coilDuctCleaning} coil cleaning` },
+      { cause: 'Blower speed set too high', signs: 'Strong airflow, cool air, but humidity stays high; common when installers use one setting everywhere', who: 'Pro', cost: `${COST.serviceCall} service call to adjust` },
+      { cause: 'Leaky return ducts', signs: 'Ducts in an attic or crawlspace; humidity high even with long run times', who: 'Pro', cost: `${COST.ductSealing} duct sealing` },
+      { cause: 'Low refrigerant (a leak)', signs: 'Cooling weaker than it used to be, ice on the lines', who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: 'Moisture sources indoors', signs: 'Worst after showers or cooking; damp crawlspace or basement; condensation on windows', who: 'DIY or pro', cost: '$0 (exhaust fans) and up' },
+      { cause: 'A climate that needs more dehumidification', signs: 'Mild, humid days when the AC barely needs to run', who: 'Pro', cost: `${COST.dehumidifier} installed whole-house dehumidifier` },
+    ],
+    steps: [
+      { title: 'Measure for a day', text: 'Put a hygrometer in a couple of rooms and check it morning, afternoon and night. You want a number to compare after each fix, not a feeling.' },
+      { title: 'Set the fan to Auto and wait', text: 'With the fan on Auto, water that collects on the coil drains away instead of being blown back into the house. Give it two days before judging.' },
+      { title: 'Replace the filter', text: 'A clogged filter reduces airflow and lets the coil get dirty, and a dirty coil removes less moisture.' },
+      { title: 'Use the dehumidify settings you have', text: 'Many thermostats have a dehumidify or "overcool" setting, and many ductless mini-splits have a Dry mode. Check your manuals; these settings run the system in a way that removes more moisture.' },
+      { title: 'Cut the moisture coming in', text: 'Run the bathroom fan during and after showers and the range hood while cooking. Vent the dryer outside. A damp crawlspace or basement often needs a vapor barrier or its own dehumidifier.' },
+      { title: 'Ask the technician the right questions', text: 'If humidity stays above 60%, ask about the refrigerant charge, the blower speed, return duct leaks, and whether the system is oversized. A whole-house dehumidifier comes after those, not before.' },
+    ],
+    callPro: [
+      'Humidity stays above 60% with the fan on Auto and a clean filter',
+      'Condensation on vents or windows, or mold growing indoors',
+      'The system short cycles',
+      'Ice on the lines or the coil',
+    ],
+    quoteFlags: [
+      'A bigger air conditioner to fix humidity: oversizing makes it worse',
+      'A whole-house dehumidifier sold before anyone checks the fan setting, blower speed, refrigerant charge and duct leaks',
+      "Duct cleaning sold as a humidity fix: it doesn't change how much moisture the system removes",
+    ],
+    faqs: [
+      { q: 'Why is my house humid when the AC is running?', a: 'The most common reasons are the fan set to On (which re-evaporates water from the coil), a system that is too big and shuts off before removing much moisture, a dirty filter or coil, and humid air leaking in through return ducts. Indoor moisture from showers, cooking or a damp crawlspace adds to it.' },
+      { q: 'What humidity should my house be with the AC on?', a: 'The EPA recommends keeping indoor relative humidity below 60%, ideally between 30% and 50%. Above 60% for long periods, mold and dust mites thrive and the house feels clammy even at a cool temperature.' },
+      { q: 'Does running the AC fan on On increase humidity?', a: 'It can, by a lot. When the compressor stops, the fan keeps blowing across the wet coil and puts that moisture back into the house. In one test by building scientist Allison Bailes in her own home, switching the fan from Auto to On raised indoor humidity from about 58% to about 70%.' },
+      { q: 'Do I need a dehumidifier if I have air conditioning?', a: "Often not. Air conditioners remove moisture as they cool, and fixing the fan setting, airflow and duct leaks usually brings humidity down. A dehumidifier makes sense in very humid climates, in homes with an oversized system you're not ready to replace, or for a damp basement. Whole-house units typically cost about $2,800–$3,300 installed." },
+    ],
+    related: ['ac-short-cycling', 'ac-smells', 'ac-running-constantly'],
+  },
+  {
+    slug: 'mini-split-error-codes',
+    published: '2026-10-17',
+    updated: '2026-10-17',
+    name: 'Mini-split error code or blinking light',
+    title: 'Mini-Split Error Code or Blinking Light? What to Do',
+    h1: 'Mini-Split Error Code or Blinking Light? What It Means and What to Do',
+    description: "Ductless mini-split showing an error code or flashing a light? How to read it, how to reset the unit safely, what the main kinds of codes mean, and when it needs a technician.",
+    group: 'mini-split',
+    summary: 'The indoor unit shows a code or flashes a light, and the system stops or won\'t cool.',
+    quick: [
+      'A power glitch or surge that left the control board locked out (a reset often clears it)',
+      'Dirty filters or a blocked outdoor unit, so the system shuts down to protect itself',
+      'A communication error between the indoor and outdoor units (wiring, a surge or a board)',
+      'A failed temperature sensor (thermistor)',
+      'A drain or condensate pump problem on units with a float switch',
+      'Low refrigerant',
+      "A fault in the outdoor unit's inverter board or compressor",
+    ],
+    firstChecks: [
+      'Write the code down exactly, or count the blinks: how many, which light (often Operation or Timer), and whether the pattern repeats. A short phone video helps.',
+      "Find your exact model numbers on the labels of the indoor and outdoor units. Codes differ between brands and even between a brand's own product lines.",
+      "Look it up in the owner's or installation manual for that model (most are on the manufacturer's website). Some units also have a code list on a label inside the front panel or the outdoor unit's service cover.",
+      'Check the filters behind the front panel, and make sure nothing blocks the outdoor unit.',
+    ],
+    causes: [
+      { cause: 'Power glitch or lockout', signs: 'Code appeared after an outage, storm or flicker', who: 'DIY', cost: '$0 (reset)' },
+      { cause: 'Dirty filters or blocked outdoor unit', signs: 'Protection codes for high temperature or pressure, or freeze protection; dusty mesh filters', who: 'DIY or pro', cost: `$0 to clean filters, ${COST.condenserClean} pro cleaning` },
+      { cause: 'Communication error', signs: 'Indoor and outdoor units can\'t talk to each other. Common examples: U4 on many Daikin units, E6 on many Mitsubishi units', who: 'Pro', cost: `${COST.serviceCall} service call plus wiring or a board` },
+      { cause: 'Failed temperature sensor', signs: 'Sensor or thermistor code; unit stops or runs oddly', who: 'Pro', cost: `${COST.serviceCall} service call plus the sensor` },
+      { cause: 'Drain or condensate pump problem', signs: 'Water dripping from the indoor unit; float or drain code', who: 'DIY or pro', cost: `${COST.drainClear} drain clearing, ${COST.condensatePump} pump`, see: 'ac-leaking-water' },
+      { cause: 'Low refrigerant (a leak)', signs: 'Weak cooling, ice on the lines, low-pressure or refrigerant code', who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: 'Inverter board or compressor fault', signs: 'Outdoor unit code that returns after every reset', who: 'Pro', cost: `${COST.serviceCall} plus the board (often several hundred dollars); ${COST.compressor} for a compressor` },
+    ],
+    steps: [
+      { title: 'Record the code', text: 'Note the code or blink pattern, the time, the mode (cool, heat, dry) and what the unit was doing. Take a photo or short video.' },
+      { title: 'Look it up for your exact model', text: "Use the model numbers from the unit's labels to find the manual. Generic online lists often conflict, because the same code can mean different things on different product lines." },
+      { title: 'Reset once', text: 'Turn the unit off with the remote, switch off its breaker or outdoor disconnect, wait about 5 minutes, then restore power and restart with the remote. If the code comes straight back, stop resetting it.' },
+      { title: 'Clean the filters and clear the outdoor unit', text: "Lift the front panel, slide out the mesh filters and rinse them in lukewarm water. Let them dry fully before refitting. Outside, clear leaves, snow or plants away from the unit." },
+      { title: 'Rule out the normal blinks', text: "In heating mode, many mini-splits blink a light while the outdoor unit defrosts, and stop after several minutes. Some also blink while they warm up. Check the remote's batteries and mode too." },
+      { title: 'Call with the details', text: 'Give the technician the brand, both model numbers, the exact code, when it started and what you have tried. They can often tell which part to bring.' },
+    ],
+    safetyNote: "Don't open the outdoor unit's covers. Mini-split outdoor units contain inverter boards with capacitors that stay charged at high voltage for several minutes after the power is off.",
+    callPro: [
+      'The code comes back after one reset',
+      'A communication, sensor, inverter or compressor code',
+      'Water dripping from the indoor unit',
+      'Ice on the copper lines',
+    ],
+    quoteFlags: [
+      'A new system quoted for a communication error before the connecting wiring and terminals are checked',
+      'A board replaced without explaining what the code and the test readings showed',
+      'A refrigerant recharge with no leak search',
+    ],
+    faqs: [
+      { q: 'What does a blinking light on my mini-split mean?', a: "Usually that the unit has detected a fault and stopped. The number of blinks, and which light blinks, is a code you can look up in the manual for your exact model. In heating mode, a blinking light can also just mean the unit is defrosting, which is normal and stops after several minutes." },
+      { q: 'How do I reset a mini-split error code?', a: "Turn the unit off with the remote, switch off its breaker or outdoor disconnect for about 5 minutes, then turn the power back on and restart it with the remote. If the code returns, don't keep resetting: the fault is still there." },
+      { q: 'What is a communication error on a mini-split?', a: "It means the indoor and outdoor units can't exchange signals. Causes include loose or corroded connecting wires, a surge that damaged a board, or a failed board. On many Daikin units it shows as U4, and on many Mitsubishi units as E6, but check your manual: codes vary by model." },
+      { q: 'Can I trust mini-split error code lists online?', a: "Use them as a starting point only. Codes differ between brands and between product lines from the same brand, and generic lists often disagree. The manual for your exact model number, or the manufacturer's support line, is the reliable source." },
+    ],
+    related: ['ac-not-working-after-power-outage', 'ac-leaking-water', 'ac-frozen-coil'],
   },
 ];
 
