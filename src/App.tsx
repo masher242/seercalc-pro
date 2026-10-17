@@ -25,6 +25,7 @@ import BlogArticleAirFilter from './pages/BlogArticleAirFilter';
 import BlogArticleSeerChart from './pages/BlogArticleSeerChart';
 import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
 import BlogArticle16vs18Seer from './pages/BlogArticle16vs18Seer';
+import BlogArticle18vs20Seer from './pages/BlogArticle18vs20Seer';
 import BlogArticle14vs16Seer from './pages/BlogArticle14vs16Seer';
 import BlogArticlePowerProtection from './pages/BlogArticlePowerProtection';
 import BrandTrane from './pages/BrandTrane';
@@ -91,6 +92,7 @@ function AppContent() {
           <Route path="/blog/seer-rating-chart" element={<BlogArticleSeerChart />} />
           <Route path="/blog/seer-vs-seer2-explained" element={<BlogArticleSeerVsSeer2 />} />
           <Route path="/blog/16-vs-18-seer" element={<BlogArticle16vs18Seer />} />
+          <Route path="/blog/18-vs-20-seer" element={<BlogArticle18vs20Seer />} />
           <Route path="/blog/14-vs-16-seer" element={<BlogArticle14vs16Seer />} />
           <Route path="/blog/protect-air-conditioner-power-surges-outages" element={<BlogArticlePowerProtection />} />
           <Route path="/brands/trane" element={<BrandTrane />} />

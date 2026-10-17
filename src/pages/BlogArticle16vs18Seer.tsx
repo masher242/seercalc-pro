@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
+import { VerdictBadge, HowWeJudge, KeepYearsField, PaybackResults } from '../components/PaybackVerdict';
+import { SYSTEM_LIFE, GOOD_MAX, MARGINAL_MAX, hoursRateThreshold } from '../data/payback';
 import LeadMagnet from '../components/LeadMagnet';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import { STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, annualCost, usd, cents } from '../data/acCost';
@@ -13,7 +15,7 @@ const PATH = '/blog/16-vs-18-seer';
 const TITLE = '16 vs 18 SEER: Is the Upgrade Worth It? (Payback Math)';
 const HEADLINE = '16 vs 18 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)';
 const PUBLISHED = '2026-10-12';
-const UPDATED = '2026-10-12';
+const UPDATED = '2026-10-17';
 
 /** Assumptions used throughout (stated in the article). */
 const TONS = 3;
@@ -21,7 +23,11 @@ const US_HOURS = 1500;
 const PREMIUM = 1500; // typical extra installed cost of 18 SEER over 16 SEER, 3-ton
 const PREMIUM_LOW = 1000;
 const PREMIUM_HIGH = 2500;
-const LIFE = 15;
+const LIFE = SYSTEM_LIFE;
+/** kWh saved per running hour, 3-ton, 16 → 18 (3 × 12 × (1/16 − 1/18)). */
+const KWH_PER_HOUR = TONS * 12 * (1 / 16 - 1 / 18);
+const GOOD_AT = hoursRateThreshold(PREMIUM, KWH_PER_HOUR, GOOD_MAX);
+const MARGINAL_AT = hoursRateThreshold(PREMIUM, KWH_PER_HOUR, MARGINAL_MAX);
 /** SEER → SEER2 for ducted split systems (same factor as our converter). */
 const SPLIT_FACTOR = SEER2_FACTOR;
 
@@ -43,17 +49,16 @@ function PaybackEstimator() {
   const [rateC, setRateC] = useState(+(US_RATE * 100).toFixed(2));
   const [hours, setHours] = useState(US_HOURS);
   const [premium, setPremium] = useState(PREMIUM);
+  const [keep, setKeep] = useState(LIFE);
 
   const yearly = savings(tons, hours, rateC / 100);
-  const payback = yearly > 0 ? premium / yearly : Infinity;
-  const net = yearly * LIFE - premium;
   const input = 'w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500';
   const label = 'block text-sm font-medium text-gray-700 mb-1';
 
   return (
     <div className="rounded-lg border border-teal-200 bg-teal-50/50 p-5 mb-6">
       <p className="text-sm font-bold uppercase tracking-wide text-teal-800 mb-3">Your numbers</p>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
         <div>
           <label htmlFor="pb-tons" className={label}>System size</label>
           <select id="pb-tons" className={input} value={tons} onChange={(e) => setTons(Number(e.target.value))}>
@@ -75,23 +80,9 @@ function PaybackEstimator() {
           <input id="pb-prem" type="number" min={0} step={100} className={input} value={premium}
             onChange={(e) => setPremium(Math.max(0, Number(e.target.value)))} />
         </div>
+        <KeepYearsField id="pb-keep" value={keep} onChange={setKeep} className={input} labelClass={label} />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
-        <div className="bg-white rounded-lg p-3 border border-gray-200">
-          <p className="text-xs text-gray-500">Saved per year</p>
-          <p className="text-2xl font-bold text-gray-900">{usd(yearly)}</p>
-        </div>
-        <div className="bg-white rounded-lg p-3 border border-gray-200">
-          <p className="text-xs text-gray-500">Payback</p>
-          <p className="text-2xl font-bold text-gray-900">{Number.isFinite(payback) ? years(payback) : '—'}</p>
-        </div>
-        <div className="bg-white rounded-lg p-3 border border-gray-200">
-          <p className="text-xs text-gray-500">Net over {LIFE} years</p>
-          <p className={`text-2xl font-bold ${net >= 0 ? 'text-teal-700' : 'text-red-700'}`}>
-            {net >= 0 ? '+' : '−'}{usd(Math.abs(net))}
-          </p>
-        </div>
-      </div>
+      <PaybackResults yearly={yearly} premium={premium} keep={keep} money={(n) => usd(n)} />
       <p className="text-xs text-gray-500 mt-3">
         Electricity savings only, at today's rate. Your rate is on your bill; the extra cost is the difference between two
         quotes for the same size system from the same installer.
@@ -120,6 +111,10 @@ export default function BlogArticle16vs18Seer() {
     return { ...s, save, payback: PREMIUM / save, net: save * LIFE - PREMIUM };
   });
 
+  const hot = scenarios.filter((s) => ['Florida', 'Texas', 'Arizona'].includes(s.place)).map((s) => s.payback);
+  const [hotLo, hotHi] = [Math.round(Math.min(...hot)), Math.round(Math.max(...hot))];
+  const hotRange = hotLo === hotHi ? `about ${hotLo}` : `${hotLo}–${hotHi}`;
+  const ca = scenarios.find((s) => s.place === 'California');
   const best = [...scenarios].sort((x, y) => y.save - x.save)[0];
   const description = `An 18 SEER AC uses 11% less electricity than a 16 SEER. For a 3-ton system at the U.S. average ${cents(US_RATE)}/kWh that saves about ${usd(usSave)} a year, so a ${usd(PREMIUM)} upgrade takes ${Math.round(usPayback)} years to pay back. Where it pays, and where it doesn't.`;
 
@@ -134,7 +129,7 @@ export default function BlogArticle16vs18Seer() {
     },
     {
       q: 'Is an 18 SEER air conditioner worth it?',
-      a: `On electricity savings alone, usually not at average U.S. rates: a ${usd(PREMIUM)} premium takes about ${Math.round(usPayback)} years to pay back, longer than most systems last. It is worth it where you run the AC a lot and pay a high rate (roughly when cooling hours × rate in dollars is above 600 for a 3-ton system), or when you want the quieter operation and better humidity control of a variable-speed system.`,
+      a: `On electricity savings alone, usually not at average U.S. rates: a ${usd(PREMIUM)} premium takes about ${Math.round(usPayback)} years to pay back, longer than most systems last. Even in hot states with ordinary rates it takes ${hotRange} years. It's a good deal (paying back within ${GOOD_MAX} years) only where you run the AC a lot and pay a high rate, roughly when cooling hours × rate in dollars is above ${GOOD_AT.toLocaleString()} for a 3-ton system. The other reason to buy one is comfort: the quieter running and better humidity control of a variable-speed system.`,
     },
     {
       q: 'What is 16 SEER and 18 SEER in SEER2?',
@@ -193,10 +188,10 @@ export default function BlogArticle16vs18Seer() {
               An 18 SEER air conditioner uses <strong>11% less electricity</strong> than a 16 SEER. For a 3-ton system
               running {US_HOURS.toLocaleString()} hours a year at the U.S. average rate of {cents(US_RATE)}/kWh, that's
               about <strong>{usd(usSave)} a year</strong>. If the 18 SEER costs {usd(PREMIUM)} more, it takes{' '}
-              <strong>about {Math.round(usPayback)} years</strong> to pay back, longer than most systems last. In hot states
-              like Florida and Texas it roughly breaks even over a system's life. It pays clearly only where the AC runs most
-              of the year <em>and</em> power is expensive (Hawaii, the Caribbean), or if you're buying it for comfort rather
-              than savings.
+              <strong>about {Math.round(usPayback)} years</strong> to pay back, longer than most systems last. Even in hot
+              states like Florida and Texas it takes {hotRange} years, too slow to be worth it for savings alone. It's a good
+              deal only where the AC runs most of the year <em>and</em> power is expensive (Hawaii, the Caribbean), or if
+              you're buying it for comfort rather than savings.
             </p>
           </div>
 
@@ -251,6 +246,7 @@ export default function BlogArticle16vs18Seer() {
           </p>
 
           <h2 className={h2}>Where 18 SEER pays back, and where it doesn't</h2>
+          <HowWeJudge />
           <p className={p}>
             A 3-ton system, an 18 SEER premium of {usd(PREMIUM)}, local residential electricity rates and our estimate of
             typical cooling hours for each climate:
@@ -264,7 +260,8 @@ export default function BlogArticle16vs18Seer() {
                   <th className={th}>Cooling hrs/yr</th>
                   <th className={th}>Saved per year</th>
                   <th className={th}>Payback</th>
-                  <th className={th}>Net over {LIFE} yrs</th>
+                  <th className={th}>Verdict</th>
+                  <th className={th}>Net over {LIFE} yrs, if it lasts</th>
                 </tr>
               </thead>
               <tbody>
@@ -274,7 +271,8 @@ export default function BlogArticle16vs18Seer() {
                     <td className={td}>{cents(s.rate)}</td>
                     <td className={td}>{s.hours.toLocaleString()}</td>
                     <td className={td}>{usd(s.save)}</td>
-                    <td className={`${td} ${s.payback <= LIFE ? 'text-teal-700 font-semibold' : ''}`}>{years(s.payback)}</td>
+                    <td className={td}>{years(s.payback)}</td>
+                    <td className={td}><VerdictBadge payback={s.payback} /></td>
                     <td className={`${td} ${s.net >= 0 ? 'text-teal-700 font-semibold' : 'text-red-700'}`}>{s.net >= 0 ? '+' : '−'}{usd(Math.abs(s.net))}</td>
                   </tr>
                 ))}
@@ -284,10 +282,11 @@ export default function BlogArticle16vs18Seer() {
           <p className={p}>
             Three groups stand out. Where the cooling season is moderate or short (Ohio, New York, the U.S. average), 18 SEER
             never earns back its premium on electricity. In hot states with ordinary rates (Florida, Texas, Arizona), long
-            hours make up for cheap power, and in California high rates make up for a moderate season. There the upgrade
-            roughly breaks even over 15 years: a small gain if the
-            system lasts, a loss if you move. Only where the AC runs most of the year <em>and</em> power is expensive does it
-            pay back in well under ten years and keep saving after that.
+            hours make up for cheap power, and in California high rates make up for a moderate season. There the upgrade pays
+            back in {hotRange} years ({ca ? `${Math.round(ca.payback)} in California` : 'similar in California'}):
+            on paper a small gain over {LIFE} years, but too slow to count as a good use of the money, and a loss if you
+            move. Only where the AC runs most of the year <em>and</em> power is expensive is it a good deal, paying back in
+            well under {GOOD_MAX} years and saving for years after that.
             {bahamas && (
               <> In the Bahamas it's better than the table shows: BPL charges more for every kWh above 800 a month, so the
               kWh an efficient AC saves come off the most expensive part of the bill (see the{' '}
@@ -298,9 +297,11 @@ export default function BlogArticle16vs18Seer() {
           <h3 className={h3}>A quick rule of thumb</h3>
           <p className={p}>
             For a 3-ton system, multiply your yearly cooling hours by your rate in dollars. If the result is{' '}
-            <strong>above 600</strong>, a {usd(PREMIUM)} premium pays back within 10 years. 3,000 hours at 20¢ (= 600) just
-            makes it; 1,500 hours at 18¢ (= 270) doesn't come close. For a different premium, scale the 600: a $1,000
-            premium needs 400, a $2,500 premium needs 1,000.
+            <strong>above {GOOD_AT.toLocaleString()}</strong>, a {usd(PREMIUM)} premium pays back within {GOOD_MAX} years: a good
+            deal. Between {MARGINAL_AT.toLocaleString()} and {GOOD_AT.toLocaleString()} it's marginal; below{' '}
+            {MARGINAL_AT.toLocaleString()}, it isn't worth it for savings. 3,000 hours at 31¢ (= 930) clears the bar; 3,000
+            hours at 15¢ (= 450) and 1,500 hours at 18¢ (= 270) don't. For a different premium, scale the numbers: a $1,000
+            premium needs {hoursRateThreshold(1000, KWH_PER_HOUR, GOOD_MAX).toLocaleString()} for a good deal.
           </p>
 
           <h2 className={h2}>Run your own numbers</h2>
@@ -389,7 +390,7 @@ export default function BlogArticle16vs18Seer() {
             <div className="rounded-lg border border-teal-200 bg-teal-50/40 p-5">
               <h3 className="text-lg font-bold text-gray-900 mb-2">Choose 18 SEER if</h3>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
-                <li>Hours × rate (in dollars) is above 600 for a 3-ton system</li>
+                <li>Hours × rate (in dollars) is above {GOOD_AT.toLocaleString()} for a 3-ton system</li>
                 <li>You live somewhere humid and want better moisture control</li>
                 <li>The outdoor unit is close to where you sleep or sit</li>
                 <li>A utility rebate covers much of the premium</li>
@@ -399,7 +400,7 @@ export default function BlogArticle16vs18Seer() {
           </div>
           <p className={p}>
             Comparing other steps? See <Link to="/blog/14-vs-16-seer" className={a}>14 vs 16 SEER</Link> for the step up from
-            the minimum, the <Link to="/blog/seer-rating-chart" className={a}>SEER rating chart</Link> for every
+            the minimum, <Link to="/blog/18-vs-20-seer" className={a}>18 vs 20 SEER</Link> for the top tier, the <Link to="/blog/seer-rating-chart" className={a}>SEER rating chart</Link> for every
             rating from 8 to 25, and <Link to="/blog/choosing-the-right-seer-rating" className={a}>choosing the right SEER rating</Link>{' '}
             for the bigger picture.
           </p>
