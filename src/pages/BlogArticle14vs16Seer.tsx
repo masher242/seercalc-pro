@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
+import { VerdictBadge, HowWeJudge, KeepYearsField, PaybackResults } from '../components/PaybackVerdict';
+import { SYSTEM_LIFE, GOOD_MAX, MARGINAL_MAX, hoursRateThreshold, verdict } from '../data/payback';
 import LeadMagnet from '../components/LeadMagnet';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import { STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, annualCost, usd, cents } from '../data/acCost';
@@ -13,7 +15,7 @@ const PATH = '/blog/14-vs-16-seer';
 const TITLE = '14 vs 16 SEER: Is the Upgrade Worth It? (Payback Math)';
 const HEADLINE = '14 vs 16 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)';
 const PUBLISHED = '2026-10-14';
-const UPDATED = '2026-10-14';
+const UPDATED = '2026-10-17';
 
 /** Assumptions used throughout (stated in the article). */
 const TONS = 3;
@@ -21,7 +23,14 @@ const US_HOURS = 1500;
 const PREMIUM = 800; // typical extra installed cost of a 16 SEER over a 14 SEER, 3-ton
 const PREMIUM_LOW = 300;
 const PREMIUM_HIGH = 1500;
-const LIFE = 15;
+const LIFE = SYSTEM_LIFE;
+/** kWh saved per running hour, 3-ton: North 14 → 16, South 15 → 16. */
+const KWH_NORTH = TONS * 12 * (1 / 14 - 1 / 16);
+const KWH_SOUTH = TONS * 12 * (1 / 15 - 1 / 16);
+const GOOD_NORTH = hoursRateThreshold(PREMIUM, KWH_NORTH, GOOD_MAX);
+const MARGINAL_NORTH = hoursRateThreshold(PREMIUM, KWH_NORTH, MARGINAL_MAX);
+const GOOD_SOUTH = hoursRateThreshold(PREMIUM, KWH_SOUTH, GOOD_MAX);
+const MARGINAL_SOUTH = hoursRateThreshold(PREMIUM, KWH_SOUTH, MARGINAL_MAX);
 /** SEER → SEER2 for ducted split systems (same factor as our converter). */
 const SPLIT_FACTOR = SEER2_FACTOR;
 /** Cheapest SEER that can be installed new in the Southeast/Southwest (14.3 SEER2). */
@@ -48,10 +57,9 @@ function PaybackEstimator() {
   const [rateC, setRateC] = useState(+(US_RATE * 100).toFixed(2));
   const [hours, setHours] = useState(US_HOURS);
   const [premium, setPremium] = useState(PREMIUM);
+  const [keep, setKeep] = useState(LIFE);
 
   const yearly = savings(base, tons, hours, rateC / 100);
-  const payback = yearly > 0 ? premium / yearly : Infinity;
-  const net = yearly * LIFE - premium;
   const input = 'w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500';
   const label = 'block text-sm font-medium text-gray-700 mb-1';
 
@@ -79,7 +87,7 @@ function PaybackEstimator() {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
         <div>
           <label htmlFor="pb-tons" className={label}>System size</label>
           <select id="pb-tons" className={input} value={tons} onChange={(e) => setTons(Number(e.target.value))}>
@@ -101,23 +109,9 @@ function PaybackEstimator() {
           <input id="pb-prem" type="number" min={0} step={100} className={input} value={premium}
             onChange={(e) => setPremium(Math.max(0, Number(e.target.value)))} />
         </div>
+        <KeepYearsField id="pb-keep" value={keep} onChange={setKeep} className={input} labelClass={label} />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
-        <div className="bg-white rounded-lg p-3 border border-gray-200">
-          <p className="text-xs text-gray-500">Saved per year</p>
-          <p className="text-2xl font-bold text-gray-900">{usd(yearly)}</p>
-        </div>
-        <div className="bg-white rounded-lg p-3 border border-gray-200">
-          <p className="text-xs text-gray-500">Payback</p>
-          <p className="text-2xl font-bold text-gray-900">{Number.isFinite(payback) ? years(payback) : '—'}</p>
-        </div>
-        <div className="bg-white rounded-lg p-3 border border-gray-200">
-          <p className="text-xs text-gray-500">Net over {LIFE} years</p>
-          <p className={`text-2xl font-bold ${net >= 0 ? 'text-teal-700' : 'text-red-700'}`}>
-            {net >= 0 ? '+' : '−'}{usd(Math.abs(net))}
-          </p>
-        </div>
-      </div>
+      <PaybackResults yearly={yearly} premium={premium} keep={keep} money={(n) => usd(n)} />
       <p className="text-xs text-gray-500 mt-3">
         Electricity savings only, at today's rate. Your rate is on your bill; the extra cost is the difference between two
         quotes for the same size system from the same installer.
@@ -149,6 +143,7 @@ export default function BlogArticle14vs16Seer() {
   const hot = scenarios.filter((s) => ['Florida', 'Texas', 'Arizona'].includes(s.place)).map((s) => s.payback);
   const hotRange = `${Math.floor(Math.min(...hot))}–${Math.ceil(Math.max(...hot))}`;
   const hi = scenarios.find((s) => s.place === 'Hawaii')!;
+  const usVerdict = verdict(usPayback);
   const description = `A 16 SEER AC uses 12.5% less electricity than a 14 SEER. For a 3-ton system at the U.S. average ${cents(US_RATE)}/kWh that saves about ${usd(usSave)} a year, so an ${usd(PREMIUM)} upgrade pays back in about ${Math.round(usPayback)} years. Where it pays, and what changes in the South.`;
 
   const faqs = [
@@ -162,7 +157,7 @@ export default function BlogArticle14vs16Seer() {
     },
     {
       q: 'Is a 16 SEER air conditioner worth it over a 14 SEER?',
-      a: `Usually, yes, if the 16 costs ${usd(PREMIUM)} or less extra. At average U.S. rates and hours it pays back in about ${Math.round(usPayback)} years, well within a system's life. In the Southeast and Southwest the cheapest new unit you can install is already about 15 SEER, so the step to 16 saves less and takes ${hotRange} years to pay back in Florida, Texas and Arizona at the same premium.`,
+      a: `It depends on where you live. At average U.S. rates and hours, a ${usd(PREMIUM)} premium pays back in about ${Math.round(usPayback)} years, which we count as "${usVerdict.label.toLowerCase()}". ${usVerdict.note} In the Southeast and Southwest the cheapest new unit is already about 15 SEER, so the step to 16 saves less and takes ${hotRange} years in Florida, Texas and Arizona. It's a good deal where power is expensive: about ${Math.round(hi.payback)} years in Hawaii.`,
     },
     {
       q: 'Can you still buy a 14 SEER air conditioner?',
@@ -225,10 +220,11 @@ export default function BlogArticle14vs16Seer() {
               A 16 SEER air conditioner uses <strong>12.5% less electricity</strong> than a 14 SEER. For a 3-ton system
               running {US_HOURS.toLocaleString()} hours a year at the U.S. average rate of {cents(US_RATE)}/kWh, that's
               about <strong>{usd(usSave)} a year</strong>. If the 16 costs {usd(PREMIUM)} more, it pays back in{' '}
-              <strong>about {Math.round(usPayback)} years</strong>, well within a system's life. Unlike the{' '}
-              <Link to="/blog/16-vs-18-seer" className={a}>16 vs 18 upgrade</Link>, this one usually earns its money back.
-              One catch: in the Southeast and Southwest, the cheapest unit you can legally install is already about 15 SEER,
-              so the step to 16 is smaller and takes {hotRange} years to pay back in Florida, Texas and Arizona.
+              <strong>about {Math.round(usPayback)} years</strong>: {usVerdict.id === 'good' ? 'a good deal' : usVerdict.id === 'marginal' ? 'marginal, worth it if you\'ll keep the system well past that' : 'not worth it for savings alone'}.
+              That's better than the <Link to="/blog/16-vs-18-seer" className={a}>16 vs 18 upgrade</Link>, which rarely pays
+              back at all. In the Southeast and Southwest, the cheapest unit you can legally install is already about 15
+              SEER, so the step to 16 is smaller and takes {hotRange} years in Florida, Texas and Arizona. It's a clear good
+              deal only where power is expensive, like Hawaii and the Caribbean.
             </p>
           </div>
 
@@ -297,6 +293,7 @@ export default function BlogArticle14vs16Seer() {
           </p>
 
           <h2 className={h2}>Where 16 SEER pays back</h2>
+          <HowWeJudge />
           <p className={p}>
             A 3-ton system, a 16 SEER premium of {usd(PREMIUM)}, local residential electricity rates and our estimate of
             typical cooling hours for each climate. Northern states compare against a 14 SEER; southern states against the
@@ -312,7 +309,8 @@ export default function BlogArticle14vs16Seer() {
                   <th className={th}>Cooling hrs/yr</th>
                   <th className={th}>Saved per year</th>
                   <th className={th}>Payback</th>
-                  <th className={th}>Net over {LIFE} yrs</th>
+                  <th className={th}>Verdict</th>
+                  <th className={th}>Net over {LIFE} yrs, if it lasts</th>
                 </tr>
               </thead>
               <tbody>
@@ -323,7 +321,8 @@ export default function BlogArticle14vs16Seer() {
                     <td className={td}>{cents(s.rate)}</td>
                     <td className={td}>{s.hours.toLocaleString()}</td>
                     <td className={td}>{usd(s.save)}</td>
-                    <td className={`${td} ${s.payback <= LIFE ? 'text-teal-700 font-semibold' : ''}`}>{years(s.payback)}</td>
+                    <td className={td}>{years(s.payback)}</td>
+                    <td className={td}><VerdictBadge payback={s.payback} /></td>
                     <td className={`${td} ${s.net >= 0 ? 'text-teal-700 font-semibold' : 'text-red-700'}`}>{s.net >= 0 ? '+' : '−'}{usd(Math.abs(s.net))}</td>
                   </tr>
                 ))}
@@ -331,11 +330,11 @@ export default function BlogArticle14vs16Seer() {
             </table>
           </div>
           <p className={p}>
-            In the North, a 16 pays back in under ten years in most places with a moderate summer, and in about 12 years
-            where the summer is short, like Michigan. In the South the picture flips: hot states run the AC twice as long,
-            but because the comparison is 15 vs 16, the 16 takes {hotRange} years to pay back in Florida, Texas and Arizona. A
-            small gain if the system lasts, closer to a wash if you move. Where power is expensive and the AC runs most of
-            the year (Hawaii, the Caribbean), it pays back in a few years.
+            In most of the U.S. this upgrade is marginal. In the North a 16 pays back in about 8–10 years where the summer
+            is moderate, and about 12 where it's short, like Michigan: worth it if you'll keep the system for its full life,
+            not if you might move. In the South hot states run the AC twice as long, but because the comparison is 15 vs
+            16, the 16 still takes {hotRange} years in Florida, Texas and Arizona. Where power is expensive and the AC runs
+            most of the year (Hawaii, the Caribbean), it's a good deal, paying back in a few years.
             {bahamas && (
               <> In the Bahamas it's better than the table shows: BPL charges more for every kWh above 800 a month, so the
               kWh an efficient AC saves come off the most expensive part of the bill (see the{' '}
@@ -346,10 +345,13 @@ export default function BlogArticle14vs16Seer() {
           <h3 className={h3}>A quick rule of thumb</h3>
           <p className={p}>
             For a 3-ton system, multiply your yearly cooling hours by your rate in dollars. In the North (14 vs 16), if
-            the result is <strong>above 250</strong>, an {usd(PREMIUM)} premium pays back within 10 years. The U.S.
-            average, 1,500 hours at 18.3¢ (= 275), clears it. In the South (15 vs 16) the bar is about <strong>530</strong>:
-            3,000 hours at 15¢ (= 450) falls a little short. For a different premium, scale the number: a $500 premium
-            needs 160 in the North and 330 in the South.
+            the result is <strong>above {GOOD_NORTH.toLocaleString()}</strong>, an {usd(PREMIUM)} premium pays back within{' '}
+            {GOOD_MAX} years: a good deal. Between {MARGINAL_NORTH.toLocaleString()} and {GOOD_NORTH.toLocaleString()} it's
+            marginal. The U.S. average, 1,500 hours at 18.3¢ (= 275), lands in the marginal band. In the South (15 vs 16)
+            the good-deal bar is about <strong>{GOOD_SOUTH.toLocaleString()}</strong> and the marginal band starts at{' '}
+            {MARGINAL_SOUTH.toLocaleString()}: 3,000 hours at 15¢ (= 450) is marginal. For a $500 premium, the good-deal bar
+            drops to {hoursRateThreshold(500, KWH_NORTH, GOOD_MAX).toLocaleString()} in the North and{' '}
+            {hoursRateThreshold(500, KWH_SOUTH, GOOD_MAX).toLocaleString()} in the South.
           </p>
 
           <h2 className={h2}>Run your own numbers</h2>
@@ -414,7 +416,7 @@ export default function BlogArticle14vs16Seer() {
               <h3 className="text-lg font-bold text-gray-900 mb-2">Choose 14 SEER (or the base 15) if</h3>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
                 <li>Your cooling season is short (under about 900 hours)</li>
-                <li>You expect to move within 7 years</li>
+                <li>You expect to move within about 10 years</li>
                 <li>The 16 costs more than $1,200 extra and no rebate applies</li>
                 <li>It's a rental or a house you're about to sell</li>
               </ul>
@@ -422,7 +424,7 @@ export default function BlogArticle14vs16Seer() {
             <div className="rounded-lg border border-teal-200 bg-teal-50/40 p-5">
               <h3 className="text-lg font-bold text-gray-900 mb-2">Choose 16 SEER if</h3>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-700">
-                <li>Hours × rate (in dollars) is above 250 in the North, 530 in the South</li>
+                <li>Hours × rate (in dollars) is above {GOOD_NORTH.toLocaleString()} in the North, {GOOD_SOUTH.toLocaleString()} in the South</li>
                 <li>A utility rebate requires ENERGY STAR</li>
                 <li>The premium is under $1,000 for a single-stage 16</li>
                 <li>You plan to stay 10 years or more</li>
@@ -432,7 +434,7 @@ export default function BlogArticle14vs16Seer() {
           </div>
           <p className={p}>
             Thinking about going higher? See <Link to="/blog/16-vs-18-seer" className={a}>16 vs 18 SEER</Link> for the next
-            step, the <Link to="/blog/seer-rating-chart" className={a}>SEER rating chart</Link> for every rating from 8 to
+            step, <Link to="/blog/18-vs-20-seer" className={a}>18 vs 20 SEER</Link> for the top tier, the <Link to="/blog/seer-rating-chart" className={a}>SEER rating chart</Link> for every rating from 8 to
             25, and <Link to="/blog/choosing-the-right-seer-rating" className={a}>choosing the right SEER rating</Link>{' '}
             for the bigger picture.
           </p>

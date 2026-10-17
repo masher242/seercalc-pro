@@ -5,6 +5,14 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: '18-vs-20-seer',
+    title: '18 vs 20 SEER: Is the Top-Tier Upgrade Worth It?',
+    description: 'A 20 SEER AC uses 10% less electricity than an 18. Why each SEER step saves less, the few places 20 SEER pays back, and the good reasons to buy one anyway.',
+    date: '2026-10-17',
+    readTime: '8 min read',
+    category: 'HVAC Education'
+  },
+  {
     slug: '14-vs-16-seer',
     title: '14 vs 16 SEER: Is the Upgrade Worth the Extra Cost?',
     description: 'A 16 SEER AC uses 12.5% less electricity than a 14. The payback math by state, why the South is different, and how 16 SEER lines up with ENERGY STAR.',
