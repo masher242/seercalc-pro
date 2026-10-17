@@ -312,6 +312,11 @@ export default function BlogArticleMinisplit() {
                 </Link>
               </div>
 
+              <p className="text-gray-700 leading-relaxed mt-8">
+                Thinking of running a mini-split from solar panels? See{' '}
+                <Link to="/blog/solar-mini-split" className="text-teal-600 hover:text-teal-700 font-medium">solar-powered mini-splits: how hybrid AC/DC units work and whether they pay off</Link>.
+              </p>
+
               <h2 id="faq" className="text-3xl font-bold text-gray-900 mt-12 mb-6">Frequently Asked Questions</h2>
 
               <div className="space-y-6">

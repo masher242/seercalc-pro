@@ -5,6 +5,14 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: 'solar-mini-split',
+    title: 'Solar-Powered Mini-Splits: How Hybrid AC/DC Units Work and Whether They Pay Off',
+    description: 'Hybrid mini-splits run on panels first and the grid second. Brands compared, the catches, setup and permits, island conditions, and a payback calculator.',
+    date: '2026-10-17',
+    readTime: '11 min read',
+    category: 'HVAC Guides'
+  },
+  {
     slug: '18-vs-20-seer',
     title: '18 vs 20 SEER: Is the Top-Tier Upgrade Worth It?',
     description: 'A 20 SEER AC uses 10% less electricity than an 18. Why each SEER step saves less, the few places 20 SEER pays back, and the good reasons to buy one anyway.',
