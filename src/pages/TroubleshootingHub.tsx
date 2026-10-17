@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ShieldAlert, CheckCircle2, Thermometer, Power, Droplets, ArrowRight } from 'lucide-react';
+import { ShieldAlert, CheckCircle2, Thermometer, Power, Droplets, ArrowRight, Repeat, Volume2, AirVent } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
-import { articleJsonLd, SITE_URL } from '../data/site';
+import { articleJsonLd, SITE_URL, SITE_EMAIL } from '../data/site';
 import { SYMPTOMS, GROUPS, TROUBLESHOOTING_UPDATED, COST, GroupId } from '../data/troubleshooting';
 
 const PATH = '/troubleshooting';
 const TITLE = 'AC Troubleshooting: Fix Common Air Conditioner Problems';
 const HEADLINE = 'AC Troubleshooting: What\'s Wrong With Your Air Conditioner?';
-const DESCRIPTION = 'Pick your symptom: warm air, won\'t turn on, frozen coil, leaking water and more. Free checks to try first, likely causes, typical repair costs and when to call a pro.';
+const DESCRIPTION = 'Pick your symptom: warm air, won\'t turn on, short cycling, noises, smells, leaks, humidity, mini-split codes. Free checks first, likely causes and repair costs.';
 
 const h2 = 'text-2xl font-bold text-gray-900 mt-10 mb-4';
 const p = 'text-gray-700 leading-relaxed mb-4';
@@ -18,7 +18,10 @@ const a = 'text-teal-600 hover:text-teal-700 font-medium';
 const GROUP_ICON: Record<GroupId, typeof Thermometer> = {
   'not-cooling': Thermometer,
   'wont-run': Power,
+  cycling: Repeat,
   'water-ice': Droplets,
+  'noise-smell': Volume2,
+  'mini-split': AirVent,
 };
 
 export default function TroubleshootingHub() {
@@ -133,7 +136,8 @@ export default function TroubleshootingHub() {
             <li>Check typical prices in <Link to="/blog/ac-repair-cost-2026" className={a}>AC repair costs in 2026</Link>.</li>
           </ul>
           <p className="text-sm text-gray-500">
-            More problems are on the way: noises, smells, short cycling, high humidity and mini-split error codes.
+            Don't see your problem? Email{' '}
+            <a href={`mailto:${SITE_EMAIL}`} className={a}>{SITE_EMAIL}</a> and we'll look at adding it.
           </p>
         </div>
 
