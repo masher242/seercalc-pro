@@ -5,6 +5,46 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: 'ceiling-fan-vs-ac-savings',
+    title: 'Ceiling Fan vs. Air Conditioning: How Much Does a Fan Really Save?',
+    description: 'A ceiling fan costs pennies an hour; central AC dozens of times more. Fans only save money if you raise the thermostat and switch them off in empty rooms. The numbers by location, and a calculator.',
+    date: '2026-10-19',
+    readTime: '9 min read',
+    category: 'Fans and Airflow'
+  },
+  {
+    slug: 'cost-to-run-a-fan',
+    title: 'How Much Does It Cost to Run a Fan? Ceiling, Box and Tower Fans, by State and Country',
+    description: 'Fan running costs per hour and per month for every U.S. state, the Caribbean, Canada and Europe, with a calculator for your own fan.',
+    date: '2026-10-19',
+    readTime: '6 min read',
+    category: 'Fans and Airflow'
+  },
+  {
+    slug: 'ceiling-fan-buying-guide',
+    title: 'Ceiling Fan Buying Guide: Size, Motor, Efficiency and Where It Goes',
+    description: 'Blade size by room, DC vs standard motors, reading the EnergyGuide label, ENERGY STAR, damp and wet ratings for porches and coastal homes.',
+    date: '2026-10-19',
+    readTime: '9 min read',
+    category: 'Fans and Airflow'
+  },
+  {
+    slug: 'ceiling-fan-direction',
+    title: 'Which Way Should a Ceiling Fan Spin in Summer and Winter?',
+    description: 'Counterclockwise in summer, clockwise on low in winter. How to check yours, where the switch is, and the settings that save money.',
+    date: '2026-10-19',
+    readTime: '4 min read',
+    category: 'Fans and Airflow'
+  },
+  {
+    slug: 'home-airflow-fans',
+    title: 'Fans and Airflow in Your Home: AC Fan Setting, Closed Vents, Hot Rooms and Whole-House Fans',
+    description: 'Why "fan On" can raise humidity, why closing vents backfires, fixing hot rooms, and when window and whole-house fans work.',
+    date: '2026-10-19',
+    readTime: '9 min read',
+    category: 'Fans and Airflow'
+  },
+  {
     slug: 'solar-mini-split',
     title: 'Solar-Powered Mini-Splits: How Hybrid AC/DC Units Work and Whether They Pay Off',
     description: 'Hybrid mini-splits run on panels first and the grid second. Brands compared, the catches, setup and permits, island conditions, and a payback calculator.',

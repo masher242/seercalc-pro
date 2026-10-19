@@ -28,6 +28,11 @@ import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
 import BlogArticle16vs18Seer from './pages/BlogArticle16vs18Seer';
 import BlogArticle18vs20Seer from './pages/BlogArticle18vs20Seer';
 import BlogArticleSolarMiniSplit from './pages/BlogArticleSolarMiniSplit';
+import BlogArticleFanVsAc from './pages/BlogArticleFanVsAc';
+import BlogArticleFanCost from './pages/BlogArticleFanCost';
+import BlogArticleFanBuyingGuide from './pages/BlogArticleFanBuyingGuide';
+import BlogArticleFanDirection from './pages/BlogArticleFanDirection';
+import BlogArticleHomeAirflow from './pages/BlogArticleHomeAirflow';
 import BlogArticle14vs16Seer from './pages/BlogArticle14vs16Seer';
 import BlogArticlePowerProtection from './pages/BlogArticlePowerProtection';
 import BrandTrane from './pages/BrandTrane';
@@ -90,6 +95,11 @@ function AppContent() {
         <Route path="/blog/16-vs-18-seer" element={<BlogArticle16vs18Seer />} />
         <Route path="/blog/18-vs-20-seer" element={<BlogArticle18vs20Seer />} />
         <Route path="/blog/solar-mini-split" element={<BlogArticleSolarMiniSplit />} />
+        <Route path="/blog/ceiling-fan-vs-ac-savings" element={<BlogArticleFanVsAc />} />
+        <Route path="/blog/cost-to-run-a-fan" element={<BlogArticleFanCost />} />
+        <Route path="/blog/ceiling-fan-buying-guide" element={<BlogArticleFanBuyingGuide />} />
+        <Route path="/blog/ceiling-fan-direction" element={<BlogArticleFanDirection />} />
+        <Route path="/blog/home-airflow-fans" element={<BlogArticleHomeAirflow />} />
         <Route path="/blog/14-vs-16-seer" element={<BlogArticle14vs16Seer />} />
         <Route path="/blog/protect-air-conditioner-power-surges-outages" element={<BlogArticlePowerProtection />} />
         <Route path="/brands/trane" element={<BrandTrane />} />
@@ -188,6 +198,11 @@ export const routes = [
   '/blog/16-vs-18-seer',
   '/blog/18-vs-20-seer',
   '/blog/solar-mini-split',
+  '/blog/ceiling-fan-vs-ac-savings',
+  '/blog/cost-to-run-a-fan',
+  '/blog/ceiling-fan-buying-guide',
+  '/blog/ceiling-fan-direction',
+  '/blog/home-airflow-fans',
   '/blog/14-vs-16-seer',
   '/blog/protect-air-conditioner-power-surges-outages',
   '/troubleshooting',
