@@ -229,6 +229,12 @@ export default function BlogArticleFreeStrategy() {
                 Turn ceiling fans off when you leave the room. Fans cool people, not spaces. A running fan in an empty room wastes electricity with zero benefit — it's the opposite of what you're trying to accomplish.
               </p>
             </div>
+            <p className="text-gray-700 leading-relaxed mb-8">
+              How much a fan really saves where you live, what fans cost to run, and how to choose one:{' '}
+              <Link to="/blog/ceiling-fan-vs-ac-savings" className="text-teal-600 hover:text-teal-700 font-medium">ceiling fan vs. AC</Link>,{' '}
+              <Link to="/blog/cost-to-run-a-fan" className="text-teal-600 hover:text-teal-700 font-medium">cost to run a fan</Link> and the{' '}
+              <Link to="/blog/ceiling-fan-buying-guide" className="text-teal-600 hover:text-teal-700 font-medium">ceiling fan buying guide</Link>.
+            </p>
 
             <hr className="my-8 border-gray-200" />
 
