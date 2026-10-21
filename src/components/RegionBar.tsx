@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import { Map as MapIcon, Palmtree, Leaf, Landmark } from 'lucide-react';
+import { Map as MapIcon, Palmtree, Leaf, Landmark, Sun } from 'lucide-react';
 import { STATES } from '../data/acCost';
 import { COUNTRIES } from '../data/caribbean';
 import { EU_COUNTRIES } from '../data/europe';
@@ -44,6 +44,13 @@ export const REGIONS = [
     short: 'Europe',
     icon: Landmark,
     match: (p: string) => slugOf(p) === 'europe' || EUROPE_SLUGS.has(slugOf(p)),
+  },
+  {
+    to: '/ac-cost/australia',
+    label: 'Australia',
+    short: 'Australia',
+    icon: Sun,
+    match: (p: string) => slugOf(p) === 'australia',
   },
 ];
 

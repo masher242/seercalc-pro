@@ -56,6 +56,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/ac-cost/australia" className="text-gray-600 hover:text-teal-600 transition-colors">
+                  AC Cost in Australia
+                </Link>
+              </li>
+              <li>
                 <Link to="/troubleshooting" className="text-gray-600 hover:text-teal-600 transition-colors">
                   AC Troubleshooting
                 </Link>

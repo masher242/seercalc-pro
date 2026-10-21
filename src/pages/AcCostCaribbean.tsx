@@ -169,7 +169,8 @@ export default function AcCostCaribbean() {
           </ul>
           <p className="text-sm text-gray-600 mb-4">
             Also see what AC costs to run in <Link to="/ac-cost/canada" className={a}>Canada</Link>,{' '}
-            <Link to="/ac-cost/europe" className={a}>Europe</Link> and{' '}
+            <Link to="/ac-cost/europe" className={a}>Europe</Link>,{' '}
+            <Link to="/ac-cost/australia" className={a}>Australia</Link> and{' '}
             <Link to="/ac-cost" className={a}>every U.S. state</Link>.
           </p>
 
