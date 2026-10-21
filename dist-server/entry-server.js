@@ -3239,7 +3239,7 @@ function ResultsSection({ results, onStartOver }) {
     /* @__PURE__ */ jsxs("div", { className: "bg-gradient-to-br from-green-50 to-blue-50 rounded-xl shadow-lg p-6 md:p-8 mb-6", children: [
       /* @__PURE__ */ jsxs("h2", { className: "text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2", children: [
         /* @__PURE__ */ jsx(TrendingDown, { className: "w-7 h-7 text-green-600" }),
-        "Your Savings Results"
+        "Your Estimated Savings"
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8", children: [
         /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-lg p-6 shadow-md", children: [
@@ -3303,22 +3303,29 @@ function ResultsSection({ results, onStartOver }) {
           /* @__PURE__ */ jsx(Calendar, { className: "w-6 h-6 text-blue-600 flex-shrink-0 mt-1" }),
           /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-600 mb-1", children: "Payback Period" }),
-            /* @__PURE__ */ jsxs("div", { className: "text-3xl font-bold text-gray-900", children: [
-              results.paybackYears.toFixed(1),
-              " years"
-            ] })
+            /* @__PURE__ */ jsx("div", { className: "text-3xl font-bold text-gray-900", children: Number.isFinite(results.paybackYears) ? `${results.paybackYears.toFixed(1)} years` : "Never" }),
+            /* @__PURE__ */ jsx("div", { className: "text-xs text-gray-500 mt-1", children: Number.isFinite(results.paybackYears) ? "upgrade cost ÷ yearly savings" : "the new system doesn't save energy" })
           ] })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-lg p-6 shadow-md flex items-start gap-3", children: [
           /* @__PURE__ */ jsx(DollarSign, { className: "w-6 h-6 text-green-600 flex-shrink-0 mt-1" }),
           /* @__PURE__ */ jsxs("div", { children: [
-            /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-600 mb-1", children: "10-Year ROI" }),
-            /* @__PURE__ */ jsxs("div", { className: "text-3xl font-bold text-gray-900", children: [
+            /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-600 mb-1", children: "10-Year Net Return" }),
+            /* @__PURE__ */ jsxs("div", { className: `text-3xl font-bold ${results.roi < 0 ? "text-red-600" : "text-gray-900"}`, children: [
+              results.roi > 0 ? "+" : "",
               results.roi.toFixed(0),
               "%"
+            ] }),
+            /* @__PURE__ */ jsxs("div", { className: "text-xs text-gray-500 mt-1", children: [
+              "(10-year savings − upgrade cost) ÷ upgrade cost",
+              results.roi < 0 ? " — not repaid within 10 years on energy alone" : ""
             ] })
           ] })
         ] })
+      ] }),
+      /* @__PURE__ */ jsxs("p", { className: "text-xs text-gray-600 mb-6 leading-relaxed", children: [
+        /* @__PURE__ */ jsx("strong", { children: "These are estimates." }),
+        " They use full-load cooling hours and today's electricity rate, so your real bill will move with the weather, your thermostat, how well the system is installed and future rate changes. Savings over 5 and 10 years assume today's rate stays the same."
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-lg p-6 shadow-md mb-6", children: [
         /* @__PURE__ */ jsxs("h3", { className: "text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2", children: [
@@ -3452,8 +3459,8 @@ function calculateSavings(inputs) {
   const monthlySavings = annualSavings / 12;
   const fiveYearSavings = annualSavings * 5;
   const tenYearSavings = annualSavings * 10;
-  const paybackYears = inputs.upgradeCost > 0 ? inputs.upgradeCost / annualSavings : 0;
-  const roi = inputs.upgradeCost > 0 ? tenYearSavings / inputs.upgradeCost * 100 : 0;
+  const paybackYears = inputs.upgradeCost > 0 ? annualSavings > 0 ? inputs.upgradeCost / annualSavings : Infinity : 0;
+  const roi = inputs.upgradeCost > 0 ? (tenYearSavings - inputs.upgradeCost) / inputs.upgradeCost * 100 : 0;
   const oldKWh = inputs.tonnage * BTU_PER_TON * inputs.hoursPerYear / (inputs.currentSEER * 1e3);
   const newKWh = inputs.tonnage * BTU_PER_TON * inputs.hoursPerYear / (inputs.newSEER * 1e3);
   const kwhSaved = oldKWh - newKWh;
@@ -3542,7 +3549,7 @@ function Home() {
       /* @__PURE__ */ jsx("link", { rel: "canonical", href: "https://airconditionanswers.com/" }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "website" }),
       /* @__PURE__ */ jsx("meta", { property: "og:url", content: "https://airconditionanswers.com/" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: "SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: "SEER Calculator ❄️ Estimate Your AC Savings Before You Buy" }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: "Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: "https://airconditionanswers.com/og-image.png" }),
       /* @__PURE__ */ jsx("meta", { property: "og:image:width", content: "1200" }),
@@ -3551,7 +3558,7 @@ function Home() {
       /* @__PURE__ */ jsx("meta", { property: "og:locale", content: "en_US" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:url", content: "https://airconditionanswers.com/" }),
-      /* @__PURE__ */ jsx("meta", { name: "twitter:title", content: "SEER Calculator ❄️ See Your Exact AC Savings Before You Buy" }),
+      /* @__PURE__ */ jsx("meta", { name: "twitter:title", content: "SEER Calculator ❄️ Estimate Your AC Savings Before You Buy" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:description", content: "Enter your current SEER rating and get personalized savings — tailored to your home size, climate zone, and electric rate. Free, instant, no email required." }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:image", content: "https://airconditionanswers.com/og-image.png" }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
@@ -6247,7 +6254,7 @@ function BlogArticleChoosing() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "bg-blue-50 rounded-lg p-6 border border-blue-200 mt-8", children: [
           /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold text-gray-900 mb-3", children: "Use Our Calculator to Compare Options" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-700 mb-4", children: "Ready to see exactly how much each SEER level will save you? Our calculator lets you compare multiple SEER ratings side-by-side." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 mb-4", children: "Ready to estimate how much each SEER level will save you? Our calculator lets you compare multiple SEER ratings side-by-side." }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -7286,7 +7293,7 @@ function BlogArticleCost() {
             " years in Arizona at today's prices, sooner where electricity costs more. Ultra-high efficiency (20+) makes sense mainly for very hot climates or very high electricity rates. In mild climates, stick with SEER2 14.3-16."
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "bg-blue-50 rounded-lg p-6 border border-blue-200 mb-8", children: [
-            /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mb-3", children: "Calculate Your Exact SEER Payback Period" }),
+            /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mb-3", children: "Estimate Your SEER Payback Period" }),
             /* @__PURE__ */ jsx("p", { className: "text-gray-700 mb-4", children: "Enter your climate, electricity rate, and usage to see which SEER rating makes financial sense." }),
             /* @__PURE__ */ jsxs(
               Link,
@@ -7842,7 +7849,7 @@ function BlogArticleMinisplit() {
           ] }) }),
           /* @__PURE__ */ jsxs("div", { className: "bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl p-8 my-10 text-center", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-2xl font-bold mb-3", children: "Calculate Mini-Split Savings" }),
-            /* @__PURE__ */ jsx("p", { className: "mb-6", children: "See exactly how much you'll save on electricity with a high-efficiency mini-split vs your current system." }),
+            /* @__PURE__ */ jsx("p", { className: "mb-6", children: "See roughly how much you'll save on electricity with a high-efficiency mini-split vs your current system." }),
             /* @__PURE__ */ jsx(Link, { to: "/", className: "inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors", children: "Use the SEER Calculator →" })
           ] }),
           /* @__PURE__ */ jsx("h2", { id: "cost-by-zones", className: "text-3xl font-bold text-gray-900 mt-12 mb-6", children: "Mini-Split Cost by Number of Zones" }),
@@ -7913,7 +7920,7 @@ function BlogArticleMinisplit() {
             " These are mid-tier brand prices (LG, Fujitsu, Carrier). Premium brands (Mitsubishi, Daikin) add 20-30%. Budget DIY-friendly brands (MRCOOL, Pioneer) are 15-25% less but may require professional installation for warranty compliance. Labor costs (40-50% of total) include electrical work ($500-$2,500+ for new 240V circuits), line set installation, vacuum/charging, and commissioning."
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl p-8 my-10 text-center", children: [
-            /* @__PURE__ */ jsx("h3", { className: "text-2xl font-bold mb-3", children: "Calculate Your Exact Operating Costs" }),
+            /* @__PURE__ */ jsx("h3", { className: "text-2xl font-bold mb-3", children: "Estimate Your Operating Costs" }),
             /* @__PURE__ */ jsx("p", { className: "mb-6", children: "Compare mini-split operating costs to your current system based on your specific usage." }),
             /* @__PURE__ */ jsx(Link, { to: "/", className: "inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors", children: "Use the Calculator →" })
           ] }),
@@ -10564,7 +10571,7 @@ function BlogArticleReplacement() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-lg p-8 text-center mb-12", children: [
           /* @__PURE__ */ jsx("h2", { className: "text-3xl font-bold mb-4", children: "Calculate Your Replacement ROI" }),
-          /* @__PURE__ */ jsx("p", { className: "text-xl mb-6", children: "See exactly how much you'll save with a new efficient AC" }),
+          /* @__PURE__ */ jsx("p", { className: "text-xl mb-6", children: "See roughly how much you'll save with a new efficient AC" }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -11925,7 +11932,7 @@ function BlogArticleBrands() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-lg p-8 text-center mb-12", children: [
           /* @__PURE__ */ jsx("h2", { className: "text-3xl font-bold mb-4", children: "Calculate Your Energy Savings" }),
-          /* @__PURE__ */ jsx("p", { className: "text-xl mb-6", children: "Compare SEER2 ratings and see exactly how much you'll save with different brands" }),
+          /* @__PURE__ */ jsx("p", { className: "text-xl mb-6", children: "Compare SEER2 ratings and see roughly how much you'll save with different brands" }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -12607,7 +12614,7 @@ function BlogArticleRepairCost() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "bg-blue-50 rounded-lg p-6 border border-blue-200 mt-8", children: [
           /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold text-gray-900 mb-3", children: "Calculate Your Repair vs Replace ROI" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-700 mb-4", children: "See exactly whether repair or replacement makes financial sense:" }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 mb-4", children: "See whether repair or replacement is likely to make financial sense:" }),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 text-gray-700 space-y-2 mb-6", children: [
             /* @__PURE__ */ jsx("li", { children: "Compare total cost of ownership" }),
             /* @__PURE__ */ jsx("li", { children: "Calculate energy savings" }),
@@ -12708,7 +12715,7 @@ function BlogArticleACRepairCost() {
           /* @__PURE__ */ jsxs("div", { className: "bg-blue-50 border-l-4 border-blue-600 p-6 mb-8", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mb-3", children: "You'll Learn:" }),
             /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 text-gray-700 space-y-2", children: [
-              /* @__PURE__ */ jsx("li", { children: "Exact costs for 20+ common AC problems" }),
+              /* @__PURE__ */ jsx("li", { children: "Typical cost ranges for 20+ common AC problems" }),
               /* @__PURE__ */ jsx("li", { children: "What's included in repair pricing" }),
               /* @__PURE__ */ jsx("li", { children: "How to spot overcharging" }),
               /* @__PURE__ */ jsx("li", { children: "When repair makes sense vs replacement" }),
@@ -13712,13 +13719,13 @@ function BlogArticleWhatIsSEER() {
             /* @__PURE__ */ jsx("strong", { children: "$784 on summer cooling in 2025" }),
             " — up 6.2% from the year before. But if you're in a high-rate state or territory with an aging, inefficient system, your number could be three to four times higher. The SEER rating doesn't just describe your system's efficiency — it determines how much of your income you hand to the utility company every single summer, year after year."
           ] }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed mb-4", children: "The good news: you can calculate exactly where you stand right now, before spending anything. Plug in your current SEER rating, your electricity rate, and your estimated usage, and our calculator will show you your annual cooling cost and the precise savings you'd see from upgrading." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed mb-4", children: "The good news: you can estimate where you stand right now, before spending anything. Plug in your current SEER rating, your electricity rate, and your estimated usage, and our calculator will show you your annual cooling cost and the estimated savings you'd see from upgrading." }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed mb-6", children: "I built this tool because I needed it. The numbers I ran on my own systems changed how I think about every AC purchase — for my home and my stores. Whether you're a homeowner in Massachusetts trying to tame a summer bill or a business owner somewhere in the world where the grid is expensive and the sun is relentless, SEER is the number that tells you the truth." }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-500 text-sm italic mb-6", children: "Because at Hawaii-level rates, each SEER point can be worth a hundred dollars or more a year — and your wallet definitely cares about that." })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200", children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Ready to See Your Numbers?" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER, electricity rate, and usage to calculate exactly how much you could save by upgrading." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER, electricity rate, and usage to estimate how much you could save by upgrading." }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -14238,7 +14245,7 @@ function BlogArticleFreeStrategy() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200", children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Calculate Your SEER Savings" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "See your baseline cooling cost based on your current SEER rating, then stack setpoint savings on top. Know exactly where the biggest return is." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "See your baseline cooling cost based on your current SEER rating, then stack setpoint savings on top. See where the biggest saving is likely to be." }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -14648,7 +14655,7 @@ function BlogArticleSeerChart() {
             ] })
           ] }),
           /* @__PURE__ */ jsx("h1", { className: "text-4xl font-bold text-gray-900 mb-4", children: "The Complete SEER Rating Chart: Every Rating from 8 to 25+ Explained (2026)" }),
-          /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Every SEER rating, what it costs you per year, and exactly how much upgrading could save" }),
+          /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Every SEER rating, what it costs you per year, and roughly how much upgrading could save" }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: "2026-06-17" })
         ] }),
         /* @__PURE__ */ jsxs("section", { className: "prose prose-lg max-w-none", children: [
@@ -14669,7 +14676,7 @@ function BlogArticleSeerChart() {
             cents(HIGH$1),
             "/kWh, Hawaii's average, similar to many islands and high-cost areas), using EIA figures for ",
             RATES_AS_OF,
-            " so you can see exactly where your system falls — and exactly what upgrading could save you."
+            " so you can see where your system falls and roughly what upgrading could save you."
           ] }),
           /* @__PURE__ */ jsx("hr", { className: "my-8 border-gray-200" }),
           /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold text-gray-900 mt-2 mb-4", children: "The Complete SEER Rating Chart" }),
@@ -14754,7 +14761,7 @@ function BlogArticleSeerChart() {
           ] }),
           /* @__PURE__ */ jsxs("p", { className: "text-gray-700 leading-relaxed mb-6", children: [
             /* @__PURE__ */ jsx("strong", { children: "What to do:" }),
-            " Replace immediately. Even a minimum-efficiency new system cuts your costs nearly in half. Use our calculator to see your exact savings."
+            " Replace immediately. Even a minimum-efficiency new system cuts your costs nearly in half. Use our calculator to estimate your savings."
           ] }),
           /* @__PURE__ */ jsx("hr", { className: "my-8 border-gray-200" }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "Low Efficiency: SEER 10-12" }),
@@ -15167,7 +15174,7 @@ function BlogArticleSeerChart() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200", children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Ready to See Your Numbers?" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER, electricity rate, and usage to calculate exactly how much you could save by upgrading." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER, electricity rate, and usage to estimate how much you could save by upgrading." }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -15670,7 +15677,7 @@ function BlogArticleSeerVsSeer2() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200", children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Ready to See Your Numbers?" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER, electricity rate, and usage to calculate exactly how much you could save by upgrading." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER, electricity rate, and usage to estimate how much you could save by upgrading." }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -20829,7 +20836,7 @@ function BrandTrane() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200", children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Calculate Trane Savings vs. Your Current System" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER rating and a Trane system's SEER2 to see exactly how much you'd save on electricity bills — at your local electricity rate." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER rating and a Trane system's SEER2 to estimate how much you'd save on electricity bills — at your local electricity rate." }),
           /* @__PURE__ */ jsxs(
             Link,
             {
@@ -21715,7 +21722,7 @@ function BrandCarrier() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200", children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Calculate Carrier Savings vs. Your Current System" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER rating and a Carrier system's SEER2 to see exactly how much you'd save on electricity — at your actual local rate." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER rating and a Carrier system's SEER2 to estimate how much you'd save on electricity — at your actual local rate." }),
           /* @__PURE__ */ jsxs(Link, { to: "/", className: "inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors", children: [
             /* @__PURE__ */ jsx(Calculator, { className: "w-4 h-4" }),
             "Calculate My Savings"
@@ -24587,7 +24594,7 @@ function BrandRheem() {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200", children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Calculate Savings with a Rheem Upgrade" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER and a Rheem Endeavor system's SEER2 to see exact annual savings and payback period at your local electricity rate." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-600 mb-4 text-sm", children: "Enter your current SEER and a Rheem Endeavor system's SEER2 to estimate annual savings and payback period at your local electricity rate." }),
           /* @__PURE__ */ jsxs(Link, { to: "/", className: "inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors", children: [
             /* @__PURE__ */ jsx(Calculator, { className: "w-4 h-4" }),
             "Calculate My Savings"
@@ -25197,7 +25204,7 @@ const liveCalculators = [
   {
     slug: "/",
     title: "SEER Savings Calculator",
-    description: "Enter your current SEER rating and a new system's SEER2 to see exact annual electricity savings at your local rate — with payback period.",
+    description: "Enter your current SEER rating and a new system's SEER2 to estimate annual electricity savings at your local rate — with payback period.",
     inputs: "Current SEER, new SEER2, electricity rate, cooling hours",
     bestFor: "Anyone comparing new AC systems or curious how much their old system is costing them",
     time: "2 min",
@@ -25206,7 +25213,7 @@ const liveCalculators = [
   {
     slug: "/calculators/repair-vs-replace",
     title: "AC Repair vs. Replace Calculator",
-    description: "Should you pay for the repair or buy a new system? Enter your repair quote, system age, and efficiency ratings to get a clear recommendation with the math behind it.",
+    description: "Should you pay for the repair or buy a new system? Enter your repair quote, system age, and efficiency ratings to get a suggested answer with the math behind it.",
     inputs: "System age, repair cost, current SEER, new system cost, new SEER2, electricity rate",
     bestFor: "Homeowners facing a repair bill who want to know if replacement makes more financial sense",
     time: "3 min",
@@ -25257,9 +25264,9 @@ function CalculatorsIndex() {
         /* @__PURE__ */ jsxs("p", { className: "text-gray-800", children: [
           "The ",
           /* @__PURE__ */ jsx("strong", { children: "SEER Savings Calculator" }),
-          " shows exactly how much your old AC is costing you vs. a new system — at your specific electricity rate. The ",
+          " estimates how much your old AC is costing you vs. a new system — at your specific electricity rate. The ",
           /* @__PURE__ */ jsx("strong", { children: "Repair vs. Replace Calculator" }),
-          " tells you whether to pay that repair bill or put the money toward a new system."
+          " helps you decide whether to pay that repair bill or put the money toward a new system."
         ] })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "mb-10 space-y-6", children: [
@@ -25739,7 +25746,7 @@ function CalculatorRepairVsReplace() {
             ] }),
             /* @__PURE__ */ jsxs("li", { children: [
               "→ ",
-              /* @__PURE__ */ jsx(Link, { to: "/", className: "text-teal-600 underline font-medium", children: "Calculate exact savings" }),
+              /* @__PURE__ */ jsx(Link, { to: "/", className: "text-teal-600 underline font-medium", children: "Estimate your savings" }),
               " for the specific SEER2 system you're being quoted"
             ] })
           ] }) : results.recommendation === "repair" ? /* @__PURE__ */ jsxs("ul", { className: "space-y-2 text-sm text-gray-700", children: [
@@ -25779,7 +25786,7 @@ function CalculatorRepairVsReplace() {
           ] })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-xl border border-gray-200 p-6 text-center", children: [
-          /* @__PURE__ */ jsx("p", { className: "text-gray-700 font-semibold mb-2", children: "Replacing? See exactly how much you'd save on electricity." }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 font-semibold mb-2", children: "Replacing? See roughly how much you'd save on electricity." }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-4", children: "Enter your current SEER and new system's SEER2 to calculate annual savings at your electricity rate." }),
           /* @__PURE__ */ jsxs(Link, { to: "/", className: "inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors", children: [
             /* @__PURE__ */ jsx(Calculator, { className: "w-4 h-4" }),
