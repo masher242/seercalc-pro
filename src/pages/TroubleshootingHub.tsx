@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ShieldAlert, CheckCircle2, Thermometer, Power, Droplets, ArrowRight, Repeat, Volume2, AirVent } from 'lucide-react';
+import { ShieldAlert, CheckCircle2, Thermometer, Power, Droplets, ArrowRight, Repeat, Volume2, AirVent, Snowflake } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
 import { articleJsonLd, SITE_URL, SITE_EMAIL } from '../data/site';
@@ -9,7 +9,7 @@ import { SYMPTOMS, GROUPS, TROUBLESHOOTING_UPDATED, COST, GroupId } from '../dat
 const PATH = '/troubleshooting';
 const TITLE = 'AC Troubleshooting: Fix Common Air Conditioner Problems';
 const HEADLINE = 'AC Troubleshooting: What\'s Wrong With Your Air Conditioner?';
-const DESCRIPTION = 'Pick your symptom: warm air, won\'t turn on, short cycling, noises, smells, leaks, humidity, mini-split codes. Free checks first, likely causes and repair costs.';
+const DESCRIPTION = 'Pick your symptom: warm air, won\'t turn on, short cycling, noises, smells, leaks, humidity, mini-split codes, heat pumps in winter. Free checks first, likely causes and repair costs.';
 
 const h2 = 'text-2xl font-bold text-gray-900 mt-10 mb-4';
 const p = 'text-gray-700 leading-relaxed mb-4';
@@ -22,6 +22,7 @@ const GROUP_ICON: Record<GroupId, typeof Thermometer> = {
   'water-ice': Droplets,
   'noise-smell': Volume2,
   'mini-split': AirVent,
+  'heat-pump': Snowflake,
 };
 
 export default function TroubleshootingHub() {

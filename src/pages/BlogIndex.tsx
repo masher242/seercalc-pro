@@ -45,6 +45,22 @@ const articles = [
     category: 'Fans and Airflow'
   },
   {
+    slug: 'heat-pump-vs-central-ac',
+    title: 'Heat Pump vs. Central AC in 2026: Which Costs Less to Run, and When the Heat Pump Pays Off',
+    description: 'Same cooling cost, very different heating costs. Where a heat pump pays back (oil, propane, electric heat), where gas still wins, and a payback calculator with this winter\'s prices.',
+    date: '2026-10-21',
+    readTime: '10 min read',
+    category: 'HVAC Guides'
+  },
+  {
+    slug: 'heat-pump-canada',
+    title: 'Heat Pumps in Canada (2026): What They Save in Every Province, and the Rebates Available',
+    description: 'Savings against baseboards, oil and gas in all 10 provinces, plus the new federal rebate and provincial programs in Ontario, Quebec and B.C.',
+    date: '2026-10-21',
+    readTime: '8 min read',
+    category: 'HVAC Guides'
+  },
+  {
     slug: 'solar-mini-split',
     title: 'Solar-Powered Mini-Splits: How Hybrid AC/DC Units Work and Whether They Pay Off',
     description: 'Hybrid mini-splits run on panels first and the grid second. Brands compared, the catches, setup and permits, island conditions, and a payback calculator.',

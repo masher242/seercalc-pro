@@ -292,7 +292,8 @@ export default function AcCostProvince() {
                 {cad(save14to18)} a year over a standard one, so the extra cost takes a long time to pay back (see our{' '}
                 <Link to="/blog/16-vs-18-seer" className={a}>16 vs 18 SEER analysis</Link>). A cold-climate heat pump
                 cools just as well in summer and also heats in winter, when it runs many more hours, so its efficiency pays
-                back far faster. Check {pr.name} and your utility for current rebates and financing before you buy.
+                back far faster. See what it saves in {pr.name} and the 2026 rebates in our{' '}
+                <Link to="/blog/heat-pump-canada" className={a}>heat pumps in Canada guide</Link>.
               </p>
             </div>
           </div>

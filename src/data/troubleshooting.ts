@@ -4,7 +4,7 @@
 // update both together. Figures not in those articles name their source in a comment.
 
 /** Hub date; also the default for symptom pages without their own `updated`. */
-export const TROUBLESHOOTING_UPDATED = '2026-10-17';
+export const TROUBLESHOOTING_UPDATED = '2026-10-21';
 /** Date the first six symptom pages were published (default `published`/`updated`). */
 export const TROUBLESHOOTING_FIRST = '2026-10-14';
 
@@ -57,7 +57,7 @@ export interface Symptom {
   extra?: { heading: string; paragraphs: string[]; link?: { to: string; label: string } };
 }
 
-export type GroupId = 'not-cooling' | 'wont-run' | 'cycling' | 'water-ice' | 'noise-smell' | 'mini-split';
+export type GroupId = 'not-cooling' | 'wont-run' | 'cycling' | 'water-ice' | 'noise-smell' | 'mini-split' | 'heat-pump';
 
 export const GROUPS: { id: GroupId; name: string; blurb: string }[] = [
   { id: 'not-cooling', name: 'Not cooling', blurb: 'It runs, but the air isn\'t cold or the house won\'t cool down.' },
@@ -66,6 +66,7 @@ export const GROUPS: { id: GroupId; name: string; blurb: string }[] = [
   { id: 'water-ice', name: 'Water and ice', blurb: 'Leaks, a full drain pan, or ice on the coil or lines.' },
   { id: 'noise-smell', name: 'Noises and smells', blurb: 'Buzzing, banging, hissing, or a musty or burning smell.' },
   { id: 'mini-split', name: 'Ductless mini-splits', blurb: 'Error codes, blinking lights and resets on wall-mounted units.' },
+  { id: 'heat-pump', name: 'Heat pumps in winter', blurb: 'Not heating, ice on the outdoor unit, steam and defrost cycles.' },
 ];
 
 /** Repair cost ranges used across these pages (U.S., installed, 2026). */
@@ -91,6 +92,10 @@ export const COST = {
   ductSealing: '$500–$2,000',
   /** Homewyse national estimate, May 2026 ($2,774–$3,285 per unit installed) */
   dehumidifier: '$2,800–$3,300',
+  /** PickHVAC heat pump parts guide, May 2026 ($350–$1,200 installed); also in /blog/ac-repair-cost-2026 */
+  reversingValve: '$350–$1,200',
+  /** HomeAdvisor heat pump repair cost guide, updated June 2026 */
+  defrostBoard: '$200–$650',
 };
 
 export const SYMPTOMS: Symptom[] = [
@@ -873,6 +878,183 @@ export const SYMPTOMS: Symptom[] = [
       { q: 'Can I trust mini-split error code lists online?', a: "Use them as a starting point only. Codes differ between brands and between product lines from the same brand, and generic lists often disagree. The manual for your exact model number, or the manufacturer's support line, is the reliable source." },
     ],
     related: ['ac-not-working-after-power-outage', 'ac-leaking-water', 'ac-frozen-coil'],
+  },  {
+    slug: 'heat-pump-not-heating',
+    name: 'Heat pump not heating',
+    title: 'Heat Pump Not Heating? Causes, Checks and Repair Costs',
+    h1: 'Heat Pump Not Heating or Blowing Cold Air? What to Check First',
+    description: 'Heat pump running but the house won\'t warm up, or air from the vents feels cool? What\'s normal (defrost, lukewarm air), the free checks, likely causes and repair costs.',
+    group: 'heat-pump',
+    summary: 'It runs in winter, but the house stays cold or the vents blow cool air.',
+    published: '2026-10-21',
+    updated: '2026-10-21',
+    quick: [
+      'Thermostat on Cool or Auto, or a schedule holding a low temperature',
+      'A defrost cycle in progress (cool air for a few minutes is normal)',
+      'A clogged air filter',
+      'The outdoor unit iced over or blocked by snow',
+      'Backup (auxiliary) heat not working on the coldest days',
+      'A reversing valve stuck in cooling mode, or low refrigerant',
+    ],
+    firstChecks: [
+      'Thermostat: mode on Heat, set at least 2–3°F above the room, schedule or "hold" off. A heat pump thermostat may show "Aux" or "Em Heat"; leave Emergency Heat off for now.',
+      'Feel the air at a vent after 10 minutes of running. Heat pump air feels lukewarm compared with a gas furnace; that\'s normal as long as the house slowly warms.',
+      'Outdoor unit: is the fan spinning and is it free of thick ice and snow? A short burst of steam with the fan stopped is a normal defrost.',
+      'Air filter: replace it if it\'s gray. Low airflow cuts heating just as it cuts cooling.',
+      'Breakers: there are usually separate breakers for the outdoor unit, the indoor air handler and the backup heat strips.',
+    ],
+    causes: [
+      { cause: 'Thermostat settings or schedule', signs: 'Mode on Cool or Auto with a low setpoint, a schedule or vacation hold', who: 'DIY', cost: '$0' },
+      { cause: 'Normal defrost cycle', signs: 'Cool air for a few minutes, outdoor fan stopped, steam rising from the unit, then heat resumes', who: 'DIY', cost: '$0 (normal)', see: 'heat-pump-defrost-mode' },
+      { cause: 'Clogged filter', signs: 'Weak airflow from vents, filter visibly gray', who: 'DIY', cost: COST.filter },
+      { cause: 'Outdoor coil iced over or buried in snow', signs: 'Coil encased in ice that doesn\'t clear, or snow drifted against the unit', who: 'DIY or pro', cost: '$0 to clear snow; depends on the cause', see: 'heat-pump-frozen-outdoor-unit' },
+      { cause: 'Outdoor unit not running', signs: 'Indoor fan runs, outdoor unit silent or humming; breaker off', who: 'DIY or pro', cost: `$0 (breaker) to ${COST.capacitor} (capacitor)`, see: 'ac-outdoor-unit-not-running' },
+      { cause: 'Backup heat not working', signs: 'House falls behind only on the coldest days; "Aux" shows but the air stays lukewarm; heat-strip breaker tripped', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
+      { cause: 'Reversing valve stuck in cooling', signs: 'Air from the vents is cold, not just lukewarm, all the time in Heat mode; the outdoor unit blows warm air', who: 'Pro', cost: COST.reversingValve },
+      { cause: 'Low refrigerant (a leak)', signs: 'Heating has gotten weaker over weeks, frequent icing, hissing or oily spots on the lines', who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+    ],
+    steps: [
+      { title: 'Set the thermostat correctly', text: 'Set it to Heat, 2–3°F above the room temperature, fan on Auto, and turn off any schedule or hold. If it was on Cool or Auto with a low setting, that alone explains cold air.' },
+      { title: 'Rule out a defrost cycle', text: 'In cold, damp weather a heat pump reverses for a few minutes to melt frost off the outdoor coil. During defrost the outdoor fan usually stops, the unit may steam, and the indoor air can feel cool. If heat returns within about 15 minutes, nothing is wrong.' },
+      { title: 'Replace the filter and open the vents', text: 'A clogged filter or closed vents cut airflow, which makes a heat pump run hotter and less efficiently and can trip its safety controls. Fit a new filter and make sure supply and return grilles are open and clear.' },
+      { title: 'Clear the outdoor unit', text: 'Brush snow off the top and sides and keep 2 feet clear around it. If the coil is solidly encased in ice that a defrost doesn\'t clear, see the frozen outdoor unit page. Don\'t chip ice off the coil.' },
+      { title: 'Use Emergency Heat only if the outdoor unit has failed', text: 'Emergency Heat turns the heat pump off and heats with the backup heat alone, usually electric strips that cost about two to three times as much to run. It\'s the right setting to stay warm while you wait for a technician, not an everyday setting.' },
+    ],
+    safetyNote: 'Heat strips run on a separate high-voltage circuit; don\'t open the air handler to check them. Never add refrigerant yourself: it requires EPA certification, and newer systems use mildly flammable refrigerants.',
+    callPro: [
+      'The air is cold, not lukewarm, for more than 15 minutes in Heat mode',
+      'The outdoor unit stays encased in ice after a defrost cycle',
+      'The house can\'t keep up even on mild winter days',
+      'A breaker for the outdoor unit or the heat strips trips again after one reset',
+    ],
+    quoteFlags: [
+      'A refrigerant top-up with no leak search: heat pumps don\'t use up refrigerant',
+      'A reversing valve replacement quoted before anyone has checked the thermostat wiring and the valve\'s solenoid coil, which are cheaper fixes',
+      'A new system quoted because "heat pumps don\'t work in the cold": cold-climate models are rated to heat well below freezing',
+    ],
+    faqs: [
+      { q: 'Why is my heat pump blowing cold air?', a: 'Most often it\'s in a defrost cycle, which lasts a few minutes and then heat returns. If the air stays cold, check that the thermostat is on Heat and set above the room temperature. Air that is cold all the time in Heat mode can mean the reversing valve is stuck in cooling, which needs a technician.' },
+      { q: 'Is it normal for heat pump air to feel lukewarm?', a: 'Yes. A heat pump delivers a larger volume of moderately warm air rather than short blasts of hot air like a gas furnace, so the air at the vent can feel only lukewarm against your hand. As long as the house reaches the set temperature, it\'s working.' },
+      { q: 'Should I switch my heat pump to Emergency Heat when it\'s very cold?', a: 'Usually not. The thermostat brings in backup (auxiliary) heat automatically when the heat pump needs help. Emergency Heat turns the heat pump off entirely, which costs much more to run. Use it only when the outdoor unit has failed or is iced solid and you\'re waiting for a repair.' },
+      { q: 'At what temperature does a heat pump stop heating?', a: 'It depends on the model. Older and standard heat pumps lose a lot of capacity below about freezing and lean on backup heat, while cold-climate models are designed to keep heating at 5°F (−15°C) and below. Check the low-temperature rating on your model\'s spec sheet.' },
+    ],
+    related: ['heat-pump-defrost-mode', 'heat-pump-frozen-outdoor-unit', 'ac-outdoor-unit-not-running'],
+    extra: {
+      heading: 'Is a heat pump worth it where you live?',
+      paragraphs: ['Whether a heat pump saves money over a furnace depends on what you heat with now and what you pay for electricity. Our heat pump vs central AC guide runs the numbers for gas, propane, oil and electric baseboard heat.'],
+      link: { to: '/blog/heat-pump-vs-central-ac', label: 'Heat pump vs central AC: what it costs to run' },
+    },
+  },
+  {
+    slug: 'heat-pump-frozen-outdoor-unit',
+    name: 'Heat pump iced up',
+    title: 'Heat Pump Frozen in Winter? Ice on the Outdoor Unit',
+    h1: 'Heat Pump Outdoor Unit Covered in Ice? What\'s Normal and What to Do',
+    description: 'Some frost on a heat pump in winter is normal. Thick ice that doesn\'t clear isn\'t. How to tell the difference, the safe things to do, the causes and what repairs cost.',
+    group: 'heat-pump',
+    summary: 'Frost or thick ice on the outdoor unit that doesn\'t clear.',
+    published: '2026-10-21',
+    updated: '2026-10-21',
+    quick: [
+      'Normal frost between defrost cycles in cold, damp weather',
+      'Snow drifted against the unit or ice dripping onto it from a roof',
+      'Melt water refreezing under the unit because it sits too low',
+      'A failed defrost control board or sensor',
+      'An outdoor fan that has stopped',
+      'Low refrigerant from a leak',
+    ],
+    firstChecks: [
+      'How thick is it? A thin, even layer of white frost that clears every hour or so is normal. Clear ice that covers the coil and the top of the unit and never clears is not.',
+      'Watch for a defrost: within an hour or two, the outdoor fan should stop and the unit should steam for a few minutes, leaving the coil clear.',
+      'Look up: is water dripping onto the unit from a gutter or roof edge and freezing?',
+      'Look down: is the unit sitting in a puddle of ice, or buried in snow? It should be raised a few inches above the ground.',
+    ],
+    causes: [
+      { cause: 'Normal frost', signs: 'Thin white frost that disappears during each defrost cycle', who: 'DIY', cost: '$0 (normal)', see: 'heat-pump-defrost-mode' },
+      { cause: 'Snow, roof drip or poor drainage', signs: 'Ice heaviest on the top or the bottom; unit sits low or under a roof edge', who: 'DIY or pro', cost: '$0 to clear; a riser stand or gutter repair costs extra' },
+      { cause: 'Failed defrost board or sensor', signs: 'The unit never stops its fan or steams; ice keeps building', who: 'Pro', cost: COST.defrostBoard },
+      { cause: 'Outdoor fan not running', signs: 'Compressor runs but the fan doesn\'t turn (outside defrost)', who: 'Pro', cost: COST.condenserFan },
+      { cause: 'Reversing valve sticking', signs: 'Defrost starts but doesn\'t melt the ice; unit makes the defrost sound but the coil stays frozen', who: 'Pro', cost: COST.reversingValve },
+      { cause: 'Low refrigerant (a leak)', signs: 'Icing has gotten worse over time, heating is weak, hissing or oily spots on the lines', who: 'Pro', cost: `${COST.refrigerant} to find, fix and recharge` },
+    ],
+    steps: [
+      { title: 'Give it a defrost cycle', text: 'If the frost is thin and even, leave it. The unit will reverse for a few minutes, the fan will stop and it will steam. That\'s normal and can happen every 30 to 90 minutes in freezing, damp weather.' },
+      { title: 'Clear snow, gently', text: 'Brush snow off the top and away from the sides with a soft broom, and keep about 2 feet clear around the unit. Don\'t chip, scrape or hammer ice off the coil: the fins and tubes are thin and puncture easily.' },
+      { title: 'Melt heavy ice with water, not tools', text: 'If thick ice won\'t clear and you\'re waiting for service, switch the system to Emergency Heat or off, then pour lukewarm (not hot) water over the coil from a watering can or hose. Never use a heat gun, open flame or chemical de-icer.' },
+      { title: 'Fix the drip and the drainage', text: 'Water from a roof edge or a broken gutter freezes on the unit faster than any defrost can clear it. Redirect it, and if the unit sits on the ground, a riser or wall bracket keeps it above snow and melt water.' },
+      { title: 'Call if it ices up again', text: 'If the coil ices solid again after you\'ve cleared snow and fixed any drip, the defrost controls, fan or refrigerant charge need checking. Run it on Emergency Heat until then.' },
+    ],
+    safetyNote: 'Turn off power at the outdoor disconnect before touching the unit. Don\'t use sharp tools, heat guns or flames on ice.',
+    callPro: [
+      'The coil is encased in clear ice that doesn\'t clear after a defrost cycle',
+      'The unit never seems to go into defrost (no steam, the fan never stops)',
+      'The outdoor fan isn\'t spinning while the compressor runs',
+      'Ice comes back within a day of clearing it',
+    ],
+    quoteFlags: [
+      'A new outdoor unit quoted before the defrost board, sensor and fan have been tested',
+      'A refrigerant recharge with no leak search',
+      'A "winter cover" sold to keep a heat pump dry: covering a running heat pump blocks its airflow',
+    ],
+    faqs: [
+      { q: 'Is it normal for a heat pump to have ice on it?', a: 'A light, even layer of frost is normal in cold, damp weather; the defrost cycle clears it every so often. A heat pump encased in thick ice, especially on the top or with ice that never clears, isn\'t normal and points to snow, dripping water or a defrost problem.' },
+      { q: 'How do I defrost a frozen heat pump?', a: 'Switch the thermostat to Emergency Heat or off, then pour lukewarm water over the coil to melt the ice. Don\'t chip it off. Once it\'s clear, return to Heat and watch whether it ices up again; if it does, call a technician.' },
+      { q: 'Can I cover my heat pump in winter?', a: 'Not while it\'s in use. A heat pump needs air flowing through its coil to heat your house. A small roof or awning well above the unit can keep falling snow and ice off, as long as it doesn\'t restrict airflow.' },
+    ],
+    related: ['heat-pump-defrost-mode', 'heat-pump-not-heating', 'ac-frozen-coil'],
+  },
+  {
+    slug: 'heat-pump-defrost-mode',
+    name: 'Heat pump steaming / defrost',
+    title: 'Heat Pump Defrost Mode: Steam, Noises and Cool Air',
+    h1: 'Heat Pump Steaming, Whooshing or Blowing Cool Air? Defrost Mode Explained',
+    description: 'Steam from your heat pump, a loud whoosh, the fan stopping and cool air for a few minutes are usually just defrost mode. What\'s normal, how often, and when it\'s a problem.',
+    group: 'heat-pump',
+    summary: 'Steam from the outdoor unit, a whoosh, the fan stopping, cool air for a few minutes.',
+    published: '2026-10-21',
+    updated: '2026-10-21',
+    quick: [
+      'Normal defrost: the heat pump briefly runs in reverse to melt frost',
+      'Defrosting very often because of snow, dirt or poor airflow',
+      'A defrost cycle that doesn\'t end: a failed board or sensor',
+      'Backup heat not coming on during defrost, so the indoor air feels cold',
+    ],
+    firstChecks: [
+      'Time it: a normal defrost lasts about 2 to 10 minutes, up to about 15 in heavy frost.',
+      'Count them: in freezing, damp weather, defrosts every 30 to 90 minutes are normal. In mild, dry weather they should be rare.',
+      'Watch the outdoor fan: on most models it stops during defrost and starts again afterwards.',
+      'Look at the coil afterwards: it should be clear of frost.',
+    ],
+    causes: [
+      { cause: 'Normal defrost cycle', signs: 'Whoosh, fan stops, steam for a few minutes, then normal heating resumes', who: 'DIY', cost: '$0 (normal)' },
+      { cause: 'Dirty coil or blocked airflow', signs: 'Defrosts more often than usual; leaves or snow against the unit; a dirty indoor filter', who: 'DIY', cost: `$0–${COST.filter.split('–')[1]}` },
+      { cause: 'Backup heat not working during defrost', signs: 'Indoor air is noticeably cold every time it defrosts', who: 'Pro', cost: `${COST.serviceCall} service call plus parts` },
+      { cause: 'Failed defrost board or sensor', signs: 'Defrost cycles back to back, last well over 15 minutes, or never happen', who: 'Pro', cost: COST.defrostBoard },
+      { cause: 'Reversing valve or refrigerant problem', signs: 'Defrost runs but doesn\'t clear the coil; heating weak afterwards', who: 'Pro', cost: `${COST.reversingValve} valve, ${COST.refrigerant} leak repair` },
+    ],
+    steps: [
+      { title: 'Let a cycle finish', text: 'Don\'t switch the system off when you see steam. A defrost is the heat pump briefly running as an air conditioner so warm refrigerant melts frost off the outdoor coil. The steam is that melt water evaporating. Interrupting it leaves ice behind.' },
+      { title: 'Keep the outdoor unit clear', text: 'Snow, leaves and dirt on the coil make frost build faster, so the unit defrosts more often. Keep 2 feet clear around it. In mild weather, a gentle rinse of the coil with the power off helps.' },
+      { title: 'Check the filter indoors', text: 'A clogged filter makes the whole system work harder in heating, too. Replace it if it\'s gray.' },
+      { title: 'Note what\'s not normal', text: 'Write down how long each defrost lasts and how often it happens. Cycles over 15 minutes, back-to-back cycles in dry weather, or no defrost at all while ice builds up are worth a service call, and the notes help the technician.' },
+    ],
+    callPro: [
+      'Defrost cycles last much longer than 15 minutes or run back to back',
+      'Ice builds up and the unit never seems to defrost',
+      'You hear grinding or screeching, or smell burning (switch off and call)',
+      'The house gets cold every time it defrosts',
+    ],
+    quoteFlags: [
+      'A new system recommended because the unit "steams": steam during defrost is normal',
+      'A defrost board replaced without testing the coil sensor first',
+    ],
+    faqs: [
+      { q: 'Why is steam coming out of my heat pump?', a: 'It\'s almost always the defrost cycle. In cold weather, frost forms on the outdoor coil, and the heat pump periodically reverses to warm the coil and melt it. The melt water evaporates off the warm coil as steam. It\'s normal and stops within a few minutes.' },
+      { q: 'How often should a heat pump go into defrost?', a: 'It depends on the weather and the controls. In freezing, damp weather, every 30 to 90 minutes is normal; in dry or milder weather it may rarely defrost at all. Each cycle usually lasts 2 to 10 minutes.' },
+      { q: 'Why does my heat pump blow cold air during defrost?', a: 'During defrost the heat pump is moving heat to the outdoor coil, so it isn\'t heating the house for those few minutes. Most systems switch on backup heat to temper the air. If the air is noticeably cold every time, the backup heat may not be working.' },
+      { q: 'What is the loud whoosh from my heat pump?', a: 'That\'s the reversing valve switching the direction of the refrigerant at the start and end of a defrost cycle. A short whoosh or hiss is normal. Grinding, screeching or banging isn\'t.' },
+    ],
+    related: ['heat-pump-frozen-outdoor-unit', 'heat-pump-not-heating', 'ac-making-noise'],
   },
 ];
 

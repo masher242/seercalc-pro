@@ -241,7 +241,9 @@ export default function AcCostCanada() {
           <p className={p}>
             Heat pumps change that. A cold-climate heat pump cools in summer and heats in winter, and in most of Canada it
             runs far more hours heating than cooling. If you're replacing an AC, compare a heat pump on its heating
-            efficiency (HSPF) as well as SEER, and check your province and utility for current rebates or financing.
+            efficiency (HSPF) as well as SEER, and check your province and utility for current rebates or financing. Our{' '}
+            <Link to="/blog/heat-pump-canada" className={a}>heat pumps in Canada guide</Link> shows what one saves in each
+            province and the rebates open in 2026.
           </p>
 
           <h2 className={h2}>Cutting cooling costs</h2>
