@@ -28,6 +28,8 @@ import BlogArticleSeerVsSeer2 from './pages/BlogArticleSeerVsSeer2';
 import BlogArticle16vs18Seer from './pages/BlogArticle16vs18Seer';
 import BlogArticle18vs20Seer from './pages/BlogArticle18vs20Seer';
 import BlogArticleSolarMiniSplit from './pages/BlogArticleSolarMiniSplit';
+import BlogArticleHeatPumpVsAc from './pages/BlogArticleHeatPumpVsAc';
+import BlogArticleHeatPumpCanada from './pages/BlogArticleHeatPumpCanada';
 import BlogArticleFanVsAc from './pages/BlogArticleFanVsAc';
 import BlogArticleFanCost from './pages/BlogArticleFanCost';
 import BlogArticleFanBuyingGuide from './pages/BlogArticleFanBuyingGuide';
@@ -102,6 +104,8 @@ function AppContent() {
         <Route path="/blog/16-vs-18-seer" element={<BlogArticle16vs18Seer />} />
         <Route path="/blog/18-vs-20-seer" element={<BlogArticle18vs20Seer />} />
         <Route path="/blog/solar-mini-split" element={<BlogArticleSolarMiniSplit />} />
+        <Route path="/blog/heat-pump-vs-central-ac" element={<BlogArticleHeatPumpVsAc />} />
+        <Route path="/blog/heat-pump-canada" element={<BlogArticleHeatPumpCanada />} />
         <Route path="/blog/ceiling-fan-vs-ac-savings" element={<BlogArticleFanVsAc />} />
         <Route path="/blog/cost-to-run-a-fan" element={<BlogArticleFanCost />} />
         <Route path="/blog/ceiling-fan-buying-guide" element={<BlogArticleFanBuyingGuide />} />
@@ -215,6 +219,8 @@ export const routes = [
   '/blog/16-vs-18-seer',
   '/blog/18-vs-20-seer',
   '/blog/solar-mini-split',
+  '/blog/heat-pump-vs-central-ac',
+  '/blog/heat-pump-canada',
   '/blog/ceiling-fan-vs-ac-savings',
   '/blog/cost-to-run-a-fan',
   '/blog/ceiling-fan-buying-guide',

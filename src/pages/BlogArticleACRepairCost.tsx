@@ -405,7 +405,7 @@ export default function BlogArticleACRepairCost() {
             <div className="space-y-4 mb-8">
               <div className="bg-gray-50 rounded-lg p-4">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">AC Blowing Warm Air: $200-$2,000</h3>
-                <p className="text-gray-700">Most often caused by low refrigerant ($400-$2,400) or reversing valve stuck on heat pumps ($400-$1,000). Check thermostat settings first (free fix).</p>
+                <p className="text-gray-700">Most often caused by low refrigerant ($400-$2,400) or reversing valve stuck on heat pumps ($350-$1,200). Check thermostat settings first (free fix).</p>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-4">
