@@ -164,7 +164,7 @@ export default function BlogArticleSeerChart() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              This chart answers all of those questions with real numbers. We've calculated annual costs at both the national average electricity rate ({cents(AVG)}/kWh) and a high rate ({cents(HIGH)}/kWh, Hawaii's average, similar to many islands and high-cost areas), using EIA figures for {RATES_AS_OF} so you can see exactly where your system falls — and exactly what upgrading could save you.
+              This chart answers all of those questions with real numbers. We've calculated annual costs at both the national average electricity rate ({cents(AVG)}/kWh) and a high rate ({cents(HIGH)}/kWh, Hawaii's average, similar to many islands and high-cost areas), using EIA figures for {RATES_AS_OF} so you can see where your system falls and roughly what upgrading could save you.
             </p>
 
             <hr className="my-8 border-gray-200" />

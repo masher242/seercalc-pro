@@ -305,7 +305,7 @@ export default function BlogArticleMinisplit() {
               {/* Continue with remaining sections... Due to length, I'll create this as a comprehensive component */}
 
               <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl p-8 my-10 text-center">
-                <h3 className="text-2xl font-bold mb-3">Calculate Your Exact Operating Costs</h3>
+                <h3 className="text-2xl font-bold mb-3">Estimate Your Operating Costs</h3>
                 <p className="mb-6">Compare mini-split operating costs to your current system based on your specific usage.</p>
                 <Link to="/" className="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
                   Use the Calculator →

@@ -86,7 +86,7 @@ export default function BlogArticleACRepairCost() {
             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-3">You'll Learn:</h3>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                <li>Exact costs for 20+ common AC problems</li>
+                <li>Typical cost ranges for 20+ common AC problems</li>
                 <li>What's included in repair pricing</li>
                 <li>How to spot overcharging</li>
                 <li>When repair makes sense vs replacement</li>
