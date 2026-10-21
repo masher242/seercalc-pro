@@ -1,0 +1,46 @@
+# Weekly: read data/refresh-calendar.json and keep one GitHub issue ("Data refresh due")
+# listing every data source due in the next 7 days or overdue. Closes the issue when
+# nothing is due. GitHub emails the repo owner when the issue is opened or updated.
+# Needs no repo settings: the built-in token can manage issues.
+
+name: Data refresh reminder
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find items due
+        id: due
+        run: |
+          python3 scripts/check-refresh-calendar.py --markdown --github-output > body.md
+          cat body.md
+
+      - name: Open, update or close the reminder issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COUNT: ${{ steps.due.outputs.count }}
+        run: |
+          TITLE="Data refresh due"
+          gh label create data-refresh --color 0E8A16 --description "Data sources due for a refresh" 2>/dev/null || true
+          NUM=$(gh issue list --label data-refresh --state open --json number --jq '.[0].number // empty')
+          if [ "${COUNT:-0}" -gt 0 ]; then
+            if [ -n "$NUM" ]; then
+              gh issue edit "$NUM" --body-file body.md
+              gh issue comment "$NUM" --body "Weekly check: ${COUNT} item(s) due. List updated above."
+            else
+              gh issue create --title "$TITLE" --label data-refresh --body-file body.md
+            fi
+          elif [ -n "$NUM" ]; then
+            gh issue close "$NUM" --comment "Nothing is due this week."
+          fi
