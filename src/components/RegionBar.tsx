@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import { Map as MapIcon, Palmtree, Leaf, Landmark, Sun, Mountain } from 'lucide-react';
+import { Map as MapIcon, Palmtree, Leaf, Landmark, Sun, Mountain, Globe2 } from 'lucide-react';
 import { STATES } from '../data/acCost';
 import { COUNTRIES } from '../data/caribbean';
 import { EU_COUNTRIES } from '../data/europe';
@@ -58,6 +58,13 @@ export const REGIONS = [
     short: 'Asia',
     icon: Mountain,
     match: (p: string) => slugOf(p) === 'asia',
+  },
+  {
+    to: '/ac-cost/world',
+    label: 'World compared',
+    short: 'World',
+    icon: Globe2,
+    match: (p: string) => slugOf(p) === 'world',
   },
 ];
 
