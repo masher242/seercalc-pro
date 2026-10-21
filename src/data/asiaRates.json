@@ -1,0 +1,570 @@
+{
+  "_readme": "Electricity prices for the Asia AC cost pages. For each country, zones are utilities (or tariff areas); rate is the price per kWh, in local currency, that running an air conditioner adds to a household bill (see rateNote for exactly how it was worked out). Each country has its own source and date: update rate, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for one split unit. usdPer converts local currency to US dollars (ECB reference rates crossed through the euro).",
+  "updated": "2026-10-21",
+  "fxAsOf": "October 21, 2026",
+  "fxSource": "European Central Bank euro reference rates, October 21, 2026 (crossed through the euro); New Taiwan dollar at market rate October 21, 2026; Vietnamese dong at the State Bank of Vietnam central rate, October 6, 2026; Cambodian riel at the National Bank of Cambodia official rate, October 21, 2026; Brunei dollar at par with the Singapore dollar",
+  "usdPer": {
+    "SGD": 0.783,
+    "PHP": 0.015796,
+    "HKD": 0.12743,
+    "MYR": 0.24505,
+    "THB": 0.029784,
+    "JPY": 0.006334,
+    "KRW": 0.00075438,
+    "IDR": 5.5424e-05,
+    "CNY": 0.14979,
+    "TWD": 0.03086,
+    "VND": 3.8994e-05,
+    "KHR": 0.00024558,
+    "BND": 0.783
+  },
+  "countries": [
+    {
+      "name": "Singapore",
+      "slug": "singapore",
+      "currency": "SGD",
+      "zones": [
+        {
+          "id": "sp",
+          "name": "SP Group regulated tariff",
+          "area": "the whole island",
+          "rate": 0.3116
+        }
+      ],
+      "rateNote": "SP Group's regulated household tariff for October 1 to December 31, 2026: 28.59 cents per kWh before GST, 31.16 cents with 9% GST. Every kWh costs the same, so this is also what each extra kWh of air conditioning costs.",
+      "asOf": "October–December 2026",
+      "source": "SP Group household electricity tariff, October 1–December 31, 2026 (28.59¢/kWh before GST, down 10.4% from the previous quarter), 9% GST added",
+      "sourceUrl": "https://littlebigreddot.com/electricity-tariff-october-december-2026-sp-group-10-4-per-cent/",
+      "cities": [
+        {
+          "name": "Singapore",
+          "hours": 2000,
+          "zone": "sp"
+        }
+      ],
+      "refCity": "Singapore",
+      "units": "In Singapore, air conditioners are often sold by horsepower: a 1.5 hp unit is about 12,000 BTU (3.5 kW) of cooling.",
+      "tariff": [
+        "SP Group resets the regulated household tariff every quarter, mainly following the cost of the natural gas that generates most of Singapore's power. The fourth-quarter 2026 tariff fell 10.4%, but it can rise again just as quickly, so check the current quarter's rate on your bill.",
+        "Households can also buy from a retailer in the Open Electricity Market, with fixed-price plans or a discount off the regulated tariff. Those can be cheaper than the price used here.",
+        "Air conditioning is often the biggest part of a Singapore power bill. Most of it is bedroom units running through the night, so the setting you sleep at (25°C rather than 22°C) and a clean filter matter more than the size of the living-room unit."
+      ]
+    },
+    {
+      "name": "Philippines",
+      "slug": "philippines",
+      "currency": "PHP",
+      "zones": [
+        {
+          "id": "meralco",
+          "name": "Meralco",
+          "area": "Metro Manila and nearby provinces (Bulacan, Cavite, Laguna, Rizal and parts of Batangas, Pampanga and Quezon)",
+          "rate": 15.0615
+        }
+      ],
+      "rateNote": "Meralco's overall residential rate for October 2026 bills, for a typical household using 200 kWh a month, including generation, transmission, distribution, taxes and other charges.",
+      "asOf": "October 2026",
+      "source": "Meralco, overall rate for a typical household in October 2026 (₱15.0615 per kWh, up ₱0.3191 from September)",
+      "sourceUrl": "https://company.meralco.com.ph/news-and-advisories/higher-residential-rates-october-2026",
+      "cities": [
+        {
+          "name": "Metro Manila",
+          "hours": 2200,
+          "zone": "meralco"
+        }
+      ],
+      "refCity": "Metro Manila",
+      "units": "In the Philippines, air conditioners are usually sold by horsepower: a 1.5 hp split or window unit is about 12,000 BTU (3.5 kW) of cooling.",
+      "tariff": [
+        "Meralco's rate changes every month, mostly because of the generation charge, which follows fuel costs and the wholesale market. October 2026's rate rose by about ₱0.32 a kWh. Your bill shows each month's rate.",
+        "The rate here is for a typical household. Homes that use more pay a similar price per kWh, while very small users get a lifeline discount. Outside Meralco's franchise area, other distribution utilities and cooperatives (in Cebu, Davao and elsewhere) set their own rates.",
+        "Window-type and older non-inverter units are still common in the Philippines. Replacing one with an inverter split is often the single biggest saving available, because the unit runs for so many hours."
+      ]
+    },
+    {
+      "name": "Hong Kong",
+      "slug": "hong-kong",
+      "currency": "HKD",
+      "zones": [
+        {
+          "id": "clp",
+          "name": "CLP Power",
+          "area": "Kowloon, the New Territories and most outlying islands",
+          "rate": 1.699
+        }
+      ],
+      "rateNote": "CLP Power's 2026 residential price for a home using 1,000 to 1,800 units every two months (the band most air-conditioned flats reach in summer): energy charge HK$1.237 plus the October 2026 fuel cost adjustment of HK$0.462 per unit.",
+      "asOf": "2026 tariff, fuel cost adjustment for October 2026",
+      "source": "CLP Power, 2026 residential tariff table (block of 1,001–1,800 units per two months, 123.7 cents per unit) and fuel cost adjustment from October 1, 2026 (46.2 cents per unit)",
+      "sourceUrl": "https://www.clp.com.hk/en/help-support/bills-payment-tariffs/fuel-cost-adjustment",
+      "cities": [
+        {
+          "name": "Hong Kong",
+          "hours": 1100,
+          "zone": "clp"
+        }
+      ],
+      "refCity": "Hong Kong",
+      "units": "In Hong Kong, air conditioners are sold by horsepower or kW: a 1.5 hp unit is about 12,000 BTU (3.5 kW) of cooling.",
+      "tariff": [
+        "CLP charges more per unit the more you use. The basic energy charge is 94.5 cents for the first 400 units every two months, 107.9 cents for the next 600 and 123.7 cents for the next 800, rising to 189 cents above 4,200 units. Summer air conditioning pushes most flats into the higher blocks, so the units it adds cost more than the average.",
+        "On top of that is the fuel cost adjustment, revised monthly. It has risen through 2026, from 39.4 cents a unit in January to 46.2 cents in October. An 8-cent Special Fuel Rebate applied to eligible residential customers from August to October 2026.",
+        "Hong Kong Island and Lamma are supplied by HK Electric, whose 2026 basic tariff averages 127.9 cents a unit, with a fuel clause charge of 60.7 cents in September 2026, so a unit there costs more than with CLP."
+      ]
+    },
+    {
+      "name": "Japan",
+      "slug": "japan",
+      "currency": "JPY",
+      "zones": [
+        {
+          "id": "tepco",
+          "name": "TEPCO (Tokyo Electric Power)",
+          "area": "Tokyo and the Kanto region",
+          "rate": 38.87
+        },
+        {
+          "id": "kansai",
+          "name": "Kansai Electric",
+          "area": "Osaka, Kyoto, Kobe and the Kansai region",
+          "rate": 35.01
+        }
+      ],
+      "rateNote": "the price of each kWh above 300 kWh a month on the standard metered plan (TEPCO Juryo Dento B, Kansai Juryo Dento A), plus the October 2026 fuel cost adjustment before the temporary government discount, plus the 2026 renewable energy levy of ¥4.18, tax included",
+      "asOf": "October 2026",
+      "source": "TEPCO Energy Partner and Kansai Electric standard metered tariffs (third tier, above 300 kWh: TEPCO ¥40.49, Kansai ¥28.59), October 2026 fuel cost adjustment before the government discount (TEPCO −¥5.80, Kansai +¥2.24) and the FY2026 renewable energy levy (¥4.18), tax included",
+      "sourceUrl": "https://www.tepco.co.jp/ep/notice/pressrelease/2026/pdf/260828j0601.pdf",
+      "cities": [
+        {
+          "name": "Osaka",
+          "hours": 700,
+          "zone": "kansai"
+        },
+        {
+          "name": "Kyoto",
+          "hours": 700,
+          "zone": "kansai"
+        },
+        {
+          "name": "Kobe",
+          "hours": 650,
+          "zone": "kansai"
+        },
+        {
+          "name": "Tokyo",
+          "hours": 600,
+          "zone": "tepco"
+        },
+        {
+          "name": "Yokohama",
+          "hours": 550,
+          "zone": "tepco"
+        }
+      ],
+      "refCity": "Tokyo",
+      "units": "In Japan, room air conditioners are sold by cooling capacity in kW and the room size they suit, in tatami mats: a 2.8 kW unit is for about 10 mats, a 3.6 kW unit for about 12 and a 4.0 kW unit for about 14.",
+      "tariff": [
+        "Japan's standard household plans charge three prices: a low one for the first 120 kWh a month, a middle one up to 300 kWh, and a top one above that. In summer most air-conditioned homes go past 300 kWh, so each extra kWh the AC uses is billed at the top tier. That's the price used here.",
+        "Every kWh also carries a monthly fuel cost adjustment and the renewable energy levy (¥4.18 a kWh from May 2026). The government cut bills by ¥3.5–4.5 a kWh for August to October 2026 usage; that temporary discount isn't included here, because it isn't a lasting part of the price.",
+        "Many households have switched from the regional utility to another retailer since the market opened in 2016. Their plans, often with time-of-day pricing, can be cheaper or dearer than the standard tariff used here."
+      ]
+    },
+    {
+      "name": "Malaysia",
+      "slug": "malaysia",
+      "currency": "MYR",
+      "zones": [
+        {
+          "id": "tnb",
+          "name": "Tenaga Nasional (TNB)",
+          "area": "Peninsular Malaysia",
+          "rate": 0.4893
+        }
+      ],
+      "rateNote": "what each kWh adds when air conditioning takes a home from 300 to 600 kWh a month, on TNB's domestic tariff (energy 27.03, capacity 4.55 and network 12.85 sen a kWh), after the Energy Efficiency Incentive rebate shrinks from 22.5 to 9.0 sen a kWh, under the September–December 2026 rules (no AFA, retail charge or service tax up to 800 kWh)",
+      "asOf": "September–December 2026 rules",
+      "source": "TNB domestic tariff from July 2025 (energy 27.03, capacity 4.55, network 12.85 sen/kWh up to 1,500 kWh; Energy Efficiency Incentive bands) and the September–December 2026 exemption up to 800 kWh; our calculation",
+      "sourceUrl": "https://paultan.org/2026/10/01/tnb-bill-afa-rate-october-2026-set-at-3-61-sen-kwh/",
+      "cities": [
+        {
+          "name": "George Town (Penang)",
+          "hours": 2300,
+          "zone": "tnb"
+        },
+        {
+          "name": "Kuala Lumpur",
+          "hours": 2200,
+          "zone": "tnb"
+        },
+        {
+          "name": "Johor Bahru",
+          "hours": 2100,
+          "zone": "tnb"
+        },
+        {
+          "name": "Ipoh",
+          "hours": 2000,
+          "zone": "tnb"
+        }
+      ],
+      "refCity": "Kuala Lumpur",
+      "units": "In Malaysia, air conditioners are usually sold by horsepower: a 1.5 hp unit is about 12,000 BTU (3.5 kW) of cooling.",
+      "tariff": [
+        "Since July 2025, TNB bills households a generation charge, a capacity charge and a network charge for every kWh, plus a monthly fuel adjustment (AFA). Homes using under 1,000 kWh a month get an Energy Efficiency Incentive rebate, worked out from the home's total use: the more you use, the smaller the rebate on every kWh.",
+        "That's why air conditioning costs more per kWh than the headline rate: going from 300 to 600 kWh a month cuts the rebate from 22.5 to 9.0 sen on every kWh, so each kWh the AC adds costs about 49 sen, not 44.",
+        "Until December 31, 2026, homes using up to 800 kWh a month pay no AFA (+3.61 sen in October 2026), retail charge or service tax. From January 2027 that limit drops back to 600 kWh, so a home using more than that will pay more for the same cooling. Sabah and Sarawak have their own utilities and tariffs."
+      ]
+    },
+    {
+      "name": "Thailand",
+      "slug": "thailand",
+      "currency": "THB",
+      "zones": [
+        {
+          "id": "national",
+          "name": "MEA (Bangkok area) and PEA (provinces), same national tariff",
+          "area": "the whole country",
+          "rate": 4.6231
+        }
+      ],
+      "rateNote": "the residential price per unit between 201 and 400 units a month (base rate ฿4.1584 plus the September–December 2026 Ft of ฿0.1623, plus 7% VAT); above 400 units it is about ฿4.84",
+      "asOf": "September–December 2026",
+      "source": "Energy Regulatory Commission, residential progressive tariff from September 2026 bills (฿4.1584 a unit for 201–400 units, ฿4.3583 above 400) and Ft of 16.23 satang for September–December 2026, plus 7% VAT",
+      "sourceUrl": "https://en.thairath.co.th/scoop/theissue/2958534",
+      "cities": [
+        {
+          "name": "Bangkok",
+          "hours": 2400,
+          "zone": "national"
+        },
+        {
+          "name": "Phuket",
+          "hours": 2300,
+          "zone": "national"
+        },
+        {
+          "name": "Khon Kaen",
+          "hours": 2000,
+          "zone": "national"
+        },
+        {
+          "name": "Chiang Mai",
+          "hours": 1500,
+          "zone": "national"
+        }
+      ],
+      "refCity": "Bangkok",
+      "units": "In Thailand, air conditioners are sold by BTU: a 12,000 BTU unit is about 3.5 kW of cooling.",
+      "tariff": [
+        "Thai households pay more per unit as they use more. From September 2026 bills, the first 200 units a month cost about ฿3 each before Ft and VAT, units 201–400 cost ฿4.16, and units above 400 cost ฿4.36. Air conditioning usually pushes a home into the upper blocks, so the price used here is the 201–400 block.",
+        "The fuel adjustment charge (Ft) is reset every four months by the Energy Regulatory Commission. For September to December 2026 it is 16.23 satang a unit, and the average household price is about ฿3.86 before VAT.",
+        "The same tariff applies in Bangkok (Metropolitan Electricity Authority) and the provinces (Provincial Electricity Authority). Condos and rented rooms sometimes charge their own, higher rate per unit, so check your lease."
+      ]
+    },
+    {
+      "name": "Vietnam",
+      "slug": "vietnam",
+      "currency": "VND",
+      "zones": [
+        {
+          "id": "evn",
+          "name": "EVN (Vietnam Electricity)",
+          "area": "the whole country",
+          "rate": 3618
+        }
+      ],
+      "rateNote": "EVN's residential price for each kWh between 301 and 400 kWh a month (3,350 dong before VAT, under Ministry of Industry and Trade Decision 1279, in force since May 10, 2025), plus 8% VAT; above 400 kWh it is about 3,737 dong",
+      "asOf": "tariff since May 10, 2025, still current in October 2026",
+      "source": "EVN residential tariff, Ministry of Industry and Trade Decision 1279/QĐ-BCT of May 9, 2025 (6 tiers: 1,984 / 2,050 / 2,380 / 2,998 / 3,350 / 3,460 dong a kWh before VAT), 8% VAT",
+      "sourceUrl": "https://vietnamsolar.vn/gia-dien-sinh-hoat/",
+      "cities": [
+        {
+          "name": "Ho Chi Minh City",
+          "hours": 2400,
+          "zone": "evn"
+        },
+        {
+          "name": "Da Nang",
+          "hours": 1700,
+          "zone": "evn"
+        },
+        {
+          "name": "Hanoi",
+          "hours": 1200,
+          "zone": "evn"
+        }
+      ],
+      "refCity": "Ho Chi Minh City",
+      "units": "In Vietnam, air conditioners are sold by BTU or horsepower: a 12,000 BTU (1.5 hp) unit is about 3.5 kW of cooling.",
+      "tariff": [
+        "EVN charges six rising prices per kWh as monthly use climbs: 1,984 dong for the first 50 kWh, up to 3,350 dong for 301–400 kWh and 3,460 dong above 400 kWh, all before VAT. Air conditioning is usually what pushes a home into the top tiers, so the kWh it adds cost far more than the average.",
+        "The tariff has been unchanged since May 2025. A simpler five-tier structure has been approved and will replace it at the next price adjustment, so check your bill if rates change.",
+        "Hanoi has a real winter and a hot, humid summer, while Ho Chi Minh City is hot all year, which is why its yearly cooling cost is about twice Hanoi's."
+      ]
+    },
+    {
+      "name": "Indonesia",
+      "slug": "indonesia",
+      "currency": "IDR",
+      "zones": [
+        {
+          "id": "pln",
+          "name": "PLN, 1,300–2,200 VA homes",
+          "area": "the whole country",
+          "rate": 1444.7
+        },
+        {
+          "id": "pln35",
+          "name": "PLN, 3,500 VA and larger homes",
+          "area": "the whole country",
+          "rate": 1699.53
+        }
+      ],
+      "rateNote": "PLN's non-subsidised household tariff for October–December 2026, unchanged from the previous quarter: Rp1,444.70 a kWh for 1,300–2,200 VA connections (the usual size for an air-conditioned home) and Rp1,699.53 for 3,500 VA and above; the regional street-lighting tax isn't included",
+      "asOf": "October–December 2026",
+      "source": "PLN household tariff adjustment for October–December 2026 (R-1 1,300–2,200 VA Rp1,444.70/kWh; R-2/R-3 3,500 VA and above Rp1,699.53/kWh), as reported October 12, 2026",
+      "sourceUrl": "https://journalarta.com/news/2026/10/12/tarif-listrik-pln-oktober-2026/",
+      "cities": [
+        {
+          "name": "Jakarta",
+          "hours": 2500,
+          "zone": "pln"
+        },
+        {
+          "name": "Surabaya",
+          "hours": 2500,
+          "zone": "pln"
+        },
+        {
+          "name": "Denpasar (Bali)",
+          "hours": 2300,
+          "zone": "pln"
+        },
+        {
+          "name": "Medan",
+          "hours": 2200,
+          "zone": "pln"
+        }
+      ],
+      "refCity": "Jakarta",
+      "units": "In Indonesia, air conditioners are sold by PK (horsepower): a 1.5 PK unit is about 12,000 BTU (3.5 kW) of cooling.",
+      "tariff": [
+        "PLN sets household prices by the size of the connection, in volt-amperes (VA), and reviews them every quarter. Most air-conditioned homes have a 1,300 or 2,200 VA connection; larger homes on 3,500 VA or more pay about 18% more per kWh.",
+        "Prices for October–December 2026 were kept the same as the previous quarter. Very small 450 and 900 VA connections for low-income households are subsidised and much cheaper, but can rarely run an air conditioner.",
+        "Bills also carry a regional street-lighting tax (PPJ), set by each local government, which isn't included here."
+      ]
+    },
+    {
+      "name": "Taiwan",
+      "slug": "taiwan",
+      "currency": "TWD",
+      "zones": [
+        {
+          "id": "taipower",
+          "name": "Taipower",
+          "area": "the whole island",
+          "rate": 3.8
+        }
+      ],
+      "rateNote": "Taipower's summer residential price (June 1 to September 30) for each kWh between 331 and 500 kWh a month, the band most air-conditioned homes reach in summer, from the rates in effect since June 1, 2026",
+      "asOf": "summer 2026 rates (June–September)",
+      "source": "Taipower residential summer rates from June 1, 2026 (NT$1.78 up to 120 kWh, 2.55 for 121–330, 3.80 for 331–500, 5.14 for 501–700, 6.44 for 701–1,000, 8.86 above), reported by Focus Taiwan",
+      "sourceUrl": "https://focustaiwan.tw/business/202605110005",
+      "cities": [
+        {
+          "name": "Kaohsiung",
+          "hours": 1700,
+          "zone": "taipower"
+        },
+        {
+          "name": "Taichung",
+          "hours": 1300,
+          "zone": "taipower"
+        },
+        {
+          "name": "Taipei",
+          "hours": 1300,
+          "zone": "taipower"
+        }
+      ],
+      "refCity": "Taipei",
+      "units": "In Taiwan, air conditioners are sold by kW or by ping (floor area): a 3.5 kW unit suits a room of about 5–6 ping.",
+      "tariff": [
+        "Taipower charges six rising prices per kWh, and higher ones in summer (June to September) than the rest of the year. In summer, kWh from 331 to 500 a month cost NT$3.80 each, and above 1,000 they cost NT$8.86, so a home that runs several units can pay more than twice the price per kWh of a light user.",
+        "The price used here is the summer one, because that's when most cooling happens. Air conditioning used outside June–September is billed at the lower non-summer rates, so the yearly figures are slightly on the high side.",
+        "Taipower also offers time-of-use plans with much cheaper night and weekend power, which can suit homes that cool bedrooms overnight."
+      ]
+    },
+    {
+      "name": "South Korea",
+      "slug": "south-korea",
+      "currency": "KRW",
+      "zones": [
+        {
+          "id": "kepco",
+          "name": "KEPCO (Korea Electric Power)",
+          "area": "the whole country",
+          "rate": 257.6
+        }
+      ],
+      "rateNote": "KEPCO's low-voltage residential price for each kWh between 301 and 450 kWh a month in July and August (214.6 won), plus the climate and environment charge (9 won) and the fourth-quarter 2026 fuel cost adjustment (+5 won), plus 10% VAT and the 2.7% power industry fund",
+      "asOf": "October–December 2026 (summer tiers)",
+      "source": "KEPCO residential (low voltage) progressive tariff, July–August tiers (120 / 214.6 / 307.3 won a kWh), climate and environment charge 9 won, fuel cost adjustment +5 won for October–December 2026 (frozen), VAT 10%, power industry fund 2.7%",
+      "sourceUrl": "https://www.fnnews.com/news/202609210824289338",
+      "cities": [
+        {
+          "name": "Daegu",
+          "hours": 550,
+          "zone": "kepco"
+        },
+        {
+          "name": "Busan",
+          "hours": 450,
+          "zone": "kepco"
+        },
+        {
+          "name": "Seoul",
+          "hours": 400,
+          "zone": "kepco"
+        }
+      ],
+      "refCity": "Seoul",
+      "units": "In Korea, air conditioners are sold by pyeong (the floor area they cool): a 3.5 kW wall unit suits a room of about 10–11 pyeong.",
+      "tariff": [
+        "Korean homes pay three rising prices per kWh. In July and August the bands are widened: up to 300 kWh at 120 won, 301–450 kWh at 214.6 won and above 450 kWh at 307.3 won, with a higher fixed charge too. Crossing 450 kWh in a summer month is what makes a Korean power bill jump.",
+        "Every kWh also carries a climate and environment charge and a quarterly fuel cost adjustment, which KEPCO kept at +5 won for October–December 2026. VAT and the power industry fund are added on top.",
+        "Korea's power is cheap by international standards, and its cooling season is short, so even a heavily used air conditioner costs less over a year than in Southeast Asia. Very high users (above 1,000 kWh a month in summer and winter) pay a 'super user' rate of 736.2 won."
+      ]
+    },
+    {
+      "name": "China",
+      "slug": "china",
+      "currency": "CNY",
+      "zones": [
+        {
+          "id": "shanghai",
+          "name": "Shanghai (State Grid)",
+          "area": "Shanghai",
+          "rate": 0.667
+        },
+        {
+          "id": "beijing",
+          "name": "Beijing (State Grid)",
+          "area": "Beijing",
+          "rate": 0.5383
+        },
+        {
+          "id": "guangzhou",
+          "name": "Guangzhou (China Southern Power Grid)",
+          "area": "Guangzhou and Guangdong province",
+          "rate": 0.639
+        },
+        {
+          "id": "shenzhen",
+          "name": "Shenzhen (China Southern Power Grid)",
+          "area": "Shenzhen",
+          "rate": 0.713
+        }
+      ],
+      "rateNote": "the second-tier household price in each city, the band an air-conditioned home typically reaches (Beijing: 241–400 kWh a month, ¥0.5383; Shanghai, Guangzhou and Shenzhen: second tier, approximately ¥0.667, ¥0.639 and ¥0.713); the third tier costs about ¥0.25 a kWh more",
+      "asOf": "tiered tariffs current in 2026",
+      "source": "Beijing Municipal Government household tiered electricity prices (¥0.4883 / 0.5383 / 0.7883 a kWh); Shanghai, Guangzhou and Shenzhen second-tier prices as compiled by Living Cost Laboratory (2026)",
+      "sourceUrl": "https://english.beijing.gov.cn/livinginbeijing/housing/202005/t20200513_1895841.html",
+      "cities": [
+        {
+          "name": "Shenzhen",
+          "hours": 1500,
+          "zone": "shenzhen"
+        },
+        {
+          "name": "Guangzhou",
+          "hours": 1400,
+          "zone": "guangzhou"
+        },
+        {
+          "name": "Shanghai",
+          "hours": 800,
+          "zone": "shanghai"
+        },
+        {
+          "name": "Beijing",
+          "hours": 500,
+          "zone": "beijing"
+        }
+      ],
+      "refCity": "Shanghai",
+      "units": "In China, air conditioners are sold by \"pi\" (匹, horsepower): a 1.5 pi unit is about 3.5 kW (12,000 BTU) of cooling.",
+      "tariff": [
+        "Chinese households pay three tiers: a basic price for normal use, about ¥0.05 a kWh more in the second tier, and about ¥0.30 more in the third. Some cities (Beijing, Shanghai) count tiers on yearly use, others (Guangzhou, Shenzhen) monthly, with wider tiers in summer.",
+        "Prices are set by each province and are low by international standards, so even in the long, humid summers of Guangzhou and Shenzhen a split unit costs far less to run than in Manila or Singapore.",
+        "Many cities also offer peak and valley (time-of-day) pricing, which makes overnight cooling cheaper. The figures for Shanghai, Guangzhou and Shenzhen are approximate; check the second-tier price on your bill."
+      ]
+    },
+    {
+      "name": "Cambodia",
+      "slug": "cambodia",
+      "currency": "KHR",
+      "zones": [
+        {
+          "id": "edc",
+          "name": "EDC (Électricité du Cambodge)",
+          "area": "Phnom Penh and 16 provinces on the EDC grid",
+          "rate": 730
+        }
+      ],
+      "rateNote": "the price for homes using more than 200 kWh a month on EDC's low-voltage grid, set by the Electricity Authority of Cambodia; the band is based on the home's total monthly use, so every kWh costs 730 riel once a home passes 200 kWh",
+      "asOf": "tariff set in 2021, confirmed unchanged for 2024; no later change found",
+      "source": "Electricity Authority of Cambodia, Decision No. 014 on EDC consumer tariffs (residential: 380 / 480 / 610 / 730 riel a kWh), confirmed unchanged for 2024",
+      "sourceUrl": "https://jbac.info/wp-content/uploads/2021/02/EN-EAC-No.-014-Decision-on-the-Determination-of-List-of-Electricity-Tariff-For-Consumers-of-EDC-For-2021.pdf",
+      "cities": [
+        {
+          "name": "Phnom Penh",
+          "hours": 2500,
+          "zone": "edc"
+        },
+        {
+          "name": "Siem Reap",
+          "hours": 2400,
+          "zone": "edc"
+        }
+      ],
+      "refCity": "Phnom Penh",
+      "units": "In Cambodia, air conditioners are sold by horsepower or BTU: a 1.5 hp (12,000 BTU) unit is about 3.5 kW of cooling.",
+      "tariff": [
+        "The Electricity Authority of Cambodia sets four household prices, based on how much a home uses in the month: 380 riel a kWh up to 10 kWh, 480 riel up to 50, 610 riel up to 200 and 730 riel above 200. An air-conditioned home is almost always above 200 kWh, so its whole bill is charged at 730 riel a kWh.",
+        "These prices have been unchanged for several years; the newest published decision we found dates from 2021 and was confirmed for 2024. Homes outside the EDC grid, supplied by private licensees, can pay more.",
+        "Many bills are paid in US dollars at the official exchange rate, about 4,072 riel to the dollar in October 2026."
+      ]
+    },
+    {
+      "name": "Brunei",
+      "slug": "brunei",
+      "currency": "BND",
+      "zones": [
+        {
+          "id": "des",
+          "name": "Department of Electrical Services / BPC",
+          "area": "the whole country",
+          "rate": 0.08
+        }
+      ],
+      "rateNote": "the residential price for each kWh between 601 and 2,000 kWh a month (8 cents), the band an air-conditioned home usually reaches; the first 600 kWh cost 1 cent each",
+      "asOf": "tariff in force since January 1, 2012",
+      "source": "Department of Electrical Services, Brunei Darussalam, residential (Tariff A) four-tier tariff from January 1, 2012 (1 / 8 / 10 / 12 cents a kWh)",
+      "sourceUrl": "https://www.des.gov.bn/electricity-tariff/",
+      "cities": [
+        {
+          "name": "Bandar Seri Begawan",
+          "hours": 2500,
+          "zone": "des"
+        }
+      ],
+      "refCity": "Bandar Seri Begawan",
+      "units": "In Brunei, air conditioners are sold by horsepower: a 1.5 hp unit is about 12,000 BTU (3.5 kW) of cooling.",
+      "tariff": [
+        "Brunei's household electricity is heavily subsidised. The first 600 kWh a month cost just 1 cent each, the next 1,400 kWh 8 cents, then 10 and 12 cents, prices that haven't changed since 2012.",
+        "Because power is so cheap, air conditioning is used heavily, and the hot, humid climate means it runs most of the year. Even so, one unit costs less to run than almost anywhere else in this guide."
+      ]
+    }
+  ]
+}

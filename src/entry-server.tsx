@@ -56,6 +56,8 @@ import AcCostCanada from './pages/AcCostCanada';
 import AcCostEurope from './pages/AcCostEurope';
 import AcCostAustralia from './pages/AcCostAustralia';
 import AcCostAustraliaState from './pages/AcCostAustraliaState';
+import AcCostAsia from './pages/AcCostAsia';
+import AcCostAsiaCountry from './pages/AcCostAsiaCountry';
 import TroubleshootingHub from './pages/TroubleshootingHub';
 import TroubleshootingSymptom from './pages/TroubleshootingSymptom';
 import AcCostProvince from './pages/AcCostProvince';
@@ -67,6 +69,7 @@ import { COUNTRIES } from './data/caribbean';
 import { PROVINCES } from './data/canada';
 import { EU_COUNTRIES } from './data/europe';
 import { AU_STATES } from './data/australia';
+import { ASIA_COUNTRIES } from './data/asia';
 import { SYMPTOMS } from './data/troubleshooting';
 
 function AppContent() {
@@ -127,6 +130,8 @@ function AppContent() {
         <Route path="/ac-cost/europe" element={<AcCostEurope />} />
         <Route path="/ac-cost/australia" element={<AcCostAustralia />} />
         <Route path="/ac-cost/australia/:state" element={<AcCostAustraliaState />} />
+        <Route path="/ac-cost/asia" element={<AcCostAsia />} />
+        <Route path="/ac-cost/asia/:country" element={<AcCostAsiaCountry />} />
         <Route path="/ac-cost/canada/:province" element={<AcCostProvince />} />
         <Route path="/ac-cost/:state" element={<AcCostState />} />
         <Route path="/blog/how-much-does-it-cost-to-run-ac" element={<BlogArticleRunningCost />} />
@@ -201,6 +206,8 @@ export const routes = [
   ...EU_COUNTRIES.map((c) => `/ac-cost/${c.slug}`),
   '/ac-cost/australia',
   ...AU_STATES.map((s) => `/ac-cost/australia/${s.slug}`),
+  '/ac-cost/asia',
+  ...ASIA_COUNTRIES.map((c) => `/ac-cost/asia/${c.slug}`),
   '/blog/how-much-does-it-cost-to-run-ac',
   '/blog/16-vs-18-seer',
   '/blog/18-vs-20-seer',
