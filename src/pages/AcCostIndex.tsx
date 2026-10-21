@@ -116,7 +116,7 @@ export default function AcCostIndex() {
             className="flex items-center justify-between gap-3 rounded-lg border border-teal-200 bg-teal-50 px-4 py-3 hover:border-teal-400 transition-colors"
           >
             <span className="text-sm text-gray-800">
-              <strong>Asia:</strong> Singapore, the Philippines, Hong Kong, Japan, Malaysia and Thailand.
+              <strong>Asia:</strong> 13 countries, from Singapore and Japan to China, with a map.
             </span>
             <span className="text-sm font-semibold text-teal-700 whitespace-nowrap">Asia →</span>
           </Link>

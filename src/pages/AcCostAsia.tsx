@@ -12,7 +12,7 @@ import {
 } from '../data/asia';
 
 const PATH = '/ac-cost/asia';
-const TITLE = 'Cost to Run AC in Asia: 6 Countries Compared';
+const TITLE = `Cost to Run AC in Asia: ${ASIA_COUNTRIES.length} Countries Compared`;
 const HEADLINE = 'What It Costs to Run Air Conditioning in Asia';
 
 const th = 'border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900';
@@ -23,6 +23,10 @@ const a = 'text-teal-600 hover:text-teal-700 font-medium';
 
 const kwhPerHour = (ASIA_REF_KW / ASIA_REF_EFF).toFixed(2);
 const inName = (c: AsiaCountry) => (c.slug === 'philippines' ? 'the Philippines' : c.name);
+const LIST = (() => {
+  const n = [...ASIA_COUNTRIES].sort((x, y) => x.name.localeCompare(y.name)).map(inName);
+  return `${n.slice(0, -1).join(', ')} and ${n[n.length - 1]}`;
+})();
 
 export default function AcCostAsia() {
   const ranked = [...ASIA_COUNTRIES].sort((x, y) => x.rank - y.rank);
@@ -42,12 +46,12 @@ export default function AcCostAsia() {
   const manila = ASIA_COUNTRIES.find((c) => c.slug === 'philippines');
   const malaysia = ASIA_COUNTRIES.find((c) => c.slug === 'malaysia');
 
-  const description = 'What a 1.5 hp (12,000 BTU) inverter air conditioner costs to run per hour and per year in Singapore, the Philippines, Hong Kong, Japan, Malaysia and Thailand, at current electricity prices, in local currency and U.S. dollars.';
+  const description = `What a 1.5 hp (12,000 BTU) inverter air conditioner costs to run per hour and per year in ${ASIA_COUNTRIES.length} Asian countries and territories, from Singapore and the Philippines to Japan, Korea and China, at current electricity prices, in local currency and U.S. dollars.`;
 
   const faqs = [
     {
       q: 'Where in Asia is air conditioning most expensive to run?',
-      a: `Per kWh, ${inName(priciest)} has the highest price of the six countries here (about ${cents(priciest.usdRate)} in U.S. money). Over a year, the hot, humid cities where the AC runs most of the year cost the most: one 1.5 hp unit costs about ${usd0(usdYear(byYear[0]))} a year in ${byYear[0].ref.name}, against about ${usd0(usdYear(byYear[byYear.length - 1]))} in ${byYear[byYear.length - 1].ref.name}.`,
+      a: `Per kWh, ${inName(priciest)} has the highest price of the ${ASIA_COUNTRIES.length} countries here (about ${cents(priciest.usdRate)} in U.S. money). Over a year, the hot, humid cities where the AC runs most of the year cost the most: one 1.5 hp unit costs about ${usd0(usdYear(byYear[0]))} a year in ${byYear[0].ref.name}, against about ${usd0(usdYear(byYear[byYear.length - 1]))} in ${byYear[byYear.length - 1].ref.name}.`,
     },
     {
       q: 'How much does a 1.5 hp aircon cost to run per hour?',
@@ -106,8 +110,7 @@ export default function AcCostAsia() {
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{HEADLINE}</h1>
             <p className="text-xl text-gray-600">
-              Electricity prices, hourly and yearly cooling costs, and what an inverter unit saves, in Singapore, the
-              Philippines, Hong Kong, Japan, Malaysia and Thailand.
+              Electricity prices, hourly and yearly cooling costs, and what an inverter unit saves, in {LIST}.
             </p>
             <ArticleByline updated={ASIA_UPDATED} />
           </header>
@@ -218,6 +221,11 @@ export default function AcCostAsia() {
               performance of a reverse-cycle unit matters as much as its cooling.
             </p>
           )}
+
+          <p className="text-sm text-gray-500 mb-4">
+            Not covered yet: Laos and Myanmar. Laos changed its household tariff in May 2026, but we couldn't find the
+            published rate table; we'll add both when we can source a current price.
+          </p>
 
           <h2 className={h2}>Frequently asked questions</h2>
           <div className="space-y-5 mb-8">

@@ -25,7 +25,7 @@ const inName = (c: AsiaCountry) => (c.slug === 'philippines' ? 'the Philippines'
 
 function Estimator({ c }: { c: AsiaCountry }) {
   const m = (n: number, small = false) => lmoney(c.currency, n, small);
-  const step = c.currency === 'JPY' || c.currency === 'PHP' ? 0.1 : 0.001;
+  const step = c.rate >= 100 ? 1 : c.rate >= 1 ? 0.01 : 0.001;
   const [kw, setKw] = useState(ASIA_REF_KW);
   const [now, setNow] = useState(3);
   const [next, setNext] = useState(ASIA_REF_EFF);
@@ -444,7 +444,7 @@ export default function AcCostAsiaCountry() {
           <p className={p}>
             Electricity used (kWh) = cooling capacity (kW) ÷ seasonal efficiency × hours. Cost = kWh × price. Price:{' '}
             <a href={c.sourceUrl} target="_blank" rel="noopener noreferrer" className={a}>{c.source}</a>. U.S. figures use 1{' '}
-            {c.currency} = ${usd.toFixed(c.currency === 'JPY' || c.currency === 'PHP' ? 5 : 4)} ({ASIA_FX_AS_OF}, European
+            {c.currency} = ${usd < 0.01 ? usd.toPrecision(4) : usd.toFixed(4)} ({ASIA_FX_AS_OF}, European
             Central Bank). Cooling hours are our estimate for each city. To check your own price, divide the energy part of
             your bill by the kWh used.
           </p>

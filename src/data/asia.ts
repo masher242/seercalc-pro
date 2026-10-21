@@ -6,7 +6,7 @@
 // how it was worked out). U.S. dollar figures use ECB reference rates.
 import data from './asiaRates.json';
 
-export type AsiaCurrency = 'SGD' | 'PHP' | 'HKD' | 'JPY' | 'MYR' | 'THB';
+export type AsiaCurrency = 'SGD' | 'PHP' | 'HKD' | 'JPY' | 'MYR' | 'THB' | 'VND' | 'IDR' | 'TWD' | 'KRW' | 'CNY' | 'KHR' | 'BND';
 
 export interface AsiaZone {
   id: string;
@@ -79,11 +79,13 @@ export const ASIA_SIZES = [
   { kw: 7, label: '2.5 hp · 7 kW (24,000 BTU)', use: 'open-plan living area' },
 ];
 
-const SYMBOL: Record<AsiaCurrency, string> = { SGD: 'S$', PHP: '₱', HKD: 'HK$', JPY: '¥', MYR: 'RM', THB: '฿' };
+const SYMBOL: Record<AsiaCurrency, string> = {
+  SGD: 'S$', PHP: '₱', HKD: 'HK$', JPY: '¥', MYR: 'RM', THB: '฿', VND: '₫', IDR: 'Rp', TWD: 'NT$', KRW: '₩', CNY: 'CN¥', KHR: '៛', BND: 'B$',
+};
 /** Digits for amounts like a yearly cost (yen has no decimals). */
-const BIG_DIGITS: Record<AsiaCurrency, number> = { SGD: 0, PHP: 0, HKD: 0, JPY: 0, MYR: 0, THB: 0 };
+const BIG_DIGITS: Record<AsiaCurrency, number> = { SGD: 0, PHP: 0, HKD: 0, JPY: 0, MYR: 0, THB: 0, VND: 0, IDR: 0, TWD: 0, KRW: 0, CNY: 0, KHR: 0, BND: 0 };
 /** Digits for small amounts like a cost per hour. */
-const SMALL_DIGITS: Record<AsiaCurrency, number> = { SGD: 2, PHP: 2, HKD: 2, JPY: 0, MYR: 2, THB: 2 };
+const SMALL_DIGITS: Record<AsiaCurrency, number> = { SGD: 2, PHP: 2, HKD: 2, JPY: 0, MYR: 2, THB: 2, VND: 0, IDR: 0, TWD: 2, KRW: 0, CNY: 2, KHR: 0, BND: 2 };
 
 /** Money in local currency. `small` = per-hour style amounts with decimals (except yen). */
 export function lmoney(cur: AsiaCurrency, n: number, small = false) {
@@ -92,9 +94,10 @@ export function lmoney(cur: AsiaCurrency, n: number, small = false) {
 }
 
 /** Price per kWh as shown on the pages, e.g. "S$0.3116", "₱15.06", "¥38.87". */
+const PRICE_DIGITS: Record<AsiaCurrency, number> = { SGD: 4, PHP: 2, HKD: 3, JPY: 2, MYR: 4, THB: 2, VND: 0, IDR: 2, TWD: 2, KRW: 1, CNY: 4, KHR: 0, BND: 2 };
 export function lprice(cur: AsiaCurrency, rate: number) {
-  const d = cur === 'PHP' || cur === 'JPY' || cur === 'THB' ? 2 : cur === 'HKD' ? 3 : 4;
-  return `${SYMBOL[cur]}${rate.toFixed(d)}`;
+  const d = PRICE_DIGITS[cur];
+  return `${SYMBOL[cur]}${rate.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d })}`;
 }
 
 export const usd0 = (n: number) => `$${Math.round(n).toLocaleString('en-US')}`;

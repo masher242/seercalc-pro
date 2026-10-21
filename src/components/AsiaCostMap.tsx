@@ -37,10 +37,10 @@ const BY_KEY = Object.fromEntries(CITIES.map((c) => [c.key, c]));
 const BY_SLUG = Object.fromEntries(ASIA_COUNTRIES.map((c) => [c.slug, c]));
 const mainCity = (c: AsiaCountry) => BY_KEY[`${c.slug}:${c.ref.name}`];
 /** Cities too close to another dot at this scale: listed in the table, not drawn. */
-const NO_DOT = new Set(['Yokohama', 'Kyoto', 'Kobe', 'Johor Bahru']);
+const NO_DOT = new Set(['Yokohama', 'Kyoto', 'Kobe', 'Johor Bahru', 'Shenzhen']);
 /** Too small to tap on the map: buttons under it. */
-const SMALL = ['singapore', 'hong-kong'];
-const SHORT: Record<string, string> = { thailand: 'TH', malaysia: 'MY', philippines: 'PH', japan: 'JP' };
+const SMALL = ['singapore', 'hong-kong', 'brunei'];
+const SHORT: Record<string, string> = { thailand: 'TH', malaysia: 'MY', philippines: 'PH', japan: 'JP', vietnam: 'VN', indonesia: 'ID', china: 'CN', 'south-korea': 'KR', cambodia: 'KH', taiwan: 'TW' };
 
 interface MetricDef {
   label: string;
@@ -54,16 +54,16 @@ const METRICS: Record<Metric, MetricDef> = {
   year: {
     label: 'Yearly AC cost',
     heading: 'what a year of AC costs',
-    breaks: [125, 200, 275, 350],
-    legend: ['Under $125', '$125–200', '$200–275', '$275–350', '$350 +'],
+    breaks: [75, 150, 225, 300],
+    legend: ['Under $75', '$75–150', '$150–225', '$225–300', '$300 +'],
     value: (c) => c.usdYear,
     show: (n) => `${usd0(n)} a year`,
   },
   price: {
     label: 'Electricity price',
     heading: 'electricity prices',
-    breaks: [0.13, 0.18, 0.22, 0.24],
-    legend: ['Under 13¢', '13–18¢', '18–22¢', '22–24¢', '24¢ +'],
+    breaks: [0.10, 0.14, 0.18, 0.22],
+    legend: ['Under 10¢', '10–14¢', '14–18¢', '18–22¢', '22¢ +'],
     value: (c) => c.usdPrice,
     show: (n) => `${cents(n)} per kWh`,
   },
@@ -192,7 +192,7 @@ export default function AsiaCostMap() {
           <g className="hidden sm:inline">
             {ASIA_COUNTRIES.filter((c) => SHORT[c.slug]).map((c) => {
               const [x, y] = ASIA_LABELS[c.slug];
-              const shift: Record<string, [number, number]> = { thailand: [12, -18], malaysia: [18, -2], philippines: [18, -8], japan: [-30, -10] };
+              const shift: Record<string, [number, number]> = { thailand: [-8, -26], malaysia: [-22, 0], philippines: [22, -10], japan: [-34, 10], vietnam: [6, -40], cambodia: [8, 2], 'south-korea': [-14, 0], indonesia: [0, -8], taiwan: [22, 0] };
               const [dx, dy] = shift[c.slug] ?? [0, 0];
               return (
                 <text key={`l-${c.slug}`} x={x + dx} y={y + dy} textAnchor="middle" dominantBaseline="central" fontSize={14} fontWeight={700}
@@ -300,9 +300,10 @@ export default function AsiaCostMap() {
       <p className="mt-3 text-xs text-gray-500 leading-relaxed">
         <strong>Prices:</strong> the price of each kWh air conditioning adds to a household bill, from each country's
         regulated tariff (sources and method on the country pages). Malaysia is Peninsular Malaysia (TNB); Hong Kong is CLP
-        Power's area; Japan is the Tokyo and Kansai utilities. <strong>Cooling hours:</strong> our estimate for each city's
-        climate, for one unit. U.S. dollars at ECB reference rates. Yokohama, Kyoto, Kobe and Johor Bahru are in the table
-        but not drawn, because they sit on top of Tokyo, Osaka and Singapore at this scale. Outlines: Natural Earth.
+        Power's area; Japan is the Tokyo and Kansai utilities; China is shaded by Shanghai, with Beijing and Guangzhou
+        as dots. Laos and Myanmar aren't covered yet. <strong>Cooling hours:</strong> our estimate for each city's
+        climate, for one unit. U.S. dollars at ECB reference rates. Yokohama, Kyoto, Kobe, Johor Bahru and Shenzhen are in the
+        table but not drawn, because they sit on top of Tokyo, Osaka, Singapore and Hong Kong at this scale. Outlines: Natural Earth.
       </p>
     </section>
   );
