@@ -1,0 +1,215 @@
+{
+  "_readme": "Electricity prices for the Australia AC cost pages. Each state has one or more network zones; usage is the flat (single-rate) usage charge in Australian cents per kWh including GST, supply the daily supply charge in cents per day including GST. Figures are the regulated reference prices for July 1, 2026 to June 30, 2027: AER Default Market Offer caps (NSW, south-east QLD, SA), ESC Victorian Default Offer (VIC), QCA notified prices (regional QLD, gazetted ex GST, x1.1 here), WA uniform tariff (Synergy A1 / Horizon A2), Aurora Energy Tariff 31 (TAS), ActewAGL standing offer (ACT), Jacana Energy (NT). They all reset every July 1: update usage, supply, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for one split unit. usdPerAud is for the U.S. comparison only.",
+  "updated": "2026-10-21",
+  "period": "July 1, 2026 to June 30, 2027",
+  "usdPerAud": 0.696,
+  "fxAsOf": "October 2026",
+  "states": [
+    {
+      "name": "New South Wales",
+      "short": "NSW",
+      "slug": "new-south-wales",
+      "offer": "Default Market Offer",
+      "regulator": "Australian Energy Regulator (AER)",
+      "source": "AER, Default Market Offer 2026–27 final determination (May 2026): residential flat-rate tariff caps by distribution zone",
+      "sourceUrl": "https://www.aer.gov.au/system/files/2026-05/AER%20-%20Final%20determination%20-%20Default%20market%20offer%202026%E2%80%9327.pdf",
+      "zones": [
+        { "id": "ausgrid", "network": "Ausgrid", "area": "Sydney's east, north and inner west, Newcastle, the Central Coast and the Hunter", "usage": 33.1372, "supply": 166.2289 },
+        { "id": "endeavour", "network": "Endeavour Energy", "area": "Western Sydney, the Blue Mountains, the Southern Highlands and the Illawarra", "usage": 33.7273, "supply": 185.1350 },
+        { "id": "essential", "network": "Essential Energy", "area": "most of regional and rural NSW", "usage": 35.0054, "supply": 272.2168 }
+      ],
+      "cities": [
+        { "name": "Broken Hill", "hours": 1000, "zone": "essential" },
+        { "name": "Dubbo", "hours": 850, "zone": "essential" },
+        { "name": "Penrith (Western Sydney)", "hours": 750, "zone": "endeavour" },
+        { "name": "Wagga Wagga", "hours": 700, "zone": "essential" },
+        { "name": "Sydney", "hours": 400, "zone": "ausgrid" },
+        { "name": "Newcastle", "hours": 400, "zone": "ausgrid" },
+        { "name": "Wollongong", "hours": 300, "zone": "endeavour" }
+      ],
+      "refCity": "Sydney",
+      "tariff": [
+        "The Default Market Offer is a price cap set by the Australian Energy Regulator. It is the most a retailer can charge households on its standing offer, and the reference price every market offer has to be compared against. Most households are on a market offer, and many of those are cheaper than the cap, so check your bill for your own usage rate.",
+        "Western Sydney is the place where this matters most: it's hotter than the coast and on a slightly dearer network, so a home in Penrith can run its air conditioner nearly twice as many hours as one in the eastern suburbs.",
+        "Many NSW homes with a smart meter are on time-of-use pricing, where afternoon and early-evening kilowatt-hours cost more than the flat rate shown here. Pre-cooling the house in the middle of the day, especially with rooftop solar, moves AC use out of the peak."
+      ]
+    },
+    {
+      "name": "Victoria",
+      "short": "VIC",
+      "slug": "victoria",
+      "offer": "Victorian Default Offer",
+      "regulator": "Essential Services Commission (ESC)",
+      "source": "Essential Services Commission, Victorian Default Offer 2026–27 final decision (May 20, 2026): domestic flat tariffs by distribution zone",
+      "sourceUrl": "https://www.esc.vic.gov.au/electricity-and-gas/prices-tariffs-and-benchmarks/victorian-default-offer/victorian-default-offer-price-review-2026-27",
+      "zones": [
+        { "id": "citipower", "network": "CitiPower", "area": "Melbourne's CBD and inner suburbs", "usage": 25.96, "supply": 121.14 },
+        { "id": "united", "network": "United Energy", "area": "Melbourne's south-east and the Mornington Peninsula", "usage": 27.35, "supply": 119.12 },
+        { "id": "jemena", "network": "Jemena", "area": "Melbourne's north and north-west", "usage": 27.47, "supply": 127.13 },
+        { "id": "powercor", "network": "Powercor", "area": "Melbourne's west and western and central Victoria", "usage": 28.22, "supply": 138.05 },
+        { "id": "ausnet", "network": "AusNet Services", "area": "Melbourne's outer east and eastern and north-eastern Victoria", "usage": 31.98, "supply": 128.24 }
+      ],
+      "cities": [
+        { "name": "Mildura", "hours": 900, "zone": "powercor" },
+        { "name": "Shepparton", "hours": 550, "zone": "powercor" },
+        { "name": "Wodonga", "hours": 550, "zone": "ausnet" },
+        { "name": "Bendigo", "hours": 450, "zone": "powercor" },
+        { "name": "Melbourne", "hours": 250, "zone": "citipower" },
+        { "name": "Geelong", "hours": 200, "zone": "powercor" },
+        { "name": "Traralgon", "hours": 200, "zone": "ausnet" }
+      ],
+      "refCity": "Melbourne",
+      "tariff": [
+        "The Victorian Default Offer is set each year by the Essential Services Commission. It's the price retailers charge households who haven't chosen a plan, and a benchmark every other offer is compared with. Inner Melbourne's flat rate is the lowest of any network in this guide, but Victorian prices differ by network: the same kilowatt-hour costs about 23% more in AusNet's area than in inner Melbourne.",
+        "Melbourne's summers swing between mild weeks and short, very hot spells, so most homes run cooling far fewer hours than in Sydney or Brisbane. Northern Victoria is a different climate: Mildura has hot, dry summers closer to inland NSW.",
+        "If you're on a time-of-use or flexible plan, the peak price applies in the late afternoon and evening, which is exactly when a hot day's cooling load is highest. Closing blinds early and pre-cooling the house helps."
+      ]
+    },
+    {
+      "name": "Queensland",
+      "short": "QLD",
+      "slug": "queensland",
+      "offer": "Default Market Offer (south-east) and QCA notified prices (regional)",
+      "regulator": "Australian Energy Regulator (south-east Queensland) and Queensland Competition Authority (regional Queensland)",
+      "source": "AER, Default Market Offer 2026–27 final determination (Energex zone); Queensland Competition Authority, notified prices for regional Queensland 2026–27, Tariff 11 (gazetted June 5, 2026, excluding GST; GST added here)",
+      "sourceUrl": "https://www.qca.org.au/wp-content/uploads/2025/12/050626-29-extra-gazette.pdf",
+      "zones": [
+        { "id": "energex", "network": "Energex (Default Market Offer)", "area": "south-east Queensland: Brisbane, the Gold Coast, the Sunshine Coast and Ipswich", "usage": 27.9744, "supply": 192.0159 },
+        { "id": "ergon", "network": "Ergon Energy (QCA Tariff 11)", "area": "regional Queensland, from Toowoomba to Cairns and Mount Isa", "usage": 28.8948, "supply": 180.5078 }
+      ],
+      "cities": [
+        { "name": "Cairns", "hours": 2000, "zone": "ergon" },
+        { "name": "Townsville", "hours": 2000, "zone": "ergon" },
+        { "name": "Rockhampton", "hours": 1500, "zone": "ergon" },
+        { "name": "Brisbane", "hours": 900, "zone": "energex" },
+        { "name": "Gold Coast", "hours": 750, "zone": "energex" },
+        { "name": "Sunshine Coast", "hours": 700, "zone": "energex" },
+        { "name": "Toowoomba", "hours": 400, "zone": "ergon" }
+      ],
+      "refCity": "Brisbane",
+      "tariff": [
+        "Queensland has two price systems. In the south-east, retailers compete and the Australian Energy Regulator's Default Market Offer caps the standing offer. In regional Queensland, most homes buy from Ergon Energy Retail at prices the Queensland Competition Authority sets each year, so the price is close to the same from Toowoomba to Cairns.",
+        "North Queensland is where Australian air conditioning works hardest outside the Top End: Townsville and Cairns are hot and humid for much of the year, so the AC often runs five times as many hours as in Toowoomba. There, a more efficient unit and good shading pay back fastest.",
+        "Many Queensland homes also have a controlled-load tariff for the hot water system, billed at a lower rate. Air conditioners run on the general (flat or time-of-use) tariff, which is the price used here."
+      ]
+    },
+    {
+      "name": "Western Australia",
+      "short": "WA",
+      "slug": "western-australia",
+      "offer": "Home Plan (A1) tariff",
+      "regulator": "WA Government (uniform tariff)",
+      "source": "WA Government residential tariff from July 1, 2026, as published by Horizon Power (A2 standard residential, the same rates as Synergy's Home Plan A1)",
+      "sourceUrl": "https://www.horizonpower.com.au/about-us/news-announcements/fees-and-charges-2026/",
+      "zones": [
+        { "id": "uniform", "network": "Synergy (south-west) and Horizon Power (regional), same uniform tariff", "area": "the whole state: Perth and the south-west on Synergy, the Pilbara, Kimberley and other regional towns on Horizon Power", "usage": 33.2621, "supply": 119.2419 }
+      ],
+      "cities": [
+        { "name": "Karratha", "hours": 2800, "zone": "uniform" },
+        { "name": "Broome", "hours": 2600, "zone": "uniform" },
+        { "name": "Kalgoorlie", "hours": 1000, "zone": "uniform" },
+        { "name": "Geraldton", "hours": 800, "zone": "uniform" },
+        { "name": "Perth", "hours": 600, "zone": "uniform" },
+        { "name": "Bunbury", "hours": 350, "zone": "uniform" },
+        { "name": "Albany", "hours": 100, "zone": "uniform" }
+      ],
+      "refCity": "Perth",
+      "tariff": [
+        "Western Australia isn't part of the national electricity market. Households in Perth and the south-west buy from the government-owned retailer Synergy, and the state government sets the residential tariff each year. The same tariff applies in Horizon Power's regional towns, so a kilowatt-hour costs the same in Broome as in Perth, even though supplying it costs far more.",
+        "That makes WA the clearest example of climate driving the bill: at the same price, a home in Karratha can spend over four times as much cooling as one in Perth, and almost 30 times as much as one in Albany.",
+        "Synergy also offers time-of-use plans (such as Midday Saver) with cheap power in the middle of the day. Running the AC while the sun is up and the house is warming, rather than in the evening peak, suits those plans and homes with rooftop solar."
+      ]
+    },
+    {
+      "name": "South Australia",
+      "short": "SA",
+      "slug": "south-australia",
+      "offer": "Default Market Offer",
+      "regulator": "Australian Energy Regulator (AER)",
+      "source": "AER, Default Market Offer 2026–27 final determination (May 2026): residential flat-rate tariff caps, SA Power Networks zone",
+      "sourceUrl": "https://www.aer.gov.au/system/files/2026-05/AER%20-%20Final%20determination%20-%20Default%20market%20offer%202026%E2%80%9327.pdf",
+      "zones": [
+        { "id": "sapn", "network": "SA Power Networks", "area": "the whole state", "usage": 41.9103, "supply": 180.0512 }
+      ],
+      "cities": [
+        { "name": "Port Augusta", "hours": 1100, "zone": "sapn" },
+        { "name": "Whyalla", "hours": 950, "zone": "sapn" },
+        { "name": "Murray Bridge", "hours": 650, "zone": "sapn" },
+        { "name": "Adelaide", "hours": 550, "zone": "sapn" },
+        { "name": "Mount Gambier", "hours": 150, "zone": "sapn" }
+      ],
+      "refCity": "Adelaide",
+      "tariff": [
+        "South Australia has the highest usage price in Australia: the Default Market Offer cap for 2026–27 is almost 42 cents a kWh, about 50% more than in south-east Queensland. It was also the only Default Market Offer region where the cap went up for 2026–27. Market offers are often below the cap, so shopping around is worth more here than anywhere.",
+        "Adelaide's heatwaves are dry and intense, and the hottest days are when the grid's evening peak is highest. Many SA homes have rooftop solar; running the AC through the afternoon on solar power, and letting the house coast into the evening, avoids buying the most expensive kilowatt-hours.",
+        "Time-of-use plans in SA usually have a cheap solar window in the middle of the day and a peak in the late afternoon and evening, so when you run the AC can matter as much as how long."
+      ]
+    },
+    {
+      "name": "Tasmania",
+      "short": "TAS",
+      "slug": "tasmania",
+      "offer": "Aurora Energy Tariff 31 (regulated standing offer)",
+      "regulator": "Office of the Tasmanian Economic Regulator",
+      "source": "Aurora Energy 2026–27 Standing Offer Tariff Schedule (Office of the Tasmanian Economic Regulator): Tariff 31 Residential Light and Power, July 1, 2026 to June 30, 2027",
+      "sourceUrl": "https://www.economicregulator.tas.gov.au/Documents/26%201991%20Aurora%20Energy%202025%20Standing%20Offer%20Price%20Schedule%202026-27.PDF",
+      "zones": [
+        { "id": "tasnetworks", "network": "TasNetworks (Aurora Energy Tariff 31)", "area": "the whole state", "usage": 27.9538, "supply": 167.6815 }
+      ],
+      "cities": [
+        { "name": "Launceston", "hours": 120, "zone": "tasnetworks" },
+        { "name": "Hobart", "hours": 60, "zone": "tasnetworks" },
+        { "name": "Devonport", "hours": 50, "zone": "tasnetworks" }
+      ],
+      "refCity": "Hobart",
+      "tariff": [
+        "Tasmania's regulated prices are set through the Office of the Tasmanian Economic Regulator. Tariff 31 is the long-standing general light and power tariff; heating-only circuits on Tariff 41 cost less per kWh, and Aurora also offers time-of-use plans.",
+        "Cooling barely registers in a Tasmanian power bill: summer AC use is a few dozen hours a year in most homes. The reverse-cycle split in a Tasmanian living room earns its keep in winter as a heater, so its heating efficiency (the heating stars on the label) matters far more than its cooling rating."
+      ]
+    },
+    {
+      "name": "Australian Capital Territory",
+      "short": "ACT",
+      "slug": "act",
+      "offer": "ActewAGL standing offer (Home tariff)",
+      "regulator": "Independent Competition and Regulatory Commission (ICRC)",
+      "source": "ActewAGL, ACT Standard plan electricity prices, schedule of charges from July 1, 2026 (Home tariff), within the ICRC's regulated standing-offer price path",
+      "sourceUrl": "https://www.actewagl.com.au/-/media/files/plan%20pricing/2026/act-standard-electricity-prices-july-2026",
+      "zones": [
+        { "id": "evoenergy", "network": "Evoenergy (ActewAGL Home tariff)", "area": "Canberra and the whole territory", "usage": 36.9536, "supply": 134.2 }
+      ],
+      "cities": [
+        { "name": "Canberra", "hours": 300, "zone": "evoenergy" }
+      ],
+      "refCity": "Canberra",
+      "tariff": [
+        "In the ACT, the Independent Competition and Regulatory Commission regulates ActewAGL's standing-offer prices. The Home tariff charges one price for every kWh at any time of day. Other retailers sell market offers, which can be cheaper.",
+        "Canberra summers have hot, dry days and cool nights, so a well-shaded house can often be cooled overnight with open windows and kept closed through the day, using the AC only on the hottest afternoons. Like Tasmania, Canberra's reverse-cycle units do most of their work as heaters in winter, especially as the territory moves homes off gas."
+      ]
+    },
+    {
+      "name": "Northern Territory",
+      "short": "NT",
+      "slug": "northern-territory",
+      "offer": "Jacana Energy regulated residential tariff",
+      "regulator": "NT Government pricing order",
+      "source": "Jacana Energy, residential pricing and tariffs, Standard Residential (flat-rate) tariff valid July 1, 2026 to June 30, 2027",
+      "sourceUrl": "https://jacanaenergy.com.au/residential/pricing",
+      "zones": [
+        { "id": "jacana", "network": "Power and Water (Jacana Energy standard residential)", "area": "Darwin, Katherine, Tennant Creek and Alice Springs", "usage": 31.6788, "supply": 62.45 }
+      ],
+      "cities": [
+        { "name": "Darwin", "hours": 3000, "zone": "jacana" },
+        { "name": "Katherine", "hours": 2600, "zone": "jacana" },
+        { "name": "Tennant Creek", "hours": 2000, "zone": "jacana" },
+        { "name": "Alice Springs", "hours": 1300, "zone": "jacana" }
+      ],
+      "refCity": "Darwin",
+      "tariff": [
+        "Residential electricity prices in the NT are set by the government, and most households buy from Jacana Energy. The daily supply charge is the lowest in the country, but in Darwin that hardly matters: the air conditioner runs for much of the year, so the usage charge is almost the whole bill.",
+        "Jacana's time-of-use tariff charges less between 9am and 3pm. In Darwin, where cooling is needed day and night, it suits homes that can shift some load (such as pre-cooling, pool pumps and laundry) into the middle of the day, especially with rooftop solar.",
+        "In the Top End's humidity, an efficient unit that also dehumidifies well, kept at 25–26°C with ceiling fans running, is cheaper and more comfortable than a smaller unit pushed to its limit."
+      ]
+    }
+  ]
+}

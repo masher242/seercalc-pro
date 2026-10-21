@@ -231,7 +231,8 @@ export default function AcCostEurope() {
           </ul>
           <p className="text-sm text-gray-600 mb-4">
             Also see <Link to="/ac-cost/caribbean" className={a}>the Caribbean</Link>,{' '}
-            <Link to="/ac-cost/canada" className={a}>Canada</Link> and <Link to="/ac-cost" className={a}>every U.S. state</Link>.
+            <Link to="/ac-cost/canada" className={a}>Canada</Link>, <Link to="/ac-cost/australia" className={a}>Australia</Link> and{' '}
+            <Link to="/ac-cost" className={a}>every U.S. state</Link>.
           </p>
         </article>
 
