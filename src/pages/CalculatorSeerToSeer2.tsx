@@ -94,8 +94,6 @@ export default function CalculatorSeerToSeer2() {
     setResult(null);
   };
 
-  const inputClass = "w-full border-2 border-gray-300 rounded-lg px-4 py-3 text-gray-900 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 text-center";
-
   return (
     <>
       <Helmet>

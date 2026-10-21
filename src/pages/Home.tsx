@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { BookOpen } from 'lucide-react';
 import CalculatorForm from '../components/CalculatorForm';
 import { USCostMapPreview } from '../components/USCostMap';
 import { REGIONS } from '../components/RegionBar';

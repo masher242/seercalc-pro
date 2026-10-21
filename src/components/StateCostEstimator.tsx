@@ -55,7 +55,7 @@ export default function StateCostEstimator({ stateName, stateRate, stateHours, m
       </div>
 
       <div className="mb-4">
-        <span className={label}>System size</span>
+        <span className={label}>System size (cooling output; 1 ton = 12,000 BTU)</span>
         <div className="flex flex-wrap gap-1.5">
           {TONNAGES.map((t) => (
             <button
@@ -87,7 +87,7 @@ export default function StateCostEstimator({ stateName, stateRate, stateHours, m
           </select>
         </label>
         <label>
-          <span className={label}>Hours / year</span>
+          <span className={label}>Hours it runs / year</span>
           <input
             type="number" min={0} max={8760} step={100} inputMode="numeric"
             className={select} value={hours}
@@ -95,7 +95,7 @@ export default function StateCostEstimator({ stateName, stateRate, stateHours, m
           />
         </label>
         <label>
-          <span className={label}>Rate (¢/kWh)</span>
+          <span className={label}>Price per kWh (¢)</span>
           <input
             type="number" min={0} max={200} step={0.01} inputMode="decimal"
             className={select} value={rateCents}
@@ -129,7 +129,9 @@ export default function StateCostEstimator({ stateName, stateRate, stateHours, m
       </div>
 
       <p className="text-xs text-gray-500 mt-4">
-        Starts from {stateName.endsWith('s') ? `${stateName}'` : `${stateName}'s`} average residential rate and typical cooling hours. Want payback on a quote?{' '}
+        Starts from {stateName.endsWith('s') ? `${stateName}'` : `${stateName}'s`} average residential price and our estimate
+        of the hours an AC runs at full power there in a year. Per hour = the system's electricity use for one hour at full
+        power × the price; per year = per hour × the hours. Want payback on a quote?{' '}
         <Link to={calcLink} className="font-semibold text-teal-700 hover:underline">Open the full calculator with these numbers →</Link>
       </p>
     </section>

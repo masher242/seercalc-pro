@@ -4,10 +4,11 @@ import { ArrowLeft, Calculator, MapPin, Clock, Zap } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
 import StateCostEstimator from '../components/StateCostEstimator';
+import TableExplainer from '../components/TableExplainer';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import {
   US_RATE, RATES_AS_OF, TONNAGES, SEERS, REF_TONS, REF_SEER, SUMMER_MONTH_HOURS,
-  annualCost, costPerHour, usd, cents,
+  annualCost, costPerHour, kw, sizeLabel, usd, cents,
 } from '../data/acCost';
 import { Country, COUNTRIES, CARIBBEAN_UPDATED, localRateLabel } from '../data/caribbean';
 
@@ -135,9 +136,9 @@ export default function AcCostCountry({ c }: { c: Country }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
             {[
-              { label: 'Per hour', value: usd(perHour, 2), note: '3-ton, SEER 14' },
+              { label: 'Per hour', value: usd(perHour, 2), note: `3-ton (36,000 BTU), SEER ${REF_SEER}: uses ${kw(REF_TONS, REF_SEER).toFixed(2)} kWh` },
               { label: 'Per month', value: usd(month), note: '8 hrs/day × 30 days' },
-              { label: 'Per year', value: usd(year), note: showLocal ? local(c, year) : `${c.hours.toLocaleString()} cooling hours` },
+              { label: 'Per year', value: usd(year), note: `${showLocal ? `${local(c, year)} · ` : ''}${c.hours.toLocaleString()} hours running (our estimate)` },
             ].map((k) => (
               <div key={k.label} className="rounded-lg border border-gray-200 p-4 text-center">
                 <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{k.label}</p>
@@ -156,25 +157,42 @@ export default function AcCostCountry({ c }: { c: Country }) {
           )}
 
           <h2 className={h2}>Cost to run AC in {c.inName} by system size</h2>
-          <p className={p}>
-            Central systems and ductless mini-splits are both sized in tons (1 ton = 12,000 Btu). A single bedroom
-            mini-split is usually 0.75–1 ton; a whole house, 2–5 tons. Costs for SEER {REF_SEER} at {cents(rate)}/kWh:
-          </p>
+          <TableExplainer>
+            <p className="mb-2">
+              Each row is a different size of air conditioner, all rated SEER {REF_SEER}, at {c.poss} price of{' '}
+              {localRateLabel(c)}/kWh{showLocal ? ` (${cents(rate)} US)` : ''}. Central systems and ductless mini-splits
+              are both sized by how much heat they remove (tons, BTU, kW of cooling), not by the electricity they use;
+              that's the second column. A single-bedroom mini-split is usually 0.75–1 ton (9,000–12,000 BTU); a whole
+              house, 2–5 tons.
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Cost per hour:</strong> one hour at full power = electricity used per hour × the price.</li>
+              <li><strong>Per month:</strong> 8 hours of running a day for 30 days.</li>
+              <li>
+                <strong>Per year:</strong> {c.hours.toLocaleString()} hours of full-power running, our estimate for{' '}
+                {yearRound ? 'year-round cooling' : 'a summer cooling season'}.
+                {showLocal ? ` The last column is the same yearly cost in ${c.currency}.` : ''}
+              </li>
+              <li><strong>What the price includes:</strong> {c.basis}.</li>
+            </ul>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>System size</th>
-                  <th className={th}>Per hour</th>
-                  <th className={th}>Per month (8 hrs/day)</th>
-                  <th className={th}>Per year</th>
-                  {showLocal && <th className={th}>Per year ({c.currency})</th>}
+                  <th className={th}>System size (cooling output)</th>
+                  <th className={th}>Electricity used per hour</th>
+                  <th className={th}>Cost per hour (US$)</th>
+                  <th className={th}>Cost per month, 8 hrs/day (US$)</th>
+                  <th className={th}>Cost per year, {c.hours.toLocaleString()} hours (US$)</th>
+                  {showLocal && <th className={th}>Cost per year ({c.currency})</th>}
                 </tr>
               </thead>
               <tbody>
                 {TONNAGES.map((t) => (
                   <tr key={t} className={t === REF_TONS ? 'bg-amber-50/60' : ''}>
-                    <td className={`${td} font-medium`}>{t} ton ({(t * 12000).toLocaleString()} Btu)</td>
+                    <td className={`${td} font-medium`}>{sizeLabel(t)}</td>
+                    <td className={td}>{kw(t, REF_SEER).toFixed(2)} kWh</td>
                     <td className={td}>{usd(costPerHour(t, REF_SEER, rate), 2)}</td>
                     <td className={td}>{usd(costPerHour(t, REF_SEER, rate) * SUMMER_MONTH_HOURS)}</td>
                     <td className={td}>{usd(annualCost(t, REF_SEER, c.hours, rate))}</td>
@@ -186,18 +204,27 @@ export default function AcCostCountry({ c }: { c: Country }) {
           </div>
 
           <h2 className={h2}>What a more efficient AC saves in {c.inName}</h2>
-          <p className={p}>
-            Annual cost of a 3-ton system at {c.hours.toLocaleString()} cooling hours a year. Many older units on the islands
-            are SEER 10 or lower; modern inverter mini-splits commonly reach SEER 18–25.
-          </p>
+          <TableExplainer>
+            <p className="mb-2">
+              The same 3-ton (36,000 BTU) system at different efficiency ratings, running {c.hours.toLocaleString()} hours
+              a year at {cents(rate)} US per kWh. A higher SEER gives the same cooling for less electricity. Many older
+              units on the islands are SEER 10 or lower; modern inverter mini-splits commonly reach SEER 18–25.
+            </p>
+            <p>
+              Savings are against an old SEER 10 unit, in US$. The 10-year column is the yearly saving × 10 at today's
+              price (island prices move with fuel, so treat it as a guide). It's the electricity saved, before the cost
+              of the new unit.
+            </p>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>SEER rating</th>
-                  <th className={th}>Annual cost</th>
-                  <th className={th}>Savings vs. SEER 10</th>
-                  <th className={th}>10-year savings</th>
+                  <th className={th}>Efficiency (SEER)</th>
+                  <th className={th}>Electricity used per hour</th>
+                  <th className={th}>Cost per year (US$)</th>
+                  <th className={th}>Saved per year vs. SEER 10</th>
+                  <th className={th}>Saved over 10 years vs. SEER 10</th>
                 </tr>
               </thead>
               <tbody>
@@ -207,6 +234,7 @@ export default function AcCostCountry({ c }: { c: Country }) {
                   return (
                     <tr key={seer}>
                       <td className={`${td} font-medium`}>SEER {seer}</td>
+                      <td className={td}>{kw(REF_TONS, seer).toFixed(2)} kWh</td>
                       <td className={td}>{usd(cost)}</td>
                       <td className={td}>{seer === 10 ? '—' : usd(sv)}</td>
                       <td className={td}>{seer === 10 ? '—' : usd(sv * 10)}</td>
@@ -270,7 +298,7 @@ export default function AcCostCountry({ c }: { c: Country }) {
             Power draw (kW) = tons × 12,000 Btu/h ÷ SEER ÷ 1,000. Cost = kW × hours × rate. Rate:{' '}
             <a href={c.sourceUrl} target="_blank" rel="noopener noreferrer" className={a}>{c.source}</a>, {c.asOf}.
             Island rates change with fuel prices, often monthly, so check your latest bill: divide the total by the kWh used
-            to get your all-in rate. Cooling hours are our estimate for the climate.
+            to get your average price per kWh. Cooling hours are our estimate for the climate.
           </p>
 
           <div className="mt-10 rounded-lg bg-gray-50 border border-gray-200 p-6">

@@ -3,8 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
+import TableExplainer, { RefSystemSentence } from '../components/TableExplainer';
 import { articleJsonLd, SITE_URL } from '../data/site';
-import { US_RATE, RATES_AS_OF, REF_TONS, REF_SEER, annualCost, costPerHour, cents } from '../data/acCost';
+import { US_RATE, RATES_AS_OF, REF_TONS, REF_SEER, annualCost, costPerHour, kw, cents } from '../data/acCost';
 import {
   PROVINCES, US_CITIES, CANADA_UPDATED, CANADA_RATES_DATE, CANADA_SOURCE, CANADA_SOURCE_URL,
   USD_PER_CAD, USD_PER_CAD_AS_OF, cad,
@@ -126,16 +127,41 @@ export default function AcCostCanada() {
           </p>
 
           <h2 className={h2}>Cost to run AC by province</h2>
+          <TableExplainer>
+            <RefSystemSentence />
+            <p className="mb-2">All amounts are in Canadian dollars and cents, before GST/HST and provincial taxes, at{' '}
+              {CANADA_RATES_DATE} prices from Hydro-Québec's comparison of the main city in each province.</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>
+                <strong>Average price per kWh:</strong> the monthly bill of a home using 1,000 kWh a month, divided by
+                1,000. It includes the fixed monthly charge spread over every kWh.
+              </li>
+              <li>
+                <strong>Price of each extra kWh:</strong> how much the bill goes up for each kWh between 1,000 and 2,000 a
+                month. Air conditioning is used on top of a home's normal electricity, so this is closer to what running it
+                adds to a bill.
+              </li>
+              <li>
+                <strong>Cost per hour:</strong> one hour of the AC running at full power, so{' '}
+                {kw(REF_TONS, REF_SEER).toFixed(2)} kWh × the average price.
+              </li>
+              <li>
+                <strong>Cost per year:</strong> the cost per hour × how many hours a year the AC runs at full power, our
+                estimate for each province's summer, from 300 hours in Newfoundland and Labrador to 800 in Ontario (shown in
+                grey). Real systems cycle on and off, so this is their running time added up.
+              </li>
+            </ul>
+          </TableExplainer>
           <div className="overflow-x-auto mb-3">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
                   <th className={th}>Province</th>
-                  <th className={th}>City</th>
-                  <th className={th}>Avg. price</th>
-                  <th className={th}>AC's extra kWh</th>
-                  <th className={th}>3-ton per hour</th>
-                  <th className={th}>Per year</th>
+                  <th className={th}>City priced</th>
+                  <th className={th}>Average price per kWh<br /><span className="font-normal text-xs text-gray-500">home using 1,000 kWh/month</span></th>
+                  <th className={th}>Price of each extra kWh<br /><span className="font-normal text-xs text-gray-500">from 1,000 to 2,000 kWh/month</span></th>
+                  <th className={th}>Cost per hour of AC<br /><span className="font-normal text-xs text-gray-500">3-ton, SEER {REF_SEER}</span></th>
+                  <th className={th}>Cost per year of AC<br /><span className="font-normal text-xs text-gray-500">(hours it runs a year)</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -161,11 +187,9 @@ export default function AcCostCanada() {
             </table>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            Canadian cents per kWh, before GST/HST and provincial taxes, at {CANADA_RATES_DATE} rates. "Avg. price" is the
-            average for a home using 1,000 kWh a month. "AC's extra kWh" is what each kWh between 1,000 and 2,000 a month
-            costs, which is closer to what running the air conditioner adds to a bill. The U.S. average ({cents(US_RATE)} US,{' '}
-            {RATES_AS_OF}) is converted at US${USD_PER_CAD.toFixed(3)} per C$ ({USD_PER_CAD_AS_OF}). Territories aren't in the
-            comparison.
+            The U.S. average row is the EIA's all-in average residential price ({cents(US_RATE)} US, {RATES_AS_OF}),
+            converted at US${USD_PER_CAD.toFixed(3)} per C$ ({USD_PER_CAD_AS_OF}), with 1,500 hours a year. Territories
+            aren't in Hydro-Québec's comparison.
           </p>
 
           <h2 className={h2}>Across the border</h2>
@@ -174,14 +198,21 @@ export default function AcCostCanada() {
             power is cheaper across the board, which is one reason a premium air conditioner takes longer to pay back in
             Canada than in the U.S.
           </p>
+          <TableExplainer>
+            <p>
+              Each row pairs a Canadian city with a nearby U.S. city. Both prices are the average price per kWh for a home
+              using 1,000 kWh a month, in Canadian cents, before tax ({CANADA_RATES_DATE}). Hydro-Québec converted the U.S.
+              bills to Canadian dollars at the April 1, 2025 exchange rate.
+            </p>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[520px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
                   <th className={th}>Canadian city</th>
-                  <th className={th}>Price</th>
-                  <th className={th}>U.S. city</th>
-                  <th className={th}>Price</th>
+                  <th className={th}>Average price per kWh (C$)</th>
+                  <th className={th}>Nearby U.S. city</th>
+                  <th className={th}>Average price per kWh (C$)</th>
                 </tr>
               </thead>
               <tbody>
@@ -199,10 +230,6 @@ export default function AcCostCanada() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-500 mb-4">
-            Canadian cents per kWh at 1,000 kWh a month, before tax. U.S. bills were converted to Canadian dollars by
-            Hydro-Québec at the April 1, 2025 exchange rate.
-          </p>
 
           <h2 className={h2}>Is a more efficient AC worth it in Canada?</h2>
           <p className={p}>

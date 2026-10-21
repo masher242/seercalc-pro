@@ -1,5 +1,5 @@
 {
-  "_readme": "Residential electricity rates for the Caribbean cost pages. Edit a country's rate, date and source here and every Caribbean page updates. localRate is per kWh in the local currency; usdRate is the same in US dollars at the source's exchange rate. Rates include fuel charges and taxes unless noted. Each country uses its newest available figure, so dates differ between countries (see asOf).",
+  "_readme": "Residential electricity rates for the Caribbean cost pages. Edit a country's rate, date and source here and every Caribbean page updates. localRate is per kWh in the local currency; usdRate is the same in US dollars at the source's exchange rate. `basis` says in plain words what each rate includes (all-in average, or a utility's per-kWh charges for a stated monthly use before fixed charges); it is shown under the Caribbean table and on each country page. Each country uses its newest available figure, so dates differ between countries (see asOf).",
   "updated": "2026-10-16",
   "countries": [
     {
@@ -12,6 +12,7 @@
       "utility": "Bahamas Power and Light (BPL)",
       "source": "BPL residential tariff and fuel charge on a September 2026 household bill (1,505 kWh; energy and fuel charges, before fixed charges and taxes)",
       "sourceUrl": "https://www.bplco.com/fuel-charge-update/",
+      "basis": "Energy and fuel charges for a 1,505 kWh month, before fixed charges and VAT",
       "hours": 3000,
       "note": "BPL bills residential energy in tiers, plus a fuel charge that is a direct pass-through of fuel costs. On a September 2026 bill: no energy charge on the first 200 kWh, 11.95¢/kWh from 201 to 800 kWh and 14.95¢ above 800, plus a fuel charge of 17.4¢/kWh on the first 800 kWh and 21.4¢ above that. So every kWh above 800 a month (usually the air conditioning) costs 36.35¢ before fixed charges and taxes, more than the 31.0¢ average shown here.",
       "noteUrl": "https://www.bplco.com/fuel-charge-update/",
@@ -27,6 +28,7 @@
       "utility": "Jamaica Public Service (JPS)",
       "source": "GlobalPetrolPrices.com, household electricity price (includes fuel charge, taxes and fees)",
       "sourceUrl": "https://www.globalpetrolprices.com/Jamaica/electricity_prices/",
+      "basis": "All-in household average: fuel charge, taxes and fees included",
       "hours": 3000,
       "note": "JPS bills include a fuel charge that changes every month (J$26.78/kWh in August 2026, down from J$33.01 in March) plus a purchased-power charge, so the effective rate moves with world fuel prices. GCT on household electricity was cut to 7% in May 2025. The rate shown is the newest complete all-in figure available (June 2025); JPS doesn't publish a single all-in rate.",
       "noteUrl": "https://www.jpsco.com/payment-billing"
@@ -41,6 +43,7 @@
       "utility": "Barbados Light & Power (BL&P)",
       "source": "BL&P domestic tariff (base energy charges) plus the September 2026 fuel clause adjustment of 37.53¢/kWh and VAT at 17.5%, for a 1,000 kWh month, before the customer charge",
       "sourceUrl": "https://www.blpc.com.bb/fuel-clause-adjustment/",
+      "basis": "Energy charge, fuel charge and VAT for a 1,000 kWh month, before the monthly customer charge",
       "hours": 3000,
       "note": "BL&P's base energy charge rises with usage (BBD 0.160/kWh for the first 150 kWh up to BBD 0.254 above 1,500 kWh), and a fuel clause adjustment set monthly (37.53¢ in September 2026) is added to every kWh. Barbados has at times charged a reduced 7.5% VAT on the first 250 kWh of household use, which would lower the average slightly.",
       "noteUrl": "https://support.blpc.com.bb/support/solutions/articles/42000057422-domestic-tariff"
@@ -55,6 +58,7 @@
       "utility": "Trinidad and Tobago Electricity Commission (T&TEC)",
       "source": "GlobalPetrolPrices.com, household electricity price (includes taxes and fees)",
       "sourceUrl": "https://www.globalpetrolprices.com/Trinidad-and-Tobago/electricity_prices/",
+      "basis": "All-in household average: taxes and fees included",
       "hours": 3000,
       "note": "Trinidad and Tobago generates its power from domestic natural gas, which is why its rates are among the lowest in the Caribbean. We found no change to T&TEC's residential rates since this figure (a proposed increase from the Regulated Industries Commission was still awaiting a government decision in 2025), so this June 2025 figure is the newest available."
     },
@@ -68,6 +72,7 @@
       "utility": "Caribbean Utilities Company (CUC)",
       "source": "CUC standard billing rates (from June 1, 2026) with the fuel cost charge capped at CI$0.18/kWh by the government relief programme, plus fuel duty and renewables charge, for the average household (1,158 kWh a month), before the facilities charge",
       "sourceUrl": "https://onlineservices.cuc-cayman.com/hc/en-us/articles/7227102242450-Standard-Billing-Rates-Effective-June-1-2026",
+      "basis": "Energy, capped fuel charge, duty and renewables charge for a 1,158 kWh month, before the facilities charge",
       "hours": 3000,
       "note": "CUC's energy charge is CI$0.1387/kWh, and the fuel cost charge is capped at CI$0.18/kWh on usage from 101 to 2,000 kWh a month under a government relief programme that runs through December 2026. When the cap ends, the fuel charge goes back to CUC's monthly fuel cost (about CI$0.24/kWh in October 2026), which would put the average near CI$0.41/kWh. Fuel duty, a renewables charge and, above 1,000 kWh, a licence fee are added per kWh.",
       "noteUrl": "https://gov.ky/w/government-extends-fuel-relief-programme-through-december-2026",
@@ -83,6 +88,7 @@
       "utility": "BELCO",
       "source": "BELCO residential tariff (base rates from August 1, 2026; fuel adjustment rate 14.226¢ from October 1, 2026; Regulatory Authority fee), for a 1,000 kWh month, before the facilities charge",
       "sourceUrl": "https://belco.bm/know-your-rate-and-bill/",
+      "basis": "Energy, fuel and regulatory charges for a 1,000 kWh month, before the facilities charge",
       "hours": 1500,
       "note": "BELCO charges by usage block: 14.52¢/kWh for the first 250 kWh, 25.61¢ from 251 to 700 and 39.50¢ above 700, plus the fuel adjustment (14.226¢) and a small regulatory fee on every kWh. So once a summer bill passes 700 kWh, each extra kWh the AC uses costs about 54.3¢, well above the 41.8¢ average shown here. A monthly facilities charge ($31 to $149, by daily usage) is on top.",
       "noteUrl": "https://belco.bm/know-your-rate-and-bill/"
@@ -97,6 +103,7 @@
       "utility": "LUMA Energy",
       "source": "Puerto Rico Energy Bureau quarterly adjustment, as reported by El Nuevo Día (Oct. 1, 2026)",
       "sourceUrl": "https://www.elnuevodia.com/english/news/story/new-record-energy-rate-in-puerto-rico-18-increase-brings-the-cost-of-a-kilowatt-hour-to-3386-cents/",
+      "basis": "Residential cost per kWh for the quarter, after the Energy Bureau's quarterly fuel and purchased-power adjustment",
       "hours": 3000,
       "note": "The Energy Bureau resets fuel and purchased-power charges every quarter. The October–December 2026 rate is a record high for residential customers."
     },
@@ -110,6 +117,7 @@
       "utility": "Edenorte, Edesur and Edeeste (state distributors)",
       "source": "GlobalPetrolPrices.com, household electricity price (includes taxes and fees)",
       "sourceUrl": "https://www.globalpetrolprices.com/Dominican-Republic/electricity_prices/",
+      "basis": "All-in household average: taxes and fees included",
       "hours": 3000,
       "note": "Dominican residential tariffs are set by the government and rise in steps with monthly usage, so households running AC heavily pay a higher rate on their top block than the average shown here. This September 2025 figure is the newest published all-in rate.",
       "article": "the"

@@ -4,9 +4,10 @@ import { Helmet } from 'react-helmet-async';
 import { MapPin } from 'lucide-react';
 import { SITE_URL } from '../data/site';
 import USCostMap from '../components/USCostMap';
+import TableExplainer, { RefSystemSentence, HoursNote } from '../components/TableExplainer';
 import {
   STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, REF_TONS, REF_SEER,
-  annualCost, costPerHour, usd, cents,
+  annualCost, costPerHour, kw, usd, cents,
 } from '../data/acCost';
 
 const th = 'border-b border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap';
@@ -61,11 +62,11 @@ export default function AcCostIndex() {
             <p className="text-2xl font-bold text-[#17204d]">{cents(US_RATE)}/kWh</p>
           </div>
           <div className="rounded-lg bg-white border border-gray-200 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">3-ton AC per hour (U.S. avg)</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">One hour of a 3-ton AC (U.S. avg price)</p>
             <p className="text-2xl font-bold text-[#17204d]">{usd(costPerHour(REF_TONS, REF_SEER, US_RATE), 2)}</p>
           </div>
           <div className="rounded-lg bg-white border border-gray-200 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Most / least expensive</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Priciest / cheapest electricity</p>
             <p className="text-lg font-bold text-[#17204d]">
               {STATES.find((s) => s.rank === 1)?.name} / {STATES.find((s) => s.rank === STATES.length)?.name}
             </p>
@@ -122,6 +123,27 @@ export default function AcCostIndex() {
           </Link>
         </div>
 
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Cost to run AC in every state</h2>
+        <TableExplainer>
+          <RefSystemSentence />
+          <ul className="list-disc pl-5 space-y-1">
+            <li>
+              <strong>Electricity price per kWh:</strong> the state's average residential price ({RATES_AS_OF}, U.S.
+              Energy Information Administration): what homes paid in total divided by the kWh they used, so fees and
+              fixed charges are spread across every kWh.
+            </li>
+            <li>
+              <strong>Cost per hour:</strong> one hour of the AC running at full power, so{' '}
+              {kw(REF_TONS, REF_SEER).toFixed(2)} kWh × the price.
+            </li>
+            <li>
+              <strong>Cost per year:</strong> <HoursNote>, from 300 hours in Alaska to 3,000 on the Gulf Coast, in Arizona
+              and Hawaii (shown in grey)</HoursNote>
+            </li>
+            <li><strong>Rank:</strong> 1 = the most expensive electricity of the 50 states and DC.</li>
+          </ul>
+        </TableExplainer>
+
         <div className="flex items-center gap-2 mb-3 text-sm">
           <span className="text-gray-500">Sort by:</span>
           {(['cost', 'name'] as const).map((k) => (
@@ -130,20 +152,20 @@ export default function AcCostIndex() {
               onClick={() => setSort(k)}
               className={`px-3 py-1 rounded-full border font-semibold ${sort === k ? 'bg-[#17204d] text-white border-[#17204d]' : 'bg-white text-gray-700 border-gray-200 hover:border-teal-400'}`}
             >
-              {k === 'cost' ? 'Most expensive' : 'State name'}
+              {k === 'cost' ? 'Priciest electricity' : 'State name'}
             </button>
           ))}
         </div>
 
         <div className="overflow-x-auto bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
-          <table className="w-full text-sm">
+          <table className="w-full min-w-[560px] text-sm">
             <thead className="bg-teal-50">
               <tr>
-                <th className={th}>#</th>
+                <th className={th}>Rank</th>
                 <th className={th}>State</th>
-                <th className={th}>Rate</th>
-                <th className={th}>3-ton AC per hour</th>
-                <th className={th}>Typical year</th>
+                <th className={th}>Electricity price per kWh</th>
+                <th className={th}>Cost per hour of AC<br /><span className="font-normal text-xs text-gray-500">3-ton, SEER {REF_SEER}</span></th>
+                <th className={th}>Cost per year of AC<br /><span className="font-normal text-xs text-gray-500">(hours it runs a year)</span></th>
               </tr>
             </thead>
             <tbody>
@@ -166,8 +188,7 @@ export default function AcCostIndex() {
         </div>
 
         <p className="text-sm text-gray-500 mb-2">
-          "Typical year" uses our estimate of full-power cooling hours for each state's climate, from 300 (Alaska) to
-          3,000 (the Gulf Coast, Arizona and Hawaii). Rates: <a href={RATES_SOURCE_URL} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">EIA Electric Power Monthly, Table 5.6.A</a>.{' '}
+          Prices: <a href={RATES_SOURCE_URL} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">EIA Electric Power Monthly, Table 5.6.A</a>.{' '}
           <a href="/data/residential-electricity-rates-by-state.csv" className="text-teal-700 hover:underline">Download CSV</a>.
         </p>
         <p className="text-sm text-gray-600">

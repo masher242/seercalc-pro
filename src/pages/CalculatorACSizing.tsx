@@ -376,16 +376,6 @@ export default function CalculatorACSizing() {
 
   const inputClass = "w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent text-sm";
 
-  const tonLabel = (t: number) => {
-    if (t <= 1.5) return `${t} ton (18,000 BTU)`;
-    if (t === 2) return `2 ton (24,000 BTU)`;
-    if (t === 2.5) return `2.5 ton (30,000 BTU)`;
-    if (t === 3) return `3 ton (36,000 BTU)`;
-    if (t === 3.5) return `3.5 ton (42,000 BTU)`;
-    if (t === 4) return `4 ton (48,000 BTU)`;
-    if (t === 5) return `5 ton (60,000 BTU)`;
-    return `${t} ton`;
-  };
 
   return (
     <>

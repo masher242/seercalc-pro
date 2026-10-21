@@ -1,2 +1,22 @@
-/blog/*  /blog/:splat.html  200
-/*       /index.html       200
+# Domain move: send every old seercalc.pro URL to the same path on airconditionanswers.com
+# Serve robots.txt directly on the old domain so Google can always read it
+https://seercalc.pro/robots.txt       /robots.txt  200!
+https://www.seercalc.pro/robots.txt   /robots.txt  200!
+https://seercalc.pro/*            https://airconditionanswers.com/:splat  301!
+https://www.seercalc.pro/*        https://airconditionanswers.com/:splat  301!
+http://seercalc.pro/*             https://airconditionanswers.com/:splat  301!
+http://www.seercalc.pro/*         https://airconditionanswers.com/:splat  301!
+
+/blog        /blog.html          200
+/blog/*      /blog/:splat.html   200
+/brands      /brands.html        200
+/brands/*    /brands/:splat.html 200
+/calculators      /calculators.html          200
+/calculators/*    /calculators/:splat.html   200
+/ac-cost      /ac-cost.html       200
+/ac-cost/*    /ac-cost/:splat.html 200
+/troubleshooting      /troubleshooting.html          200
+/troubleshooting/*    /troubleshooting/:splat.html   200
+/about        /about/mark-curant  301
+/about/*      /about/:splat.html  200
+/*           /404.html        404

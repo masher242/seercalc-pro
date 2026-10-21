@@ -75,7 +75,6 @@ function calcResults(inputs: Inputs): Results | null {
   let recommendation: 'repair' | 'replace' | 'borderline';
 
   const repairPctOfNewSystem = (repair / newCost) * 100;
-  const oldSystemRatio = age / maxLifespan; // 0–1, higher = older
 
   if (age >= 15) {
     reasoning.push(`System is ${age} years old — at or near end of typical 15–20 year lifespan`);
