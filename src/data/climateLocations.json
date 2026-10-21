@@ -1,0 +1,173 @@
+{
+ "_readme": "temp",
+ "locations": [
+  {
+   "id": "cb:dominican-republic",
+   "name": "Santo Domingo",
+   "country": "DO",
+   "lat": 18.486,
+   "lon": -69.931
+  },
+  {
+   "id": "au:new-south-wales",
+   "name": "Sydney",
+   "country": "AU",
+   "lat": -33.868,
+   "lon": 151.209
+  },
+  {
+   "id": "au:victoria",
+   "name": "Melbourne",
+   "country": "AU",
+   "lat": -37.814,
+   "lon": 144.963
+  },
+  {
+   "id": "au:queensland",
+   "name": "Brisbane",
+   "country": "AU",
+   "lat": -27.47,
+   "lon": 153.026
+  },
+  {
+   "id": "au:western-australia",
+   "name": "Perth",
+   "country": "AU",
+   "lat": -31.951,
+   "lon": 115.861
+  },
+  {
+   "id": "au:south-australia",
+   "name": "Adelaide",
+   "country": "AU",
+   "lat": -34.929,
+   "lon": 138.601
+  },
+  {
+   "id": "au:tasmania",
+   "name": "Hobart",
+   "country": "AU",
+   "lat": -42.882,
+   "lon": 147.327
+  },
+  {
+   "id": "au:act",
+   "name": "Canberra",
+   "country": "AU",
+   "lat": -35.281,
+   "lon": 149.13
+  },
+  {
+   "id": "au:northern-territory",
+   "name": "Darwin",
+   "country": "AU",
+   "lat": -12.463,
+   "lon": 130.842
+  },
+  {
+   "id": "as:singapore",
+   "name": "Singapore",
+   "country": "SG",
+   "lat": 1.29,
+   "lon": 103.852
+  },
+  {
+   "id": "as:philippines",
+   "name": "Metro Manila",
+   "country": "PH",
+   "lat": 14.599,
+   "lon": 120.984
+  },
+  {
+   "id": "as:hong-kong",
+   "name": "Hong Kong",
+   "country": "HK",
+   "lat": 22.302,
+   "lon": 114.177
+  },
+  {
+   "id": "as:japan",
+   "name": "Tokyo",
+   "country": "JP",
+   "lat": 35.69,
+   "lon": 139.692
+  },
+  {
+   "id": "as:malaysia",
+   "name": "Kuala Lumpur",
+   "country": "MY",
+   "lat": 3.139,
+   "lon": 101.687
+  },
+  {
+   "id": "as:thailand",
+   "name": "Bangkok",
+   "country": "TH",
+   "lat": 13.756,
+   "lon": 100.502
+  },
+  {
+   "id": "as:vietnam",
+   "name": "Ho Chi Minh City",
+   "country": "VN",
+   "lat": 10.823,
+   "lon": 106.63
+  },
+  {
+   "id": "as:indonesia",
+   "name": "Jakarta",
+   "country": "ID",
+   "lat": -6.208,
+   "lon": 106.846
+  },
+  {
+   "id": "as:taiwan",
+   "name": "Taipei",
+   "country": "TW",
+   "lat": 25.033,
+   "lon": 121.565
+  },
+  {
+   "id": "as:south-korea",
+   "name": "Seoul",
+   "country": "KR",
+   "lat": 37.567,
+   "lon": 126.978
+  },
+  {
+   "id": "as:china",
+   "name": "Shanghai",
+   "country": "CN",
+   "lat": 31.23,
+   "lon": 121.474
+  },
+  {
+   "id": "as:cambodia",
+   "name": "Phnom Penh",
+   "country": "KH",
+   "lat": 11.556,
+   "lon": 104.928
+  },
+  {
+   "id": "as:brunei",
+   "name": "Bandar Seri Begawan",
+   "country": "BN",
+   "lat": 4.903,
+   "lon": 114.94
+  },
+  {
+   "id": "chk:miami",
+   "name": "Miami",
+   "country": "US",
+   "lat": 25.762,
+   "lon": -80.192
+  },
+  {
+   "id": "chk:nassau",
+   "name": "Nassau",
+   "country": "BS",
+   "lat": 25.048,
+   "lon": -77.355
+  }
+ ]
+}

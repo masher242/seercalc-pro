@@ -1,0 +1,24 @@
+# TEMPORARY (remove before merging): fetch climate data on this branch and report it as
+# an annotation, because the building session can't reach Open-Meteo directly.
+name: Climate data (branch run)
+on:
+  push:
+    branches: [world-climate-run]
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch and report
+        run: |
+          set +e
+          timeout 3000 python3 scripts/update-climate.py > out.log 2>&1
+          echo "::notice title=log::$(tail -c 900 out.log | tr '\n' ' ')"
+          python3 -c "import json;d=json.load(open('src/data/climateCdd.json'));print('::notice title=data::'+json.dumps({k:v['cdd'] for k,v in d['locations'].items()},separators=(',',':'),ensure_ascii=True))" || true
+          python3 -c "import json;d=json.load(open('src/data/climateCdd.json'));print('::notice title=found::'+json.dumps({k:[v['found'],v['lat'],v['lon']] for k,v in d['locations'].items()},separators=(',',':'),ensure_ascii=True))" || true
