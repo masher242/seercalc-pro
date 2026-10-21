@@ -57,6 +57,7 @@ import AcCostEurope from './pages/AcCostEurope';
 import AcCostAustralia from './pages/AcCostAustralia';
 import AcCostAustraliaState from './pages/AcCostAustraliaState';
 import AcCostAsia from './pages/AcCostAsia';
+import AcCostWorld from './pages/AcCostWorld';
 import AcCostAsiaCountry from './pages/AcCostAsiaCountry';
 import TroubleshootingHub from './pages/TroubleshootingHub';
 import TroubleshootingSymptom from './pages/TroubleshootingSymptom';
@@ -130,6 +131,7 @@ function AppContent() {
         <Route path="/ac-cost/europe" element={<AcCostEurope />} />
         <Route path="/ac-cost/australia" element={<AcCostAustralia />} />
         <Route path="/ac-cost/australia/:state" element={<AcCostAustraliaState />} />
+        <Route path="/ac-cost/world" element={<AcCostWorld />} />
         <Route path="/ac-cost/asia" element={<AcCostAsia />} />
         <Route path="/ac-cost/asia/:country" element={<AcCostAsiaCountry />} />
         <Route path="/ac-cost/canada/:province" element={<AcCostProvince />} />
@@ -206,6 +208,7 @@ export const routes = [
   ...EU_COUNTRIES.map((c) => `/ac-cost/${c.slug}`),
   '/ac-cost/australia',
   ...AU_STATES.map((s) => `/ac-cost/australia/${s.slug}`),
+  '/ac-cost/world',
   '/ac-cost/asia',
   ...ASIA_COUNTRIES.map((c) => `/ac-cost/asia/${c.slug}`),
   '/blog/how-much-does-it-cost-to-run-ac',

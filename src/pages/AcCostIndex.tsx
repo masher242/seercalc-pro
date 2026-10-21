@@ -75,6 +75,15 @@ export default function AcCostIndex() {
 
         <USCostMap />
 
+        <Link
+          to="/ac-cost/world"
+          className="flex items-center justify-between gap-3 rounded-lg border border-orange-200 bg-orange-50 px-4 py-3 mb-3 hover:border-orange-400 transition-colors"
+        >
+          <span className="text-sm text-gray-800">
+            <strong>Around the world:</strong> every state, province and country we cover, compared on one yardstick.
+          </span>
+          <span className="text-sm font-semibold text-orange-700 whitespace-nowrap">World →</span>
+        </Link>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
           <Link
             to="/ac-cost/caribbean"

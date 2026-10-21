@@ -5,7 +5,7 @@ var _a, _b;
 import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server.mjs";
-import React3, { Component, forwardRef, createElement, useRef, useEffect, useState, useCallback, StrictMode } from "react";
+import React3, { Component, forwardRef, createElement, useRef, useEffect, useState, useCallback, useMemo, StrictMode } from "react";
 import fastCompare from "react-fast-compare";
 import invariant from "invariant";
 import shallowEqual from "shallowequal";
@@ -1044,6 +1044,17 @@ const DollarSign = createLucideIcon("DollarSign", [
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const Download = createLucideIcon("Download", [
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
+  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
+]);
+/**
+ * @license lucide-react v0.344.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const Droplets = createLucideIcon("Droplets", [
   [
     "path",
@@ -1059,6 +1070,27 @@ const Droplets = createLucideIcon("Droplets", [
       key: "1sl1rz"
     }
   ]
+]);
+/**
+ * @license lucide-react v0.344.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Earth = createLucideIcon("Earth", [
+  ["path", { d: "M21.54 15H17a2 2 0 0 0-2 2v4.54", key: "1djwo0" }],
+  [
+    "path",
+    {
+      d: "M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17",
+      key: "1fi5u6"
+    }
+  ],
+  [
+    "path",
+    { d: "M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05", key: "xsiumc" }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ]);
 /**
  * @license lucide-react v0.344.0 - ISC
@@ -1193,7 +1225,7 @@ const MapPin = createLucideIcon("MapPin", [
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const Map = createLucideIcon("Map", [
+const Map$1 = createLucideIcon("Map", [
   ["polygon", { points: "3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21", key: "ok2ie8" }],
   ["line", { x1: "9", x2: "9", y1: "3", y2: "18", key: "w34qz5" }],
   ["line", { x1: "15", x2: "15", y1: "6", y2: "21", key: "volv9a" }]
@@ -1649,8 +1681,8 @@ function CalculatorBar() {
   ] }) }) });
 }
 const asOf = "July 2026";
-const updated$7 = "2026-10-08";
-const source$3 = "U.S. Energy Information Administration, Electric Power Monthly, Table 5.6.A (residential, cents/kWh)";
+const updated$8 = "2026-10-08";
+const source$4 = "U.S. Energy Information Administration, Electric Power Monthly, Table 5.6.A (residential, cents/kWh)";
 const us = 18.31;
 const states$1 = {
   AK: 28.83,
@@ -1707,8 +1739,8 @@ const states$1 = {
 };
 const rates = {
   asOf,
-  updated: updated$7,
-  source: source$3,
+  updated: updated$8,
+  source: source$4,
   us,
   states: states$1
 };
@@ -1825,8 +1857,8 @@ const REF_SEER = 14;
 const SUMMER_MONTH_HOURS = 240;
 const usd = (n, digits = 0) => n.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: digits, maximumFractionDigits: digits });
 const cents = (rate) => `${(rate * 100).toFixed(2)}¢`;
-const _readme$6 = "Residential electricity rates for the Caribbean cost pages. Edit a country's rate, date and source here and every Caribbean page updates. localRate is per kWh in the local currency; usdRate is the same in US dollars at the source's exchange rate. `basis` says in plain words what each rate includes (all-in average, or a utility's per-kWh charges for a stated monthly use before fixed charges); it is shown under the Caribbean table and on each country page. Each country uses its newest available figure, so dates differ between countries (see asOf).";
-const updated$6 = "2026-10-16";
+const _readme$7 = "Residential electricity rates for the Caribbean cost pages. Edit a country's rate, date and source here and every Caribbean page updates. localRate is per kWh in the local currency; usdRate is the same in US dollars at the source's exchange rate. `basis` says in plain words what each rate includes (all-in average, or a utility's per-kWh charges for a stated monthly use before fixed charges); it is shown under the Caribbean table and on each country page. Each country uses its newest available figure, so dates differ between countries (see asOf).";
+const updated$7 = "2026-10-16";
 const countries$4 = [
   {
     name: "Bahamas",
@@ -1950,8 +1982,8 @@ const countries$4 = [
   }
 ];
 const data$4 = {
-  _readme: _readme$6,
-  updated: updated$6,
+  _readme: _readme$7,
+  updated: updated$7,
   countries: countries$4
 };
 function possessive(name) {
@@ -1975,8 +2007,8 @@ function localRateLabel(c) {
   const digits = c.localRate >= 10 ? 2 : 3;
   return `${c.currency} ${c.localRate.toFixed(digits)}`;
 }
-const _readme$5 = "Electricity prices for the Europe AC cost pages. rate is the price per kWh in local currency that running an air conditioner adds to a bill (see rateNote for exactly what it is). Each country has its own source and date: update rate, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for a split AC (the EU energy label assumes 350 for an average European climate). usdPerEur and gbpPerEur are for the U.S./UK comparisons only.";
-const updated$5 = "2026-10-16";
+const _readme$6 = "Electricity prices for the Europe AC cost pages. rate is the price per kWh in local currency that running an air conditioner adds to a bill (see rateNote for exactly what it is). Each country has its own source and date: update rate, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for a split AC (the EU energy label assumes 350 for an average European climate). usdPerEur and gbpPerEur are for the U.S./UK comparisons only.";
+const updated$6 = "2026-10-16";
 const usdPerEur = 1.116;
 const gbpPerEur = 0.847;
 const fxAsOf$2 = "October 14, 2026";
@@ -2288,8 +2320,8 @@ const countries$3 = [
   }
 ];
 const data$3 = {
-  _readme: _readme$5,
-  updated: updated$5,
+  _readme: _readme$6,
+  updated: updated$6,
   usdPerEur,
   gbpPerEur,
   fxAsOf: fxAsOf$2,
@@ -2347,12 +2379,12 @@ const STATE_SLUGS = new Set(STATES$1.map((s) => s.slug));
 const CARIBBEAN_SLUGS = new Set(COUNTRIES.map((c) => c.slug));
 const EUROPE_SLUGS = new Set(EU_COUNTRIES.map((c) => c.slug));
 const slugOf = (pathname) => pathname.replace(/^\/ac-cost\/?/, "").split("/")[0];
-const REGIONS = [
+const REGIONS$1 = [
   {
     to: "/ac-cost",
     label: "U.S. states map",
     short: "U.S.",
-    icon: Map,
+    icon: Map$1,
     match: (p2) => p2 === "/ac-cost" || STATE_SLUGS.has(slugOf(p2))
   },
   {
@@ -2389,6 +2421,13 @@ const REGIONS = [
     short: "Asia",
     icon: Mountain,
     match: (p2) => slugOf(p2) === "asia"
+  },
+  {
+    to: "/ac-cost/world",
+    label: "World compared",
+    short: "World",
+    icon: Earth,
+    match: (p2) => slugOf(p2) === "world"
   }
 ];
 function showRegionBar(pathname) {
@@ -2404,7 +2443,7 @@ function RegionBar() {
   }, [pathname]);
   return /* @__PURE__ */ jsx("nav", { "aria-label": "AC costs by region", className: "border-t border-gray-100 bg-gradient-to-r from-orange-50/80 via-white to-teal-50/80", children: /* @__PURE__ */ jsx("div", { className: "max-w-7xl mx-auto px-3 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1 sm:gap-3 py-2 sm:py-2.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden", children: [
     /* @__PURE__ */ jsx("span", { className: "hidden sm:inline text-xs font-bold uppercase tracking-wider text-gray-500 mr-1 flex-shrink-0", children: "AC costs in" }),
-    REGIONS.map(({ to, label, short, icon: Icon, match }) => {
+    REGIONS$1.map(({ to, label, short, icon: Icon, match }) => {
       const active = match(p2);
       return /* @__PURE__ */ jsxs(
         Link,
@@ -2449,7 +2488,7 @@ function Header() {
   }, [location.pathname]);
   const navItems = [
     { to: "/calculators", label: "Calculators", shortLabel: "Calc", icon: Calculator, active: isCalcPage },
-    { to: "/ac-cost", label: "AC Costs", shortLabel: "Costs", icon: Map, active: isCostPage },
+    { to: "/ac-cost", label: "AC Costs", shortLabel: "Costs", icon: Map$1, active: isCostPage },
     { to: "/troubleshooting", label: "Troubleshooting", shortLabel: "Fix", icon: Wrench, active: isFixPage },
     { to: "/blog", label: "Efficiency Hub", shortLabel: "Hub", icon: BookOpen, active: isBlogPage },
     { to: "/brands", label: "Brand Reviews", shortLabel: "Brands", icon: Star, active: isBrandsPage }
@@ -2570,6 +2609,7 @@ function Footer() {
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/ac-cost/europe", className: "text-gray-600 hover:text-teal-600 transition-colors", children: "AC Cost in Europe" }) }),
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: "text-gray-600 hover:text-teal-600 transition-colors", children: "AC Cost in Australia" }) }),
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/ac-cost/asia", className: "text-gray-600 hover:text-teal-600 transition-colors", children: "AC Cost in Asia" }) }),
+          /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/ac-cost/world", className: "text-gray-600 hover:text-teal-600 transition-colors", children: "AC Cost Around the World" }) }),
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/troubleshooting", className: "text-gray-600 hover:text-teal-600 transition-colors", children: "AC Troubleshooting" }) }),
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-seer-calculator-faq", className: "text-gray-600 hover:text-teal-600 transition-colors", children: "HVAC FAQ" }) })
         ] })
@@ -3583,8 +3623,8 @@ function Home() {
         /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("p", { className: "text-xs font-bold uppercase tracking-wider text-orange-700 mb-2", children: "AC cost map" }),
           /* @__PURE__ */ jsx("h2", { id: "cost-map-teaser", className: "text-2xl font-bold text-gray-900 mb-3", children: "What does AC cost where you live?" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-700 mb-4", children: "See every state's electricity rate and what a year of air conditioning costs there, on one map. Also covers the Caribbean, Canada, Europe, Australia and Asia." }),
-          /* @__PURE__ */ jsx("div", { className: "flex flex-wrap gap-2", children: REGIONS.map(({ to, label, icon: Icon }) => /* @__PURE__ */ jsxs(
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 mb-4", children: "See every state's electricity rate and what a year of air conditioning costs there, on one map. Also covers the Caribbean, Canada, Europe, Australia and Asia, and compares them all side by side." }),
+          /* @__PURE__ */ jsx("div", { className: "flex flex-wrap gap-2", children: REGIONS$1.map(({ to, label, icon: Icon }) => /* @__PURE__ */ jsxs(
             Link,
             {
               to: to === "/ac-cost" ? "/ac-cost#map" : to,
@@ -7951,10 +7991,10 @@ function BlogArticleMinisplit() {
     ] }) })
   ] });
 }
-const PATH$h = "/blog/hvac-tax-credits-rebates-2026";
+const PATH$i = "/blog/hvac-tax-credits-rebates-2026";
 const UPDATED$5 = "2026-10-16";
-const TITLE$h = "HVAC Tax Credits 2026 💵 Federal Credit Ended: What's Left";
-const HEADLINE$h = "HVAC Tax Credits & Rebates in 2026: The Federal Credit Is Gone. Here's What's Left.";
+const TITLE$i = "HVAC Tax Credits 2026 💵 Federal Credit Ended: What's Left";
+const HEADLINE$i = "HVAC Tax Credits & Rebates in 2026: The Federal Credit Is Gone. Here's What's Left.";
 const DESCRIPTION$1 = "There is no federal tax credit for an AC or heat pump installed in 2026. The 25C credit ended Dec 31, 2025. What still pays: state heat pump rebates, utility rebates and promotions.";
 const changes = [
   { item: "Central air conditioner (25C)", before: "30% of cost, up to $600", now: "Ended — no federal credit" },
@@ -8008,20 +8048,20 @@ const sources = [
   { label: "ENERGY STAR — Rebate Finder", url: "https://www.energystar.gov/rebate-finder" },
   { label: "DSIRE — Database of State Incentives for Renewables & Efficiency", url: "https://www.dsireusa.org" }
 ];
-const th$o = "border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900";
-const td$o = "border border-gray-200 px-4 py-3 text-gray-700";
-const h2$o = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$o = "text-gray-700 leading-relaxed mb-4";
-const a$p = "text-teal-600 hover:text-teal-700 font-medium";
+const th$p = "border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900";
+const td$p = "border border-gray-200 px-4 py-3 text-gray-700";
+const h2$p = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$p = "text-gray-700 leading-relaxed mb-4";
+const a$q = "text-teal-600 hover:text-teal-700 font-medium";
 function BlogArticleTaxCredits() {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$h }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$i }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: DESCRIPTION$1 }),
       /* @__PURE__ */ jsx("meta", { name: "keywords", content: "HVAC tax credit 2026, air conditioner tax credit, heat pump tax credit 2026, 25C credit ended, HEEHRA rebate, HVAC rebates 2026" }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `https://airconditionanswers.com${PATH$h}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `https://airconditionanswers.com${PATH$i}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `https://airconditionanswers.com${PATH$h}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `https://airconditionanswers.com${PATH$i}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:title", content: "HVAC Tax Credits in 2026: The Federal Credit Ended. What's Left?" }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: DESCRIPTION$1 }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: "https://airconditionanswers.com/og-image.png" }),
@@ -8030,7 +8070,7 @@ function BlogArticleTaxCredits() {
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:title", content: "HVAC Tax Credits in 2026: The Federal Credit Ended. What's Left?" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:description", content: DESCRIPTION$1 }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$h, headline: HEADLINE$h, description: DESCRIPTION$1, dateModified: UPDATED$5 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$i, headline: HEADLINE$i, description: DESCRIPTION$1, dateModified: UPDATED$5 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -8055,7 +8095,7 @@ function BlogArticleTaxCredits() {
               "8 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$h }),
+          /* @__PURE__ */ jsx("h1", { className: "text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$i }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: 'If a contractor is still promising you "30% back from the government," read this before you sign.' }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$5 })
         ] }),
@@ -8067,24 +8107,24 @@ function BlogArticleTaxCredits() {
               " The Energy Efficient Home Improvement Credit (Section 25C) paid 30% of the cost, up to $600 for a central AC and $2,000 for a heat pump. It ended for equipment placed in service after December 31, 2025, under the One Big Beautiful Bill Act (P.L. 119-21). What still pays in 2026: state-run HEEHRA rebates for heat pumps (income-qualified, up to $8,000, and since DOE's May 2026 guidance only when replacing electric equipment, not gas or oil), utility rebates, and manufacturer promotions."
             ] })
           ] }),
-          /* @__PURE__ */ jsx("p", { className: p$o, children: "For three years, the federal credit was the first line of every HVAC sales pitch. It was real money: a qualifying heat pump earned up to $2,000 back at tax time, and many contractors built the credit into their quotes. Then Congress ended it. The credit was originally scheduled to run through 2032; the budget law signed on July 4, 2025 cut it off at the end of 2025, and no replacement was created." }),
-          /* @__PURE__ */ jsx("p", { className: p$o, children: "That leaves a lot of out-of-date information on contractor websites, in sales scripts and in older articles (including an earlier version of this one). Here is what actually changed, what is still available, and how to tell when a quote is leaning on an incentive that no longer exists." }),
-          /* @__PURE__ */ jsx("h2", { className: h2$o, children: "What changed: 2025 vs. 2026" }),
+          /* @__PURE__ */ jsx("p", { className: p$p, children: "For three years, the federal credit was the first line of every HVAC sales pitch. It was real money: a qualifying heat pump earned up to $2,000 back at tax time, and many contractors built the credit into their quotes. Then Congress ended it. The credit was originally scheduled to run through 2032; the budget law signed on July 4, 2025 cut it off at the end of 2025, and no replacement was created." }),
+          /* @__PURE__ */ jsx("p", { className: p$p, children: "That leaves a lot of out-of-date information on contractor websites, in sales scripts and in older articles (including an earlier version of this one). Here is what actually changed, what is still available, and how to tell when a quote is leaning on an incentive that no longer exists." }),
+          /* @__PURE__ */ jsx("h2", { className: h2$p, children: "What changed: 2025 vs. 2026" }),
           /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-6", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
             /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-              /* @__PURE__ */ jsx("th", { className: th$o, children: "Incentive" }),
-              /* @__PURE__ */ jsx("th", { className: th$o, children: "Through Dec 31, 2025" }),
-              /* @__PURE__ */ jsx("th", { className: th$o, children: "Installed in 2026" })
+              /* @__PURE__ */ jsx("th", { className: th$p, children: "Incentive" }),
+              /* @__PURE__ */ jsx("th", { className: th$p, children: "Through Dec 31, 2025" }),
+              /* @__PURE__ */ jsx("th", { className: th$p, children: "Installed in 2026" })
             ] }) }),
             /* @__PURE__ */ jsx("tbody", { children: changes.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: r.item }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: r.before }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: r.now })
+              /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: r.item }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: r.before }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: r.now })
             ] }, r.item)) })
           ] }) }),
-          /* @__PURE__ */ jsx("p", { className: p$o, children: "Under 25C, all items except heat pumps shared a $1,200 annual cap, and heat pumps had their own $2,000 cap, for a maximum of $3,200 a year. None of that applies to equipment installed in 2026." }),
-          /* @__PURE__ */ jsx("h2", { className: h2$o, children: "The date that matters is installation, not payment" }),
-          /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+          /* @__PURE__ */ jsx("p", { className: p$p, children: "Under 25C, all items except heat pumps shared a $1,200 annual cap, and heat pumps had their own $2,000 cap, for a maximum of $3,200 a year. None of that applies to equipment installed in 2026." }),
+          /* @__PURE__ */ jsx("h2", { className: h2$p, children: "The date that matters is installation, not payment" }),
+          /* @__PURE__ */ jsxs("p", { className: p$p, children: [
             "The 25C credit is gone for property ",
             /* @__PURE__ */ jsx("em", { children: "placed in service" }),
             " after December 31, 2025. For the 25D credit (which covered geothermal heat pumps), the law says an expenditure is made when the original installation is completed. Either way, the test is when the system was installed and running, not when you signed or paid."
@@ -8110,19 +8150,19 @@ function BlogArticleTaxCredits() {
               /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed mb-0", children: `If a 2026 quote shows "after 30% federal tax credit" pricing, the real price is higher than the number you're looking at. Ask the contractor to show the price with no federal credit, and to put any rebate they're promising in writing with the program name. A contractor who is still selling an expired credit is either out of date or counting on you not checking. Either is worth knowing before you sign.` })
             ] })
           ] }) }),
-          /* @__PURE__ */ jsx("h2", { className: h2$o, children: "What's still available in 2026" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$p, children: "What's still available in 2026" }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "1. State heat pump rebates (HEEHRA)" }),
-          /* @__PURE__ */ jsx("p", { className: p$o, children: "The Home Electrification and Appliance Rebates program (HEEHRA) was funded by the 2022 Inflation Reduction Act and is run by state energy offices. It survived the end of the federal tax credits. It is a point-of-sale discount through an approved contractor, not a tax credit, and it is limited to households at or below 150% of area median income (AMI)." }),
+          /* @__PURE__ */ jsx("p", { className: p$p, children: "The Home Electrification and Appliance Rebates program (HEEHRA) was funded by the 2022 Inflation Reduction Act and is run by state energy offices. It survived the end of the federal tax credits. It is a point-of-sale discount through an approved contractor, not a tax credit, and it is limited to households at or below 150% of area median income (AMI)." }),
           /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
             /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-              /* @__PURE__ */ jsx("th", { className: th$o, children: "Upgrade" }),
-              /* @__PURE__ */ jsx("th", { className: th$o, children: "Income ≤ 80% AMI" }),
-              /* @__PURE__ */ jsx("th", { className: th$o, children: "Income 80–150% AMI" })
+              /* @__PURE__ */ jsx("th", { className: th$p, children: "Upgrade" }),
+              /* @__PURE__ */ jsx("th", { className: th$p, children: "Income ≤ 80% AMI" }),
+              /* @__PURE__ */ jsx("th", { className: th$p, children: "Income 80–150% AMI" })
             ] }) }),
             /* @__PURE__ */ jsx("tbody", { children: heehra.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: r.item }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: r.low }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: r.moderate })
+              /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: r.item }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: r.low }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: r.moderate })
             ] }, r.item)) })
           ] }) }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Federal maximums (ENERGY STAR / DOE). The dollar caps are the same for both income groups; what differs is the share of the project cost: up to 100% at or below 80% AMI, up to 50% at 80–150% AMI. States can set lower amounts." }),
@@ -8134,42 +8174,42 @@ function BlogArticleTaxCredits() {
               " if your home is heated with gas or oil, don't count on a HEEHRA rebate for a heat pump. Check your state energy office's current rules before you get quotes."
             ] })
           ] }),
-          /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+          /* @__PURE__ */ jsxs("p", { className: p$p, children: [
             /* @__PURE__ */ jsx("strong", { children: "Who has it:" }),
             " availability depends entirely on your state. More than 20 states had launched programs by mid-2026. California's single-family funding ran out in February 2026 and moved to a waitlist, and large states including Texas and Florida had not launched as of early 2026. Check your state energy office before you get quotes, because funds usually have to be reserved before installation."
           ] }),
-          /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+          /* @__PURE__ */ jsxs("p", { className: p$p, children: [
             /* @__PURE__ */ jsx("strong", { children: "Central AC owners, note:" }),
             " HEEHRA is built around heat pumps. A cooling-only air conditioner is not a heat pump, so don't count on a HEEHRA rebate for one."
           ] }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "2. HOMES whole-home rebates" }),
-          /* @__PURE__ */ jsx("p", { className: p$o, children: "The second IRA program, HOMES, pays based on the energy savings of a whole-home retrofit rather than a single piece of equipment. It is also state-run, and each state sets its own rules, so it's worth asking about if you're combining a new system with insulation and air sealing." }),
+          /* @__PURE__ */ jsx("p", { className: p$p, children: "The second IRA program, HOMES, pays based on the energy savings of a whole-home retrofit rather than a single piece of equipment. It is also state-run, and each state sets its own rules, so it's worth asking about if you're combining a new system with insulation and air sealing." }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "3. Utility rebates" }),
-          /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+          /* @__PURE__ */ jsxs("p", { className: p$p, children: [
             `For most people buying a central AC in 2026, the electric utility is now the main source of incentive money. Programs vary widely: some pay per ton or by SEER2 tier, some only pay for heat pumps, and many require the unit to be ENERGY STAR certified or above a minimum SEER2. Look on your utility's website under "rebates" or "energy efficiency," or search by ZIP code in the`,
             " ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/rebate-finder", target: "_blank", rel: "noopener noreferrer", className: a$p, children: "ENERGY STAR Rebate Finder" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/rebate-finder", target: "_blank", rel: "noopener noreferrer", className: a$q, children: "ENERGY STAR Rebate Finder" }),
             "."
           ] }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "4. Manufacturer and seasonal promotions" }),
-          /* @__PURE__ */ jsx("p", { className: p$o, children: "Manufacturers run rebates and financing offers, usually in spring and fall when installers are less busy. These are real but temporary, and they come off a price you should still compare across at least three quotes." }),
-          /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Does ENERGY STAR still matter?" }),
-          /* @__PURE__ */ jsx("p", { className: p$o, children: "Yes, though for a different reason than before. The federal credits used to require ENERGY STAR-level efficiency. Now it mostly matters for utility rebates. The program itself is still running in 2026: it was nearly eliminated in 2025, and in March 2026 primary management began moving from EPA to the Department of Energy." }),
-          /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+          /* @__PURE__ */ jsx("p", { className: p$p, children: "Manufacturers run rebates and financing offers, usually in spring and fall when installers are less busy. These are real but temporary, and they come off a price you should still compare across at least three quotes." }),
+          /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Does ENERGY STAR still matter?" }),
+          /* @__PURE__ */ jsx("p", { className: p$p, children: "Yes, though for a different reason than before. The federal credits used to require ENERGY STAR-level efficiency. Now it mostly matters for utility rebates. The program itself is still running in 2026: it was nearly eliminated in 2025, and in March 2026 primary management began moving from EPA to the Department of Energy." }),
+          /* @__PURE__ */ jsxs("p", { className: p$p, children: [
             "To be ENERGY STAR certified, a split central air conditioner needs at least ",
             /* @__PURE__ */ jsx("strong", { children: "15.2 SEER2 and 12.0 EER2" }),
             ". That's well above the federal minimum of 13.4 SEER2 in northern states and 14.3 SEER2 in the Southeast and Southwest. See our",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$p, children: "SEER vs. SEER2 guide" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$q, children: "SEER vs. SEER2 guide" }),
             " for how the two rating systems compare."
           ] }),
-          /* @__PURE__ */ jsx("h2", { className: h2$o, children: "What this means for your buying decision" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$p, children: "What this means for your buying decision" }),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
             /* @__PURE__ */ jsxs("li", { children: [
               /* @__PURE__ */ jsx("strong", { children: "Judge efficiency on the electricity it saves." }),
               " Without a federal credit, a high-SEER2 system has to pay for itself through lower bills (and any utility rebate). At high electricity rates that's often easy; at low rates it may not be. Run your own numbers with the",
               " ",
-              /* @__PURE__ */ jsx(Link, { to: "/", className: a$p, children: "SEER savings calculator" }),
+              /* @__PURE__ */ jsx(Link, { to: "/", className: a$q, children: "SEER savings calculator" }),
               "."
             ] }),
             /* @__PURE__ */ jsxs("li", { children: [
@@ -8181,12 +8221,12 @@ function BlogArticleTaxCredits() {
               " Utility and state rebates often require pre-approval, specific equipment or an approved contractor. Confirm before installation, not after."
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Frequently asked questions" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Frequently asked questions" }),
           /* @__PURE__ */ jsx("div", { className: "space-y-6 mb-8", children: faqs.map((f) => /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: f.q }),
             /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
           ] }, f.q)) }),
-          /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Sources" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Sources" }),
           /* @__PURE__ */ jsx("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: sources.map((s) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: s.url, target: "_blank", rel: "noopener noreferrer", className: "text-teal-700 hover:underline", children: s.label }) }, s.url)) }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic", children: "This is general information, not tax advice. Incentive programs change; confirm current rules with the IRS, your state energy office and your utility before you buy." }),
           /* @__PURE__ */ jsxs("div", { className: "mt-10 rounded-lg bg-gray-50 border border-gray-200 p-6", children: [
@@ -8200,10 +8240,10 @@ function BlogArticleTaxCredits() {
           /* @__PURE__ */ jsxs("div", { className: "mt-10", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-3", children: "Related guides" }),
             /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-3", children: [
-              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-unit-cost-2026", className: a$p, children: "→ How much a new AC costs in 2026" }),
-              /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$p, children: "→ SEER vs. SEER2 explained" }),
-              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-repair-cost-vs-replacement", className: a$p, children: "→ Repair or replace? The $5,000 rule" }),
-              /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$p, children: "→ Choosing the right SEER rating" })
+              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-unit-cost-2026", className: a$q, children: "→ How much a new AC costs in 2026" }),
+              /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$q, children: "→ SEER vs. SEER2 explained" }),
+              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-repair-cost-vs-replacement", className: a$q, children: "→ Repair or replace? The $5,000 rule" }),
+              /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$q, children: "→ Choosing the right SEER rating" })
             ] })
           ] })
         ] })
@@ -15763,9 +15803,9 @@ function PaybackResults({ yearly, premium, keep, money: money2 }) {
     /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-700 mt-3", children: v.note })
   ] });
 }
-const PATH$g = "/blog/16-vs-18-seer";
-const TITLE$g = "16 vs 18 SEER: Is the Upgrade Worth It? (Payback Math)";
-const HEADLINE$g = "16 vs 18 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)";
+const PATH$h = "/blog/16-vs-18-seer";
+const TITLE$h = "16 vs 18 SEER: Is the Upgrade Worth It? (Payback Math)";
+const HEADLINE$h = "16 vs 18 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)";
 const PUBLISHED$4 = "2026-10-12";
 const UPDATED$4 = "2026-10-17";
 const TONS$2 = 3;
@@ -15778,14 +15818,14 @@ const KWH_PER_HOUR = TONS$2 * 12 * (1 / 16 - 1 / 18);
 const GOOD_AT = hoursRateThreshold(PREMIUM$2, KWH_PER_HOUR, GOOD_MAX);
 const MARGINAL_AT = hoursRateThreshold(PREMIUM$2, KWH_PER_HOUR, MARGINAL_MAX);
 const SPLIT_FACTOR$3 = SEER2_FACTOR;
-const th$n = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$n = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$n = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$o = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$o = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$o = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$7 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$n = "text-gray-700 leading-relaxed mb-4";
-const a$o = "text-teal-600 hover:text-teal-700 font-medium";
+const p$o = "text-gray-700 leading-relaxed mb-4";
+const a$p = "text-teal-600 hover:text-teal-700 font-medium";
 const savings$2 = (tons, hours, rate) => annualCost(tons, 16, hours, rate) - annualCost(tons, 18, hours, rate);
-const years$2 = (n) => n > 40 ? "over 40 years" : `${n.toFixed(1)} years`;
+const years$3 = (n) => n > 40 ? "over 40 years" : `${n.toFixed(1)} years`;
 function PaybackEstimator$2() {
   const [tons, setTons] = useState(3);
   const [rateC, setRateC] = useState(+(US_RATE * 100).toFixed(2));
@@ -15901,18 +15941,18 @@ function BlogArticle16vs18Seer() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$g }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$h }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$g}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$h}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$g}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$g }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$h}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$h }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Education" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$g, headline: HEADLINE$g, description, datePublished: PUBLISHED$4, dateModified: UPDATED$4 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$h, headline: HEADLINE$h, description, datePublished: PUBLISHED$4, dateModified: UPDATED$4 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -15933,7 +15973,7 @@ function BlogArticle16vs18Seer() {
               " 9 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$g }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$h }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "The contractor's second quote is $1,000 to $2,500 higher. Here's how to tell whether you'll ever get it back." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$4 })
         ] }),
@@ -15967,56 +16007,56 @@ function BlogArticle16vs18Seer() {
             " power is expensive (Hawaii, the Caribbean), or if you're buying it for comfort rather than savings."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$n, children: `I run several stores in the Caribbean, where power costs more than 30¢/kWh and the AC runs most of the year. Every replacement quote comes with the same upsell: the higher-efficiency model, which "pays for itself." Sometimes it does. Often it doesn't. The difference is two numbers you already have: what you pay per kWh and how many hours your system runs. Here's the math, worked through for the 16 vs 18 decision.` }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "The difference in one table" }),
+        /* @__PURE__ */ jsx("p", { className: p$o, children: `I run several stores in the Caribbean, where power costs more than 30¢/kWh and the AC runs most of the year. Every replacement quote comes with the same upsell: the higher-efficiency model, which "pays for itself." Sometimes it does. Often it doesn't. The difference is two numbers you already have: what you pay per kWh and how many hours your system runs. Here's the math, worked through for the 16 vs 18 decision.` }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "The difference in one table" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$n }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "16 SEER" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "18 SEER" })
+            /* @__PURE__ */ jsx("th", { className: th$o }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "16 SEER" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "18 SEER" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$n} font-medium`, children: "SEER2 equivalent (ducted split)" }),
-              /* @__PURE__ */ jsxs("td", { className: td$n, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "SEER2 equivalent (ducted split)" }),
+              /* @__PURE__ */ jsxs("td", { className: td$o, children: [
                 "≈ ",
                 (16 * SPLIT_FACTOR$3).toFixed(1),
                 " SEER2"
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$n, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$o, children: [
                 "≈ ",
                 (18 * SPLIT_FACTOR$3).toFixed(1),
                 " SEER2"
               ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$n} font-medium`, children: "Power draw, 3-ton" }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: "2.25 kW" }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: "2.00 kW" })
+              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Power draw, 3-ton" }),
+              /* @__PURE__ */ jsx("td", { className: td$o, children: "2.25 kW" }),
+              /* @__PURE__ */ jsx("td", { className: td$o, children: "2.00 kW" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$n} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$o} font-medium`, children: [
                 "Yearly cost, 3-ton, ",
                 US_HOURS$3.toLocaleString(),
                 " hrs, ",
                 cents(US_RATE)
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: usd(annualCost(TONS$2, 16, US_HOURS$3, US_RATE)) }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: usd(annualCost(TONS$2, 18, US_HOURS$3, US_RATE)) })
+              /* @__PURE__ */ jsx("td", { className: td$o, children: usd(annualCost(TONS$2, 16, US_HOURS$3, US_RATE)) }),
+              /* @__PURE__ */ jsx("td", { className: td$o, children: usd(annualCost(TONS$2, 18, US_HOURS$3, US_RATE)) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$n} font-medium`, children: "Typical compressor" }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: "Single-stage or two-stage" }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: "Two-stage or variable-speed" })
+              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Typical compressor" }),
+              /* @__PURE__ */ jsx("td", { className: td$o, children: "Single-stage or two-stage" }),
+              /* @__PURE__ */ jsx("td", { className: td$o, children: "Two-stage or variable-speed" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$n} font-medium`, children: "Typical installed price, 3-ton" }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: "About $4,500–$7,500" }),
-              /* @__PURE__ */ jsx("td", { className: td$n, children: "About $6,000–$10,000" })
+              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Typical installed price, 3-ton" }),
+              /* @__PURE__ */ jsx("td", { className: td$o, children: "About $4,500–$7,500" }),
+              /* @__PURE__ */ jsx("td", { className: td$o, children: "About $6,000–$10,000" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$n} font-medium`, children: "Extra cost of 18 over 16" }),
-              /* @__PURE__ */ jsxs("td", { className: td$n, colSpan: 2, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Extra cost of 18 over 16" }),
+              /* @__PURE__ */ jsxs("td", { className: td$o, colSpan: 2, children: [
                 "Usually ",
                 usd(PREMIUM_LOW$2),
                 "–",
@@ -16027,7 +16067,7 @@ function BlogArticle16vs18Seer() {
           ] })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Prices are typical U.S. installed ranges from published 2026 cost surveys, not quotes. Your two quotes from the same installer are the only premium that matters." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "The math" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "The math" }),
         /* @__PURE__ */ jsxs("div", { className: "bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4 font-mono text-sm text-gray-800", children: [
           "Power (kW) = tons × 12 ÷ SEER",
           /* @__PURE__ */ jsx("br", {}),
@@ -16035,7 +16075,7 @@ function BlogArticle16vs18Seer() {
           /* @__PURE__ */ jsx("br", {}),
           "Money saved = kWh saved × your rate"
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "The middle line is a shortcut that only works for 16 vs 18: 12 × (1/16 − 1/18) happens to equal exactly 1/12. A 3-ton system running ",
           US_HOURS$3.toLocaleString(),
           " hours saves 3 × ",
@@ -16049,49 +16089,49 @@ function BlogArticle16vs18Seer() {
           usd(usSave),
           "."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "Then divide the price difference by the yearly saving to get the payback period, and compare it to how long you'll keep the system. Central AC typically lasts",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/how-long-do-air-conditioners-last", className: a$o, children: "15 to 20 years" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/how-long-do-air-conditioners-last", className: a$p, children: "15 to 20 years" }),
           "; I use ",
           LIFE$2,
           " below to stay conservative, and because many people move before then."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Where 18 SEER pays back, and where it doesn't" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Where 18 SEER pays back, and where it doesn't" }),
         /* @__PURE__ */ jsx(HowWeJudge, {}),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "A 3-ton system, an 18 SEER premium of ",
           usd(PREMIUM$2),
           ", local residential electricity rates and our estimate of typical cooling hours for each climate:"
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Location" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Rate" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Cooling hrs/yr" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Saved per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Payback" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Verdict" }),
-            /* @__PURE__ */ jsxs("th", { className: th$n, children: [
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Location" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Rate" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Cooling hrs/yr" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Saved per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Payback" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Verdict" }),
+            /* @__PURE__ */ jsxs("th", { className: th$o, children: [
               "Net over ",
               LIFE$2,
               " yrs, if it lasts"
             ] })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: scenarios.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$n, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$o, children: s.place }) }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: cents(s.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: s.hours.toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: usd(s.save) }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: years$2(s.payback) }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
-            /* @__PURE__ */ jsxs("td", { className: `${td$n} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
+            /* @__PURE__ */ jsx("td", { className: td$o, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$p, children: s.place }) }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: cents(s.rate) }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: s.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: usd(s.save) }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: years$3(s.payback) }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
+            /* @__PURE__ */ jsxs("td", { className: `${td$o} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
               s.net >= 0 ? "+" : "−",
               usd(Math.abs(s.net))
             ] })
           ] }, s.place)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "Three groups stand out. Where the cooling season is moderate or short (Ohio, New York, the U.S. average), 18 SEER never earns back its premium on electricity. In hot states with ordinary rates (Florida, Texas, Arizona), long hours make up for cheap power, and in California high rates make up for a moderate season. There the upgrade pays back in ",
           hotRange,
           " years (",
@@ -16106,12 +16146,12 @@ function BlogArticle16vs18Seer() {
           bahamas && /* @__PURE__ */ jsxs(Fragment, { children: [
             " In the Bahamas it's better than the table shows: BPL charges more for every kWh above 800 a month, so the kWh an efficient AC saves come off the most expensive part of the bill (see the",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${bahamas.slug}`, className: a$o, children: "Bahamas cost page" }),
+            /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${bahamas.slug}`, className: a$p, children: "Bahamas cost page" }),
             ")."
           ] })
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "A quick rule of thumb" }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "For a 3-ton system, multiply your yearly cooling hours by your rate in dollars. If the result is",
           " ",
           /* @__PURE__ */ jsxs("strong", { children: [
@@ -16133,51 +16173,51 @@ function BlogArticle16vs18Seer() {
           hoursRateThreshold(1e3, KWH_PER_HOUR, GOOD_MAX).toLocaleString(),
           " for a good deal."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(PaybackEstimator$2, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "What the efficiency number doesn't tell you" }),
-        /* @__PURE__ */ jsx("p", { className: p$n, children: "The SEER difference is rarely the real reason to buy an 18. Getting from 16 to 18 usually means a different compressor, and that changes how the system behaves." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "What the efficiency number doesn't tell you" }),
+        /* @__PURE__ */ jsx("p", { className: p$o, children: "The SEER difference is rarely the real reason to buy an 18. Getting from 16 to 18 usually means a different compressor, and that changes how the system behaves." }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Comfort and humidity" }),
-        /* @__PURE__ */ jsx("p", { className: p$n, children: "Most 16 SEER systems are single-stage: the compressor is either fully on or off. Most 18 SEER systems are two-stage or variable-speed, so they run longer at lower output. Longer, gentler runs keep temperatures more even and pull more moisture out of the air. In a humid climate, a house at 76°F and 50% humidity feels cooler than one at 74°F and 60%, so some owners save by setting the thermostat higher. That saving doesn't show up in the SEER math above." }),
+        /* @__PURE__ */ jsx("p", { className: p$o, children: "Most 16 SEER systems are single-stage: the compressor is either fully on or off. Most 18 SEER systems are two-stage or variable-speed, so they run longer at lower output. Longer, gentler runs keep temperatures more even and pull more moisture out of the air. In a humid climate, a house at 76°F and 50% humidity feels cooler than one at 74°F and 60%, so some owners save by setting the thermostat higher. That saving doesn't show up in the SEER math above." }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Noise" }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "Running at low speed most of the time, a variable-speed outdoor unit is noticeably quieter. If the condenser sits under a bedroom window or near a patio, that matters more than ",
           usd(usSave),
           " a year."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Repairs and parts" }),
-        /* @__PURE__ */ jsx("p", { className: p$n, children: "The variable-speed hardware that makes 18 SEER possible (an inverter drive and more control electronics) costs more to repair out of warranty, and parts can be brand-specific. Before choosing the 18, ask the installer what the parts and labor warranties cover, for how long, and whether registration is required. A long parts warranty takes most of the risk out of the more complex system." }),
+        /* @__PURE__ */ jsx("p", { className: p$o, children: "The variable-speed hardware that makes 18 SEER possible (an inverter drive and more control electronics) costs more to repair out of warranty, and parts can be brand-specific. Before choosing the 18, ask the installer what the parts and labor warranties cover, for how long, and whether registration is required. A long parts warranty takes most of the risk out of the more complex system." }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Power quality" }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "This is the one I learned the hard way. Where outages, brownouts and surges are common (island grids, rural lines, hurricane country), the control boards in any modern AC are exposed, and a variable-speed system has more electronics to lose. If you're buying the 18 in that kind of place, budget for surge and voltage protection on the outdoor unit too. See",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$o, children: "how to protect your AC from surges, brownouts and outages" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$p, children: "how to protect your AC from surges, brownouts and outages" }),
           "."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "The installation matters more than the label" }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "A rating is only reached when the system is sized correctly, charged correctly and connected to ducts that move enough air. A well-installed 16 will beat a badly installed 18. Ask for a load calculation (Manual J) rather than a size matched to the old unit, and check the size yourself with our",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$o, children: "AC sizing calculator" }),
+          /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$p, children: "AC sizing calculator" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Check the actual ratings on your quotes" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Check the actual ratings on your quotes" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Compare SEER2, not SEER." }),
             ' Equipment made since 2023 is rated in SEER2, which runs about 5% lower for ducted systems. A quote listing "16 SEER" for new equipment may be using the old scale. Convert with our',
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$o, children: "SEER to SEER2 converter" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$p, children: "SEER to SEER2 converter" }),
             ", and read",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$o, children: "SEER vs SEER2 explained" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$p, children: "SEER vs SEER2 explained" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "The rating belongs to the matched system." }),
             " An outdoor unit's rating depends on the indoor coil or air handler and sometimes the thermostat it's paired with. Look up the exact combination on your quote in the",
             " ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$o, children: "AHRI Directory" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$p, children: "AHRI Directory" }),
             ". If the match isn't listed, the rating isn't guaranteed."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -16188,11 +16228,11 @@ function BlogArticle16vs18Seer() {
             /* @__PURE__ */ jsx("strong", { children: "Rebates are by SEER2 and EER2 tier." }),
             " The federal 25C tax credit for central AC ended on December 31, 2025, but many utilities still pay rebates for higher-efficiency equipment. A rebate comes straight off the premium and can change the answer. See",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$o, children: "HVAC tax credits and rebates in 2026" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$p, children: "HVAC tax credits and rebates in 2026" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Which one to buy" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Which one to buy" }),
         /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-6 mb-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-5", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Choose 16 SEER if" }),
@@ -16219,24 +16259,24 @@ function BlogArticle16vs18Seer() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "Comparing other steps? See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/14-vs-16-seer", className: a$o, children: "14 vs 16 SEER" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/14-vs-16-seer", className: a$p, children: "14 vs 16 SEER" }),
           " for the step up from the minimum, ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/18-vs-20-seer", className: a$o, children: "18 vs 20 SEER" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/18-vs-20-seer", className: a$p, children: "18 vs 20 SEER" }),
           " for the top tier, the ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$o, children: "SEER rating chart" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$p, children: "SEER rating chart" }),
           " for every rating from 8 to 25, and ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$o, children: "choosing the right SEER rating" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$p, children: "choosing the right SEER rating" }),
           " ",
           "for the bigger picture."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "U.S. electricity rates: ",
@@ -16276,7 +16316,7 @@ const LIFE$1 = SYSTEM_LIFE;
 const TONS$1 = 3;
 const US_HOURS$2 = 1500;
 const savings$1 = (low, high, tons, hours, rate) => annualCost(tons, low, hours, rate) - annualCost(tons, high, hours, rate);
-const years$1 = (n) => !Number.isFinite(n) || n > 40 ? "over 40 years" : `${n.toFixed(1)} years`;
+const years$2 = (n) => !Number.isFinite(n) || n > 40 ? "over 40 years" : `${n.toFixed(1)} years`;
 const seer2 = (seer) => (seer * SPLIT_FACTOR$2).toFixed(1);
 const pctLess = (low, high) => Math.round((1 - low / high) * 1e3) / 10;
 function buildScenarios(low, high, premium) {
@@ -16294,32 +16334,32 @@ function buildScenarios(low, high, premium) {
     return { ...s, save: save2, payback: premium / save2, net: save2 * LIFE$1 - premium };
   });
 }
-const th$m = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$m = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const a$n = "text-teal-600 hover:text-teal-700 font-medium";
+const th$n = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$n = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const a$o = "text-teal-600 hover:text-teal-700 font-medium";
 function ScenarioTable({ rows }) {
   return /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
     /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-      /* @__PURE__ */ jsx("th", { className: th$m, children: "Location" }),
-      /* @__PURE__ */ jsx("th", { className: th$m, children: "Rate" }),
-      /* @__PURE__ */ jsx("th", { className: th$m, children: "Cooling hrs/yr" }),
-      /* @__PURE__ */ jsx("th", { className: th$m, children: "Saved per year" }),
-      /* @__PURE__ */ jsx("th", { className: th$m, children: "Payback" }),
-      /* @__PURE__ */ jsx("th", { className: th$m, children: "Verdict" }),
-      /* @__PURE__ */ jsxs("th", { className: th$m, children: [
+      /* @__PURE__ */ jsx("th", { className: th$n, children: "Location" }),
+      /* @__PURE__ */ jsx("th", { className: th$n, children: "Rate" }),
+      /* @__PURE__ */ jsx("th", { className: th$n, children: "Cooling hrs/yr" }),
+      /* @__PURE__ */ jsx("th", { className: th$n, children: "Saved per year" }),
+      /* @__PURE__ */ jsx("th", { className: th$n, children: "Payback" }),
+      /* @__PURE__ */ jsx("th", { className: th$n, children: "Verdict" }),
+      /* @__PURE__ */ jsxs("th", { className: th$n, children: [
         "Net over ",
         LIFE$1,
         " yrs, if it lasts"
       ] })
     ] }) }),
     /* @__PURE__ */ jsx("tbody", { children: rows.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-      /* @__PURE__ */ jsx("td", { className: td$m, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$n, children: s.place }) }),
-      /* @__PURE__ */ jsx("td", { className: td$m, children: cents(s.rate) }),
-      /* @__PURE__ */ jsx("td", { className: td$m, children: s.hours.toLocaleString() }),
-      /* @__PURE__ */ jsx("td", { className: td$m, children: usd(s.save) }),
-      /* @__PURE__ */ jsx("td", { className: td$m, children: years$1(s.payback) }),
-      /* @__PURE__ */ jsx("td", { className: td$m, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
-      /* @__PURE__ */ jsxs("td", { className: `${td$m} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
+      /* @__PURE__ */ jsx("td", { className: td$n, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$o, children: s.place }) }),
+      /* @__PURE__ */ jsx("td", { className: td$n, children: cents(s.rate) }),
+      /* @__PURE__ */ jsx("td", { className: td$n, children: s.hours.toLocaleString() }),
+      /* @__PURE__ */ jsx("td", { className: td$n, children: usd(s.save) }),
+      /* @__PURE__ */ jsx("td", { className: td$n, children: years$2(s.payback) }),
+      /* @__PURE__ */ jsx("td", { className: td$n, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
+      /* @__PURE__ */ jsxs("td", { className: `${td$n} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
         s.net >= 0 ? "+" : "−",
         usd(Math.abs(s.net))
       ] })
@@ -16420,16 +16460,16 @@ function ComparisonSeries({ current }) {
     " ",
     all.map((x, i) => /* @__PURE__ */ jsxs("span", { children: [
       i > 0 && " · ",
-      /* @__PURE__ */ jsx(Link, { to: x.path, className: a$n, children: x.label })
+      /* @__PURE__ */ jsx(Link, { to: x.path, className: a$o, children: x.label })
     ] }, x.path)),
     ". Every rating from 8 to 25 is in the ",
-    /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$n, children: "SEER rating chart" }),
+    /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$o, children: "SEER rating chart" }),
     "."
   ] });
 }
-const PATH$f = "/blog/18-vs-20-seer";
-const TITLE$f = "18 vs 20 SEER: Is the Upgrade Worth It? (Payback Math)";
-const HEADLINE$f = "18 vs 20 SEER: Is the Top-Tier Upgrade Worth It? (2026 Payback Math)";
+const PATH$g = "/blog/18-vs-20-seer";
+const TITLE$g = "18 vs 20 SEER: Is the Upgrade Worth It? (Payback Math)";
+const HEADLINE$g = "18 vs 20 SEER: Is the Top-Tier Upgrade Worth It? (2026 Payback Math)";
 const PUBLISHED$3 = "2026-10-17";
 const UPDATED$3 = "2026-10-17";
 const LOW = 18;
@@ -16437,12 +16477,12 @@ const HIGH = 20;
 const PREMIUM$1 = 2e3;
 const PREMIUM_LOW$1 = 1500;
 const PREMIUM_HIGH$1 = 3e3;
-const th$l = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$l = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$m = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$m = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$m = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$n = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$6 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$m = "text-gray-700 leading-relaxed mb-4";
-const a$m = "text-teal-600 hover:text-teal-700 font-medium";
+const p$n = "text-gray-700 leading-relaxed mb-4";
+const a$n = "text-teal-600 hover:text-teal-700 font-medium";
 const STEPS$1 = [
   [14, 16],
   [16, 18],
@@ -16482,18 +16522,18 @@ function BlogArticle18vs20Seer() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$f }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$g }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$f}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$g}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$f}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$f }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$g}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$g }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Education" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$f, headline: HEADLINE$f, description, datePublished: PUBLISHED$3, dateModified: UPDATED$3 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$g, headline: HEADLINE$g, description, datePublished: PUBLISHED$3, dateModified: UPDATED$3 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -16514,7 +16554,7 @@ function BlogArticle18vs20Seer() {
               " 8 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$f }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$g }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Each step up the SEER ladder costs more and saves less. At the top, the math gets hard to make work." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$3 })
         ] }),
@@ -16561,93 +16601,93 @@ function BlogArticle18vs20Seer() {
             ". Buy a 20 for a rebate, a better warranty or very expensive power, not for average savings."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$m, children: "In the Caribbean, where I run several stores, power costs about 31¢/kWh and the AC runs most of the year. If top-tier efficiency pays anywhere, it should pay here. Even so, the step from 18 to 20 is a close call, and in most of the U.S. it isn't close at all. The reason is simple arithmetic." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Why each step saves less" }),
-        /* @__PURE__ */ jsx("p", { className: p$m, children: "SEER is a ratio of cooling to electricity, so the electricity you use is proportional to 1 ÷ SEER. Each extra point of SEER cuts a smaller slice off a smaller number. For a 3-ton system, every hour it runs:" }),
+        /* @__PURE__ */ jsx("p", { className: p$n, children: "In the Caribbean, where I run several stores, power costs about 31¢/kWh and the AC runs most of the year. If top-tier efficiency pays anywhere, it should pay here. Even so, the step from 18 to 20 is a close call, and in most of the U.S. it isn't close at all. The reason is simple arithmetic." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Why each step saves less" }),
+        /* @__PURE__ */ jsx("p", { className: p$n, children: "SEER is a ratio of cooling to electricity, so the electricity you use is proportional to 1 ÷ SEER. Each extra point of SEER cuts a smaller slice off a smaller number. For a 3-ton system, every hour it runs:" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Upgrade" }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "kWh saved per running hour" }),
-            /* @__PURE__ */ jsxs("th", { className: th$l, children: [
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Upgrade" }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "kWh saved per running hour" }),
+            /* @__PURE__ */ jsxs("th", { className: th$m, children: [
               "Per year (",
               US_HOURS$2.toLocaleString(),
               " hrs, ",
               cents(US_RATE),
               ")"
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Typical extra cost" })
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Typical extra cost" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: STEPS$1.map(([lo, hi]) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$l} font-medium`, children: hi === HIGH ? `${lo} → ${hi} SEER` : /* @__PURE__ */ jsxs(Link, { to: `/blog/${lo}-vs-${hi}-seer`, className: a$m, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$m} font-medium`, children: hi === HIGH ? `${lo} → ${hi} SEER` : /* @__PURE__ */ jsxs(Link, { to: `/blog/${lo}-vs-${hi}-seer`, className: a$n, children: [
               lo,
               " → ",
               hi,
               " SEER"
             ] }) }),
-            /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+            /* @__PURE__ */ jsxs("td", { className: td$m, children: [
               (kw(TONS$1, lo) - kw(TONS$1, hi)).toFixed(2),
               " kWh"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$l, children: usd(savings$1(lo, hi, TONS$1, US_HOURS$2, US_RATE)) }),
-            /* @__PURE__ */ jsx("td", { className: td$l, children: lo === 14 ? "$300–$1,500" : lo === 16 ? "$1,000–$2,500" : `${usd(PREMIUM_LOW$1)}–${usd(PREMIUM_HIGH$1)}` })
+            /* @__PURE__ */ jsx("td", { className: td$m, children: usd(savings$1(lo, hi, TONS$1, US_HOURS$2, US_RATE)) }),
+            /* @__PURE__ */ jsx("td", { className: td$m, children: lo === 14 ? "$300–$1,500" : lo === 16 ? "$1,000–$2,500" : `${usd(PREMIUM_LOW$1)}–${usd(PREMIUM_HIGH$1)}` })
           ] }, lo)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$m, children: "Going from 18 to 20 saves less than two-thirds of what 14 to 16 does, and usually costs more than twice as much. That's the whole story of high-efficiency air conditioning: the first upgrades are cheap and productive; the last ones are expensive and marginal." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "The difference in one table" }),
+        /* @__PURE__ */ jsx("p", { className: p$n, children: "Going from 18 to 20 saves less than two-thirds of what 14 to 16 does, and usually costs more than twice as much. That's the whole story of high-efficiency air conditioning: the first upgrades are cheap and productive; the last ones are expensive and marginal." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "The difference in one table" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$l }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "18 SEER" }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "20 SEER" })
+            /* @__PURE__ */ jsx("th", { className: th$m }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "18 SEER" }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "20 SEER" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$l} font-medium`, children: "SEER2 equivalent (ducted split)" }),
-              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$m} font-medium`, children: "SEER2 equivalent (ducted split)" }),
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
                 "≈ ",
                 seer2(18),
                 " SEER2"
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
                 "≈ ",
                 seer2(20),
                 " SEER2"
               ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$l} font-medium`, children: "Power draw, 3-ton" }),
-              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$m} font-medium`, children: "Power draw, 3-ton" }),
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
                 kw(3, 18).toFixed(2),
                 " kW"
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
                 kw(3, 20).toFixed(2),
                 " kW"
               ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$l} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$m} font-medium`, children: [
                 "Yearly cost, 3-ton, ",
                 US_HOURS$2.toLocaleString(),
                 " hrs, ",
                 cents(US_RATE)
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: usd(annualCost(TONS$1, 18, US_HOURS$2, US_RATE)) }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: usd(annualCost(TONS$1, 20, US_HOURS$2, US_RATE)) })
+              /* @__PURE__ */ jsx("td", { className: td$m, children: usd(annualCost(TONS$1, 18, US_HOURS$2, US_RATE)) }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: usd(annualCost(TONS$1, 20, US_HOURS$2, US_RATE)) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$l} font-medium`, children: "Typical compressor" }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Two-stage or variable-speed" }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Variable-speed (inverter)" })
+              /* @__PURE__ */ jsx("td", { className: `${td$m} font-medium`, children: "Typical compressor" }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Two-stage or variable-speed" }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Variable-speed (inverter)" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$l} font-medium`, children: "Typical installed price, 3-ton" }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "About $6,000–$10,000" }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "About $8,500–$14,000" })
+              /* @__PURE__ */ jsx("td", { className: `${td$m} font-medium`, children: "Typical installed price, 3-ton" }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "About $6,000–$10,000" }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "About $8,500–$14,000" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$l} font-medium`, children: "Extra cost of 20 over 18" }),
-              /* @__PURE__ */ jsxs("td", { className: td$l, colSpan: 2, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$m} font-medium`, children: "Extra cost of 20 over 18" }),
+              /* @__PURE__ */ jsxs("td", { className: td$m, colSpan: 2, children: [
                 "Usually ",
                 usd(PREMIUM_LOW$1),
                 "–",
@@ -16658,9 +16698,9 @@ function BlogArticle18vs20Seer() {
           ] })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Prices are typical U.S. installed ranges from a published 2026 cost survey; the 18-to-20 premium is our estimate from those ranges. Your two quotes from the same installer are the only premium that matters." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Payback by location" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Payback by location" }),
         /* @__PURE__ */ jsx(HowWeJudge, {}),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "A 3-ton system, a ",
           usd(PREMIUM$1),
           " premium for the 20, local residential electricity rates and our estimate of typical cooling hours for each climate. Each hour of running saves ",
@@ -16668,14 +16708,14 @@ function BlogArticle18vs20Seer() {
           " kWh (the shortcut: kWh saved per year = tons × hours ÷ 15)."
         ] }),
         /* @__PURE__ */ jsx(ScenarioTable, { rows: scenarios }),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "Even hot states with ordinary rates, like Florida and Texas, take two decades to recover the premium. It takes very expensive power and a long cooling season together, as in Hawaii, for a 20 to be a good deal on electricity. In the Bahamas it pays back in about",
           " ",
           Math.round(((_a2 = scenarios.find((s) => s.place === "The Bahamas")) == null ? void 0 : _a2.payback) ?? 0),
           " years at the average rate: marginal, inside the life of the system but not by much. The tiered bill helps a little: BPL charges more for every kWh above 800 a month, and that's where AC savings land."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$6, children: "A quick rule of thumb" }),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "For a 3-ton system, multiply your yearly cooling hours by your rate in dollars. If the result is",
           " ",
           /* @__PURE__ */ jsxs("strong", { children: [
@@ -16692,10 +16732,10 @@ function BlogArticle18vs20Seer() {
           goodAt.toLocaleString(),
           " it's marginal. 3,000 hours at 48¢ (Hawaii, = 1,440) just clears the bar; 3,000 hours at 31¢ (the Bahamas, = 930) is marginal; 3,000 hours at 15¢ (Florida, = 450) is nowhere close."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(PaybackEstimator$1, { low: LOW, high: HIGH, premium: PREMIUM$1 }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Reasons to buy a 20 anyway" }),
-        /* @__PURE__ */ jsx("p", { className: p$m, children: "By 18 SEER you usually already have a two-stage or variable-speed compressor, so the comfort, humidity control and quiet running that make high-efficiency systems pleasant are mostly in place. The 20 adds a little more of the same. The good reasons to pay for it are mostly financial details on the quote:" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Reasons to buy a 20 anyway" }),
+        /* @__PURE__ */ jsx("p", { className: p$n, children: "By 18 SEER you usually already have a two-stage or variable-speed compressor, so the comfort, humidity control and quiet running that make high-efficiency systems pleasant are mostly in place. The 20 adds a little more of the same. The good reasons to pay for it are mostly financial details on the quote:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "A rebate that targets the top tier." }),
@@ -16714,29 +16754,29 @@ function BlogArticle18vs20Seer() {
             " The table assumes today's rates. If your rate climbs, so do the savings."
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "Two cautions. A variable-speed system has more electronics to protect, so where power is unreliable, budget for",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$m, children: "surge and voltage protection" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$n, children: "surge and voltage protection" }),
           ". And if what you really want is efficiency in a few rooms, a",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$m, children: "ductless mini-split" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$n, children: "ductless mini-split" }),
           " often reaches 20+ SEER for less than a top-tier central system, with no duct losses."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Check the actual ratings on your quotes" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Check the actual ratings on your quotes" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: '"Up to" ratings.' }),
             ' Top-tier lines are often advertised as "up to 20+ SEER2", a figure reached only with a specific indoor unit and sometimes a specific size. Look up the exact matched combination on your quote in the',
             " ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$m, children: "AHRI Directory" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$n, children: "AHRI Directory" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Compare SEER2, not SEER" }),
             ", using the",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$m, children: "SEER to SEER2 converter" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$n, children: "SEER to SEER2 converter" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -16744,7 +16784,7 @@ function BlogArticle18vs20Seer() {
             " It measures efficiency at 95°F outdoors. Some very high SEER2 systems have only average EER2, and on hot afternoons it's EER2 that sets your bill."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Which one to buy" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Which one to buy" }),
         /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-6 mb-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/40 p-5", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Choose 18 SEER if" }),
@@ -16768,13 +16808,13 @@ function BlogArticle18vs20Seer() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(ComparisonSeries, { current: PATH$f }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx(ComparisonSeries, { current: PATH$g }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "U.S. electricity rates: ",
@@ -16809,9 +16849,9 @@ function BlogArticle18vs20Seer() {
     ] })
   ] });
 }
-const PATH$e = "/blog/solar-mini-split";
-const TITLE$e = "Solar Mini-Splits: Do Hybrid AC/DC Units Pay Off?";
-const HEADLINE$e = "Solar-Powered Mini-Splits: How Hybrid AC/DC Units Work and Whether They Pay Off";
+const PATH$f = "/blog/solar-mini-split";
+const TITLE$f = "Solar Mini-Splits: Do Hybrid AC/DC Units Pay Off?";
+const HEADLINE$f = "Solar-Powered Mini-Splits: How Hybrid AC/DC Units Work and Whether They Pay Off";
 const PUBLISHED$2 = "2026-10-17";
 const UPDATED$2 = "2026-10-17";
 const PANEL_KW = 1.1;
@@ -16823,12 +16863,12 @@ const SUN_HOURS = { OH: 4.2, CA: 5.5, FL: 5.3, TX: 5.3, AZ: 6.5, HI: 5.5 };
 const US_SUN = 4.5;
 const CARIBBEAN_SUN = 5.5;
 const solarKwh = (panelKw, sun, share) => panelKw * sun * 365 * SYSTEM_LOSS * share;
-const th$k = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$k = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$l = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$l = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$l = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$m = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$5 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$l = "text-gray-700 leading-relaxed mb-4";
-const a$l = "text-teal-600 hover:text-teal-700 font-medium";
+const p$m = "text-gray-700 leading-relaxed mb-4";
+const a$m = "text-teal-600 hover:text-teal-700 font-medium";
 const ext$6 = "text-teal-700 hover:underline";
 const BRANDS = [
   {
@@ -16871,8 +16911,8 @@ function SolarEstimator() {
   const [rateC, setRateC] = useState(+(US_RATE * 100).toFixed(2));
   const [extra, setExtra] = useState(EXTRA_COST);
   const [keep, setKeep] = useState(KEEP);
-  const kwh = solarKwh(panelW / 1e3, sun, share / 100);
-  const yearly = kwh * (rateC / 100);
+  const kwh2 = solarKwh(panelW / 1e3, sun, share / 100);
+  const yearly = kwh2 * (rateC / 100);
   const input = "w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-500";
   const label = "block text-sm font-medium text-gray-700 mb-1";
   return /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/50 p-5 mb-6", children: [
@@ -16962,7 +17002,7 @@ function SolarEstimator() {
     /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-700 mb-3", children: [
       "The AC takes about ",
       /* @__PURE__ */ jsxs("strong", { children: [
-        Math.round(kwh).toLocaleString(),
+        Math.round(kwh2).toLocaleString(),
         " kWh a year"
       ] }),
       " from the panels instead of the grid."
@@ -16983,9 +17023,9 @@ function BlogArticleSolarMiniSplit() {
     ...bahamas ? [{ place: "The Bahamas", link: `/ac-cost/${bahamas.slug}`, rate: bahamas.usdRate, hours: bahamas.hours, sun: CARIBBEAN_SUN }] : []
   ].map((r) => {
     const share = solarShare(r.hours);
-    const kwh = solarKwh(PANEL_KW, r.sun, share);
-    const save2 = kwh * r.rate;
-    return { ...r, share, kwh, save: save2, payback: EXTRA_COST / save2 };
+    const kwh2 = solarKwh(PANEL_KW, r.sun, share);
+    const save2 = kwh2 * r.rate;
+    return { ...r, share, kwh: kwh2, save: save2, payback: EXTRA_COST / save2 };
   });
   const us2 = rows[0];
   const bah = rows.find((r) => r.place === "The Bahamas");
@@ -17015,18 +17055,18 @@ function BlogArticleSolarMiniSplit() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$e }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$f }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$e}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$f}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$e}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$e }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$f}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$f }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Guides" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$e, headline: HEADLINE$e, description, datePublished: PUBLISHED$2, dateModified: UPDATED$2 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$f, headline: HEADLINE$f, description, datePublished: PUBLISHED$2, dateModified: UPDATED$2 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -17047,7 +17087,7 @@ function BlogArticleSolarMiniSplit() {
               " 11 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$e }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$f }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Panels wired straight into the air conditioner, no battery, no net-metering contract. Here's what you get and what it's worth." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$2 })
         ] }),
@@ -17072,9 +17112,9 @@ function BlogArticleSolarMiniSplit() {
             ". They're best for spaces cooled during the day (shops, offices, garages) where power is expensive. The catches: young brands, 5-year warranties and little long-term reliability data."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "My stores need cooling most in the middle of the day, when the sun is strongest and power costs over 30¢/kWh. That's exactly the case these units are built for, so I looked into them properly: who makes them, how they're wired, what goes wrong, and what the numbers look like. Here's what I found." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "How a hybrid solar mini-split works" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "Every inverter mini-split already runs its compressor and fans on DC power, converted from the grid's AC. A hybrid unit adds a solar input to the outdoor unit so panels can feed that DC directly." }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "My stores need cooling most in the middle of the day, when the sun is strongest and power costs over 30¢/kWh. That's exactly the case these units are built for, so I looked into them properly: who makes them, how they're wired, what goes wrong, and what the numbers look like. Here's what I found." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "How a hybrid solar mini-split works" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "Every inverter mini-split already runs its compressor and fans on DC power, converted from the grid's AC. A hybrid unit adds a solar input to the outdoor unit so panels can feed that DC directly." }),
         /* @__PURE__ */ jsx("div", { className: "grid sm:grid-cols-3 gap-3 mb-4", children: [
           { Icon: Sun, t: "Solar first", d: "Panels connect to the outdoor unit with standard solar connectors. Whatever they produce goes to the compressor first." },
           { Icon: PlugZap, t: "Grid fills the gap", d: "When the panels can't cover the load (mornings, evenings, cloud, night), the unit tops up from the grid automatically." },
@@ -17084,8 +17124,8 @@ function BlogArticleSolarMiniSplit() {
           /* @__PURE__ */ jsx("p", { className: "font-semibold text-gray-900", children: t }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-700 mt-1", children: d })
         ] }, t)) }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "Because nothing is exported, you don't need a net-metering agreement with your utility. That's the main attraction where utilities don't credit solar, and the main weakness where they do." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Who makes them" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "Because nothing is exported, you don't need a net-metering agreement with your utility. That's the main attraction where utilities don't credit solar, and the main weakness where they do." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Who makes them" }),
         /* @__PURE__ */ jsx("div", { className: "sm:hidden space-y-3 mb-4", children: BRANDS.map((b) => /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-4", children: [
           /* @__PURE__ */ jsx("p", { className: "font-semibold text-gray-900", children: b.name }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-600", children: b.models }),
@@ -17103,28 +17143,28 @@ function BlogArticleSolarMiniSplit() {
         ] }, b.name)) }),
         /* @__PURE__ */ jsx("div", { className: "hidden sm:block overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Brand" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Specs" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Price" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Warranty" })
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Brand" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Specs" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Price" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Warranty" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: BRANDS.map((b) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsxs("td", { className: `${td$k} font-medium text-gray-900`, children: [
+            /* @__PURE__ */ jsxs("td", { className: `${td$l} font-medium text-gray-900`, children: [
               b.name,
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500 mt-1", children: b.models })
             ] }),
-            /* @__PURE__ */ jsxs("td", { className: td$k, children: [
+            /* @__PURE__ */ jsxs("td", { className: td$l, children: [
               b.specs,
               /* @__PURE__ */ jsx("span", { className: "block text-xs text-gray-500 mt-1", children: b.note })
             ] }),
-            /* @__PURE__ */ jsx("td", { className: `${td$k} whitespace-nowrap`, children: b.price }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: b.warranty })
+            /* @__PURE__ */ jsx("td", { className: `${td$l} whitespace-nowrap`, children: b.price }),
+            /* @__PURE__ */ jsx("td", { className: td$l, children: b.warranty })
           ] }, b.name)) })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Prices are the seller's listed price for the unit only, October 2026. Panels, mounting and installation are extra." }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: `On grid power alone these units perform like any good mini-split: EG4 rates its 12K at 22.5 SEER2. Be wary of claims like "SEER 75 equivalent". They count only the grid power you pay for, so they're marketing figures, not ratings.` }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "What the payback looks like" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "The saving is the grid electricity the panels replace. For a 12,000 BTU unit with 1,100 W of panels:" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: `On grid power alone these units perform like any good mini-split: EG4 rates its 12K at 22.5 SEER2. Be wary of claims like "SEER 75 equivalent". They count only the grid power you pay for, so they're marketing figures, not ratings.` }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "What the payback looks like" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "The saving is the grid electricity the panels replace. For a 12,000 BTU unit with 1,100 W of panels:" }),
         /* @__PURE__ */ jsxs("div", { className: "bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4 font-mono text-sm text-gray-800", children: [
           "Solar kWh used = panel kW × peak sun hours × 365 × 0.8 × share used",
           /* @__PURE__ */ jsx("br", {}),
@@ -17132,7 +17172,7 @@ function BlogArticleSolarMiniSplit() {
           /* @__PURE__ */ jsx("br", {}),
           "Payback = extra cost ÷ saving per year"
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           `The 0.8 covers losses from heat, dust, wiring and panel angle. "Share used" is the part of the panels' output that actually goes into cooling: high in a hot climate where the space is cooled all day, low where the AC is off half the time. We use 70% in hot climates, 45% in moderate ones and 30% where summers are short; these are our estimates, not measurements. The extra cost is $`,
           EXTRA_COST.toLocaleString(),
           " for panels, mounting and wiring fitted yourself; with an electrician it can be twice that."
@@ -17162,52 +17202,52 @@ function BlogArticleSolarMiniSplit() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "A 12,000 BTU hybrid unit, 1,100 W of panels and $",
           EXTRA_COST.toLocaleString(),
           " of extra cost:"
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm min-w-[640px]", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Location" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Electricity rate" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Peak sun hours/day" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Share of solar used" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Solar kWh used per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Saved per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Payback" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Verdict" })
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Location" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Electricity rate" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Peak sun hours/day" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Share of solar used" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Solar kWh used per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Saved per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Payback" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Verdict" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: rows.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$k, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$l, children: r.place }) }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: cents(r.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: r.sun }),
-            /* @__PURE__ */ jsxs("td", { className: td$k, children: [
+            /* @__PURE__ */ jsx("td", { className: td$l, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$m, children: r.place }) }),
+            /* @__PURE__ */ jsx("td", { className: td$l, children: cents(r.rate) }),
+            /* @__PURE__ */ jsx("td", { className: td$l, children: r.sun }),
+            /* @__PURE__ */ jsxs("td", { className: td$l, children: [
               Math.round(r.share * 100),
               "%"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: Math.round(r.kwh).toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: usd(r.save) }),
-            /* @__PURE__ */ jsxs("td", { className: td$k, children: [
+            /* @__PURE__ */ jsx("td", { className: td$l, children: Math.round(r.kwh).toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$l, children: usd(r.save) }),
+            /* @__PURE__ */ jsxs("td", { className: td$l, children: [
               r.payback.toFixed(1),
               " years"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: r.payback }) })
+            /* @__PURE__ */ jsx("td", { className: td$l, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: r.payback }) })
           ] }, r.place)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "On paper the payback is short almost everywhere it's sunny, because the extra cost is small: three panels and some mounting, not a whole solar system. Expensive power does the rest: the panels pay for themselves in under two years in Hawaii and under three in the Bahamas. Where summers are short and power is average, like Ohio, it takes about twice as long as in the hot states, which only rates as marginal." }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "Two things the table can't show. First, the share of solar used is a guess you should make for your own space: a store cooled from 8 to 6 uses far more than a bedroom cooled only at night. Second, a short payback means little if the unit fails in year six and parts are hard to get. The verdicts assume the unit lasts." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "On paper the payback is short almost everywhere it's sunny, because the extra cost is small: three panels and some mounting, not a whole solar system. Expensive power does the rest: the panels pay for themselves in under two years in Hawaii and under three in the Bahamas. Where summers are short and power is average, like Ohio, it takes about twice as long as in the hot states, which only rates as marginal." }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "Two things the table can't show. First, the share of solar used is a guess you should make for your own space: a store cooled from 8 to 6 uses far more than a bedroom cooled only at night. Second, a short payback means little if the unit fails in year six and parts are hard to get. The verdicts assume the unit lasts." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(SolarEstimator, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Setting one up" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Setting one up" }),
         /* @__PURE__ */ jsx("h3", { className: h3$5, children: "The air conditioner" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "The indoor and outdoor units install like any mini-split. EG4 ships its units with a pre-charged 16 ft line set, so no refrigerant handling is needed for a standard install, and owners report fitting one in an afternoon with two people. Longer line runs (up to 49 ft for the 12K) need a technician to adjust the charge." }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "The indoor and outdoor units install like any mini-split. EG4 ships its units with a pre-charged 16 ft line set, so no refrigerant handling is needed for a standard install, and owners report fitting one in an afternoon with two people. Longer line runs (up to 49 ft for the 12K) need a technician to adjust the charge." }),
         /* @__PURE__ */ jsx("h3", { className: h3$5, children: "The panels" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "The panels can go on a roof, a shed, a carport or a ground rack, as long as they face the sun for most of the day. They're wired in series to reach the unit's input voltage (90–380 V DC on the EG4 12K) and plugged into the outdoor unit with standard solar connectors. Stay under the maximum voltage, including on cold mornings when panel voltage rises." }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "The panels can go on a roof, a shed, a carport or a ground rack, as long as they face the sun for most of the day. They're wired in series to reach the unit's input voltage (90–380 V DC on the EG4 12K) and plugged into the outdoor unit with standard solar connectors. Stay under the maximum voltage, including on cold mornings when panel voltage rises." }),
         /* @__PURE__ */ jsx("h3", { className: h3$5, children: "Permits and the electrical code" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "Kit sellers rarely mention this. Up to 380 V DC is a serious voltage, and panels on a building in the U.S. normally fall under the electrical code's solar rules (NEC Article 690), which include rapid-shutdown requirements for rooftop arrays. Many areas need a permit and an inspection. Ground-mounted panels can be simpler, but check with your local building department, and use an electrician for the DC wiring if you're not sure." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "How reliable are they?" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "Honestly, nobody knows yet. Most of the evidence is owner reviews, forums and sites that earn a commission on sales. There's no long-term independent data. What owners report:" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "Kit sellers rarely mention this. Up to 380 V DC is a serious voltage, and panels on a building in the U.S. normally fall under the electrical code's solar rules (NEC Article 690), which include rapid-shutdown requirements for rooftop arrays. Many areas need a permit and an inspection. Ground-mounted panels can be simpler, but check with your local building department, and use an electrician for the DC wiring if you're not sure." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "How reliable are they?" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "Honestly, nobody knows yet. Most of the evidence is owner reviews, forums and sites that earn a commission on sales. There's no long-term independent data. What owners report:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "It works as described." }),
@@ -17226,8 +17266,8 @@ function BlogArticleSolarMiniSplit() {
             " Five years, against the 10–12 years major brands like Mitsubishi and Daikin offer on registered, professionally installed units. Local technicians may not know these brands, and parts come through the seller."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "In the Caribbean and other hurricane zones" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "The numbers are best here, and so are the risks. Before buying, plan for:" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "In the Caribbean and other hurricane zones" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "The numbers are best here, and so are the risks. Before buying, plan for:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Wind." }),
@@ -17241,7 +17281,7 @@ function BlogArticleSolarMiniSplit() {
             /* @__PURE__ */ jsx("strong", { children: "Power quality." }),
             " Control boards are the reported weak spot, and island grids surge and sag. A voltage protector on the outdoor unit is cheap insurance. See",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$l, children: "how to protect your AC from surges and brownouts" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$m, children: "how to protect your AC from surges and brownouts" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -17249,7 +17289,7 @@ function BlogArticleSolarMiniSplit() {
             " New R-410A equipment hasn't been allowed in the U.S. since January 2025; check that any unit you're quoted uses R-32 or another current refrigerant, especially older stock shipped to the islands."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Hybrid mini-split or rooftop solar?" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Hybrid mini-split or rooftop solar?" }),
         /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-6 mb-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/40 p-5", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "A hybrid mini-split makes sense if" }),
@@ -17271,23 +17311,23 @@ function BlogArticleSolarMiniSplit() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "Comparing ordinary mini-splits? See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$l, children: "mini-split costs in 2026" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$m, children: "mini-split costs in 2026" }),
           " ",
           "and what AC costs to run ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$l, children: "in your state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$m, children: "in your state" }),
           " or",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$l, children: "in the Caribbean" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$m, children: "in the Caribbean" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "EG4 specifications: ",
@@ -17399,16 +17439,16 @@ function FanSeries({ current }) {
     ] }) : /* @__PURE__ */ jsx(Link, { to: s.path, className: "text-teal-600 hover:text-teal-700 font-medium", children: s.label }) }, s.path)) })
   ] });
 }
-const PATH$d = "/blog/ceiling-fan-vs-ac-savings";
-const TITLE$d = "Ceiling Fan vs. AC: How Much Does a Fan Really Save?";
-const HEADLINE$d = "Ceiling Fan vs. Air Conditioning: How Much Does a Fan Really Save?";
+const PATH$e = "/blog/ceiling-fan-vs-ac-savings";
+const TITLE$e = "Ceiling Fan vs. AC: How Much Does a Fan Really Save?";
+const HEADLINE$e = "Ceiling Fan vs. Air Conditioning: How Much Does a Fan Really Save?";
 const US_HOURS$1 = 1500;
-const th$j = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$j = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$k = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$k = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$k = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$l = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$4 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$k = "text-gray-700 leading-relaxed mb-4";
-const a$k = "text-teal-600 hover:text-teal-700 font-medium";
+const p$l = "text-gray-700 leading-relaxed mb-4";
+const a$l = "text-teal-600 hover:text-teal-700 font-medium";
 const ext$5 = "text-teal-700 hover:underline";
 const signed = (n) => `${n >= 0 ? "+" : "−"}${usd(Math.abs(n))}`;
 function FanSavingsEstimator() {
@@ -17613,18 +17653,18 @@ function BlogArticleFanVsAc() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$d }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$e }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$d}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$e}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$d}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$d }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$e}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$e }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$d, headline: HEADLINE$d, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$e, headline: HEADLINE$e, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -17645,7 +17685,7 @@ function BlogArticleFanVsAc() {
               " 9 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$d }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$e }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "A fan costs pennies an hour. Whether it saves you anything depends on two habits." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -17683,19 +17723,19 @@ function BlogArticleFanVsAc() {
             " a year at U.S. average rates, and several times that in hot, expensive places."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$k, children: "We have ceiling fans at home, and they make a huge difference. My stores don't have them. That contrast is a good way to understand fans: they help the people sitting or sleeping under them, which suits a living room or bedroom, while a store with customers coming and going depends on the AC. The difference between cooling people and cooling a space is the key to whether a fan saves you money." }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$d }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "How a fan cools you without cooling the room" }),
-        /* @__PURE__ */ jsx("p", { className: p$k, children: "A fan doesn't lower the air temperature. Its motor actually adds a little heat. What it does is move air across your skin, which carries heat away and speeds up the evaporation of sweat. You feel cooler at the same temperature, the way a breeze feels cooler than still air. That's why a fan in an empty room is pure waste: there's no one there to feel the breeze." }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsx("p", { className: p$l, children: "We have ceiling fans at home, and they make a huge difference. My stores don't have them. That contrast is a good way to understand fans: they help the people sitting or sleeping under them, which suits a living room or bedroom, while a store with customers coming and going depends on the AC. The difference between cooling people and cooling a space is the key to whether a fan saves you money." }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$e }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "How a fan cools you without cooling the room" }),
+        /* @__PURE__ */ jsx("p", { className: p$l, children: "A fan doesn't lower the air temperature. Its motor actually adds a little heat. What it does is move air across your skin, which carries heat away and speeds up the evaporation of sweat. You feel cooler at the same temperature, the way a breeze feels cooler than still air. That's why a fan in an empty room is pure waste: there's no one there to feel the breeze." }),
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "The money comes from what you do with that comfort. If the room feels ",
           DEGREES_RAISED,
           "°F cooler with the fan on, you can set the thermostat ",
           DEGREES_RAISED,
           "°F higher, and the AC runs less. The fan's own running cost is the price of that saving."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "What a fan costs to run compared with AC" }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "What a fan costs to run compared with AC" }),
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "Cost of one hour at the U.S. average residential rate of ",
           cents(US_RATE),
           "/kWh (",
@@ -17704,48 +17744,48 @@ function BlogArticleFanVsAc() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "What's running" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Power (typical)" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Cost per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Cost per month, 8 hours a day" })
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "What's running" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Power (typical)" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Cost per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Cost per month, 8 hours a day" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             FAN_TYPES.map((f) => /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: f.name }),
-              /* @__PURE__ */ jsxs("td", { className: td$j, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$k} font-medium`, children: f.name }),
+              /* @__PURE__ */ jsxs("td", { className: td$k, children: [
                 f.watts,
                 " W (",
                 f.range,
                 ")"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$j, children: cents(f.watts / 1e3 * US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$j, children: usd(f.watts / 1e3 * US_RATE * 240, 2) })
+              /* @__PURE__ */ jsx("td", { className: td$k, children: cents(f.watts / 1e3 * US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$k, children: usd(f.watts / 1e3 * US_RATE * 240, 2) })
             ] }, f.id)),
             /* @__PURE__ */ jsxs("tr", { className: "bg-gray-50", children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$j} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$k} font-medium`, children: [
                 "Central air conditioner, ",
                 AC_TONS,
                 "-ton, SEER ",
                 AC_SEER
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$j, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$k, children: [
                 (AC_KW * 1e3).toLocaleString(void 0, { maximumFractionDigits: 0 }),
                 " W"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$j, children: usd(acHour, 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$j, children: usd(acHour * 240) })
+              /* @__PURE__ */ jsx("td", { className: td$k, children: usd(acHour, 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$k, children: usd(acHour * 240) })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "The cost in your state, in the Caribbean, Canada and Europe is in",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$k, children: "how much it costs to run a fan" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$l, children: "how much it costs to run a fan" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "The two habits that decide whether a fan saves money" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "The two habits that decide whether a fan saves money" }),
         /* @__PURE__ */ jsx("h3", { className: h3$4, children: "1. Raise the thermostat" }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "Without this, a fan is an extra cost on top of the AC. Two standard fans running alongside the AC, with the thermostat left where it was, add about ",
           usd(usNoRaise.fanCost),
           " a year at U.S. average rates in our example. Raise the setting ",
@@ -17758,13 +17798,13 @@ function BlogArticleFanVsAc() {
           Math.round(DEGREES_RAISED * PCT_PER_DEGREE * 100),
           "% less. That's where the saving comes from. Our",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/thermostat-setback-strategy", className: a$k, children: "thermostat strategy" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/thermostat-setback-strategy", className: a$l, children: "thermostat strategy" }),
           " has the schedule."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$4, children: "2. Turn it off when you leave" }),
-        /* @__PURE__ */ jsx("p", { className: p$k, children: "Fans cool people, not rooms. A fan left running in an empty bedroom all day costs money and changes nothing. Fans with a remote or a timer, or smart fans that can be scheduled, make this easier." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "What two ceiling fans save, by location" }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsx("p", { className: p$l, children: "Fans cool people, not rooms. A fan left running in an empty bedroom all day costs money and changes nothing. Fans with a remote or a timer, or smart fans that can be scheduled, make this easier." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "What two ceiling fans save, by location" }),
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "Two ceiling fans, the thermostat raised ",
           DEGREES_RAISED,
           "°F, a 3-ton SEER 14 central AC, and our estimate of cooling hours for each climate. The fans run ",
@@ -17773,27 +17813,27 @@ function BlogArticleFanVsAc() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm min-w-[640px]", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Location" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Electricity rate" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "AC hours per year" }),
-            /* @__PURE__ */ jsxs("th", { className: th$j, children: [
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Location" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Electricity rate" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "AC hours per year" }),
+            /* @__PURE__ */ jsxs("th", { className: th$k, children: [
               "AC saving from raising ",
               DEGREES_RAISED,
               "°F"
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Net saving, standard fans" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Net saving, DC fans" })
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Net saving, standard fans" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Net saving, DC fans" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: rows.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$j, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$k, children: r.place }) }),
-            /* @__PURE__ */ jsx("td", { className: td$j, children: cents(r.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$j, children: r.hours.toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$j, children: usd(r.std.acSaved) }),
-            /* @__PURE__ */ jsx("td", { className: `${td$j} ${r.std.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.std.net) }),
-            /* @__PURE__ */ jsx("td", { className: `${td$j} ${r.dcr.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.dcr.net) })
+            /* @__PURE__ */ jsx("td", { className: td$k, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$l, children: r.place }) }),
+            /* @__PURE__ */ jsx("td", { className: td$k, children: cents(r.rate) }),
+            /* @__PURE__ */ jsx("td", { className: td$k, children: r.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$k, children: usd(r.std.acSaved) }),
+            /* @__PURE__ */ jsx("td", { className: `${td$k} ${r.std.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.std.net) }),
+            /* @__PURE__ */ jsx("td", { className: `${td$k} ${r.dcr.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.dcr.net) })
           ] }, r.place)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "Two things stand out. The saving is real but modest: tens of dollars a year in most of the U.S.",
           bah && /* @__PURE__ */ jsxs(Fragment, { children: [
             ", and about",
@@ -17805,19 +17845,19 @@ function BlogArticleFanVsAc() {
           ] }),
           ". And the motor matters: a standard fan uses about twice the power of a DC fan, so it gives back a bigger share of the saving. If you're buying new fans, a DC motor is worth it. See the",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$k, children: "ceiling fan buying guide" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$l, children: "ceiling fan buying guide" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "The bigger saving: fan instead of AC" }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "The bigger saving: fan instead of AC" }),
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "The table assumes the AC runs as usual, just at a higher setting. The larger saving comes from not running the AC at all when you don't need it: mild evenings, spring and fall, a cool night with the windows open. Every hour you use a fan instead of the AC saves about ",
           usd(acHour - fanHourAc, 2),
           " at U.S. average rates. A few hundred hours a year of that is worth more than the thermostat trick."
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$k, children: "It has limits. A fan moves air but doesn't remove humidity, so in muggy weather the air stays clammy. And once the air is hotter than your skin, roughly the mid-90s °F, a fan blows hot air at you and stops helping. On those days, run the AC and use the fan to raise the setting." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("p", { className: p$l, children: "It has limits. A fan moves air but doesn't remove humidity, so in muggy weather the air stays clammy. And once the air is hotter than your skin, roughly the mid-90s °F, a fan blows hot air at you and stops helping. On those days, run the AC and use the fan to raise the setting." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(FanSavingsEstimator, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "When fans don't help" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "When fans don't help" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Empty rooms." }),
@@ -17835,23 +17875,23 @@ function BlogArticleFanVsAc() {
             /* @__PURE__ */ jsx("strong", { children: "Humidity." }),
             " A ceiling fan doesn't dry the air. For a clammy house, see",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-high-humidity", className: a$k, children: "house humid with the AC on" }),
+            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-high-humidity", className: a$l, children: "house humid with the AC on" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Your AC's own fan setting." }),
             ' Setting the thermostat fan to "On" is not the same as a ceiling fan, and it can raise humidity. See',
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/home-airflow-fans", className: a$k, children: "fans and airflow in your home" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/home-airflow-fans", className: a$l, children: "fans and airflow in your home" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Raising the thermostat about 4°F with a ceiling fan, turning fans off in empty rooms: ",
@@ -17881,12 +17921,12 @@ function BlogArticleFanVsAc() {
     ] })
   ] });
 }
-const _readme$4 = "Residential electricity prices for the Canada cost pages, from Hydro-Québec's annual Comparison of Electricity Prices in Major North American Cities. Bills are in Canadian dollars, before taxes, for 1,000 and 2,000 kWh a month. Update every number from the new edition each year (rates in effect April 1), then bump 'updated'. usdPerCad converts to US dollars for the U.S. comparison only. hours are our estimate of full-load cooling hours a year for a central AC.";
-const updated$4 = "2026-10-14";
+const _readme$5 = "Residential electricity prices for the Canada cost pages, from Hydro-Québec's annual Comparison of Electricity Prices in Major North American Cities. Bills are in Canadian dollars, before taxes, for 1,000 and 2,000 kWh a month. Update every number from the new edition each year (rates in effect April 1), then bump 'updated'. usdPerCad converts to US dollars for the U.S. comparison only. hours are our estimate of full-load cooling hours a year for a central AC.";
+const updated$5 = "2026-10-14";
 const edition = "2025";
 const ratesInEffect = "April 1, 2025";
-const source$2 = "Hydro-Québec, Comparison of Electricity Prices in Major North American Cities (rates in effect April 1, 2025)";
-const sourceUrl$2 = "https://www.hydroquebec.com/data/documents-donnees/pdf/comparaison-prix-2025-en.pdf";
+const source$3 = "Hydro-Québec, Comparison of Electricity Prices in Major North American Cities (rates in effect April 1, 2025)";
+const sourceUrl$3 = "https://www.hydroquebec.com/data/documents-donnees/pdf/comparaison-prix-2025-en.pdf";
 const usdPerCad = 0.703;
 const usdPerCadAsOf = "October 1, 2026";
 const provinces = [
@@ -18079,12 +18119,12 @@ const usCities = [
   }
 ];
 const data$2 = {
-  _readme: _readme$4,
-  updated: updated$4,
+  _readme: _readme$5,
+  updated: updated$5,
   edition,
   ratesInEffect,
-  source: source$2,
-  sourceUrl: sourceUrl$2,
+  source: source$3,
+  sourceUrl: sourceUrl$3,
   usdPerCad,
   usdPerCadAsOf,
   provinces,
@@ -18114,12 +18154,12 @@ function getProvince(slug) {
   return PROVINCES.find((p2) => p2.slug === slug);
 }
 const cad = (n, digits = 0) => `C$${n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
-const _readme$3 = "Household electricity prices for the Europe map. Eurostat nrg_pc_204: households, band DC (2,500-4,999 kWh a year), all taxes and levies included, EUR per kWh. Keys are ISO 3166-1 alpha-2 (Greece is GR; Eurostat uses EL). Refresh with scripts/update-eu-rates.py, which picks the newest half-year that has all 27 EU countries. Country pages (europeRates.json) use the latest national tariff instead, so their figures can differ.";
+const _readme$4 = "Household electricity prices for the Europe map. Eurostat nrg_pc_204: households, band DC (2,500-4,999 kWh a year), all taxes and levies included, EUR per kWh. Keys are ISO 3166-1 alpha-2 (Greece is GR; Eurostat uses EL). Refresh with scripts/update-eu-rates.py, which picks the newest half-year that has all 27 EU countries. Country pages (europeRates.json) use the latest national tariff instead, so their figures can differ.";
 const period$1 = "2026-S1";
 const periodLabel = "January to June 2026";
-const updated$3 = "2026-10-16";
-const source$1 = "Eurostat, Electricity prices for household consumers (nrg_pc_204)";
-const sourceUrl$1 = "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?lang=en";
+const updated$4 = "2026-10-16";
+const source$2 = "Eurostat, Electricity prices for household consumers (nrg_pc_204)";
+const sourceUrl$2 = "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?lang=en";
 const euAverage = 0.2896;
 const euAverageNote = "EU-27 average for the same period and band, as published by Eurostat";
 const countries$2 = {
@@ -18236,25 +18276,25 @@ const countries$2 = {
 };
 const euAveragePeriod = "2025-S2";
 const eu = {
-  _readme: _readme$3,
+  _readme: _readme$4,
   period: period$1,
   periodLabel,
-  updated: updated$3,
-  source: source$1,
-  sourceUrl: sourceUrl$1,
+  updated: updated$4,
+  source: source$2,
+  sourceUrl: sourceUrl$2,
   euAverage,
   euAverageNote,
   countries: countries$2,
   euAveragePeriod
 };
-const PATH$c = "/blog/cost-to-run-a-fan";
-const TITLE$c = "Cost to Run a Fan: Ceiling, Box & Tower Fans by State";
-const HEADLINE$c = "How Much Does It Cost to Run a Fan? Ceiling, Box and Tower Fans, by State and Country";
-const th$i = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$i = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$j = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$j = "text-gray-700 leading-relaxed mb-4";
-const a$j = "text-teal-600 hover:text-teal-700 font-medium";
+const PATH$d = "/blog/cost-to-run-a-fan";
+const TITLE$d = "Cost to Run a Fan: Ceiling, Box & Tower Fans by State";
+const HEADLINE$d = "How Much Does It Cost to Run a Fan? Ceiling, Box and Tower Fans, by State and Country";
+const th$j = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$j = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$k = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$k = "text-gray-700 leading-relaxed mb-4";
+const a$k = "text-teal-600 hover:text-teal-700 font-medium";
 const ext$4 = "text-teal-700 hover:underline";
 const STD = fanType("ac-ceiling");
 const DC = fanType("dc-ceiling");
@@ -18263,27 +18303,27 @@ const cost = (watts, hours, rate) => watts / 1e3 * hours * rate;
 function CostTable({ rows, fmt, rateLabel, unit }) {
   return /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm min-w-[620px]", children: [
     /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-      /* @__PURE__ */ jsx("th", { className: th$i, children: "Where" }),
-      /* @__PURE__ */ jsxs("th", { className: th$i, children: [
+      /* @__PURE__ */ jsx("th", { className: th$j, children: "Where" }),
+      /* @__PURE__ */ jsxs("th", { className: th$j, children: [
         "Electricity price (",
         unit,
         ")"
       ] }),
-      /* @__PURE__ */ jsx("th", { className: th$i, children: "Standard ceiling fan, per hour" }),
-      /* @__PURE__ */ jsx("th", { className: th$i, children: "Standard ceiling fan, per month" }),
-      /* @__PURE__ */ jsx("th", { className: th$i, children: "DC ceiling fan, per month" }),
-      /* @__PURE__ */ jsx("th", { className: th$i, children: "Box fan, per month" })
+      /* @__PURE__ */ jsx("th", { className: th$j, children: "Standard ceiling fan, per hour" }),
+      /* @__PURE__ */ jsx("th", { className: th$j, children: "Standard ceiling fan, per month" }),
+      /* @__PURE__ */ jsx("th", { className: th$j, children: "DC ceiling fan, per month" }),
+      /* @__PURE__ */ jsx("th", { className: th$j, children: "Box fan, per month" })
     ] }) }),
     /* @__PURE__ */ jsx("tbody", { children: rows.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-      /* @__PURE__ */ jsxs("td", { className: `${td$i} font-medium`, children: [
-        r.link ? /* @__PURE__ */ jsx(Link, { to: r.link, className: a$j, children: r.name }) : r.name,
+      /* @__PURE__ */ jsxs("td", { className: `${td$j} font-medium`, children: [
+        r.link ? /* @__PURE__ */ jsx(Link, { to: r.link, className: a$k, children: r.name }) : r.name,
         r.note && /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: r.note })
       ] }),
-      /* @__PURE__ */ jsx("td", { className: td$i, children: rateLabel(r.rate) }),
-      /* @__PURE__ */ jsx("td", { className: td$i, children: fmt(cost(STD.watts, 1, r.rate), 3) }),
-      /* @__PURE__ */ jsx("td", { className: td$i, children: fmt(cost(STD.watts, FAN_MONTH_HOURS, r.rate), 2) }),
-      /* @__PURE__ */ jsx("td", { className: td$i, children: fmt(cost(DC.watts, FAN_MONTH_HOURS, r.rate), 2) }),
-      /* @__PURE__ */ jsx("td", { className: td$i, children: fmt(cost(BOX.watts, FAN_MONTH_HOURS, r.rate), 2) })
+      /* @__PURE__ */ jsx("td", { className: td$j, children: rateLabel(r.rate) }),
+      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(STD.watts, 1, r.rate), 3) }),
+      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(STD.watts, FAN_MONTH_HOURS, r.rate), 2) }),
+      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(DC.watts, FAN_MONTH_HOURS, r.rate), 2) }),
+      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(BOX.watts, FAN_MONTH_HOURS, r.rate), 2) })
     ] }, r.key)) })
   ] }) });
 }
@@ -18404,18 +18444,18 @@ function BlogArticleFanCost() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$c }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$d }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$c}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$d}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$c}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$c }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$d}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$d }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$c, headline: HEADLINE$c, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$d, headline: HEADLINE$d, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -18436,7 +18476,7 @@ function BlogArticleFanCost() {
               " 6 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$c }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$d }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Pennies an hour almost everywhere. Here are the exact numbers for where you live." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -18466,10 +18506,10 @@ function BlogArticleFanCost() {
             ". Prices for every state, the Caribbean, Canada and Europe are below."
           ] })
         ] }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$c }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "The formula" }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$d }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "The formula" }),
         /* @__PURE__ */ jsx("div", { className: "bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4 font-mono text-sm text-gray-800", children: "Cost = watts ÷ 1,000 × hours × your price per kWh" }),
-        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
           "A ",
           STD.watts,
           " W ceiling fan for 8 hours uses ",
@@ -18480,24 +18520,24 @@ function BlogArticleFanCost() {
           usd(cost(STD.watts, 8, US_RATE), 2),
           ". Your fan's watts are on its yellow EnergyGuide label or nameplate."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "How much power fans use" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "How much power fans use" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Fan" }),
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Typical power, high speed" }),
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Watts used in our tables" })
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Fan" }),
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Typical power, high speed" }),
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Watts used in our tables" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: FAN_TYPES.map((f) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: f.name }),
-            /* @__PURE__ */ jsx("td", { className: td$i, children: f.range }),
-            /* @__PURE__ */ jsxs("td", { className: td$i, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: f.name }),
+            /* @__PURE__ */ jsx("td", { className: td$j, children: f.range }),
+            /* @__PURE__ */ jsxs("td", { className: td$j, children: [
               f.watts,
               " W"
             ] })
           ] }, f.id)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: 'Low speed uses far less: an ENERGY STAR-listed 44" ceiling fan draws 17.6 W on high and just 2.7 W on low. Lights built into a fan are extra.' }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Work out your own cost" }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: 'Low speed uses far less: an ENERGY STAR-listed 44" ceiling fan draws 17.6 W on high and just 2.7 W on low. Lights built into a fan are extra.' }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Work out your own cost" }),
         /* @__PURE__ */ jsx(FanCostCalculator, {}),
         /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 bg-gray-50 p-5 mb-4", children: [
           /* @__PURE__ */ jsx("p", { className: "text-sm font-bold uppercase tracking-wide text-gray-700 mb-2", children: "What these tables show" }),
@@ -18515,8 +18555,8 @@ function BlogArticleFanCost() {
             " W). Prices are in each place's own currency."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Cost to run a fan in every U.S. state" }),
-        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Cost to run a fan in every U.S. state" }),
+        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
           "Residential electricity in ",
           most.name,
           " (",
@@ -18538,14 +18578,14 @@ function BlogArticleFanCost() {
           ". Each state links to its AC running costs."
         ] }),
         /* @__PURE__ */ jsx(CostTable, { rows: usRows, fmt: (n, d) => usd(n, d), rateLabel: (r) => cents(r), unit: "per kWh" }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "The Caribbean" }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "In U.S. dollars, at each country's newest available residential rate (dates under each name). Fans matter more here: cooling is needed most of the year and power often costs two or three times the U.S. average." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "The Caribbean" }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "In U.S. dollars, at each country's newest available residential rate (dates under each name). Fans matter more here: cooling is needed most of the year and power often costs two or three times the U.S. average." }),
         /* @__PURE__ */ jsx(CostTable, { rows: cbRows, fmt: (n, d) => usd(n, d), rateLabel: (r) => cents(r), unit: "US$ per kWh" }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Canada" }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "In Canadian dollars before tax, at the price of each extra kWh between 1,000 and 2,000 a month in the province's largest listed city (named under each province), which is what running a fan adds to the bill." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Canada" }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "In Canadian dollars before tax, at the price of each extra kWh between 1,000 and 2,000 a month in the province's largest listed city (named under each province), which is what running a fan adds to the bill." }),
         /* @__PURE__ */ jsx(CostTable, { rows: caRows, fmt: (n, d) => cad(n, d), rateLabel: (r) => `C$${r.toFixed(3)}`, unit: "C$ per kWh" }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Europe" }),
-        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Europe" }),
+        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
           "In euros: Eurostat's household price for 2,500–4,999 kWh a year, all taxes included (",
           eu.periodLabel,
           ", or the newest period noted under a country's name).",
@@ -18561,7 +18601,7 @@ function BlogArticleFanCost() {
             unit: "£ per kWh"
           }
         ),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Cheaper ways to run a fan" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Cheaper ways to run a fan" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Turn it off when you leave the room." }),
@@ -18575,23 +18615,23 @@ function BlogArticleFanCost() {
             /* @__PURE__ */ jsx("strong", { children: "Choose a DC motor" }),
             " when you buy: about half the power of a standard ceiling fan. See the",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$j, children: "ceiling fan buying guide" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$k, children: "ceiling fan buying guide" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Use the fan to run the AC less." }),
             " That's where the real saving is. See",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$j, children: "ceiling fan vs. AC" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$k, children: "ceiling fan vs. AC" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Sources" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Sources" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "U.S. rates: ",
@@ -18629,15 +18669,15 @@ function BlogArticleFanCost() {
     ] })
   ] });
 }
-const PATH$b = "/blog/ceiling-fan-buying-guide";
-const TITLE$b = "Ceiling Fan Buying Guide: Size, Motor, Efficiency";
-const HEADLINE$b = "Ceiling Fan Buying Guide: Size, Motor, Efficiency and Where It Goes";
-const th$h = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$h = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$i = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const PATH$c = "/blog/ceiling-fan-buying-guide";
+const TITLE$c = "Ceiling Fan Buying Guide: Size, Motor, Efficiency";
+const HEADLINE$c = "Ceiling Fan Buying Guide: Size, Motor, Efficiency and Where It Goes";
+const th$i = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$i = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$j = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$3 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$i = "text-gray-700 leading-relaxed mb-4";
-const a$i = "text-teal-600 hover:text-teal-700 font-medium";
+const p$j = "text-gray-700 leading-relaxed mb-4";
+const a$j = "text-teal-600 hover:text-teal-700 font-medium";
 const ext$3 = "text-teal-700 hover:underline";
 const CHECKLIST = [
   "Blade span to suit the room (table below)",
@@ -18684,18 +18724,18 @@ function BlogArticleFanBuyingGuide() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$b }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$c }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$b}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$c}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$b}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$b }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$c}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$c }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$b, headline: HEADLINE$b, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$c, headline: HEADLINE$c, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -18716,7 +18756,7 @@ function BlogArticleFanBuyingGuide() {
               " 9 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$b }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$c }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "The features that change how cool you feel and what you pay, and the ones that are just style." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -18733,27 +18773,27 @@ function BlogArticleFanBuyingGuide() {
             "fan."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "We have ceiling fans at home and they make a huge difference, so this is the guide I'd want before replacing one. It's about what to look for, not a list of products: the site doesn't take payment for recommendations, and the right fan depends on your room." }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$b }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "The checklist" }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "We have ceiling fans at home and they make a huge difference, so this is the guide I'd want before replacing one. It's about what to look for, not a list of products: the site doesn't take payment for recommendations, and the right fan depends on your room." }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$c }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "The checklist" }),
         /* @__PURE__ */ jsx("ul", { className: "space-y-2 mb-6", children: CHECKLIST.map((c) => /* @__PURE__ */ jsxs("li", { className: "flex gap-2 text-gray-700", children: [
           /* @__PURE__ */ jsx(CheckCircle2, { className: "w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" }),
           /* @__PURE__ */ jsx("span", { children: c })
         ] }, c)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "1. Size: blade span by room" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "1. Size: blade span by room" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$h, children: "Room" }),
-            /* @__PURE__ */ jsx("th", { className: th$h, children: "Fan" })
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "Room" }),
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "Fan" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: SIZING.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$h, children: s.room }),
-            /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: s.fan })
+            /* @__PURE__ */ jsx("td", { className: td$i, children: s.room }),
+            /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: s.fan })
           ] }, s.room)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "Guidance from the Department of Energy. Smaller and medium fans cool an area about 4 to 6 feet around them; larger fans reach about 10 feet. Larger blades also move air more gently at the same airflow, which is nicer over a bed or a desk with papers on it. In a long or open-plan room, two fans over the places people sit beat one big fan in the middle." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "2. Motor: DC or standard" }),
-        /* @__PURE__ */ jsxs("p", { className: p$i, children: [
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "Guidance from the Department of Energy. Smaller and medium fans cool an area about 4 to 6 feet around them; larger fans reach about 10 feet. Larger blades also move air more gently at the same airflow, which is nicer over a bed or a desk with papers on it. In a long or open-plan room, two fans over the places people sit beat one big fan in the middle." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "2. Motor: DC or standard" }),
+        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
           "Most fans use a standard AC motor. DC (brushless) motors cost more but use much less power: about ",
           dc.range,
           " for a typical DC fan, against ",
@@ -18762,58 +18802,58 @@ function BlogArticleFanBuyingGuide() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$h }),
-            /* @__PURE__ */ jsx("th", { className: th$h, children: "Standard (AC) motor" }),
-            /* @__PURE__ */ jsx("th", { className: th$h, children: "DC motor" })
+            /* @__PURE__ */ jsx("th", { className: th$i }),
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "Standard (AC) motor" }),
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "DC motor" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: "Power on high" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: std.range }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: dc.range })
+              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Power on high" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: std.range }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: dc.range })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$h} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$i} font-medium`, children: [
                 "Cost per hour at ",
                 cents(US_RATE),
                 "/kWh"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: cents(std.watts / 1e3 * US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: cents(dc.watts / 1e3 * US_RATE) })
+              /* @__PURE__ */ jsx("td", { className: td$i, children: cents(std.watts / 1e3 * US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: cents(dc.watts / 1e3 * US_RATE) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: "Speeds" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Usually 3" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Often 5–6" })
+              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Speeds" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Usually 3" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Often 5–6" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: "Noise" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Can hum, especially on cheaper models" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Usually quieter" })
+              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Noise" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Can hum, especially on cheaper models" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Usually quieter" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: "Control" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Pull chain, wall control or remote" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Remote or wall control, often app" })
+              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Control" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Pull chain, wall control or remote" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Remote or wall control, often app" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: "Repairs" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Simple; generic parts" }),
-              /* @__PURE__ */ jsx("td", { className: td$h, children: "Uses a control board; parts usually from the maker" })
+              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Repairs" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Simple; generic parts" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Uses a control board; parts usually from the maker" })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$i, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
           "Is the higher price worth it? Running one fan 8 hours a day for six warm months, a DC motor saves about",
           " ",
           usd(yearlyGap),
           " a year at U.S. average rates. That's small in a mild climate. It's more where fans run most of the year and power is expensive, as in the Caribbean, and the quieter running and extra speeds matter in a bedroom anyway. If the price gap is small, take the DC model. Running costs for your area are in",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$i, children: "how much it costs to run a fan" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$j, children: "how much it costs to run a fan" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "3. Efficiency: read the EnergyGuide label" }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "New ceiling fans sold in the U.S. come with a yellow EnergyGuide label on the box. It shows three numbers worth comparing:" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "3. Efficiency: read the EnergyGuide label" }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "New ceiling fans sold in the U.S. come with a yellow EnergyGuide label on the box. It shows three numbers worth comparing:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Airflow (CFM):" }),
@@ -18828,29 +18868,29 @@ function BlogArticleFanBuyingGuide() {
             " airflow divided by power. This is the number to compare: higher means more breeze for the same electricity."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: `The label also shows an estimated yearly cost, based on 12¢ per kWh and 6.4 hours a day. If you pay more, or run the fan longer, your cost will be higher. Two examples show how wide the range is: one fan's label shows 44 W and 106 CFM per watt, while an ENERGY STAR-listed 44" fan draws 17.6 W on high with an efficiency rating of about 263 CFM per watt.` }),
-        /* @__PURE__ */ jsxs("p", { className: p$i, children: [
+        /* @__PURE__ */ jsx("p", { className: p$j, children: `The label also shows an estimated yearly cost, based on 12¢ per kWh and 6.4 hours a day. If you pay more, or run the fan longer, your cost will be higher. Two examples show how wide the range is: one fan's label shows 44 W and 106 CFM per watt, while an ENERGY STAR-listed 44" fan draws 17.6 W on high with an efficiency rating of about 263 CFM per watt.` }),
+        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
           /* @__PURE__ */ jsx("strong", { children: "ENERGY STAR" }),
           " certified fans are, on average, up to 40% more efficient than conventional models, according to the Department of Energy. You can search certified models in the",
           " ",
           /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/productfinder/product/certified-ceiling-fans/results", target: "_blank", rel: "noopener noreferrer", className: ext$3, children: "ENERGY STAR product finder" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "4. Location rating: dry, damp or wet" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "4. Location rating: dry, damp or wet" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$h, children: "Rating" }),
-            /* @__PURE__ */ jsx("th", { className: th$h, children: "Where" }),
-            /* @__PURE__ */ jsx("th", { className: th$h, children: "Notes" })
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "Rating" }),
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "Where" }),
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "Notes" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: RATINGS.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: r.rating }),
-            /* @__PURE__ */ jsx("td", { className: td$h, children: r.where }),
-            /* @__PURE__ */ jsx("td", { className: td$h, children: r.notes })
+            /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: r.rating }),
+            /* @__PURE__ */ jsx("td", { className: td$i, children: r.where }),
+            /* @__PURE__ */ jsx("td", { className: td$i, children: r.notes })
           ] }, r.rating)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "In coastal and island homes, salt air is hard on anything metal outdoors. A wet-rated fan with sealed housing and rust-resistant hardware lasts much longer on a porch than an indoor fan, and even indoors near the sea a fan with better-protected hardware is worth considering." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "5. Height and placement" }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "In coastal and island homes, salt air is hard on anything metal outdoors. A wet-rated fan with sealed housing and rust-resistant hardware lasts much longer on a porch than an indoor fan, and even indoors near the sea a fan with better-protected hardware is worth considering." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "5. Height and placement" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Blades ",
@@ -18870,29 +18910,29 @@ function BlogArticleFanBuyingGuide() {
           /* @__PURE__ */ jsx("li", { children: "On a high or sloped ceiling, a longer downrod brings the fan down to the right height; use the angled-ceiling kit the maker specifies." }),
           /* @__PURE__ */ jsx("li", { children: 'For a low ceiling, a flush-mount ("hugger") fan keeps blades at a safe height, though it moves less air.' })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "All of this is Department of Energy guidance; your fan's manual has the exact limits for that model." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "6. Controls, lights and installation" }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "All of this is Department of Energy guidance; your fan's manual has the exact limits for that model." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "6. Controls, lights and installation" }),
         /* @__PURE__ */ jsx("h3", { className: h3$3, children: "Controls" }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "The cheapest feature with the biggest effect on your bill is one that makes the fan easy to turn off. A wall control or remote beats a pull chain; a timer or app schedule is better still for bedrooms. Fans cool people, not rooms, so a fan nobody switches off wastes money." }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "The cheapest feature with the biggest effect on your bill is one that makes the fan easy to turn off. A wall control or remote beats a pull chain; a timer or app schedule is better still for bedrooms. Fans cool people, not rooms, so a fan nobody switches off wastes money." }),
         /* @__PURE__ */ jsx("h3", { className: h3$3, children: "Lights" }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "Most fan lights are now LED. An integrated LED kit lasts a long time but can't be swapped for a brighter or warmer bulb; replaceable LED bulbs give you that choice." }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "Most fan lights are now LED. An integrated LED kit lasts a long time but can't be swapped for a brighter or warmer bulb; replaceable LED bulbs give you that choice." }),
         /* @__PURE__ */ jsx("h3", { className: h3$3, children: "Installation" }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "A ceiling fan must hang from an electrical box rated to support a fan, not an ordinary light-fixture box. If you're replacing a light, check the box first, and use an electrician if you're not sure or new wiring is needed." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Once it's up" }),
-        /* @__PURE__ */ jsxs("p", { className: p$i, children: [
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "A ceiling fan must hang from an electrical box rated to support a fan, not an ordinary light-fixture box. If you're replacing a light, check the box first, and use an electrician if you're not sure or new wiring is needed." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Once it's up" }),
+        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
           "Set it to spin counterclockwise in summer (looking up) and raise your thermostat a few degrees. That's where the saving comes from. See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-direction", className: a$i, children: "ceiling fan direction and settings" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-direction", className: a$j, children: "ceiling fan direction and settings" }),
           " ",
           "and ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$i, children: "how much a ceiling fan saves" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$j, children: "how much a ceiling fan saves" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Sources" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Sources" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Sizing, height, clearances, ENERGY STAR efficiency: ",
@@ -18913,12 +18953,12 @@ function BlogArticleFanBuyingGuide() {
     ] })
   ] });
 }
-const PATH$a = "/blog/ceiling-fan-direction";
-const TITLE$a = "Ceiling Fan Direction for Summer and Winter (and Speed)";
-const HEADLINE$a = "Which Way Should a Ceiling Fan Spin in Summer and Winter? Direction, Speed and Settings";
-const h2$h = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$h = "text-gray-700 leading-relaxed mb-4";
-const a$h = "text-teal-600 hover:text-teal-700 font-medium";
+const PATH$b = "/blog/ceiling-fan-direction";
+const TITLE$b = "Ceiling Fan Direction for Summer and Winter (and Speed)";
+const HEADLINE$b = "Which Way Should a Ceiling Fan Spin in Summer and Winter? Direction, Speed and Settings";
+const h2$i = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$i = "text-gray-700 leading-relaxed mb-4";
+const a$i = "text-teal-600 hover:text-teal-700 font-medium";
 const ext$2 = "text-teal-700 hover:underline";
 function BlogArticleFanDirection() {
   const description = "Summer: counterclockwise (looking up) on a higher speed. Winter: clockwise on low. How to check yours, where the switch is, and the settings that save money.";
@@ -18950,18 +18990,18 @@ function BlogArticleFanDirection() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$a }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$b }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$a}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$b}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$a}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$a }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$b}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$b }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$a, headline: HEADLINE$a, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$b, headline: HEADLINE$b, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -18982,7 +19022,7 @@ function BlogArticleFanDirection() {
               " 4 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$a }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$b }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "The short answer, how to check yours, and the settings that actually save money." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -19002,12 +19042,12 @@ function BlogArticleFanDirection() {
             /* @__PURE__ */ jsx("p", { className: "text-gray-700", children: "Low speed. Pulls air up and moves warm air from the ceiling down the walls, without a draft." })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$a }),
-        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "How to check which way your fan is spinning" }),
-        /* @__PURE__ */ jsx("p", { className: p$h, children: "Stand directly under the fan on medium or high. A steady breeze on your face means it's pushing air down: the summer setting. Little or no breeze means it's pulling air up: the winter setting. If you're not sure, turn it off, flip the direction, and compare." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Where the switch is" }),
-        /* @__PURE__ */ jsx("p", { className: p$h, children: "On most standard fans, a small slide switch sits on the motor housing just above the blades. Turn the fan off and let it stop completely before you flip it. DC-motor fans often have no switch: use the reverse button on the remote or the setting in the app." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Speed and settings that save money" }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$b }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "How to check which way your fan is spinning" }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "Stand directly under the fan on medium or high. A steady breeze on your face means it's pushing air down: the summer setting. Little or no breeze means it's pulling air up: the winter setting. If you're not sure, turn it off, flip the direction, and compare." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Where the switch is" }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "On most standard fans, a small slide switch sits on the motor housing just above the blades. Turn the fan off and let it stop completely before you flip it. DC-motor fans often have no switch: use the reverse button on the remote or the setting in the app." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Speed and settings that save money" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Raise the thermostat." }),
@@ -19030,18 +19070,18 @@ function BlogArticleFanDirection() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Mild days:" }),
             " use the fan instead of the AC. Every hour the AC stays off saves far more than the fan costs. See ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$h, children: "ceiling fan vs. AC" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$i, children: "ceiling fan vs. AC" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Does the winter setting really help?" }),
-        /* @__PURE__ */ jsx("p", { className: p$h, children: "Warm air rises, so in a heated room the ceiling can be noticeably warmer than where you sit, more so with high ceilings. Running the fan clockwise on low mixes that warm air back down without blowing a cold breeze on you. The effect is modest in a room with ordinary ceilings and biggest in rooms with high or vaulted ones." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Does the winter setting really help?" }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "Warm air rises, so in a heated room the ceiling can be noticeably warmer than where you sit, more so with high ceilings. Running the fan clockwise on low mixes that warm air back down without blowing a cold breeze on you. The effect is modest in a room with ordinary ceilings and biggest in rooms with high or vaulted ones." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Sources" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Sources" }),
         /* @__PURE__ */ jsx("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: /* @__PURE__ */ jsxs("li", { children: [
           "Direction for summer and winter, raising the thermostat about ",
           DEGREES_RAISED,
@@ -19054,15 +19094,15 @@ function BlogArticleFanDirection() {
     ] })
   ] });
 }
-const PATH$9 = "/blog/home-airflow-fans";
-const TITLE$9 = "Home Airflow: AC Fan Setting, Vents, Whole-House Fans";
-const HEADLINE$9 = "Fans and Airflow in Your Home: The AC Fan Setting, Closed Vents, Hot Rooms and Whole-House Fans";
-const th$g = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$g = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$g = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const PATH$a = "/blog/home-airflow-fans";
+const TITLE$a = "Home Airflow: AC Fan Setting, Vents, Whole-House Fans";
+const HEADLINE$a = "Fans and Airflow in Your Home: The AC Fan Setting, Closed Vents, Hot Rooms and Whole-House Fans";
+const th$h = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$h = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$h = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$2 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$g = "text-gray-700 leading-relaxed mb-4";
-const a$g = "text-teal-600 hover:text-teal-700 font-medium";
+const p$h = "text-gray-700 leading-relaxed mb-4";
+const a$h = "text-teal-600 hover:text-teal-700 font-medium";
 const ext$1 = "text-teal-700 hover:underline";
 const FAN_KINDS = [
   { kind: "Ceiling fan", what: "Moves air over people in one room", when: "Whenever someone is in the room; lets you raise the thermostat", climate: "Everywhere" },
@@ -19097,18 +19137,18 @@ function BlogArticleHomeAirflow() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$9 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$a }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$9}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$a}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$9}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$9 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$a}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$a }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$9, headline: HEADLINE$9, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$a, headline: HEADLINE$a, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -19129,7 +19169,7 @@ function BlogArticleHomeAirflow() {
               " 9 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$9 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$a }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Moving air is cheap. Moving it the wrong way costs money. The airflow habits worth changing." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -19159,63 +19199,63 @@ function BlogArticleHomeAirflow() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$9 }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Five kinds of fan, five different jobs" }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$a }),
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Five kinds of fan, five different jobs" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm min-w-[620px]", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$g, children: "Fan" }),
-            /* @__PURE__ */ jsx("th", { className: th$g, children: "What it does" }),
-            /* @__PURE__ */ jsx("th", { className: th$g, children: "When to use it" }),
-            /* @__PURE__ */ jsx("th", { className: th$g, children: "Climate" })
+            /* @__PURE__ */ jsx("th", { className: th$h, children: "Fan" }),
+            /* @__PURE__ */ jsx("th", { className: th$h, children: "What it does" }),
+            /* @__PURE__ */ jsx("th", { className: th$h, children: "When to use it" }),
+            /* @__PURE__ */ jsx("th", { className: th$h, children: "Climate" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: FAN_KINDS.map((f) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$g} font-medium`, children: f.kind }),
-            /* @__PURE__ */ jsx("td", { className: td$g, children: f.what }),
-            /* @__PURE__ */ jsx("td", { className: td$g, children: f.when }),
-            /* @__PURE__ */ jsx("td", { className: td$g, children: f.climate })
+            /* @__PURE__ */ jsx("td", { className: `${td$h} font-medium`, children: f.kind }),
+            /* @__PURE__ */ jsx("td", { className: td$h, children: f.what }),
+            /* @__PURE__ */ jsx("td", { className: td$h, children: f.when }),
+            /* @__PURE__ */ jsx("td", { className: td$h, children: f.climate })
           ] }, f.kind)) })
         ] }) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Your AC's fan: Auto, not On" }),
-        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Your AC's fan: Auto, not On" }),
+        /* @__PURE__ */ jsxs("p", { className: p$h, children: [
           'The "Fan" switch on your thermostat controls the indoor blower in the air handler or furnace, a much bigger motor than a ceiling fan. On ',
           /* @__PURE__ */ jsx("strong", { children: "Auto" }),
           " it runs only while the AC is cooling. On ",
           /* @__PURE__ */ jsx("strong", { children: "On" }),
           " it runs all the time."
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "That matters for humidity. While the AC runs, water condenses on the cold indoor coil and drains away. When the compressor stops, the coil is still wet. With the fan on Auto, it stops too and the water drains. With the fan on On, air keeps blowing across the wet coil and carries that moisture straight back into the house. In one test by building scientist Allison Bailes in his own home, switching from Auto to On raised indoor humidity from about 58% to about 70%, the level where mold starts to thrive." }),
-        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "That matters for humidity. While the AC runs, water condenses on the cold indoor coil and drains away. When the compressor stops, the coil is still wet. With the fan on Auto, it stops too and the water drains. With the fan on On, air keeps blowing across the wet coil and carries that moisture straight back into the house. In one test by building scientist Allison Bailes in his own home, switching from Auto to On raised indoor humidity from about 58% to about 70%, the level where mold starts to thrive." }),
+        /* @__PURE__ */ jsxs("p", { className: p$h, children: [
           '"On" also costs more, because the blower runs 24 hours a day. There are reasons to use it (some homes use it to even out temperatures or run a filter), but in a humid climate, Auto is the safe default. If your house feels clammy, see ',
-          /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-high-humidity", className: a$g, children: "house humid with the AC on" }),
+          /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-high-humidity", className: a$h, children: "house humid with the AC on" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Don't close vents to save energy" }),
-        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Don't close vents to save energy" }),
+        /* @__PURE__ */ jsxs("p", { className: p$h, children: [
           "It seems logical: close the vents in rooms you don't use and cool less house. But a central system is designed to push a set amount of air. Close vents and the pressure in the ducts rises, so more air leaks out of the ducts, often into an attic or crawlspace. A",
           " ",
           /* @__PURE__ */ jsx("a", { href: "https://eta.lbl.gov/publications/register-closing-effects-forced-air", target: "_blank", rel: "noopener noreferrer", className: ext$1, children: "Lawrence Berkeley National Laboratory study" }),
           " ",
           "found that closing registers increased energy use in typical houses with ducts outside the living space, and recommended against it. Closing more than about 60% of registers can even freeze the cooling coil."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$h, children: [
           "If you must close one, close the vent farthest from the indoor unit; that does the least harm. Better still, leave them open and use a thermostat schedule. If the coil does freeze, see",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-frozen-coil", className: a$g, children: "AC frozen up" }),
+          /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-frozen-coil", className: a$h, children: "AC frozen up" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Fixing a room that's always hot" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Fixing a room that's always hot" }),
         /* @__PURE__ */ jsx("h3", { className: h3$2, children: "Check the supply" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "Hold your hand to the vent with the AC running. Weak airflow compared with other rooms points to a long or leaky duct run, a crushed or disconnected flex duct in the attic, or a balancing damper partly closed. A technician can check and seal ducts; sealing leaky ducts typically costs $500–$2,000." }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "Hold your hand to the vent with the AC running. Weak airflow compared with other rooms points to a long or leaky duct run, a crushed or disconnected flex duct in the attic, or a balancing damper partly closed. A technician can check and seal ducts; sealing leaky ducts typically costs $500–$2,000." }),
         /* @__PURE__ */ jsx("h3", { className: h3$2, children: "Give the air a way out" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "Many homes have one central return. When a bedroom door is closed, the air pushed in has no easy way back, so less cool air goes in. If the room cools better with the door open, the fix is a return path: a larger gap under the door, a transfer grille, or a jumper duct to the hallway." }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "Many homes have one central return. When a bedroom door is closed, the air pushed in has no easy way back, so less cool air goes in. If the room cools better with the door open, the fix is a return path: a larger gap under the door, a transfer grille, or a jumper duct to the hallway." }),
         /* @__PURE__ */ jsx("h3", { className: h3$2, children: "Cut the heat coming in" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "Sun on west-facing windows, a room over a garage, or one under a hot attic gains more heat than the rest of the house. Blinds or shades, window film, and attic insulation help more than anything you do to the AC. A ceiling fan then makes the people in the room comfortable at a higher setting." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Window fans and whole-house fans" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "These fans don't cool you with a breeze; they replace hot indoor air with cooler outdoor air. That only works when it's actually cooler outside, so they're for evenings, nights and mild seasons, with the AC off and windows open." }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "Sun on west-facing windows, a room over a garage, or one under a hot attic gains more heat than the rest of the house. Blinds or shades, window film, and attic insulation help more than anything you do to the AC. A ceiling fan then makes the people in the room comfortable at a higher setting." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Window fans and whole-house fans" }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "These fans don't cool you with a breeze; they replace hot indoor air with cooler outdoor air. That only works when it's actually cooler outside, so they're for evenings, nights and mild seasons, with the AC off and windows open." }),
         /* @__PURE__ */ jsx("h3", { className: h3$2, children: "Window fans" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "The Department of Energy suggests putting a fan in a window to blow hot air out, ideally upstairs and on the side away from the wind, and opening windows on the cooler, shaded side, ideally downstairs, so fresh air is drawn through the house." }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "The Department of Energy suggests putting a fan in a window to blow hot air out, ideally upstairs and on the side away from the wind, and opening windows on the cooler, shaded side, ideally downstairs, so fresh air is drawn through the house." }),
         /* @__PURE__ */ jsx("h3", { className: h3$2, children: "Whole-house fans" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "A whole-house fan is mounted in the ceiling and pulls air through open windows and out through the attic, changing the air in the whole house quickly. Guidance from the Department of Energy's Building America program says they suit climates where summer nights fall below about 67°F with a day-to-night swing of 25°F or more, typically dry regions. Before installing one:" }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "A whole-house fan is mounted in the ceiling and pulls air through open windows and out through the attic, changing the air in the whole house quickly. Guidance from the Department of Energy's Building America program says they suit climates where summer nights fall below about 67°F with a day-to-night swing of 25°F or more, typically dry regions. Before installing one:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Only run it when it's cooler outside" }),
@@ -19235,15 +19275,15 @@ function BlogArticleHomeAirflow() {
           ] })
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$2, children: "In humid climates" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "Where nights stay warm and muggy, as in Florida, along the Gulf Coast and across the Caribbean, outdoor air rarely gets cool and dry enough to help. A whole-house fan would bring in moisture the AC then has to remove. There, ceiling fans with the AC are the better combination." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Powered attic fans: usually skip them" }),
-        /* @__PURE__ */ jsx("p", { className: p$g, children: "An attic fan on the roof or gable exhausts hot attic air. It sounds sensible, but research from the Florida Solar Energy Center found these fans generally cost more to run than they save in cooling. They can also pull cooled air out of the house through gaps in the ceiling. Sealing air leaks in the attic floor and adding insulation does more for less." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "Where nights stay warm and muggy, as in Florida, along the Gulf Coast and across the Caribbean, outdoor air rarely gets cool and dry enough to help. A whole-house fan would bring in moisture the AC then has to remove. There, ceiling fans with the AC are the better combination." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Powered attic fans: usually skip them" }),
+        /* @__PURE__ */ jsx("p", { className: p$h, children: "An attic fan on the roof or gable exhausts hot attic air. It sounds sensible, but research from the Florida Solar Energy Center found these fans generally cost more to run than they save in cooling. They can also pull cooled air out of the house through gaps in the ceiling. Sealing air leaks in the attic floor and adding insulation does more for less." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Sources" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$h, children: "Sources" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Fan On vs Auto humidity test: ",
@@ -19281,9 +19321,9 @@ function BlogArticleHomeAirflow() {
     ] })
   ] });
 }
-const PATH$8 = "/blog/14-vs-16-seer";
-const TITLE$8 = "14 vs 16 SEER: Is the Upgrade Worth It? (Payback Math)";
-const HEADLINE$8 = "14 vs 16 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)";
+const PATH$9 = "/blog/14-vs-16-seer";
+const TITLE$9 = "14 vs 16 SEER: Is the Upgrade Worth It? (Payback Math)";
+const HEADLINE$9 = "14 vs 16 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)";
 const PUBLISHED$1 = "2026-10-14";
 const UPDATED$1 = "2026-10-17";
 const TONS = 3;
@@ -19301,14 +19341,14 @@ const MARGINAL_SOUTH = hoursRateThreshold(PREMIUM, KWH_SOUTH, MARGINAL_MAX);
 const SPLIT_FACTOR$1 = SEER2_FACTOR;
 const SOUTH_BASE = 15;
 const SOUTH = /* @__PURE__ */ new Set(["AL", "AR", "AZ", "CA", "DC", "DE", "FL", "GA", "HI", "KY", "LA", "MD", "MS", "NC", "NM", "NV", "OK", "SC", "TN", "TX", "VA"]);
-const th$f = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$f = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$f = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$g = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$g = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$g = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$1 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$f = "text-gray-700 leading-relaxed mb-4";
-const a$f = "text-teal-600 hover:text-teal-700 font-medium";
+const p$g = "text-gray-700 leading-relaxed mb-4";
+const a$g = "text-teal-600 hover:text-teal-700 font-medium";
 const savings = (base, tons, hours, rate) => annualCost(tons, base, hours, rate) - annualCost(tons, 16, hours, rate);
-const years = (n) => n > 40 ? "over 40 years" : `${n.toFixed(1)} years`;
+const years$1 = (n) => n > 40 ? "over 40 years" : `${n.toFixed(1)} years`;
 function PaybackEstimator() {
   const [base, setBase] = useState(14);
   const [tons, setTons] = useState(3);
@@ -19446,18 +19486,18 @@ function BlogArticle14vs16Seer() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$8 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$9 }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$8}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$9}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$8}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$8 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$9}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$9 }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Education" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$8, headline: HEADLINE$8, description, datePublished: PUBLISHED$1, dateModified: UPDATED$1 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$9, headline: HEADLINE$9, description, datePublished: PUBLISHED$1, dateModified: UPDATED$1 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -19478,7 +19518,7 @@ function BlogArticle14vs16Seer() {
               " 8 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$8 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$9 }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "The minimum-efficiency unit or the step up? For most buyers this is the upgrade that actually pays." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$1 })
         ] }),
@@ -19508,65 +19548,65 @@ function BlogArticle14vs16Seer() {
             ": ",
             usVerdict.id === "good" ? "a good deal" : usVerdict.id === "marginal" ? "marginal, worth it if you'll keep the system well past that" : "not worth it for savings alone",
             ". That's better than the ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$f, children: "16 vs 18 upgrade" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$g, children: "16 vs 18 upgrade" }),
             ", which rarely pays back at all. In the Southeast and Southwest, the cheapest unit you can legally install is already about 15 SEER, so the step to 16 is smaller and takes ",
             hotRange,
             " years in Florida, Texas and Arizona. It's a clear good deal only where power is expensive, like Hawaii and the Caribbean."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$f, children: "I've bought a lot of air conditioners for my stores, and the cheapest unit on the quote is always tempting. It's also the one that costs the most to run for the next fifteen years. Whether the step up is worth it comes down to two numbers you already have: what you pay per kWh and how many hours your system runs. Here's the math for the 14 vs 16 decision." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: 'First: "14 SEER" now means the minimum' }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsx("p", { className: p$g, children: "I've bought a lot of air conditioners for my stores, and the cheapest unit on the quote is always tempting. It's also the one that costs the most to run for the next fifteen years. Whether the step up is worth it comes down to two numbers you already have: what you pay per kWh and how many hours your system runs. Here's the math for the 14 vs 16 decision." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: 'First: "14 SEER" now means the minimum' }),
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           `Since January 2023, new central air conditioners are rated in SEER2 and must meet regional minimums: 13.4 SEER2 (about 14 SEER) in northern states and 14.3 SEER2 (about 15 SEER) in the Southeast and Southwest. So in 2026 a "14 SEER" quote is the base model, and it can only be installed new in the North. In southern states the cheapest option is about 15 SEER, and that's the real comparison there. Our`,
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$f, children: "SEER to SEER2 converter" }),
+          /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$g, children: "SEER to SEER2 converter" }),
           " lists which states are in which region."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "The other useful fact: 16 SEER is about ",
           (16 * SPLIT_FACTOR$1).toFixed(1),
           " SEER2, right at the ENERGY STAR minimum of 15.2 SEER2 for split systems. That line matters because many utility rebates start there."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "The difference in one table" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "The difference in one table" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$f }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "14 SEER" }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "16 SEER" })
+            /* @__PURE__ */ jsx("th", { className: th$g }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "14 SEER" }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "16 SEER" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$f} font-medium`, children: "SEER2 equivalent (ducted split)" }),
-              /* @__PURE__ */ jsx("td", { className: td$f, children: "≈ 13.4 SEER2 (the northern minimum)" }),
-              /* @__PURE__ */ jsxs("td", { className: td$f, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$g} font-medium`, children: "SEER2 equivalent (ducted split)" }),
+              /* @__PURE__ */ jsx("td", { className: td$g, children: "≈ 13.4 SEER2 (the northern minimum)" }),
+              /* @__PURE__ */ jsxs("td", { className: td$g, children: [
                 "≈ ",
                 (16 * SPLIT_FACTOR$1).toFixed(1),
                 " SEER2 (ENERGY STAR level)"
               ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$f} font-medium`, children: "Power draw, 3-ton" }),
-              /* @__PURE__ */ jsx("td", { className: td$f, children: "2.57 kW" }),
-              /* @__PURE__ */ jsx("td", { className: td$f, children: "2.25 kW" })
+              /* @__PURE__ */ jsx("td", { className: `${td$g} font-medium`, children: "Power draw, 3-ton" }),
+              /* @__PURE__ */ jsx("td", { className: td$g, children: "2.57 kW" }),
+              /* @__PURE__ */ jsx("td", { className: td$g, children: "2.25 kW" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$f} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$g} font-medium`, children: [
                 "Yearly cost, 3-ton, ",
                 US_HOURS.toLocaleString(),
                 " hrs, ",
                 cents(US_RATE)
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$f, children: usd(annualCost(TONS, 14, US_HOURS, US_RATE)) }),
-              /* @__PURE__ */ jsx("td", { className: td$f, children: usd(annualCost(TONS, 16, US_HOURS, US_RATE)) })
+              /* @__PURE__ */ jsx("td", { className: td$g, children: usd(annualCost(TONS, 14, US_HOURS, US_RATE)) }),
+              /* @__PURE__ */ jsx("td", { className: td$g, children: usd(annualCost(TONS, 16, US_HOURS, US_RATE)) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$f} font-medium`, children: "Typical compressor" }),
-              /* @__PURE__ */ jsx("td", { className: td$f, children: "Single-stage" }),
-              /* @__PURE__ */ jsx("td", { className: td$f, children: "Single-stage or two-stage" })
+              /* @__PURE__ */ jsx("td", { className: `${td$g} font-medium`, children: "Typical compressor" }),
+              /* @__PURE__ */ jsx("td", { className: td$g, children: "Single-stage" }),
+              /* @__PURE__ */ jsx("td", { className: td$g, children: "Single-stage or two-stage" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$f} font-medium`, children: "Extra cost of 16 over 14" }),
-              /* @__PURE__ */ jsxs("td", { className: td$f, colSpan: 2, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$g} font-medium`, children: "Extra cost of 16 over 14" }),
+              /* @__PURE__ */ jsxs("td", { className: td$g, colSpan: 2, children: [
                 "Usually ",
                 usd(PREMIUM_LOW),
                 "–",
@@ -19577,7 +19617,7 @@ function BlogArticle14vs16Seer() {
           ] })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "The premium range is from published 2025–2026 cost guides, not quotes. Your two quotes from the same installer are the only premium that matters." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "The math" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "The math" }),
         /* @__PURE__ */ jsxs("div", { className: "bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4 font-mono text-sm text-gray-800", children: [
           "Power (kW) = tons × 12 ÷ SEER",
           /* @__PURE__ */ jsx("br", {}),
@@ -19585,7 +19625,7 @@ function BlogArticle14vs16Seer() {
           /* @__PURE__ */ jsx("br", {}),
           "Money saved = kWh saved × your rate"
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "The middle line is the shortcut for this step: 12 × (1/14 − 1/16) works out to 3/28, about 0.107 kWh per ton per hour. A 3-ton system running ",
           US_HOURS.toLocaleString(),
           " hours saves about",
@@ -19597,66 +19637,66 @@ function BlogArticle14vs16Seer() {
           usd(usSave),
           "."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "For the southern comparison (15 vs 16) the saving per ton-hour is less than half that: 12 × (1/15 − 1/16) = 0.05 kWh. Then divide the price difference by the yearly saving to get the payback period, and compare it to how long you'll keep the system. Central AC typically lasts",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/how-long-do-air-conditioners-last", className: a$f, children: "15 to 20 years" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/how-long-do-air-conditioners-last", className: a$g, children: "15 to 20 years" }),
           "; I use ",
           LIFE,
           " below to stay conservative."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Where 16 SEER pays back" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Where 16 SEER pays back" }),
         /* @__PURE__ */ jsx(HowWeJudge, {}),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "A 3-ton system, a 16 SEER premium of ",
           usd(PREMIUM),
           ", local residential electricity rates and our estimate of typical cooling hours for each climate. Northern states compare against a 14 SEER; southern states against the 15 SEER that's the cheapest option there."
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "Location" }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "Compared with" }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "Rate" }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "Cooling hrs/yr" }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "Saved per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "Payback" }),
-            /* @__PURE__ */ jsx("th", { className: th$f, children: "Verdict" }),
-            /* @__PURE__ */ jsxs("th", { className: th$f, children: [
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "Location" }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "Compared with" }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "Rate" }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "Cooling hrs/yr" }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "Saved per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "Payback" }),
+            /* @__PURE__ */ jsx("th", { className: th$g, children: "Verdict" }),
+            /* @__PURE__ */ jsxs("th", { className: th$g, children: [
               "Net over ",
               LIFE,
               " yrs, if it lasts"
             ] })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: scenarios.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$f, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$f, children: s.place }) }),
-            /* @__PURE__ */ jsxs("td", { className: td$f, children: [
+            /* @__PURE__ */ jsx("td", { className: td$g, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$g, children: s.place }) }),
+            /* @__PURE__ */ jsxs("td", { className: td$g, children: [
               s.base,
               " SEER"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$f, children: cents(s.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$f, children: s.hours.toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$f, children: usd(s.save) }),
-            /* @__PURE__ */ jsx("td", { className: td$f, children: years(s.payback) }),
-            /* @__PURE__ */ jsx("td", { className: td$f, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
-            /* @__PURE__ */ jsxs("td", { className: `${td$f} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
+            /* @__PURE__ */ jsx("td", { className: td$g, children: cents(s.rate) }),
+            /* @__PURE__ */ jsx("td", { className: td$g, children: s.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$g, children: usd(s.save) }),
+            /* @__PURE__ */ jsx("td", { className: td$g, children: years$1(s.payback) }),
+            /* @__PURE__ */ jsx("td", { className: td$g, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
+            /* @__PURE__ */ jsxs("td", { className: `${td$g} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
               s.net >= 0 ? "+" : "−",
               usd(Math.abs(s.net))
             ] })
           ] }, s.place)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "In most of the U.S. this upgrade is marginal. In the North a 16 pays back in about 8–10 years where the summer is moderate, and about 12 where it's short, like Michigan: worth it if you'll keep the system for its full life, not if you might move. In the South hot states run the AC twice as long, but because the comparison is 15 vs 16, the 16 still takes ",
           hotRange,
           " years in Florida, Texas and Arizona. Where power is expensive and the AC runs most of the year (Hawaii, the Caribbean), it's a good deal, paying back in a few years.",
           bahamas && /* @__PURE__ */ jsxs(Fragment, { children: [
             " In the Bahamas it's better than the table shows: BPL charges more for every kWh above 800 a month, so the kWh an efficient AC saves come off the most expensive part of the bill (see the",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${bahamas.slug}`, className: a$f, children: "Bahamas cost page" }),
+            /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${bahamas.slug}`, className: a$g, children: "Bahamas cost page" }),
             ")."
           ] })
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$1, children: "A quick rule of thumb" }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "For a 3-ton system, multiply your yearly cooling hours by your rate in dollars. In the North (14 vs 16), if the result is ",
           /* @__PURE__ */ jsxs("strong", { children: [
             "above ",
@@ -19683,51 +19723,51 @@ function BlogArticle14vs16Seer() {
           hoursRateThreshold(500, KWH_SOUTH, GOOD_MAX).toLocaleString(),
           " in the South."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(PaybackEstimator, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "What else changes between a 14 and a 16" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "What else changes between a 14 and a 16" }),
         /* @__PURE__ */ jsx("h3", { className: h3$1, children: "Comfort: often nothing" }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "Many 16 SEER systems use the same single-stage compressor design as a 14, just with larger coils and a more efficient fan. They run the same way, on or off, so don't expect better humidity control or quieter running unless the 16 is a two-stage model. Ask which one you're being quoted; a two-stage 16 costs more, but it runs longer at low output, which evens out temperatures and pulls more moisture from the air. If comfort is what you're after, see ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$f, children: "16 vs 18 SEER" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$g, children: "16 vs 18 SEER" }),
           ", where variable-speed systems come in."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$1, children: "Repairs" }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "A single-stage 16 is no harder to fix than a 14. That's the quiet advantage of this step: you get most of the efficiency gain without the inverter electronics and brand-specific parts of an 18 SEER system. On grids with frequent outages and brownouts, that matters. Simpler controls have less to lose. See",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$f, children: "how to protect your AC from surges, brownouts and outages" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$g, children: "how to protect your AC from surges, brownouts and outages" }),
           "."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$1, children: "Rebates" }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "The federal 25C tax credit for central AC ended on December 31, 2025, but many utilities still pay rebates for ENERGY STAR equipment. A 16 SEER at 15.2 SEER2 or above usually qualifies; a 14 never does. A rebate of a few hundred dollars can take a big share out of the premium. See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$f, children: "HVAC tax credits and rebates in 2026" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$g, children: "HVAC tax credits and rebates in 2026" }),
           "."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$1, children: "Replacing a working 14? Don't, for efficiency alone" }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "If your current system is a 14 SEER and runs fine, replacing it with a 16 to save ",
           usd(usSave),
           " a year makes no sense against the cost of a whole new system. This comparison is for when you're buying anyway. If your system is SEER 10 or older, the picture is very different; run it through the",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/calculators/repair-vs-replace", className: a$f, children: "repair vs replace calculator" }),
+          /* @__PURE__ */ jsx(Link, { to: "/calculators/repair-vs-replace", className: a$g, children: "repair vs replace calculator" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Check the actual ratings on your quotes" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Check the actual ratings on your quotes" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Compare SEER2, not SEER." }),
             ' Equipment made since 2023 is rated in SEER2. A unit sold as "16 SEER" might be 15.0 or 15.2 SEER2, and only the second reaches ENERGY STAR. Convert with our',
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$f, children: "SEER to SEER2 converter" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$g, children: "SEER to SEER2 converter" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "The rating belongs to the matched system." }),
             " The outdoor unit's rating depends on the indoor coil or air handler it's paired with. Look up the exact combination on your quote in the",
             " ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$f, children: "AHRI Directory" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$g, children: "AHRI Directory" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -19737,11 +19777,11 @@ function BlogArticle14vs16Seer() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Get the size right first." }),
             " An oversized 16 wastes more than a correctly sized 14 saves. Ask for a load calculation and check it with the ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$f, children: "AC sizing calculator" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$g, children: "AC sizing calculator" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Which one to buy" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Which one to buy" }),
         /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-6 mb-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-5", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Choose 14 SEER (or the base 15) if" }),
@@ -19769,24 +19809,24 @@ function BlogArticle14vs16Seer() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$g, children: [
           "Thinking about going higher? See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$f, children: "16 vs 18 SEER" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$g, children: "16 vs 18 SEER" }),
           " for the next step, ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/18-vs-20-seer", className: a$f, children: "18 vs 20 SEER" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/18-vs-20-seer", className: a$g, children: "18 vs 20 SEER" }),
           " for the top tier, the ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$f, children: "SEER rating chart" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$g, children: "SEER rating chart" }),
           " for every rating from 8 to 25, and ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$f, children: "choosing the right SEER rating" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$g, children: "choosing the right SEER rating" }),
           " ",
           "for the bigger picture."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$g, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "U.S. electricity rates: ",
@@ -19821,17 +19861,17 @@ function BlogArticle14vs16Seer() {
     ] })
   ] });
 }
-const PATH$7 = "/blog/protect-air-conditioner-power-surges-outages";
-const TITLE$7 = "Protect Your AC From Surges, Brownouts & Outages";
-const HEADLINE$7 = "How to Protect Your Air Conditioner from Power Surges, Brownouts and Outages";
+const PATH$8 = "/blog/protect-air-conditioner-power-surges-outages";
+const TITLE$8 = "Protect Your AC From Surges, Brownouts & Outages";
+const HEADLINE$8 = "How to Protect Your Air Conditioner from Power Surges, Brownouts and Outages";
 const PUBLISHED = "2026-10-12";
 const UPDATED = "2026-10-12";
-const th$e = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$e = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$e = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$f = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$f = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$f = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$e = "text-gray-700 leading-relaxed mb-4";
-const a$e = "text-teal-600 hover:text-teal-700 font-medium";
+const p$f = "text-gray-700 leading-relaxed mb-4";
+const a$f = "text-teal-600 hover:text-teal-700 font-medium";
 const ext = "text-teal-700 hover:underline";
 const THREATS = [
   {
@@ -19893,18 +19933,18 @@ function BlogArticlePowerProtection() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$7 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$8 }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$7}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$8}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$7}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$7 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$8}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$8 }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Guides" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$7, headline: HEADLINE$7, description, datePublished: PUBLISHED, dateModified: UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$8, headline: HEADLINE$8, description, datePublished: PUBLISHED, dateModified: UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -19925,7 +19965,7 @@ function BlogArticlePowerProtection() {
               " 10 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$7 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$8 }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Four different electrical problems, four different fixes, and a hurricane checklist." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED })
         ] }),
@@ -19948,7 +19988,7 @@ function BlogArticlePowerProtection() {
             " so units don't restart the moment power returns. Before a hurricane, switch units off at the breaker."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$e, children: "I run several retail stores in the Caribbean. On an island grid, outages, flickers and brownouts aren't emergencies; they're part of a normal week, and a dead AC in a store means lost customers that afternoon. Here's what we actually do:" }),
+        /* @__PURE__ */ jsx("p", { className: p$f, children: "I run several retail stores in the Caribbean. On an island grid, outages, flickers and brownouts aren't emergencies; they're part of a normal week, and a dead AC in a store means lost customers that afternoon. Here's what we actually do:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Delayed starts on the condensers." }),
@@ -19963,36 +20003,36 @@ function BlogArticlePowerProtection() {
             " We've lost refrigerators and their compressors to brownouts, so that equipment now runs through appliance protectors that watch the voltage: when it drops, they cut power, and they wait a few minutes before reconnecting."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$e, children: "The most important point below is one that's easy to miss: surges and brownouts are different problems, and the device that stops one doesn't stop the other." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "The four ways bad power damages an AC" }),
+        /* @__PURE__ */ jsx("p", { className: p$f, children: "The most important point below is one that's easy to miss: surges and brownouts are different problems, and the device that stops one doesn't stop the other." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "The four ways bad power damages an AC" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "Problem" }),
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "What happens" }),
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "What it damages" }),
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "What protects against it" })
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "Problem" }),
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "What happens" }),
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "What it damages" }),
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "What protects against it" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: THREATS.map((t) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$e} font-medium`, children: t.threat }),
-            /* @__PURE__ */ jsx("td", { className: td$e, children: t.what }),
-            /* @__PURE__ */ jsx("td", { className: td$e, children: t.damage }),
-            /* @__PURE__ */ jsx("td", { className: td$e, children: t.fix })
+            /* @__PURE__ */ jsx("td", { className: `${td$f} font-medium`, children: t.threat }),
+            /* @__PURE__ */ jsx("td", { className: td$f, children: t.what }),
+            /* @__PURE__ */ jsx("td", { className: td$f, children: t.damage }),
+            /* @__PURE__ */ jsx("td", { className: td$f, children: t.fix })
           ] }, t.threat)) })
         ] }) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Surge protector vs. voltage protector: not the same thing" }),
-        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Surge protector vs. voltage protector: not the same thing" }),
+        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
           "A ",
           /* @__PURE__ */ jsx("strong", { children: "surge protector" }),
           " clamps voltage spikes that last a few millionths of a second. It's what you want against lightning nearby or the jolt when the utility switches lines. It's mostly the electronics (control boards, thermostats, the inverter in a variable-speed system) that die from surges."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
           "A ",
           /* @__PURE__ */ jsx("strong", { children: "brownout" }),
           " is the opposite: voltage that stays too low. A motor that's asked to do the same work on less voltage draws more current, and more current means heat. One HVAC company cites winding temperatures rising 10–15% for every 10% drop in voltage. Run a compressor like that for an afternoon, or start and stop it repeatedly on a sagging line, and the windings burn out. That's the expensive part: a compressor replacement typically runs ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/ac-repair-cost-2026", className: a$e, children: "$1,500–$3,000" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ac-repair-cost-2026", className: a$f, children: "$1,500–$3,000" }),
           ", often enough to make replacing the whole system the better deal."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
           "A surge protector does nothing about low voltage. What does is a ",
           /* @__PURE__ */ jsx("strong", { children: "voltage monitor" }),
           " (sold as compressor protectors, voltage protectors or brownout protectors): it watches the supply and disconnects the unit when voltage goes too low or too high, then waits until power has been normal for a few minutes before reconnecting. Many models include surge protection too, so one device at the outdoor unit covers both problems and adds a restart delay."
@@ -20008,42 +20048,42 @@ function BlogArticlePowerProtection() {
           /* @__PURE__ */ jsx("em", { children: "restart delay" }),
           ", not just a joule rating. That's what the protectors on our refrigeration do, and it's what a compressor needs. A plain surge strip won't cut power when voltage sags. The same goes for refrigerators, freezers, ice machines and anything else with a compressor."
         ] }) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Delay timers: the cheapest protection there is" }),
-        /* @__PURE__ */ jsx("p", { className: p$e, children: "When an AC stops, the refrigerant is at high pressure on one side of the compressor and low on the other. It takes a few minutes to even out. If power drops and returns in seconds, the compressor tries to restart against that pressure difference, can stall, and draws locked-rotor current until its overload trips. Do that a few times during a flickering outage and it adds up." }),
-        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Delay timers: the cheapest protection there is" }),
+        /* @__PURE__ */ jsx("p", { className: p$f, children: "When an AC stops, the refrigerant is at high pressure on one side of the compressor and low on the other. It takes a few minutes to even out. If power drops and returns in seconds, the compressor tries to restart against that pressure difference, can stall, and draws locked-rotor current until its overload trips. Do that a few times during a flickering outage and it adds up." }),
+        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
           "A ",
           /* @__PURE__ */ jsx("strong", { children: "delay-on-make timer" }),
           " holds the unit off for a set time (typically 3–5 minutes) after power returns. Set different delays on different units and they come back one after another instead of all at once, which is easier on the grid, on your building's wiring and, if you're on one, on your generator. Many thermostats and newer outdoor units already have a short delay built in, so check before adding one; for older equipment it's a small part and a quick job for a technician."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Hard-start kits and soft starters" }),
-        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Hard-start kits and soft starters" }),
+        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
           "These are often confused. A ",
           /* @__PURE__ */ jsx("strong", { children: "hard-start kit" }),
           " (an extra capacitor and relay) gives the compressor a stronger kick to get going. It helps an aging compressor or one on weak voltage start, but it treats a symptom: if a technician recommends one, ask why the compressor is struggling."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$f, children: [
           "A ",
           /* @__PURE__ */ jsx("strong", { children: "soft starter" }),
           " does the reverse: it ramps the compressor up gently, cutting the surge of current it pulls at start-up. Emerson says its SecureStart module reduces starting current by up to 75%. That means less light flicker, less strain on a weak supply, and, most usefully, the ability to run an AC from a smaller generator than it would otherwise need."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "What each device costs" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "What each device costs" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "Device" }),
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "Protects against" }),
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "Typical cost" }),
-            /* @__PURE__ */ jsx("th", { className: th$e, children: "Notes" })
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "Device" }),
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "Protects against" }),
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "Typical cost" }),
+            /* @__PURE__ */ jsx("th", { className: th$f, children: "Notes" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: DEVICES.map((d) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$e} font-medium`, children: d.device }),
-            /* @__PURE__ */ jsx("td", { className: td$e, children: d.protects }),
-            /* @__PURE__ */ jsx("td", { className: td$e, children: d.cost }),
-            /* @__PURE__ */ jsx("td", { className: td$e, children: d.note })
+            /* @__PURE__ */ jsx("td", { className: `${td$f} font-medium`, children: d.device }),
+            /* @__PURE__ */ jsx("td", { className: td$f, children: d.protects }),
+            /* @__PURE__ */ jsx("td", { className: td$f, children: d.cost }),
+            /* @__PURE__ */ jsx("td", { className: td$f, children: d.note })
           ] }, d.device)) })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Approximate U.S. prices. Installation labor varies by location; in the Caribbean, expect parts to cost more and to take longer to arrive, so stock spares." }),
-        /* @__PURE__ */ jsx("p", { className: p$e, children: "Set those against what they protect: a control board or contactor is a few hundred dollars to replace, a compressor $1,500–$3,000, and a whole system $5,000–$15,000. If your grid has regular brownouts, a $200 voltage protector on each outdoor unit is one of the best-value purchases you can make for your cooling." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "What to protect first" }),
+        /* @__PURE__ */ jsx("p", { className: p$f, children: "Set those against what they protect: a control board or contactor is a few hundred dollars to replace, a compressor $1,500–$3,000, and a whole system $5,000–$15,000. If your grid has regular brownouts, a $200 voltage protector on each outdoor unit is one of the best-value purchases you can make for your cooling." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "What to protect first" }),
         /* @__PURE__ */ jsxs("ol", { className: "list-decimal pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Frequent brownouts or flickering power:" }),
@@ -20060,7 +20100,7 @@ function BlogArticlePowerProtection() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Variable-speed (inverter) system:" }),
             " surge protection matters more, because there's more electronics to lose. See ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$e, children: "16 vs 18 SEER" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$f, children: "16 vs 18 SEER" }),
             " for the trade-offs of these systems."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -20068,8 +20108,8 @@ function BlogArticlePowerProtection() {
             " a soft starter, so the generator can actually start the AC."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Running AC on a generator" }),
-        /* @__PURE__ */ jsx("p", { className: p$e, children: "The common mistake is sizing a generator for the AC's running draw. A compressor's starting current, listed as LRA (locked-rotor amps) on the outdoor unit's nameplate, is several times higher than its running current, and the generator has to supply it for that first second or the unit won't start. Ask the installer to size the generator from the LRA of everything that will start on it, or add a soft starter to bring that number down." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Running AC on a generator" }),
+        /* @__PURE__ */ jsx("p", { className: p$f, children: "The common mistake is sizing a generator for the AC's running draw. A compressor's starting current, listed as LRA (locked-rotor amps) on the outdoor unit's nameplate, is several times higher than its running current, and the generator has to supply it for that first second or the unit won't start. Ask the installer to size the generator from the LRA of everything that will start on it, or add a soft starter to bring that number down." }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Use a transfer switch or interlock" }),
@@ -20087,7 +20127,7 @@ function BlogArticlePowerProtection() {
             ", the largest first, and let each settle before starting the next."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Hurricane checklist for your AC" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Hurricane checklist for your AC" }),
         /* @__PURE__ */ jsx("h3", { className: h3, children: "Before the storm" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1.5 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsx("li", { children: "Turn every unit off at the thermostat, then turn off its breaker or outdoor disconnect. This is what we do at every store." }),
@@ -20107,12 +20147,12 @@ function BlogArticlePowerProtection() {
           /* @__PURE__ */ jsx("li", { children: "Turn breakers back on, then start units one at a time from the thermostat. Listen for grinding, buzzing or a unit that won't start." }),
           /* @__PURE__ */ jsx("li", { children: "Check that the condensate drain is clear; storm debris and algae can block it and flood the indoor unit." })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Sources" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$f, children: "Sources" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Generator safety: ",
@@ -26329,9 +26369,9 @@ const WINDOW_OPTIONS = [
   { value: "lowE", label: "Double-Pane Low-E or Triple-Pane", sub: "Energy-efficient glass with low-emissivity coating. Modern standard.", icon: "✨" }
 ];
 function calcSizing(inputs) {
-  const climate = STATE_CLIMATE[inputs.state] || STATE_CLIMATE["OTHER"];
-  let btu = inputs.sqft * climate.baseBtu;
-  let totalAdj = climate.climateAdj;
+  const climate2 = STATE_CLIMATE[inputs.state] || STATE_CLIMATE["OTHER"];
+  let btu = inputs.sqft * climate2.baseBtu;
+  let totalAdj = climate2.climateAdj;
   const ceilingAdj = {
     standard: 0,
     high: 0.12,
@@ -26402,7 +26442,7 @@ function calcSizing(inputs) {
     roundedTons,
     lowTons,
     highTons,
-    climate,
+    climate: climate2,
     totalAdjPct: Math.round(totalAdj * 100)
   };
 }
@@ -27016,8 +27056,8 @@ function HoursNote({ children }) {
     ". A bigger or smaller home, a different thermostat setting or a second unit changes the result."
   ] });
 }
-const th$d = "border-b border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap";
-const td$d = "border-b border-gray-100 px-3 py-2.5 text-gray-700";
+const th$e = "border-b border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap";
+const td$e = "border-b border-gray-100 px-3 py-2.5 text-gray-700";
 function AcCostIndex() {
   var _a2, _b2;
   const [sort, setSort] = useState("cost");
@@ -27081,6 +27121,20 @@ function AcCostIndex() {
         ] })
       ] }),
       /* @__PURE__ */ jsx(USCostMap, {}),
+      /* @__PURE__ */ jsxs(
+        Link,
+        {
+          to: "/ac-cost/world",
+          className: "flex items-center justify-between gap-3 rounded-lg border border-orange-200 bg-orange-50 px-4 py-3 mb-3 hover:border-orange-400 transition-colors",
+          children: [
+            /* @__PURE__ */ jsxs("span", { className: "text-sm text-gray-800", children: [
+              /* @__PURE__ */ jsx("strong", { children: "Around the world:" }),
+              " every state, province and country we cover, compared on one yardstick."
+            ] }),
+            /* @__PURE__ */ jsx("span", { className: "text-sm font-semibold text-orange-700 whitespace-nowrap", children: "World →" })
+          ]
+        }
+      ),
       /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6", children: [
         /* @__PURE__ */ jsxs(
           Link,
@@ -27195,10 +27249,10 @@ function AcCostIndex() {
       ] }),
       /* @__PURE__ */ jsx("div", { className: "overflow-x-auto bg-white rounded-lg shadow-sm border border-gray-200 mb-6", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[560px] text-sm", children: [
         /* @__PURE__ */ jsx("thead", { className: "bg-teal-50", children: /* @__PURE__ */ jsxs("tr", { children: [
-          /* @__PURE__ */ jsx("th", { className: th$d, children: "Rank" }),
-          /* @__PURE__ */ jsx("th", { className: th$d, children: "State" }),
-          /* @__PURE__ */ jsx("th", { className: th$d, children: "Electricity price per kWh" }),
-          /* @__PURE__ */ jsxs("th", { className: th$d, children: [
+          /* @__PURE__ */ jsx("th", { className: th$e, children: "Rank" }),
+          /* @__PURE__ */ jsx("th", { className: th$e, children: "State" }),
+          /* @__PURE__ */ jsx("th", { className: th$e, children: "Electricity price per kWh" }),
+          /* @__PURE__ */ jsxs("th", { className: th$e, children: [
             "Cost per hour of AC",
             /* @__PURE__ */ jsx("br", {}),
             /* @__PURE__ */ jsxs("span", { className: "font-normal text-xs text-gray-500", children: [
@@ -27206,21 +27260,21 @@ function AcCostIndex() {
               REF_SEER
             ] })
           ] }),
-          /* @__PURE__ */ jsxs("th", { className: th$d, children: [
+          /* @__PURE__ */ jsxs("th", { className: th$e, children: [
             "Cost per year of AC",
             /* @__PURE__ */ jsx("br", {}),
             /* @__PURE__ */ jsx("span", { className: "font-normal text-xs text-gray-500", children: "(hours it runs a year)" })
           ] })
         ] }) }),
         /* @__PURE__ */ jsx("tbody", { children: rows.map((s) => /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50", children: [
-          /* @__PURE__ */ jsx("td", { className: `${td$d} text-gray-400`, children: s.rank }),
-          /* @__PURE__ */ jsx("td", { className: td$d, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${s.slug}`, className: "font-semibold text-teal-700 hover:underline", children: s.name }) }),
-          /* @__PURE__ */ jsxs("td", { className: td$d, children: [
+          /* @__PURE__ */ jsx("td", { className: `${td$e} text-gray-400`, children: s.rank }),
+          /* @__PURE__ */ jsx("td", { className: td$e, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${s.slug}`, className: "font-semibold text-teal-700 hover:underline", children: s.name }) }),
+          /* @__PURE__ */ jsxs("td", { className: td$e, children: [
             cents(s.rate),
             "/kWh"
           ] }),
-          /* @__PURE__ */ jsx("td", { className: td$d, children: usd(costPerHour(REF_TONS, REF_SEER, s.rate), 2) }),
-          /* @__PURE__ */ jsxs("td", { className: td$d, children: [
+          /* @__PURE__ */ jsx("td", { className: td$e, children: usd(costPerHour(REF_TONS, REF_SEER, s.rate), 2) }),
+          /* @__PURE__ */ jsxs("td", { className: td$e, children: [
             usd(annualCost(REF_TONS, REF_SEER, s.hours, s.rate)),
             " ",
             /* @__PURE__ */ jsxs("span", { className: "text-xs text-gray-400", children: [
@@ -27456,11 +27510,11 @@ function NotFound() {
     ] })
   ] });
 }
-const th$c = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$c = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$d = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$d = "text-gray-700 leading-relaxed mb-4";
-const a$d = "text-teal-600 hover:text-teal-700 font-medium";
+const th$d = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$d = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$e = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$e = "text-gray-700 leading-relaxed mb-4";
+const a$e = "text-teal-600 hover:text-teal-700 font-medium";
 function local(c, usdAmount, digits = 0) {
   if (c.currency === "USD") return usd(usdAmount, digits);
   const v = usdAmount * (c.localRate / c.usdRate);
@@ -27626,7 +27680,7 @@ function AcCostCountry({ c }) {
           cents(rate),
           " at the exchange rate used by the source."
         ] }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$d, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$e, children: [
           "Cost to run AC in ",
           c.inName,
           " by system size"
@@ -27673,34 +27727,34 @@ function AcCostCountry({ c }) {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "System size (cooling output)" }),
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Electricity used per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per hour (US$)" }),
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per month, 8 hrs/day (US$)" }),
-            /* @__PURE__ */ jsxs("th", { className: th$c, children: [
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "System size (cooling output)" }),
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Electricity used per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Cost per hour (US$)" }),
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Cost per month, 8 hrs/day (US$)" }),
+            /* @__PURE__ */ jsxs("th", { className: th$d, children: [
               "Cost per year, ",
               c.hours.toLocaleString(),
               " hours (US$)"
             ] }),
-            showLocal && /* @__PURE__ */ jsxs("th", { className: th$c, children: [
+            showLocal && /* @__PURE__ */ jsxs("th", { className: th$d, children: [
               "Cost per year (",
               c.currency,
               ")"
             ] })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: TONNAGES.map((t) => /* @__PURE__ */ jsxs("tr", { className: t === REF_TONS ? "bg-amber-50/60" : "", children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$c} font-medium`, children: sizeLabel(t) }),
-            /* @__PURE__ */ jsxs("td", { className: td$c, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$d} font-medium`, children: sizeLabel(t) }),
+            /* @__PURE__ */ jsxs("td", { className: td$d, children: [
               kw(t, REF_SEER).toFixed(2),
               " kWh"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$c, children: usd(costPerHour(t, REF_SEER, rate), 2) }),
-            /* @__PURE__ */ jsx("td", { className: td$c, children: usd(costPerHour(t, REF_SEER, rate) * SUMMER_MONTH_HOURS) }),
-            /* @__PURE__ */ jsx("td", { className: td$c, children: usd(annualCost(t, REF_SEER, c.hours, rate)) }),
-            showLocal && /* @__PURE__ */ jsx("td", { className: td$c, children: local(c, annualCost(t, REF_SEER, c.hours, rate)) })
+            /* @__PURE__ */ jsx("td", { className: td$d, children: usd(costPerHour(t, REF_SEER, rate), 2) }),
+            /* @__PURE__ */ jsx("td", { className: td$d, children: usd(costPerHour(t, REF_SEER, rate) * SUMMER_MONTH_HOURS) }),
+            /* @__PURE__ */ jsx("td", { className: td$d, children: usd(annualCost(t, REF_SEER, c.hours, rate)) }),
+            showLocal && /* @__PURE__ */ jsx("td", { className: td$d, children: local(c, annualCost(t, REF_SEER, c.hours, rate)) })
           ] }, t)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$d, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$e, children: [
           "What a more efficient AC saves in ",
           c.inName
         ] }),
@@ -27716,35 +27770,35 @@ function AcCostCountry({ c }) {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Efficiency (SEER)" }),
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Electricity used per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per year (US$)" }),
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Saved per year vs. SEER 10" }),
-            /* @__PURE__ */ jsx("th", { className: th$c, children: "Saved over 10 years vs. SEER 10" })
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Efficiency (SEER)" }),
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Electricity used per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Cost per year (US$)" }),
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Saved per year vs. SEER 10" }),
+            /* @__PURE__ */ jsx("th", { className: th$d, children: "Saved over 10 years vs. SEER 10" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: SEERS.map((seer) => {
             const cost2 = annualCost(REF_TONS, seer, c.hours, rate);
             const sv = annualCost(REF_TONS, 10, c.hours, rate) - cost2;
             return /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$c} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$d} font-medium`, children: [
                 "SEER ",
                 seer
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$c, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$d, children: [
                 kw(REF_TONS, seer).toFixed(2),
                 " kWh"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$c, children: usd(cost2) }),
-              /* @__PURE__ */ jsx("td", { className: td$c, children: seer === 10 ? "—" : usd(sv) }),
-              /* @__PURE__ */ jsx("td", { className: td$c, children: seer === 10 ? "—" : usd(sv * 10) })
+              /* @__PURE__ */ jsx("td", { className: td$d, children: usd(cost2) }),
+              /* @__PURE__ */ jsx("td", { className: td$d, children: seer === 10 ? "—" : usd(sv) }),
+              /* @__PURE__ */ jsx("td", { className: td$d, children: seer === 10 ? "—" : usd(sv * 10) })
             ] }, seer);
           }) })
         ] }) }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$d, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$e, children: [
           "About electricity in ",
           c.inName
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$d, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
           "Power in ",
           c.inName,
           " is supplied by ",
@@ -27753,11 +27807,11 @@ function AcCostCountry({ c }) {
           c.note,
           c.noteUrl && /* @__PURE__ */ jsxs(Fragment, { children: [
             " (",
-            /* @__PURE__ */ jsx("a", { href: c.noteUrl, target: "_blank", rel: "noopener noreferrer", className: a$d, children: "source" }),
+            /* @__PURE__ */ jsx("a", { href: c.noteUrl, target: "_blank", rel: "noopener noreferrer", className: a$e, children: "source" }),
             ")"
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "Protect the AC you're paying to run" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Protect the AC you're paying to run" }),
         /* @__PURE__ */ jsxs("div", { className: "flex gap-3 rounded-lg bg-amber-50 border border-amber-200 p-5 mb-4", children: [
           /* @__PURE__ */ jsx(Zap, { className: "w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" }),
           /* @__PURE__ */ jsxs("div", { className: "text-gray-700 leading-relaxed", children: [
@@ -27782,7 +27836,7 @@ function AcCostCountry({ c }) {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$d, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$e, children: [
           "How ",
           c.inName,
           " compares"
@@ -27804,19 +27858,19 @@ function AcCostCountry({ c }) {
           "/kWh (",
           RATES_AS_OF,
           "). See ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$d, children: "costs in every U.S. state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$e, children: "costs in every U.S. state" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "How we calculated this" }),
-        /* @__PURE__ */ jsxs("p", { className: p$d, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$e, children: "How we calculated this" }),
+        /* @__PURE__ */ jsxs("p", { className: p$e, children: [
           "Power draw (kW) = tons × 12,000 Btu/h ÷ SEER ÷ 1,000. Cost = kW × hours × rate. Rate:",
           " ",
-          /* @__PURE__ */ jsx("a", { href: c.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: a$d, children: c.source }),
+          /* @__PURE__ */ jsx("a", { href: c.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: a$e, children: c.source }),
           ", ",
           c.asOf,
           ". Island rates change with fuel prices, often monthly, so check your latest bill: divide the total by the kWh used to get your average price per kWh. Cooling hours are our estimate for the climate."
@@ -27839,11 +27893,11 @@ function AcCostCountry({ c }) {
     ] })
   ] });
 }
-const th$b = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$b = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$c = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$c = "text-gray-700 leading-relaxed mb-4";
-const a$c = "text-teal-600 hover:text-teal-700 font-medium";
+const th$c = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$c = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$d = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$d = "text-gray-700 leading-relaxed mb-4";
+const a$d = "text-teal-600 hover:text-teal-700 font-medium";
 const SEER_OPTIONS = [3.6, 4.1, 4.6, 5.1, 5.6, 6.1, 6.5, 7, 7.5, 8, 8.5, 9, 10];
 function Estimator$2({ c }) {
   const m = (n, d = 0) => money(c.currency, n, d);
@@ -28137,8 +28191,8 @@ function AcCostEuropeCountry({ c }) {
           /* @__PURE__ */ jsx("p", { className: "text-xs text-gray-500", children: k.note })
         ] }, k.label)) }),
         /* @__PURE__ */ jsx(Estimator$2, { c }, c.slug),
-        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "Yearly cost by city" }),
-        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "Yearly cost by city" }),
+        /* @__PURE__ */ jsxs("p", { className: p$d, children: [
           "How long the AC runs matters as much as the price of power, and that varies hugely across ",
           c.inName,
           ". This table is for ",
@@ -28158,21 +28212,21 @@ function AcCostEuropeCountry({ c }) {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "City" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Hours the AC runs per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per year, 3.5 kW split unit" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per year, portable unit (same hours)" })
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "City" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Hours the AC runs per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per year, 3.5 kW split unit" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per year, portable unit (same hours)" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: cities.map((x) => /* @__PURE__ */ jsxs("tr", { className: x.name === c.ref.name ? "bg-amber-50/60" : "", children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$b} font-medium`, children: x.name }),
-            /* @__PURE__ */ jsx("td", { className: td$b, children: x.hours.toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$b, children: m(yearCost$2(EU_REF_KW, EU_REF_SEER, x.hours, rate)) }),
-            /* @__PURE__ */ jsx("td", { className: td$b, children: m(portableHour * x.hours) })
+            /* @__PURE__ */ jsx("td", { className: `${td$c} font-medium`, children: x.name }),
+            /* @__PURE__ */ jsx("td", { className: td$c, children: x.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$c, children: m(yearCost$2(EU_REF_KW, EU_REF_SEER, x.hours, rate)) }),
+            /* @__PURE__ */ jsx("td", { className: td$c, children: m(portableHour * x.hours) })
           ] }, x.name)) })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-4", children: "Cooling hours are our estimate of full-load hours for each city's climate. For comparison, the EU energy label assumes 350 hours for an average European climate. The portable column assumes a typical unit drawing about 1 kW." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "Cost by unit size" }),
-        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "Cost by unit size" }),
+        /* @__PURE__ */ jsxs("p", { className: p$d, children: [
           "In Europe, air conditioners are sold by how much cooling they put out, in kW (the BTU size is in brackets). A bigger unit cools a bigger space but uses more electricity. All at energy class A++ (SEER ",
           EU_REF_SEER,
           ") and",
@@ -28182,11 +28236,11 @@ function AcCostEuropeCountry({ c }) {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Unit size (cooling output)" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Typical use" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per hour of running" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per month (8 hours a day)" }),
-            /* @__PURE__ */ jsxs("th", { className: th$b, children: [
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Unit size (cooling output)" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Typical use" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per hour of running" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per month (8 hours a day)" }),
+            /* @__PURE__ */ jsxs("th", { className: th$c, children: [
               "Cost per year in ",
               c.ref.name,
               " (",
@@ -28196,23 +28250,23 @@ function AcCostEuropeCountry({ c }) {
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             EU_SIZES.map((s) => /* @__PURE__ */ jsxs("tr", { className: s.kw === EU_REF_KW ? "bg-amber-50/60" : "", children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$b} font-medium whitespace-nowrap`, children: s.label }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: s.use }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: m(hourCost$1(s.kw, EU_REF_SEER, rate), 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: m(hourCost$1(s.kw, EU_REF_SEER, rate) * HOT_MONTH_HOURS$1) }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: m(yearCost$2(s.kw, EU_REF_SEER, c.ref.hours, rate)) })
+              /* @__PURE__ */ jsx("td", { className: `${td$c} font-medium whitespace-nowrap`, children: s.label }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: s.use }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: m(hourCost$1(s.kw, EU_REF_SEER, rate), 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: m(hourCost$1(s.kw, EU_REF_SEER, rate) * HOT_MONTH_HOURS$1) }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: m(yearCost$2(s.kw, EU_REF_SEER, c.ref.hours, rate)) })
             ] }, s.kw)),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$b} font-medium whitespace-nowrap`, children: "Portable" }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: "one room, no installation" }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: m(portableHour, 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: m(portableHour * HOT_MONTH_HOURS$1) }),
-              /* @__PURE__ */ jsx("td", { className: td$b, children: m(portableHour * c.ref.hours) })
+              /* @__PURE__ */ jsx("td", { className: `${td$c} font-medium whitespace-nowrap`, children: "Portable" }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: "one room, no installation" }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: m(portableHour, 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: m(portableHour * HOT_MONTH_HOURS$1) }),
+              /* @__PURE__ */ jsx("td", { className: td$c, children: m(portableHour * c.ref.hours) })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "What a more efficient unit saves" }),
-        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "What a more efficient unit saves" }),
+        /* @__PURE__ */ jsxs("p", { className: p$d, children: [
           "The energy label shows the unit's seasonal efficiency (SEER) and class: the higher the SEER, the less electricity it needs for the same cooling. Yearly cost of one 3.5 kW (12,000 BTU) unit in",
           " ",
           c.ref.name,
@@ -28222,14 +28276,14 @@ function AcCostEuropeCountry({ c }) {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Efficiency (EU SEER)" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Energy class" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$b, children: "Saved per year vs an old SEER 4.6 unit" })
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Efficiency (EU SEER)" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Energy class" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Cost per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$c, children: "Saved per year vs an old SEER 4.6 unit" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: EU_SEERS.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$b} font-medium`, children: s.seer.toFixed(1) }),
-            /* @__PURE__ */ jsxs("td", { className: td$b, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$c} font-medium`, children: s.seer.toFixed(1) }),
+            /* @__PURE__ */ jsxs("td", { className: td$c, children: [
               s.label,
               s.note ? /* @__PURE__ */ jsxs("span", { className: "text-gray-400", children: [
                 " (",
@@ -28237,8 +28291,8 @@ function AcCostEuropeCountry({ c }) {
                 ")"
               ] }) : null
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$b, children: m(yearCost$2(EU_REF_KW, s.seer, c.ref.hours, rate)) }),
-            /* @__PURE__ */ jsx("td", { className: td$b, children: s.seer === 4.6 ? "—" : m(save2(4.6, s.seer)) })
+            /* @__PURE__ */ jsx("td", { className: td$c, children: m(yearCost$2(EU_REF_KW, s.seer, c.ref.hours, rate)) }),
+            /* @__PURE__ */ jsx("td", { className: td$c, children: s.seer === 4.6 ? "—" : m(save2(4.6, s.seer)) })
           ] }, s.seer)) })
         ] }) }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-500 mb-4", children: [
@@ -28249,18 +28303,18 @@ function AcCostEuropeCountry({ c }) {
           save2(6.1, 8.5) * 12 < 300 ? ", so in most homes the premium for a top-class unit is hard to earn back on cooling alone" : "",
           ". Many split units are heat pumps that also heat in winter, and there the heating rating (SCOP) usually matters more."
         ] }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$c, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$d, children: [
           "What to know about electricity prices in ",
           c.inName
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$d, children: [
           "The price used here is the ",
           c.rateNote,
           " (",
           c.asOf,
           ")."
         ] }),
-        c.tariff.map((t) => /* @__PURE__ */ jsx("p", { className: p$c, children: t }, t)),
+        c.tariff.map((t) => /* @__PURE__ */ jsx("p", { className: p$d, children: t }, t)),
         /* @__PURE__ */ jsxs("div", { className: "flex gap-3 rounded-lg bg-slate-50 border border-slate-200 p-5 mb-4", children: [
           /* @__PURE__ */ jsx(Wind, { className: "w-6 h-6 text-teal-600 flex-shrink-0 mt-0.5" }),
           /* @__PURE__ */ jsxs("div", { className: "text-gray-700 leading-relaxed", children: [
@@ -28274,7 +28328,7 @@ function AcCostEuropeCountry({ c }) {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$c, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$d, children: [
           "How ",
           c.inName,
           " compares"
@@ -28301,19 +28355,19 @@ function AcCostEuropeCountry({ c }) {
           RATES_AS_OF,
           "). See",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$c, children: "costs in every U.S. state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$d, children: "costs in every U.S. state" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "How we calculated this" }),
-        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$d, children: "How we calculated this" }),
+        /* @__PURE__ */ jsxs("p", { className: p$d, children: [
           "Electricity used (kWh) = cooling capacity (kW) ÷ SEER × hours. Cost = kWh × price. Price:",
           " ",
-          /* @__PURE__ */ jsx("a", { href: c.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: a$c, children: c.source }),
+          /* @__PURE__ */ jsx("a", { href: c.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: a$d, children: c.source }),
           ". U.S. dollar figures use ",
           usdNote,
           " (",
@@ -28325,11 +28379,11 @@ function AcCostEuropeCountry({ c }) {
     ] })
   ] });
 }
-const th$a = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$a = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$b = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$b = "text-gray-700 leading-relaxed mb-4";
-const a$b = "text-teal-600 hover:text-teal-700 font-medium";
+const th$b = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$b = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$c = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$c = "text-gray-700 leading-relaxed mb-4";
+const a$c = "text-teal-600 hover:text-teal-700 font-medium";
 function AcCostState() {
   const { state: slug } = useParams();
   const s = getState(slug);
@@ -28479,7 +28533,7 @@ function AcCostState() {
           /* @__PURE__ */ jsx("p", { className: "text-xs text-gray-500", children: k.note })
         ] }, k.label)) }),
         /* @__PURE__ */ jsx(StateCostEstimator, { stateName: s.name, stateRate: s.rate, stateHours: s.hours }, s.slug),
-        /* @__PURE__ */ jsxs("h2", { className: h2$b, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$c, children: [
           "Cost to run AC in ",
           s.name,
           " by system size"
@@ -28494,7 +28548,7 @@ function AcCostState() {
             cents(s.rate),
             "/kWh. The size (tons, BTU, kW of cooling) is how much heat the system removes, not the electricity it uses; that's the second column. Most homes need about 1 ton per 500–600 sq ft; our",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$b, children: "AC sizing calculator" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$c, children: "AC sizing calculator" }),
             " gives a closer estimate."
           ] }),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1", children: [
@@ -28518,30 +28572,30 @@ function AcCostState() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "System size (cooling output)" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Electricity used per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Cost per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Cost per day (8 hours)" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Cost per summer month (8 hrs × 30 days)" }),
-            /* @__PURE__ */ jsxs("th", { className: th$a, children: [
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "System size (cooling output)" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Electricity used per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per day (8 hours)" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per summer month (8 hrs × 30 days)" }),
+            /* @__PURE__ */ jsxs("th", { className: th$b, children: [
               "Cost per year (",
               s.hours.toLocaleString(),
               " hours)"
             ] })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: TONNAGES.map((t) => /* @__PURE__ */ jsxs("tr", { className: t === REF_TONS ? "bg-amber-50/60" : "", children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$a} font-medium`, children: sizeLabel(t) }),
-            /* @__PURE__ */ jsxs("td", { className: td$a, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$b} font-medium`, children: sizeLabel(t) }),
+            /* @__PURE__ */ jsxs("td", { className: td$b, children: [
               kw(t, REF_SEER).toFixed(2),
               " kWh"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$a, children: usd(costPerHour(t, REF_SEER, s.rate), 2) }),
-            /* @__PURE__ */ jsx("td", { className: td$a, children: usd(costPerHour(t, REF_SEER, s.rate) * 8, 2) }),
-            /* @__PURE__ */ jsx("td", { className: td$a, children: usd(costPerHour(t, REF_SEER, s.rate) * SUMMER_MONTH_HOURS) }),
-            /* @__PURE__ */ jsx("td", { className: td$a, children: usd(annualCost(t, REF_SEER, s.hours, s.rate)) })
+            /* @__PURE__ */ jsx("td", { className: td$b, children: usd(costPerHour(t, REF_SEER, s.rate), 2) }),
+            /* @__PURE__ */ jsx("td", { className: td$b, children: usd(costPerHour(t, REF_SEER, s.rate) * 8, 2) }),
+            /* @__PURE__ */ jsx("td", { className: td$b, children: usd(costPerHour(t, REF_SEER, s.rate) * SUMMER_MONTH_HOURS) }),
+            /* @__PURE__ */ jsx("td", { className: td$b, children: usd(annualCost(t, REF_SEER, s.hours, s.rate)) })
           ] }, t)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$b, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$c, children: [
           "How much a more efficient AC saves in ",
           s.name
         ] }),
@@ -28557,42 +28611,42 @@ function AcCostState() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Efficiency (SEER)" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Electricity used per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Cost per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Saved per year vs. SEER 10" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Saved over 10 years vs. SEER 10" })
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Efficiency (SEER)" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Electricity used per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Saved per year vs. SEER 10" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Saved over 10 years vs. SEER 10" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: SEERS.map((seer) => {
             const c = annualCost(REF_TONS, seer, s.hours, s.rate);
             const sv = annualCost(REF_TONS, 10, s.hours, s.rate) - c;
             return /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$a} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$b} font-medium`, children: [
                 "SEER ",
                 seer
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$a, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$b, children: [
                 kw(REF_TONS, seer).toFixed(2),
                 " kWh"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$a, children: usd(c) }),
-              /* @__PURE__ */ jsx("td", { className: td$a, children: seer === 10 ? "—" : usd(sv) }),
-              /* @__PURE__ */ jsx("td", { className: td$a, children: seer === 10 ? "—" : usd(sv * 10) })
+              /* @__PURE__ */ jsx("td", { className: td$b, children: usd(c) }),
+              /* @__PURE__ */ jsx("td", { className: td$b, children: seer === 10 ? "—" : usd(sv) }),
+              /* @__PURE__ */ jsx("td", { className: td$b, children: seer === 10 ? "—" : usd(sv * 10) })
             ] }, seer);
           }) })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$b, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
           "For your exact system, rate and usage, run the",
           " ",
-          /* @__PURE__ */ jsxs(Link, { to: calcLink, className: a$b, children: [
+          /* @__PURE__ */ jsxs(Link, { to: calcLink, className: a$c, children: [
             "SEER savings calculator with ",
             s.name,
             "'s rate filled in"
           ] }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Why your bill may differ" }),
-        /* @__PURE__ */ jsxs("p", { className: p$b, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "Why your bill may differ" }),
+        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
           "The yearly figures assume ",
           s.hours.toLocaleString(),
           " hours of full-power cooling, our estimate for a climate with",
@@ -28610,23 +28664,23 @@ function AcCostState() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "How much the AC runs" }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Hours it runs per year" }),
-            /* @__PURE__ */ jsxs("th", { className: th$a, children: [
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "How much the AC runs" }),
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Hours it runs per year" }),
+            /* @__PURE__ */ jsxs("th", { className: th$b, children: [
               "Cost per year at ",
               s.name,
               "'s price"
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$a, children: "Cost per year at the U.S. average price" })
+            /* @__PURE__ */ jsx("th", { className: th$b, children: "Cost per year at the U.S. average price" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: ["cool", "moderate", "warm", "hot"].map((b) => /* @__PURE__ */ jsxs("tr", { className: b === s.climate ? "bg-amber-50/60" : "", children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$a} font-medium`, children: b === "cool" ? "Light" : b === "moderate" ? "Average" : b === "warm" ? "Heavy" : "Very heavy" }),
-            /* @__PURE__ */ jsx("td", { className: td$a, children: BAND_HOURS[b].toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$a, children: usd(annualCost(REF_TONS, REF_SEER, BAND_HOURS[b], s.rate)) }),
-            /* @__PURE__ */ jsx("td", { className: td$a, children: usd(annualCost(REF_TONS, REF_SEER, BAND_HOURS[b], US_RATE)) })
+            /* @__PURE__ */ jsx("td", { className: `${td$b} font-medium`, children: b === "cool" ? "Light" : b === "moderate" ? "Average" : b === "warm" ? "Heavy" : "Very heavy" }),
+            /* @__PURE__ */ jsx("td", { className: td$b, children: BAND_HOURS[b].toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$b, children: usd(annualCost(REF_TONS, REF_SEER, BAND_HOURS[b], s.rate)) }),
+            /* @__PURE__ */ jsx("td", { className: td$b, children: usd(annualCost(REF_TONS, REF_SEER, BAND_HOURS[b], US_RATE)) })
           ] }, b)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$b, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
           "At typical usage, ",
           s.name,
           " homeowners pay ",
@@ -28636,30 +28690,30 @@ function AcCostState() {
           year >= usYear ? "more" : "less",
           " to run the same system than they would at the U.S. average rate."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Ways to cut your cooling bill" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "Ways to cut your cooling bill" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Raise the thermostat while you're away. See the ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/thermostat-setback-strategy", className: a$b, children: "$0 thermostat strategy" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/thermostat-setback-strategy", className: a$c, children: "$0 thermostat strategy" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Change the filter on schedule; a clogged one can raise cooling costs 5–15%. See ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/air-filter-electricity-bill", className: a$b, children: "the $10 air filter fix" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/air-filter-electricity-bill", className: a$c, children: "the $10 air filter fix" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "If your system is 15+ years old, compare repair and replacement with the ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/repair-vs-replace", className: a$b, children: "repair vs. replace calculator" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/repair-vs-replace", className: a$c, children: "repair vs. replace calculator" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Ask your utility about AC rebates. The federal tax credit ended Dec. 31, 2025; see the ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$b, children: "2026 rebate guide" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$c, children: "2026 rebate guide" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Nearby on the price list" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "Nearby on the price list" }),
         /* @__PURE__ */ jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4", children: neighbors.map((n) => /* @__PURE__ */ jsxs(Link, { to: `/ac-cost/${n.slug}`, className: "rounded-lg border border-gray-200 p-3 hover:border-teal-400 hover:shadow-sm transition-all", children: [
           /* @__PURE__ */ jsxs("p", { className: "text-xs text-gray-500", children: [
             "#",
@@ -28671,25 +28725,25 @@ function AcCostState() {
             "/kWh"
           ] })
         ] }, n.slug)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "How we calculated this" }),
-        /* @__PURE__ */ jsxs("p", { className: p$b, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$c, children: "How we calculated this" }),
+        /* @__PURE__ */ jsxs("p", { className: p$c, children: [
           "Power draw (kW) = tons × 12,000 Btu/h ÷ SEER ÷ 1,000. Cost = kW × hours × rate. The rate is ",
           s.name,
           "'s average residential price for ",
           RATES_AS_OF,
           " from the",
           " ",
-          /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: a$b, children: "U.S. Energy Information Administration (Electric Power Monthly, Table 5.6.A)" }),
+          /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: a$c, children: "U.S. Energy Information Administration (Electric Power Monthly, Table 5.6.A)" }),
           ". Average prices include taxes and fees spread across all usage; your marginal rate on your bill may be higher or lower. Cooling hours are our estimate by climate. SEER describes average seasonal efficiency, so real hourly draw is higher on the hottest afternoons and lower on mild days."
         ] }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-500", children: [
           "Download the data: ",
-          /* @__PURE__ */ jsx("a", { href: "/data/residential-electricity-rates-by-state.csv", className: a$b, children: "residential electricity rates by state (CSV)" }),
+          /* @__PURE__ */ jsx("a", { href: "/data/residential-electricity-rates-by-state.csv", className: a$c, children: "residential electricity rates by state (CSV)" }),
           "."
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-10 rounded-lg bg-gray-50 border border-gray-200 p-6", children: [
@@ -28708,7 +28762,7 @@ function AcCostState() {
           ] }),
           /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-500 mt-4", children: [
             "See all states in the ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/how-much-does-it-cost-to-run-ac", className: a$b, children: "AC running-cost guide" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/how-much-does-it-cost-to-run-ac", className: a$c, children: "AC running-cost guide" }),
             "."
           ] })
         ] })
@@ -28717,14 +28771,14 @@ function AcCostState() {
     ] })
   ] });
 }
-const PATH$6 = "/ac-cost/caribbean";
-const TITLE$6 = "Cost to Run AC in the Caribbean 🌴 Rates by Island (2026)";
-const HEADLINE$6 = "What It Costs to Run Air Conditioning in the Caribbean";
-const th$9 = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap";
-const td$9 = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$a = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$a = "text-gray-700 leading-relaxed mb-4";
-const a$a = "text-teal-600 hover:text-teal-700 font-medium";
+const PATH$7 = "/ac-cost/caribbean";
+const TITLE$7 = "Cost to Run AC in the Caribbean 🌴 Rates by Island (2026)";
+const HEADLINE$7 = "What It Costs to Run Air Conditioning in the Caribbean";
+const th$a = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap";
+const td$a = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$b = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$b = "text-gray-700 leading-relaxed mb-4";
+const a$b = "text-teal-600 hover:text-teal-700 font-medium";
 function AcCostCaribbean() {
   const ranked = [...COUNTRIES].sort((x, y) => x.rank - y.rank);
   const most = ranked[0];
@@ -28747,17 +28801,17 @@ function AcCostCaribbean() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$6 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$7 }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$6}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$7}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$6}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$6 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$7}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$7 }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$6, headline: HEADLINE$6, description, dateModified: CARIBBEAN_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$7, headline: HEADLINE$7, description, dateModified: CARIBBEAN_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -28784,7 +28838,7 @@ function AcCostCaribbean() {
               " 7 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$6 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$7 }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Electricity rates, hourly and yearly cooling costs, and what an efficient unit saves, island by island." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: CARIBBEAN_UPDATED })
         ] }),
@@ -28820,8 +28874,8 @@ function AcCostCaribbean() {
             " to run."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$a, children: "I run retail stores in the Caribbean. Our power costs more than 30¢ a kilowatt-hour, it isn't always reliable, and the air conditioning doesn't get a season off. That combination changes how you think about every unit you buy: the purchase price matters less than what it costs to run for the next ten years, and protecting it from the grid matters as much as maintaining it. These pages put real numbers on that for each island." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Cost to run AC by country" }),
+        /* @__PURE__ */ jsx("p", { className: p$b, children: "I run retail stores in the Caribbean. Our power costs more than 30¢ a kilowatt-hour, it isn't always reliable, and the air conditioning doesn't get a season off. That combination changes how you think about every unit you buy: the purchase price matters less than what it costs to run for the next ten years, and protecting it from the grid matters as much as maintaining it. These pages put real numbers on that for each island." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Cost to run AC by country" }),
         /* @__PURE__ */ jsxs(TableExplainer, { children: [
           /* @__PURE__ */ jsx(RefSystemSentence, {}),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1", children: [
@@ -28848,18 +28902,18 @@ function AcCostCaribbean() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[640px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$9, children: "Country" }),
-            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
+            /* @__PURE__ */ jsx("th", { className: th$a, children: "Country" }),
+            /* @__PURE__ */ jsxs("th", { className: th$a, children: [
               "Electricity price per kWh",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsx("span", { className: "font-normal text-xs text-gray-500", children: "local currency" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$a, children: [
               "Same price",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsx("span", { className: "font-normal text-xs text-gray-500", children: "in U.S. cents" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$a, children: [
               "Cost per hour of AC",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsxs("span", { className: "font-normal text-xs text-gray-500", children: [
@@ -28868,20 +28922,20 @@ function AcCostCaribbean() {
                 ", US$"
               ] })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$a, children: [
               "Cost per year of AC",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsx("span", { className: "font-normal text-xs text-gray-500", children: "US$ (hours it runs a year)" })
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$9, children: "Price date" })
+            /* @__PURE__ */ jsx("th", { className: th$a, children: "Price date" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             ranked.map((c) => /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: td$9, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${c.slug}`, className: a$a, children: c.name }) }),
-              /* @__PURE__ */ jsx("td", { className: td$9, children: localRateLabel(c) }),
-              /* @__PURE__ */ jsx("td", { className: td$9, children: cents(c.usdRate) }),
-              /* @__PURE__ */ jsx("td", { className: td$9, children: usd(costPerHour(REF_TONS, REF_SEER, c.usdRate), 2) }),
-              /* @__PURE__ */ jsxs("td", { className: td$9, children: [
+              /* @__PURE__ */ jsx("td", { className: td$a, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${c.slug}`, className: a$b, children: c.name }) }),
+              /* @__PURE__ */ jsx("td", { className: td$a, children: localRateLabel(c) }),
+              /* @__PURE__ */ jsx("td", { className: td$a, children: cents(c.usdRate) }),
+              /* @__PURE__ */ jsx("td", { className: td$a, children: usd(costPerHour(REF_TONS, REF_SEER, c.usdRate), 2) }),
+              /* @__PURE__ */ jsxs("td", { className: td$a, children: [
                 usd(annualCost(REF_TONS, REF_SEER, c.hours, c.usdRate)),
                 " ",
                 /* @__PURE__ */ jsxs("span", { className: "text-xs text-gray-400", children: [
@@ -28890,19 +28944,19 @@ function AcCostCaribbean() {
                   " hrs)"
                 ] })
               ] }),
-              /* @__PURE__ */ jsx("td", { className: `${td$9} text-xs text-gray-500`, children: c.asOf })
+              /* @__PURE__ */ jsx("td", { className: `${td$a} text-xs text-gray-500`, children: c.asOf })
             ] }, c.slug)),
             /* @__PURE__ */ jsxs("tr", { className: "bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$9} font-semibold`, children: "U.S. average" }),
-              /* @__PURE__ */ jsx("td", { className: td$9, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$9, children: cents(US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$9, children: usd(costPerHour(REF_TONS, REF_SEER, US_RATE), 2) }),
-              /* @__PURE__ */ jsxs("td", { className: td$9, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$a} font-semibold`, children: "U.S. average" }),
+              /* @__PURE__ */ jsx("td", { className: td$a, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$a, children: cents(US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$a, children: usd(costPerHour(REF_TONS, REF_SEER, US_RATE), 2) }),
+              /* @__PURE__ */ jsxs("td", { className: td$a, children: [
                 usd(annualCost(REF_TONS, REF_SEER, 1500, US_RATE)),
                 " ",
                 /* @__PURE__ */ jsx("span", { className: "text-xs text-gray-400", children: "(1,500 hrs)" })
               ] }),
-              /* @__PURE__ */ jsx("td", { className: `${td$9} text-xs text-gray-500`, children: RATES_AS_OF })
+              /* @__PURE__ */ jsx("td", { className: `${td$a} text-xs text-gray-500`, children: RATES_AS_OF })
             ] })
           ] })
         ] }) }),
@@ -28925,7 +28979,7 @@ function AcCostCaribbean() {
           ] }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-500", children: "Island prices move with fuel costs, so each one shows the date it applies to. Where a price leaves out the fixed monthly charge, that charge doesn't change when you run the AC more, so the per-kWh price is the right one for working out what AC adds to a bill. We're working on the U.S. Virgin Islands and Turks & Caicos and will add them once we have a current, sourced rate." })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Why island electricity costs so much" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Why island electricity costs so much" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Imported fuel." }),
@@ -28940,12 +28994,12 @@ function AcCostCaribbean() {
             " Trinidad and Tobago runs on its own natural gas and has some of the cheapest power in the region; the Dominican Republic's tariffs are government-set."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Cutting cooling costs in island conditions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Cutting cooling costs in island conditions" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Buy on running cost, not price." }),
             " At 30¢+/kWh, a SEER 20 inverter unit uses half the electricity of a SEER 10. The difference often pays for itself in a few years. Use the ",
-            /* @__PURE__ */ jsx(Link, { to: "/", className: a$a, children: "savings calculator" }),
+            /* @__PURE__ */ jsx(Link, { to: "/", className: a$b, children: "savings calculator" }),
             " with your rate."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -28963,7 +29017,7 @@ function AcCostCaribbean() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Clean the filters." }),
             " In dusty, humid conditions filters clog fast. See ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/air-filter-electricity-bill", className: a$a, children: "the $10 air filter fix" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/air-filter-electricity-bill", className: a$b, children: "the $10 air filter fix" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -28973,27 +29027,27 @@ function AcCostCaribbean() {
         ] }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-600 mb-4", children: [
           "Also see what AC costs to run in ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$a, children: "Canada" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$b, children: "Canada" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/europe", className: a$a, children: "Europe" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/europe", className: a$b, children: "Europe" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: a$a, children: "Australia" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: a$b, children: "Australia" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/asia", className: a$a, children: "Asia" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/asia", className: a$b, children: "Asia" }),
           " and",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$a, children: "every U.S. state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$b, children: "every U.S. state" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$b, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           ranked.map((c) => /* @__PURE__ */ jsxs("li", { children: [
             c.name,
@@ -29018,23 +29072,23 @@ function AcCostCaribbean() {
     ] })
   ] });
 }
-const PATH$5 = "/ac-cost/canada";
-const TITLE$5 = "Cost to Run AC in Canada 🍁 Rates by Province (2026)";
-const HEADLINE$5 = "What It Costs to Run Air Conditioning in Canada";
-const th$8 = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap";
-const td$8 = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$9 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$9 = "text-gray-700 leading-relaxed mb-4";
-const a$9 = "text-teal-600 hover:text-teal-700 font-medium";
+const PATH$6 = "/ac-cost/canada";
+const TITLE$6 = "Cost to Run AC in Canada 🍁 Rates by Province (2026)";
+const HEADLINE$6 = "What It Costs to Run Air Conditioning in Canada";
+const th$9 = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 whitespace-nowrap";
+const td$9 = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$a = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$a = "text-gray-700 leading-relaxed mb-4";
+const a$a = "text-teal-600 hover:text-teal-700 font-medium";
 function AcCostCanada() {
   const ranked = [...PROVINCES].sort((x, y) => x.rank - y.rank);
   const most = ranked[0];
   const least = ranked[ranked.length - 1];
-  const byYear = [...PROVINCES].sort(
+  const byYear2 = [...PROVINCES].sort(
     (x, y) => annualCost(REF_TONS, REF_SEER, y.hours, y.rate) - annualCost(REF_TONS, REF_SEER, x.hours, x.rate)
   );
-  const topYear = byYear[0];
-  const lowYear = byYear[byYear.length - 1];
+  const topYear = byYear2[0];
+  const lowYear = byYear2[byYear2.length - 1];
   const perHour = (r) => cad(costPerHour(REF_TONS, REF_SEER, r), 2);
   const year = (r, h) => cad(annualCost(REF_TONS, REF_SEER, h, r));
   const description = `A 3-ton central AC costs ${perHour(least.rate)}–${perHour(most.rate)} an hour to run in Canada, from ${least.name} to ${most.name}. Electricity prices, yearly costs and SEER savings for all 10 provinces.`;
@@ -29058,17 +29112,17 @@ function AcCostCanada() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$5 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$6 }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$5}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$6}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$5}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$5 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$6}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$6 }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$5, headline: HEADLINE$5, description, dateModified: CANADA_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$6, headline: HEADLINE$6, description, dateModified: CANADA_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -29095,7 +29149,7 @@ function AcCostCanada() {
               " 6 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$5 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$6 }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Electricity prices, hourly and yearly cooling costs, and what a more efficient unit saves, province by province, in Canadian dollars." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: CANADA_UPDATED })
         ] }),
@@ -29132,8 +29186,8 @@ function AcCostCanada() {
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$9, children: "Canada is the opposite of the islands where I run my stores. There, power costs over 30¢ a kWh and the AC never gets a season off, so efficiency pays back fast. In most of Canada, electricity is cheaper and the cooling season lasts a few months, which changes the math. These pages put numbers on it so you can see whether an upgrade is worth it where you live." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Cost to run AC by province" }),
+        /* @__PURE__ */ jsx("p", { className: p$a, children: "Canada is the opposite of the islands where I run my stores. There, power costs over 30¢ a kWh and the AC never gets a season off, so efficiency pays back fast. In most of Canada, electricity is cheaper and the cooling season lasts a few months, which changes the math. These pages put numbers on it so you can see whether an upgrade is worth it where you live." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Cost to run AC by province" }),
         /* @__PURE__ */ jsxs(TableExplainer, { children: [
           /* @__PURE__ */ jsx(RefSystemSentence, {}),
           /* @__PURE__ */ jsxs("p", { className: "mb-2", children: [
@@ -29166,19 +29220,19 @@ function AcCostCanada() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[640px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$8, children: "Province" }),
-            /* @__PURE__ */ jsx("th", { className: th$8, children: "City priced" }),
-            /* @__PURE__ */ jsxs("th", { className: th$8, children: [
+            /* @__PURE__ */ jsx("th", { className: th$9, children: "Province" }),
+            /* @__PURE__ */ jsx("th", { className: th$9, children: "City priced" }),
+            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
               "Average price per kWh",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsx("span", { className: "font-normal text-xs text-gray-500", children: "home using 1,000 kWh/month" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$8, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
               "Price of each extra kWh",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsx("span", { className: "font-normal text-xs text-gray-500", children: "from 1,000 to 2,000 kWh/month" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$8, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
               "Cost per hour of AC",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsxs("span", { className: "font-normal text-xs text-gray-500", children: [
@@ -29186,7 +29240,7 @@ function AcCostCanada() {
                 REF_SEER
               ] })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$8, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$9, children: [
               "Cost per year of AC",
               /* @__PURE__ */ jsx("br", {}),
               /* @__PURE__ */ jsx("span", { className: "font-normal text-xs text-gray-500", children: "(hours it runs a year)" })
@@ -29194,12 +29248,12 @@ function AcCostCanada() {
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             ranked.map((x) => /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: td$8, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/canada/${x.slug}`, className: a$9, children: x.name }) }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: x.city.name }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: cents(x.rate) }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: cents(x.city.extraRate) }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: perHour(x.rate) }),
-              /* @__PURE__ */ jsxs("td", { className: td$8, children: [
+              /* @__PURE__ */ jsx("td", { className: td$9, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/canada/${x.slug}`, className: a$a, children: x.name }) }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: x.city.name }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: cents(x.rate) }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: cents(x.city.extraRate) }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: perHour(x.rate) }),
+              /* @__PURE__ */ jsxs("td", { className: td$9, children: [
                 year(x.rate, x.hours),
                 " ",
                 /* @__PURE__ */ jsxs("span", { className: "text-xs text-gray-400", children: [
@@ -29210,12 +29264,12 @@ function AcCostCanada() {
               ] })
             ] }, x.slug)),
             /* @__PURE__ */ jsxs("tr", { className: "bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$8} font-semibold`, children: "U.S. average" }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: cents(usRateCad) }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: perHour(usRateCad) }),
-              /* @__PURE__ */ jsxs("td", { className: td$8, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$9} font-semibold`, children: "U.S. average" }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: cents(usRateCad) }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: perHour(usRateCad) }),
+              /* @__PURE__ */ jsxs("td", { className: td$9, children: [
                 year(usRateCad, 1500),
                 " ",
                 /* @__PURE__ */ jsx("span", { className: "text-xs text-gray-400", children: "(1,500 hrs)" })
@@ -29234,8 +29288,8 @@ function AcCostCanada() {
           USD_PER_CAD_AS_OF,
           "), with 1,500 hours a year. Territories aren't in Hydro-Québec's comparison."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Across the border" }),
-        /* @__PURE__ */ jsx("p", { className: p$9, children: "The same Hydro-Québec comparison prices U.S. cities the same way, so the numbers line up directly. Canadian power is cheaper across the board, which is one reason a premium air conditioner takes longer to pay back in Canada than in the U.S." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Across the border" }),
+        /* @__PURE__ */ jsx("p", { className: p$a, children: "The same Hydro-Québec comparison prices U.S. cities the same way, so the numbers line up directly. Canadian power is cheaper across the board, which is one reason a premium air conditioner takes longer to pay back in Canada than in the U.S." }),
         /* @__PURE__ */ jsx(TableExplainer, { children: /* @__PURE__ */ jsxs("p", { children: [
           "Each row pairs a Canadian city with a nearby U.S. city. Both prices are the average price per kWh for a home using 1,000 kWh a month, in Canadian cents, before tax (",
           CANADA_RATES_DATE,
@@ -29243,33 +29297,33 @@ function AcCostCanada() {
         ] }) }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[520px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$8, children: "Canadian city" }),
-            /* @__PURE__ */ jsx("th", { className: th$8, children: "Average price per kWh (C$)" }),
-            /* @__PURE__ */ jsx("th", { className: th$8, children: "Nearby U.S. city" }),
-            /* @__PURE__ */ jsx("th", { className: th$8, children: "Average price per kWh (C$)" })
+            /* @__PURE__ */ jsx("th", { className: th$9, children: "Canadian city" }),
+            /* @__PURE__ */ jsx("th", { className: th$9, children: "Average price per kWh (C$)" }),
+            /* @__PURE__ */ jsx("th", { className: th$9, children: "Nearby U.S. city" }),
+            /* @__PURE__ */ jsx("th", { className: th$9, children: "Average price per kWh (C$)" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: US_CITIES.map((u) => {
             const ca = PROVINCES.flatMap((x) => x.cities).find((c) => c.name === u.near);
             return ca ? /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: td$8, children: ca.name }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: cents(ca.rate) }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: u.name }),
-              /* @__PURE__ */ jsx("td", { className: td$8, children: cents(u.rate) })
+              /* @__PURE__ */ jsx("td", { className: td$9, children: ca.name }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: cents(ca.rate) }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: u.name }),
+              /* @__PURE__ */ jsx("td", { className: td$9, children: cents(u.rate) })
             ] }, u.name) : null;
           }) })
         ] }) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Is a more efficient AC worth it in Canada?" }),
-        /* @__PURE__ */ jsxs("p", { className: p$9, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Is a more efficient AC worth it in Canada?" }),
+        /* @__PURE__ */ jsxs("p", { className: p$a, children: [
           "For cooling alone, the payback is slow. Going from SEER 14 to SEER 18 on a 3-ton system saves about",
           " ",
           cad(save2(on)),
           " a year in Ontario and less in provinces with cooler summers. Our",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$9, children: "16 vs 18 SEER payback analysis" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/16-vs-18-seer", className: a$a, children: "16 vs 18 SEER payback analysis" }),
           " shows why: the extra cost of a premium unit only pays back when electricity is expensive and the AC runs a lot."
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$9, children: "Heat pumps change that. A cold-climate heat pump cools in summer and heats in winter, and in most of Canada it runs far more hours heating than cooling. If you're replacing an AC, compare a heat pump on its heating efficiency (HSPF) as well as SEER, and check your province and utility for current rebates or financing." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Cutting cooling costs" }),
+        /* @__PURE__ */ jsx("p", { className: p$a, children: "Heat pumps change that. A cold-climate heat pump cools in summer and heats in winter, and in most of Canada it runs far more hours heating than cooling. If you're replacing an AC, compare a heat pump on its heating efficiency (HSPF) as well as SEER, and check your province and utility for current rebates or financing." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Cutting cooling costs" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Watch time-of-use rates." }),
@@ -29278,7 +29332,7 @@ function AcCostCanada() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Size it right." }),
             " An oversized unit short-cycles, dehumidifies poorly and costs more to buy. Check with the ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$9, children: "AC sizing calculator" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$a, children: "AC sizing calculator" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -29292,16 +29346,16 @@ function AcCostCanada() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Clean or replace the filter." }),
             " A clogged filter makes the system run longer. See ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/air-filter-electricity-bill", className: a$9, children: "the $10 air filter fix" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/air-filter-electricity-bill", className: a$a, children: "the $10 air filter fix" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$a, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Electricity prices: ",
@@ -29357,10 +29411,10 @@ const EU_PATHS = {
 };
 const CONTEXT_PATH = "M52.8,700L53.5,697.9L63.4,688L67,679.8L79.5,671.5L84.7,669.4L97,667.5L108.2,664.2L119.6,651.7L129.7,635L139.7,635.1L138.3,637.8L144.1,647.8L151.2,651.7L161.2,651.6L168.3,653.8L172.4,651.4L173.5,656.9L182.8,659.1L187.3,660.2L196.8,656.8L201.1,653.5L211.8,650L219.1,650.5L227,644.9L238.6,641.9L258.7,643L264.7,640.3L272.9,641.1L277,639.6L291.6,641.1L297.8,645.7L301.2,646.1L313.9,642.2L317.6,639.8L324,643.3L328.4,640.4L338.7,645.3L348.7,644.3L357.3,639.9L365.6,637.5L373.1,640.2L376.1,649L385.8,642.9L386.9,646.6L381.9,653.5L377.7,656.6L378.5,664.6L384.8,669.4L386.5,676.7L377.3,689.3L369.9,695.2L370.8,700L52.8,700ZM750.9,700L753,697.9L756.1,691.9L757.8,685.5L758.9,662.3L761.4,639L764.4,630.6L760.9,620.2L756.6,614.9L756.8,608.1L753.6,601.5L757.2,593.5L753.9,589.7L746.3,598.7L736.9,597.3L734,598.5L727.8,608.9L723.7,613.2L711.3,619.5L704.6,618.6L697.9,613.7L687.1,611.4L676.6,612.9L675.3,625.1L672.8,624.5L665.4,629.1L656.5,626.6L653.9,621.6L642.7,621.8L633.7,626.3L641.1,618.1L628,621L630.3,617.8L624.9,614.7L621.9,609.6L623.2,603.9L608.6,601.1L610.7,594.1L612.6,597.7L619.9,596.3L614.1,591.9L617.1,588L611,581.5L612.2,576.2L602.4,579.9L601.8,570.2L608.2,561.2L615.6,558.6L618.8,560.5L623.7,558.3L640.3,553.9L638.1,550.4L649.9,545.6L643,545.9L637.9,543.3L640.8,538.4L649.3,537.8L654.9,535.6L661.7,536L667.6,534L669.4,529.5L679,519L691.9,509.7L710.3,505.3L713.1,502.3L718.6,507L722.6,507.6L728.8,504.6L731.9,508.6L737.2,510L740.1,507L745,508.9L763.7,507.2L776.3,498.8L782,499.1L788.1,497.1L795.5,489L800,481.7L800,700ZM800,470.5L792.7,460.9L781.8,457.2L777.6,457.8L768.8,455.4L747.7,446.2L740.2,446.4L734.5,442.9L728.8,444.3L724.9,441L717.1,440.7L719.8,436.5L727.9,431.8L726.5,426.9L727.5,419.5L733.7,415.4L721.6,409L730.2,405.3L728.5,402.9L736.7,393.9L734.5,391.5L724.1,399L716.3,402.3L714.9,405.9L703.8,415L698.5,417.5L693.8,425.8L692.4,423.1L689.1,429.1L693.4,436.7L700.1,442L702.6,442L710.8,436.3L714.7,436.2L714.3,442.8L708.2,446.1L703.8,445.3L699.6,452.9L694.9,454.4L687,465.1L680.3,463.8L680.5,456.9L678.8,453.7L669.6,451.5L664.2,452L670.4,443.5L675.9,438L674.2,435.6L669,435.6L660.6,439.9L650.8,438L653.1,435.3L646.9,434.6L657.2,433.2L659.2,429.9L646.1,432.7L637.6,437.1L636.1,446.1L633.5,451.3L626.5,456.6L629.6,464L622.9,462.9L617.7,467.3L609.8,464.9L606.4,455.7L605.6,443.2L602.2,437.5L590.7,427.4L584.4,418.9L579.7,417.9L576.1,419.6L575.1,423.9L566.8,427L560.4,431.8L555.9,428.5L551,429.9L541.4,429.8L537.8,428.5L534.9,431.6L533.2,428.8L524.6,424.5L527.9,411.5L531.3,412L528,402.7L531.6,395.4L538.2,385.3L541.1,384.2L541.3,376L534.9,368.3L533.6,364.6L532.6,354.9L526.8,351.7L528.4,346.6L532.9,343.1L532.2,336.3L525.1,320.2L538.8,317.3L545.9,309.2L547.1,297.8L550.8,292.9L554,292.4L555,289.1L551.7,288.8L551.9,282.6L555.9,278.6L561.4,278.1L563.4,272.3L565.7,270.5L563.5,263.3L559.2,258.1L557.7,258.9L557.9,251.2L552,247.1L552.7,241.8L554.6,240.6L550.2,233.4L547.6,223L550,210.2L548.9,205.9L552,205.7L552.9,202.5L556.9,202L557.9,198.4L567.3,198.4L567.4,196.8L562.1,193.6L556.3,195.1L551.7,192.7L549.2,187.6L543.4,191.6L547.2,183.8L552.8,175L563.4,147.4L563.7,141.2L559.1,136.3L551.4,132.7L546.9,129.2L549.4,123.3L548.5,120.1L544.5,117.9L542.2,110.9L537.6,108.2L538.5,105.3L536.5,103.6L536.2,97L537.6,94.5L534.1,87.6L524.5,75.5L523.8,73.4L526.8,61.6L526.4,58.9L520.1,53.4L515.1,52.3L512.2,47.3L512.6,41.8L509.8,40L512.8,37L511.2,34.4L512.9,28.4L510.6,25.2L505.3,23.6L500.9,20.1L496.8,24.1L493,24.7L490.9,30.1L490.9,38L491.9,42.4L489.8,45.2L488.1,50.6L480.1,48.1L477,51.5L470.7,51.2L469.5,48.9L463.8,42L460.3,44L460.7,46.7L457.8,47.1L454.5,47.8L456.5,52.5L454.6,56.7L456.6,57.6L455.1,60.1L443.7,57.4L442.3,58.2L443,64.2L441.6,68.7L437.2,66.5L433.8,70.6L432.7,75.6L429.7,79.5L432.2,86.2L425.6,97L426.2,100.4L423,103.1L419.3,103.9L420.2,109.2L419.4,119.2L413.2,132.7L416.7,134.8L417.4,140.1L416,143.1L410.6,142.1L405.4,144.7L401.4,151.1L400,156.7L401.8,162.1L401,169.7L402.6,175.3L401.4,185.8L407.9,192.6L406.2,198.3L402.7,199.1L405.4,209.3L404.5,215.7L399.4,220.2L397,225.2L398.1,230.9L396.6,237.6L394.1,235.5L388.9,232.7L386.5,225.2L382.5,235.8L377.9,235.7L366,248.4L362.4,251.1L355.3,253L346.5,250.5L345.1,247.7L338.9,242.4L337.4,238.5L338.8,233.3L343.3,236.3L341.6,232.6L342.6,228.2L346,224.1L336.7,230.2L334.7,228.9L337.1,221.3L341.5,221.4L345.9,218.6L341.4,217.6L345.9,211.1L349.6,208.2L349.3,212.9L352.4,206.7L346.2,209.1L339.2,218.1L335.3,220.7L337,213L339,212L337.2,209L338.2,204.2L336.7,201.5L337,195.3L345.9,194.7L355.3,195.9L360,194.6L352.1,193.5L340,194.3L337.5,191.4L337.7,188L340.8,187.4L337.6,182.9L338.5,179.4L342.7,179.9L347.3,182.3L348.4,181.2L340.1,178.5L340.3,174.8L347.4,170.7L348.8,172L350.8,167.8L355,167.1L363,168.7L361.8,167L366.2,165.4L355.4,166L357.7,161.4L362.6,159.1L367.1,159.5L371.2,164.3L367.6,158.2L371.3,155.6L370,151.5L373.8,149.6L377.7,151.2L380.9,150.2L383.1,154.5L389.6,153.5L389.4,150.5L394.8,147.2L394.3,142.7L391.1,145L391.2,147.8L386.2,151.4L382.7,152.2L380.3,147.1L388.4,135.8L396.2,129.8L394.4,129.6L396,125.6L401.3,121.8L402.7,113.5L406.2,107.5L406,104.8L412.7,103.2L414.8,100.6L408.5,102.4L409,94.8L415.4,85.8L424.9,83.1L417.7,82.4L421.2,77.2L424.9,79.3L423.5,73.6L419.8,75.4L421.5,70.2L425.3,69.4L423.2,68L427.9,64.8L430.1,71L430.7,67.2L429,63.8L430.3,61.7L433.7,62.1L438.3,60.4L431.6,60.2L431.8,57.2L436.6,53.7L438.2,48L440.8,46.7L441.4,40.8L443.7,41.3L446.8,35.2L450.1,34.3L450.4,40.8L452.1,32.1L454.2,32.2L454.3,38.3L455.6,38L455.6,31.1L459.1,31.1L460.5,28.6L464.2,31.8L463.4,28.4L459.4,24.7L462,24.4L467.3,20.9L469.1,21.9L472.1,27.2L472,22.5L475.3,17.5L476.8,13.1L475.4,11.1L477.8,7.3L481.4,9.6L484.4,8.8L482.6,14.9L482.2,21.2L482.9,23.1L488.6,6.8L490.2,7.6L490,11.1L491.3,15.8L493.3,13.4L493.4,9L495.3,6.9L492.8,5.3L494.3,2.2L499.5,3.1L499.8,8.2L501.5,15.7L501.9,6.6L504.3,4.1L509.6,6.9L510.9,5.4L512.7,8L515,7.7L518.5,11.5L513.3,16.3L506,17.3L511.9,19L513.2,22.4L516.6,22.1L516.2,20.4L520.8,20.3L525,20.9L527.7,17.2L526.7,15.2L533.8,16.9L534.9,19L529.6,19.8L532,22.8L538.5,21.4L540,26.6L541.2,23.1L544.6,22L549.1,22.1L551.4,20.3L555.5,20.5L570.8,24.6L577.7,28.5L580.5,28L587.2,30.3L587.6,28.3L594.2,32.1L599,32.4L603.7,39.4L605.7,39.7L607.8,46.6L606.4,55.1L604.8,58.8L600.5,64L594.9,67.8L589,68.8L586,68L572.4,69.7L566.2,67.7L555.8,68.1L549.9,65L550,63.7L542.4,64.6L547.5,66.1L547.8,67.7L555.4,72.8L559,73.4L557.6,76L563.6,76.1L570.8,80.8L571.8,87.4L571,89.9L576.6,96.1L579.8,103.4L585.5,105.6L586.9,104.5L591.9,106.4L594.8,109L604.4,109.3L607.6,103.7L604.6,99L598.2,99.7L590.3,93.9L590.6,87.3L595.7,86.6L600.9,89.2L615.9,89.1L616.6,84.9L619.3,83.5L616.4,80.3L610.2,75.8L608.4,71.6L610.7,67.4L611.5,62.7L615.5,57.6L617.1,48.6L620.5,49L624.8,47.1L634.2,50.9L632.1,47.2L630.7,38.7L625.5,32.3L621.9,32.3L619.6,28.1L616.8,17.8L613.5,12.6L606.3,10.3L606.1,8.9L610.7,9.3L616.6,5.6L622.3,4.6L632,10.1L633.2,12.1L627.1,17.5L626.1,24L627.3,26L632.7,26.6L638.5,30.6L642.2,29.6L647.8,22.7L644.5,14.1L643,12.2L647.5,6.2L644.9,4.6L647.7,3L648.7,0L800,0ZM223.2,305.4L218.8,306.5L223,301.7ZM620.3,528.9L620.4,531.1L626.6,537.1L637.2,539.2L634.4,544.7L625.7,544.6L616.8,548.6L614.5,554.5L608.4,559.3L601.8,568.6L601.7,564.1L608.2,556.9L598.7,559L597.4,557.1L600.8,552.1L599.9,546.9L603.3,543.2L602.1,539.7L598.2,538.3L600.9,533.3L610.2,529L614,531.2ZM369.3,457.6L376.8,461.5L380.3,461.5L379.9,467.3L377,466L373.5,470.7L368.2,471.5L364.9,468.3L364.6,471.8L360.5,480.1L354.4,472.1L353.5,468.4L345.5,477.7L335.6,477L332.7,472.3L332.8,467.7L328.6,467.1L323.8,472L323.9,466.8L337,451.1L337.9,448L342.4,448.9L345,446.5L355,447.2L357.7,444L364.7,446.1L368.9,448.9L368.8,453.7ZM526.3,565.7L527.7,569.8L524.9,573.4L523.4,579.7L518.8,582.8L520.1,586L514.8,588.2L512.1,582.3L506.6,579.8L503.8,571.6L505.1,566.5L504,557.4L505.3,550.6L501.8,549.4L495.1,542.9L489.6,540L488.3,537.8L477.3,532.4L476.2,531.7L476.6,529.7L471.3,522.6L463.4,517L456.2,509.3L454.9,504.6L449.4,499.4L449.7,491.8L452.9,491.4L456.5,494.5L459.4,490.5L464.4,489L467.3,490.8L476.3,491.9L478.6,490.5L487.5,491L492.3,494.4L493.5,488.2L495.9,486.6L491.4,484.6L489.3,474.9L496.9,469.9L506.1,469.8L513.7,475.7L514.2,480.6L523.4,484.9L523.2,491.1L533.5,495.8L538.5,492L541.6,493.4L539.1,497L542.3,500.2L539.1,505L539.5,510.6L542.3,514.9L548.6,519L545.7,525.1L542.6,526.4L544.3,533.6L542.2,536.3L549.7,541.3L552.7,546L552.4,553.2L547.1,558L539.3,559.3L534.9,564.3ZM582.7,90L583.8,93.7L580.9,91.3ZM494.6,299.4L491.5,305.4L497.8,305.5L497.5,299.3L506.9,301.8L512.1,301.2L515.5,304.8L514.8,311.4L516.1,313.8L488.6,316.2L482,316.2L485,310.5L485,307.3L490.7,305.2L494,299.4ZM470.4,12.2L468.9,16.6L464.8,18.7L462.1,16.4L467.9,14.5ZM482.1,3.9L486,5.8L482.8,7.1L480.9,6.1ZM472.4,16.8L472.5,19.4L470.5,22.1L468.6,19.4L471.8,15.6ZM474.8,16L472.6,15.9L472.7,13ZM413,64.8L412.5,67.7L408.6,69.8L410.7,65.1ZM421.7,52L423.1,54.9L422.1,58L417.2,57.9L417.3,54.4L419,54.9L420.5,51ZM456.1,27.8L453.6,26.9L456.1,25.7ZM446.5,29.4L448.8,30.9L446.2,34.1L444.4,38.6L441.2,39.7L441.2,35.4L443.2,33L445.8,26.1ZM393.9,127.6L390.7,128L393.1,125.6ZM436,39L439.5,40.4L439.7,46.1L436.6,46.4L434.7,49.7L433.3,47.7L433.1,43.6ZM425.8,58.8L429.3,52.8L430.9,57.2L427.1,61.9L423.1,62.3L418.3,65.8L415.7,66.1L417.9,62.1L421.4,61.2L423.4,57.9L424.1,53.1L423.4,50L425.9,45.6L427.4,46.6L425.6,50.3L426.8,55.6ZM338.6,517.6L337.8,517.9ZM198.5,61.6L204.4,61L200.6,64.6L202.7,67.6L199.9,71.3L203.1,72.5L202.8,74.5L206.6,79.3L204.1,81.6L203.2,87.7L197,91.7L195.4,90.4L192.9,94.5L187.3,96.2L183.6,95.4L178.2,96.1L172,98.4L162.1,97L158.3,99.7L153.3,99.2L143.2,91.1L139.1,80.9L137,81.4L128.1,77.2L130.2,72.9L130.7,75.1L134.6,75.6L140.6,71.8L137.7,72L139.5,68.7L138,65.5L138.7,62.2L132.9,58.4L128.6,57.5L128.8,55.1L138.4,57.2L144.9,60.3L142.7,55.2L149.1,53.9L143.3,47.9L135,46.8L132.3,43.2L136.4,43.1L137.2,40.4L139.6,43.6L142.4,43.7L139.8,40L142.2,40.7L142.7,36.9L146.1,36.4L146.4,40.9L151,41.6L149.2,37.5L152.4,38.4L149.3,34.8L151.7,34L154.6,35.9L157.4,46.1L152,55.2L152.2,59.5L158.4,54.4L159.5,56.9L164.4,49.6L166.7,50.5L167.2,56.4L171.2,52.2L176.1,52.7L177.8,60.5L179.2,54.4L181.7,55.9L182.6,60L187.3,57.2L188.8,59.5L191.8,59.4L193.5,55L197.7,55.5ZM473.5,207L476.2,208.4L474.4,211.7L470.8,209.5ZM240.2,155L238.2,159.1L236,152.8ZM733.4,631.9L726.4,634.4L723.8,632.7L716.6,636.2L713.9,635.4L716.3,630.5L724.2,629.3L738.6,618.8L731.4,628.1ZM258.9,532.9L255.4,530.7Z";
 const EU_CENTROIDS = { "GB": [243, 316], "SE": [437, 172], "ES": [180, 559], "SK": [491, 423], "SI": [436, 475], "RO": [567, 466], "PT": [116, 558], "PL": [484, 360], "NL": [328, 358], "MT": [437, 664], "LU": [329, 405], "LT": [525, 294], "LV": [531, 264], "IT": [404, 524], "IE": [179, 314], "HU": [493, 451], "GR": [552, 588], "DE": [381, 384], "FR": [278, 459], "FI": [514, 127], "EE": [533, 229], "DK": [373, 287], "CZ": [440, 408], "CY": [719, 639], "HR": [458, 492], "BG": [580, 522], "BE": [314, 387], "AT": [426, 448] };
-const _readme$2 = "Cooling degree days (Eurostat nrg_chdd_a) per country: cdd = average of the latest 10 published years (from-to); latest = the newest single year. Used to estimate typical AC hours on the Europe map. Refresh with scripts/update-eu-cooling.py.";
-const source = "Eurostat, Cooling and heating degree days by country - annual data (nrg_chdd_a)";
-const sourceUrl = "https://ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table?lang=en";
-const updated$2 = "2026-10-16";
+const _readme$3 = "Cooling degree days (Eurostat nrg_chdd_a) per country: cdd = average of the latest 10 published years (from-to); latest = the newest single year. Used to estimate typical AC hours on the Europe map. Refresh with scripts/update-eu-cooling.py.";
+const source$1 = "Eurostat, Cooling and heating degree days by country - annual data (nrg_chdd_a)";
+const sourceUrl$1 = "https://ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table?lang=en";
+const updated$3 = "2026-10-16";
 const countries$1 = {
   AT: {
     cdd: 29.9,
@@ -29532,15 +29586,15 @@ const countries$1 = {
   }
 };
 const cooling = {
-  _readme: _readme$2,
-  source,
-  sourceUrl,
-  updated: updated$2,
+  _readme: _readme$3,
+  source: source$1,
+  sourceUrl: sourceUrl$1,
+  updated: updated$3,
   countries: countries$1
 };
-const CDD = cooling.countries;
+const CDD$1 = cooling.countries;
 const page = (name) => EU_COUNTRIES.find((c) => c.name === name);
-const inName$2 = (slug) => {
+const inName$3 = (slug) => {
   var _a2;
   return ((_a2 = EU_COUNTRIES.find((c) => c.slug === slug)) == null ? void 0 : _a2.inName) ?? slug;
 };
@@ -29550,7 +29604,7 @@ const ISO_BY_NAME = {
 };
 const fitPoints = EU_COUNTRIES.map((c) => {
   var _a2;
-  return { x: (_a2 = CDD[ISO_BY_NAME[c.name]]) == null ? void 0 : _a2.cdd, y: c.ref.hours };
+  return { x: (_a2 = CDD$1[ISO_BY_NAME[c.name]]) == null ? void 0 : _a2.cdd, y: c.ref.hours };
 }).filter(
   (p2) => typeof p2.x === "number"
 );
@@ -29563,7 +29617,7 @@ const [FIT_A, FIT_B] = (() => {
 })();
 const hoursFor = (iso) => {
   var _a2;
-  return Math.round(Math.max(0, FIT_A + FIT_B * (((_a2 = CDD[iso]) == null ? void 0 : _a2.cdd) ?? 0)) / 10) * 10;
+  return Math.round(Math.max(0, FIT_A + FIT_B * (((_a2 = CDD$1[iso]) == null ? void 0 : _a2.cdd) ?? 0)) / 10) * 10;
 };
 const makeRow = (iso, name, price, extra = {}) => {
   var _a2;
@@ -29578,7 +29632,7 @@ const ukGbp = ukPage ? ukPage.rate + (ukPage.standingChargePerDay ?? 0) * 365 / 
 const UK = ukPage ? makeRow("GB", "United Kingdom", ukGbp / GBP_PER_EUR, { ofgem: true }) : null;
 const ROWS = UK ? [...EU_ROWS, UK] : EU_ROWS;
 const BY_ISO = Object.fromEntries(ROWS.map((r) => [r.iso, r]));
-const COUNT = ROWS.length;
+const COUNT$1 = ROWS.length;
 const OLDER = EU_ROWS.filter((r) => r.olderPeriod).sort((a2, b) => a2.name.localeCompare(b.name));
 const olderList = OLDER.map((r) => `${r.name} (${r.olderPeriod})`).join(", ");
 const PAGE_LIST = (() => {
@@ -29586,13 +29640,13 @@ const PAGE_LIST = (() => {
   return names.length > 1 ? `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}` : names.join("");
 })();
 const cddYears = (() => {
-  const spans = new Set(Object.values(CDD).map((c) => `${c.from}–${c.to}`));
+  const spans = new Set(Object.values(CDD$1).map((c) => `${c.from}–${c.to}`));
   return [...spans].join(", ");
 })();
 const eur = (n) => `€${n.toFixed(4)}`;
 const eur0 = (n) => `€${Math.round(n).toLocaleString("en-US")}`;
 const usCents = (eurPerKwh) => cents(eurPerKwh * USD_PER_EUR);
-const usd0$1 = (e) => `$${Math.round(e * USD_PER_EUR).toLocaleString("en-US")}`;
+const usd0$2 = (e) => `$${Math.round(e * USD_PER_EUR).toLocaleString("en-US")}`;
 const METRICS$2 = {
   year: {
     label: "Yearly AC cost",
@@ -29635,8 +29689,8 @@ function EuropeCostMap() {
   ROWS.forEach((r) => {
     counts[binOf2(r)] += 1;
   });
-  const top = sorted[0];
-  const bottom = sorted[sorted.length - 1];
+  const top2 = sorted[0];
+  const bottom2 = sorted[sorted.length - 1];
   const active = hover ?? selected;
   const shown = active ? BY_ISO[active] : null;
   const isSel = (iso) => iso === selected;
@@ -29783,7 +29837,7 @@ function EuropeCostMap() {
             "#",
             rankOf(shown.iso),
             " of ",
-            COUNT,
+            COUNT$1,
             " for ",
             metric === "year" ? "yearly AC cost" : "price"
           ] })
@@ -29791,7 +29845,7 @@ function EuropeCostMap() {
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-700", children: [
           eur0(shown.year),
           " a year (about ",
-          usd0$1(shown.year),
+          usd0$2(shown.year),
           ") · about ",
           shown.hours.toLocaleString("en-US"),
           " cooling hours · ",
@@ -29805,24 +29859,24 @@ function EuropeCostMap() {
       ] }),
       shown.slug ? /* @__PURE__ */ jsxs(Link, { to: `/ac-cost/${shown.slug}`, className: "text-sm font-semibold text-teal-700 hover:underline whitespace-nowrap", children: [
         "AC costs in ",
-        inName$2(shown.slug),
+        inName$3(shown.slug),
         " →"
       ] }) : /* @__PURE__ */ jsx("span", { className: "text-xs text-gray-500", children: "Full AC cost page coming later" })
     ] }) : /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-600 py-3", children: [
       "Tap or hover over a country. Highest: ",
-      top.name,
+      top2.name,
       " (",
-      def.show(def.value(top)),
+      def.show(def.value(top2)),
       "). Lowest: ",
-      bottom.name,
+      bottom2.name,
       " (",
-      def.show(def.value(bottom)),
+      def.show(def.value(bottom2)),
       ")."
     ] }) }),
     /* @__PURE__ */ jsxs("details", { className: "mt-3 rounded-lg border border-gray-200 bg-white", children: [
       /* @__PURE__ */ jsxs("summary", { className: "cursor-pointer px-4 py-3 text-sm font-semibold text-gray-800", children: [
         "All ",
-        COUNT,
+        COUNT$1,
         " countries, as a table"
       ] }),
       /* @__PURE__ */ jsx("div", { className: "overflow-x-auto px-2 pb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full text-sm", children: [
@@ -29892,14 +29946,14 @@ function EuropeCostMap() {
     ] })
   ] });
 }
-const PATH$4 = "/ac-cost/europe";
-const TITLE$4 = "Cost to Run AC in Europe: 8 Countries, City by City";
-const HEADLINE$4 = "What It Costs to Run Air Conditioning in Europe";
-const th$7 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
-const td$7 = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$8 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$8 = "text-gray-700 leading-relaxed mb-4";
-const a$8 = "text-teal-600 hover:text-teal-700 font-medium";
+const PATH$5 = "/ac-cost/europe";
+const TITLE$5 = "Cost to Run AC in Europe: 8 Countries, City by City";
+const HEADLINE$5 = "What It Costs to Run Air Conditioning in Europe";
+const th$8 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
+const td$8 = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$9 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$9 = "text-gray-700 leading-relaxed mb-4";
+const a$9 = "text-teal-600 hover:text-teal-700 font-medium";
 function AcCostEurope() {
   const ranked = [...EU_COUNTRIES].sort((x, y) => x.rank - y.rank);
   const range = (c) => {
@@ -29923,17 +29977,17 @@ function AcCostEurope() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$4 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$5 }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$4}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$5}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$4}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$4 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$5}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$5 }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$4, headline: HEADLINE$4, description, dateModified: EUROPE_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$5, headline: HEADLINE$5, description, dateModified: EUROPE_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -29960,7 +30014,7 @@ function AcCostEurope() {
               " 6 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$4 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$5 }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Electricity prices, hourly and yearly cooling costs, and what an efficient unit saves, in Spain, Italy, Greece, Cyprus, Malta, Portugal, France and the UK, plus a map of every EU country." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: EUROPE_UPDATED })
         ] }),
@@ -29986,9 +30040,9 @@ function AcCostEurope() {
             ", but climate decides the yearly bill: the AC runs several times longer in Nicosia, Valletta or Seville than in Paris, and many times longer than in London."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$8, children: "Where I run my stores, power costs over 30¢ a kWh and the AC never gets a season off. Southern Europe isn't far behind on price, and summers there are getting hotter and longer. Northern Europe has the opposite problem: homes weren't built for air conditioning, and a portable unit bought in a heatwave can be the most expensive way to cool a room. These pages put numbers on both." }),
+        /* @__PURE__ */ jsx("p", { className: p$9, children: "Where I run my stores, power costs over 30¢ a kWh and the AC never gets a season off. Southern Europe isn't far behind on price, and summers there are getting hotter and longer. Northern Europe has the opposite problem: homes weren't built for air conditioning, and a portable unit bought in a heatwave can be the most expensive way to cool a room. These pages put numbers on both." }),
         /* @__PURE__ */ jsx(EuropeCostMap, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Cost to run AC by country" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Cost to run AC by country" }),
         /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800", children: [
           /* @__PURE__ */ jsx("p", { className: "font-bold text-gray-900 mb-2", children: "What this table shows" }),
           /* @__PURE__ */ jsxs("p", { className: "mb-2", children: [
@@ -30026,35 +30080,35 @@ function AcCostEurope() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$7, children: "Country" }),
-            /* @__PURE__ */ jsx("th", { className: th$7, children: "Electricity price per kWh" }),
-            /* @__PURE__ */ jsx("th", { className: th$7, children: "Same price in U.S. cents" }),
-            /* @__PURE__ */ jsxs("th", { className: th$7, children: [
+            /* @__PURE__ */ jsx("th", { className: th$8, children: "Country" }),
+            /* @__PURE__ */ jsx("th", { className: th$8, children: "Electricity price per kWh" }),
+            /* @__PURE__ */ jsx("th", { className: th$8, children: "Same price in U.S. cents" }),
+            /* @__PURE__ */ jsxs("th", { className: th$8, children: [
               "Cost per hour of AC",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "one 3.5 kW (12,000 BTU) unit" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$7, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$8, children: [
               "Cost per year of AC",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "coolest to hottest city" })
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$7, children: "Price date" })
+            /* @__PURE__ */ jsx("th", { className: th$8, children: "Price date" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             ranked.map((c) => /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: td$7, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${c.slug}`, className: a$8, children: c.name }) }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: unitPrice(c) }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: cents(c.usdRate) }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: money(c.currency, hourCost$1(EU_REF_KW, EU_REF_SEER, c.rate), 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: range(c) }),
-              /* @__PURE__ */ jsx("td", { className: `${td$7} text-xs text-gray-500`, children: c.asOf })
+              /* @__PURE__ */ jsx("td", { className: td$8, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${c.slug}`, className: a$9, children: c.name }) }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: unitPrice(c) }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: cents(c.usdRate) }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: money(c.currency, hourCost$1(EU_REF_KW, EU_REF_SEER, c.rate), 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: range(c) }),
+              /* @__PURE__ */ jsx("td", { className: `${td$8} text-xs text-gray-500`, children: c.asOf })
             ] }, c.slug)),
             /* @__PURE__ */ jsxs("tr", { className: "bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$7} font-semibold`, children: "U.S. average" }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: cents(US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$7, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: `${td$7} text-xs text-gray-500`, children: RATES_AS_OF })
+              /* @__PURE__ */ jsx("td", { className: `${td$8} font-semibold`, children: "U.S. average" }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: cents(US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$8, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: `${td$8} text-xs text-gray-500`, children: RATES_AS_OF })
             ] })
           ] })
         ] }) }),
@@ -30074,10 +30128,10 @@ function AcCostEurope() {
           FX_AS_OF,
           ")."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Climate matters more than price" }),
-        /* @__PURE__ */ jsx("p", { className: p$8, children: "The EU energy label assumes an air conditioner runs about 350 full-load hours a year, based on an average European climate. Real homes vary far more than that. Our estimates run from about 1,600 hours in Nicosia and 1,200 in Seville down to 250 in Paris and 30 in Edinburgh. That's why the yearly cost in Seville can be several times the cost in Paris, even though a kWh costs about the same, and why Malta, with some of the cheapest power in Europe, still spends more on cooling than Germany." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Split or portable?" }),
-        /* @__PURE__ */ jsxs("p", { className: p$8, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Climate matters more than price" }),
+        /* @__PURE__ */ jsx("p", { className: p$9, children: "The EU energy label assumes an air conditioner runs about 350 full-load hours a year, based on an average European climate. Real homes vary far more than that. Our estimates run from about 1,600 hours in Nicosia and 1,200 in Seville down to 250 in Paris and 30 in Edinburgh. That's why the yearly cost in Seville can be several times the cost in Paris, even though a kWh costs about the same, and why Malta, with some of the cheapest power in Europe, still spends more on cooling than Germany." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Split or portable?" }),
+        /* @__PURE__ */ jsxs("p", { className: p$9, children: [
           "A portable unit is the quick fix in a heatwave, but it's the expensive way to cool. It draws about 1 kW, and its exhaust hose pushes air outside that's replaced by warm air leaking back in. A 3.5 kW split unit at SEER",
           " ",
           EU_REF_SEER,
@@ -30085,12 +30139,12 @@ function AcCostEurope() {
           (EU_REF_KW / EU_REF_SEER).toFixed(2),
           " kW on average while delivering more cooling. A split unit costs more to buy and install, but much less to run, and many are also heat pumps that heat efficiently in winter."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$9, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           ranked.map((c) => /* @__PURE__ */ jsxs("li", { children: [
             c.name,
@@ -30102,15 +30156,15 @@ function AcCostEurope() {
         ] }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-600 mb-4", children: [
           "Also see ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$8, children: "the Caribbean" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$9, children: "the Caribbean" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$8, children: "Canada" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$9, children: "Canada" }),
           ", ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: a$8, children: "Australia" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: a$9, children: "Australia" }),
           " and",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$8, children: "every U.S. state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$9, children: "every U.S. state" }),
           "."
         ] })
       ] }),
@@ -30122,8 +30176,8 @@ const AU_VIEWBOX = "0 0 800 700";
 const AU_STATE_PATHS = { "western-australia": "M323.1,327.3L327.6,443.4L299.6,456.3L276,458.3L247.1,477.3L240.3,492.2L233.2,495.9L215.7,497.6L203,495.4L177.7,501.1L171.9,509.8L163,513.1L151.8,524.8L143.1,528.2L125.4,528.3L98.6,517.1L96.1,502.3L104.8,501.4L106.6,494.2L102.5,464L91.1,447.4L83.2,420.2L73.2,403.4L65.3,395L60.6,380.6L45.4,363.8L54.3,360.6L44.2,349.5L50.2,350.9L58.7,361.2L59.1,349.9L40.4,323.7L43.2,302.2L39.4,286.7L44.8,269.2L47.2,282.3L58.1,265.3L68.3,258.7L89.1,238.6L102.3,238.2L126.2,225.8L132.2,219.7L141.3,219.5L164.7,209.4L175.2,197L180.4,183.7L189.7,173.9L184.5,159.7L198.5,140.8L211.8,161.5L214.9,148.1L208.7,141L227.1,136.4L225.6,119.6L246.5,97.9L252.8,100.2L257.8,87.5L265.6,90.2L271.7,81.6L287.5,89.8L298.4,100.4L314.2,102.1Z", "northern-territory": "M323.1,327.3L314.2,102.1L326.9,107L330.9,100.6L321.3,92.2L329.9,75.6L338.1,70L336,63.2L344.8,52.5L358.1,45L361.1,49.1L385,43.9L385.8,36.3L368.3,29.1L377.4,27.6L385.9,33.4L417.3,43.2L427.2,42.8L437,47.6L451.3,39.9L446.8,46.3L457.9,52.1L463.7,42.7L471.7,50.7L463.3,59.1L461.6,67.8L450.9,69.2L449.8,86.1L440.2,98.1L442.6,102.9L484.6,128.5L490.2,135.1L484.2,326.6ZM470.6,87L458.7,87.4L466.2,77ZM343.6,38.8L334.6,40.8L338.5,31ZM361.5,31.4L351.2,42.3L342.2,36.5L344.2,31.6L357.2,27.7Z", "south-australia": "M327.6,443.4L323.1,327.3L484.2,326.6L537.9,329L534.5,390.1L529.3,492.7L528.4,491.9L523.9,573.7L514.9,569.7L505.8,556.2L507.5,544.5L503,532.9L493.9,522.2L481.1,522.3L486.8,510.6L480.4,493.1L473.3,512.6L459.9,514.2L468.4,507.8L470.6,492.6L478.2,481.1L476.3,465.6L466.6,481.8L453,489.6L439.7,507.8L432.3,486.8L425.8,475L417.6,471.6L416.5,459.1L405,451.7L391.5,447.2L382.3,448.3L363.9,438.2ZM476.8,524.5L468.8,531.3L457.5,530.2L455.7,524.4L467.2,521.5Z", "queensland": "M484.2,326.6L490.2,135.1L509.5,142.7L513.7,151.5L528.6,159.7L544.1,154.7L552.5,139.7L562.3,108.3L560.7,83.1L564.5,66.3L570.8,63.9L566.7,54.7L572.6,46L578.1,27.6L584.2,23.3L591.1,35.6L591.2,45.7L600.6,62.7L605.1,97.1L619.4,95.9L634.2,111.4L634.3,140.8L645.5,166.7L642.5,179.3L649.4,196.4L666.5,204.2L674.8,215.1L687.1,222.1L687.6,231L699.5,252.8L700.4,266.9L706.7,273.6L709.5,266.1L721,276L720.1,294L737.2,311.6L751.7,339.1L754.6,350.5L750,375.2L754,395.5L746.5,398.6L735.9,395.2L726,399.4L726,406.4L714.4,410.2L706.4,399.3L683.3,394.7L673,402L534.5,390.1L537.9,329ZM760.4,326.1L760.6,332.8L753.2,346.5L754.7,334.6Z", "tasmania": "M632.4,663.2L625.1,671.5L624.7,682.9L616.6,676.9L607,690L594.7,687.5L587.4,674.7L584.2,660.7L588.8,663.6L580.8,648.8L577.8,635.5L579.4,629.5L603.3,641.4L621.2,640L629.6,636.5L634.2,640.3Z", "victoria": "M523.9,573.7L528.4,491.9L529.3,492.7L547.9,496.4L554,509L557.5,505.5L566.3,510.2L567.1,517.9L586.3,538.1L599.1,534.1L611.5,539.7L631,539.9L640,542.4L642.2,558L668.2,575.2L657.2,579.9L634.3,580L616.6,592.8L605.2,595.7L593.7,588L586.8,574.7L582.7,580.5L563.8,591.3L549.6,582.9L535.8,578.4L530.9,579.9Z", "act": "M664.9,530.7L658.8,540.2L654,537.2L655.6,529.3Z", "new-south-wales": "M529.3,492.7L534.5,390.1L673,402L683.3,394.7L706.4,399.3L714.4,410.2L726,406.4L726,399.4L735.9,395.2L746.5,398.6L754,395.5L753.4,410L747.6,418.1L738.3,443L734.2,460.3L723.3,479.4L711,487.1L700.4,499.6L688.5,524.8L676.5,542.4L670.2,562.2L668.2,575.2L642.2,558L640,542.4L631,539.9L611.5,539.7L599.1,534.1L586.3,538.1L567.1,517.9L566.3,510.2L557.5,505.5L554,509L547.9,496.4ZM664.9,530.7L655.6,529.3L654,537.2L658.8,540.2Z" };
 const AU_STATE_LABELS = { "western-australia": [202, 322], "northern-territory": [400, 191], "south-australia": [443, 409], "queensland": [605, 263], "tasmania": [606, 659], "victoria": [579, 553], "act": [659, 534], "new-south-wales": [633, 463] };
 const AU_CITY_POINTS = { "Sydney": [698.3, 505.2], "Penrith (Western Sydney)": [690, 501.7], "Newcastle": [710.3, 487.6], "Wollongong": [691.5, 515.6], "Dubbo": [658.9, 467.1], "Wagga Wagga": [632.2, 522.8], "Broken Hill": [539.2, 450.6], "Melbourne": [588, 573], "Geelong": [577.9, 578.9], "Bendigo": [578.9, 551], "Mildura": [547.9, 496.8], "Shepparton": [597.6, 545], "Wodonga": [622.3, 542], "Traralgon": [612.5, 583.1], "Brisbane": [747.6, 380.6], "Gold Coast": [752.5, 392.2], "Sunshine Coast": [750.8, 364.1], "Toowoomba": [728.5, 379.6], "Rockhampton": [714.3, 291.6], "Townsville": [655.5, 200.6], "Cairns": [640, 151.7], "Perth": [105.9, 468.7], "Bunbury": [106.3, 497], "Albany": [147.7, 526], "Kalgoorlie": [198, 433], "Geraldton": [75.2, 408], "Broome": [187.2, 172.6], "Karratha": [92, 240], "Adelaide": [488.4, 508.8], "Mount Gambier": [521.2, 568.7], "Port Augusta": [476.1, 458.9], "Whyalla": [472.6, 469.7], "Murray Bridge": [499.2, 513.1], "Hobart": [615.4, 676.5], "Launceston": [615.4, 647.9], "Devonport": [603.8, 641.8], "Canberra": [660.6, 529.2], "Darwin": [349.2, 53], "Katherine": [378.2, 92.4], "Tennant Creek": [416.1, 196.3], "Alice Springs": [410.3, 278.6] };
-const _readme$1 = "Electricity prices for the Australia AC cost pages. Each state has one or more network zones; usage is the flat (single-rate) usage charge in Australian cents per kWh including GST, supply the daily supply charge in cents per day including GST. Figures are the regulated reference prices for July 1, 2026 to June 30, 2027: AER Default Market Offer caps (NSW, south-east QLD, SA), ESC Victorian Default Offer (VIC), QCA notified prices (regional QLD, gazetted ex GST, x1.1 here), WA uniform tariff (Synergy A1 / Horizon A2), Aurora Energy Tariff 31 (TAS), ActewAGL standing offer (ACT), Jacana Energy (NT). They all reset every July 1: update usage, supply, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for one split unit. usdPerAud is for the U.S. comparison only.";
-const updated$1 = "2026-10-21";
+const _readme$2 = "Electricity prices for the Australia AC cost pages. Each state has one or more network zones; usage is the flat (single-rate) usage charge in Australian cents per kWh including GST, supply the daily supply charge in cents per day including GST. Figures are the regulated reference prices for July 1, 2026 to June 30, 2027: AER Default Market Offer caps (NSW, south-east QLD, SA), ESC Victorian Default Offer (VIC), QCA notified prices (regional QLD, gazetted ex GST, x1.1 here), WA uniform tariff (Synergy A1 / Horizon A2), Aurora Energy Tariff 31 (TAS), ActewAGL standing offer (ACT), Jacana Energy (NT). They all reset every July 1: update usage, supply, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for one split unit. usdPerAud is for the U.S. comparison only.";
+const updated$2 = "2026-10-21";
 const period = "July 1, 2026 to June 30, 2027";
 const usdPerAud = 0.696;
 const fxAsOf$1 = "October 2026";
@@ -30590,8 +30644,8 @@ const states = [
   }
 ];
 const data$1 = {
-  _readme: _readme$1,
-  updated: updated$1,
+  _readme: _readme$2,
+  updated: updated$2,
   period,
   usdPerAud,
   fxAsOf: fxAsOf$1,
@@ -30682,8 +30736,8 @@ function AustraliaCostMap() {
   };
   const stateBin = (s) => binOf2(mainCity$1(s));
   const sorted = [...CITIES$1].sort((a2, b) => def.value(b) - def.value(a2));
-  const top = sorted[0];
-  const bottom = sorted[sorted.length - 1];
+  const top2 = sorted[0];
+  const bottom2 = sorted[sorted.length - 1];
   const same = (a2, b) => !!a2 && a2.kind === b.kind && a2.id === b.id;
   const pick = (s) => setSelected((cur) => same(cur, s) ? null : s);
   const mouseOnly = (s) => (e) => {
@@ -30915,17 +30969,17 @@ function AustraliaCostMap() {
     ] }),
     /* @__PURE__ */ jsx("div", { className: "mt-3 min-h-[92px] rounded-lg border border-teal-200 bg-teal-50 px-4 py-3", "aria-live": "polite", children: card ?? /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-600 py-3", children: [
       "Tap or hover over a state or a city dot. Highest: ",
-      top.name,
+      top2.name,
       ", ",
-      top.state.short,
+      top2.state.short,
       " (",
-      def.show(def.value(top)),
+      def.show(def.value(top2)),
       "). Lowest: ",
-      bottom.name,
+      bottom2.name,
       ", ",
-      bottom.state.short,
+      bottom2.state.short,
       " (",
-      def.show(def.value(bottom)),
+      def.show(def.value(bottom2)),
       ")."
     ] }) }),
     /* @__PURE__ */ jsxs("details", { className: "mt-3 rounded-lg border border-gray-200 bg-white", children: [
@@ -30967,18 +31021,18 @@ function AustraliaCostMap() {
     ] })
   ] });
 }
-const PATH$3 = "/ac-cost/australia";
-const TITLE$3 = "Cost to Run AC in Australia: Every State, City by City";
-const HEADLINE$3 = "What It Costs to Run Air Conditioning in Australia";
-const th$6 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
-const td$6 = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$7 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$7 = "text-gray-700 leading-relaxed mb-4";
-const a$7 = "text-teal-600 hover:text-teal-700 font-medium";
+const PATH$4 = "/ac-cost/australia";
+const TITLE$4 = "Cost to Run AC in Australia: Every State, City by City";
+const HEADLINE$4 = "What It Costs to Run Air Conditioning in Australia";
+const th$7 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
+const td$7 = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$8 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$8 = "text-gray-700 leading-relaxed mb-4";
+const a$8 = "text-teal-600 hover:text-teal-700 font-medium";
 const kwhPerHour$3 = (AU_REF_KW / AU_REF_EFF).toFixed(2);
 function AcCostAustralia() {
   const ranked = [...AU_STATES].sort((x, y) => x.rank - y.rank);
-  const priciest = ranked[0];
+  const priciest2 = ranked[0];
   const cheapest = ranked[ranked.length - 1];
   const cityYear = (s, c) => yearCost(AU_REF_KW, AU_REF_EFF, c.hours, cityRate(s, c));
   const range = (s) => {
@@ -30990,7 +31044,7 @@ function AcCostAustralia() {
     return u.length === 1 ? auCents(u[0]) : `${auCents(Math.min(...u))}–${auCents(Math.max(...u))}`;
   };
   const allCities = AU_STATES.flatMap((s) => s.cities.map((c) => ({ s, c, year: cityYear(s, c) })));
-  const top = [...allCities].sort((x, y) => y.year - x.year).slice(0, 8);
+  const top2 = [...allCities].sort((x, y) => y.year - x.year).slice(0, 8);
   const darwin = allCities.find((x) => x.c.name === "Darwin");
   const hobart = allCities.find((x) => x.c.name === "Hobart");
   const adelaide = allCities.find((x) => x.c.name === "Adelaide");
@@ -30999,7 +31053,7 @@ function AcCostAustralia() {
   const faqs2 = [
     {
       q: "Where in Australia is air conditioning most expensive to run?",
-      a: `Per kWh, ${priciest.name} has the highest usage charge (${auCents(priciest.refZone.usage)} under the ${priciest.offer}). But yearly cost depends far more on climate: in Darwin, the Pilbara and north Queensland the AC runs for much of the year, so cooling costs the most there. One 3.5 kW split costs about ${darwin ? aud(darwin.year) : ""} a year in Darwin, against ${hobart ? aud(hobart.year) : ""} in Hobart.`
+      a: `Per kWh, ${priciest2.name} has the highest usage charge (${auCents(priciest2.refZone.usage)} under the ${priciest2.offer}). But yearly cost depends far more on climate: in Darwin, the Pilbara and north Queensland the AC runs for much of the year, so cooling costs the most there. One 3.5 kW split costs about ${darwin ? aud(darwin.year) : ""} a year in Darwin, against ${hobart ? aud(hobart.year) : ""} in Hobart.`
     },
     {
       q: "How much does it cost to run a split system per hour in Australia?",
@@ -31007,7 +31061,7 @@ function AcCostAustralia() {
     },
     {
       q: "How much does a portable air conditioner cost to run in Australia?",
-      a: `A typical portable unit draws about 1 kW, so it costs roughly the price of 1 kWh per hour: from about ${aud(PORTABLE_KW_ELEC * cheapest.rate, 2)} in ${cheapest.ref.name} to ${aud(PORTABLE_KW_ELEC * priciest.rate, 2)} in ${priciest.ref.name}. A split system gives more cooling for about half the electricity.`
+      a: `A typical portable unit draws about 1 kW, so it costs roughly the price of 1 kWh per hour: from about ${aud(PORTABLE_KW_ELEC * cheapest.rate, 2)} in ${cheapest.ref.name} to ${aud(PORTABLE_KW_ELEC * priciest2.rate, 2)} in ${priciest2.ref.name}. A split system gives more cooling for about half the electricity.`
     },
     {
       q: "Is the Default Market Offer what I pay?",
@@ -31016,17 +31070,17 @@ function AcCostAustralia() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$3 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$4 }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$3}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$4}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$3}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$3 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$4}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$4 }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$3, headline: HEADLINE$3, description, dateModified: AU_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$4, headline: HEADLINE$4, description, dateModified: AU_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -31053,7 +31107,7 @@ function AcCostAustralia() {
               " 6 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$3 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$4 }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Electricity prices for 2026–27, hourly and yearly cooling costs, and what an efficient split system saves, in every state and territory, in Australian dollars." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: AU_UPDATED })
         ] }),
@@ -31071,12 +31125,12 @@ function AcCostAustralia() {
             " ",
             "to ",
             /* @__PURE__ */ jsxs("strong", { children: [
-              aud(hourCost(AU_REF_KW, AU_REF_EFF, priciest.rate), 2),
+              aud(hourCost(AU_REF_KW, AU_REF_EFF, priciest2.rate), 2),
               " in ",
-              priciest.ref.name
+              priciest2.ref.name
             ] }),
             ", at the 2026–27 regulated usage charges. ",
-            priciest.name,
+            priciest2.name,
             " has the dearest power, but climate decides the yearly bill:",
             darwin && hobart ? /* @__PURE__ */ jsxs(Fragment, { children: [
               " one unit costs about ",
@@ -31090,9 +31144,9 @@ function AcCostAustralia() {
             ] }) : null
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$7, children: "I run stores where power costs over 30¢ a kWh and the air conditioning never gets a season off, so Australia's numbers look familiar. Prices per kWh differ between states, but far less than the climate does: a split system in Darwin or Karratha works harder in a year than one in Melbourne does in a decade. These pages put a dollar figure on both sides of that." }),
+        /* @__PURE__ */ jsx("p", { className: p$8, children: "I run stores where power costs over 30¢ a kWh and the air conditioning never gets a season off, so Australia's numbers look familiar. Prices per kWh differ between states, but far less than the climate does: a split system in Darwin or Karratha works harder in a year than one in Melbourne does in a decade. These pages put a dollar figure on both sides of that." }),
         /* @__PURE__ */ jsx(AustraliaCostMap, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Cost to run AC by state and territory" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Cost to run AC by state and territory" }),
         /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800", children: [
           /* @__PURE__ */ jsx("p", { className: "font-bold text-gray-900 mb-2", children: "What this table shows" }),
           /* @__PURE__ */ jsxs("p", { className: "mb-2", children: [
@@ -31132,28 +31186,28 @@ function AcCostAustralia() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[640px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "State or territory" }),
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "Usage charge per kWh" }),
-            /* @__PURE__ */ jsxs("th", { className: th$6, children: [
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "State or territory" }),
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "Usage charge per kWh" }),
+            /* @__PURE__ */ jsxs("th", { className: th$7, children: [
               "Same price in U.S. cents",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "main city" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$6, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$7, children: [
               "Cost per hour of AC",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "one 3.5 kW unit, main city" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$6, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$7, children: [
               "Cost per year of AC",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "coolest to hottest city" })
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "Price set by" })
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "Price set by" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             ranked.map((s) => /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: td$6, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/australia/${s.slug}`, className: a$7, children: s.name }) }),
-              /* @__PURE__ */ jsx("td", { className: td$6, children: priceRange(s) }),
-              /* @__PURE__ */ jsx("td", { className: td$6, children: cents(s.usdRate) }),
-              /* @__PURE__ */ jsxs("td", { className: td$6, children: [
+              /* @__PURE__ */ jsx("td", { className: td$7, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/australia/${s.slug}`, className: a$8, children: s.name }) }),
+              /* @__PURE__ */ jsx("td", { className: td$7, children: priceRange(s) }),
+              /* @__PURE__ */ jsx("td", { className: td$7, children: cents(s.usdRate) }),
+              /* @__PURE__ */ jsxs("td", { className: td$7, children: [
                 aud(hourCost(AU_REF_KW, AU_REF_EFF, s.rate), 2),
                 " ",
                 /* @__PURE__ */ jsxs("span", { className: "text-gray-400", children: [
@@ -31162,16 +31216,16 @@ function AcCostAustralia() {
                   ")"
                 ] })
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$6, children: range(s) }),
-              /* @__PURE__ */ jsx("td", { className: `${td$6} text-xs text-gray-500`, children: s.offer })
+              /* @__PURE__ */ jsx("td", { className: td$7, children: range(s) }),
+              /* @__PURE__ */ jsx("td", { className: `${td$7} text-xs text-gray-500`, children: s.offer })
             ] }, s.slug)),
             /* @__PURE__ */ jsxs("tr", { className: "bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$6} font-semibold`, children: "U.S. average" }),
-              /* @__PURE__ */ jsx("td", { className: td$6, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$6, children: cents(US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$6, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$6, children: "—" }),
-              /* @__PURE__ */ jsxs("td", { className: `${td$6} text-xs text-gray-500`, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$7} font-semibold`, children: "U.S. average" }),
+              /* @__PURE__ */ jsx("td", { className: td$7, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$7, children: cents(US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$7, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$7, children: "—" }),
+              /* @__PURE__ */ jsxs("td", { className: `${td$7} text-xs text-gray-500`, children: [
                 "EIA, ",
                 RATES_AS_OF
               ] })
@@ -31192,25 +31246,25 @@ function AcCostAustralia() {
           AU_FX_AS_OF,
           ")."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Where AC costs the most over a year" }),
-        /* @__PURE__ */ jsx("p", { className: p$7, children: "The cities with the biggest yearly cooling bill aren't the ones with the dearest power. They're the hottest ones. Yearly cost of one 3.5 kW split at each city's usage charge and our estimate of its cooling hours:" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Where AC costs the most over a year" }),
+        /* @__PURE__ */ jsx("p", { className: p$8, children: "The cities with the biggest yearly cooling bill aren't the ones with the dearest power. They're the hottest ones. Yearly cost of one 3.5 kW split at each city's usage charge and our estimate of its cooling hours:" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[560px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "City" }),
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "State" }),
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "Hours the AC runs per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "Usage charge per kWh" }),
-            /* @__PURE__ */ jsx("th", { className: th$6, children: "Cost per year, 3.5 kW split" })
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "City" }),
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "State" }),
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "Hours the AC runs per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "Usage charge per kWh" }),
+            /* @__PURE__ */ jsx("th", { className: th$7, children: "Cost per year, 3.5 kW split" })
           ] }) }),
-          /* @__PURE__ */ jsx("tbody", { children: top.map(({ s, c, year }) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$6} font-medium`, children: c.name }),
-            /* @__PURE__ */ jsx("td", { className: td$6, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/australia/${s.slug}`, className: a$7, children: s.short }) }),
-            /* @__PURE__ */ jsx("td", { className: td$6, children: c.hours.toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$6, children: auCents(cityRate(s, c) * 100) }),
-            /* @__PURE__ */ jsx("td", { className: td$6, children: aud(year) })
+          /* @__PURE__ */ jsx("tbody", { children: top2.map(({ s, c, year }) => /* @__PURE__ */ jsxs("tr", { children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$7} font-medium`, children: c.name }),
+            /* @__PURE__ */ jsx("td", { className: td$7, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/australia/${s.slug}`, className: a$8, children: s.short }) }),
+            /* @__PURE__ */ jsx("td", { className: td$7, children: c.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$7, children: auCents(cityRate(s, c) * 100) }),
+            /* @__PURE__ */ jsx("td", { className: td$7, children: aud(year) })
           ] }, c.name)) })
         ] }) }),
-        adelaide && brisbane && /* @__PURE__ */ jsxs("p", { className: p$7, children: [
+        adelaide && brisbane && /* @__PURE__ */ jsxs("p", { className: p$8, children: [
           "The same effect shows between the capitals. Adelaide pays about ",
           Math.round((adelaide.s.rate / brisbane.s.rate - 1) * 100),
           "% more per kWh than Brisbane, yet Brisbane's longer, humid summer means a split there costs about",
@@ -31220,8 +31274,8 @@ function AcCostAustralia() {
           aud(adelaide.year),
           " in Adelaide."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "How prices are set" }),
-        /* @__PURE__ */ jsx("p", { className: p$7, children: "In NSW, south-east Queensland and South Australia, the Australian Energy Regulator sets the Default Market Offer: a cap on standing-offer prices for each electricity network, reset every July 1. Victoria has its own Victorian Default Offer, set by the Essential Services Commission. WA, Tasmania, the ACT, the Northern Territory and regional Queensland have regulated or government-set tariffs. Many households are on market offers below these prices, so they're a ceiling and a benchmark rather than what everyone pays." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "How prices are set" }),
+        /* @__PURE__ */ jsx("p", { className: p$8, children: "In NSW, south-east Queensland and South Australia, the Australian Energy Regulator sets the Default Market Offer: a cap on standing-offer prices for each electricity network, reset every July 1. Victoria has its own Victorian Default Offer, set by the Essential Services Commission. WA, Tasmania, the ACT, the Northern Territory and regional Queensland have regulated or government-set tariffs. Many households are on market offers below these prices, so they're a ceiling and a benchmark rather than what everyone pays." }),
         /* @__PURE__ */ jsxs("div", { className: "flex gap-3 rounded-lg bg-amber-50 border border-amber-200 p-5 mb-4", children: [
           /* @__PURE__ */ jsx(Sun, { className: "w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" }),
           /* @__PURE__ */ jsxs("div", { className: "text-gray-700 leading-relaxed", children: [
@@ -31229,18 +31283,18 @@ function AcCostAustralia() {
             /* @__PURE__ */ jsx("p", { children: "If your panels are generating, the AC runs partly on your own power, and each of those kWh costs only the feed-in tariff you'd otherwise earn, which is far below the usage charge. That's why cooling the house in the middle of the day and letting it coast into the evening peak is the standard advice for solar homes." })
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Split, ducted or portable?" }),
-        /* @__PURE__ */ jsxs("p", { className: p$7, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Split, ducted or portable?" }),
+        /* @__PURE__ */ jsxs("p", { className: p$8, children: [
           "Most Australian homes cool with reverse-cycle split systems, which also heat efficiently in winter. Ducted systems cool the whole house from one unit but use several times the electricity of a single split, so zoning matters. A portable unit is the most expensive way to cool a room: it draws about 1 kW and its exhaust hose pulls warm air back in, while a 3.5 kW split draws about ",
           kwhPerHour$3,
           " kW for more cooling."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$8, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           ranked.map((s) => /* @__PURE__ */ jsxs("li", { children: [
             s.name,
@@ -31256,18 +31310,18 @@ function AcCostAustralia() {
         ] }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-600 mb-4", children: [
           "Also see ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$7, children: "the Caribbean" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$8, children: "the Caribbean" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$7, children: "Canada" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$8, children: "Canada" }),
           ", ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/europe", className: a$7, children: "Europe" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/europe", className: a$8, children: "Europe" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/asia", className: a$7, children: "Asia" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/asia", className: a$8, children: "Asia" }),
           " and",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$7, children: "every U.S. state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$8, children: "every U.S. state" }),
           "."
         ] })
       ] }),
@@ -31275,11 +31329,11 @@ function AcCostAustralia() {
     ] })
   ] });
 }
-const th$5 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
-const td$5 = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$6 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$6 = "text-gray-700 leading-relaxed mb-4";
-const a$6 = "text-teal-600 hover:text-teal-700 font-medium";
+const th$6 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
+const td$6 = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$7 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$7 = "text-gray-700 leading-relaxed mb-4";
+const a$7 = "text-teal-600 hover:text-teal-700 font-medium";
 const EFF_OPTIONS$1 = [2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7];
 const kwhPerHour$2 = (AU_REF_KW / AU_REF_EFF).toFixed(2);
 function Estimator$1({ s }) {
@@ -31573,8 +31627,8 @@ function AcCostAustraliaState() {
         ] }, k.label)) }),
         /* @__PURE__ */ jsx(Estimator$1, { s }, s.slug),
         cities.length > 1 && /* @__PURE__ */ jsxs(Fragment, { children: [
-          /* @__PURE__ */ jsx("h2", { className: h2$6, children: "Yearly cost by city" }),
-          /* @__PURE__ */ jsxs("p", { className: p$6, children: [
+          /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Yearly cost by city" }),
+          /* @__PURE__ */ jsxs("p", { className: p$7, children: [
             "How long the AC runs matters as much as the price of power, and that varies hugely across ",
             s.name,
             ". This table is for ",
@@ -31595,28 +31649,28 @@ function AcCostAustraliaState() {
           ] }),
           /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
             /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-              /* @__PURE__ */ jsx("th", { className: th$5, children: "City" }),
-              multiZone && /* @__PURE__ */ jsx("th", { className: th$5, children: "Network" }),
-              multiZone && /* @__PURE__ */ jsx("th", { className: th$5, children: "Usage charge per kWh" }),
-              /* @__PURE__ */ jsx("th", { className: th$5, children: "Hours the AC runs per year" }),
-              /* @__PURE__ */ jsx("th", { className: th$5, children: "Cost per year, 3.5 kW split" }),
-              /* @__PURE__ */ jsx("th", { className: th$5, children: "Cost per year, portable unit (same hours)" })
+              /* @__PURE__ */ jsx("th", { className: th$6, children: "City" }),
+              multiZone && /* @__PURE__ */ jsx("th", { className: th$6, children: "Network" }),
+              multiZone && /* @__PURE__ */ jsx("th", { className: th$6, children: "Usage charge per kWh" }),
+              /* @__PURE__ */ jsx("th", { className: th$6, children: "Hours the AC runs per year" }),
+              /* @__PURE__ */ jsx("th", { className: th$6, children: "Cost per year, 3.5 kW split" }),
+              /* @__PURE__ */ jsx("th", { className: th$6, children: "Cost per year, portable unit (same hours)" })
             ] }) }),
             /* @__PURE__ */ jsx("tbody", { children: cities.map((c) => {
               const z = zoneOf(s, c);
               return /* @__PURE__ */ jsxs("tr", { className: c.name === s.ref.name ? "bg-amber-50/60" : "", children: [
-                /* @__PURE__ */ jsx("td", { className: `${td$5} font-medium`, children: c.name }),
-                multiZone && /* @__PURE__ */ jsx("td", { className: td$5, children: z.network.replace(/ \(.*\)$/, "") }),
-                multiZone && /* @__PURE__ */ jsx("td", { className: td$5, children: auCents(z.usage) }),
-                /* @__PURE__ */ jsx("td", { className: td$5, children: c.hours.toLocaleString() }),
-                /* @__PURE__ */ jsx("td", { className: td$5, children: aud(cityYear(c)) }),
-                /* @__PURE__ */ jsx("td", { className: td$5, children: aud(PORTABLE_KW_ELEC * cityRate(s, c) * c.hours) })
+                /* @__PURE__ */ jsx("td", { className: `${td$6} font-medium`, children: c.name }),
+                multiZone && /* @__PURE__ */ jsx("td", { className: td$6, children: z.network.replace(/ \(.*\)$/, "") }),
+                multiZone && /* @__PURE__ */ jsx("td", { className: td$6, children: auCents(z.usage) }),
+                /* @__PURE__ */ jsx("td", { className: td$6, children: c.hours.toLocaleString() }),
+                /* @__PURE__ */ jsx("td", { className: td$6, children: aud(cityYear(c)) }),
+                /* @__PURE__ */ jsx("td", { className: td$6, children: aud(PORTABLE_KW_ELEC * cityRate(s, c) * c.hours) })
               ] }, c.name);
             }) })
           ] }) }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-4", children: "Cooling hours are our estimate of full-load hours for each city's climate, for one unit in the main living area. A home cooling several rooms, or with a ducted system, uses more. The portable column assumes a typical unit drawing about 1 kW." })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$6, children: multiZone ? "Prices by network" : "The price used here" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$7, children: multiZone ? "Prices by network" : "The price used here" }),
         /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800", children: [
           /* @__PURE__ */ jsx("p", { className: "font-bold text-gray-900 mb-2", children: "What this table shows" }),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1", children: [
@@ -31643,24 +31697,24 @@ function AcCostAustraliaState() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Network" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Area covered" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Usage charge per kWh" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Daily supply charge" }),
-            /* @__PURE__ */ jsxs("th", { className: th$5, children: [
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Network" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Area covered" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Usage charge per kWh" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Daily supply charge" }),
+            /* @__PURE__ */ jsxs("th", { className: th$6, children: [
               "Cost per hour of AC",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "one 3.5 kW split" })
             ] })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: s.zones.map((z) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$5} font-medium`, children: z.network }),
-            /* @__PURE__ */ jsx("td", { className: td$5, children: z.area }),
-            /* @__PURE__ */ jsx("td", { className: td$5, children: auCents(z.usage) }),
-            /* @__PURE__ */ jsxs("td", { className: td$5, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$6} font-medium`, children: z.network }),
+            /* @__PURE__ */ jsx("td", { className: td$6, children: z.area }),
+            /* @__PURE__ */ jsx("td", { className: td$6, children: auCents(z.usage) }),
+            /* @__PURE__ */ jsxs("td", { className: td$6, children: [
               aud(z.supply / 100, 2),
               " a day"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$5, children: aud(hourCost(AU_REF_KW, AU_REF_EFF, z.usage / 100), 2) })
+            /* @__PURE__ */ jsx("td", { className: td$6, children: aud(hourCost(AU_REF_KW, AU_REF_EFF, z.usage / 100), 2) })
           ] }, z.id)) })
         ] }) }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-500 mb-4", children: [
@@ -31668,8 +31722,8 @@ function AcCostAustraliaState() {
           /* @__PURE__ */ jsx("a", { href: s.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: "text-teal-700 hover:underline", children: s.source }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "Cost by unit size" }),
-        /* @__PURE__ */ jsxs("p", { className: p$6, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Cost by unit size" }),
+        /* @__PURE__ */ jsxs("p", { className: p$7, children: [
           "Split systems in Australia are sold by how much cooling they put out, in kW (the BTU size is in brackets). A bigger unit cools a bigger space but uses more electricity. All at a seasonal efficiency of ",
           AU_REF_EFF.toFixed(1),
           " (our assumption for a typical new inverter split) and ",
@@ -31678,11 +31732,11 @@ function AcCostAustraliaState() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Unit size (cooling output)" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Typical use" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Cost per hour of running" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Cost per month (8 hours a day)" }),
-            /* @__PURE__ */ jsxs("th", { className: th$5, children: [
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Unit size (cooling output)" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Typical use" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Cost per hour of running" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Cost per month (8 hours a day)" }),
+            /* @__PURE__ */ jsxs("th", { className: th$6, children: [
               "Cost per year in ",
               s.ref.name,
               " (",
@@ -31692,28 +31746,28 @@ function AcCostAustraliaState() {
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             AU_SIZES.map((z) => /* @__PURE__ */ jsxs("tr", { className: z.kw === AU_REF_KW ? "bg-amber-50/60" : "", children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$5} font-medium whitespace-nowrap`, children: z.label }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: z.use }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(hourCost(z.kw, AU_REF_EFF, rate), 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(hourCost(z.kw, AU_REF_EFF, rate) * HOT_MONTH_HOURS) }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(yearCost(z.kw, AU_REF_EFF, s.ref.hours, rate)) })
+              /* @__PURE__ */ jsx("td", { className: `${td$6} font-medium whitespace-nowrap`, children: z.label }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: z.use }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(hourCost(z.kw, AU_REF_EFF, rate), 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(hourCost(z.kw, AU_REF_EFF, rate) * HOT_MONTH_HOURS) }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(yearCost(z.kw, AU_REF_EFF, s.ref.hours, rate)) })
             ] }, z.kw)),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$5} font-medium whitespace-nowrap`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$6} font-medium whitespace-nowrap`, children: [
                 DUCTED_KW,
                 " kW ducted"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: "whole home" }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(hourCost(DUCTED_KW, DUCTED_EFF, rate), 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(hourCost(DUCTED_KW, DUCTED_EFF, rate) * HOT_MONTH_HOURS) }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(yearCost(DUCTED_KW, DUCTED_EFF, s.ref.hours, rate)) })
+              /* @__PURE__ */ jsx("td", { className: td$6, children: "whole home" }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(hourCost(DUCTED_KW, DUCTED_EFF, rate), 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(hourCost(DUCTED_KW, DUCTED_EFF, rate) * HOT_MONTH_HOURS) }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(yearCost(DUCTED_KW, DUCTED_EFF, s.ref.hours, rate)) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$5} font-medium whitespace-nowrap`, children: "Portable" }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: "one room, no installation" }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(portableHour, 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(portableHour * HOT_MONTH_HOURS) }),
-              /* @__PURE__ */ jsx("td", { className: td$5, children: aud(portableHour * s.ref.hours) })
+              /* @__PURE__ */ jsx("td", { className: `${td$6} font-medium whitespace-nowrap`, children: "Portable" }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: "one room, no installation" }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(portableHour, 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(portableHour * HOT_MONTH_HOURS) }),
+              /* @__PURE__ */ jsx("td", { className: td$6, children: aud(portableHour * s.ref.hours) })
             ] })
           ] })
         ] }) }),
@@ -31723,8 +31777,8 @@ function AcCostAustraliaState() {
           DUCTED_EFF.toFixed(1),
           " (ducts lose some cooling). Zoning, or closing off unused rooms, cuts that cost a lot."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "What a more efficient unit saves" }),
-        /* @__PURE__ */ jsxs("p", { className: p$6, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "What a more efficient unit saves" }),
+        /* @__PURE__ */ jsxs("p", { className: p$7, children: [
           "Seasonal efficiency is how much cooling a unit delivers for each kW of electricity over a whole season. The higher it is, the less electricity it needs for the same cooling. Yearly cost of one 3.5 kW (12,000 BTU) unit in",
           " ",
           s.ref.name,
@@ -31734,21 +31788,21 @@ function AcCostAustraliaState() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Seasonal efficiency" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "What it's like" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Electricity per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Cost per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$5, children: "Saved per year vs an old 3.0 unit" })
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Seasonal efficiency" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "What it's like" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Electricity per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Cost per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$6, children: "Saved per year vs an old 3.0 unit" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: AU_EFFS.map((e) => /* @__PURE__ */ jsxs("tr", { className: e.eff === AU_REF_EFF ? "bg-amber-50/60" : "", children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$5} font-medium`, children: e.eff.toFixed(1) }),
-            /* @__PURE__ */ jsx("td", { className: td$5, children: e.note }),
-            /* @__PURE__ */ jsxs("td", { className: td$5, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$6} font-medium`, children: e.eff.toFixed(1) }),
+            /* @__PURE__ */ jsx("td", { className: td$6, children: e.note }),
+            /* @__PURE__ */ jsxs("td", { className: td$6, children: [
               (AU_REF_KW / e.eff).toFixed(2),
               " kWh"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$5, children: aud(yearCost(AU_REF_KW, e.eff, s.ref.hours, rate)) }),
-            /* @__PURE__ */ jsx("td", { className: td$5, children: e.eff === 3 ? "—" : aud(save2(3, e.eff)) })
+            /* @__PURE__ */ jsx("td", { className: td$6, children: aud(yearCost(AU_REF_KW, e.eff, s.ref.hours, rate)) }),
+            /* @__PURE__ */ jsx("td", { className: td$6, children: e.eff === 3 ? "—" : aud(save2(3, e.eff)) })
           ] }, e.eff)) })
         ] }) }),
         /* @__PURE__ */ jsxs("div", { className: "flex gap-3 rounded-lg bg-slate-50 border border-slate-200 p-5 mb-4", children: [
@@ -31764,11 +31818,11 @@ function AcCostAustraliaState() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$6, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$7, children: [
           "What to know about electricity prices in ",
           s.name
         ] }),
-        s.tariff.map((t) => /* @__PURE__ */ jsx("p", { className: p$6, children: t }, t)),
+        s.tariff.map((t) => /* @__PURE__ */ jsx("p", { className: p$7, children: t }, t)),
         /* @__PURE__ */ jsxs("div", { className: "flex gap-3 rounded-lg bg-slate-50 border border-slate-200 p-5 mb-4", children: [
           /* @__PURE__ */ jsx(Wind, { className: "w-6 h-6 text-teal-600 flex-shrink-0 mt-0.5" }),
           /* @__PURE__ */ jsxs("div", { className: "text-gray-700 leading-relaxed", children: [
@@ -31783,7 +31837,7 @@ function AcCostAustraliaState() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("h2", { className: h2$6, children: [
+        /* @__PURE__ */ jsxs("h2", { className: h2$7, children: [
           "How ",
           s.name,
           " compares"
@@ -31813,19 +31867,19 @@ function AcCostAustraliaState() {
           RATES_AS_OF,
           "). See",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$6, children: "costs in every U.S. state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$7, children: "costs in every U.S. state" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "How we calculated this" }),
-        /* @__PURE__ */ jsxs("p", { className: p$6, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$7, children: "How we calculated this" }),
+        /* @__PURE__ */ jsxs("p", { className: p$7, children: [
           "Electricity used (kWh) = cooling capacity (kW) ÷ seasonal efficiency × hours. Cost = kWh × usage charge. Prices:",
           " ",
-          /* @__PURE__ */ jsx("a", { href: s.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: a$6, children: s.source }),
+          /* @__PURE__ */ jsx("a", { href: s.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: a$7, children: s.source }),
           ". U.S. cents use A$1 = $",
           USD_PER_AUD.toFixed(3),
           " (",
@@ -31842,8 +31896,8 @@ const ASIA_PATHS = { "vietnam": "M183.1,520.6L182.1,525.8L180,520.7ZM245.7,364.7
 const ASIA_LABELS = { "vietnam": [220, 434], "thailand": [146, 450], "taiwan": [418, 336], "south-korea": [494, 152], "singapore": [175, 650], "philippines": [426, 448], "malaysia": [153, 610], "japan": [608, 138], "indonesia": [321, 677], "china": [235, 168], "hong-kong": [328, 355], "cambodia": [197, 488], "brunei": [330, 611] };
 const ASIA_CONTEXT_PATH = "M481.3,806.9L480.1,802.5L482.6,801.4L481.9,799.8L480,800.7L479.3,799L483,794.8L492.1,792.4L503.9,791.6L509,789.4L513.7,790.8L508.2,795L504.6,796.1L500.4,798.6L497.3,799.3L486.3,803.5ZM466.4,804.8L472.3,802.6L470,805.9ZM582.4,0L582.1,0.3L581.8,3.4L579,10L574.9,16.7L572.1,20.2L569.7,25.6L568,28L567.4,30.6L565,32.6L562.6,38.7L562.5,40.6L560.6,43L559.7,45.4L555.7,49.2L546.5,56.9L541,59.4L539,58L535.9,57.4L531.5,57.8L530.7,51.8L528.1,54.8L526.5,55.3L527.6,52.6L525.4,53.1L523,57L522,59.6L519.9,62.6L515.1,62.6L516.7,64.3L515.5,67.6L515.5,67.6L513.4,64.5L511.9,61.9L513.4,60.6L518.4,58.8L519.5,52L517.9,47.5L518,42.3L514.8,34.4L513.5,32.5L514.5,30.9L518,29.5L519.7,26.2L521.5,24.3L522.9,25.3L533.2,27.2L534.8,25.6L534.6,20.5L536.9,18.7L537,14.8L538.2,13.6L538.2,11L539.5,9.3L538.9,5.8L539.9,2.7L539.7,0.7L539.9,0L582.4,0ZM622.4,0L622.1,1.3L620.6,0.2L620.5,0L622.4,0ZM684.3,0L683.2,1.8L680.8,2.6L680.5,4.8L678.3,9.5L676,12.2L676,9.8L677.2,8.1L676.8,6.7L679.4,1.7L680.7,0L684.3,0ZM677.1,21.7L675.9,21L677.7,19.9ZM668.7,12.4L670.6,13.1L672.5,12.4L670.6,15.2L668.9,16.1L666.8,21.1L665.4,22.8L665.9,25.3L664.4,24.6L664.1,22.7L665.6,20.5L667.8,12.6ZM800,747.1L797.4,747.1L795,749L795.1,750.4L798.3,756.5L800,758L800,788.7L800,788.7L795.5,785.7L794.2,783.8L794.8,781.1L791.1,781L784,770.5L781.9,768.3L777.6,766.9L774,767L767,765.8L765.5,763.5L760.5,763.1L759.4,764.8L756.5,766.3L751.9,765.4L749.4,763.1L752.4,769.2L751.7,770.4L746.9,770.3L747.8,773.3L740.4,775.6L734.9,775.5L731.2,776.4L736.2,776.4L740.6,777.9L744.5,782.2L744.1,784.5L733.8,790.6L727.9,788.9L719.3,790.2L716.2,789.6L712.4,790.9L710.1,789.6L710.1,789.6L710.4,758.1L708.8,755.9L710.4,750.1L709.9,696.7L712.9,696.7L724.4,700.4L727.6,701.8L737.5,704.3L746.1,705L753.3,709.4L759.9,709.3L768.5,716L772.1,716.1L778.2,721.8L778.6,726.9L778,730.2L779.5,731L787.3,732.3L796.1,735.7L800,735.6L800,747.1ZM781.8,720L780.1,720.3L781.4,717.3ZM747.3,777.4L743.6,776.1L747.3,776.1ZM798.1,728.4L795.7,726.9L797.5,725L798.5,725.8ZM800,679L797.7,681.2L791.3,681.5L788.5,682.7L789.9,679.1L795.7,678.2L795.7,678.2L800,678.6L800,679ZM747.3,779.5L745.5,779.5L742,777ZM496.3,121.2L494.4,125.1L493,125.9L483.1,126.6L481.4,127.6L477.9,132.4L477.7,134.3L474.6,133.1L471.9,135.2L470.9,133.5L467.6,132L465.7,134.5L463.2,135.9L462.5,134.3L458.8,133.2L461.6,131.3L455.2,130.6L457.2,129L457.1,127.5L459,124.4L461.7,122.7L464.4,122.3L461.5,121.6L459.7,119.9L462.1,113.9L461.4,110.6L458.4,109.8L454.6,107.7L453.2,109.7L452.1,107.3L449.7,105.8L449.7,104.4L449.9,103L455.2,97.7L460.8,94.7L464,91.6L466.8,90.9L471.7,84.2L472.6,80.2L475.7,78L478.5,81L484.6,82.2L487.1,81.7L489.7,82.6L491,80L487.7,75.5L487.7,74.3L497.1,72.9L499.7,70.1L500.7,67.3L502.9,67.5L504.9,66.1L505,61.8L505.8,58.6L509.7,59.8L510,61.8L513.4,64.5L515.5,67.6L513.1,67.8L509.4,71.7L506.6,76.7L506.2,79.8L507.4,82.4L507.6,88.7L503.8,90.8L501.6,94.3L497.4,97.1L496.6,98.9L493.5,101.4L489.8,102.2L488.8,103.7L485.7,105.5L485.9,110L484.2,112.5L484.5,113.7L489,115.2L491.4,117.6ZM0,242.3L0.8,242.5L3.1,242L6.1,242.8L6.1,242.8L6.1,244.6L3.5,249.2L2.2,253.1L3.1,256.3L3.1,259.4L0.8,263.4L0,263.3L0,242.3ZM389.8,0L390.1,0.7L396,6.3L398,10.3L397.8,12.9L396.1,13.8L390.6,13.4L387.4,11.8L386.2,12.7L382,12.4L377.9,13.7L375.5,15.1L372.8,14.4L372.1,17.3L367.2,16.9L364.2,18.2L360.5,23.8L360.8,25L354.9,29.6L347,30.6L345.2,30L342.9,30.7L341.7,32.9L337.6,36.4L332.8,39L327.3,37.9L322.6,36.2L320.9,34.2L315.5,33.9L312.4,37.1L309.7,43.3L310.7,45.8L313.8,49.6L314.6,52.7L312.9,53.3L310.3,55.5L304.4,57.4L297.3,65L286.7,68.8L278.5,68.9L273,68L257.7,69.1L247.5,72.4L239.8,75.3L237.2,77.1L236,76.3L232.1,75.7L232.6,72.7L223.9,73.6L217.6,69.3L208.1,66.1L206.3,65L204.2,61.2L202.1,59.9L197.8,59.2L186.5,56L180.7,56.8L157.7,50.2L149,49.8L148.8,46.8L145.7,42.3L144.3,31.2L142.8,30.2L143.7,26.4L140.6,26.2L137.5,24.3L133.5,19.3L131.1,18.5L129,14.8L125.7,12.9L120.9,11.3L117.2,10.9L113.5,9.3L109.1,8.3L104.5,5.3L102.7,5.2L102,0.2L102.1,0L389.8,0ZM169.8,346.5L170.4,347.9L175.1,353.8L176.3,357.4L178,355.5L179.6,357.4L177.8,363.3L180.6,368.9L187.4,372.3L193.2,369.3L195,369.8L199.9,374L196.8,376.8L200,378L200.9,380.5L203.4,381.2L203.8,383.4L201,387L198.2,388.9L194.5,387.5L191.4,387.4L191.7,390.2L189.2,392.1L199.6,400.6L205.3,403.2L204.2,406L207.3,410L208.9,410.6L211.7,416.8L215.6,421.7L219.1,424.8L222,428.7L222.3,433.1L224.8,436.1L226.1,435.1L227.3,437.7L233.4,442.5L232.9,444.2L230.4,445.3L232.3,449.4L236.4,454L233.8,457.8L234.2,461.8L232.6,463.7L231,463.2L228.3,465.6L224.2,466.8L220,462.8L217.9,464.4L212.7,465.7L214.4,470.1L213.5,471.8L211.3,471.6L209.2,469.2L206.4,468L203.8,468.5L201.7,465L205.9,462.6L207.2,456.9L206.6,454L207.1,450.7L208.6,449L208.9,445.9L206,443.9L206.2,441.6L201.5,438.8L198.7,434.2L197.9,431.6L198.4,425.4L199.4,422.3L198.6,419.9L194.6,416.1L188.8,406.8L186.7,406.6L182.7,404.9L180,404.8L176.4,410L170.3,412.3L170.2,410.9L163.9,406.3L159.3,408.4L157.9,410.4L149.6,415.6L147,413.8L150.4,407.6L151.1,404L150.1,402.2L151.9,399.3L154,394.3L153.3,389.1L153.8,386L150.6,384.8L145.9,385.9L143.4,383.6L143.2,381.9L145.7,377.4L143.8,373.5L140.4,373.5L142.7,367.8L147,366.8L146.6,365.4L150.3,360.1L154.8,358.2L155.7,356.9L156.3,361.9L160.5,362.2L162.5,363.6L163.9,353.9L162.4,351.4L161.7,347.5L164,344.7L166.1,346L168.5,345.5ZM0,263.3L0.8,263.4L3.1,259.4L3.1,256.3L2.2,253.1L3.5,249.2L6.1,244.6L6.1,242.8L6.3,241.9L12.4,240.7L14.9,242.4L14.9,244.5L12.7,249.3L13.7,252.6L11.5,254.2L12.2,257.6L15.4,260.3L17.7,260.3L22.5,263.4L27.1,263.4L30.2,261.9L34.7,264.5L41.5,265.4L43.4,264.6L46.3,266L51.1,265.7L51,262.7L52.6,259.8L51.9,257.3L48.9,256.9L47.4,255L48.5,252.2L52.6,253.3L56.2,252.2L58.2,252.8L61.6,251.5L62.6,248.8L68.4,246L69.9,243.4L75.8,242.9L79,241.7L84.7,237.6L89.1,235.8L90.5,238L98.1,240.9L99.7,238.9L106.6,236.4L109.7,240.3L106.8,241.7L106.8,244.3L110.5,242.7L111.6,247.1L109,249L107.1,251.6L108,252.4L111.1,251.4L113,253.1L116.8,253.5L119.4,256.1L119,260.1L113.8,262.9L112.5,264.4L112.5,266.5L114.4,270.8L113.4,271.6L109.3,267.6L101.6,268.3L99.2,270.5L93,273.9L88.5,275.6L87.4,277.2L86.8,281.3L87.2,283.5L84.8,287.2L81.7,290.4L79.3,291.7L78.1,293.9L79.6,297L77.4,300.8L72.7,306.7L69.6,312.8L64.2,310.1L59.5,309.2L60.1,314.3L58.1,322.1L55.3,323.2L53.5,327.5L53.8,332.9L50.5,337.6L47.2,335.3L45.4,337.2L45.9,326.9L44.9,323.1L45.5,317.4L45.2,312L41.2,311.3L40.9,314L38.1,316.7L37.9,319.4L35.6,320.9L33.8,317.3L32.1,318.5L31.3,311.3L33,306.5L35.2,304.3L37.2,304.7L39.3,303.5L41.9,303.9L43.2,301.7L44.7,301.7L48.4,294.6L50.6,295.6L50.2,293.1L46.6,290.2L39.3,289.4L37.1,288.5L26.4,287L19.3,283.8L21,274.4L20.3,270.9L19.3,270L17.8,272.9L14.7,271.9L13,269.1L12.5,265.9L11.4,268.1L8,266.8L6.8,263.2L5.1,262.2L5.3,265.1L0.9,268.5L0,270.3L0,263.3ZM0,271.8L1.3,273L3,276.6L6.7,278.5L8.3,281.8L7.3,283.1L1.9,282.2L0,285.2L0,271.8ZM0,294.2L2.6,296L1.5,299.9L0,302.5L0,294.2ZM0,307L0.4,308.1L0,309.8L0,307ZM0,310.9L2.1,312.2L0.8,314.1L0.5,320.2L1.2,325.6L0.8,328.3L0,332.4L0,310.9ZM37.9,558.9L37,560L35.5,553.5L37.9,553.4L38.6,556.9ZM23.3,502.6L21.5,502.5L21.6,499.5L23.9,497.6L24.5,500.6ZM27.7,488.8L27,488.6L25.6,483.5L26.8,482.5L28.9,476.8L29.8,470.7L30.9,469.4L32.3,462.6L35.4,460.2L35.1,464.5L32.1,468.6L33,470.1L32.9,474.7L31,475.9L30.7,479.6L28.7,482.2L29.3,483.3ZM319,357.9L319.6,357.2ZM140.4,373.5L137.6,371.7L134.1,372.8L131.8,372L132.1,374.5L129.7,375.9L127.9,375.2L125.5,376L123.7,379.7L114.6,379.9L111.8,378.7L108.7,382.6L107.9,387.3L106.3,390L106,395.2L101.3,395.8L102.9,398.9L103.9,398.9L105.1,402.9L104.5,405.8L105.5,408.2L110.9,416.5L113.1,419.3L113.2,422.8L115.5,429.3L117.6,427.9L117.1,431.3L113.8,432.8L112.5,442.1L107.3,444.4L107.5,450.1L111.3,457.1L115.8,462.1L118.2,467.2L118.1,474.2L117,476L118.1,481.4L120.5,484.4L120.9,489.6L122.5,495.7L120.5,498L115.9,504.9L109.5,510.7L109.4,514.1L108.3,517.4L106.2,519.5L105.4,517.3L105.9,514.9L105.5,510.1L108.7,505.9L109.9,502.4L110.3,497.3L112.3,495.6L109,495L110.4,488.1L109.6,484.9L110.4,481.8L109.8,474.4L108.1,469.6L106,465.7L105.7,462.1L104.6,466.8L104,461.8L104.6,459.4L103.4,456.7L101.6,448.9L101.9,444.2L101.7,434.1L100.2,431.8L101.5,425.6L102.9,424.1L98.1,424.2L96.3,416.2L93.9,412.2L92.1,413.6L92.6,416.2L90.9,419.7L88.1,422.5L84.6,422.7L82.6,418.8L83.9,423.7L79.4,426L75.9,426.8L74.5,429.5L70.2,432.7L69.1,432L70,428.1L67.5,430.8L64.4,430.5L64.3,425.2L62.7,428.1L60.8,428.8L62.4,421.8L58.1,425.7L55.1,426.5L56.6,419.3L57.9,417.7L60.4,410.7L61.9,408.4L62.7,404.6L61.9,400.8L61.7,395.2L58.5,385.3L58.7,378.8L57.1,380.7L56.5,384.2L53.8,382L51.7,376.7L52.8,376.3L55.8,379.1L58.4,376.5L56.5,374.9L54,371L55.6,369.2L53.9,369L51.3,366.5L48.6,366.3L47.9,368.9L46.7,365.5L48.2,361.3L45.3,364.2L44.3,363.2L45.8,361.5L44,357.9L43.6,361.8L39.5,353.9L38.8,346.4L41,344.5L44.6,347L45.4,337.2L47.2,335.3L50.5,337.6L53.8,332.9L53.5,327.5L55.3,323.2L58.1,322.1L60.1,314.3L59.5,309.2L64.2,310.1L69.6,312.8L72.7,306.7L77.4,300.8L79.6,297L78.1,293.9L79.3,291.7L81.7,290.4L84.8,287.2L87.2,283.5L86.8,281.3L87.4,277.2L88.5,275.6L93,273.9L99.2,270.5L101.6,268.3L109.3,267.6L113.4,271.6L114.4,270.8L112.5,266.5L112.5,264.4L113.8,262.9L119,260.1L119.4,256.1L122.8,252.3L126.5,254.9L128.9,258.4L130.1,267.2L132.9,266.1L134.5,267.4L134,278.8L131.8,287.9L130.6,288.1L130.7,292.3L128.6,292.6L126.5,295.3L124.5,295L123.2,297.4L120.6,299.7L119.3,299.3L117.6,302.3L117.6,304.7L115.4,305.8L114.1,309.8L115.7,311.6L115.5,315.2L113.6,317.1L114.2,318.6L119.5,316.7L125.8,316.7L130,317.5L127.6,320.9L129.2,324.2L128.8,330.5L134.8,332.5L136.7,334.7L134.9,336.5L133.7,341.1L131,345.3L131.7,346.5L136.3,347.3L140.4,348.7L140.7,353.4L143.4,357.2L147.6,357.7L151.8,355.2L155.2,354.1L155.7,356.9L154.8,358.2L150.3,360.1L146.6,365.4L147,366.8L142.7,367.8ZM107.5,492.5L107.1,489.8L108.9,491.9ZM107.9,494.8L107.3,497.8L106,497.2L105.5,493.9ZM106.9,482.3L107.4,484.2L105.3,486L105.6,481.1ZM58.4,427.9L57.2,427.1L60.4,424.4ZM100.4,428.4L99.3,425.3L101,425.9ZM52.9,386.9L50.6,383.9L53.9,384.4ZM54.9,374.3L57.7,376.6L55,377.8L53.9,375.1ZM48.5,252.2L47.4,255L48.9,256.9L51.9,257.3L52.6,259.8L51,262.7L51.1,265.7L46.3,266L43.4,264.6L41.5,265.4L34.7,264.5L30.2,261.9L27.1,263.4L22.5,263.4L17.7,260.3L15.4,260.3L12.2,257.6L11.5,254.2L13.7,252.6L14.9,250.6L24,242.7L30,240.7L34.3,242.5L33.8,244.9L38.2,245.8L42.3,247.9L44.4,246.8L48.6,249.4ZM0,309.8L0.4,308.1L0,307L0,302.5L0,302.5L1.5,299.9L2.6,296L0,294.2L0,285.2L0,285.2L1.9,282.2L7.3,283.1L8.3,281.8L6.7,278.5L3,276.6L1.3,273L0,271.8L0,270.3L0,270.3L0.9,268.5L5.3,265.1L5.1,262.2L6.8,263.2L8,266.8L11.4,268.1L12.5,265.9L13,269.1L14.7,271.9L17.8,272.9L19.3,270L20.3,270.9L21,274.4L19.3,283.8L26.4,287L37.1,288.5L39.3,289.4L46.6,290.2L50.2,293.1L50.6,295.6L48.4,294.6L44.7,301.7L43.2,301.7L41.9,303.9L39.3,303.5L37.2,304.7L35.2,304.3L33,306.5L31.3,311.3L32.1,318.5L33.8,317.3L35.6,320.9L37.9,319.4L38.1,316.7L40.9,314L41.2,311.3L45.2,312L45.5,317.4L44.9,323.1L45.9,326.9L45.4,337.2L44.6,347L41,344.5L38.8,346.4L39.5,353.9L36.9,347.8L37.4,340.4L36.4,332.1L35.4,327.9L33.8,324.6L33.6,322L28.7,325.2L26.1,325L24.9,323L23.4,317.2L24.1,314.7L24.3,310L23.3,312.3L19.7,311.2L22.6,313.3L23,316.6L21.2,317.4L21.9,319.8L20,321.7L21.2,326.6L20.7,329.2L17.2,331.7L15,334.6L13.2,333.5L15.6,329.9L12,331.2L12,325.8L10.1,331.5L6.4,334.1L6.7,326.6L6,331.8L2.6,334.3L0.7,331.6L0.8,328.3L0.8,328.3L1.2,325.6L0.5,320.2L0.8,314.1L2.1,312.2L0,310.9L0,309.8ZM27.6,331.5L26.1,332.4L27.6,326.4L28.3,330ZM33.3,329.4L31.7,327.7L32.6,325.8ZM22.7,332L19.3,331.8L22,328.4L22.2,325.2L21.1,320.7L23.2,321.3L24.8,326.5ZM36.3,342.8L35.6,339.7L36.6,339.7ZM725.6,820L726,818.9L726.5,814.2L728.8,813.1L730.7,810.5L732.8,810.9L732,812.7L734.3,814.5L735.8,818.6L735.9,820L725.6,820ZM372.7,615.8L365.9,613.4L357.5,612.9L356.1,613.8L348.7,613.1L345.5,615.3L343.9,618.9L343.8,625.9L342.2,631.7L339.2,631.8L336.9,634.4L336.8,637.3L337.8,639.3L332.5,642.7L333.2,646.5L331.3,648.3L330.2,651.6L328.5,653.9L326.7,653.2L319.7,654.1L315.6,656.8L306.8,653.8L305.9,651.9L299.2,651.9L294.9,653.5L293.3,657.6L288.8,659.5L284.7,659.5L279.2,658.5L270.6,661L267.9,659L260.8,652.5L258.5,649.9L256.9,645.8L258.2,644L259.5,646.5L263.2,648.6L268.5,648.8L273.2,651.3L277,651.9L279.3,653.6L278.5,650.3L280.1,648.8L281.8,643.2L281,642.4L281.5,639L284.4,639.8L284.5,636.2L285.5,634.7L288.6,633.2L294.2,632.5L303.1,630.5L307.5,628.7L313.4,621.2L320.4,614.2L321.2,610L322.4,609.3L324.7,611L326.1,614.1L327.4,614.2L330.1,617.5L331.8,616.5L333.5,612.3L332.2,607.7L336.2,605.2L336.2,608.1L337.3,612.4L340.5,612.6L339.7,609L337.9,605.2L341.2,604.7L343.8,602.5L341.9,597.9L344.5,595.3L347.3,596.2L351.1,591.4L352.3,587.8L357.4,582.3L361,575.9L362.2,576.2L361.5,581.2L363.3,580.4L366.4,576L368.2,576.7L368.8,580.2L373.8,583.1L374.5,585.9L373.3,587L373.4,590.7L376.2,590.7L378.9,589L380.5,591.8L377.9,592.8L378.5,594L382.4,592.4L385.4,593.2L387.3,595.6L392.6,597.9L396.4,598.1L396.7,601.1L395,602.6L388.5,604.5L382.6,604.2L381.5,606.5L387.4,611.7L386.7,612.8L379,614.7L375.1,613.4ZM366.6,573.2L365.5,571.8L368.4,570.6L368,572.9ZM283.6,639.3L282.5,639L282.4,634.7L283.5,635.2Z";
 const ASIA_CITY_POINTS = { "Singapore": [174.6, 649.7], "Metro Manila": [420.1, 466.9], "Hong Kong": [328.2, 356.3], "Tokyo": [631.2, 148.2], "Yokohama": [631.3, 151.8], "Osaka": [585.4, 168.8], "Kyoto": [587.8, 163.9], "Kobe": [581.8, 169.2], "Kuala Lumpur": [145, 622.1], "George Town (Penang)": [127, 588.2], "Johor Bahru": [173.8, 647.6], "Ipoh": [137.1, 600.6], "Bangkok": [136.9, 468.5], "Chiang Mai": [123.1, 393.9], "Phuket": [101.7, 550.3], "Khon Kaen": [171.8, 432.6], "Ho Chi Minh City": [219.6, 517.3], "Da Nang": [244.6, 443], "Hanoi": [217.1, 369.8], "Jakarta": [217.1, 758.8], "Surabaya": [302.6, 775.9], "Denpasar (Bali)": [338.5, 795.9], "Medan": [102.4, 612.3], "Kaohsiung": [409.3, 352.2], "Taichung": [413.8, 330.5], "Taipei": [425, 317.7], "Seoul": [481.9, 137.1], "Busan": [509.4, 169.1], "Daegu": [502.8, 159.8], "Shanghai": [421.5, 229.4], "Beijing": [361.1, 107.4], "Guangzhou": [316.5, 344.4], "Shenzhen": [326.8, 353.1], "Phnom Penh": [195.9, 504.7], "Siem Reap": [182.6, 477.9], "Bandar Seri Begawan": [335, 604.6] };
-const _readme = "Electricity prices for the Asia AC cost pages. For each country, zones are utilities (or tariff areas); rate is the price per kWh, in local currency, that running an air conditioner adds to a household bill (see rateNote for exactly how it was worked out). Each country has its own source and date: update rate, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for one split unit. usdPer converts local currency to US dollars (ECB reference rates crossed through the euro).";
-const updated = "2026-10-21";
+const _readme$1 = "Electricity prices for the Asia AC cost pages. For each country, zones are utilities (or tariff areas); rate is the price per kWh, in local currency, that running an air conditioner adds to a household bill (see rateNote for exactly how it was worked out). Each country has its own source and date: update rate, asOf and source together, then bump 'updated'. hours per city are our estimate of full-load cooling hours a year for one split unit. usdPer converts local currency to US dollars (ECB reference rates crossed through the euro).";
+const updated$1 = "2026-10-21";
 const fxAsOf = "October 21, 2026";
 const fxSource = "European Central Bank euro reference rates, October 21, 2026 (crossed through the euro); New Taiwan dollar at market rate October 21, 2026; Vietnamese dong at the State Bank of Vietnam central rate, October 6, 2026; Cambodian riel at the National Bank of Cambodia official rate, October 21, 2026; Brunei dollar at par with the Singapore dollar";
 const usdPer = {
@@ -32411,8 +32465,8 @@ const countries = [
   }
 ];
 const data = {
-  _readme,
-  updated,
+  _readme: _readme$1,
+  updated: updated$1,
   fxAsOf,
   fxSource,
   usdPer,
@@ -32470,13 +32524,13 @@ function lprice(cur, rate) {
   const d = PRICE_DIGITS[cur];
   return `${SYMBOL[cur]}${rate.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d })}`;
 }
-const usd0 = (n) => `$${Math.round(n).toLocaleString("en-US")}`;
+const usd0$1 = (n) => `$${Math.round(n).toLocaleString("en-US")}`;
 const CITIES = ASIA_COUNTRIES.flatMap(
   (c) => c.cities.map((x) => {
     const price = asiaCityRate(c, x);
     const year = yearCost(AU_REF_KW, AU_REF_EFF, x.hours, price);
-    const usd2 = USD_PER[c.currency];
-    return { key: `${c.slug}:${x.name}`, name: x.name, country: c, hours: x.hours, price, usdPrice: price * usd2, year, usdYear: year * usd2, point: ASIA_CITY_POINTS[x.name] };
+    const usd3 = USD_PER[c.currency];
+    return { key: `${c.slug}:${x.name}`, name: x.name, country: c, hours: x.hours, price, usdPrice: price * usd3, year, usdYear: year * usd3, point: ASIA_CITY_POINTS[x.name] };
   })
 );
 const BY_KEY = Object.fromEntries(CITIES.map((c) => [c.key, c]));
@@ -32492,7 +32546,7 @@ const METRICS = {
     breaks: [75, 150, 225, 300],
     legend: ["Under $75", "$75–150", "$150–225", "$225–300", "$300 +"],
     value: (c) => c.usdYear,
-    show: (n) => `${usd0(n)} a year`
+    show: (n) => `${usd0$1(n)} a year`
   },
   price: {
     label: "Electricity price",
@@ -32514,8 +32568,8 @@ function AsiaCostMap() {
   };
   const countryBin = (c) => binOf2(mainCity(c));
   const sorted = [...CITIES].sort((a2, b) => def.value(b) - def.value(a2));
-  const top = sorted[0];
-  const bottom = sorted[sorted.length - 1];
+  const top2 = sorted[0];
+  const bottom2 = sorted[sorted.length - 1];
   const same = (a2, b) => !!a2 && a2.kind === b.kind && a2.id === b.id;
   const pick = (s) => setSelected((cur) => same(cur, s) ? null : s);
   const mouseOnly = (s) => (e) => {
@@ -32538,7 +32592,7 @@ function AsiaCostMap() {
           /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-700", children: [
             lmoney(cur, c2.year),
             " a year (about ",
-            usd0(c2.usdYear),
+            usd0$1(c2.usdYear),
             ") · about ",
             c2.hours.toLocaleString("en-US"),
             " cooling hours ·",
@@ -32566,7 +32620,7 @@ function AsiaCostMap() {
           ": ",
           lmoney(c.currency, m.year),
           " a year (about ",
-          usd0(m.usdYear),
+          usd0$1(m.usdYear),
           ") at ",
           lprice(c.currency, m.price),
           " per kWh (",
@@ -32743,17 +32797,17 @@ function AsiaCostMap() {
     ] }),
     /* @__PURE__ */ jsx("div", { className: "mt-3 min-h-[92px] rounded-lg border border-teal-200 bg-teal-50 px-4 py-3", "aria-live": "polite", children: card ?? /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-600 py-3", children: [
       "Tap or hover over a country or a city dot. Highest: ",
-      top.name,
+      top2.name,
       ", ",
-      top.country.name,
+      top2.country.name,
       " (",
-      def.show(def.value(top)),
+      def.show(def.value(top2)),
       "). Lowest: ",
-      bottom.name,
+      bottom2.name,
       ", ",
-      bottom.country.name,
+      bottom2.country.name,
       " (",
-      def.show(def.value(bottom)),
+      def.show(def.value(bottom2)),
       ")."
     ] }) }),
     /* @__PURE__ */ jsxs("details", { className: "mt-3 rounded-lg border border-gray-200 bg-white", children: [
@@ -32779,7 +32833,7 @@ function AsiaCostMap() {
             /* @__PURE__ */ jsx(Link, { to: `/ac-cost/asia/${c.country.slug}`, className: "text-xs font-semibold text-teal-700 hover:underline", children: c.country.name })
           ] }),
           /* @__PURE__ */ jsx("td", { className: "px-2 py-1.5 text-gray-700", children: lmoney(c.country.currency, c.year) }),
-          /* @__PURE__ */ jsx("td", { className: "px-2 py-1.5 text-gray-700", children: usd0(c.usdYear) }),
+          /* @__PURE__ */ jsx("td", { className: "px-2 py-1.5 text-gray-700", children: usd0$1(c.usdYear) }),
           /* @__PURE__ */ jsx("td", { className: "px-2 py-1.5 text-gray-700", children: c.hours.toLocaleString("en-US") }),
           /* @__PURE__ */ jsxs("td", { className: "px-2 py-1.5 text-gray-700", children: [
             lprice(c.country.currency, c.price),
@@ -32798,25 +32852,25 @@ function AsiaCostMap() {
     ] })
   ] });
 }
-const PATH$2 = "/ac-cost/asia";
-const TITLE$2 = `Cost to Run AC in Asia: ${ASIA_COUNTRIES.length} Countries Compared`;
-const HEADLINE$2 = "What It Costs to Run Air Conditioning in Asia";
-const th$4 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
-const td$4 = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$5 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$5 = "text-gray-700 leading-relaxed mb-4";
-const a$5 = "text-teal-600 hover:text-teal-700 font-medium";
+const PATH$3 = "/ac-cost/asia";
+const TITLE$3 = `Cost to Run AC in Asia: ${ASIA_COUNTRIES.length} Countries Compared`;
+const HEADLINE$3 = "What It Costs to Run Air Conditioning in Asia";
+const th$5 = "border border-gray-200 px-3 py-2.5 text-left align-bottom font-semibold text-gray-900";
+const td$5 = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$6 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$6 = "text-gray-700 leading-relaxed mb-4";
+const a$6 = "text-teal-600 hover:text-teal-700 font-medium";
 const kwhPerHour$1 = (AU_REF_KW / AU_REF_EFF).toFixed(2);
-const inName$1 = (c) => c.slug === "philippines" ? "the Philippines" : c.name;
+const inName$2 = (c) => c.slug === "philippines" ? "the Philippines" : c.name;
 const LIST = (() => {
-  const n = [...ASIA_COUNTRIES].sort((x, y) => x.name.localeCompare(y.name)).map(inName$1);
+  const n = [...ASIA_COUNTRIES].sort((x, y) => x.name.localeCompare(y.name)).map(inName$2);
   return `${n.slice(0, -1).join(", ")} and ${n[n.length - 1]}`;
 })();
 function AcCostAsia() {
   const ranked = [...ASIA_COUNTRIES].sort((x, y) => x.rank - y.rank);
   const usdYear = (c) => yearCost(AU_REF_KW, AU_REF_EFF, c.ref.hours, c.rate) * USD_PER[c.currency];
-  const byYear = [...ASIA_COUNTRIES].sort((x, y) => usdYear(y) - usdYear(x));
-  const priciest = ranked[0];
+  const byYear2 = [...ASIA_COUNTRIES].sort((x, y) => usdYear(y) - usdYear(x));
+  const priciest2 = ranked[0];
   const cheapest = ranked[ranked.length - 1];
   const range = (c) => {
     const ys = c.cities.map((x) => yearCost(AU_REF_KW, AU_REF_EFF, x.hours, asiaCityRate(c, x)));
@@ -32833,11 +32887,11 @@ function AcCostAsia() {
   const faqs2 = [
     {
       q: "Where in Asia is air conditioning most expensive to run?",
-      a: `Per kWh, ${inName$1(priciest)} has the highest price of the ${ASIA_COUNTRIES.length} countries here (about ${cents(priciest.usdRate)} in U.S. money). Over a year, the hot, humid cities where the AC runs most of the year cost the most: one 1.5 hp unit costs about ${usd0(usdYear(byYear[0]))} a year in ${byYear[0].ref.name}, against about ${usd0(usdYear(byYear[byYear.length - 1]))} in ${byYear[byYear.length - 1].ref.name}.`
+      a: `Per kWh, ${inName$2(priciest2)} has the highest price of the ${ASIA_COUNTRIES.length} countries here (about ${cents(priciest2.usdRate)} in U.S. money). Over a year, the hot, humid cities where the AC runs most of the year cost the most: one 1.5 hp unit costs about ${usd0$1(usdYear(byYear2[0]))} a year in ${byYear2[0].ref.name}, against about ${usd0$1(usdYear(byYear2[byYear2.length - 1]))} in ${byYear2[byYear2.length - 1].ref.name}.`
     },
     {
       q: "How much does a 1.5 hp aircon cost to run per hour?",
-      a: `A typical 1.5 hp (12,000 BTU) inverter unit uses about ${kwhPerHour$1} kWh an hour, so it costs about ${ranked.map((c) => `${lmoney(c.currency, hourCost(AU_REF_KW, AU_REF_EFF, c.rate), true)} in ${inName$1(c)}`).join(", ")}.`
+      a: `A typical 1.5 hp (12,000 BTU) inverter unit uses about ${kwhPerHour$1} kWh an hour, so it costs about ${ranked.map((c) => `${lmoney(c.currency, hourCost(AU_REF_KW, AU_REF_EFF, c.rate), true)} in ${inName$2(c)}`).join(", ")}.`
     },
     {
       q: "Is an inverter air conditioner worth it in a tropical climate?",
@@ -32846,17 +32900,17 @@ function AcCostAsia() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$2 }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$3 }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$2}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$3}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$2}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$2 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$3}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$3 }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$2, headline: HEADLINE$2, description, dateModified: ASIA_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$3, headline: HEADLINE$3, description, dateModified: ASIA_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -32883,7 +32937,7 @@ function AcCostAsia() {
               " 6 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$2 }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$3 }),
           /* @__PURE__ */ jsxs("p", { className: "text-xl text-gray-600", children: [
             "Electricity prices, hourly and yearly cooling costs, and what an inverter unit saves, in ",
             LIST,
@@ -32901,7 +32955,7 @@ function AcCostAsia() {
             /* @__PURE__ */ jsxs("strong", { children: [
               lmoney(cheapest.currency, hourCost(AU_REF_KW, AU_REF_EFF, cheapest.rate), true),
               " an hour in ",
-              inName$1(cheapest)
+              inName$2(cheapest)
             ] }),
             " ",
             "(",
@@ -32909,30 +32963,30 @@ function AcCostAsia() {
             " a kWh in U.S. money) to",
             " ",
             /* @__PURE__ */ jsxs("strong", { children: [
-              lmoney(priciest.currency, hourCost(AU_REF_KW, AU_REF_EFF, priciest.rate), true),
+              lmoney(priciest2.currency, hourCost(AU_REF_KW, AU_REF_EFF, priciest2.rate), true),
               " in ",
-              inName$1(priciest)
+              inName$2(priciest2)
             ] }),
             " ",
             "(",
-            cents(priciest.usdRate),
+            cents(priciest2.usdRate),
             "). Over a year, the tropical cities pay most because the AC rarely gets a day off: one unit costs about ",
             /* @__PURE__ */ jsxs("strong", { children: [
-              usd0(usdYear(byYear[0])),
+              usd0$1(usdYear(byYear2[0])),
               " a year in ",
-              byYear[0].ref.name
+              byYear2[0].ref.name
             ] }),
             ", against",
             " ",
-            usd0(usdYear(byYear[byYear.length - 1])),
+            usd0$1(usdYear(byYear2[byYear2.length - 1])),
             " in ",
-            byYear[byYear.length - 1].ref.name,
+            byYear2[byYear2.length - 1].ref.name,
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$5, children: "My stores are in a climate a lot like Manila's or Bangkok's: hot all year, humid, and with power that isn't cheap. In that kind of climate the air conditioner is the biggest line on the bill, and the type of unit matters as much as the price of a kWh. These pages put both into numbers, in each country's own currency." }),
+        /* @__PURE__ */ jsx("p", { className: p$6, children: "My stores are in a climate a lot like Manila's or Bangkok's: hot all year, humid, and with power that isn't cheap. In that kind of climate the air conditioner is the biggest line on the bill, and the type of unit matters as much as the price of a kWh. These pages put both into numbers, in each country's own currency." }),
         /* @__PURE__ */ jsx(AsiaCostMap, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "Cost to run AC by country" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "Cost to run AC by country" }),
         /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800", children: [
           /* @__PURE__ */ jsx("p", { className: "font-bold text-gray-900 mb-2", children: "What this table shows" }),
           /* @__PURE__ */ jsxs("p", { className: "mb-2", children: [
@@ -32968,32 +33022,32 @@ function AcCostAsia() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[640px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$4, children: "Country" }),
-            /* @__PURE__ */ jsx("th", { className: th$4, children: "Price per kWh" }),
-            /* @__PURE__ */ jsx("th", { className: th$4, children: "Same price in U.S. cents" }),
-            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+            /* @__PURE__ */ jsx("th", { className: th$5, children: "Country" }),
+            /* @__PURE__ */ jsx("th", { className: th$5, children: "Price per kWh" }),
+            /* @__PURE__ */ jsx("th", { className: th$5, children: "Same price in U.S. cents" }),
+            /* @__PURE__ */ jsxs("th", { className: th$5, children: [
               "Cost per hour of AC",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "one 1.5 hp inverter unit" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$5, children: [
               "Cost per year of AC",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "by city" })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$5, children: [
               "Same per year in U.S. dollars",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "main city" })
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$4, children: "Price date" })
+            /* @__PURE__ */ jsx("th", { className: th$5, children: "Price date" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             ranked.map((c) => /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: td$4, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/asia/${c.slug}`, className: a$5, children: c.name }) }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: priceRange(c) }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: cents(c.usdRate) }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: lmoney(c.currency, hourCost(AU_REF_KW, AU_REF_EFF, c.rate), true) }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: range(c) }),
-              /* @__PURE__ */ jsxs("td", { className: td$4, children: [
-                usd0(usdYear(c)),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: /* @__PURE__ */ jsx(Link, { to: `/ac-cost/asia/${c.slug}`, className: a$6, children: c.name }) }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: priceRange(c) }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: cents(c.usdRate) }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: lmoney(c.currency, hourCost(AU_REF_KW, AU_REF_EFF, c.rate), true) }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: range(c) }),
+              /* @__PURE__ */ jsxs("td", { className: td$5, children: [
+                usd0$1(usdYear(c)),
                 " ",
                 /* @__PURE__ */ jsxs("span", { className: "text-gray-400", children: [
                   "(",
@@ -33001,16 +33055,16 @@ function AcCostAsia() {
                   ")"
                 ] })
               ] }),
-              /* @__PURE__ */ jsx("td", { className: `${td$4} text-xs text-gray-500`, children: c.asOf })
+              /* @__PURE__ */ jsx("td", { className: `${td$5} text-xs text-gray-500`, children: c.asOf })
             ] }, c.slug)),
             /* @__PURE__ */ jsxs("tr", { className: "bg-gray-50", children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$4} font-semibold`, children: "U.S. average" }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: cents(US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$4, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: `${td$4} text-xs text-gray-500`, children: RATES_AS_OF })
+              /* @__PURE__ */ jsx("td", { className: `${td$5} font-semibold`, children: "U.S. average" }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: cents(US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$5, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: `${td$5} text-xs text-gray-500`, children: RATES_AS_OF })
             ] })
           ] })
         ] }) }),
@@ -33021,7 +33075,7 @@ function AcCostAsia() {
           ASIA_FX_SOURCE,
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "Inverter or not: the biggest choice" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "Inverter or not: the biggest choice" }),
         /* @__PURE__ */ jsxs("div", { className: "flex gap-3 rounded-lg bg-amber-50 border border-amber-200 p-5 mb-4", children: [
           /* @__PURE__ */ jsx(Gauge, { className: "w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" }),
           /* @__PURE__ */ jsx("div", { className: "text-gray-700 leading-relaxed", children: /* @__PURE__ */ jsxs("p", { children: [
@@ -33040,14 +33094,14 @@ function AcCostAsia() {
             'Look for the energy label rating your country uses (stars or ticks) and the word "inverter".'
           ] }) })
         ] }),
-        tokyo && /* @__PURE__ */ jsx("p", { className: p$5, children: "Japan is the exception to the rule: its price per kWh is among the highest here, but the cooling season is short, so a unit in Tokyo costs far less over a year than one in Bangkok or Singapore. There, the heating performance of a reverse-cycle unit matters as much as its cooling." }),
+        tokyo && /* @__PURE__ */ jsx("p", { className: p$6, children: "Japan is the exception to the rule: its price per kWh is among the highest here, but the cooling season is short, so a unit in Tokyo costs far less over a year than one in Bangkok or Singapore. There, the heating performance of a reverse-cycle unit matters as much as its cooling." }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-4", children: "Not covered yet: Laos and Myanmar. Laos changed its household tariff in May 2026, but we couldn't find the published rate table; we'll add both when we can source a current price." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$6, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           ranked.map((c) => /* @__PURE__ */ jsxs("li", { children: [
             c.name,
@@ -33065,19 +33119,1273 @@ function AcCostAsia() {
         ] }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-600 mb-4", children: [
           "Also see ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: a$5, children: "Australia" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: a$6, children: "Australia" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$5, children: "the Caribbean" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$6, children: "the Caribbean" }),
           ", ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/europe", className: a$5, children: "Europe" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/europe", className: a$6, children: "Europe" }),
           ",",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$5, children: "Canada" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$6, children: "Canada" }),
           " and ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$5, children: "every U.S. state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$6, children: "every U.S. state" }),
           "."
         ] })
+      ] }),
+      /* @__PURE__ */ jsx(LeadMagnet, {})
+    ] })
+  ] });
+}
+const _readme = "Cooling degree days (base 18.3 °C / 65 °F) per place, yearly average 2016–2025. Generated by scripts/update-climate.py from Open-Meteo (ERA5 reanalysis); run through a temporary GitHub Actions branch because the building session can't reach Open-Meteo. Used by the world comparison page (src/data/world.ts) to work out cooling hours the same way everywhere.";
+const source = "Open-Meteo historical weather API (ERA5 reanalysis, Copernicus/ECMWF)";
+const sourceUrl = "https://open-meteo.com/en/docs/historical-weather-api";
+const baseC = 18.3;
+const years = "2016–2025";
+const updated = "2026-10-21";
+const locations = {
+  "us:AL": {
+    name: "Birmingham",
+    cdd: 1115
+  },
+  "us:AK": {
+    name: "Anchorage",
+    cdd: 18
+  },
+  "us:AZ": {
+    name: "Phoenix",
+    cdd: 2643
+  },
+  "us:AR": {
+    name: "Little Rock",
+    cdd: 1207
+  },
+  "us:CA": {
+    name: "Los Angeles",
+    cdd: 680
+  },
+  "us:CO": {
+    name: "Denver",
+    cdd: 464
+  },
+  "us:CT": {
+    name: "Hartford",
+    cdd: 464
+  },
+  "us:DE": {
+    name: "Wilmington",
+    cdd: 671
+  },
+  "us:DC": {
+    name: "Washington",
+    cdd: 760
+  },
+  "us:FL": {
+    name: "Orlando",
+    cdd: 1765
+  },
+  "us:GA": {
+    name: "Atlanta",
+    cdd: 958
+  },
+  "us:HI": {
+    name: "Honolulu",
+    cdd: 2133
+  },
+  "us:ID": {
+    name: "Boise",
+    cdd: 703
+  },
+  "us:IL": {
+    name: "Chicago",
+    cdd: 497
+  },
+  "us:IN": {
+    name: "Indianapolis",
+    cdd: 650
+  },
+  "us:IA": {
+    name: "Des Moines",
+    cdd: 670
+  },
+  "us:KS": {
+    name: "Wichita",
+    cdd: 1012
+  },
+  "us:KY": {
+    name: "Louisville",
+    cdd: 806
+  },
+  "us:LA": {
+    name: "New Orleans",
+    cdd: 1661
+  },
+  "us:ME": {
+    name: "Portland",
+    cdd: 271
+  },
+  "us:MD": {
+    name: "Baltimore",
+    cdd: 720
+  },
+  "us:MA": {
+    name: "Boston",
+    cdd: 439
+  },
+  "us:MI": {
+    name: "Detroit",
+    cdd: 482
+  },
+  "us:MN": {
+    name: "Minneapolis",
+    cdd: 424
+  },
+  "us:MS": {
+    name: "Jackson",
+    cdd: 1312
+  },
+  "us:MO": {
+    name: "St. Louis",
+    cdd: 876
+  },
+  "us:MT": {
+    name: "Billings",
+    cdd: 476
+  },
+  "us:NE": {
+    name: "Omaha",
+    cdd: 727
+  },
+  "us:NV": {
+    name: "Las Vegas",
+    cdd: 2190
+  },
+  "us:NH": {
+    name: "Manchester",
+    cdd: 390
+  },
+  "us:NJ": {
+    name: "Newark",
+    cdd: 595
+  },
+  "us:NM": {
+    name: "Albuquerque",
+    cdd: 973
+  },
+  "us:NY": {
+    name: "New York",
+    cdd: 600
+  },
+  "us:NC": {
+    name: "Charlotte",
+    cdd: 974
+  },
+  "us:ND": {
+    name: "Fargo",
+    cdd: 389
+  },
+  "us:OH": {
+    name: "Columbus",
+    cdd: 587
+  },
+  "us:OK": {
+    name: "Oklahoma City",
+    cdd: 1243
+  },
+  "us:OR": {
+    name: "Portland",
+    cdd: 261
+  },
+  "us:PA": {
+    name: "Philadelphia",
+    cdd: 714
+  },
+  "us:RI": {
+    name: "Providence",
+    cdd: 433
+  },
+  "us:SC": {
+    name: "Columbia",
+    cdd: 1220
+  },
+  "us:SD": {
+    name: "Sioux Falls",
+    cdd: 495
+  },
+  "us:TN": {
+    name: "Nashville",
+    cdd: 964
+  },
+  "us:TX": {
+    name: "Dallas",
+    cdd: 1626
+  },
+  "us:UT": {
+    name: "Salt Lake City",
+    cdd: 762
+  },
+  "us:VT": {
+    name: "Burlington",
+    cdd: 323
+  },
+  "us:VA": {
+    name: "Richmond",
+    cdd: 890
+  },
+  "us:WA": {
+    name: "Seattle",
+    cdd: 103
+  },
+  "us:WV": {
+    name: "Charleston",
+    cdd: 622
+  },
+  "us:WI": {
+    name: "Milwaukee",
+    cdd: 401
+  },
+  "us:WY": {
+    name: "Cheyenne",
+    cdd: 292
+  },
+  "cb:bahamas": {
+    name: "Nassau",
+    cdd: 2784
+  },
+  "cb:jamaica": {
+    name: "Kingston",
+    cdd: 2680
+  },
+  "cb:barbados": {
+    name: "Bridgetown",
+    cdd: 3079
+  },
+  "cb:trinidad-and-tobago": {
+    name: "Port of Spain",
+    cdd: 3021
+  },
+  "cb:cayman-islands": {
+    name: "George Town",
+    cdd: 3384
+  },
+  "cb:bermuda": {
+    name: "Hamilton",
+    cdd: 1500
+  },
+  "cb:puerto-rico": {
+    name: "San Juan",
+    cdd: 2951
+  },
+  "cb:dominican-republic": {
+    name: "Santo Domingo",
+    cdd: 2608,
+    lat: 18.486,
+    lon: -69.931
+  },
+  "ca:QC:Montréal": {
+    name: "Montréal",
+    cdd: 216
+  },
+  "ca:ON:Toronto": {
+    name: "Toronto",
+    cdd: 331
+  },
+  "ca:ON:Ottawa": {
+    name: "Ottawa",
+    cdd: 272
+  },
+  "ca:AB:Calgary": {
+    name: "Calgary",
+    cdd: 59
+  },
+  "ca:AB:Edmonton": {
+    name: "Edmonton",
+    cdd: 77
+  },
+  "ca:BC:Vancouver": {
+    name: "Vancouver",
+    cdd: 86
+  },
+  "ca:MB:Winnipeg": {
+    name: "Winnipeg",
+    cdd: 243
+  },
+  "ca:SK:Regina": {
+    name: "Regina",
+    cdd: 169
+  },
+  "ca:NS:Halifax": {
+    name: "Halifax",
+    cdd: 102
+  },
+  "ca:NB:Moncton": {
+    name: "Moncton",
+    cdd: 173
+  },
+  "ca:PE:Charlottetown": {
+    name: "Charlottetown",
+    cdd: 138
+  },
+  "ca:NL:St. John's": {
+    name: "St. John's",
+    cdd: 37
+  },
+  "eu:spain:Seville": {
+    name: "Seville",
+    cdd: 1322
+  },
+  "eu:spain:Valencia": {
+    name: "Valencia",
+    cdd: 924
+  },
+  "eu:spain:Madrid": {
+    name: "Madrid",
+    cdd: 883
+  },
+  "eu:spain:Málaga": {
+    name: "Málaga",
+    cdd: 1096
+  },
+  "eu:spain:Barcelona": {
+    name: "Barcelona",
+    cdd: 683
+  },
+  "eu:spain:Bilbao": {
+    name: "Bilbao",
+    cdd: 289
+  },
+  "eu:france:Marseille": {
+    name: "Marseille",
+    cdd: 589
+  },
+  "eu:france:Nice": {
+    name: "Nice",
+    cdd: 692
+  },
+  "eu:france:Lyon": {
+    name: "Lyon",
+    cdd: 436
+  },
+  "eu:france:Bordeaux": {
+    name: "Bordeaux",
+    cdd: 391
+  },
+  "eu:france:Paris": {
+    name: "Paris",
+    cdd: 236
+  },
+  "eu:france:Lille": {
+    name: "Lille",
+    cdd: 128
+  },
+  "eu:portugal:Évora": {
+    name: "Évora",
+    cdd: 737
+  },
+  "eu:portugal:Faro": {
+    name: "Faro",
+    cdd: 802
+  },
+  "eu:portugal:Lisbon": {
+    name: "Lisbon",
+    cdd: 494
+  },
+  "eu:portugal:Porto": {
+    name: "Porto",
+    cdd: 233
+  },
+  "eu:united-kingdom:London": {
+    name: "London",
+    cdd: 92
+  },
+  "eu:united-kingdom:Birmingham": {
+    name: "Birmingham",
+    cdd: 44
+  },
+  "eu:united-kingdom:Manchester": {
+    name: "Manchester",
+    cdd: 34
+  },
+  "eu:united-kingdom:Edinburgh": {
+    name: "Edinburgh",
+    cdd: 8
+  },
+  "eu:italy:Palermo": {
+    name: "Palermo",
+    cdd: 1023
+  },
+  "eu:italy:Bari": {
+    name: "Bari",
+    cdd: 942
+  },
+  "eu:italy:Naples": {
+    name: "Naples",
+    cdd: 771
+  },
+  "eu:italy:Rome": {
+    name: "Rome",
+    cdd: 842
+  },
+  "eu:italy:Florence": {
+    name: "Florence",
+    cdd: 705
+  },
+  "eu:italy:Bologna": {
+    name: "Bologna",
+    cdd: 727
+  },
+  "eu:italy:Milan": {
+    name: "Milan",
+    cdd: 621
+  },
+  "eu:italy:Turin": {
+    name: "Turin",
+    cdd: 554
+  },
+  "eu:greece:Rhodes": {
+    name: "Rhodes",
+    cdd: 1373
+  },
+  "eu:greece:Athens": {
+    name: "Athens",
+    cdd: 1138
+  },
+  "eu:greece:Heraklion": {
+    name: "Heraklion",
+    cdd: 1020
+  },
+  "eu:greece:Patras": {
+    name: "Patras",
+    cdd: 937
+  },
+  "eu:greece:Thessaloniki": {
+    name: "Thessaloniki",
+    cdd: 980
+  },
+  "eu:greece:Ioannina": {
+    name: "Ioannina",
+    cdd: 527
+  },
+  "eu:cyprus:Nicosia": {
+    name: "Nicosia",
+    cdd: 1556
+  },
+  "eu:cyprus:Larnaca": {
+    name: "Larnaca",
+    cdd: 1532
+  },
+  "eu:cyprus:Limassol": {
+    name: "Limassol",
+    cdd: 1456
+  },
+  "eu:cyprus:Paphos": {
+    name: "Paphos",
+    cdd: 1219
+  },
+  "eu:malta:Valletta": {
+    name: "Valletta",
+    cdd: 1169
+  },
+  "eu:malta:Gozo": {
+    name: "Gozo",
+    cdd: 911
+  },
+  "eucap:AT": {
+    name: "Vienna",
+    cdd: 372
+  },
+  "eucap:BE": {
+    name: "Brussels",
+    cdd: 144
+  },
+  "eucap:BG": {
+    name: "Sofia",
+    cdd: 376
+  },
+  "eucap:HR": {
+    name: "Zagreb",
+    cdd: 429
+  },
+  "eucap:CZ": {
+    name: "Prague",
+    cdd: 266
+  },
+  "eucap:DK": {
+    name: "Copenhagen",
+    cdd: 51
+  },
+  "eucap:EE": {
+    name: "Tallinn",
+    cdd: 70
+  },
+  "eucap:FI": {
+    name: "Helsinki",
+    cdd: 55
+  },
+  "eucap:DE": {
+    name: "Berlin",
+    cdd: 233
+  },
+  "eucap:HU": {
+    name: "Budapest",
+    cdd: 471
+  },
+  "eucap:IE": {
+    name: "Dublin",
+    cdd: 9
+  },
+  "eucap:LV": {
+    name: "Riga",
+    cdd: 117
+  },
+  "eucap:LT": {
+    name: "Vilnius",
+    cdd: 127
+  },
+  "eucap:LU": {
+    name: "Luxembourg",
+    cdd: 134
+  },
+  "eucap:NL": {
+    name: "Amsterdam",
+    cdd: 83
+  },
+  "eucap:PL": {
+    name: "Warsaw",
+    cdd: 232
+  },
+  "eucap:RO": {
+    name: "Bucharest",
+    cdd: 623
+  },
+  "eucap:SK": {
+    name: "Bratislava",
+    cdd: 393
+  },
+  "eucap:SI": {
+    name: "Ljubljana",
+    cdd: 287
+  },
+  "eucap:SE": {
+    name: "Stockholm",
+    cdd: 61
+  },
+  "au:new-south-wales": {
+    name: "Sydney",
+    cdd: 571,
+    lat: -33.868,
+    lon: 151.209
+  },
+  "au:victoria": {
+    name: "Melbourne",
+    cdd: 305,
+    lat: -37.814,
+    lon: 144.963
+  },
+  "au:queensland": {
+    name: "Brisbane",
+    cdd: 1026,
+    lat: -27.47,
+    lon: 153.026
+  },
+  "au:western-australia": {
+    name: "Perth",
+    cdd: 789,
+    lat: -31.951,
+    lon: 115.861
+  },
+  "au:south-australia": {
+    name: "Adelaide",
+    cdd: 512,
+    lat: -34.929,
+    lon: 138.601
+  },
+  "au:tasmania": {
+    name: "Hobart",
+    cdd: 71,
+    lat: -42.882,
+    lon: 147.327
+  },
+  "au:act": {
+    name: "Canberra",
+    cdd: 248,
+    lat: -35.281,
+    lon: 149.13
+  },
+  "au:northern-territory": {
+    name: "Darwin",
+    cdd: 3354,
+    lat: -12.463,
+    lon: 130.842
+  },
+  "as:singapore": {
+    name: "Singapore",
+    cdd: 3272,
+    lat: 1.29,
+    lon: 103.852
+  },
+  "as:philippines": {
+    name: "Metro Manila",
+    cdd: 3336,
+    lat: 14.599,
+    lon: 120.984
+  },
+  "as:hong-kong": {
+    name: "Hong Kong",
+    cdd: 1800,
+    lat: 22.302,
+    lon: 114.177
+  },
+  "as:japan": {
+    name: "Tokyo",
+    cdd: 917,
+    lat: 35.69,
+    lon: 139.692
+  },
+  "as:malaysia": {
+    name: "Kuala Lumpur",
+    cdd: 3161,
+    lat: 3.139,
+    lon: 101.687
+  },
+  "as:thailand": {
+    name: "Bangkok",
+    cdd: 3569,
+    lat: 13.756,
+    lon: 100.502
+  },
+  "as:vietnam": {
+    name: "Ho Chi Minh City",
+    cdd: 3369,
+    lat: 10.823,
+    lon: 106.63
+  },
+  "as:indonesia": {
+    name: "Jakarta",
+    cdd: 3184,
+    lat: -6.208,
+    lon: 106.846
+  },
+  "as:taiwan": {
+    name: "Taipei",
+    cdd: 1942,
+    lat: 25.033,
+    lon: 121.565
+  },
+  "as:south-korea": {
+    name: "Seoul",
+    cdd: 670,
+    lat: 37.567,
+    lon: 126.978
+  },
+  "as:china": {
+    name: "Shanghai",
+    cdd: 1187,
+    lat: 31.23,
+    lon: 121.474
+  },
+  "as:cambodia": {
+    name: "Phnom Penh",
+    cdd: 3510,
+    lat: 11.556,
+    lon: 104.928
+  },
+  "as:brunei": {
+    name: "Bandar Seri Begawan",
+    cdd: 3038,
+    lat: 4.903,
+    lon: 114.94
+  }
+};
+const climate = {
+  _readme,
+  source,
+  sourceUrl,
+  baseC,
+  years,
+  updated,
+  locations
+};
+const WORLD_UNIT_KW = AU_REF_KW;
+const WORLD_UNIT_EFF = AU_REF_EFF;
+const WORLD_KWH_PER_HOUR = WORLD_UNIT_KW / WORLD_UNIT_EFF;
+const WORLD_HOURS_BASE = 80;
+const WORLD_HOURS_PER_CDD = 0.8;
+const WORLD_FIT_CITIES = 69;
+const CLIMATE_YEARS = climate.years;
+const CLIMATE_SOURCE = climate.source;
+const CLIMATE_SOURCE_URL = climate.sourceUrl;
+const WORLD_UPDATED = "2026-10-21";
+const REGIONS = ["United States", "Canada", "Caribbean", "Europe", "Asia", "Australia"];
+const CDD = climate.locations;
+function worldHours(cdd) {
+  return Math.round((WORLD_HOURS_BASE + WORLD_HOURS_PER_CDD * cdd) / 10) * 10;
+}
+function place(p2, climateId) {
+  const c = CDD[climateId];
+  if (!c) throw new Error(`No climate data for ${climateId}`);
+  const hours = worldHours(c.cdd);
+  const perHour = WORLD_KWH_PER_HOUR * p2.usdRate;
+  return { ...p2, city: c.name, cdd: c.cdd, hours, perHour, perYear: perHour * hours };
+}
+const EU_PAGE_BY_ISO = {
+  ES: "spain",
+  FR: "france",
+  PT: "portugal",
+  GB: "united-kingdom",
+  IT: "italy",
+  GR: "greece",
+  CY: "cyprus",
+  MT: "malta"
+};
+function europe() {
+  const entries = Object.entries(eu.countries);
+  const rows = entries.map(([iso, c]) => ({ iso, name: c.name, eur: c.price, date: c.periodLabel ?? eu.periodLabel }));
+  const uk = EU_COUNTRIES.find((c) => c.slug === "united-kingdom");
+  if (uk) {
+    const gbp = uk.rate + (uk.standingChargePerDay ?? 0) * 365 / (uk.typicalKwh ?? 2500);
+    rows.push({ iso: "GB", name: "United Kingdom", eur: gbp / GBP_PER_EUR, date: uk.asOf });
+  }
+  return rows.map((r) => {
+    const slug = EU_PAGE_BY_ISO[r.iso];
+    const page2 = slug ? EU_COUNTRIES.find((c) => c.slug === slug) : void 0;
+    const climateId = page2 ? `eu:${page2.slug}:${page2.refCity}` : `eucap:${r.iso}`;
+    return place({
+      id: `eu-${r.iso.toLowerCase()}`,
+      name: r.name,
+      region: "Europe",
+      href: page2 ? `/ac-cost/${page2.slug}` : "/ac-cost/europe#map",
+      usdRate: r.eur * USD_PER_EUR,
+      basis: "all-in",
+      priceDate: r.date
+    }, climateId);
+  });
+}
+const WORLD_PLACES = [
+  ...STATES$1.map((s) => place({
+    id: `us-${s.abbr.toLowerCase()}`,
+    name: s.name,
+    region: "United States",
+    href: `/ac-cost/${s.slug}`,
+    usdRate: s.rate,
+    basis: "all-in",
+    priceDate: RATES_AS_OF
+  }, `us:${s.abbr}`)),
+  ...COUNTRIES.map((c) => place({
+    id: `cb-${c.slug}`,
+    name: c.name,
+    region: "Caribbean",
+    href: `/ac-cost/${c.slug}`,
+    usdRate: c.usdRate,
+    basis: c.basis.startsWith("All-in") ? "all-in" : "usage",
+    priceDate: c.asOf
+  }, `cb:${c.slug}`)),
+  ...PROVINCES.map((p2) => place({
+    id: `ca-${p2.slug}`,
+    name: p2.name,
+    region: "Canada",
+    href: `/ac-cost/canada/${p2.slug}`,
+    usdRate: p2.usdRate,
+    basis: "all-in",
+    priceDate: CANADA_RATES_DATE
+  }, `ca:${p2.abbr}:${p2.city.name}`)),
+  ...europe(),
+  ...AU_STATES.map((s) => place({
+    id: `au-${s.slug}`,
+    name: s.name,
+    region: "Australia",
+    href: `/ac-cost/australia/${s.slug}`,
+    usdRate: s.usdRate,
+    basis: "usage",
+    priceDate: AU_PERIOD
+  }, `au:${s.slug}`)),
+  ...ASIA_COUNTRIES.map((c) => place({
+    id: `as-${c.slug}`,
+    name: c.name,
+    region: "Asia",
+    href: `/ac-cost/asia/${c.slug}`,
+    usdRate: c.usdRate,
+    basis: "usage",
+    priceDate: c.asOf
+  }, `as:${c.slug}`))
+];
+const BASIS_LABEL = {
+  "all-in": "All-in average",
+  usage: "Per-kWh charges"
+};
+const REGION_HUB = {
+  "United States": "/ac-cost",
+  Caribbean: "/ac-cost/caribbean",
+  Canada: "/ac-cost/canada",
+  Europe: "/ac-cost/europe",
+  Australia: "/ac-cost/australia",
+  Asia: "/ac-cost/asia"
+};
+const PATH$2 = "/ac-cost/world";
+const COUNT = WORLD_PLACES.length;
+const TITLE$2 = `Cost to Run AC Around the World: ${COUNT} Places Compared`;
+const HEADLINE$2 = "What It Costs to Run Air Conditioning Around the World";
+const th$4 = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 align-bottom";
+const td$4 = "border border-gray-200 px-3 py-2 text-gray-700";
+const h2$5 = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$5 = "text-gray-700 leading-relaxed mb-4";
+const a$5 = "text-teal-600 hover:text-teal-700 font-medium";
+const usd0 = (n) => `$${Math.round(n).toLocaleString("en-US")}`;
+const usd2 = (n) => `$${n.toFixed(2)}`;
+const kwh = WORLD_KWH_PER_HOUR.toFixed(2);
+const SORTS = [
+  { key: "year", label: "Cost per year", value: (x) => x.perYear },
+  { key: "price", label: "Electricity price", value: (x) => x.usdRate },
+  { key: "hours", label: "Hours of AC", value: (x) => x.hours }
+];
+const THE = /* @__PURE__ */ new Set(["Bahamas", "Cayman Islands", "Dominican Republic", "United Kingdom", "Netherlands", "Philippines", "Czechia", "District of Columbia"]);
+const inName$1 = (x) => THE.has(x.name) ? `the ${x.name}` : x.name;
+const byYear = [...WORLD_PLACES].sort((x, y) => y.perYear - x.perYear);
+const byPrice = [...WORLD_PLACES].sort((x, y) => y.usdRate - x.usdRate);
+const yearRank = new Map(byYear.map((x, i) => [x.id, i + 1]));
+const priceRank = new Map(byPrice.map((x, i) => [x.id, i + 1]));
+const top = byYear[0];
+const bottom = byYear[byYear.length - 1];
+const priciest = byPrice[0];
+const cheapestPower = byPrice[byPrice.length - 1];
+const pricyButCheapToCool = byPrice.slice(0, 15).reduce((m, x) => (yearRank.get(x.id) ?? 0) > (yearRank.get(m.id) ?? 0) ? x : m);
+const cheapPowerButCostly = byYear.slice(0, 15).reduce((m, x) => x.usdRate < m.usdRate ? x : m);
+const median = (xs) => {
+  const s = [...xs].sort((x, y) => x - y);
+  return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2;
+};
+const regionMedian = REGIONS.map((r) => {
+  const rows = WORLD_PLACES.filter((x) => x.region === r);
+  return { region: r, count: rows.length, year: median(rows.map((x) => x.perYear)), price: median(rows.map((x) => x.usdRate)) };
+}).sort((x, y) => y.year - x.year);
+function csv(rows) {
+  const head = ["Rank by yearly cost", "Place", "Region", "Climate city", "Price per kWh (US$)", "Price basis", "Price date", "Cooling degree days (base 18.3 C)", "Hours of AC per year", "Cost per hour (US$)", "Cost per year (US$)", "Page"];
+  const esc = (v) => typeof v === "string" && /[",]/.test(v) ? `"${v.replace(/"/g, '""')}"` : String(v);
+  const lines = rows.map((x) => [
+    yearRank.get(x.id) ?? "",
+    x.name,
+    x.region,
+    x.city,
+    x.usdRate.toFixed(4),
+    BASIS_LABEL[x.basis],
+    x.priceDate,
+    x.cdd,
+    x.hours,
+    x.perHour.toFixed(3),
+    Math.round(x.perYear),
+    `${SITE_URL}${x.href}`
+  ].map(esc).join(","));
+  return [head.join(","), ...lines].join("\n");
+}
+function AcCostWorld() {
+  const [region, setRegion] = useState("all");
+  const [sort, setSort] = useState("year");
+  const rows = useMemo(() => {
+    const s = SORTS.find((x) => x.key === sort);
+    return WORLD_PLACES.filter((x) => region === "all" || x.region === region).sort((x, y) => s.value(y) - s.value(x));
+  }, [region, sort]);
+  const maxYear = top.perYear;
+  const download = () => {
+    const blob = new Blob([csv(byYear)], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "ac-running-cost-world.csv";
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+  const description = `One 12,000 BTU air conditioner costs from ${usd0(bottom.perYear)} a year to run in ${inName$1(bottom)} to ${usd0(top.perYear)} in ${inName$1(top)}. ${COUNT} places in the U.S., Canada, the Caribbean, Europe, Asia and Australia, on one yardstick.`;
+  const faqs2 = [
+    {
+      q: "Where in the world is air conditioning most expensive to run?",
+      a: `Of the ${COUNT} places we compare, ${inName$1(top)} pays the most to run the same air conditioner: about ${usd0(top.perYear)} a year for one 12,000 BTU unit, because power costs ${cents(top.usdRate)} a kWh and the climate calls for about ${top.hours.toLocaleString()} hours of cooling. ${byYear.slice(1, 4).map((x) => `${x.name} (${usd0(x.perYear)})`).join(", ")} follow.`
+    },
+    {
+      q: "Is the most expensive electricity the same as the most expensive AC?",
+      a: `No. ${priciest.name} has the dearest power of the places we compare (${cents(priciest.usdRate)} a kWh), but it ranks #${yearRank.get(priciest.id)} for what a year of AC costs. ${pricyButCheapToCool.name}'s power is among the 15 most expensive (${cents(pricyButCheapToCool.usdRate)}), yet a year of cooling costs only ${usd0(pricyButCheapToCool.perYear)} because summers are short. Climate matters as much as price.`
+    },
+    {
+      q: "How did you compare places fairly?",
+      a: `Every place gets the same air conditioner (12,000 BTU, using ${kwh} kWh of electricity an hour) and the same rule for how long it runs: ${WORLD_HOURS_BASE} hours plus ${WORLD_HOURS_PER_CDD} hours for every cooling degree day, measured from ten years of weather data (${CLIMATE_YEARS}). Only the electricity price and the climate change from place to place.`
+    }
+  ];
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsxs(Helmet, { children: [
+      /* @__PURE__ */ jsx("title", { children: TITLE$2 }),
+      /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$2}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$2}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$2 }),
+      /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
+      /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
+      /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
+      /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$2, headline: HEADLINE$2, description, dateModified: WORLD_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs2.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } }))
+      }) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        name: "Cost to run air conditioning around the world",
+        description: `Yearly and hourly cost of running one 12,000 BTU air conditioner in ${COUNT} places, from local electricity prices and ten years of cooling degree days.`,
+        url: `${SITE_URL}${PATH$2}`,
+        creator: { "@id": `${SITE_URL}/about/mark-curant#person` },
+        dateModified: WORLD_UPDATED,
+        temporalCoverage: "2016/2026",
+        spatialCoverage: "United States, Canada, Caribbean, Europe, Asia, Australia",
+        variableMeasured: ["Electricity price per kWh (US$)", "Cooling degree days", "Hours of air conditioning per year", "Cost per year (US$)"],
+        isAccessibleForFree: true
+      }) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Most expensive places to run air conditioning",
+        itemListElement: byYear.slice(0, 20).map((x, i) => ({ "@type": "ListItem", position: i + 1, name: x.name, url: `${SITE_URL}${x.href.split("#")[0]}` }))
+      }) })
+    ] }),
+    /* @__PURE__ */ jsxs("main", { className: "max-w-5xl mx-auto px-4 py-12", children: [
+      /* @__PURE__ */ jsxs(Link, { to: "/ac-cost", className: "inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 mb-8 transition-colors", children: [
+        /* @__PURE__ */ jsx(ArrowLeft, { className: "w-4 h-4" }),
+        "AC running cost by U.S. state"
+      ] }),
+      /* @__PURE__ */ jsxs("article", { className: "bg-white rounded-lg shadow-lg p-5 sm:p-8", children: [
+        /* @__PURE__ */ jsxs("header", { className: "mb-8", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-sm text-gray-500 mb-4", children: [
+            /* @__PURE__ */ jsxs("span", { className: "inline-flex items-center gap-1 bg-teal-100 text-teal-700 px-3 py-1 rounded-full font-medium", children: [
+              /* @__PURE__ */ jsx(Earth, { className: "w-3.5 h-3.5" }),
+              " World"
+            ] }),
+            /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-1", children: [
+              /* @__PURE__ */ jsx(Clock, { className: "w-4 h-4" }),
+              " 7 min read"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$2 }),
+          /* @__PURE__ */ jsxs("p", { className: "text-xl text-gray-600", children: [
+            "The same air conditioner, priced in ",
+            COUNT,
+            " places on one yardstick: local electricity prices, ten years of measured climate, and one rule for how long it runs."
+          ] }),
+          /* @__PURE__ */ jsx(ArticleByline, { updated: WORLD_UPDATED })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "bg-teal-50 border-l-4 border-teal-500 p-6 mb-8 rounded-r-lg", children: [
+          /* @__PURE__ */ jsx("p", { className: "text-sm font-bold uppercase tracking-wide text-teal-800 mb-2", children: "Quick answer" }),
+          /* @__PURE__ */ jsxs("p", { className: "text-gray-800 leading-relaxed", children: [
+            "One modern 12,000 BTU air conditioner costs about ",
+            /* @__PURE__ */ jsxs("strong", { children: [
+              usd0(top.perYear),
+              " a year to run in ",
+              inName$1(top)
+            ] }),
+            ", the most of the ",
+            COUNT,
+            " places we compare, and about ",
+            /* @__PURE__ */ jsxs("strong", { children: [
+              usd0(bottom.perYear),
+              " in ",
+              inName$1(bottom)
+            ] }),
+            ", the least. ",
+            priciest.name,
+            " has the most expensive electricity (",
+            cents(priciest.usdRate),
+            " a kWh) and",
+            " ",
+            cheapestPower.name,
+            " the cheapest (",
+            cents(cheapestPower.usdRate),
+            "), but what a year of cooling costs depends just as much on the climate: ",
+            cheapPowerButCostly.name,
+            ", with power at ",
+            cents(cheapPowerButCostly.usdRate),
+            ", still ranks #",
+            yearRank.get(cheapPowerButCostly.id),
+            " for yearly cost."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("p", { className: p$5, children: "I run retail stores in the Caribbean, where power costs over 30¢ a kWh and the air conditioning never gets a season off. I built the region pages on this site one at a time, and each one used its own assumptions, so you couldn't line them up. This page fixes that: the same unit, the same rule for hours, measured weather for every place. Only the price of electricity and the climate change." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "What drives the cost" }),
+        /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6", children: [
+          /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-4", children: [
+            /* @__PURE__ */ jsx("p", { className: "text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1", children: "Most expensive to cool" }),
+            /* @__PURE__ */ jsxs("p", { className: "text-gray-800", children: [
+              /* @__PURE__ */ jsx("strong", { children: top.name }),
+              ": ",
+              usd0(top.perYear),
+              " a year. Expensive power (",
+              cents(top.usdRate),
+              "/kWh) and about",
+              " ",
+              top.hours.toLocaleString(),
+              " hours of AC a year."
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-4", children: [
+            /* @__PURE__ */ jsx("p", { className: "text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1", children: "Priciest power, cheap to cool" }),
+            /* @__PURE__ */ jsxs("p", { className: "text-gray-800", children: [
+              /* @__PURE__ */ jsx("strong", { children: pricyButCheapToCool.name }),
+              ": power is #",
+              priceRank.get(pricyButCheapToCool.id),
+              " most expensive (",
+              cents(pricyButCheapToCool.usdRate),
+              "), but a year of AC costs only ",
+              usd0(pricyButCheapToCool.perYear),
+              " (",
+              pricyButCheapToCool.hours.toLocaleString(),
+              " hours)."
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-4", children: [
+            /* @__PURE__ */ jsx("p", { className: "text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1", children: "Cheap power, still costly" }),
+            /* @__PURE__ */ jsxs("p", { className: "text-gray-800", children: [
+              /* @__PURE__ */ jsx("strong", { children: cheapPowerButCostly.name }),
+              ": one of the cheapest kWh in the top 15 (",
+              cents(cheapPowerButCostly.usdRate),
+              "), but ",
+              cheapPowerButCostly.hours.toLocaleString(),
+              " hours of cooling make it #",
+              yearRank.get(cheapPowerButCostly.id),
+              " for yearly cost."
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-4", children: [
+            /* @__PURE__ */ jsx("p", { className: "text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1", children: "By region (middle place)" }),
+            /* @__PURE__ */ jsx("ul", { className: "text-gray-800 text-sm space-y-0.5", children: regionMedian.map((r) => /* @__PURE__ */ jsxs("li", { children: [
+              /* @__PURE__ */ jsx(Link, { to: REGION_HUB[r.region], className: a$5, children: r.region }),
+              ": ",
+              usd0(r.year),
+              " a year, ",
+              cents(r.price),
+              "/kWh",
+              /* @__PURE__ */ jsxs("span", { className: "text-gray-400", children: [
+                " (",
+                r.count,
+                " places)"
+              ] })
+            ] }, r.region)) })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "The 15 most expensive places to run AC" }),
+        /* @__PURE__ */ jsx("p", { className: p$5, children: "Cost of a year of air conditioning with one 12,000 BTU unit, in U.S. dollars." }),
+        /* @__PURE__ */ jsx("ol", { className: "space-y-1.5 mb-6", children: byYear.slice(0, 15).map((x, i) => /* @__PURE__ */ jsxs("li", { className: "grid grid-cols-[1.5rem_minmax(0,8.5rem)_1fr_3rem] sm:grid-cols-[2rem_12rem_1fr_3.5rem] items-center gap-2 text-sm", children: [
+          /* @__PURE__ */ jsx("span", { className: "text-gray-400 text-right", children: i + 1 }),
+          /* @__PURE__ */ jsx(Link, { to: x.href, className: "font-medium text-gray-900 hover:text-teal-700 truncate", children: x.name }),
+          /* @__PURE__ */ jsx("span", { className: "h-4 bg-gray-100 rounded-r", "aria-hidden": "true", children: /* @__PURE__ */ jsx("span", { className: "block h-4 rounded-r bg-orange-400/80", style: { width: `${Math.max(2, x.perYear / maxYear * 100)}%` } }) }),
+          /* @__PURE__ */ jsx("span", { className: "text-gray-700 text-right tabular-nums", children: usd0(x.perYear) })
+        ] }, x.id)) }),
+        /* @__PURE__ */ jsxs("h2", { className: h2$5, id: "table", children: [
+          "All ",
+          COUNT,
+          " places compared"
+        ] }),
+        /* @__PURE__ */ jsxs(TableExplainer, { children: [
+          /* @__PURE__ */ jsxs("p", { className: "mb-2", children: [
+            "Every cost is for ",
+            /* @__PURE__ */ jsx("strong", { children: "one modern 12,000 BTU inverter air conditioner" }),
+            " (1 ton, 3.5 kW of cooling), the usual size for a living room. 12,000 BTU is how much ",
+            /* @__PURE__ */ jsx("em", { children: "cooling" }),
+            " it puts out. It uses about",
+            " ",
+            /* @__PURE__ */ jsxs("strong", { children: [
+              kwh,
+              " kWh of electricity for each hour it runs"
+            ] }),
+            " at full power. The same unit is used everywhere, so only the price and the climate change."
+          ] }),
+          /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1", children: [
+            /* @__PURE__ */ jsxs("li", { children: [
+              /* @__PURE__ */ jsx("strong", { children: "Electricity price per kWh:" }),
+              ' what a household pays for 1 kWh, converted to U.S. cents. "All-in average" prices include the fixed monthly charge spread over every kWh; "per-kWh charges" leave the fixed charge out, which is closer to what extra AC use adds to a bill. Each place uses its newest available price, so dates differ.'
+            ] }),
+            /* @__PURE__ */ jsxs("li", { children: [
+              /* @__PURE__ */ jsx("strong", { children: "Climate (cooling degree days):" }),
+              " how hot it is over a year, measured from ten years of weather (",
+              CLIMATE_YEARS,
+              ") for the city named under each place. Each day adds the number of degrees (°C) its average temperature is above 18.3 °C (65 °F)."
+            ] }),
+            /* @__PURE__ */ jsxs("li", { children: [
+              /* @__PURE__ */ jsx("strong", { children: "Hours of AC per year:" }),
+              " ",
+              WORLD_HOURS_BASE,
+              " hours plus ",
+              WORLD_HOURS_PER_CDD,
+              " hours for every cooling degree day. It's the AC's running time at full power, added up over the year."
+            ] }),
+            /* @__PURE__ */ jsxs("li", { children: [
+              /* @__PURE__ */ jsx("strong", { children: "Cost per hour:" }),
+              " ",
+              kwh,
+              " kWh × the price. ",
+              /* @__PURE__ */ jsx("strong", { children: "Cost per year:" }),
+              " cost per hour × hours."
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap items-center gap-2 mb-2 text-sm", role: "group", "aria-label": "Show region", children: [
+          /* @__PURE__ */ jsx("span", { className: "text-gray-500", children: "Show:" }),
+          ["all", ...REGIONS].map((r) => /* @__PURE__ */ jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setRegion(r),
+              "aria-pressed": region === r,
+              className: `px-3 py-1 rounded-full border font-semibold ${region === r ? "bg-[#17204d] text-white border-[#17204d]" : "bg-white text-gray-700 border-gray-200 hover:border-teal-400"}`,
+              children: r === "all" ? `All ${COUNT}` : r
+            },
+            r
+          ))
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap items-center gap-2 mb-3 text-sm", role: "group", "aria-label": "Sort by", children: [
+          /* @__PURE__ */ jsx("span", { className: "text-gray-500", children: "Highest first:" }),
+          SORTS.map((s) => /* @__PURE__ */ jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setSort(s.key),
+              "aria-pressed": sort === s.key,
+              className: `px-3 py-1 rounded-full border font-semibold ${sort === s.key ? "bg-teal-600 text-white border-teal-600" : "bg-white text-gray-700 border-gray-200 hover:border-teal-400"}`,
+              children: s.label
+            },
+            s.key
+          )),
+          /* @__PURE__ */ jsxs("button", { type: "button", onClick: download, className: "ml-auto inline-flex items-center gap-1 text-teal-700 font-semibold hover:underline", children: [
+            /* @__PURE__ */ jsx(Download, { className: "w-4 h-4" }),
+            " Download CSV"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[760px] border-collapse text-sm", children: [
+          /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
+            /* @__PURE__ */ jsx("th", { className: th$4, children: "#" }),
+            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+              "Place",
+              /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "climate measured in" })
+            ] }),
+            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+              "Electricity price per kWh",
+              /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "U.S. cents · price basis" })
+            ] }),
+            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+              "Climate",
+              /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "cooling degree days a year" })
+            ] }),
+            /* @__PURE__ */ jsx("th", { className: th$4, children: "Hours of AC per year" }),
+            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+              "Cost per hour of AC",
+              /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "one 12,000 BTU unit" })
+            ] }),
+            /* @__PURE__ */ jsxs("th", { className: th$4, children: [
+              "Cost per year of AC",
+              /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "one 12,000 BTU unit" })
+            ] })
+          ] }) }),
+          /* @__PURE__ */ jsx("tbody", { children: rows.map((x, i) => /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50", children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$4} text-gray-400`, children: i + 1 }),
+            /* @__PURE__ */ jsxs("td", { className: td$4, children: [
+              /* @__PURE__ */ jsx(Link, { to: x.href, className: a$5, children: x.name }),
+              /* @__PURE__ */ jsxs("span", { className: "block text-xs text-gray-500", children: [
+                x.city,
+                " · ",
+                x.region
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxs("td", { className: td$4, children: [
+              cents(x.usdRate),
+              /* @__PURE__ */ jsxs("span", { className: "block text-xs text-gray-500", children: [
+                BASIS_LABEL[x.basis],
+                " · ",
+                x.priceDate
+              ] })
+            ] }),
+            /* @__PURE__ */ jsx("td", { className: td$4, children: x.cdd.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$4, children: x.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$4, children: usd2(x.perHour) }),
+            /* @__PURE__ */ jsx("td", { className: `${td$4} font-semibold text-gray-900`, children: usd0(x.perYear) })
+          ] }, x.id)) })
+        ] }) }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-6", children: "Each place links to its own page, with costs in local currency, by unit size and efficiency, and the details of its electricity price. EU countries without their own page link to the Europe price map." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "Why these numbers differ from the country pages" }),
+        /* @__PURE__ */ jsx("p", { className: p$5, children: "Each region page answers a local question, so it uses the local default: a 3-ton central system in the U.S. and Canada, a 3.5 kW split in Europe, Asia and Australia, and our own estimate of the hours for each city. Those are the right numbers for planning a bill where you live, but they can't be lined up against each other. This page gives up some local detail to make the comparison fair:" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Same unit everywhere." }),
+            " One 12,000 BTU unit using ",
+            kwh,
+            " kWh an hour. A U.S. home with a 3-ton central system uses about 3.7 times as much electricity an hour as this unit."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Same rule for hours." }),
+            " Hours come from measured climate, not from a separate estimate for each region. The rule (",
+            WORLD_HOURS_BASE,
+            " + ",
+            WORLD_HOURS_PER_CDD,
+            " × cooling degree days) is a straight line fitted to the city-by-city hour estimates on our Europe, Caribbean, Asia and Australia pages (",
+            WORLD_FIT_CITIES,
+            " cities). It gives, for example, ",
+            worldHours(1e3).toLocaleString(),
+            " hours for a place with 1,000 cooling degree days and",
+            " ",
+            worldHours(3e3).toLocaleString(),
+            " for 3,000."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "One city per place." }),
+            " A state or country is represented by one city's climate (named under each row). Hotter and cooler parts of the same place will differ."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Europe uses Eurostat's all-in averages" }),
+            " for every EU country (and an Ofgem-based figure for the UK), the same prices as our Europe map. A few European country pages use the tariff price of each extra kWh instead, so their prices can differ."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
+        ] }, f.q)) }),
+        /* @__PURE__ */ jsx("h2", { className: h2$5, children: "Sources and method" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            "Climate: ",
+            /* @__PURE__ */ jsx("a", { href: CLIMATE_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: "text-teal-700 hover:underline", children: CLIMATE_SOURCE }),
+            ", daily mean temperature ",
+            CLIMATE_YEARS,
+            "; cooling degree days at base 18.3 °C (65 °F), averaged per year."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            "U.S.: ",
+            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: "text-teal-700 hover:underline", children: "EIA Electric Power Monthly, Table 5.6.A" }),
+            ", average residential price by state, ",
+            RATES_AS_OF,
+            "."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            "Canada: ",
+            /* @__PURE__ */ jsx("a", { href: CANADA_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: "text-teal-700 hover:underline", children: CANADA_SOURCE }),
+            ", average price at 1,000 kWh a month before tax, largest city in each province."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            "Europe: Eurostat household electricity prices (nrg_pc_204), 2,500–4,999 kWh a year, all taxes, ",
+            eu.periodLabel,
+            " ",
+            "(newest half-year for each country); UK from Ofgem's price cap."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            "Caribbean, Australia and Asia: each country's utility, regulator or tariff source, listed on its page (",
+            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: "text-teal-700 hover:underline", children: "Caribbean" }),
+            ",",
+            " ",
+            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/australia", className: "text-teal-700 hover:underline", children: "Australia" }),
+            ",",
+            " ",
+            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/asia", className: "text-teal-700 hover:underline", children: "Asia" }),
+            ")."
+          ] }),
+          /* @__PURE__ */ jsx("li", { children: "Prices in other currencies are converted to U.S. dollars at the exchange rates stated on each region page." })
+        ] }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-600 mb-2", children: "You're welcome to use these figures; please link to this page as the source." })
       ] }),
       /* @__PURE__ */ jsx(LeadMagnet, {})
     ] })
@@ -33236,7 +34544,7 @@ function AcCostAsiaCountry() {
   const perHour = hourCost(AU_REF_KW, AU_REF_EFF, rate);
   const month = perHour * HOT_MONTH_HOURS;
   const refYear = yearCost(AU_REF_KW, AU_REF_EFF, c.ref.hours, rate);
-  const usd2 = USD_PER[c.currency];
+  const usd3 = USD_PER[c.currency];
   const cities = [...c.cities].sort((x, y) => y.hours - x.hours);
   const cityYear = (x) => yearCost(AU_REF_KW, AU_REF_EFF, x.hours, asiaCityRate(c, x));
   const hot = cities[0];
@@ -33258,7 +34566,7 @@ function AcCostAsiaCountry() {
     },
     {
       q: `How much does air conditioning add to a monthly bill in ${inName(c)}?`,
-      a: `Running a 1.5 hp inverter split 8 hours a day for 30 days uses about ${Math.round(AU_REF_KW / AU_REF_EFF * HOT_MONTH_HOURS)} kWh, or about ${m(month)}. Over a year in ${c.ref.name}, at our estimate of ${c.ref.hours.toLocaleString()} cooling hours, one unit costs about ${m(refYear)} (about ${usd0(refYear * usd2)}).`
+      a: `Running a 1.5 hp inverter split 8 hours a day for 30 days uses about ${Math.round(AU_REF_KW / AU_REF_EFF * HOT_MONTH_HOURS)} kWh, or about ${m(month)}. Over a year in ${c.ref.name}, at our estimate of ${c.ref.hours.toLocaleString()} cooling hours, one unit costs about ${m(refYear)} (about ${usd0$1(refYear * usd3)}).`
     },
     {
       q: "Is an inverter air conditioner worth it?",
@@ -33349,7 +34657,7 @@ function AcCostAsiaCountry() {
               c.ref.name
             ] }),
             " (about ",
-            usd0(refYear * usd2),
+            usd0$1(refYear * usd3),
             ")",
             cities.length === 1 ? "." : hot.name === c.ref.name ? /* @__PURE__ */ jsxs(Fragment, { children: [
               ", the hottest city we list, and ",
@@ -33422,7 +34730,7 @@ function AcCostAsiaCountry() {
                 multiZone && /* @__PURE__ */ jsx("td", { className: td$3, children: lprice(c.currency, z.rate) }),
                 /* @__PURE__ */ jsx("td", { className: td$3, children: x.hours.toLocaleString() }),
                 /* @__PURE__ */ jsx("td", { className: td$3, children: m(cityYear(x)) }),
-                /* @__PURE__ */ jsx("td", { className: td$3, children: usd0(cityYear(x) * usd2) })
+                /* @__PURE__ */ jsx("td", { className: td$3, children: usd0$1(cityYear(x) * usd3) })
               ] }, x.name);
             }) })
           ] }) }),
@@ -33461,7 +34769,7 @@ function AcCostAsiaCountry() {
             /* @__PURE__ */ jsx("td", { className: `${td$3} font-medium`, children: z.name }),
             /* @__PURE__ */ jsx("td", { className: td$3, children: z.area }),
             /* @__PURE__ */ jsx("td", { className: td$3, children: lprice(c.currency, z.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$3, children: cents(z.rate * usd2) }),
+            /* @__PURE__ */ jsx("td", { className: td$3, children: cents(z.rate * usd3) }),
             /* @__PURE__ */ jsx("td", { className: td$3, children: m(hourCost(AU_REF_KW, AU_REF_EFF, z.rate), true) })
           ] }, z.id)) })
         ] }) }),
@@ -33610,7 +34918,7 @@ function AcCostAsiaCountry() {
           " ",
           c.currency,
           " = $",
-          usd2 < 0.01 ? usd2.toPrecision(4) : usd2.toFixed(4),
+          usd3 < 0.01 ? usd3.toPrecision(4) : usd3.toFixed(4),
           " (",
           ASIA_FX_AS_OF,
           ", European Central Bank). Cooling hours are our estimate for each city. To check your own price, divide the energy part of your bill by the kWh used."
@@ -35189,8 +36497,8 @@ function BlogArticleRunningCost() {
   const month = perHour * SUMMER_MONTH_HOURS;
   const year = annualCost(REF_TONS, REF_SEER, YEAR_HOURS, US_RATE);
   const ranked = [...STATES$1].sort((x, y) => x.rank - y.rank);
-  const top = ranked.slice(0, 10);
-  const bottom = ranked.slice(-10).reverse();
+  const top2 = ranked.slice(0, 10);
+  const bottom2 = ranked.slice(-10).reverse();
   const most = ranked[0];
   const least = ranked[ranked.length - 1];
   const description = `A typical 3-ton central AC costs about ${usd(perHour, 2)} an hour, ${usd(month)} for a summer month and ${usd(year)} a year at the U.S. average rate of ${cents(US_RATE)}/kWh (${RATES_AS_OF}). Costs by size, SEER and state.`;
@@ -35461,7 +36769,7 @@ function BlogArticleRunningCost() {
             " kWh × that price."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("div", { className: "grid md:grid-cols-2 gap-6 mb-4", children: [{ label: "Most expensive", list: top }, { label: "Least expensive", list: bottom }].map((g) => /* @__PURE__ */ jsxs("div", { children: [
+        /* @__PURE__ */ jsx("div", { className: "grid md:grid-cols-2 gap-6 mb-4", children: [{ label: "Most expensive", list: top2 }, { label: "Least expensive", list: bottom2 }].map((g) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsxs("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: [
             g.label,
             " to run AC"
@@ -35609,6 +36917,7 @@ function AppContent() {
       /* @__PURE__ */ jsx(Route, { path: "/ac-cost/europe", element: /* @__PURE__ */ jsx(AcCostEurope, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/ac-cost/australia", element: /* @__PURE__ */ jsx(AcCostAustralia, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/ac-cost/australia/:state", element: /* @__PURE__ */ jsx(AcCostAustraliaState, {}) }),
+      /* @__PURE__ */ jsx(Route, { path: "/ac-cost/world", element: /* @__PURE__ */ jsx(AcCostWorld, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/ac-cost/asia", element: /* @__PURE__ */ jsx(AcCostAsia, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/ac-cost/asia/:country", element: /* @__PURE__ */ jsx(AcCostAsiaCountry, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/ac-cost/canada/:province", element: /* @__PURE__ */ jsx(AcCostProvince, {}) }),
@@ -35673,6 +36982,7 @@ const routes = [
   ...EU_COUNTRIES.map((c) => `/ac-cost/${c.slug}`),
   "/ac-cost/australia",
   ...AU_STATES.map((s) => `/ac-cost/australia/${s.slug}`),
+  "/ac-cost/world",
   "/ac-cost/asia",
   ...ASIA_COUNTRIES.map((c) => `/ac-cost/asia/${c.slug}`),
   "/blog/how-much-does-it-cost-to-run-ac",
