@@ -4,11 +4,12 @@ import { ArrowLeft, Calculator, MapPin, Clock, Leaf } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
 import StateCostEstimator from '../components/StateCostEstimator';
+import TableExplainer from '../components/TableExplainer';
 import NotFound from './NotFound';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import {
   US_RATE, RATES_AS_OF, TONNAGES, SEERS, REF_TONS, REF_SEER, SUMMER_MONTH_HOURS,
-  annualCost, costPerHour, cents,
+  annualCost, costPerHour, kw, sizeLabel, cents,
 } from '../data/acCost';
 import {
   getProvince, PROVINCES, CANADA_UPDATED, CANADA_RATES_DATE, CANADA_SOURCE, CANADA_SOURCE_URL,
@@ -133,9 +134,9 @@ export default function AcCostProvince() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
             {[
-              { label: 'Per hour', value: cad(perHour, 2), note: '3-ton, SEER 14' },
+              { label: 'Per hour', value: cad(perHour, 2), note: `3-ton (36,000 BTU), SEER ${REF_SEER}: uses ${kw(REF_TONS, REF_SEER).toFixed(2)} kWh` },
               { label: 'Per month', value: cad(month), note: '8 hrs/day × 30 days' },
-              { label: 'Per year', value: cad(year), note: `${pr.hours.toLocaleString()} cooling hours` },
+              { label: 'Per year', value: cad(year), note: `${pr.hours.toLocaleString()} hours running (our estimate)` },
             ].map((k) => (
               <div key={k.label} className="rounded-lg border border-gray-200 p-4 text-center">
                 <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{k.label}</p>
@@ -151,14 +152,28 @@ export default function AcCostProvince() {
           </p>
 
           <h2 className={h2}>Electricity prices in {pr.name}</h2>
+          <TableExplainer>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>
+                <strong>Monthly bill at 1,000 kWh:</strong> what a home using 1,000 kWh in a month pays, fixed charges
+                included, in Canadian dollars before GST/HST and provincial taxes ({CANADA_RATES_DATE}, Hydro-Québec
+                comparison).
+              </li>
+              <li><strong>Average price per kWh:</strong> that bill divided by 1,000.</li>
+              <li>
+                <strong>Price of each extra kWh:</strong> how much the bill rises for each kWh from 1,000 to 2,000 a month.
+                AC is used on top of normal household use, so this is closer to what running it adds.
+              </li>
+            </ul>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
                   <th className={th}>City</th>
-                  <th className={th}>Bill at 1,000 kWh</th>
-                  <th className={th}>Avg. price</th>
-                  <th className={th}>Each kWh from 1,000 to 2,000</th>
+                  <th className={th}>Monthly bill at 1,000 kWh (before tax)</th>
+                  <th className={th}>Average price per kWh</th>
+                  <th className={th}>Price of each extra kWh (1,000 to 2,000 a month)</th>
                 </tr>
               </thead>
               <tbody>
@@ -184,24 +199,39 @@ export default function AcCostProvince() {
           </p>
 
           <h2 className={h2}>Cost to run AC in {pr.name} by system size</h2>
-          <p className={p}>
-            Central systems and ductless mini-splits are both sized in tons (1 ton = 12,000 Btu). A single-room mini-split
-            is usually 0.75–1 ton; a whole house, 2–5 tons. Costs for SEER {REF_SEER} at {cents(rate)}/kWh:
-          </p>
+          <TableExplainer>
+            <p className="mb-2">
+              Each row is a different size of air conditioner, all rated SEER {REF_SEER}, at {pr.city.name}'s average price
+              of {cents(rate)}/kWh, in Canadian dollars before tax. Central systems and ductless mini-splits are both sized
+              by how much heat they remove (tons, BTU, kW of cooling), not by the electricity they use; that's the second
+              column. A single-room mini-split is usually 0.75–1 ton (9,000–12,000 BTU); a whole house, 2–5 tons.
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Cost per hour:</strong> one hour at full power = electricity used per hour × the price.</li>
+              <li><strong>Per month:</strong> 8 hours of running a day for 30 days.</li>
+              <li>
+                <strong>Per year:</strong> {pr.hours.toLocaleString()} hours of full-power running, our estimate for{' '}
+                {pr.name}'s summer. Priced at the extra-kWh price ({cents(pr.city.extraRate)}), each figure would be{' '}
+                {Math.round(Math.abs(pr.city.extraRate / rate - 1) * 100)}% {pr.city.extraRate >= rate ? 'higher' : 'lower'}.
+              </li>
+            </ul>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>System size</th>
-                  <th className={th}>Per hour</th>
-                  <th className={th}>Per month (8 hrs/day)</th>
-                  <th className={th}>Per year</th>
+                  <th className={th}>System size (cooling output)</th>
+                  <th className={th}>Electricity used per hour</th>
+                  <th className={th}>Cost per hour</th>
+                  <th className={th}>Cost per month (8 hrs/day)</th>
+                  <th className={th}>Cost per year ({pr.hours.toLocaleString()} hours)</th>
                 </tr>
               </thead>
               <tbody>
                 {TONNAGES.map((t) => (
                   <tr key={t} className={t === REF_TONS ? 'bg-amber-50/60' : ''}>
-                    <td className={`${td} font-medium`}>{t} ton ({(t * 12000).toLocaleString()} Btu)</td>
+                    <td className={`${td} font-medium`}>{sizeLabel(t)}</td>
+                    <td className={td}>{kw(t, REF_SEER).toFixed(2)} kWh</td>
                     <td className={td}>{cad(costPerHour(t, REF_SEER, rate), 2)}</td>
                     <td className={td}>{cad(costPerHour(t, REF_SEER, rate) * SUMMER_MONTH_HOURS)}</td>
                     <td className={td}>{cad(annualCost(t, REF_SEER, pr.hours, rate))}</td>
@@ -212,18 +242,27 @@ export default function AcCostProvince() {
           </div>
 
           <h2 className={h2}>What a more efficient AC saves in {pr.name}</h2>
-          <p className={p}>
-            Annual cost of a 3-ton system at {pr.hours.toLocaleString()} cooling hours a year. Minimum efficiency for
-            new central air conditioners is set by Natural Resources Canada; older units are often SEER 10 or lower.
-          </p>
+          <TableExplainer>
+            <p className="mb-2">
+              The same 3-ton (36,000 BTU) central AC at different efficiency ratings, running {pr.hours.toLocaleString()}{' '}
+              hours a year at {cents(rate)}/kWh, in Canadian dollars before tax. A higher SEER gives the same cooling for
+              less electricity. Minimum efficiency for new central air conditioners is set by Natural Resources Canada;
+              older units are often SEER 10 or lower.
+            </p>
+            <p>
+              Savings are against an old SEER 10 unit. The 15-year column (about how long a system lasts) is the yearly
+              saving × 15 at today's price. It's the electricity saved, before the cost of the new system.
+            </p>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>SEER rating</th>
-                  <th className={th}>Annual cost</th>
-                  <th className={th}>Savings vs. SEER 10</th>
-                  <th className={th}>15-year savings</th>
+                  <th className={th}>Efficiency (SEER)</th>
+                  <th className={th}>Electricity used per hour</th>
+                  <th className={th}>Cost per year</th>
+                  <th className={th}>Saved per year vs. SEER 10</th>
+                  <th className={th}>Saved over 15 years vs. SEER 10</th>
                 </tr>
               </thead>
               <tbody>
@@ -233,6 +272,7 @@ export default function AcCostProvince() {
                   return (
                     <tr key={seer}>
                       <td className={`${td} font-medium`}>SEER {seer}</td>
+                      <td className={td}>{kw(REF_TONS, seer).toFixed(2)} kWh</td>
                       <td className={td}>{cad(cost)}</td>
                       <td className={td}>{seer === 10 ? '—' : cad(sv)}</td>
                       <td className={td}>{seer === 10 ? '—' : cad(sv * 15)}</td>

@@ -4,6 +4,7 @@ import { ArrowLeft, Calculator, MapPin, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import StateCostEstimator from '../components/StateCostEstimator';
 import LeadMagnet from '../components/LeadMagnet';
+import TableExplainer from '../components/TableExplainer';
 import NotFound from './NotFound';
 import AcCostCountry from './AcCostCountry';
 import { getCountry } from '../data/caribbean';
@@ -13,7 +14,7 @@ import { articleJsonLd, SITE_URL } from '../data/site';
 import {
   getState, STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, BAND_HOURS, BAND_LABEL,
   TONNAGES, SEERS, REF_TONS, REF_SEER, SUMMER_MONTH_HOURS,
-  annualCost, costPerHour, usd, cents, AC_COST_UPDATED,
+  annualCost, costPerHour, kw, sizeLabel, usd, cents, AC_COST_UPDATED,
 } from '../data/acCost';
 
 const th = 'border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900';
@@ -136,9 +137,9 @@ export default function AcCostState() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
             {[
-              { label: 'Per hour', value: usd(perHour, 2), note: '3-ton, SEER 14' },
+              { label: 'Per hour', value: usd(perHour, 2), note: `3-ton (36,000 BTU), SEER ${REF_SEER}: uses ${kw(REF_TONS, REF_SEER).toFixed(2)} kWh` },
               { label: 'Summer month', value: usd(month), note: '8 hrs/day × 30 days' },
-              { label: 'Per year', value: usd(year), note: `${s.hours.toLocaleString()} cooling hours` },
+              { label: 'Per year', value: usd(year), note: `${s.hours.toLocaleString()} hours running a year (our estimate)` },
             ].map((k) => (
               <div key={k.label} className="rounded-lg border border-gray-200 p-4 text-center">
                 <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{k.label}</p>
@@ -151,26 +152,39 @@ export default function AcCostState() {
           <StateCostEstimator key={s.slug} stateName={s.name} stateRate={s.rate} stateHours={s.hours} />
 
           <h2 className={h2}>Cost to run AC in {s.name} by system size</h2>
-          <p className={p}>
-            Costs for a SEER {REF_SEER} central air conditioner at {cents(s.rate)}/kWh. Not sure of your size? Most homes
-            need about 1 ton per 500–600 sq ft; our <Link to="/calculators/ac-sizing" className={a}>AC sizing calculator</Link> gives
-            a closer estimate.
-          </p>
+          <TableExplainer>
+            <p className="mb-2">
+              Each row is a different size of central air conditioner, all rated SEER {REF_SEER}, at {s.name}'s average
+              price of {cents(s.rate)}/kWh. The size (tons, BTU, kW of cooling) is how much heat the system removes, not the
+              electricity it uses; that's the second column. Most homes need about 1 ton per 500–600 sq ft; our{' '}
+              <Link to="/calculators/ac-sizing" className={a}>AC sizing calculator</Link> gives a closer estimate.
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Per hour:</strong> one hour at full power = electricity used per hour × the price.</li>
+              <li><strong>Per day and per summer month:</strong> 8 hours of running a day, and 8 hours a day for 30 days.</li>
+              <li>
+                <strong>Per year:</strong> {s.hours.toLocaleString()} hours of full-power running, our estimate for a climate
+                with {BAND_LABEL[s.climate]}.
+              </li>
+            </ul>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>System size</th>
-                  <th className={th}>Per hour</th>
-                  <th className={th}>Per day (8 hrs)</th>
-                  <th className={th}>Summer month</th>
-                  <th className={th}>Per year ({s.hours.toLocaleString()} hrs)</th>
+                  <th className={th}>System size (cooling output)</th>
+                  <th className={th}>Electricity used per hour</th>
+                  <th className={th}>Cost per hour</th>
+                  <th className={th}>Cost per day (8 hours)</th>
+                  <th className={th}>Cost per summer month (8 hrs × 30 days)</th>
+                  <th className={th}>Cost per year ({s.hours.toLocaleString()} hours)</th>
                 </tr>
               </thead>
               <tbody>
                 {TONNAGES.map((t) => (
                   <tr key={t} className={t === REF_TONS ? 'bg-amber-50/60' : ''}>
-                    <td className={`${td} font-medium`}>{t} ton ({(t * 12000).toLocaleString()} Btu)</td>
+                    <td className={`${td} font-medium`}>{sizeLabel(t)}</td>
+                    <td className={td}>{kw(t, REF_SEER).toFixed(2)} kWh</td>
                     <td className={td}>{usd(costPerHour(t, REF_SEER, s.rate), 2)}</td>
                     <td className={td}>{usd(costPerHour(t, REF_SEER, s.rate) * 8, 2)}</td>
                     <td className={td}>{usd(costPerHour(t, REF_SEER, s.rate) * SUMMER_MONTH_HOURS)}</td>
@@ -182,18 +196,26 @@ export default function AcCostState() {
           </div>
 
           <h2 className={h2}>How much a more efficient AC saves in {s.name}</h2>
-          <p className={p}>
-            Annual cost of a 3-ton system at {s.hours.toLocaleString()} cooling hours a year. Older systems are often SEER
-            10 or lower; new systems must be at least 13.4–14.3 SEER2 (about SEER 14–15) depending on region.
-          </p>
+          <TableExplainer>
+            <p className="mb-2">
+              The same 3-ton (36,000 BTU) central AC at different efficiency ratings, running {s.hours.toLocaleString()} hours
+              a year at {cents(s.rate)}/kWh. A higher SEER gives the same cooling for less electricity. Older systems are
+              often SEER 10 or lower; new systems must be at least 13.4–14.3 SEER2 (about SEER 14–15) depending on region.
+            </p>
+            <p>
+              Savings are against an old SEER 10 system. The 10-year column is the yearly saving × 10 at today's price
+              (no price changes assumed). It's what you'd save on electricity, before the cost of the new system.
+            </p>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>SEER rating</th>
-                  <th className={th}>Annual cost</th>
-                  <th className={th}>Savings vs. SEER 10</th>
-                  <th className={th}>10-year savings</th>
+                  <th className={th}>Efficiency (SEER)</th>
+                  <th className={th}>Electricity used per hour</th>
+                  <th className={th}>Cost per year</th>
+                  <th className={th}>Saved per year vs. SEER 10</th>
+                  <th className={th}>Saved over 10 years vs. SEER 10</th>
                 </tr>
               </thead>
               <tbody>
@@ -203,6 +225,7 @@ export default function AcCostState() {
                   return (
                     <tr key={seer}>
                       <td className={`${td} font-medium`}>SEER {seer}</td>
+                      <td className={td}>{kw(REF_TONS, seer).toFixed(2)} kWh</td>
                       <td className={td}>{usd(c)}</td>
                       <td className={td}>{seer === 10 ? '—' : usd(sv)}</td>
                       <td className={td}>{seer === 10 ? '—' : usd(sv * 10)}</td>
@@ -221,16 +244,18 @@ export default function AcCostState() {
           <p className={p}>
             The yearly figures assume {s.hours.toLocaleString()} hours of full-power cooling, our estimate for a climate with{' '}
             {BAND_LABEL[s.climate]}. Within {s.name}, a home in a hotter area, with poor insulation or a lower thermostat
-            setting will run more. Here is the same 3-ton SEER {REF_SEER} system at other usage levels:
+            setting will run more. Here is the same 3-ton SEER {REF_SEER} system at other usage levels. Each row is a
+            number of full-power running hours a year; the last two columns price it at {s.name}'s average price and at
+            the U.S. average ({cents(US_RATE)}/kWh).
           </p>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[600px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>Usage</th>
-                  <th className={th}>Cooling hours / year</th>
-                  <th className={th}>Annual cost in {s.name}</th>
-                  <th className={th}>At U.S. average rate</th>
+                  <th className={th}>How much the AC runs</th>
+                  <th className={th}>Hours it runs per year</th>
+                  <th className={th}>Cost per year at {s.name}'s price</th>
+                  <th className={th}>Cost per year at the U.S. average price</th>
                 </tr>
               </thead>
               <tbody>

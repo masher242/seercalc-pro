@@ -1,4 +1,4 @@
-# robots.txt for seercalc.pro
+# robots.txt for airconditionanswers.com
 # Last updated: 2026-04-16
 
 User-agent: *
@@ -133,7 +133,7 @@ User-agent: Pinterestbot
 Allow: /
 
 # Sitemap location
-Sitemap: https://seercalc.pro/sitemap.xml
+Sitemap: https://airconditionanswers.com/sitemap.xml
 
 # Crawl delay (be nice to smaller bots)
 Crawl-delay: 1

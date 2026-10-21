@@ -3,8 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
+import TableExplainer, { RefSystemSentence } from '../components/TableExplainer';
 import { articleJsonLd, SITE_URL } from '../data/site';
-import { US_RATE, RATES_AS_OF, REF_TONS, REF_SEER, annualCost, costPerHour, usd, cents } from '../data/acCost';
+import { US_RATE, RATES_AS_OF, REF_TONS, REF_SEER, annualCost, costPerHour, kw, usd, cents } from '../data/acCost';
 import { COUNTRIES, CARIBBEAN_UPDATED, localRateLabel } from '../data/caribbean';
 
 const PATH = '/ac-cost/caribbean';
@@ -111,16 +112,37 @@ export default function AcCostCaribbean() {
           </p>
 
           <h2 className={h2}>Cost to run AC by country</h2>
+          <TableExplainer>
+            <RefSystemSentence />
+            <ul className="list-disc pl-5 space-y-1">
+              <li>
+                <strong>Electricity price per kWh:</strong> what a household pays for 1 kWh, in the local currency and
+                converted to U.S. cents. Prices aren't all measured the same way: some are all-in averages, others are the
+                utility's per-kWh charges for a stated monthly use, before the fixed monthly charge. What each one
+                includes is listed under the table.
+              </li>
+              <li>
+                <strong>Cost per hour:</strong> one hour of the AC running at full power, so{' '}
+                {kw(REF_TONS, REF_SEER).toFixed(2)} kWh × the price, in U.S. dollars.
+              </li>
+              <li>
+                <strong>Cost per year:</strong> the cost per hour × how many hours a year the AC runs at full power. That's
+                our estimate: 3,000 hours for the tropical islands, where AC runs most of the year, and 1,500 for Bermuda
+                (shown in grey). Real systems cycle on and off, so this is their running time added up.
+              </li>
+              <li><strong>Price date:</strong> each country uses its newest available figure, so the dates differ.</li>
+            </ul>
+          </TableExplainer>
           <div className="overflow-x-auto mb-3">
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
                   <th className={th}>Country</th>
-                  <th className={th}>Rate (local)</th>
-                  <th className={th}>Rate (US)</th>
-                  <th className={th}>3-ton per hour</th>
-                  <th className={th}>Per year</th>
-                  <th className={th}>As of</th>
+                  <th className={th}>Electricity price per kWh<br /><span className="font-normal text-xs text-gray-500">local currency</span></th>
+                  <th className={th}>Same price<br /><span className="font-normal text-xs text-gray-500">in U.S. cents</span></th>
+                  <th className={th}>Cost per hour of AC<br /><span className="font-normal text-xs text-gray-500">3-ton, SEER {REF_SEER}, US$</span></th>
+                  <th className={th}>Cost per year of AC<br /><span className="font-normal text-xs text-gray-500">US$ (hours it runs a year)</span></th>
+                  <th className={th}>Price date</th>
                 </tr>
               </thead>
               <tbody>
@@ -145,11 +167,21 @@ export default function AcCostCaribbean() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-500 mb-4">
-            Rates are all-in household prices including fuel charges, taxes and fees, from each country's source (listed on
-            its page). Island rates move with fuel prices, so each one shows the date it applies to. We're working on the
-            U.S. Virgin Islands and Turks &amp; Caicos and will add them once we have a current, sourced rate.
-          </p>
+          <div className="text-sm text-gray-600 mb-4">
+            <p className="font-semibold text-gray-800 mb-1">What each price includes</p>
+            <ul className="list-disc pl-5 space-y-0.5 mb-2">
+              {ranked.map((c) => (
+                <li key={c.slug}><strong>{c.name}:</strong> {c.basis}.</li>
+              ))}
+              <li><strong>U.S. average:</strong> all-in average residential price (EIA), with 1,500 hours a year.</li>
+            </ul>
+            <p className="text-gray-500">
+              Island prices move with fuel costs, so each one shows the date it applies to. Where a price leaves out the
+              fixed monthly charge, that charge doesn't change when you run the AC more, so the per-kWh price is the
+              right one for working out what AC adds to a bill. We're working on the U.S. Virgin Islands and Turks &amp;
+              Caicos and will add them once we have a current, sourced rate.
+            </p>
+          </div>
 
           <h2 className={h2}>Why island electricity costs so much</h2>
           <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
@@ -170,7 +202,8 @@ export default function AcCostCaribbean() {
           <p className="text-sm text-gray-600 mb-4">
             Also see what AC costs to run in <Link to="/ac-cost/canada" className={a}>Canada</Link>,{' '}
             <Link to="/ac-cost/europe" className={a}>Europe</Link>,{' '}
-            <Link to="/ac-cost/australia" className={a}>Australia</Link> and{' '}
+            <Link to="/ac-cost/australia" className={a}>Australia</Link>,{' '}
+            <Link to="/ac-cost/asia" className={a}>Asia</Link> and{' '}
             <Link to="/ac-cost" className={a}>every U.S. state</Link>.
           </p>
 
@@ -197,8 +230,9 @@ export default function AcCostCaribbean() {
           <div className="mt-10 rounded-lg bg-gray-50 border border-gray-200 p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Work out your own cost</h3>
             <p className="text-gray-700 mb-4">
-              Divide your last electricity bill by the kWh used to get your all-in rate, then plug it into the calculator
-              with your unit's SEER and size.
+              Divide your last electricity bill by the kWh used to get your average price per kWh (or use the price of
+              your top usage block, which is what extra AC use costs), then plug it into the calculator with your unit's
+              SEER and size.
             </p>
             <Link to="/" className="inline-flex items-center gap-2 bg-teal-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors">
               <Calculator className="w-5 h-5" />

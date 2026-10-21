@@ -15,6 +15,8 @@ export interface Country {
   utility: string;
   source: string;
   sourceUrl: string;
+  /** what the rate includes, in plain words (all-in average, or per-kWh charges before fixed charges) */
+  basis: string;
   /** typical full-load cooling hours per year (our estimate) */
   hours: number;
   note: string;

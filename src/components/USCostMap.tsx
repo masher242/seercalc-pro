@@ -4,7 +4,7 @@ import { STATE_PATHS, STATE_CENTROIDS } from '../data/usStatePaths';
 import { RAMP, INK } from '../data/mapColors';
 import {
   STATES, US_RATE, REF_TONS, REF_SEER, RATES_AS_OF,
-  annualCost, costPerHour, usd, cents, type StateCost,
+  annualCost, costPerHour, kw, usd, cents, type StateCost,
 } from '../data/acCost';
 
 type Metric = 'rate' | 'year';
@@ -75,7 +75,7 @@ export default function USCostMap() {
           <p className="text-sm text-gray-500">
             {metric === 'rate'
               ? `Average residential rate, ${RATES_AS_OF} (EIA). U.S. average ${cents(US_RATE)}.`
-              : `3-ton central AC, SEER ${REF_SEER}, typical cooling hours for each state's climate.`}
+              : `One 3-ton (36,000 BTU) central AC rated SEER ${REF_SEER}, which uses ${kw(REF_TONS, REF_SEER).toFixed(2)} kWh an hour, × our estimate of the hours it runs a year in each state's climate × the state's average price.`}
           </p>
         </div>
         <div role="group" aria-label="Map shows" className="inline-flex rounded-full border border-gray-200 bg-white p-1 text-sm">
@@ -214,9 +214,9 @@ export default function USCostMap() {
                 <span className="text-xs font-medium text-gray-500">#{shown.rank} of {STATES.length} for electricity price</span>
               </p>
               <p className="text-sm text-gray-700">
-                {cents(shown.rate)}/kWh · {usd(costPerHour(REF_TONS, REF_SEER, shown.rate), 2)} an hour ·{' '}
-                {usd(yearCost(shown))} a typical year{' '}
-                <span className="text-gray-400">({shown.hours.toLocaleString()} hrs)</span>
+                {cents(shown.rate)}/kWh · 3-ton AC: {usd(costPerHour(REF_TONS, REF_SEER, shown.rate), 2)} an hour,{' '}
+                {usd(yearCost(shown))} a year{' '}
+                <span className="text-gray-400">({shown.hours.toLocaleString()} hours running)</span>
               </p>
             </div>
             <Link to={`/ac-cost/${shown.slug}`} className="text-sm font-semibold text-teal-700 hover:underline whitespace-nowrap">

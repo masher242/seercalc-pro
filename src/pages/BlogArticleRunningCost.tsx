@@ -3,10 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calculator, Clock } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
+import TableExplainer, { RefSystemSentence } from '../components/TableExplainer';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import {
   STATES, US_RATE, RATES_AS_OF, RATES_SOURCE_URL, TONNAGES, SEERS, REF_TONS, REF_SEER,
-  SUMMER_MONTH_HOURS, AC_COST_UPDATED, annualCost, costPerHour, kw, usd, cents,
+  SUMMER_MONTH_HOURS, AC_COST_UPDATED, annualCost, costPerHour, kw, sizeLabel, usd, cents,
 } from '../data/acCost';
 
 const PATH = '/blog/how-much-does-it-cost-to-run-ac';
@@ -147,22 +148,37 @@ export default function BlogArticleRunningCost() {
           </p>
 
           <h2 className={h2}>Cost to run central air by size (U.S. average rate)</h2>
+          <TableExplainer>
+            <p className="mb-2">
+              Each row is a different size of central air conditioner, all rated SEER {REF_SEER}, at the U.S. average
+              residential price of {cents(US_RATE)}/kWh ({RATES_AS_OF}). The size is how much heat the system removes
+              (tons, BTU, kW of cooling); the second column is the electricity it uses for each hour at full power.
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Cost per hour:</strong> electricity used per hour × the price.</li>
+              <li><strong>Summer month:</strong> 8 hours of running a day for 30 days.</li>
+              <li>
+                <strong>Per year:</strong> {YEAR_HOURS.toLocaleString()} hours of full-power running, a middle-of-the-road
+                U.S. climate. Real systems cycle on and off, so this is their running time added up.
+              </li>
+            </ul>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>System size</th>
-                  <th className={th}>Power draw (SEER 14)</th>
-                  <th className={th}>Per hour</th>
-                  <th className={th}>Summer month (8 hrs/day)</th>
-                  <th className={th}>Per year ({YEAR_HOURS.toLocaleString()} hrs)</th>
+                  <th className={th}>System size (cooling output)</th>
+                  <th className={th}>Electricity used per hour (SEER {REF_SEER})</th>
+                  <th className={th}>Cost per hour</th>
+                  <th className={th}>Cost per summer month (8 hrs × 30 days)</th>
+                  <th className={th}>Cost per year ({YEAR_HOURS.toLocaleString()} hours)</th>
                 </tr>
               </thead>
               <tbody>
                 {TONNAGES.map((t) => (
                   <tr key={t}>
-                    <td className={`${td} font-medium`}>{t} ton</td>
-                    <td className={td}>{kw(t, REF_SEER).toFixed(2)} kW</td>
+                    <td className={`${td} font-medium`}>{sizeLabel(t)}</td>
+                    <td className={td}>{kw(t, REF_SEER).toFixed(2)} kWh</td>
                     <td className={td}>{usd(costPerHour(t, REF_SEER, US_RATE), 2)}</td>
                     <td className={td}>{usd(costPerHour(t, REF_SEER, US_RATE) * SUMMER_MONTH_HOURS)}</td>
                     <td className={td}>{usd(annualCost(t, REF_SEER, YEAR_HOURS, US_RATE))}</td>
@@ -173,21 +189,29 @@ export default function BlogArticleRunningCost() {
           </div>
 
           <h2 className={h2}>How efficiency (SEER) changes the cost</h2>
-          <p className={p}>A 3-ton system at {YEAR_HOURS.toLocaleString()} hours a year and {cents(US_RATE)}/kWh:</p>
+          <TableExplainer>
+            <p>
+              The same 3-ton (36,000 BTU) central AC at different efficiency ratings, running{' '}
+              {YEAR_HOURS.toLocaleString()} hours a year at {cents(US_RATE)}/kWh. A higher SEER gives the same cooling for
+              less electricity. The last column is the yearly saving against an old SEER 10 system.
+            </p>
+          </TableExplainer>
           <div className="overflow-x-auto mb-4">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>SEER</th>
-                  <th className={th}>Per hour</th>
-                  <th className={th}>Per year</th>
-                  <th className={th}>vs. SEER 10</th>
+                  <th className={th}>Efficiency (SEER)</th>
+                  <th className={th}>Electricity used per hour</th>
+                  <th className={th}>Cost per hour</th>
+                  <th className={th}>Cost per year</th>
+                  <th className={th}>Cost per year vs. SEER 10</th>
                 </tr>
               </thead>
               <tbody>
                 {SEERS.map((seer) => (
                   <tr key={seer}>
                     <td className={`${td} font-medium`}>SEER {seer}</td>
+                    <td className={td}>{kw(REF_TONS, seer).toFixed(2)} kWh</td>
                     <td className={td}>{usd(costPerHour(REF_TONS, seer, US_RATE), 2)}</td>
                     <td className={td}>{usd(annualCost(REF_TONS, seer, YEAR_HOURS, US_RATE))}</td>
                     <td className={td}>{seer === 10 ? '—' : `${usd(annualCost(REF_TONS, 10, YEAR_HOURS, US_RATE) - annualCost(REF_TONS, seer, YEAR_HOURS, US_RATE))} less`}</td>
@@ -203,17 +227,18 @@ export default function BlogArticleRunningCost() {
 
           <h2 className={h2}>Window units, portable ACs and mini-splits</h2>
           <p className={p}>
-            Room units are rated in watts. Typical draw while the compressor is running, and the cost at{' '}
+            Room units list their electricity use in watts on the label (1,000 W = 1 kWh for each hour). The BTU figure
+            in each row is cooling output. Typical draw while the compressor is running, and the cost at{' '}
             {cents(US_RATE)}/kWh:
           </p>
           <div className="overflow-x-auto mb-4">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-teal-50">
-                  <th className={th}>Unit</th>
-                  <th className={th}>Typical draw</th>
-                  <th className={th}>Per hour</th>
-                  <th className={th}>Per 8-hour day</th>
+                  <th className={th}>Unit (cooling output)</th>
+                  <th className={th}>Electricity it uses while running</th>
+                  <th className={th}>Cost per hour</th>
+                  <th className={th}>Cost per 8-hour day</th>
                 </tr>
               </thead>
               <tbody>
@@ -237,6 +262,13 @@ export default function BlogArticleRunningCost() {
             Residential electricity in {most.name} costs {(most.rate / least.rate).toFixed(1)} times as much as in {least.name}, so
             the same air conditioner can cost very different amounts to run. Each state's full breakdown, by system size and SEER, is on its own page.
           </p>
+          <TableExplainer>
+            <RefSystemSentence />
+            <p>
+              Electricity price is each state's average residential price per kWh ({RATES_AS_OF}, EIA). Cost per hour ={' '}
+              {kw(REF_TONS, REF_SEER).toFixed(2)} kWh × that price.
+            </p>
+          </TableExplainer>
           <div className="grid md:grid-cols-2 gap-6 mb-4">
             {[{ label: 'Most expensive', list: top }, { label: 'Least expensive', list: bottom }].map((g) => (
               <div key={g.label}>
@@ -245,8 +277,8 @@ export default function BlogArticleRunningCost() {
                   <thead>
                     <tr className="bg-teal-50">
                       <th className={th}>State</th>
-                      <th className={th}>Rate</th>
-                      <th className={th}>3-ton per hour</th>
+                      <th className={th}>Electricity price per kWh</th>
+                      <th className={th}>Cost per hour of a 3-ton AC</th>
                     </tr>
                   </thead>
                   <tbody>

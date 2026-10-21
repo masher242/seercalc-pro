@@ -135,6 +135,16 @@ export function costPerHour(tons: number, seer: number, rate: number) {
   return kw(tons, seer) * rate;
 }
 
+/** kW of cooling output for a size in tons (1 ton = 12,000 Btu/h ≈ 3.517 kW). Not electricity use. */
+export function coolingKw(tons: number) {
+  return tons * 3.517;
+}
+
+/** "3 tons (36,000 BTU, 10.6 kW of cooling)" — size is cooling output, never electricity use. */
+export function sizeLabel(tons: number) {
+  return `${tons} ${tons === 1 ? 'ton' : 'tons'} (${(tons * 12000).toLocaleString()} BTU, ${coolingKw(tons).toFixed(1)} kW of cooling)`;
+}
+
 export const TONNAGES = [1.5, 2, 2.5, 3, 3.5, 4, 5];
 export const SEERS = [10, 13, 14, 16, 18, 20];
 /** Reference system used for headline numbers. */

@@ -2,7 +2,6 @@ import { Gift } from 'lucide-react';
 import { useState } from 'react';
 
 export default function LeadMagnet() {
-  const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,7 +18,7 @@ export default function LeadMagnet() {
       formData.append('ml-submit', '1');
       formData.append('anticsrf', 'true');
 
-      const response = await fetch('https://assets.mailerlite.com/jsonp/2236546/forms/183498968634754557/subscribe', {
+      await fetch('https://assets.mailerlite.com/jsonp/2236546/forms/183498968634754557/subscribe', {
         method: 'POST',
         body: formData,
         mode: 'no-cors'
