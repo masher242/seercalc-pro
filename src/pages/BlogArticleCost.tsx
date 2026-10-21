@@ -471,7 +471,7 @@ export default function BlogArticleCost() {
             </p>
 
             <div className="bg-blue-50 rounded-lg p-6 border border-blue-200 mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Calculate Your Exact SEER Payback Period</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Estimate Your SEER Payback Period</h3>
               <p className="text-gray-700 mb-4">Enter your climate, electricity rate, and usage to see which SEER rating makes financial sense.</p>
               <Link
                 to="/"

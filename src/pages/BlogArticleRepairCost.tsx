@@ -533,7 +533,7 @@ export default function BlogArticleRepairCost() {
           <div className="bg-blue-50 rounded-lg p-6 border border-blue-200 mt-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-3">Calculate Your Repair vs Replace ROI</h2>
             <p className="text-gray-700 mb-4">
-              See exactly whether repair or replacement makes financial sense:
+              See whether repair or replacement is likely to make financial sense:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-6">
               <li>Compare total cost of ownership</li>

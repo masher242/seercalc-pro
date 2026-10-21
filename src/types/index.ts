@@ -15,6 +15,7 @@ export interface CalculationResults {
   fiveYearSavings: number;
   tenYearSavings: number;
   paybackYears: number;
+  /** Net 10-year return in %: (10-year savings − upgrade cost) ÷ upgrade cost × 100 */
   roi: number;
   co2Reduced: number;
   treesEquivalent: number;

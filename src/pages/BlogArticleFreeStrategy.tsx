@@ -298,7 +298,7 @@ export default function BlogArticleFreeStrategy() {
 
           <div className="mt-10 p-6 bg-teal-50 rounded-lg border border-teal-200">
             <h3 className="text-lg font-bold text-gray-900 mb-2">Calculate Your SEER Savings</h3>
-            <p className="text-gray-600 mb-4 text-sm">See your baseline cooling cost based on your current SEER rating, then stack setpoint savings on top. Know exactly where the biggest return is.</p>
+            <p className="text-gray-600 mb-4 text-sm">See your baseline cooling cost based on your current SEER rating, then stack setpoint savings on top. See where the biggest saving is likely to be.</p>
             <Link
               to="/"
               className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors"
