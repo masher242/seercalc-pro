@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Clock, Sun } from 'lucide-react';
 import ArticleByline from '../components/ArticleByline';
 import LeadMagnet from '../components/LeadMagnet';
+import AustraliaCostMap from '../components/AustraliaCostMap';
 import { articleJsonLd, SITE_URL } from '../data/site';
 import { US_RATE, RATES_AS_OF, cents } from '../data/acCost';
 import {
@@ -133,6 +134,8 @@ export default function AcCostAustralia() {
             numbers look familiar. Prices per kWh differ between states, but far less than the climate does: a split system in Darwin or Karratha works harder in a year than one in Melbourne does in a decade.
             These pages put a dollar figure on both sides of that.
           </p>
+
+          <AustraliaCostMap />
 
           <h2 className={h2}>Cost to run AC by state and territory</h2>
           <div className="rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800">
