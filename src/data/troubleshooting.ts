@@ -43,8 +43,10 @@ export interface Symptom {
   steps: Step[];
   /** extra warning specific to this symptom, shown with the standard safety box */
   safetyNote?: string;
-  /** a short first-person note from Mark's own experience, shown after the causes table */
-  fromExperience?: string;
+  /** short first-person notes from Mark's own stores (owner-supplied only; see claude/owner-anecdotes.md), shown after the causes table */
+  fromExperience?: string | string[];
+  /** optional link at the end of the "From our own units" box */
+  fromExperienceLink?: { to: string; label: string };
   callPro: string[];
   quoteFlags: string[];
   faqs: { q: string; a: string }[];
@@ -101,7 +103,11 @@ export const COST = {
 export const SYMPTOMS: Symptom[] = [
   {
     slug: 'ac-blowing-warm-air',
-    fromExperience: 'My son, who\'s studying for his HVAC certification, cleans our units: clearing debris from around the outdoor unit and rinsing the coil with the power off. It costs nothing, and a dirty coil is one of the most common reasons an AC struggles on hot afternoons.',
+    fromExperience: [
+      'My son, who\'s studying for his HVAC certification, cleans our units: clearing debris from around the outdoor unit and rinsing the coil with the power off. It costs nothing, and a dirty coil is one of the most common reasons an AC struggles on hot afternoons.',
+      'Filters in awkward, out-of-the-way spots are the ones that get forgotten. In our stores, every filter is on a rotation, with a schedule to check and replace it, because a clogged filter costs efficiency and can ice up the coil.',
+    ],
+    updated: '2026-10-26',
     name: 'AC blowing warm air',
     title: 'AC Blowing Warm Air? Causes, Fixes and Repair Costs',
     h1: 'AC Blowing Warm Air? Causes, What to Check and What Repairs Cost',
@@ -158,6 +164,8 @@ export const SYMPTOMS: Symptom[] = [
   },
   {
     slug: 'ac-not-turning-on',
+    fromExperience: 'Dead thermostat batteries have stopped an entire AC system in one of our stores. It\'s one of the cheapest fixes there is, so it\'s one of the first things we check.',
+    updated: '2026-10-26',
     name: 'AC won\'t turn on',
     title: 'AC Won\'t Turn On? Causes, Checks and Repair Costs',
     h1: 'AC Won\'t Turn On? What to Check Before You Call',
@@ -214,6 +222,8 @@ export const SYMPTOMS: Symptom[] = [
   },
   {
     slug: 'ac-frozen-coil',
+    fromExperience: 'Filters in awkward, out-of-the-way spots are the ones that get forgotten. In our stores, every filter is on a rotation, with a schedule to check and replace it, because a clogged filter costs efficiency and can ice up the coil.',
+    updated: '2026-10-26',
     name: 'AC frozen up',
     title: 'AC Frozen Up? Ice on the Coil or Lines: Causes and Fixes',
     h1: 'AC Frozen Up? Why There\'s Ice on the Coil or Lines and How to Fix It',
@@ -267,7 +277,12 @@ export const SYMPTOMS: Symptom[] = [
   },
   {
     slug: 'ac-leaking-water',
-    fromExperience: 'My son has replaced condensate pumps on our units. It\'s a manageable job for someone handy, as long as the power is off and the new pump matches the old one\'s capacity and connections. If water keeps appearing after the drain line is clear, check the pump.',
+    fromExperience: [
+      'In one of our stores, the condensate pump failed, and the float switch, which is wired separately and should have shut the unit off, failed too. The AC kept running overnight and the water came through the ceiling. Staff arrived in the morning to a soaking-wet floor, gallons of water and a long cleanup, and the drywall repair and repainting cost over $1,000. The fix to the AC itself was cleaning the drain line and replacing the float switch.',
+      'My son has replaced condensate pumps on our units. It\'s a manageable job for someone handy, as long as the power is off and the new pump matches the old one\'s capacity and connections. If water keeps appearing after the drain line is clear, check the pump.',
+    ],
+    fromExperienceLink: { to: '/blog/ac-float-switch-flood', label: 'What happened, and how to test your float switch' },
+    updated: '2026-10-26',
     name: 'AC leaking water',
     title: 'AC Leaking Water Inside? Causes, Fixes and Costs',
     h1: 'AC Leaking Water Inside? Causes and How to Fix It',
@@ -320,7 +335,11 @@ export const SYMPTOMS: Symptom[] = [
   },
   {
     slug: 'ac-outdoor-unit-not-running',
-    fromExperience: 'My son, who\'s studying for his HVAC certification, has identified failed capacitors on our units. It\'s one of the cheapest repairs on this list and a common reason an outdoor unit hums without starting, so ask the technician to test it before anything more expensive. A capacitor holds a dangerous charge, so the replacement itself is a job for someone trained.',
+    fromExperience: [
+      'We\'ve had several capacitors fail across our stores. One lesson: don\'t judge a unit by how it looks. An old, rusty-looking outdoor unit can still be working fine, with the capacitor as the only part that has gone.',
+      'My son, who\'s studying for his HVAC certification, has identified failed capacitors on our units. It\'s one of the cheapest repairs on this list and a common reason an outdoor unit hums without starting, so ask the technician to test it before anything more expensive. A capacitor holds a dangerous charge, so the replacement itself is a job for someone trained.',
+    ],
+    updated: '2026-10-26',
     name: 'Outdoor unit not running',
     title: 'AC Outdoor Unit Not Running? Causes and Repair Costs',
     h1: 'AC Outdoor Unit Not Running? Why the Fan or Compressor Won\'t Start',
@@ -636,7 +655,8 @@ export const SYMPTOMS: Symptom[] = [
   {
     slug: 'ac-running-constantly',
     published: '2026-10-17',
-    updated: '2026-10-17',
+    updated: '2026-10-26',
+    fromExperience: 'We\'ve lost efficiency in our stores to damaged duct insulation in the ceiling, including tears made by other workmen doing unrelated jobs up there. A thermal camera that plugs into a phone makes it easy to find: damaged or missing insulation shows up clearly against the sections that are still covered. After anyone has worked in your ceiling or attic, it\'s worth a look.',
     name: 'AC running nonstop',
     title: "AC Running Constantly? When It's Normal and When It's Not",
     h1: "AC Running Nonstop? When It's Normal and How to Find the Problem",

@@ -177,7 +177,14 @@ export default function TroubleshootingSymptom() {
           {s.fromExperience && (
             <div className="rounded-lg border-l-4 border-[#17204d] bg-slate-50 p-5 mb-4">
               <p className="text-sm font-bold uppercase tracking-wide text-[#17204d] mb-1">From our own units</p>
-              <p className="text-gray-700 leading-relaxed">{s.fromExperience}</p>
+              {(Array.isArray(s.fromExperience) ? s.fromExperience : [s.fromExperience]).map((t) => (
+                <p key={t} className="text-gray-700 leading-relaxed mt-2 first:mt-0">{t}</p>
+              ))}
+              {s.fromExperienceLink && (
+                <p className="mt-3">
+                  <Link to={s.fromExperienceLink.to} className={a}>{s.fromExperienceLink.label} →</Link>
+                </p>
+              )}
             </div>
           )}
 

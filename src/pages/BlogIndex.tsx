@@ -5,6 +5,14 @@ import { useState } from 'react';
 
 const articles = [
   {
+    slug: 'ac-float-switch-flood',
+    title: 'The AC Leak That Flooded Our Store Overnight: Float Switches, Condensate Pumps and How to Test Them',
+    description: 'Our condensate pump failed and the float switch didn\'t shut the AC off: over $1,000 of ceiling damage from a cheap part. What a float switch does, why it fails, and a two-minute test.',
+    date: '2026-10-26',
+    readTime: '7 min read',
+    category: 'Maintenance'
+  },
+  {
     slug: 'ceiling-fan-vs-ac-savings',
     title: 'Ceiling Fan vs. Air Conditioning: How Much Does a Fan Really Save?',
     description: 'A ceiling fan costs pennies an hour; central AC dozens of times more. Fans only save money if you raise the thermostat and switch them off in empty rooms. The numbers by location, and a calculator.',

@@ -3693,6 +3693,14 @@ function Home() {
 }
 const articles = [
   {
+    slug: "ac-float-switch-flood",
+    title: "The AC Leak That Flooded Our Store Overnight: Float Switches, Condensate Pumps and How to Test Them",
+    description: "Our condensate pump failed and the float switch didn't shut the AC off: over $1,000 of ceiling damage from a cheap part. What a float switch does, why it fails, and a two-minute test.",
+    date: "2026-10-26",
+    readTime: "7 min read",
+    category: "Maintenance"
+  },
+  {
     slug: "ceiling-fan-vs-ac-savings",
     title: "Ceiling Fan vs. Air Conditioning: How Much Does a Fan Really Save?",
     description: "A ceiling fan costs pennies an hour; central AC dozens of times more. Fans only save money if you raise the thermostat and switch them off in empty rooms. The numbers by location, and a calculator.",
@@ -8043,10 +8051,10 @@ function BlogArticleMinisplit() {
     ] }) })
   ] });
 }
-const PATH$k = "/blog/hvac-tax-credits-rebates-2026";
+const PATH$l = "/blog/hvac-tax-credits-rebates-2026";
 const UPDATED$7 = "2026-10-16";
-const TITLE$k = "HVAC Tax Credits 2026 💵 Federal Credit Ended: What's Left";
-const HEADLINE$k = "HVAC Tax Credits & Rebates in 2026: The Federal Credit Is Gone. Here's What's Left.";
+const TITLE$l = "HVAC Tax Credits 2026 💵 Federal Credit Ended: What's Left";
+const HEADLINE$l = "HVAC Tax Credits & Rebates in 2026: The Federal Credit Is Gone. Here's What's Left.";
 const DESCRIPTION$1 = "There is no federal tax credit for an AC or heat pump installed in 2026. The 25C credit ended Dec 31, 2025. What still pays: state heat pump rebates, utility rebates and promotions.";
 const changes = [
   { item: "Central air conditioner (25C)", before: "30% of cost, up to $600", now: "Ended — no federal credit" },
@@ -8100,20 +8108,20 @@ const sources = [
   { label: "ENERGY STAR — Rebate Finder", url: "https://www.energystar.gov/rebate-finder" },
   { label: "DSIRE — Database of State Incentives for Renewables & Efficiency", url: "https://www.dsireusa.org" }
 ];
-const th$r = "border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900";
-const td$r = "border border-gray-200 px-4 py-3 text-gray-700";
-const h2$r = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$r = "text-gray-700 leading-relaxed mb-4";
-const a$s = "text-teal-600 hover:text-teal-700 font-medium";
+const th$s = "border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900";
+const td$s = "border border-gray-200 px-4 py-3 text-gray-700";
+const h2$s = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$s = "text-gray-700 leading-relaxed mb-4";
+const a$t = "text-teal-600 hover:text-teal-700 font-medium";
 function BlogArticleTaxCredits() {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$k }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$l }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: DESCRIPTION$1 }),
       /* @__PURE__ */ jsx("meta", { name: "keywords", content: "HVAC tax credit 2026, air conditioner tax credit, heat pump tax credit 2026, 25C credit ended, HEEHRA rebate, HVAC rebates 2026" }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `https://airconditionanswers.com${PATH$k}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `https://airconditionanswers.com${PATH$l}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `https://airconditionanswers.com${PATH$k}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `https://airconditionanswers.com${PATH$l}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:title", content: "HVAC Tax Credits in 2026: The Federal Credit Ended. What's Left?" }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: DESCRIPTION$1 }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: "https://airconditionanswers.com/og-image.png" }),
@@ -8122,7 +8130,7 @@ function BlogArticleTaxCredits() {
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:title", content: "HVAC Tax Credits in 2026: The Federal Credit Ended. What's Left?" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:description", content: DESCRIPTION$1 }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$k, headline: HEADLINE$k, description: DESCRIPTION$1, dateModified: UPDATED$7 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$l, headline: HEADLINE$l, description: DESCRIPTION$1, dateModified: UPDATED$7 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -8147,7 +8155,7 @@ function BlogArticleTaxCredits() {
               "8 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$k }),
+          /* @__PURE__ */ jsx("h1", { className: "text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$l }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: 'If a contractor is still promising you "30% back from the government," read this before you sign.' }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$7 })
         ] }),
@@ -8159,24 +8167,24 @@ function BlogArticleTaxCredits() {
               " The Energy Efficient Home Improvement Credit (Section 25C) paid 30% of the cost, up to $600 for a central AC and $2,000 for a heat pump. It ended for equipment placed in service after December 31, 2025, under the One Big Beautiful Bill Act (P.L. 119-21). What still pays in 2026: state-run HEEHRA rebates for heat pumps (income-qualified, up to $8,000, and since DOE's May 2026 guidance only when replacing electric equipment, not gas or oil), utility rebates, and manufacturer promotions."
             ] })
           ] }),
-          /* @__PURE__ */ jsx("p", { className: p$r, children: "For three years, the federal credit was the first line of every HVAC sales pitch. It was real money: a qualifying heat pump earned up to $2,000 back at tax time, and many contractors built the credit into their quotes. Then Congress ended it. The credit was originally scheduled to run through 2032; the budget law signed on July 4, 2025 cut it off at the end of 2025, and no replacement was created." }),
-          /* @__PURE__ */ jsx("p", { className: p$r, children: "That leaves a lot of out-of-date information on contractor websites, in sales scripts and in older articles (including an earlier version of this one). Here is what actually changed, what is still available, and how to tell when a quote is leaning on an incentive that no longer exists." }),
-          /* @__PURE__ */ jsx("h2", { className: h2$r, children: "What changed: 2025 vs. 2026" }),
+          /* @__PURE__ */ jsx("p", { className: p$s, children: "For three years, the federal credit was the first line of every HVAC sales pitch. It was real money: a qualifying heat pump earned up to $2,000 back at tax time, and many contractors built the credit into their quotes. Then Congress ended it. The credit was originally scheduled to run through 2032; the budget law signed on July 4, 2025 cut it off at the end of 2025, and no replacement was created." }),
+          /* @__PURE__ */ jsx("p", { className: p$s, children: "That leaves a lot of out-of-date information on contractor websites, in sales scripts and in older articles (including an earlier version of this one). Here is what actually changed, what is still available, and how to tell when a quote is leaning on an incentive that no longer exists." }),
+          /* @__PURE__ */ jsx("h2", { className: h2$s, children: "What changed: 2025 vs. 2026" }),
           /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-6", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
             /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-              /* @__PURE__ */ jsx("th", { className: th$r, children: "Incentive" }),
-              /* @__PURE__ */ jsx("th", { className: th$r, children: "Through Dec 31, 2025" }),
-              /* @__PURE__ */ jsx("th", { className: th$r, children: "Installed in 2026" })
+              /* @__PURE__ */ jsx("th", { className: th$s, children: "Incentive" }),
+              /* @__PURE__ */ jsx("th", { className: th$s, children: "Through Dec 31, 2025" }),
+              /* @__PURE__ */ jsx("th", { className: th$s, children: "Installed in 2026" })
             ] }) }),
             /* @__PURE__ */ jsx("tbody", { children: changes.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$r} font-medium`, children: r.item }),
-              /* @__PURE__ */ jsx("td", { className: td$r, children: r.before }),
-              /* @__PURE__ */ jsx("td", { className: td$r, children: r.now })
+              /* @__PURE__ */ jsx("td", { className: `${td$s} font-medium`, children: r.item }),
+              /* @__PURE__ */ jsx("td", { className: td$s, children: r.before }),
+              /* @__PURE__ */ jsx("td", { className: td$s, children: r.now })
             ] }, r.item)) })
           ] }) }),
-          /* @__PURE__ */ jsx("p", { className: p$r, children: "Under 25C, all items except heat pumps shared a $1,200 annual cap, and heat pumps had their own $2,000 cap, for a maximum of $3,200 a year. None of that applies to equipment installed in 2026." }),
-          /* @__PURE__ */ jsx("h2", { className: h2$r, children: "The date that matters is installation, not payment" }),
-          /* @__PURE__ */ jsxs("p", { className: p$r, children: [
+          /* @__PURE__ */ jsx("p", { className: p$s, children: "Under 25C, all items except heat pumps shared a $1,200 annual cap, and heat pumps had their own $2,000 cap, for a maximum of $3,200 a year. None of that applies to equipment installed in 2026." }),
+          /* @__PURE__ */ jsx("h2", { className: h2$s, children: "The date that matters is installation, not payment" }),
+          /* @__PURE__ */ jsxs("p", { className: p$s, children: [
             "The 25C credit is gone for property ",
             /* @__PURE__ */ jsx("em", { children: "placed in service" }),
             " after December 31, 2025. For the 25D credit (which covered geothermal heat pumps), the law says an expenditure is made when the original installation is completed. Either way, the test is when the system was installed and running, not when you signed or paid."
@@ -8202,19 +8210,19 @@ function BlogArticleTaxCredits() {
               /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed mb-0", children: `If a 2026 quote shows "after 30% federal tax credit" pricing, the real price is higher than the number you're looking at. Ask the contractor to show the price with no federal credit, and to put any rebate they're promising in writing with the program name. A contractor who is still selling an expired credit is either out of date or counting on you not checking. Either is worth knowing before you sign.` })
             ] })
           ] }) }),
-          /* @__PURE__ */ jsx("h2", { className: h2$r, children: "What's still available in 2026" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$s, children: "What's still available in 2026" }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "1. State heat pump rebates (HEEHRA)" }),
-          /* @__PURE__ */ jsx("p", { className: p$r, children: "The Home Electrification and Appliance Rebates program (HEEHRA) was funded by the 2022 Inflation Reduction Act and is run by state energy offices. It survived the end of the federal tax credits. It is a point-of-sale discount through an approved contractor, not a tax credit, and it is limited to households at or below 150% of area median income (AMI)." }),
+          /* @__PURE__ */ jsx("p", { className: p$s, children: "The Home Electrification and Appliance Rebates program (HEEHRA) was funded by the 2022 Inflation Reduction Act and is run by state energy offices. It survived the end of the federal tax credits. It is a point-of-sale discount through an approved contractor, not a tax credit, and it is limited to households at or below 150% of area median income (AMI)." }),
           /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
             /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-              /* @__PURE__ */ jsx("th", { className: th$r, children: "Upgrade" }),
-              /* @__PURE__ */ jsx("th", { className: th$r, children: "Income ≤ 80% AMI" }),
-              /* @__PURE__ */ jsx("th", { className: th$r, children: "Income 80–150% AMI" })
+              /* @__PURE__ */ jsx("th", { className: th$s, children: "Upgrade" }),
+              /* @__PURE__ */ jsx("th", { className: th$s, children: "Income ≤ 80% AMI" }),
+              /* @__PURE__ */ jsx("th", { className: th$s, children: "Income 80–150% AMI" })
             ] }) }),
             /* @__PURE__ */ jsx("tbody", { children: heehra.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$r} font-medium`, children: r.item }),
-              /* @__PURE__ */ jsx("td", { className: td$r, children: r.low }),
-              /* @__PURE__ */ jsx("td", { className: td$r, children: r.moderate })
+              /* @__PURE__ */ jsx("td", { className: `${td$s} font-medium`, children: r.item }),
+              /* @__PURE__ */ jsx("td", { className: td$s, children: r.low }),
+              /* @__PURE__ */ jsx("td", { className: td$s, children: r.moderate })
             ] }, r.item)) })
           ] }) }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Federal maximums (ENERGY STAR / DOE). The dollar caps are the same for both income groups; what differs is the share of the project cost: up to 100% at or below 80% AMI, up to 50% at 80–150% AMI. States can set lower amounts." }),
@@ -8226,42 +8234,42 @@ function BlogArticleTaxCredits() {
               " if your home is heated with gas or oil, don't count on a HEEHRA rebate for a heat pump. Check your state energy office's current rules before you get quotes."
             ] })
           ] }),
-          /* @__PURE__ */ jsxs("p", { className: p$r, children: [
+          /* @__PURE__ */ jsxs("p", { className: p$s, children: [
             /* @__PURE__ */ jsx("strong", { children: "Who has it:" }),
             " availability depends entirely on your state. More than 20 states had launched programs by mid-2026. California's single-family funding ran out in February 2026 and moved to a waitlist, and large states including Texas and Florida had not launched as of early 2026. Check your state energy office before you get quotes, because funds usually have to be reserved before installation."
           ] }),
-          /* @__PURE__ */ jsxs("p", { className: p$r, children: [
+          /* @__PURE__ */ jsxs("p", { className: p$s, children: [
             /* @__PURE__ */ jsx("strong", { children: "Central AC owners, note:" }),
             " HEEHRA is built around heat pumps. A cooling-only air conditioner is not a heat pump, so don't count on a HEEHRA rebate for one."
           ] }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "2. HOMES whole-home rebates" }),
-          /* @__PURE__ */ jsx("p", { className: p$r, children: "The second IRA program, HOMES, pays based on the energy savings of a whole-home retrofit rather than a single piece of equipment. It is also state-run, and each state sets its own rules, so it's worth asking about if you're combining a new system with insulation and air sealing." }),
+          /* @__PURE__ */ jsx("p", { className: p$s, children: "The second IRA program, HOMES, pays based on the energy savings of a whole-home retrofit rather than a single piece of equipment. It is also state-run, and each state sets its own rules, so it's worth asking about if you're combining a new system with insulation and air sealing." }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "3. Utility rebates" }),
-          /* @__PURE__ */ jsxs("p", { className: p$r, children: [
+          /* @__PURE__ */ jsxs("p", { className: p$s, children: [
             `For most people buying a central AC in 2026, the electric utility is now the main source of incentive money. Programs vary widely: some pay per ton or by SEER2 tier, some only pay for heat pumps, and many require the unit to be ENERGY STAR certified or above a minimum SEER2. Look on your utility's website under "rebates" or "energy efficiency," or search by ZIP code in the`,
             " ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/rebate-finder", target: "_blank", rel: "noopener noreferrer", className: a$s, children: "ENERGY STAR Rebate Finder" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/rebate-finder", target: "_blank", rel: "noopener noreferrer", className: a$t, children: "ENERGY STAR Rebate Finder" }),
             "."
           ] }),
           /* @__PURE__ */ jsx("h3", { className: "text-xl font-bold text-gray-900 mt-6 mb-3", children: "4. Manufacturer and seasonal promotions" }),
-          /* @__PURE__ */ jsx("p", { className: p$r, children: "Manufacturers run rebates and financing offers, usually in spring and fall when installers are less busy. These are real but temporary, and they come off a price you should still compare across at least three quotes." }),
-          /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Does ENERGY STAR still matter?" }),
-          /* @__PURE__ */ jsx("p", { className: p$r, children: "Yes, though for a different reason than before. The federal credits used to require ENERGY STAR-level efficiency. Now it mostly matters for utility rebates. The program itself is still running in 2026: it was nearly eliminated in 2025, and in March 2026 primary management began moving from EPA to the Department of Energy." }),
-          /* @__PURE__ */ jsxs("p", { className: p$r, children: [
+          /* @__PURE__ */ jsx("p", { className: p$s, children: "Manufacturers run rebates and financing offers, usually in spring and fall when installers are less busy. These are real but temporary, and they come off a price you should still compare across at least three quotes." }),
+          /* @__PURE__ */ jsx("h2", { className: h2$s, children: "Does ENERGY STAR still matter?" }),
+          /* @__PURE__ */ jsx("p", { className: p$s, children: "Yes, though for a different reason than before. The federal credits used to require ENERGY STAR-level efficiency. Now it mostly matters for utility rebates. The program itself is still running in 2026: it was nearly eliminated in 2025, and in March 2026 primary management began moving from EPA to the Department of Energy." }),
+          /* @__PURE__ */ jsxs("p", { className: p$s, children: [
             "To be ENERGY STAR certified, a split central air conditioner needs at least ",
             /* @__PURE__ */ jsx("strong", { children: "15.2 SEER2 and 12.0 EER2" }),
             ". That's well above the federal minimum of 13.4 SEER2 in northern states and 14.3 SEER2 in the Southeast and Southwest. See our",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$s, children: "SEER vs. SEER2 guide" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$t, children: "SEER vs. SEER2 guide" }),
             " for how the two rating systems compare."
           ] }),
-          /* @__PURE__ */ jsx("h2", { className: h2$r, children: "What this means for your buying decision" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$s, children: "What this means for your buying decision" }),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
             /* @__PURE__ */ jsxs("li", { children: [
               /* @__PURE__ */ jsx("strong", { children: "Judge efficiency on the electricity it saves." }),
               " Without a federal credit, a high-SEER2 system has to pay for itself through lower bills (and any utility rebate). At high electricity rates that's often easy; at low rates it may not be. Run your own numbers with the",
               " ",
-              /* @__PURE__ */ jsx(Link, { to: "/", className: a$s, children: "SEER savings calculator" }),
+              /* @__PURE__ */ jsx(Link, { to: "/", className: a$t, children: "SEER savings calculator" }),
               "."
             ] }),
             /* @__PURE__ */ jsxs("li", { children: [
@@ -8273,12 +8281,12 @@ function BlogArticleTaxCredits() {
               " Utility and state rebates often require pre-approval, specific equipment or an approved contractor. Confirm before installation, not after."
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Frequently asked questions" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$s, children: "Frequently asked questions" }),
           /* @__PURE__ */ jsx("div", { className: "space-y-6 mb-8", children: faqs.map((f) => /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: f.q }),
             /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
           ] }, f.q)) }),
-          /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Sources" }),
+          /* @__PURE__ */ jsx("h2", { className: h2$s, children: "Sources" }),
           /* @__PURE__ */ jsx("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: sources.map((s) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: s.url, target: "_blank", rel: "noopener noreferrer", className: "text-teal-700 hover:underline", children: s.label }) }, s.url)) }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic", children: "This is general information, not tax advice. Incentive programs change; confirm current rules with the IRS, your state energy office and your utility before you buy." }),
           /* @__PURE__ */ jsxs("div", { className: "mt-10 rounded-lg bg-gray-50 border border-gray-200 p-6", children: [
@@ -8292,10 +8300,10 @@ function BlogArticleTaxCredits() {
           /* @__PURE__ */ jsxs("div", { className: "mt-10", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-3", children: "Related guides" }),
             /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-3", children: [
-              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-unit-cost-2026", className: a$s, children: "→ How much a new AC costs in 2026" }),
-              /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$s, children: "→ SEER vs. SEER2 explained" }),
-              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-repair-cost-vs-replacement", className: a$s, children: "→ Repair or replace? The $5,000 rule" }),
-              /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$s, children: "→ Choosing the right SEER rating" })
+              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-unit-cost-2026", className: a$t, children: "→ How much a new AC costs in 2026" }),
+              /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$t, children: "→ SEER vs. SEER2 explained" }),
+              /* @__PURE__ */ jsx(Link, { to: "/blog/ac-repair-cost-vs-replacement", className: a$t, children: "→ Repair or replace? The $5,000 rule" }),
+              /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$t, children: "→ Choosing the right SEER rating" })
             ] })
           ] })
         ] })
@@ -15855,10 +15863,10 @@ function PaybackResults({ yearly, premium, keep, money: money2 }) {
     /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-700 mt-3", children: v.note })
   ] });
 }
-const PATH$j = "/blog/16-vs-18-seer";
-const TITLE$j = "16 vs 18 SEER: Is the Upgrade Worth It? (Payback Math)";
-const HEADLINE$j = "16 vs 18 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)";
-const PUBLISHED$6 = "2026-10-12";
+const PATH$k = "/blog/16-vs-18-seer";
+const TITLE$k = "16 vs 18 SEER: Is the Upgrade Worth It? (Payback Math)";
+const HEADLINE$k = "16 vs 18 SEER: Is the Upgrade Worth the Extra Cost? (2026 Payback Math)";
+const PUBLISHED$7 = "2026-10-12";
 const UPDATED$6 = "2026-10-17";
 const TONS$2 = 3;
 const US_HOURS$3 = 1500;
@@ -15870,12 +15878,12 @@ const KWH_PER_HOUR = TONS$2 * 12 * (1 / 16 - 1 / 18);
 const GOOD_AT = hoursRateThreshold(PREMIUM$2, KWH_PER_HOUR, GOOD_MAX);
 const MARGINAL_AT = hoursRateThreshold(PREMIUM$2, KWH_PER_HOUR, MARGINAL_MAX);
 const SPLIT_FACTOR$3 = SEER2_FACTOR;
-const th$q = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$q = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$q = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$r = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$r = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$r = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$7 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$q = "text-gray-700 leading-relaxed mb-4";
-const a$r = "text-teal-600 hover:text-teal-700 font-medium";
+const p$r = "text-gray-700 leading-relaxed mb-4";
+const a$s = "text-teal-600 hover:text-teal-700 font-medium";
 const savings$2 = (tons, hours, rate) => annualCost(tons, 16, hours, rate) - annualCost(tons, 18, hours, rate);
 const years$3 = (n) => n > 40 ? "over 40 years" : `${n.toFixed(1)} years`;
 function PaybackEstimator$2() {
@@ -15993,18 +16001,18 @@ function BlogArticle16vs18Seer() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$j }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$k }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$j}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$k}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$j}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$j }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$k}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$k }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Education" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$j, headline: HEADLINE$j, description, datePublished: PUBLISHED$6, dateModified: UPDATED$6 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$k, headline: HEADLINE$k, description, datePublished: PUBLISHED$7, dateModified: UPDATED$6 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -16025,7 +16033,7 @@ function BlogArticle16vs18Seer() {
               " 9 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$j }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$k }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "The contractor's second quote is $1,000 to $2,500 higher. Here's how to tell whether you'll ever get it back." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$6 })
         ] }),
@@ -16059,56 +16067,56 @@ function BlogArticle16vs18Seer() {
             " power is expensive (Hawaii, the Caribbean), or if you're buying it for comfort rather than savings."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$q, children: `I run several stores in the Caribbean, where power costs more than 30¢/kWh and the AC runs most of the year. Every replacement quote comes with the same upsell: the higher-efficiency model, which "pays for itself." Sometimes it does. Often it doesn't. The difference is two numbers you already have: what you pay per kWh and how many hours your system runs. Here's the math, worked through for the 16 vs 18 decision.` }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "The difference in one table" }),
+        /* @__PURE__ */ jsx("p", { className: p$r, children: `I run several stores in the Caribbean, where power costs more than 30¢/kWh and the AC runs most of the year. Every replacement quote comes with the same upsell: the higher-efficiency model, which "pays for itself." Sometimes it does. Often it doesn't. The difference is two numbers you already have: what you pay per kWh and how many hours your system runs. Here's the math, worked through for the 16 vs 18 decision.` }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "The difference in one table" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$q }),
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "16 SEER" }),
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "18 SEER" })
+            /* @__PURE__ */ jsx("th", { className: th$r }),
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "16 SEER" }),
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "18 SEER" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$q} font-medium`, children: "SEER2 equivalent (ducted split)" }),
-              /* @__PURE__ */ jsxs("td", { className: td$q, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$r} font-medium`, children: "SEER2 equivalent (ducted split)" }),
+              /* @__PURE__ */ jsxs("td", { className: td$r, children: [
                 "≈ ",
                 (16 * SPLIT_FACTOR$3).toFixed(1),
                 " SEER2"
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$q, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$r, children: [
                 "≈ ",
                 (18 * SPLIT_FACTOR$3).toFixed(1),
                 " SEER2"
               ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$q} font-medium`, children: "Power draw, 3-ton" }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: "2.25 kW" }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: "2.00 kW" })
+              /* @__PURE__ */ jsx("td", { className: `${td$r} font-medium`, children: "Power draw, 3-ton" }),
+              /* @__PURE__ */ jsx("td", { className: td$r, children: "2.25 kW" }),
+              /* @__PURE__ */ jsx("td", { className: td$r, children: "2.00 kW" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$q} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$r} font-medium`, children: [
                 "Yearly cost, 3-ton, ",
                 US_HOURS$3.toLocaleString(),
                 " hrs, ",
                 cents(US_RATE)
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: usd(annualCost(TONS$2, 16, US_HOURS$3, US_RATE)) }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: usd(annualCost(TONS$2, 18, US_HOURS$3, US_RATE)) })
+              /* @__PURE__ */ jsx("td", { className: td$r, children: usd(annualCost(TONS$2, 16, US_HOURS$3, US_RATE)) }),
+              /* @__PURE__ */ jsx("td", { className: td$r, children: usd(annualCost(TONS$2, 18, US_HOURS$3, US_RATE)) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$q} font-medium`, children: "Typical compressor" }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: "Single-stage or two-stage" }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: "Two-stage or variable-speed" })
+              /* @__PURE__ */ jsx("td", { className: `${td$r} font-medium`, children: "Typical compressor" }),
+              /* @__PURE__ */ jsx("td", { className: td$r, children: "Single-stage or two-stage" }),
+              /* @__PURE__ */ jsx("td", { className: td$r, children: "Two-stage or variable-speed" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$q} font-medium`, children: "Typical installed price, 3-ton" }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: "About $4,500–$7,500" }),
-              /* @__PURE__ */ jsx("td", { className: td$q, children: "About $6,000–$10,000" })
+              /* @__PURE__ */ jsx("td", { className: `${td$r} font-medium`, children: "Typical installed price, 3-ton" }),
+              /* @__PURE__ */ jsx("td", { className: td$r, children: "About $4,500–$7,500" }),
+              /* @__PURE__ */ jsx("td", { className: td$r, children: "About $6,000–$10,000" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$q} font-medium`, children: "Extra cost of 18 over 16" }),
-              /* @__PURE__ */ jsxs("td", { className: td$q, colSpan: 2, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$r} font-medium`, children: "Extra cost of 18 over 16" }),
+              /* @__PURE__ */ jsxs("td", { className: td$r, colSpan: 2, children: [
                 "Usually ",
                 usd(PREMIUM_LOW$2),
                 "–",
@@ -16119,7 +16127,7 @@ function BlogArticle16vs18Seer() {
           ] })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Prices are typical U.S. installed ranges from published 2026 cost surveys, not quotes. Your two quotes from the same installer are the only premium that matters." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "The math" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "The math" }),
         /* @__PURE__ */ jsxs("div", { className: "bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4 font-mono text-sm text-gray-800", children: [
           "Power (kW) = tons × 12 ÷ SEER",
           /* @__PURE__ */ jsx("br", {}),
@@ -16127,7 +16135,7 @@ function BlogArticle16vs18Seer() {
           /* @__PURE__ */ jsx("br", {}),
           "Money saved = kWh saved × your rate"
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "The middle line is a shortcut that only works for 16 vs 18: 12 × (1/16 − 1/18) happens to equal exactly 1/12. A 3-ton system running ",
           US_HOURS$3.toLocaleString(),
           " hours saves 3 × ",
@@ -16141,49 +16149,49 @@ function BlogArticle16vs18Seer() {
           usd(usSave),
           "."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "Then divide the price difference by the yearly saving to get the payback period, and compare it to how long you'll keep the system. Central AC typically lasts",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/how-long-do-air-conditioners-last", className: a$r, children: "15 to 20 years" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/how-long-do-air-conditioners-last", className: a$s, children: "15 to 20 years" }),
           "; I use ",
           LIFE$2,
           " below to stay conservative, and because many people move before then."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Where 18 SEER pays back, and where it doesn't" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Where 18 SEER pays back, and where it doesn't" }),
         /* @__PURE__ */ jsx(HowWeJudge, {}),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "A 3-ton system, an 18 SEER premium of ",
           usd(PREMIUM$2),
           ", local residential electricity rates and our estimate of typical cooling hours for each climate:"
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "Location" }),
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "Rate" }),
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "Cooling hrs/yr" }),
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "Saved per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "Payback" }),
-            /* @__PURE__ */ jsx("th", { className: th$q, children: "Verdict" }),
-            /* @__PURE__ */ jsxs("th", { className: th$q, children: [
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "Location" }),
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "Rate" }),
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "Cooling hrs/yr" }),
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "Saved per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "Payback" }),
+            /* @__PURE__ */ jsx("th", { className: th$r, children: "Verdict" }),
+            /* @__PURE__ */ jsxs("th", { className: th$r, children: [
               "Net over ",
               LIFE$2,
               " yrs, if it lasts"
             ] })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: scenarios.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$q, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$r, children: s.place }) }),
-            /* @__PURE__ */ jsx("td", { className: td$q, children: cents(s.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$q, children: s.hours.toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$q, children: usd(s.save) }),
-            /* @__PURE__ */ jsx("td", { className: td$q, children: years$3(s.payback) }),
-            /* @__PURE__ */ jsx("td", { className: td$q, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
-            /* @__PURE__ */ jsxs("td", { className: `${td$q} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
+            /* @__PURE__ */ jsx("td", { className: td$r, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$s, children: s.place }) }),
+            /* @__PURE__ */ jsx("td", { className: td$r, children: cents(s.rate) }),
+            /* @__PURE__ */ jsx("td", { className: td$r, children: s.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$r, children: usd(s.save) }),
+            /* @__PURE__ */ jsx("td", { className: td$r, children: years$3(s.payback) }),
+            /* @__PURE__ */ jsx("td", { className: td$r, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
+            /* @__PURE__ */ jsxs("td", { className: `${td$r} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
               s.net >= 0 ? "+" : "−",
               usd(Math.abs(s.net))
             ] })
           ] }, s.place)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "Three groups stand out. Where the cooling season is moderate or short (Ohio, New York, the U.S. average), 18 SEER never earns back its premium on electricity. In hot states with ordinary rates (Florida, Texas, Arizona), long hours make up for cheap power, and in California high rates make up for a moderate season. There the upgrade pays back in ",
           hotRange,
           " years (",
@@ -16198,12 +16206,12 @@ function BlogArticle16vs18Seer() {
           bahamas && /* @__PURE__ */ jsxs(Fragment, { children: [
             " In the Bahamas it's better than the table shows: BPL charges more for every kWh above 800 a month, so the kWh an efficient AC saves come off the most expensive part of the bill (see the",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${bahamas.slug}`, className: a$r, children: "Bahamas cost page" }),
+            /* @__PURE__ */ jsx(Link, { to: `/ac-cost/${bahamas.slug}`, className: a$s, children: "Bahamas cost page" }),
             ")."
           ] })
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "A quick rule of thumb" }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "For a 3-ton system, multiply your yearly cooling hours by your rate in dollars. If the result is",
           " ",
           /* @__PURE__ */ jsxs("strong", { children: [
@@ -16225,51 +16233,51 @@ function BlogArticle16vs18Seer() {
           hoursRateThreshold(1e3, KWH_PER_HOUR, GOOD_MAX).toLocaleString(),
           " for a good deal."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(PaybackEstimator$2, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "What the efficiency number doesn't tell you" }),
-        /* @__PURE__ */ jsx("p", { className: p$q, children: "The SEER difference is rarely the real reason to buy an 18. Getting from 16 to 18 usually means a different compressor, and that changes how the system behaves." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "What the efficiency number doesn't tell you" }),
+        /* @__PURE__ */ jsx("p", { className: p$r, children: "The SEER difference is rarely the real reason to buy an 18. Getting from 16 to 18 usually means a different compressor, and that changes how the system behaves." }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Comfort and humidity" }),
-        /* @__PURE__ */ jsx("p", { className: p$q, children: "Most 16 SEER systems are single-stage: the compressor is either fully on or off. Most 18 SEER systems are two-stage or variable-speed, so they run longer at lower output. Longer, gentler runs keep temperatures more even and pull more moisture out of the air. In a humid climate, a house at 76°F and 50% humidity feels cooler than one at 74°F and 60%, so some owners save by setting the thermostat higher. That saving doesn't show up in the SEER math above." }),
+        /* @__PURE__ */ jsx("p", { className: p$r, children: "Most 16 SEER systems are single-stage: the compressor is either fully on or off. Most 18 SEER systems are two-stage or variable-speed, so they run longer at lower output. Longer, gentler runs keep temperatures more even and pull more moisture out of the air. In a humid climate, a house at 76°F and 50% humidity feels cooler than one at 74°F and 60%, so some owners save by setting the thermostat higher. That saving doesn't show up in the SEER math above." }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Noise" }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "Running at low speed most of the time, a variable-speed outdoor unit is noticeably quieter. If the condenser sits under a bedroom window or near a patio, that matters more than ",
           usd(usSave),
           " a year."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Repairs and parts" }),
-        /* @__PURE__ */ jsx("p", { className: p$q, children: "The variable-speed hardware that makes 18 SEER possible (an inverter drive and more control electronics) costs more to repair out of warranty, and parts can be brand-specific. Before choosing the 18, ask the installer what the parts and labor warranties cover, for how long, and whether registration is required. A long parts warranty takes most of the risk out of the more complex system." }),
+        /* @__PURE__ */ jsx("p", { className: p$r, children: "The variable-speed hardware that makes 18 SEER possible (an inverter drive and more control electronics) costs more to repair out of warranty, and parts can be brand-specific. Before choosing the 18, ask the installer what the parts and labor warranties cover, for how long, and whether registration is required. A long parts warranty takes most of the risk out of the more complex system." }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "Power quality" }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "This is the one I learned the hard way. Where outages, brownouts and surges are common (island grids, rural lines, hurricane country), the control boards in any modern AC are exposed, and a variable-speed system has more electronics to lose. If you're buying the 18 in that kind of place, budget for surge and voltage protection on the outdoor unit too. See",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$r, children: "how to protect your AC from surges, brownouts and outages" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$s, children: "how to protect your AC from surges, brownouts and outages" }),
           "."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$7, children: "The installation matters more than the label" }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "A rating is only reached when the system is sized correctly, charged correctly and connected to ducts that move enough air. A well-installed 16 will beat a badly installed 18. Ask for a load calculation (Manual J) rather than a size matched to the old unit, and check the size yourself with our",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$r, children: "AC sizing calculator" }),
+          /* @__PURE__ */ jsx(Link, { to: "/calculators/ac-sizing", className: a$s, children: "AC sizing calculator" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Check the actual ratings on your quotes" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Check the actual ratings on your quotes" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Compare SEER2, not SEER." }),
             ' Equipment made since 2023 is rated in SEER2, which runs about 5% lower for ducted systems. A quote listing "16 SEER" for new equipment may be using the old scale. Convert with our',
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$r, children: "SEER to SEER2 converter" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$s, children: "SEER to SEER2 converter" }),
             ", and read",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$r, children: "SEER vs SEER2 explained" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/seer-vs-seer2-explained", className: a$s, children: "SEER vs SEER2 explained" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "The rating belongs to the matched system." }),
             " An outdoor unit's rating depends on the indoor coil or air handler and sometimes the thermostat it's paired with. Look up the exact combination on your quote in the",
             " ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$r, children: "AHRI Directory" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$s, children: "AHRI Directory" }),
             ". If the match isn't listed, the rating isn't guaranteed."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -16280,11 +16288,11 @@ function BlogArticle16vs18Seer() {
             /* @__PURE__ */ jsx("strong", { children: "Rebates are by SEER2 and EER2 tier." }),
             " The federal 25C tax credit for central AC ended on December 31, 2025, but many utilities still pay rebates for higher-efficiency equipment. A rebate comes straight off the premium and can change the answer. See",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$r, children: "HVAC tax credits and rebates in 2026" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$s, children: "HVAC tax credits and rebates in 2026" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Which one to buy" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Which one to buy" }),
         /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-6 mb-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-5", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Choose 16 SEER if" }),
@@ -16311,24 +16319,24 @@ function BlogArticle16vs18Seer() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$r, children: [
           "Comparing other steps? See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/14-vs-16-seer", className: a$r, children: "14 vs 16 SEER" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/14-vs-16-seer", className: a$s, children: "14 vs 16 SEER" }),
           " for the step up from the minimum, ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/18-vs-20-seer", className: a$r, children: "18 vs 20 SEER" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/18-vs-20-seer", className: a$s, children: "18 vs 20 SEER" }),
           " for the top tier, the ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$r, children: "SEER rating chart" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$s, children: "SEER rating chart" }),
           " for every rating from 8 to 25, and ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$r, children: "choosing the right SEER rating" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/choosing-the-right-seer-rating", className: a$s, children: "choosing the right SEER rating" }),
           " ",
           "for the bigger picture."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$r, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "U.S. electricity rates: ",
@@ -16386,32 +16394,32 @@ function buildScenarios(low, high, premium) {
     return { ...s, save: save2, payback: premium / save2, net: save2 * LIFE$1 - premium };
   });
 }
-const th$p = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$p = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const a$q = "text-teal-600 hover:text-teal-700 font-medium";
+const th$q = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$q = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const a$r = "text-teal-600 hover:text-teal-700 font-medium";
 function ScenarioTable({ rows: rows2 }) {
   return /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
     /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-      /* @__PURE__ */ jsx("th", { className: th$p, children: "Location" }),
-      /* @__PURE__ */ jsx("th", { className: th$p, children: "Rate" }),
-      /* @__PURE__ */ jsx("th", { className: th$p, children: "Cooling hrs/yr" }),
-      /* @__PURE__ */ jsx("th", { className: th$p, children: "Saved per year" }),
-      /* @__PURE__ */ jsx("th", { className: th$p, children: "Payback" }),
-      /* @__PURE__ */ jsx("th", { className: th$p, children: "Verdict" }),
-      /* @__PURE__ */ jsxs("th", { className: th$p, children: [
+      /* @__PURE__ */ jsx("th", { className: th$q, children: "Location" }),
+      /* @__PURE__ */ jsx("th", { className: th$q, children: "Rate" }),
+      /* @__PURE__ */ jsx("th", { className: th$q, children: "Cooling hrs/yr" }),
+      /* @__PURE__ */ jsx("th", { className: th$q, children: "Saved per year" }),
+      /* @__PURE__ */ jsx("th", { className: th$q, children: "Payback" }),
+      /* @__PURE__ */ jsx("th", { className: th$q, children: "Verdict" }),
+      /* @__PURE__ */ jsxs("th", { className: th$q, children: [
         "Net over ",
         LIFE$1,
         " yrs, if it lasts"
       ] })
     ] }) }),
     /* @__PURE__ */ jsx("tbody", { children: rows2.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-      /* @__PURE__ */ jsx("td", { className: td$p, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$q, children: s.place }) }),
-      /* @__PURE__ */ jsx("td", { className: td$p, children: cents(s.rate) }),
-      /* @__PURE__ */ jsx("td", { className: td$p, children: s.hours.toLocaleString() }),
-      /* @__PURE__ */ jsx("td", { className: td$p, children: usd(s.save) }),
-      /* @__PURE__ */ jsx("td", { className: td$p, children: years$2(s.payback) }),
-      /* @__PURE__ */ jsx("td", { className: td$p, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
-      /* @__PURE__ */ jsxs("td", { className: `${td$p} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
+      /* @__PURE__ */ jsx("td", { className: td$q, children: /* @__PURE__ */ jsx(Link, { to: s.link, className: a$r, children: s.place }) }),
+      /* @__PURE__ */ jsx("td", { className: td$q, children: cents(s.rate) }),
+      /* @__PURE__ */ jsx("td", { className: td$q, children: s.hours.toLocaleString() }),
+      /* @__PURE__ */ jsx("td", { className: td$q, children: usd(s.save) }),
+      /* @__PURE__ */ jsx("td", { className: td$q, children: years$2(s.payback) }),
+      /* @__PURE__ */ jsx("td", { className: td$q, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: s.payback }) }),
+      /* @__PURE__ */ jsxs("td", { className: `${td$q} ${s.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: [
         s.net >= 0 ? "+" : "−",
         usd(Math.abs(s.net))
       ] })
@@ -16512,29 +16520,29 @@ function ComparisonSeries({ current }) {
     " ",
     all.map((x, i) => /* @__PURE__ */ jsxs("span", { children: [
       i > 0 && " · ",
-      /* @__PURE__ */ jsx(Link, { to: x.path, className: a$q, children: x.label })
+      /* @__PURE__ */ jsx(Link, { to: x.path, className: a$r, children: x.label })
     ] }, x.path)),
     ". Every rating from 8 to 25 is in the ",
-    /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$q, children: "SEER rating chart" }),
+    /* @__PURE__ */ jsx(Link, { to: "/blog/seer-rating-chart", className: a$r, children: "SEER rating chart" }),
     "."
   ] });
 }
-const PATH$i = "/blog/18-vs-20-seer";
-const TITLE$i = "18 vs 20 SEER: Is the Upgrade Worth It? (Payback Math)";
-const HEADLINE$i = "18 vs 20 SEER: Is the Top-Tier Upgrade Worth It? (2026 Payback Math)";
-const PUBLISHED$5 = "2026-10-17";
+const PATH$j = "/blog/18-vs-20-seer";
+const TITLE$j = "18 vs 20 SEER: Is the Upgrade Worth It? (Payback Math)";
+const HEADLINE$j = "18 vs 20 SEER: Is the Top-Tier Upgrade Worth It? (2026 Payback Math)";
+const PUBLISHED$6 = "2026-10-17";
 const UPDATED$5 = "2026-10-17";
 const LOW = 18;
 const HIGH = 20;
 const PREMIUM$1 = 2e3;
 const PREMIUM_LOW$1 = 1500;
 const PREMIUM_HIGH$1 = 3e3;
-const th$o = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$o = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$p = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$p = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$p = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$q = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$6 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$p = "text-gray-700 leading-relaxed mb-4";
-const a$p = "text-teal-600 hover:text-teal-700 font-medium";
+const p$q = "text-gray-700 leading-relaxed mb-4";
+const a$q = "text-teal-600 hover:text-teal-700 font-medium";
 const STEPS$1 = [
   [14, 16],
   [16, 18],
@@ -16574,18 +16582,18 @@ function BlogArticle18vs20Seer() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$i }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$j }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$i}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$j}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$i}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$i }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$j}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$j }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Education" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$i, headline: HEADLINE$i, description, datePublished: PUBLISHED$5, dateModified: UPDATED$5 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$j, headline: HEADLINE$j, description, datePublished: PUBLISHED$6, dateModified: UPDATED$5 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -16606,7 +16614,7 @@ function BlogArticle18vs20Seer() {
               " 8 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$i }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$j }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Each step up the SEER ladder costs more and saves less. At the top, the math gets hard to make work." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$5 })
         ] }),
@@ -16653,93 +16661,93 @@ function BlogArticle18vs20Seer() {
             ". Buy a 20 for a rebate, a better warranty or very expensive power, not for average savings."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$p, children: "In the Caribbean, where I run several stores, power costs about 31¢/kWh and the AC runs most of the year. If top-tier efficiency pays anywhere, it should pay here. Even so, the step from 18 to 20 is a close call, and in most of the U.S. it isn't close at all. The reason is simple arithmetic." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Why each step saves less" }),
-        /* @__PURE__ */ jsx("p", { className: p$p, children: "SEER is a ratio of cooling to electricity, so the electricity you use is proportional to 1 ÷ SEER. Each extra point of SEER cuts a smaller slice off a smaller number. For a 3-ton system, every hour it runs:" }),
+        /* @__PURE__ */ jsx("p", { className: p$q, children: "In the Caribbean, where I run several stores, power costs about 31¢/kWh and the AC runs most of the year. If top-tier efficiency pays anywhere, it should pay here. Even so, the step from 18 to 20 is a close call, and in most of the U.S. it isn't close at all. The reason is simple arithmetic." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Why each step saves less" }),
+        /* @__PURE__ */ jsx("p", { className: p$q, children: "SEER is a ratio of cooling to electricity, so the electricity you use is proportional to 1 ÷ SEER. Each extra point of SEER cuts a smaller slice off a smaller number. For a 3-ton system, every hour it runs:" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$o, children: "Upgrade" }),
-            /* @__PURE__ */ jsx("th", { className: th$o, children: "kWh saved per running hour" }),
-            /* @__PURE__ */ jsxs("th", { className: th$o, children: [
+            /* @__PURE__ */ jsx("th", { className: th$p, children: "Upgrade" }),
+            /* @__PURE__ */ jsx("th", { className: th$p, children: "kWh saved per running hour" }),
+            /* @__PURE__ */ jsxs("th", { className: th$p, children: [
               "Per year (",
               US_HOURS$2.toLocaleString(),
               " hrs, ",
               cents(US_RATE),
               ")"
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$o, children: "Typical extra cost" })
+            /* @__PURE__ */ jsx("th", { className: th$p, children: "Typical extra cost" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: STEPS$1.map(([lo, hi]) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: hi === HIGH ? `${lo} → ${hi} SEER` : /* @__PURE__ */ jsxs(Link, { to: `/blog/${lo}-vs-${hi}-seer`, className: a$p, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: hi === HIGH ? `${lo} → ${hi} SEER` : /* @__PURE__ */ jsxs(Link, { to: `/blog/${lo}-vs-${hi}-seer`, className: a$q, children: [
               lo,
               " → ",
               hi,
               " SEER"
             ] }) }),
-            /* @__PURE__ */ jsxs("td", { className: td$o, children: [
+            /* @__PURE__ */ jsxs("td", { className: td$p, children: [
               (kw(TONS$1, lo) - kw(TONS$1, hi)).toFixed(2),
               " kWh"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$o, children: usd(savings$1(lo, hi, TONS$1, US_HOURS$2, US_RATE)) }),
-            /* @__PURE__ */ jsx("td", { className: td$o, children: lo === 14 ? "$300–$1,500" : lo === 16 ? "$1,000–$2,500" : `${usd(PREMIUM_LOW$1)}–${usd(PREMIUM_HIGH$1)}` })
+            /* @__PURE__ */ jsx("td", { className: td$p, children: usd(savings$1(lo, hi, TONS$1, US_HOURS$2, US_RATE)) }),
+            /* @__PURE__ */ jsx("td", { className: td$p, children: lo === 14 ? "$300–$1,500" : lo === 16 ? "$1,000–$2,500" : `${usd(PREMIUM_LOW$1)}–${usd(PREMIUM_HIGH$1)}` })
           ] }, lo)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$p, children: "Going from 18 to 20 saves less than two-thirds of what 14 to 16 does, and usually costs more than twice as much. That's the whole story of high-efficiency air conditioning: the first upgrades are cheap and productive; the last ones are expensive and marginal." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "The difference in one table" }),
+        /* @__PURE__ */ jsx("p", { className: p$q, children: "Going from 18 to 20 saves less than two-thirds of what 14 to 16 does, and usually costs more than twice as much. That's the whole story of high-efficiency air conditioning: the first upgrades are cheap and productive; the last ones are expensive and marginal." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "The difference in one table" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$o }),
-            /* @__PURE__ */ jsx("th", { className: th$o, children: "18 SEER" }),
-            /* @__PURE__ */ jsx("th", { className: th$o, children: "20 SEER" })
+            /* @__PURE__ */ jsx("th", { className: th$p }),
+            /* @__PURE__ */ jsx("th", { className: th$p, children: "18 SEER" }),
+            /* @__PURE__ */ jsx("th", { className: th$p, children: "20 SEER" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "SEER2 equivalent (ducted split)" }),
-              /* @__PURE__ */ jsxs("td", { className: td$o, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: "SEER2 equivalent (ducted split)" }),
+              /* @__PURE__ */ jsxs("td", { className: td$p, children: [
                 "≈ ",
                 seer2(18),
                 " SEER2"
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$o, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$p, children: [
                 "≈ ",
                 seer2(20),
                 " SEER2"
               ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Power draw, 3-ton" }),
-              /* @__PURE__ */ jsxs("td", { className: td$o, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: "Power draw, 3-ton" }),
+              /* @__PURE__ */ jsxs("td", { className: td$p, children: [
                 kw(3, 18).toFixed(2),
                 " kW"
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$o, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$p, children: [
                 kw(3, 20).toFixed(2),
                 " kW"
               ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$o} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$p} font-medium`, children: [
                 "Yearly cost, 3-ton, ",
                 US_HOURS$2.toLocaleString(),
                 " hrs, ",
                 cents(US_RATE)
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: usd(annualCost(TONS$1, 18, US_HOURS$2, US_RATE)) }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: usd(annualCost(TONS$1, 20, US_HOURS$2, US_RATE)) })
+              /* @__PURE__ */ jsx("td", { className: td$p, children: usd(annualCost(TONS$1, 18, US_HOURS$2, US_RATE)) }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: usd(annualCost(TONS$1, 20, US_HOURS$2, US_RATE)) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Typical compressor" }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: "Two-stage or variable-speed" }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: "Variable-speed (inverter)" })
+              /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: "Typical compressor" }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: "Two-stage or variable-speed" }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: "Variable-speed (inverter)" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Typical installed price, 3-ton" }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: "About $6,000–$10,000" }),
-              /* @__PURE__ */ jsx("td", { className: td$o, children: "About $8,500–$14,000" })
+              /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: "Typical installed price, 3-ton" }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: "About $6,000–$10,000" }),
+              /* @__PURE__ */ jsx("td", { className: td$p, children: "About $8,500–$14,000" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$o} font-medium`, children: "Extra cost of 20 over 18" }),
-              /* @__PURE__ */ jsxs("td", { className: td$o, colSpan: 2, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$p} font-medium`, children: "Extra cost of 20 over 18" }),
+              /* @__PURE__ */ jsxs("td", { className: td$p, colSpan: 2, children: [
                 "Usually ",
                 usd(PREMIUM_LOW$1),
                 "–",
@@ -16750,9 +16758,9 @@ function BlogArticle18vs20Seer() {
           ] })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Prices are typical U.S. installed ranges from a published 2026 cost survey; the 18-to-20 premium is our estimate from those ranges. Your two quotes from the same installer are the only premium that matters." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Payback by location" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Payback by location" }),
         /* @__PURE__ */ jsx(HowWeJudge, {}),
-        /* @__PURE__ */ jsxs("p", { className: p$p, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
           "A 3-ton system, a ",
           usd(PREMIUM$1),
           " premium for the 20, local residential electricity rates and our estimate of typical cooling hours for each climate. Each hour of running saves ",
@@ -16760,14 +16768,14 @@ function BlogArticle18vs20Seer() {
           " kWh (the shortcut: kWh saved per year = tons × hours ÷ 15)."
         ] }),
         /* @__PURE__ */ jsx(ScenarioTable, { rows: scenarios }),
-        /* @__PURE__ */ jsxs("p", { className: p$p, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
           "Even hot states with ordinary rates, like Florida and Texas, take two decades to recover the premium. It takes very expensive power and a long cooling season together, as in Hawaii, for a 20 to be a good deal on electricity. In the Bahamas it pays back in about",
           " ",
           Math.round(((_a2 = scenarios.find((s) => s.place === "The Bahamas")) == null ? void 0 : _a2.payback) ?? 0),
           " years at the average rate: marginal, inside the life of the system but not by much. The tiered bill helps a little: BPL charges more for every kWh above 800 a month, and that's where AC savings land."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$6, children: "A quick rule of thumb" }),
-        /* @__PURE__ */ jsxs("p", { className: p$p, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
           "For a 3-ton system, multiply your yearly cooling hours by your rate in dollars. If the result is",
           " ",
           /* @__PURE__ */ jsxs("strong", { children: [
@@ -16784,10 +16792,10 @@ function BlogArticle18vs20Seer() {
           goodAt.toLocaleString(),
           " it's marginal. 3,000 hours at 48¢ (Hawaii, = 1,440) just clears the bar; 3,000 hours at 31¢ (the Bahamas, = 930) is marginal; 3,000 hours at 15¢ (Florida, = 450) is nowhere close."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(PaybackEstimator$1, { low: LOW, high: HIGH, premium: PREMIUM$1 }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Reasons to buy a 20 anyway" }),
-        /* @__PURE__ */ jsx("p", { className: p$p, children: "By 18 SEER you usually already have a two-stage or variable-speed compressor, so the comfort, humidity control and quiet running that make high-efficiency systems pleasant are mostly in place. The 20 adds a little more of the same. The good reasons to pay for it are mostly financial details on the quote:" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Reasons to buy a 20 anyway" }),
+        /* @__PURE__ */ jsx("p", { className: p$q, children: "By 18 SEER you usually already have a two-stage or variable-speed compressor, so the comfort, humidity control and quiet running that make high-efficiency systems pleasant are mostly in place. The 20 adds a little more of the same. The good reasons to pay for it are mostly financial details on the quote:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "A rebate that targets the top tier." }),
@@ -16806,29 +16814,29 @@ function BlogArticle18vs20Seer() {
             " The table assumes today's rates. If your rate climbs, so do the savings."
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$p, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$q, children: [
           "Two cautions. A variable-speed system has more electronics to protect, so where power is unreliable, budget for",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$p, children: "surge and voltage protection" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$q, children: "surge and voltage protection" }),
           ". And if what you really want is efficiency in a few rooms, a",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$p, children: "ductless mini-split" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$q, children: "ductless mini-split" }),
           " often reaches 20+ SEER for less than a top-tier central system, with no duct losses."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Check the actual ratings on your quotes" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Check the actual ratings on your quotes" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: '"Up to" ratings.' }),
             ' Top-tier lines are often advertised as "up to 20+ SEER2", a figure reached only with a specific indoor unit and sometimes a specific size. Look up the exact matched combination on your quote in the',
             " ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$p, children: "AHRI Directory" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.ahridirectory.org/", target: "_blank", rel: "noopener noreferrer", className: a$q, children: "AHRI Directory" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Compare SEER2, not SEER" }),
             ", using the",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$p, children: "SEER to SEER2 converter" }),
+            /* @__PURE__ */ jsx(Link, { to: "/calculators/seer-to-seer2", className: a$q, children: "SEER to SEER2 converter" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -16836,7 +16844,7 @@ function BlogArticle18vs20Seer() {
             " It measures efficiency at 95°F outdoors. Some very high SEER2 systems have only average EER2, and on hot afternoons it's EER2 that sets your bill."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Which one to buy" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Which one to buy" }),
         /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-6 mb-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/40 p-5", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "Choose 18 SEER if" }),
@@ -16860,13 +16868,13 @@ function BlogArticle18vs20Seer() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(ComparisonSeries, { current: PATH$i }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx(ComparisonSeries, { current: PATH$j }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$q, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "U.S. electricity rates: ",
@@ -16901,10 +16909,10 @@ function BlogArticle18vs20Seer() {
     ] })
   ] });
 }
-const PATH$h = "/blog/solar-mini-split";
-const TITLE$h = "Solar Mini-Splits: Do Hybrid AC/DC Units Pay Off?";
-const HEADLINE$h = "Solar-Powered Mini-Splits: How Hybrid AC/DC Units Work and Whether They Pay Off";
-const PUBLISHED$4 = "2026-10-17";
+const PATH$i = "/blog/solar-mini-split";
+const TITLE$i = "Solar Mini-Splits: Do Hybrid AC/DC Units Pay Off?";
+const HEADLINE$i = "Solar-Powered Mini-Splits: How Hybrid AC/DC Units Work and Whether They Pay Off";
+const PUBLISHED$5 = "2026-10-17";
 const UPDATED$4 = "2026-10-17";
 const PANEL_KW = 1.1;
 const SYSTEM_LOSS = 0.8;
@@ -16915,13 +16923,13 @@ const SUN_HOURS = { OH: 4.2, CA: 5.5, FL: 5.3, TX: 5.3, AZ: 6.5, HI: 5.5 };
 const US_SUN = 4.5;
 const CARIBBEAN_SUN = 5.5;
 const solarKwh = (panelKw, sun, share) => panelKw * sun * 365 * SYSTEM_LOSS * share;
-const th$n = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$n = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$o = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$o = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$o = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$p = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$5 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$o = "text-gray-700 leading-relaxed mb-4";
-const a$o = "text-teal-600 hover:text-teal-700 font-medium";
-const ext$8 = "text-teal-700 hover:underline";
+const p$p = "text-gray-700 leading-relaxed mb-4";
+const a$p = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$9 = "text-teal-700 hover:underline";
 const BRANDS = [
   {
     name: "EG4 (sold by Signature Solar)",
@@ -17107,18 +17115,18 @@ function BlogArticleSolarMiniSplit() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$h }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$i }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$h}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$i}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$h}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$h }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$i}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$i }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "HVAC Guides" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$h, headline: HEADLINE$h, description, datePublished: PUBLISHED$4, dateModified: UPDATED$4 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$i, headline: HEADLINE$i, description, datePublished: PUBLISHED$5, dateModified: UPDATED$4 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -17139,7 +17147,7 @@ function BlogArticleSolarMiniSplit() {
               " 11 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$h }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$i }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Panels wired straight into the air conditioner, no battery, no net-metering contract. Here's what you get and what it's worth." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$4 })
         ] }),
@@ -17164,9 +17172,9 @@ function BlogArticleSolarMiniSplit() {
             ". They're best for spaces cooled during the day (shops, offices, garages) where power is expensive. The catches: young brands, 5-year warranties and little long-term reliability data."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "My stores need cooling most in the middle of the day, when the sun is strongest and power costs over 30¢/kWh. That's exactly the case these units are built for, so I looked into them properly: who makes them, how they're wired, what goes wrong, and what the numbers look like. Here's what I found." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "How a hybrid solar mini-split works" }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "Every inverter mini-split already runs its compressor and fans on DC power, converted from the grid's AC. A hybrid unit adds a solar input to the outdoor unit so panels can feed that DC directly." }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "My stores need cooling most in the middle of the day, when the sun is strongest and power costs over 30¢/kWh. That's exactly the case these units are built for, so I looked into them properly: who makes them, how they're wired, what goes wrong, and what the numbers look like. Here's what I found." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "How a hybrid solar mini-split works" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "Every inverter mini-split already runs its compressor and fans on DC power, converted from the grid's AC. A hybrid unit adds a solar input to the outdoor unit so panels can feed that DC directly." }),
         /* @__PURE__ */ jsx("div", { className: "grid sm:grid-cols-3 gap-3 mb-4", children: [
           { Icon: Sun, t: "Solar first", d: "Panels connect to the outdoor unit with standard solar connectors. Whatever they produce goes to the compressor first." },
           { Icon: PlugZap, t: "Grid fills the gap", d: "When the panels can't cover the load (mornings, evenings, cloud, night), the unit tops up from the grid automatically." },
@@ -17176,8 +17184,8 @@ function BlogArticleSolarMiniSplit() {
           /* @__PURE__ */ jsx("p", { className: "font-semibold text-gray-900", children: t }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-700 mt-1", children: d })
         ] }, t)) }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "Because nothing is exported, you don't need a net-metering agreement with your utility. That's the main attraction where utilities don't credit solar, and the main weakness where they do." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Who makes them" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "Because nothing is exported, you don't need a net-metering agreement with your utility. That's the main attraction where utilities don't credit solar, and the main weakness where they do." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Who makes them" }),
         /* @__PURE__ */ jsx("div", { className: "sm:hidden space-y-3 mb-4", children: BRANDS.map((b) => /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 p-4", children: [
           /* @__PURE__ */ jsx("p", { className: "font-semibold text-gray-900", children: b.name }),
           /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-600", children: b.models }),
@@ -17195,28 +17203,28 @@ function BlogArticleSolarMiniSplit() {
         ] }, b.name)) }),
         /* @__PURE__ */ jsx("div", { className: "hidden sm:block overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Brand" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Specs" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Price" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Warranty" })
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Brand" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Specs" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Price" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Warranty" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: BRANDS.map((b) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsxs("td", { className: `${td$n} font-medium text-gray-900`, children: [
+            /* @__PURE__ */ jsxs("td", { className: `${td$o} font-medium text-gray-900`, children: [
               b.name,
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500 mt-1", children: b.models })
             ] }),
-            /* @__PURE__ */ jsxs("td", { className: td$n, children: [
+            /* @__PURE__ */ jsxs("td", { className: td$o, children: [
               b.specs,
               /* @__PURE__ */ jsx("span", { className: "block text-xs text-gray-500 mt-1", children: b.note })
             ] }),
-            /* @__PURE__ */ jsx("td", { className: `${td$n} whitespace-nowrap`, children: b.price }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: b.warranty })
+            /* @__PURE__ */ jsx("td", { className: `${td$o} whitespace-nowrap`, children: b.price }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: b.warranty })
           ] }, b.name)) })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 italic mb-4", children: "Prices are the seller's listed price for the unit only, October 2026. Panels, mounting and installation are extra." }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: `On grid power alone these units perform like any good mini-split: EG4 rates its 12K at 22.5 SEER2. Be wary of claims like "SEER 75 equivalent". They count only the grid power you pay for, so they're marketing figures, not ratings.` }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "What the payback looks like" }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "The saving is the grid electricity the panels replace. For a 12,000 BTU unit with 1,100 W of panels:" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: `On grid power alone these units perform like any good mini-split: EG4 rates its 12K at 22.5 SEER2. Be wary of claims like "SEER 75 equivalent". They count only the grid power you pay for, so they're marketing figures, not ratings.` }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "What the payback looks like" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "The saving is the grid electricity the panels replace. For a 12,000 BTU unit with 1,100 W of panels:" }),
         /* @__PURE__ */ jsxs("div", { className: "bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4 font-mono text-sm text-gray-800", children: [
           "Solar kWh used = panel kW × peak sun hours × 365 × 0.8 × share used",
           /* @__PURE__ */ jsx("br", {}),
@@ -17224,7 +17232,7 @@ function BlogArticleSolarMiniSplit() {
           /* @__PURE__ */ jsx("br", {}),
           "Payback = extra cost ÷ saving per year"
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$p, children: [
           `The 0.8 covers losses from heat, dust, wiring and panel angle. "Share used" is the part of the panels' output that actually goes into cooling: high in a hot climate where the space is cooled all day, low where the AC is off half the time. We use 70% in hot climates, 45% in moderate ones and 30% where summers are short; these are our estimates, not measurements. The extra cost is $`,
           EXTRA_COST.toLocaleString(),
           " for panels, mounting and wiring fitted yourself; with an electrician it can be twice that."
@@ -17254,52 +17262,52 @@ function BlogArticleSolarMiniSplit() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$p, children: [
           "A 12,000 BTU hybrid unit, 1,100 W of panels and $",
           EXTRA_COST.toLocaleString(),
           " of extra cost:"
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm min-w-[640px]", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Location" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Electricity rate" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Peak sun hours/day" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Share of solar used" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Solar kWh used per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Saved per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Payback" }),
-            /* @__PURE__ */ jsx("th", { className: th$n, children: "Verdict" })
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Location" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Electricity rate" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Peak sun hours/day" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Share of solar used" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Solar kWh used per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Saved per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Payback" }),
+            /* @__PURE__ */ jsx("th", { className: th$o, children: "Verdict" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: rows2.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$n, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$o, children: r.place }) }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: cents(r.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: r.sun }),
-            /* @__PURE__ */ jsxs("td", { className: td$n, children: [
+            /* @__PURE__ */ jsx("td", { className: td$o, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$p, children: r.place }) }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: cents(r.rate) }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: r.sun }),
+            /* @__PURE__ */ jsxs("td", { className: td$o, children: [
               Math.round(r.share * 100),
               "%"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: Math.round(r.kwh).toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: usd(r.save) }),
-            /* @__PURE__ */ jsxs("td", { className: td$n, children: [
+            /* @__PURE__ */ jsx("td", { className: td$o, children: Math.round(r.kwh).toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$o, children: usd(r.save) }),
+            /* @__PURE__ */ jsxs("td", { className: td$o, children: [
               r.payback.toFixed(1),
               " years"
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$n, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: r.payback }) })
+            /* @__PURE__ */ jsx("td", { className: td$o, children: /* @__PURE__ */ jsx(VerdictBadge, { payback: r.payback }) })
           ] }, r.place)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "On paper the payback is short almost everywhere it's sunny, because the extra cost is small: three panels and some mounting, not a whole solar system. Expensive power does the rest: the panels pay for themselves in under two years in Hawaii and under three in the Bahamas. Where summers are short and power is average, like Ohio, it takes about twice as long as in the hot states, which only rates as marginal." }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "Two things the table can't show. First, the share of solar used is a guess you should make for your own space: a store cooled from 8 to 6 uses far more than a bedroom cooled only at night. Second, a short payback means little if the unit fails in year six and parts are hard to get. The verdicts assume the unit lasts." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "On paper the payback is short almost everywhere it's sunny, because the extra cost is small: three panels and some mounting, not a whole solar system. Expensive power does the rest: the panels pay for themselves in under two years in Hawaii and under three in the Bahamas. Where summers are short and power is average, like Ohio, it takes about twice as long as in the hot states, which only rates as marginal." }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "Two things the table can't show. First, the share of solar used is a guess you should make for your own space: a store cooled from 8 to 6 uses far more than a bedroom cooled only at night. Second, a short payback means little if the unit fails in year six and parts are hard to get. The verdicts assume the unit lasts." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(SolarEstimator, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Setting one up" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Setting one up" }),
         /* @__PURE__ */ jsx("h3", { className: h3$5, children: "The air conditioner" }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "The indoor and outdoor units install like any mini-split. EG4 ships its units with a pre-charged 16 ft line set, so no refrigerant handling is needed for a standard install, and owners report fitting one in an afternoon with two people. Longer line runs (up to 49 ft for the 12K) need a technician to adjust the charge." }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "The indoor and outdoor units install like any mini-split. EG4 ships its units with a pre-charged 16 ft line set, so no refrigerant handling is needed for a standard install, and owners report fitting one in an afternoon with two people. Longer line runs (up to 49 ft for the 12K) need a technician to adjust the charge." }),
         /* @__PURE__ */ jsx("h3", { className: h3$5, children: "The panels" }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "The panels can go on a roof, a shed, a carport or a ground rack, as long as they face the sun for most of the day. They're wired in series to reach the unit's input voltage (90–380 V DC on the EG4 12K) and plugged into the outdoor unit with standard solar connectors. Stay under the maximum voltage, including on cold mornings when panel voltage rises." }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "The panels can go on a roof, a shed, a carport or a ground rack, as long as they face the sun for most of the day. They're wired in series to reach the unit's input voltage (90–380 V DC on the EG4 12K) and plugged into the outdoor unit with standard solar connectors. Stay under the maximum voltage, including on cold mornings when panel voltage rises." }),
         /* @__PURE__ */ jsx("h3", { className: h3$5, children: "Permits and the electrical code" }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "Kit sellers rarely mention this. Up to 380 V DC is a serious voltage, and panels on a building in the U.S. normally fall under the electrical code's solar rules (NEC Article 690), which include rapid-shutdown requirements for rooftop arrays. Many areas need a permit and an inspection. Ground-mounted panels can be simpler, but check with your local building department, and use an electrician for the DC wiring if you're not sure." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "How reliable are they?" }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "Honestly, nobody knows yet. Most of the evidence is owner reviews, forums and sites that earn a commission on sales. There's no long-term independent data. What owners report:" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "Kit sellers rarely mention this. Up to 380 V DC is a serious voltage, and panels on a building in the U.S. normally fall under the electrical code's solar rules (NEC Article 690), which include rapid-shutdown requirements for rooftop arrays. Many areas need a permit and an inspection. Ground-mounted panels can be simpler, but check with your local building department, and use an electrician for the DC wiring if you're not sure." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "How reliable are they?" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "Honestly, nobody knows yet. Most of the evidence is owner reviews, forums and sites that earn a commission on sales. There's no long-term independent data. What owners report:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "It works as described." }),
@@ -17318,8 +17326,8 @@ function BlogArticleSolarMiniSplit() {
             " Five years, against the 10–12 years major brands like Mitsubishi and Daikin offer on registered, professionally installed units. Local technicians may not know these brands, and parts come through the seller."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "In the Caribbean and other hurricane zones" }),
-        /* @__PURE__ */ jsx("p", { className: p$o, children: "The numbers are best here, and so are the risks. Before buying, plan for:" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "In the Caribbean and other hurricane zones" }),
+        /* @__PURE__ */ jsx("p", { className: p$p, children: "The numbers are best here, and so are the risks. Before buying, plan for:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Wind." }),
@@ -17333,7 +17341,7 @@ function BlogArticleSolarMiniSplit() {
             /* @__PURE__ */ jsx("strong", { children: "Power quality." }),
             " Control boards are the reported weak spot, and island grids surge and sag. A voltage protector on the outdoor unit is cheap insurance. See",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$o, children: "how to protect your AC from surges and brownouts" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/protect-air-conditioner-power-surges-outages", className: a$p, children: "how to protect your AC from surges and brownouts" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -17341,7 +17349,7 @@ function BlogArticleSolarMiniSplit() {
             " New R-410A equipment hasn't been allowed in the U.S. since January 2025; check that any unit you're quoted uses R-32 or another current refrigerant, especially older stock shipped to the islands."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Hybrid mini-split or rooftop solar?" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Hybrid mini-split or rooftop solar?" }),
         /* @__PURE__ */ jsxs("div", { className: "grid md:grid-cols-2 gap-6 mb-6", children: [
           /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-teal-200 bg-teal-50/40 p-5", children: [
             /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-2", children: "A hybrid mini-split makes sense if" }),
@@ -17363,68 +17371,68 @@ function BlogArticleSolarMiniSplit() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$p, children: [
           "Comparing ordinary mini-splits? See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$o, children: "mini-split costs in 2026" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/mini-split-cost-2026", className: a$p, children: "mini-split costs in 2026" }),
           " ",
           "and what AC costs to run ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$o, children: "in your state" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost", className: a$p, children: "in your state" }),
           " or",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$o, children: "in the Caribbean" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: a$p, children: "in the Caribbean" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$p, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "EG4 specifications: ",
-            /* @__PURE__ */ jsx("a", { href: "https://eg4electronics.com/wp-content/uploads/2025/10/EG4-12K-24K-Hybrid-Mini-Split-ACDC-R32-Spec-Sheet.pdf", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "EG4 12K/24K hybrid R-32 spec sheet" }),
+            /* @__PURE__ */ jsx("a", { href: "https://eg4electronics.com/wp-content/uploads/2025/10/EG4-12K-24K-Hybrid-Mini-Split-ACDC-R32-Spec-Sheet.pdf", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "EG4 12K/24K hybrid R-32 spec sheet" }),
             "; price and warranty: ",
-            /* @__PURE__ */ jsx("a", { href: "https://signaturesolar.com/eg4-12k-btu-hybrid-solar-mini-split", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "Signature Solar" }),
+            /* @__PURE__ */ jsx("a", { href: "https://signaturesolar.com/eg4-12k-btu-hybrid-solar-mini-split", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "Signature Solar" }),
             " (October 2026)."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Year-long owner review: ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.thesolarlab.com/review/eg4-24k-mini-split-3", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "The Solar Lab, EG4 24K" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.thesolarlab.com/review/eg4-24k-mini-split-3", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "The Solar Lab, EG4 24K" }),
             ". Owner reports: ",
-            /* @__PURE__ */ jsx("a", { href: "https://forum.eg4electronics.com/community/high-efficiency-appliances/hybrid-mini-split-12k-not-heating-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "EG4 forum" }),
+            /* @__PURE__ */ jsx("a", { href: "https://forum.eg4electronics.com/community/high-efficiency-appliances/hybrid-mini-split-12k-not-heating-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "EG4 forum" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "HotSpot Energy: ",
-            /* @__PURE__ */ jsx("a", { href: "https://cdn.shopify.com/s/files/1/0247/4829/4218/files/3.pdf", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "ACDC18C spec sheet" }),
+            /* @__PURE__ */ jsx("a", { href: "https://cdn.shopify.com/s/files/1/0247/4829/4218/files/3.pdf", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "ACDC18C spec sheet" }),
             "; 12K price from retail listings. Gree: ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.pv-magazine-india.com/2024/06/20/gree-presents-photovoltaic-dc-air-conditioner", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "pv magazine, June 2024" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.pv-magazine-india.com/2024/06/20/gree-presents-photovoltaic-dc-air-conditioner", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "pv magazine, June 2024" }),
             ". Deye: ",
-            /* @__PURE__ */ jsx("a", { href: "https://deye.com/product/dc48v-solar-air-conditioner/", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "DC48V solar air conditioner" }),
+            /* @__PURE__ */ jsx("a", { href: "https://deye.com/product/dc48v-solar-air-conditioner/", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "DC48V solar air conditioner" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Electricity rates: ",
-            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "EIA Electric Power Monthly, Table 5.6.A" }),
+            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "EIA Electric Power Monthly, Table 5.6.A" }),
             " (",
             RATES_AS_OF,
             "); the Bahamas from the ",
-            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/bahamas", className: ext$8, children: "Bahamas cost page" }),
+            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/bahamas", className: ext$9, children: "Bahamas cost page" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Peak sun hours: our estimates from NREL solar maps (state ranges summarized by ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.solarreviews.com/blog/peak-sun-hours-explained", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "SolarReviews" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.solarreviews.com/blog/peak-sun-hours-explained", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "SolarReviews" }),
             "). Share of solar used, the 0.8 loss factor and the $",
             EXTRA_COST.toLocaleString(),
             " extra cost are our estimates."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "R-410A rules: ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.achrnews.com/articles/165640-epa-offers-temporary-relief-on-r-410a-installations", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "ACHR News on EPA relief for R-410A installations" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.achrnews.com/articles/165640-epa-offers-temporary-relief-on-r-410a-installations", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "ACHR News on EPA relief for R-410A installations" }),
             ". Rapid shutdown: ",
-            /* @__PURE__ */ jsx("a", { href: "https://iaeimagazine.org/2015/januaryfebruary-2015/rapid-shutdown-of-pv-systems/", target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "IAEI Magazine" }),
+            /* @__PURE__ */ jsx("a", { href: "https://iaeimagazine.org/2015/januaryfebruary-2015/rapid-shutdown-of-pv-systems/", target: "_blank", rel: "noopener noreferrer", className: ext$9, children: "IAEI Magazine" }),
             "."
           ] })
         ] }),
@@ -17506,17 +17514,17 @@ const ENBRIDGE_PER_M3 = 0.2687;
 const ENBRIDGE_SOURCE_URL = "https://oeb.ca/sites/default/files/qram-enbridge-20260701-en.pdf";
 const CA_HEAT_KWH = 15e3;
 const CA_COP = 2.5;
-const PATH$g = "/blog/heat-pump-vs-central-ac";
-const TITLE$g = "Heat Pump vs Central AC: Running Costs and Payback (2026)";
-const HEADLINE$g = "Heat Pump vs. Central AC in 2026: Which Costs Less to Run, and When the Heat Pump Pays Off";
-const PUBLISHED$3 = "2026-10-21";
+const PATH$h = "/blog/heat-pump-vs-central-ac";
+const TITLE$h = "Heat Pump vs Central AC: Running Costs and Payback (2026)";
+const HEADLINE$h = "Heat Pump vs. Central AC in 2026: Which Costs Less to Run, and When the Heat Pump Pays Off";
+const PUBLISHED$4 = "2026-10-21";
 const UPDATED$3 = "2026-10-21";
-const th$m = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 align-bottom";
-const td$m = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$n = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$n = "text-gray-700 leading-relaxed mb-4";
-const a$n = "text-teal-600 hover:text-teal-700 font-medium";
-const ext$7 = "text-teal-700 hover:underline";
+const th$n = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 align-bottom";
+const td$n = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$o = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$o = "text-gray-700 leading-relaxed mb-4";
+const a$o = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$8 = "text-teal-700 hover:underline";
 const box$1 = "rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800";
 function yearCost$1(fuel, price, mmbtu) {
   return costPerMmbtu(fuel, price) * mmbtu;
@@ -17683,17 +17691,17 @@ function BlogArticleHeatPumpVsAc() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$g }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$h }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$g}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$h}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$g}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$g }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$h}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$h }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$g, headline: HEADLINE$g, description, dateModified: UPDATED$3, datePublished: PUBLISHED$3 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$h, headline: HEADLINE$h, description, dateModified: UPDATED$3, datePublished: PUBLISHED$4 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -17714,7 +17722,7 @@ function BlogArticleHeatPumpVsAc() {
               " 10 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$g }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$h }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Replacing your central air? A heat pump does the same cooling and also heats. Here's when the extra cost pays back, with this winter's fuel prices." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$3 })
         ] }),
@@ -17742,8 +17750,8 @@ function BlogArticleHeatPumpVsAc() {
             " a kWh."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$n, children: "My stores are in the Caribbean, where nobody needs heating, so the AC-or-heat-pump question never comes up. In most of the U.S. and Canada it's the biggest decision you make when the air conditioner dies, and contractors often pitch the heat pump as the obvious upgrade. Sometimes it is. Sometimes it costs you money every winter. The difference comes down to two prices on your bills, and this article shows where the line falls." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "What a heat pump is, and what it isn't" }),
+        /* @__PURE__ */ jsx("p", { className: p$o, children: "My stores are in the Caribbean, where nobody needs heating, so the AC-or-heat-pump question never comes up. In most of the U.S. and Canada it's the biggest decision you make when the air conditioner dies, and contractors often pitch the heat pump as the obvious upgrade. Sometimes it is. Sometimes it costs you money every winter. The difference comes down to two prices on your bills, and this article shows where the line falls." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "What a heat pump is, and what it isn't" }),
         /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4", children: [
           /* @__PURE__ */ jsxs("div", { className: "flex gap-3 rounded-lg border border-gray-200 p-4", children: [
             /* @__PURE__ */ jsx(Snowflake, { className: "w-6 h-6 text-teal-600 flex-shrink-0" }),
@@ -17760,8 +17768,8 @@ function BlogArticleHeatPumpVsAc() {
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$n, children: `That's why the comparison isn't really "heat pump vs. AC". It's "heat pump vs. whatever heats your house now". Against electric baseboards or an electric furnace, which turn one kWh into one kWh of heat, a heat pump is two to three times as efficient. Against gas, it depends on the price of a kWh compared with the price of gas.` }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Heating costs: heat pump vs. your current system" }),
+        /* @__PURE__ */ jsx("p", { className: p$o, children: `That's why the comparison isn't really "heat pump vs. AC". It's "heat pump vs. whatever heats your house now". Against electric baseboards or an electric furnace, which turn one kWh into one kWh of heat, a heat pump is two to three times as efficient. Against gas, it depends on the price of a kWh compared with the price of gas.` }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Heating costs: heat pump vs. your current system" }),
         /* @__PURE__ */ jsxs("div", { className: box$1, children: [
           /* @__PURE__ */ jsx("p", { className: "font-bold text-gray-900 mb-2", children: "What this table shows" }),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1", children: [
@@ -17806,18 +17814,18 @@ function BlogArticleHeatPumpVsAc() {
         )) }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[640px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$m, children: "You heat with" }),
-            CLIMATES.map((c) => /* @__PURE__ */ jsxs("th", { className: th$m, children: [
+            /* @__PURE__ */ jsx("th", { className: th$n, children: "You heat with" }),
+            CLIMATES.map((c) => /* @__PURE__ */ jsxs("th", { className: th$n, children: [
               c.label,
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: c.examples })
             ] }, c.id))
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: FUELS.map((f) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$m} font-medium`, children: f.label }),
+            /* @__PURE__ */ jsx("td", { className: `${td$n} font-medium`, children: f.label }),
             CLIMATES.map((c) => {
               const save2 = yearCost$1(f.id, US_FUEL_PRICE[f.id], c.mmbtu) - hpYearCost(US_ELEC, hspf2, c.id);
               const payback = save2 > 0 ? HP_PREMIUM / save2 : Infinity;
-              return /* @__PURE__ */ jsxs("td", { className: td$m, children: [
+              return /* @__PURE__ */ jsxs("td", { className: td$n, children: [
                 /* @__PURE__ */ jsx("span", { className: save2 >= 0 ? "text-gray-900 font-semibold" : "text-red-700 font-semibold", children: save2 >= 0 ? `Saves ${usd(save2)}` : `Costs ${usd(-save2)} more` }),
                 /* @__PURE__ */ jsxs("span", { className: "block text-xs text-gray-500 mb-1", children: [
                   "a year",
@@ -17830,8 +17838,8 @@ function BlogArticleHeatPumpVsAc() {
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-6", children: "Heat pump seasonal efficiency: HSPF2 ÷ 3.412, raised 15% for mild winters and lowered 10–20% for cold and very cold winters, when it relies more on backup heat (our estimate). Cold-climate models hold their output better in deep cold, so the real gap in very cold climates can be bigger than shown." }),
         /* @__PURE__ */ jsx(HowWeJudge, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "The gas question: when does a heat pump beat a gas furnace?" }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "The gas question: when does a heat pump beat a gas furnace?" }),
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "Only one number matters: your electricity price compared with your gas price. At this winter's average gas price of $",
           US_GAS_PER_MCF.toFixed(2),
           " per thousand cubic feet, a heat pump heats for the same cost as a 95% gas furnace when electricity costs about ",
@@ -17861,15 +17869,15 @@ function BlogArticleHeatPumpVsAc() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[480px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$m, children: "Your gas price ($ per thousand cubic feet)" }),
-            /* @__PURE__ */ jsxs("th", { className: th$m, children: [
+            /* @__PURE__ */ jsx("th", { className: th$n, children: "Your gas price ($ per thousand cubic feet)" }),
+            /* @__PURE__ */ jsxs("th", { className: th$n, children: [
               "Heat pump wins below this electricity price",
               /* @__PURE__ */ jsxs("span", { className: "block text-xs font-normal text-gray-500", children: [
                 "standard, HSPF2 ",
                 STD_HP.hspf2
               ] })
             ] }),
-            /* @__PURE__ */ jsxs("th", { className: th$m, children: [
+            /* @__PURE__ */ jsxs("th", { className: th$n, children: [
               "Heat pump wins below this electricity price",
               /* @__PURE__ */ jsxs("span", { className: "block text-xs font-normal text-gray-500", children: [
                 "cold-climate, HSPF2 ",
@@ -17878,29 +17886,29 @@ function BlogArticleHeatPumpVsAc() {
             ] })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: [10, 13.44, 16, 20, 25].map((g) => /* @__PURE__ */ jsxs("tr", { className: g === US_GAS_PER_MCF ? "bg-amber-50/60" : "", children: [
-            /* @__PURE__ */ jsxs("td", { className: `${td$m} font-medium`, children: [
+            /* @__PURE__ */ jsxs("td", { className: `${td$n} font-medium`, children: [
               "$",
               g.toFixed(2),
               g === US_GAS_PER_MCF ? " (U.S. average)" : ""
             ] }),
-            /* @__PURE__ */ jsxs("td", { className: td$m, children: [
+            /* @__PURE__ */ jsxs("td", { className: td$n, children: [
               cents(gasBreakEvenElec(g, copStd)),
               "/kWh"
             ] }),
-            /* @__PURE__ */ jsxs("td", { className: td$m, children: [
+            /* @__PURE__ */ jsxs("td", { className: td$n, children: [
               cents(gasBreakEvenElec(g, copCold)),
               "/kWh"
             ] })
           ] }, g)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$n, children: "Your gas bill shows the price per therm or per hundred cubic feet: $1 per therm is about $10.36 per thousand cubic feet. Use the price of each extra unit (supply and delivery per therm), not the fixed monthly charge, which you'd keep paying as long as the gas is connected." }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsx("p", { className: p$o, children: "Your gas bill shows the price per therm or per hundred cubic feet: $1 per therm is about $10.36 per thousand cubic feet. Use the price of each extra unit (supply and delivery per therm), not the fixed monthly charge, which you'd keep paying as long as the gas is connected." }),
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "That doesn't make a heat pump wrong for every gas home. A ",
           /* @__PURE__ */ jsx("strong", { children: "dual-fuel" }),
           " system keeps the furnace and lets the heat pump do the mild days, when it's most efficient, switching to gas in deep cold. It costs about the same as an AC plus furnace, gives you a backup heat source, and it's the safer choice if gas prices rise. Just don't expect it to lower your bills much at today's prices."
         ] }),
         /* @__PURE__ */ jsx(Estimator$3, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Rebates and credits in 2026" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Rebates and credits in 2026" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Federal tax credit: gone." }),
@@ -17915,15 +17923,15 @@ function BlogArticleHeatPumpVsAc() {
             " many still pay rebates for heat pumps, often more for cold-climate models. Check before you sign, because some require a pre-approval."
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$o, children: [
           "Details: ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$n, children: "HVAC tax credits and rebates in 2026" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/hvac-tax-credits-rebates-2026", className: a$o, children: "HVAC tax credits and rebates in 2026" }),
           ". In Canada, federal and provincial heat pump programs are much larger; see",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/heat-pump-canada", className: a$n, children: "heat pumps in Canada: costs by province and 2026 rebates" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/heat-pump-canada", className: a$o, children: "heat pumps in Canada: costs by province and 2026 rebates" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Beyond the running cost" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Beyond the running cost" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Size it for heating." }),
@@ -17940,7 +17948,7 @@ function BlogArticleHeatPumpVsAc() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Winter maintenance." }),
             " Keep snow off the outdoor unit and expect short defrost cycles with steam. See ",
-            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/heat-pump-defrost-mode", className: a$n, children: "defrost mode explained" }),
+            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/heat-pump-defrost-mode", className: a$o, children: "defrost mode explained" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
@@ -17948,28 +17956,28 @@ function BlogArticleHeatPumpVsAc() {
             " A heat pump runs all year, so it may wear out a little sooner than an AC that only runs in summer. Our payback verdicts don't account for that."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$o, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Fuel prices: ",
-            /* @__PURE__ */ jsx("a", { href: US_FUEL_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: US_FUEL_SOURCE }),
+            /* @__PURE__ */ jsx("a", { href: US_FUEL_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$8, children: US_FUEL_SOURCE }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Electricity: ",
-            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: "EIA Electric Power Monthly, Table 5.6.A" }),
+            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "EIA Electric Power Monthly, Table 5.6.A" }),
             ", ",
             RATES_AS_OF,
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Heat pump premium: ",
-            /* @__PURE__ */ jsx("a", { href: HP_PREMIUM_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: "PickHVAC" }),
+            /* @__PURE__ */ jsx("a", { href: HP_PREMIUM_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$8, children: "PickHVAC" }),
             " (central AC $4,500–$9,000 installed vs. heat pump $6,500–$13,500); we use $",
             HP_PREMIUM.toLocaleString(),
             "."
@@ -18215,17 +18223,17 @@ function getProvince(slug) {
   return PROVINCES.find((p2) => p2.slug === slug);
 }
 const cad = (n, digits = 0) => `C$${n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
-const PATH$f = "/blog/heat-pump-canada";
-const TITLE$f = "Heat Pumps in Canada: Costs by Province and 2026 Rebates";
-const HEADLINE$f = "Heat Pumps in Canada (2026): What They Save in Every Province, and the Rebates Available";
-const PUBLISHED$2 = "2026-10-21";
+const PATH$g = "/blog/heat-pump-canada";
+const TITLE$g = "Heat Pumps in Canada: Costs by Province and 2026 Rebates";
+const HEADLINE$g = "Heat Pumps in Canada (2026): What They Save in Every Province, and the Rebates Available";
+const PUBLISHED$3 = "2026-10-21";
 const UPDATED$2 = "2026-10-21";
-const th$l = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 align-bottom";
-const td$l = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$m = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$m = "text-gray-700 leading-relaxed mb-4";
-const a$m = "text-teal-600 hover:text-teal-700 font-medium";
-const ext$6 = "text-teal-700 hover:underline";
+const th$m = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 align-bottom";
+const td$m = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$n = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$n = "text-gray-700 leading-relaxed mb-4";
+const a$n = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$7 = "text-teal-700 hover:underline";
 const box = "rounded-lg border border-teal-200 bg-teal-50/60 p-4 mb-4 text-sm text-gray-800";
 const OIL_EFF = 0.85;
 const GAS_EFF = 0.95;
@@ -18263,17 +18271,17 @@ function BlogArticleHeatPumpCanada() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$f }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$g }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$f}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$g}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$f}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$f }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$g}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$g }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$f, headline: HEADLINE$f, description, dateModified: UPDATED$2, datePublished: PUBLISHED$2 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$g, headline: HEADLINE$g, description, dateModified: UPDATED$2, datePublished: PUBLISHED$3 })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -18294,7 +18302,7 @@ function BlogArticleHeatPumpCanada() {
               " 8 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$f }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$g }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "In most of Canada a heat pump runs far more hours heating than cooling, which changes the math on replacing an air conditioner. Here's what it saves, province by province, and who pays for part of it." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: UPDATED$2 })
         ] }),
@@ -18316,12 +18324,12 @@ function BlogArticleHeatPumpCanada() {
             ", a heat pump costs more per unit of heat at current Ontario prices, so a dual-fuel setup is the usual choice. A federal rebate of up to $10,000 was announced in October 2026, with applications expected in early 2027."
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "Our ",
-          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$m, children: "Canadian AC cost pages" }),
+          /* @__PURE__ */ jsx(Link, { to: "/ac-cost/canada", className: a$n, children: "Canadian AC cost pages" }),
           " show that a premium air conditioner rarely pays back in Canada: summers are short and power is cheap. Heating turns that around. A heat pump in Ontario might cool for 800 hours a year and heat for several thousand, so its efficiency counts for much more in winter than in summer."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Heat pump vs. electric baseboards and oil, by province" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Heat pump vs. electric baseboards and oil, by province" }),
         /* @__PURE__ */ jsxs("div", { className: box, children: [
           /* @__PURE__ */ jsx("p", { className: "font-bold text-gray-900 mb-2", children: "What this table shows" }),
           /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1", children: [
@@ -18359,42 +18367,42 @@ function BlogArticleHeatPumpCanada() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[640px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Province" }),
-            /* @__PURE__ */ jsxs("th", { className: th$l, children: [
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Province" }),
+            /* @__PURE__ */ jsxs("th", { className: th$m, children: [
               "Electricity price",
               /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: "each extra kWh, C$" })
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Baseboard heat per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Heat pump per year" }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Saved vs. baseboards" }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Saved vs. oil" })
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Baseboard heat per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Heat pump per year" }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Saved vs. baseboards" }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Saved vs. oil" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: rows.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsxs("td", { className: td$l, children: [
-              /* @__PURE__ */ jsx(Link, { to: `/ac-cost/canada/${r.pr.slug}`, className: a$m, children: r.pr.name }),
+            /* @__PURE__ */ jsxs("td", { className: td$m, children: [
+              /* @__PURE__ */ jsx(Link, { to: `/ac-cost/canada/${r.pr.slug}`, className: a$n, children: r.pr.name }),
               /* @__PURE__ */ jsx("span", { className: "block text-xs text-gray-500", children: r.pr.city.name })
             ] }),
-            /* @__PURE__ */ jsx("td", { className: td$l, children: cents(r.price) }),
-            /* @__PURE__ */ jsx("td", { className: td$l, children: cad(r.baseboard) }),
-            /* @__PURE__ */ jsx("td", { className: td$l, children: cad(r.hp) }),
-            /* @__PURE__ */ jsx("td", { className: `${td$l} font-semibold text-gray-900`, children: cad(r.saveBaseboard) }),
-            /* @__PURE__ */ jsx("td", { className: `${td$l} font-semibold text-gray-900`, children: cad(r.saveOil) })
+            /* @__PURE__ */ jsx("td", { className: td$m, children: cents(r.price) }),
+            /* @__PURE__ */ jsx("td", { className: td$m, children: cad(r.baseboard) }),
+            /* @__PURE__ */ jsx("td", { className: td$m, children: cad(r.hp) }),
+            /* @__PURE__ */ jsx("td", { className: `${td$m} font-semibold text-gray-900`, children: cad(r.saveBaseboard) }),
+            /* @__PURE__ */ jsx("td", { className: `${td$m} font-semibold text-gray-900`, children: cad(r.saveOil) })
           ] }, r.pr.slug)) })
         ] }) }),
         /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-500 mb-6", children: [
           "Canadian dollars before GST/HST. Electricity: ",
-          /* @__PURE__ */ jsx("a", { href: CANADA_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$6, children: CANADA_SOURCE }),
+          /* @__PURE__ */ jsx("a", { href: CANADA_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: CANADA_SOURCE }),
           ". Oil: ",
-          /* @__PURE__ */ jsx("a", { href: CA_OIL_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$6, children: "GlobalPetrolPrices" }),
+          /* @__PURE__ */ jsx("a", { href: CA_OIL_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: "GlobalPetrolPrices" }),
           "; local prices vary widely, especially in Atlantic Canada."
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "The savings are largest where electricity is expensive, because a heat pump cuts the number of kWh, not the price of each one. Against oil, the gap is big everywhere: oil heat costs about ",
           cents(oilPerKwh),
           " per kWh of heat delivered, several times what a heat pump costs. With a typical heat pump install costing several thousand dollars more than an air conditioner, savings of $1,000+ a year pay that back in a few years, sooner after a rebate."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "What about natural gas?" }),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "What about natural gas?" }),
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "Gas got cheaper for households when the federal consumer carbon charge was removed in 2025. In the Toronto area, Enbridge's price per extra cubic metre is about ",
           (ENBRIDGE_PER_M3 * 100).toFixed(1),
           "¢ before HST from July 1, 2026 (delivery, transportation and supply; the monthly customer charge doesn't change with use). In a 95% furnace that's about ",
@@ -18416,58 +18424,58 @@ function BlogArticleHeatPumpCanada() {
           cad(on.hp),
           " a year."
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$m, children: `So for an Ontario gas home, a heat pump alone doesn't lower the heating bill at today's prices. What many people do instead is install a heat pump in place of the air conditioner and keep the gas furnace: the heat pump covers the shoulder seasons and mild winter days, the furnace takes over in deep cold, and the household gets efficient cooling and a backup heat source. Rebates often favour this "hybrid" setup, and it protects you if gas prices rise again.` }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Heat pump rebates in Canada (October 2026)" }),
+        /* @__PURE__ */ jsx("p", { className: p$n, children: `So for an Ontario gas home, a heat pump alone doesn't lower the heating bill at today's prices. What many people do instead is install a heat pump in place of the air conditioner and keep the gas furnace: the heat pump covers the shoulder seasons and mild winter days, the furnace takes over in deep cold, and the household gets efficient cooling and a backup heat source. Rebates often favour this "hybrid" setup, and it protects you if gas prices rise again.` }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Heat pump rebates in Canada (October 2026)" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-3", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[600px] border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Program" }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "What it pays" }),
-            /* @__PURE__ */ jsx("th", { className: th$l, children: "Status" })
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Program" }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "What it pays" }),
+            /* @__PURE__ */ jsx("th", { className: th$m, children: "Status" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: td$l, children: /* @__PURE__ */ jsx("strong", { children: "New federal heat pump rebate" }) }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Up to $10,000 for households below the median income; $2,000 for other eligible households. Can be combined with provincial programs." }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Announced October 8, 2026; application portal expected early 2027." })
+              /* @__PURE__ */ jsx("td", { className: td$m, children: /* @__PURE__ */ jsx("strong", { children: "New federal heat pump rebate" }) }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Up to $10,000 for households below the median income; $2,000 for other eligible households. Can be combined with provincial programs." }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Announced October 8, 2026; application portal expected early 2027." })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
                 /* @__PURE__ */ jsx("strong", { children: "Oil to Heat Pump Affordability" }),
                 " (federal)"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Up to $10,000 upfront for oil-heated homes at or below median income." }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Closed to new applications July 31, 2026. Approved applicants have until January 31, 2027 to finish and submit receipts." })
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Up to $10,000 upfront for oil-heated homes at or below median income." }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Closed to new applications July 31, 2026. Approved applicants have until January 31, 2027 to finish and submit receipts." })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: td$l, children: /* @__PURE__ */ jsx("strong", { children: "Canada Greener Homes Grant" }) }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "—" }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Closed to new applicants since February 2024." })
+              /* @__PURE__ */ jsx("td", { className: td$m, children: /* @__PURE__ */ jsx("strong", { children: "Canada Greener Homes Grant" }) }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "—" }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Closed to new applicants since February 2024." })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: td$l, children: /* @__PURE__ */ jsx("strong", { children: "Ontario: Home Renovation Savings" }) }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Up to $7,500 for a cold-climate air-source heat pump, up to $12,000 for ground-source. Must be on NRCan's qualified list." }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Running in 2026; check Save on Energy for current terms." })
+              /* @__PURE__ */ jsx("td", { className: td$m, children: /* @__PURE__ */ jsx("strong", { children: "Ontario: Home Renovation Savings" }) }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Up to $7,500 for a cold-climate air-source heat pump, up to $12,000 for ground-source. Must be on NRCan's qualified list." }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Running in 2026; check Save on Energy for current terms." })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
                 /* @__PURE__ */ jsx("strong", { children: "Quebec: LogisVert" }),
                 " (Hydro-Québec)"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "$100 per 1,000 BTU/h of heating output at −8°C, $120 for cold-climate units, up to $6,700." }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Available (June 2026 summary)." })
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "$100 per 1,000 BTU/h of heating output at −8°C, $120 for cold-climate units, up to $6,700." }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Available (June 2026 summary)." })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
                 /* @__PURE__ */ jsx("strong", { children: "B.C.: Energy Savings Program" }),
                 " (CleanBC)"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "Income-based. Switching from gas to a central ducted heat pump: $13,000 / $7,000 / $3,500 by income level. Smaller amounts for mini-splits and dual fuel; electric-to-heat-pump rebates cut back." }),
-              /* @__PURE__ */ jsx("td", { className: td$l, children: "New amounts from July 6, 2026." })
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "Income-based. Switching from gas to a central ducted heat pump: $13,000 / $7,000 / $3,500 by income level. Smaller amounts for mini-splits and dual fuel; electric-to-heat-pump rebates cut back." }),
+              /* @__PURE__ */ jsx("td", { className: td$m, children: "New amounts from July 6, 2026." })
             ] })
           ] })
         ] }) }),
         /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-6", children: "Programs change often; confirm amounts and pre-approval rules before you sign a contract. Sources: Natural Resources Canada (OHPA, Greener Homes), CTV News and Daily Hive (federal rebate announcement), Save on Energy (Ontario), Hydro-Québec LogisVert summary via Centris (June 2026), CleanBC Energy Savings Program update (June 2026)." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Getting a heat pump that works in your winter" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Getting a heat pump that works in your winter" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Buy a cold-climate model." }),
@@ -18484,38 +18492,38 @@ function BlogArticleHeatPumpCanada() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Mind the outdoor unit." }),
             " Mount it above the snow line and away from roof drip. Steam and short defrost cycles are normal; see ",
-            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/heat-pump-defrost-mode", className: a$m, children: "heat pump defrost mode explained" }),
+            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/heat-pump-defrost-mode", className: a$n, children: "heat pump defrost mode explained" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "For U.S. prices and a payback calculator for gas, propane, oil and electric homes, see",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/heat-pump-vs-central-ac", className: a$m, children: "heat pump vs. central AC" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/heat-pump-vs-central-ac", className: a$n, children: "heat pump vs. central AC" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Electricity: ",
-            /* @__PURE__ */ jsx("a", { href: CANADA_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$6, children: CANADA_SOURCE }),
+            /* @__PURE__ */ jsx("a", { href: CANADA_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: CANADA_SOURCE }),
             ", price of each kWh from 1,000 to 2,000 a month, before tax."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Gas: ",
-            /* @__PURE__ */ jsx("a", { href: ENBRIDGE_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$6, children: "Ontario Energy Board, Enbridge Gas rate notice from July 1, 2026" }),
+            /* @__PURE__ */ jsx("a", { href: ENBRIDGE_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: "Ontario Energy Board, Enbridge Gas rate notice from July 1, 2026" }),
             " (EGD rate zone), plus 13% HST; about ",
             CA_GAS_KWH_PER_M3,
             " kWh of heat per cubic metre."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Oil: ",
-            /* @__PURE__ */ jsx("a", { href: CA_OIL_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$6, children: "GlobalPetrolPrices" }),
+            /* @__PURE__ */ jsx("a", { href: CA_OIL_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: "GlobalPetrolPrices" }),
             ", ",
             CA_OIL_AS_OF,
             "; about ",
@@ -18585,17 +18593,17 @@ function FanSeries({ current }) {
     ] }) : /* @__PURE__ */ jsx(Link, { to: s.path, className: "text-teal-600 hover:text-teal-700 font-medium", children: s.label }) }, s.path)) })
   ] });
 }
-const PATH$e = "/blog/ceiling-fan-vs-ac-savings";
-const TITLE$e = "Ceiling Fan vs. AC: How Much Does a Fan Really Save?";
-const HEADLINE$e = "Ceiling Fan vs. Air Conditioning: How Much Does a Fan Really Save?";
+const PATH$f = "/blog/ceiling-fan-vs-ac-savings";
+const TITLE$f = "Ceiling Fan vs. AC: How Much Does a Fan Really Save?";
+const HEADLINE$f = "Ceiling Fan vs. Air Conditioning: How Much Does a Fan Really Save?";
 const US_HOURS$1 = 1500;
-const th$k = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$k = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$l = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const th$l = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$l = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$m = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$4 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$l = "text-gray-700 leading-relaxed mb-4";
-const a$l = "text-teal-600 hover:text-teal-700 font-medium";
-const ext$5 = "text-teal-700 hover:underline";
+const p$m = "text-gray-700 leading-relaxed mb-4";
+const a$m = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$6 = "text-teal-700 hover:underline";
 const signed = (n) => `${n >= 0 ? "+" : "−"}${usd(Math.abs(n))}`;
 function FanSavingsEstimator() {
   const [rateC, setRateC] = useState(+(US_RATE * 100).toFixed(2));
@@ -18799,18 +18807,18 @@ function BlogArticleFanVsAc() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$e }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$f }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$e}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$f}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$e}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$e }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$f}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$f }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$e, headline: HEADLINE$e, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$f, headline: HEADLINE$f, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -18831,7 +18839,7 @@ function BlogArticleFanVsAc() {
               " 9 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$e }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$f }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "A fan costs pennies an hour. Whether it saves you anything depends on two habits." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -18869,19 +18877,19 @@ function BlogArticleFanVsAc() {
             " a year at U.S. average rates, and several times that in hot, expensive places."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "We have ceiling fans at home, and they make a huge difference. My stores don't have them. That contrast is a good way to understand fans: they help the people sitting or sleeping under them, which suits a living room or bedroom, while a store with customers coming and going depends on the AC. The difference between cooling people and cooling a space is the key to whether a fan saves you money." }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$e }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "How a fan cools you without cooling the room" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "A fan doesn't lower the air temperature. Its motor actually adds a little heat. What it does is move air across your skin, which carries heat away and speeds up the evaporation of sweat. You feel cooler at the same temperature, the way a breeze feels cooler than still air. That's why a fan in an empty room is pure waste: there's no one there to feel the breeze." }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "We have ceiling fans at home, and they make a huge difference. My stores don't have them. That contrast is a good way to understand fans: they help the people sitting or sleeping under them, which suits a living room or bedroom, while a store with customers coming and going depends on the AC. The difference between cooling people and cooling a space is the key to whether a fan saves you money." }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$f }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "How a fan cools you without cooling the room" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "A fan doesn't lower the air temperature. Its motor actually adds a little heat. What it does is move air across your skin, which carries heat away and speeds up the evaporation of sweat. You feel cooler at the same temperature, the way a breeze feels cooler than still air. That's why a fan in an empty room is pure waste: there's no one there to feel the breeze." }),
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "The money comes from what you do with that comfort. If the room feels ",
           DEGREES_RAISED,
           "°F cooler with the fan on, you can set the thermostat ",
           DEGREES_RAISED,
           "°F higher, and the AC runs less. The fan's own running cost is the price of that saving."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "What a fan costs to run compared with AC" }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "What a fan costs to run compared with AC" }),
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "Cost of one hour at the U.S. average residential rate of ",
           cents(US_RATE),
           "/kWh (",
@@ -18890,48 +18898,48 @@ function BlogArticleFanVsAc() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "What's running" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Power (typical)" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Cost per hour" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Cost per month, 8 hours a day" })
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "What's running" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Power (typical)" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Cost per hour" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Cost per month, 8 hours a day" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             FAN_TYPES.map((f) => /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$k} font-medium`, children: f.name }),
-              /* @__PURE__ */ jsxs("td", { className: td$k, children: [
+              /* @__PURE__ */ jsx("td", { className: `${td$l} font-medium`, children: f.name }),
+              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
                 f.watts,
                 " W (",
                 f.range,
                 ")"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$k, children: cents(f.watts / 1e3 * US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$k, children: usd(f.watts / 1e3 * US_RATE * 240, 2) })
+              /* @__PURE__ */ jsx("td", { className: td$l, children: cents(f.watts / 1e3 * US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$l, children: usd(f.watts / 1e3 * US_RATE * 240, 2) })
             ] }, f.id)),
             /* @__PURE__ */ jsxs("tr", { className: "bg-gray-50", children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$k} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$l} font-medium`, children: [
                 "Central air conditioner, ",
                 AC_TONS,
                 "-ton, SEER ",
                 AC_SEER
               ] }),
-              /* @__PURE__ */ jsxs("td", { className: td$k, children: [
+              /* @__PURE__ */ jsxs("td", { className: td$l, children: [
                 (AC_KW * 1e3).toLocaleString(void 0, { maximumFractionDigits: 0 }),
                 " W"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$k, children: usd(acHour, 2) }),
-              /* @__PURE__ */ jsx("td", { className: td$k, children: usd(acHour * 240) })
+              /* @__PURE__ */ jsx("td", { className: td$l, children: usd(acHour, 2) }),
+              /* @__PURE__ */ jsx("td", { className: td$l, children: usd(acHour * 240) })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "The cost in your state, in the Caribbean, Canada and Europe is in",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$l, children: "how much it costs to run a fan" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$m, children: "how much it costs to run a fan" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "The two habits that decide whether a fan saves money" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "The two habits that decide whether a fan saves money" }),
         /* @__PURE__ */ jsx("h3", { className: h3$4, children: "1. Raise the thermostat" }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "Without this, a fan is an extra cost on top of the AC. Two standard fans running alongside the AC, with the thermostat left where it was, add about ",
           usd(usNoRaise.fanCost),
           " a year at U.S. average rates in our example. Raise the setting ",
@@ -18944,13 +18952,13 @@ function BlogArticleFanVsAc() {
           Math.round(DEGREES_RAISED * PCT_PER_DEGREE * 100),
           "% less. That's where the saving comes from. Our",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/thermostat-setback-strategy", className: a$l, children: "thermostat strategy" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/thermostat-setback-strategy", className: a$m, children: "thermostat strategy" }),
           " has the schedule."
         ] }),
         /* @__PURE__ */ jsx("h3", { className: h3$4, children: "2. Turn it off when you leave" }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "Fans cool people, not rooms. A fan left running in an empty bedroom all day costs money and changes nothing. Fans with a remote or a timer, or smart fans that can be scheduled, make this easier." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "What two ceiling fans save, by location" }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "Fans cool people, not rooms. A fan left running in an empty bedroom all day costs money and changes nothing. Fans with a remote or a timer, or smart fans that can be scheduled, make this easier." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "What two ceiling fans save, by location" }),
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "Two ceiling fans, the thermostat raised ",
           DEGREES_RAISED,
           "°F, a 3-ton SEER 14 central AC, and our estimate of cooling hours for each climate. The fans run ",
@@ -18959,27 +18967,27 @@ function BlogArticleFanVsAc() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm min-w-[640px]", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Location" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Electricity rate" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "AC hours per year" }),
-            /* @__PURE__ */ jsxs("th", { className: th$k, children: [
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Location" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Electricity rate" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "AC hours per year" }),
+            /* @__PURE__ */ jsxs("th", { className: th$l, children: [
               "AC saving from raising ",
               DEGREES_RAISED,
               "°F"
             ] }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Net saving, standard fans" }),
-            /* @__PURE__ */ jsx("th", { className: th$k, children: "Net saving, DC fans" })
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Net saving, standard fans" }),
+            /* @__PURE__ */ jsx("th", { className: th$l, children: "Net saving, DC fans" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: rows2.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$k, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$l, children: r.place }) }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: cents(r.rate) }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: r.hours.toLocaleString() }),
-            /* @__PURE__ */ jsx("td", { className: td$k, children: usd(r.std.acSaved) }),
-            /* @__PURE__ */ jsx("td", { className: `${td$k} ${r.std.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.std.net) }),
-            /* @__PURE__ */ jsx("td", { className: `${td$k} ${r.dcr.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.dcr.net) })
+            /* @__PURE__ */ jsx("td", { className: td$l, children: /* @__PURE__ */ jsx(Link, { to: r.link, className: a$m, children: r.place }) }),
+            /* @__PURE__ */ jsx("td", { className: td$l, children: cents(r.rate) }),
+            /* @__PURE__ */ jsx("td", { className: td$l, children: r.hours.toLocaleString() }),
+            /* @__PURE__ */ jsx("td", { className: td$l, children: usd(r.std.acSaved) }),
+            /* @__PURE__ */ jsx("td", { className: `${td$l} ${r.std.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.std.net) }),
+            /* @__PURE__ */ jsx("td", { className: `${td$l} ${r.dcr.net >= 0 ? "text-teal-700 font-semibold" : "text-red-700"}`, children: signed(r.dcr.net) })
           ] }, r.place)) })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "Two things stand out. The saving is real but modest: tens of dollars a year in most of the U.S.",
           bah && /* @__PURE__ */ jsxs(Fragment, { children: [
             ", and about",
@@ -18991,19 +18999,19 @@ function BlogArticleFanVsAc() {
           ] }),
           ". And the motor matters: a standard fan uses about twice the power of a DC fan, so it gives back a bigger share of the saving. If you're buying new fans, a DC motor is worth it. See the",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$l, children: "ceiling fan buying guide" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$m, children: "ceiling fan buying guide" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "The bigger saving: fan instead of AC" }),
-        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "The bigger saving: fan instead of AC" }),
+        /* @__PURE__ */ jsxs("p", { className: p$m, children: [
           "The table assumes the AC runs as usual, just at a higher setting. The larger saving comes from not running the AC at all when you don't need it: mild evenings, spring and fall, a cool night with the windows open. Every hour you use a fan instead of the AC saves about ",
           usd(acHour - fanHourAc, 2),
           " at U.S. average rates. A few hundred hours a year of that is worth more than the thermostat trick."
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$l, children: "It has limits. A fan moves air but doesn't remove humidity, so in muggy weather the air stays clammy. And once the air is hotter than your skin, roughly the mid-90s °F, a fan blows hot air at you and stops helping. On those days, run the AC and use the fan to raise the setting." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Run your own numbers" }),
+        /* @__PURE__ */ jsx("p", { className: p$m, children: "It has limits. A fan moves air but doesn't remove humidity, so in muggy weather the air stays clammy. And once the air is hotter than your skin, roughly the mid-90s °F, a fan blows hot air at you and stops helping. On those days, run the AC and use the fan to raise the setting." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Run your own numbers" }),
         /* @__PURE__ */ jsx(FanSavingsEstimator, {}),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "When fans don't help" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "When fans don't help" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Empty rooms." }),
@@ -19021,36 +19029,36 @@ function BlogArticleFanVsAc() {
             /* @__PURE__ */ jsx("strong", { children: "Humidity." }),
             " A ceiling fan doesn't dry the air. For a clammy house, see",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-high-humidity", className: a$l, children: "house humid with the AC on" }),
+            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-high-humidity", className: a$m, children: "house humid with the AC on" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Your AC's own fan setting." }),
             ' Setting the thermostat fan to "On" is not the same as a ceiling fan, and it can raise humidity. See',
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/home-airflow-fans", className: a$l, children: "fans and airflow in your home" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/home-airflow-fans", className: a$m, children: "fans and airflow in your home" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Sources and method" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$m, children: "Sources and method" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-8", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Raising the thermostat about 4°F with a ceiling fan, turning fans off in empty rooms: ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.energy.gov/energysaver/fans-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$5, children: "U.S. Department of Energy, Energy Saver: Fans for cooling" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.energy.gov/energysaver/fans-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$6, children: "U.S. Department of Energy, Energy Saver: Fans for cooling" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Electricity rates: ",
-            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$5, children: "EIA Electric Power Monthly, Table 5.6.A" }),
+            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$6, children: "EIA Electric Power Monthly, Table 5.6.A" }),
             " (",
             RATES_AS_OF,
             "); the Bahamas from the ",
-            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/bahamas", className: ext$5, children: "Bahamas cost page" }),
+            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/bahamas", className: ext$6, children: "Bahamas cost page" }),
             ". Cooling hours are our climate estimates, as on the state pages."
           ] }),
           /* @__PURE__ */ jsx("li", { children: `Fan wattages: an ENERGY STAR-listed 44" fan (17.6 W high, 2.7 W low), a manufacturer EnergyGuide label (44 W), and published watt-meter tests of standard and portable fans. Typical figures; check your fan's label.` }),
@@ -19200,15 +19208,15 @@ const eu = {
   countries: countries$2,
   euAveragePeriod
 };
-const PATH$d = "/blog/cost-to-run-a-fan";
-const TITLE$d = "Cost to Run a Fan: Ceiling, Box & Tower Fans by State";
-const HEADLINE$d = "How Much Does It Cost to Run a Fan? Ceiling, Box and Tower Fans, by State and Country";
-const th$j = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$j = "border border-gray-200 px-3 py-2.5 text-gray-700";
-const h2$k = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$k = "text-gray-700 leading-relaxed mb-4";
-const a$k = "text-teal-600 hover:text-teal-700 font-medium";
-const ext$4 = "text-teal-700 hover:underline";
+const PATH$e = "/blog/cost-to-run-a-fan";
+const TITLE$e = "Cost to Run a Fan: Ceiling, Box & Tower Fans by State";
+const HEADLINE$e = "How Much Does It Cost to Run a Fan? Ceiling, Box and Tower Fans, by State and Country";
+const th$k = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$k = "border border-gray-200 px-3 py-2.5 text-gray-700";
+const h2$l = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$l = "text-gray-700 leading-relaxed mb-4";
+const a$l = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$5 = "text-teal-700 hover:underline";
 const STD = fanType("ac-ceiling");
 const DC = fanType("dc-ceiling");
 const BOX = fanType("box");
@@ -19216,27 +19224,27 @@ const cost = (watts, hours, rate) => watts / 1e3 * hours * rate;
 function CostTable({ rows: rows2, fmt, rateLabel, unit }) {
   return /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm min-w-[620px]", children: [
     /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-      /* @__PURE__ */ jsx("th", { className: th$j, children: "Where" }),
-      /* @__PURE__ */ jsxs("th", { className: th$j, children: [
+      /* @__PURE__ */ jsx("th", { className: th$k, children: "Where" }),
+      /* @__PURE__ */ jsxs("th", { className: th$k, children: [
         "Electricity price (",
         unit,
         ")"
       ] }),
-      /* @__PURE__ */ jsx("th", { className: th$j, children: "Standard ceiling fan, per hour" }),
-      /* @__PURE__ */ jsx("th", { className: th$j, children: "Standard ceiling fan, per month" }),
-      /* @__PURE__ */ jsx("th", { className: th$j, children: "DC ceiling fan, per month" }),
-      /* @__PURE__ */ jsx("th", { className: th$j, children: "Box fan, per month" })
+      /* @__PURE__ */ jsx("th", { className: th$k, children: "Standard ceiling fan, per hour" }),
+      /* @__PURE__ */ jsx("th", { className: th$k, children: "Standard ceiling fan, per month" }),
+      /* @__PURE__ */ jsx("th", { className: th$k, children: "DC ceiling fan, per month" }),
+      /* @__PURE__ */ jsx("th", { className: th$k, children: "Box fan, per month" })
     ] }) }),
     /* @__PURE__ */ jsx("tbody", { children: rows2.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-      /* @__PURE__ */ jsxs("td", { className: `${td$j} font-medium`, children: [
-        r.link ? /* @__PURE__ */ jsx(Link, { to: r.link, className: a$k, children: r.name }) : r.name,
+      /* @__PURE__ */ jsxs("td", { className: `${td$k} font-medium`, children: [
+        r.link ? /* @__PURE__ */ jsx(Link, { to: r.link, className: a$l, children: r.name }) : r.name,
         r.note && /* @__PURE__ */ jsx("span", { className: "block text-xs font-normal text-gray-500", children: r.note })
       ] }),
-      /* @__PURE__ */ jsx("td", { className: td$j, children: rateLabel(r.rate) }),
-      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(STD.watts, 1, r.rate), 3) }),
-      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(STD.watts, FAN_MONTH_HOURS, r.rate), 2) }),
-      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(DC.watts, FAN_MONTH_HOURS, r.rate), 2) }),
-      /* @__PURE__ */ jsx("td", { className: td$j, children: fmt(cost(BOX.watts, FAN_MONTH_HOURS, r.rate), 2) })
+      /* @__PURE__ */ jsx("td", { className: td$k, children: rateLabel(r.rate) }),
+      /* @__PURE__ */ jsx("td", { className: td$k, children: fmt(cost(STD.watts, 1, r.rate), 3) }),
+      /* @__PURE__ */ jsx("td", { className: td$k, children: fmt(cost(STD.watts, FAN_MONTH_HOURS, r.rate), 2) }),
+      /* @__PURE__ */ jsx("td", { className: td$k, children: fmt(cost(DC.watts, FAN_MONTH_HOURS, r.rate), 2) }),
+      /* @__PURE__ */ jsx("td", { className: td$k, children: fmt(cost(BOX.watts, FAN_MONTH_HOURS, r.rate), 2) })
     ] }, r.key)) })
   ] }) });
 }
@@ -19357,18 +19365,18 @@ function BlogArticleFanCost() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$d }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$e }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$d}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$e}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$d}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$d }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$e}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$e }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$d, headline: HEADLINE$d, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$e, headline: HEADLINE$e, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -19389,7 +19397,7 @@ function BlogArticleFanCost() {
               " 6 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$d }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$e }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "Pennies an hour almost everywhere. Here are the exact numbers for where you live." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -19419,10 +19427,10 @@ function BlogArticleFanCost() {
             ". Prices for every state, the Caribbean, Canada and Europe are below."
           ] })
         ] }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$d }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "The formula" }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$e }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "The formula" }),
         /* @__PURE__ */ jsx("div", { className: "bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4 font-mono text-sm text-gray-800", children: "Cost = watts ÷ 1,000 × hours × your price per kWh" }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "A ",
           STD.watts,
           " W ceiling fan for 8 hours uses ",
@@ -19433,24 +19441,24 @@ function BlogArticleFanCost() {
           usd(cost(STD.watts, 8, US_RATE), 2),
           ". Your fan's watts are on its yellow EnergyGuide label or nameplate."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "How much power fans use" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "How much power fans use" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Fan" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Typical power, high speed" }),
-            /* @__PURE__ */ jsx("th", { className: th$j, children: "Watts used in our tables" })
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Fan" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Typical power, high speed" }),
+            /* @__PURE__ */ jsx("th", { className: th$k, children: "Watts used in our tables" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: FAN_TYPES.map((f) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: f.name }),
-            /* @__PURE__ */ jsx("td", { className: td$j, children: f.range }),
-            /* @__PURE__ */ jsxs("td", { className: td$j, children: [
+            /* @__PURE__ */ jsx("td", { className: `${td$k} font-medium`, children: f.name }),
+            /* @__PURE__ */ jsx("td", { className: td$k, children: f.range }),
+            /* @__PURE__ */ jsxs("td", { className: td$k, children: [
               f.watts,
               " W"
             ] })
           ] }, f.id)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$k, children: 'Low speed uses far less: an ENERGY STAR-listed 44" ceiling fan draws 17.6 W on high and just 2.7 W on low. Lights built into a fan are extra.' }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Work out your own cost" }),
+        /* @__PURE__ */ jsx("p", { className: p$l, children: 'Low speed uses far less: an ENERGY STAR-listed 44" ceiling fan draws 17.6 W on high and just 2.7 W on low. Lights built into a fan are extra.' }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Work out your own cost" }),
         /* @__PURE__ */ jsx(FanCostCalculator, {}),
         /* @__PURE__ */ jsxs("div", { className: "rounded-lg border border-gray-200 bg-gray-50 p-5 mb-4", children: [
           /* @__PURE__ */ jsx("p", { className: "text-sm font-bold uppercase tracking-wide text-gray-700 mb-2", children: "What these tables show" }),
@@ -19468,8 +19476,8 @@ function BlogArticleFanCost() {
             " W). Prices are in each place's own currency."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Cost to run a fan in every U.S. state" }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Cost to run a fan in every U.S. state" }),
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "Residential electricity in ",
           most.name,
           " (",
@@ -19491,14 +19499,14 @@ function BlogArticleFanCost() {
           ". Each state links to its AC running costs."
         ] }),
         /* @__PURE__ */ jsx(CostTable, { rows: usRows, fmt: (n, d) => usd(n, d), rateLabel: (r) => cents(r), unit: "per kWh" }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "The Caribbean" }),
-        /* @__PURE__ */ jsx("p", { className: p$k, children: "In U.S. dollars, at each country's newest available residential rate (dates under each name). Fans matter more here: cooling is needed most of the year and power often costs two or three times the U.S. average." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "The Caribbean" }),
+        /* @__PURE__ */ jsx("p", { className: p$l, children: "In U.S. dollars, at each country's newest available residential rate (dates under each name). Fans matter more here: cooling is needed most of the year and power often costs two or three times the U.S. average." }),
         /* @__PURE__ */ jsx(CostTable, { rows: cbRows, fmt: (n, d) => usd(n, d), rateLabel: (r) => cents(r), unit: "US$ per kWh" }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Canada" }),
-        /* @__PURE__ */ jsx("p", { className: p$k, children: "In Canadian dollars before tax, at the price of each extra kWh between 1,000 and 2,000 a month in the province's largest listed city (named under each province), which is what running a fan adds to the bill." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Canada" }),
+        /* @__PURE__ */ jsx("p", { className: p$l, children: "In Canadian dollars before tax, at the price of each extra kWh between 1,000 and 2,000 a month in the province's largest listed city (named under each province), which is what running a fan adds to the bill." }),
         /* @__PURE__ */ jsx(CostTable, { rows: caRows, fmt: (n, d) => cad(n, d), rateLabel: (r) => `C$${r.toFixed(3)}`, unit: "C$ per kWh" }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Europe" }),
-        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Europe" }),
+        /* @__PURE__ */ jsxs("p", { className: p$l, children: [
           "In euros: Eurostat's household price for 2,500–4,999 kWh a year, all taxes included (",
           eu.periodLabel,
           ", or the newest period noted under a country's name).",
@@ -19514,7 +19522,7 @@ function BlogArticleFanCost() {
             unit: "£ per kWh"
           }
         ),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Cheaper ways to run a fan" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Cheaper ways to run a fan" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Turn it off when you leave the room." }),
@@ -19528,50 +19536,50 @@ function BlogArticleFanCost() {
             /* @__PURE__ */ jsx("strong", { children: "Choose a DC motor" }),
             " when you buy: about half the power of a standard ceiling fan. See the",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$k, children: "ceiling fan buying guide" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-buying-guide", className: a$l, children: "ceiling fan buying guide" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Use the fan to run the AC less." }),
             " That's where the real saving is. See",
             " ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$k, children: "ceiling fan vs. AC" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$l, children: "ceiling fan vs. AC" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Sources" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$l, children: "Sources" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "U.S. rates: ",
-            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$4, children: "EIA Electric Power Monthly, Table 5.6.A" }),
+            /* @__PURE__ */ jsx("a", { href: RATES_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$5, children: "EIA Electric Power Monthly, Table 5.6.A" }),
             " (",
             RATES_AS_OF,
             ")."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Caribbean: utility tariffs and published household prices, as listed on each ",
-            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: ext$4, children: "country page" }),
+            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/caribbean", className: ext$5, children: "country page" }),
             " (updated ",
             CARIBBEAN_UPDATED,
             ")."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Canada: ",
-            /* @__PURE__ */ jsx("a", { href: CANADA_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$4, children: "Hydro-Québec, Comparison of Electricity Prices in Major North American Cities" }),
+            /* @__PURE__ */ jsx("a", { href: CANADA_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$5, children: "Hydro-Québec, Comparison of Electricity Prices in Major North American Cities" }),
             " (rates in effect ",
             CANADA_RATES_DATE,
             ")."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Europe: ",
-            /* @__PURE__ */ jsx("a", { href: eu.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: ext$4, children: eu.source }),
+            /* @__PURE__ */ jsx("a", { href: eu.sourceUrl, target: "_blank", rel: "noopener noreferrer", className: ext$5, children: eu.source }),
             "; United Kingdom: Ofgem price cap, as on the ",
-            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/united-kingdom", className: ext$4, children: "UK page" }),
+            /* @__PURE__ */ jsx(Link, { to: "/ac-cost/united-kingdom", className: ext$5, children: "UK page" }),
             "."
           ] }),
           /* @__PURE__ */ jsx("li", { children: "Fan wattages: ENERGY STAR listing, a manufacturer EnergyGuide label and published watt-meter tests; typical figures, check your fan's label." })
@@ -19582,16 +19590,16 @@ function BlogArticleFanCost() {
     ] })
   ] });
 }
-const PATH$c = "/blog/ceiling-fan-buying-guide";
-const TITLE$c = "Ceiling Fan Buying Guide: Size, Motor, Efficiency";
-const HEADLINE$c = "Ceiling Fan Buying Guide: Size, Motor, Efficiency and Where It Goes";
-const th$i = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
-const td$i = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
-const h2$j = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const PATH$d = "/blog/ceiling-fan-buying-guide";
+const TITLE$d = "Ceiling Fan Buying Guide: Size, Motor, Efficiency";
+const HEADLINE$d = "Ceiling Fan Buying Guide: Size, Motor, Efficiency and Where It Goes";
+const th$j = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900";
+const td$j = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
+const h2$k = "text-2xl font-bold text-gray-900 mt-10 mb-4";
 const h3$3 = "text-lg font-bold text-gray-900 mt-6 mb-2";
-const p$j = "text-gray-700 leading-relaxed mb-4";
-const a$j = "text-teal-600 hover:text-teal-700 font-medium";
-const ext$3 = "text-teal-700 hover:underline";
+const p$k = "text-gray-700 leading-relaxed mb-4";
+const a$k = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$4 = "text-teal-700 hover:underline";
 const CHECKLIST = [
   "Blade span to suit the room (table below)",
   "A DC motor if you'll run it many hours",
@@ -19637,18 +19645,18 @@ function BlogArticleFanBuyingGuide() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$c }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$d }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$c}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$d}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$c}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$c }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$d}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$d }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$c, headline: HEADLINE$c, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$d, headline: HEADLINE$d, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -19669,7 +19677,7 @@ function BlogArticleFanBuyingGuide() {
               " 9 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$c }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$d }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "The features that change how cool you feel and what you pay, and the ones that are just style." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -19686,27 +19694,27 @@ function BlogArticleFanBuyingGuide() {
             "fan."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "We have ceiling fans at home and they make a huge difference, so this is the guide I'd want before replacing one. It's about what to look for, not a list of products: the site doesn't take payment for recommendations, and the right fan depends on your room." }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$c }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "The checklist" }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "We have ceiling fans at home and they make a huge difference, so this is the guide I'd want before replacing one. It's about what to look for, not a list of products: the site doesn't take payment for recommendations, and the right fan depends on your room." }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$d }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "The checklist" }),
         /* @__PURE__ */ jsx("ul", { className: "space-y-2 mb-6", children: CHECKLIST.map((c) => /* @__PURE__ */ jsxs("li", { className: "flex gap-2 text-gray-700", children: [
           /* @__PURE__ */ jsx(CheckCircle2, { className: "w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" }),
           /* @__PURE__ */ jsx("span", { children: c })
         ] }, c)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "1. Size: blade span by room" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "1. Size: blade span by room" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Room" }),
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Fan" })
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Room" }),
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Fan" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: SIZING.map((s) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: td$i, children: s.room }),
-            /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: s.fan })
+            /* @__PURE__ */ jsx("td", { className: td$j, children: s.room }),
+            /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: s.fan })
           ] }, s.room)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "Guidance from the Department of Energy. Smaller and medium fans cool an area about 4 to 6 feet around them; larger fans reach about 10 feet. Larger blades also move air more gently at the same airflow, which is nicer over a bed or a desk with papers on it. In a long or open-plan room, two fans over the places people sit beat one big fan in the middle." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "2. Motor: DC or standard" }),
-        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "Guidance from the Department of Energy. Smaller and medium fans cool an area about 4 to 6 feet around them; larger fans reach about 10 feet. Larger blades also move air more gently at the same airflow, which is nicer over a bed or a desk with papers on it. In a long or open-plan room, two fans over the places people sit beat one big fan in the middle." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "2. Motor: DC or standard" }),
+        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
           "Most fans use a standard AC motor. DC (brushless) motors cost more but use much less power: about ",
           dc.range,
           " for a typical DC fan, against ",
@@ -19715,58 +19723,58 @@ function BlogArticleFanBuyingGuide() {
         ] }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$i }),
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Standard (AC) motor" }),
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "DC motor" })
+            /* @__PURE__ */ jsx("th", { className: th$j }),
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Standard (AC) motor" }),
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "DC motor" })
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Power on high" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: std.range }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: dc.range })
+              /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: "Power on high" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: std.range }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: dc.range })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsxs("td", { className: `${td$i} font-medium`, children: [
+              /* @__PURE__ */ jsxs("td", { className: `${td$j} font-medium`, children: [
                 "Cost per hour at ",
                 cents(US_RATE),
                 "/kWh"
               ] }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: cents(std.watts / 1e3 * US_RATE) }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: cents(dc.watts / 1e3 * US_RATE) })
+              /* @__PURE__ */ jsx("td", { className: td$j, children: cents(std.watts / 1e3 * US_RATE) }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: cents(dc.watts / 1e3 * US_RATE) })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Speeds" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Usually 3" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Often 5–6" })
+              /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: "Speeds" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Usually 3" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Often 5–6" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Noise" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Can hum, especially on cheaper models" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Usually quieter" })
+              /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: "Noise" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Can hum, especially on cheaper models" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Usually quieter" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Control" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Pull chain, wall control or remote" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Remote or wall control, often app" })
+              /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: "Control" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Pull chain, wall control or remote" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Remote or wall control, often app" })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: "Repairs" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Simple; generic parts" }),
-              /* @__PURE__ */ jsx("td", { className: td$i, children: "Uses a control board; parts usually from the maker" })
+              /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: "Repairs" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Simple; generic parts" }),
+              /* @__PURE__ */ jsx("td", { className: td$j, children: "Uses a control board; parts usually from the maker" })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
+        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
           "Is the higher price worth it? Running one fan 8 hours a day for six warm months, a DC motor saves about",
           " ",
           usd(yearlyGap),
           " a year at U.S. average rates. That's small in a mild climate. It's more where fans run most of the year and power is expensive, as in the Caribbean, and the quieter running and extra speeds matter in a bedroom anyway. If the price gap is small, take the DC model. Running costs for your area are in",
           " ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$j, children: "how much it costs to run a fan" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/cost-to-run-a-fan", className: a$k, children: "how much it costs to run a fan" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "3. Efficiency: read the EnergyGuide label" }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "New ceiling fans sold in the U.S. come with a yellow EnergyGuide label on the box. It shows three numbers worth comparing:" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "3. Efficiency: read the EnergyGuide label" }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "New ceiling fans sold in the U.S. come with a yellow EnergyGuide label on the box. It shows three numbers worth comparing:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Airflow (CFM):" }),
@@ -19781,29 +19789,29 @@ function BlogArticleFanBuyingGuide() {
             " airflow divided by power. This is the number to compare: higher means more breeze for the same electricity."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: `The label also shows an estimated yearly cost, based on 12¢ per kWh and 6.4 hours a day. If you pay more, or run the fan longer, your cost will be higher. Two examples show how wide the range is: one fan's label shows 44 W and 106 CFM per watt, while an ENERGY STAR-listed 44" fan draws 17.6 W on high with an efficiency rating of about 263 CFM per watt.` }),
-        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
+        /* @__PURE__ */ jsx("p", { className: p$k, children: `The label also shows an estimated yearly cost, based on 12¢ per kWh and 6.4 hours a day. If you pay more, or run the fan longer, your cost will be higher. Two examples show how wide the range is: one fan's label shows 44 W and 106 CFM per watt, while an ENERGY STAR-listed 44" fan draws 17.6 W on high with an efficiency rating of about 263 CFM per watt.` }),
+        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
           /* @__PURE__ */ jsx("strong", { children: "ENERGY STAR" }),
           " certified fans are, on average, up to 40% more efficient than conventional models, according to the Department of Energy. You can search certified models in the",
           " ",
-          /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/productfinder/product/certified-ceiling-fans/results", target: "_blank", rel: "noopener noreferrer", className: ext$3, children: "ENERGY STAR product finder" }),
+          /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/productfinder/product/certified-ceiling-fans/results", target: "_blank", rel: "noopener noreferrer", className: ext$4, children: "ENERGY STAR product finder" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "4. Location rating: dry, damp or wet" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "4. Location rating: dry, damp or wet" }),
         /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full border-collapse text-sm", children: [
           /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { className: "bg-teal-50", children: [
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Rating" }),
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Where" }),
-            /* @__PURE__ */ jsx("th", { className: th$i, children: "Notes" })
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Rating" }),
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Where" }),
+            /* @__PURE__ */ jsx("th", { className: th$j, children: "Notes" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { children: RATINGS.map((r) => /* @__PURE__ */ jsxs("tr", { children: [
-            /* @__PURE__ */ jsx("td", { className: `${td$i} font-medium`, children: r.rating }),
-            /* @__PURE__ */ jsx("td", { className: td$i, children: r.where }),
-            /* @__PURE__ */ jsx("td", { className: td$i, children: r.notes })
+            /* @__PURE__ */ jsx("td", { className: `${td$j} font-medium`, children: r.rating }),
+            /* @__PURE__ */ jsx("td", { className: td$j, children: r.where }),
+            /* @__PURE__ */ jsx("td", { className: td$j, children: r.notes })
           ] }, r.rating)) })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "In coastal and island homes, salt air is hard on anything metal outdoors. A wet-rated fan with sealed housing and rust-resistant hardware lasts much longer on a porch than an indoor fan, and even indoors near the sea a fan with better-protected hardware is worth considering." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "5. Height and placement" }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "In coastal and island homes, salt air is hard on anything metal outdoors. A wet-rated fan with sealed housing and rust-resistant hardware lasts much longer on a porch than an indoor fan, and even indoors near the sea a fan with better-protected hardware is worth considering." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "5. Height and placement" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Blades ",
@@ -19823,40 +19831,40 @@ function BlogArticleFanBuyingGuide() {
           /* @__PURE__ */ jsx("li", { children: "On a high or sloped ceiling, a longer downrod brings the fan down to the right height; use the angled-ceiling kit the maker specifies." }),
           /* @__PURE__ */ jsx("li", { children: 'For a low ceiling, a flush-mount ("hugger") fan keeps blades at a safe height, though it moves less air.' })
         ] }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "All of this is Department of Energy guidance; your fan's manual has the exact limits for that model." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "6. Controls, lights and installation" }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "All of this is Department of Energy guidance; your fan's manual has the exact limits for that model." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "6. Controls, lights and installation" }),
         /* @__PURE__ */ jsx("h3", { className: h3$3, children: "Controls" }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "The cheapest feature with the biggest effect on your bill is one that makes the fan easy to turn off. A wall control or remote beats a pull chain; a timer or app schedule is better still for bedrooms. Fans cool people, not rooms, so a fan nobody switches off wastes money." }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "The cheapest feature with the biggest effect on your bill is one that makes the fan easy to turn off. A wall control or remote beats a pull chain; a timer or app schedule is better still for bedrooms. Fans cool people, not rooms, so a fan nobody switches off wastes money." }),
         /* @__PURE__ */ jsx("h3", { className: h3$3, children: "Lights" }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "Most fan lights are now LED. An integrated LED kit lasts a long time but can't be swapped for a brighter or warmer bulb; replaceable LED bulbs give you that choice." }),
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "Most fan lights are now LED. An integrated LED kit lasts a long time but can't be swapped for a brighter or warmer bulb; replaceable LED bulbs give you that choice." }),
         /* @__PURE__ */ jsx("h3", { className: h3$3, children: "Installation" }),
-        /* @__PURE__ */ jsx("p", { className: p$j, children: "A ceiling fan must hang from an electrical box rated to support a fan, not an ordinary light-fixture box. If you're replacing a light, check the box first, and use an electrician if you're not sure or new wiring is needed." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Once it's up" }),
-        /* @__PURE__ */ jsxs("p", { className: p$j, children: [
+        /* @__PURE__ */ jsx("p", { className: p$k, children: "A ceiling fan must hang from an electrical box rated to support a fan, not an ordinary light-fixture box. If you're replacing a light, check the box first, and use an electrician if you're not sure or new wiring is needed." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Once it's up" }),
+        /* @__PURE__ */ jsxs("p", { className: p$k, children: [
           "Set it to spin counterclockwise in summer (looking up) and raise your thermostat a few degrees. That's where the saving comes from. See ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-direction", className: a$j, children: "ceiling fan direction and settings" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-direction", className: a$k, children: "ceiling fan direction and settings" }),
           " ",
           "and ",
-          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$j, children: "how much a ceiling fan saves" }),
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$k, children: "how much a ceiling fan saves" }),
           "."
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
-        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Sources" }),
+        /* @__PURE__ */ jsx("h2", { className: h2$k, children: "Sources" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             "Sizing, height, clearances, ENERGY STAR efficiency: ",
-            /* @__PURE__ */ jsx("a", { href: "https://www.energy.gov/energysaver/fans-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$3, children: "U.S. Department of Energy, Energy Saver: Fans for cooling" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.energy.gov/energysaver/fans-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$4, children: "U.S. Department of Energy, Energy Saver: Fans for cooling" }),
             "."
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "EnergyGuide label example (44 W, 106 CFM/W, 12¢/kWh, 6.4 hours a day): ",
-            /* @__PURE__ */ jsx("a", { href: "https://hubbellcdn.com/EnergyGuide/PROG_FTC%20label%20P2574_energyguide.pdf", target: "_blank", rel: "noopener noreferrer", className: ext$3, children: "manufacturer EnergyGuide label" }),
+            /* @__PURE__ */ jsx("a", { href: "https://hubbellcdn.com/EnergyGuide/PROG_FTC%20label%20P2574_energyguide.pdf", target: "_blank", rel: "noopener noreferrer", className: ext$4, children: "manufacturer EnergyGuide label" }),
             '. ENERGY STAR-listed 44" fan (17.6 W high, 2.7 W low, 262.7 CFM/W): ',
-            /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/productfinder/product/certified-ceiling-fans/details/4512547/export/pdf", target: "_blank", rel: "noopener noreferrer", className: ext$3, children: "ENERGY STAR product finder" }),
+            /* @__PURE__ */ jsx("a", { href: "https://www.energystar.gov/productfinder/product/certified-ceiling-fans/details/4512547/export/pdf", target: "_blank", rel: "noopener noreferrer", className: ext$4, children: "ENERGY STAR product finder" }),
             "."
           ] }),
           /* @__PURE__ */ jsx("li", { children: "Standard and DC motor power: typical ranges from published watt-meter tests; check the label on any fan you're considering." })
@@ -19866,13 +19874,13 @@ function BlogArticleFanBuyingGuide() {
     ] })
   ] });
 }
-const PATH$b = "/blog/ceiling-fan-direction";
-const TITLE$b = "Ceiling Fan Direction for Summer and Winter (and Speed)";
-const HEADLINE$b = "Which Way Should a Ceiling Fan Spin in Summer and Winter? Direction, Speed and Settings";
-const h2$i = "text-2xl font-bold text-gray-900 mt-10 mb-4";
-const p$i = "text-gray-700 leading-relaxed mb-4";
-const a$i = "text-teal-600 hover:text-teal-700 font-medium";
-const ext$2 = "text-teal-700 hover:underline";
+const PATH$c = "/blog/ceiling-fan-direction";
+const TITLE$c = "Ceiling Fan Direction for Summer and Winter (and Speed)";
+const HEADLINE$c = "Which Way Should a Ceiling Fan Spin in Summer and Winter? Direction, Speed and Settings";
+const h2$j = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$j = "text-gray-700 leading-relaxed mb-4";
+const a$j = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$3 = "text-teal-700 hover:underline";
 function BlogArticleFanDirection() {
   const description = "Summer: counterclockwise (looking up) on a higher speed. Winter: clockwise on low. How to check yours, where the switch is, and the settings that save money.";
   const faqs2 = [
@@ -19903,18 +19911,18 @@ function BlogArticleFanDirection() {
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs(Helmet, { children: [
-      /* @__PURE__ */ jsx("title", { children: TITLE$b }),
+      /* @__PURE__ */ jsx("title", { children: TITLE$c }),
       /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
-      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$b}` }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$c}` }),
       /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
-      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$b}` }),
-      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$b }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$c}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$c }),
       /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
       /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
       /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
       /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Fans and Airflow" }),
       /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
-      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$b, headline: HEADLINE$b, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$c, headline: HEADLINE$c, description, datePublished: FANS_UPDATED, dateModified: FANS_UPDATED })) }),
       /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -19935,7 +19943,7 @@ function BlogArticleFanDirection() {
               " 4 min read"
             ] })
           ] }),
-          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$b }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$c }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "The short answer, how to check yours, and the settings that actually save money." }),
           /* @__PURE__ */ jsx(ArticleByline, { updated: FANS_UPDATED })
         ] }),
@@ -19955,12 +19963,12 @@ function BlogArticleFanDirection() {
             /* @__PURE__ */ jsx("p", { className: "text-gray-700", children: "Low speed. Pulls air up and moves warm air from the ceiling down the walls, without a draft." })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(FanSeries, { current: PATH$b }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "How to check which way your fan is spinning" }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "Stand directly under the fan on medium or high. A steady breeze on your face means it's pushing air down: the summer setting. Little or no breeze means it's pulling air up: the winter setting. If you're not sure, turn it off, flip the direction, and compare." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Where the switch is" }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "On most standard fans, a small slide switch sits on the motor housing just above the blades. Turn the fan off and let it stop completely before you flip it. DC-motor fans often have no switch: use the reverse button on the remote or the setting in the app." }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Speed and settings that save money" }),
+        /* @__PURE__ */ jsx(FanSeries, { current: PATH$c }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "How to check which way your fan is spinning" }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "Stand directly under the fan on medium or high. A steady breeze on your face means it's pushing air down: the summer setting. Little or no breeze means it's pulling air up: the winter setting. If you're not sure, turn it off, flip the direction, and compare." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Where the switch is" }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "On most standard fans, a small slide switch sits on the motor housing just above the blades. Turn the fan off and let it stop completely before you flip it. DC-motor fans often have no switch: use the reverse button on the remote or the setting in the app." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Speed and settings that save money" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Raise the thermostat." }),
@@ -19983,25 +19991,1306 @@ function BlogArticleFanDirection() {
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("strong", { children: "Mild days:" }),
             " use the fan instead of the AC. Every hour the AC stays off saves far more than the fan costs. See ",
-            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$i, children: "ceiling fan vs. AC" }),
+            /* @__PURE__ */ jsx(Link, { to: "/blog/ceiling-fan-vs-ac-savings", className: a$j, children: "ceiling fan vs. AC" }),
             "."
           ] })
         ] }),
-        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Does the winter setting really help?" }),
-        /* @__PURE__ */ jsx("p", { className: p$i, children: "Warm air rises, so in a heated room the ceiling can be noticeably warmer than where you sit, more so with high ceilings. Running the fan clockwise on low mixes that warm air back down without blowing a cold breeze on you. The effect is modest in a room with ordinary ceilings and biggest in rooms with high or vaulted ones." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Does the winter setting really help?" }),
+        /* @__PURE__ */ jsx("p", { className: p$j, children: "Warm air rises, so in a heated room the ceiling can be noticeably warmer than where you sit, more so with high ceilings. Running the fan clockwise on low mixes that warm air back down without blowing a cold breeze on you. The effect is modest in a room with ordinary ceilings and biggest in rooms with high or vaulted ones." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Frequently asked questions" }),
+        /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
+        ] }, f.q)) }),
+        /* @__PURE__ */ jsx("h2", { className: h2$j, children: "Sources" }),
+        /* @__PURE__ */ jsx("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: /* @__PURE__ */ jsxs("li", { children: [
+          "Direction for summer and winter, raising the thermostat about ",
+          DEGREES_RAISED,
+          "°F, turning fans off in empty rooms: ",
+          /* @__PURE__ */ jsx("a", { href: "https://www.energy.gov/energysaver/fans-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$3, children: "U.S. Department of Energy, Energy Saver: Fans for cooling" }),
+          "."
+        ] }) })
+      ] }),
+      /* @__PURE__ */ jsx(LeadMagnet, {})
+    ] })
+  ] });
+}
+const TROUBLESHOOTING_UPDATED = "2026-10-21";
+const TROUBLESHOOTING_FIRST = "2026-10-14";
+const GROUPS = [
+  { id: "not-cooling", name: "Not cooling", blurb: "It runs, but the air isn't cold or the house won't cool down." },
+  { id: "wont-run", name: "Won't run", blurb: "Nothing happens, or part of the system stays off." },
+  { id: "cycling", name: "Runs too much or too little", blurb: "Short cycling, running nonstop, or a house that stays clammy." },
+  { id: "water-ice", name: "Water and ice", blurb: "Leaks, a full drain pan, or ice on the coil or lines." },
+  { id: "noise-smell", name: "Noises and smells", blurb: "Buzzing, banging, hissing, or a musty or burning smell." },
+  { id: "mini-split", name: "Ductless mini-splits", blurb: "Error codes, blinking lights and resets on wall-mounted units." },
+  { id: "heat-pump", name: "Heat pumps in winter", blurb: "Not heating, ice on the outdoor unit, steam and defrost cycles." }
+];
+const COST = {
+  serviceCall: "$75–$200",
+  capacitor: "$150–$400",
+  contactor: "$150–$300",
+  thermostat: "$100–$400",
+  condenserFan: "$400–$800",
+  blower: "$500–$1,200",
+  refrigerant: "$400–$2,400",
+  evapCoil: "$800–$1,600",
+  compressor: "$1,500–$3,000",
+  drainClear: "$75–$200",
+  drainPan: "$200–$600",
+  condensatePump: "$150–$400",
+  condenserClean: "$100–$300",
+  filter: "$5–$20",
+  electrical: "$150–$600",
+  coilDuctCleaning: "$100–$600",
+  burningRepair: "$150–$800",
+  breakerTrip: "$150–$1,000",
+  ductSealing: "$500–$2,000",
+  /** Homewyse national estimate, May 2026 ($2,774–$3,285 per unit installed) */
+  dehumidifier: "$2,800–$3,300",
+  /** PickHVAC heat pump parts guide, May 2026 ($350–$1,200 installed); also in /blog/ac-repair-cost-2026 */
+  reversingValve: "$350–$1,200",
+  /** HomeAdvisor heat pump repair cost guide, updated June 2026 */
+  defrostBoard: "$200–$650"
+};
+const SYMPTOMS = [
+  {
+    slug: "ac-blowing-warm-air",
+    fromExperience: [
+      "My son, who's studying for his HVAC certification, cleans our units: clearing debris from around the outdoor unit and rinsing the coil with the power off. It costs nothing, and a dirty coil is one of the most common reasons an AC struggles on hot afternoons.",
+      "Filters in awkward, out-of-the-way spots are the ones that get forgotten. In our stores, every filter is on a rotation, with a schedule to check and replace it, because a clogged filter costs efficiency and can ice up the coil."
+    ],
+    updated: "2026-10-26",
+    name: "AC blowing warm air",
+    title: "AC Blowing Warm Air? Causes, Fixes and Repair Costs",
+    h1: "AC Blowing Warm Air? Causes, What to Check and What Repairs Cost",
+    description: "Why your air conditioner is running but blowing warm air: the free checks to do first, the likely causes from thermostat to refrigerant, and typical repair costs.",
+    group: "not-cooling",
+    summary: "The fan runs but the air coming out of the vents is warm or barely cool.",
+    quick: [
+      "Thermostat set to Heat, or the fan set to On instead of Auto",
+      "A clogged air filter",
+      "The outdoor unit isn't running (tripped breaker, failed capacitor or contactor)",
+      "A dirty outdoor coil that can't get rid of heat",
+      "A frozen indoor coil",
+      "Low refrigerant from a leak"
+    ],
+    firstChecks: [
+      "Thermostat: mode on Cool, fan on Auto, temperature set at least 3°F below the room.",
+      "Air filter: if it's gray and you can't see light through it, replace it.",
+      "Outdoor unit: with the system calling for cooling, is the fan on top spinning and can you hear the compressor running?",
+      "Breakers: check both the indoor unit's breaker and the outdoor unit's breaker, plus the disconnect box beside the outdoor unit."
+    ],
+    causes: [
+      { cause: "Thermostat on Heat or fan on On", signs: "Air is warm between cooling cycles, or the fan never stops", who: "DIY", cost: "$0" },
+      { cause: "Clogged air filter", signs: "Weak airflow from vents, filter visibly gray or matted", who: "DIY", cost: COST.filter },
+      { cause: "Outdoor unit not running", signs: "Indoor fan blows, outdoor unit silent or humming with the fan still", who: "DIY or pro", cost: `$0 (breaker) to ${COST.capacitor} (capacitor)`, see: "ac-outdoor-unit-not-running" },
+      { cause: "Dirty outdoor (condenser) coil", signs: "Unit runs but struggles on hot afternoons; fins matted with dirt, grass or lint", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
+      { cause: "Frozen indoor coil", signs: "Ice on the large copper line, weak airflow, water as it thaws", who: "DIY or pro", cost: "$0 to thaw; depends on the cause", see: "ac-frozen-coil" },
+      { cause: "Low refrigerant (a leak)", signs: "Cooling has gotten worse over weeks, long run times, ice, hissing, oily spots on lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: "Failing compressor", signs: "Outdoor fan runs but no cooling, loud clanking or humming, breaker trips", who: "Pro", cost: COST.compressor }
+    ],
+    steps: [
+      { title: "Reset the thermostat", text: "Set it to Cool, fan on Auto, and 3–5°F below the current room temperature. If the screen is blank, replace the batteries. Wait 5–10 minutes: many systems have a built-in delay before the outdoor unit starts." },
+      { title: "Replace the filter", text: "A clogged filter starves the indoor coil of air, which cuts cooling and can freeze the coil. Note the size printed on the frame and the airflow arrow, which points toward the unit." },
+      { title: "Check the outdoor unit while it should be running", text: "Stand by it with the thermostat calling for cooling. You should hear the compressor and see the fan spinning, with warm air blowing out of the top. If it's silent or humming with the fan still, go to the outdoor unit page." },
+      { title: "Feel the copper lines", text: "After 15 minutes of running, the larger insulated copper line at the outdoor unit should feel cold and may sweat. If it's warm, the system isn't moving heat. If it has ice on it, the coil is freezing." },
+      { title: "Rinse the outdoor coil", text: "Turn off power at the disconnect beside the unit. Clear leaves and grass, then hose the fins gently from the outside. Don't use a pressure washer, and don't bend the fins. Keep plants and fences at least 2 feet away." }
+    ],
+    callPro: [
+      "The outdoor unit hums but the fan doesn't spin, or it doesn't start at all with the breaker on",
+      "Ice comes back after you've thawed the coil and replaced the filter",
+      "You hear hissing, or see oily residue on the copper lines or fittings",
+      "The breaker trips again after one reset"
+    ],
+    quoteFlags: [
+      `A refrigerant "top-up" without a leak search. Refrigerant doesn't get used up; if it's low, it's leaking.`,
+      "A new system recommended before anyone has checked the capacitor, contactor and airflow",
+      "A capacitor priced well above the typical $150–$400 installed"
+    ],
+    faqs: [
+      { q: "Why is my AC running but blowing warm air?", a: "Most often the thermostat is set wrong, the filter is clogged, or the outdoor unit isn't running, which leaves the indoor fan blowing uncooled air. Check those three first. If they're fine, the cause is usually a dirty outdoor coil, a frozen indoor coil or low refrigerant." },
+      { q: "Can low refrigerant make an AC blow warm air?", a: "Yes. With too little refrigerant the system can't absorb enough heat, so the air comes out barely cool, and the indoor coil often freezes. Air conditioners don't use up refrigerant, so low refrigerant means a leak. Finding and fixing it typically costs $400–$2,400 depending on the leak and the refrigerant." },
+      { q: "How long should I wait before calling for service?", a: "If the thermostat, filter and breakers check out, give it one more 15-minute run. If the air is still warm or the outdoor unit isn't running, turn the system off and call. Running it with a failed outdoor fan or low refrigerant can damage the compressor, which is the most expensive part." }
+    ],
+    related: ["ac-outdoor-unit-not-running", "ac-frozen-coil", "ac-not-turning-on"]
+  },
+  {
+    slug: "ac-not-turning-on",
+    fromExperience: "Dead thermostat batteries have stopped an entire AC system in one of our stores. It's one of the cheapest fixes there is, so it's one of the first things we check.",
+    updated: "2026-10-26",
+    name: "AC won't turn on",
+    title: "AC Won't Turn On? Causes, Checks and Repair Costs",
+    h1: "AC Won't Turn On? What to Check Before You Call",
+    description: "Air conditioner completely dead? The free checks that fix most no-start problems (thermostat, breakers, switches, a full drain pan) and what repairs cost when it's more.",
+    group: "wont-run",
+    summary: "Nothing happens when you lower the thermostat: no fan, no outdoor unit.",
+    quick: [
+      "Thermostat: dead batteries, wrong mode or a schedule overriding it",
+      "A tripped breaker or blown fuse",
+      "The service switch by the indoor unit is off, or the panel door isn't closed",
+      "A full drain pan has tripped the float (safety) switch",
+      "A blown low-voltage fuse or failed transformer"
+    ],
+    firstChecks: [
+      'Thermostat screen: blank means batteries or power. Set it to Cool, 3–5°F below room temperature, and switch off any schedule or "hold" setting.',
+      "Wait 5–10 minutes. Many systems have a restart delay after a setting change or power interruption.",
+      "Breakers: there are usually two, one for the indoor unit (furnace or air handler) and one for the outdoor unit.",
+      "Service switch: a light-style switch on or near the indoor unit. It's easy to flip off by mistake."
+    ],
+    causes: [
+      { cause: "Thermostat batteries, settings or schedule", signs: 'Blank screen, "Heat" or "Off" mode, a schedule holding a higher temperature', who: "DIY", cost: "$0–$10" },
+      { cause: "Failed thermostat", signs: "Screen on and set correctly, but nothing starts; works with a test jumper (pro)", who: "DIY or pro", cost: COST.thermostat },
+      { cause: "Tripped breaker", signs: "Breaker in the middle or off position", who: "DIY", cost: "$0 to reset once; service call if it trips again", see: "ac-tripping-breaker" },
+      { cause: "Blown fuse in the outdoor disconnect", signs: "Breaker fine but the outdoor unit has no power; the disconnect box holds cartridge fuses", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
+      { cause: "Service switch off or panel door open", signs: "Switch by the indoor unit off; the blower door has a safety switch that cuts power when it isn't seated", who: "DIY", cost: "$0" },
+      { cause: "Full drain pan (float switch)", signs: "Water in the drain pan or a secondary pan; the system shuts off to prevent a leak", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
+      { cause: "Blown low-voltage fuse or failed transformer", signs: "Thermostat dead even with fresh batteries; often after a surge or a wiring short", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
+      { cause: "Failed capacitor or contactor", signs: "Indoor fan runs but the outdoor unit doesn't", who: "Pro", cost: `${COST.capacitor} capacitor, ${COST.contactor} contactor`, see: "ac-outdoor-unit-not-running" }
+    ],
+    steps: [
+      { title: "Check the thermostat", text: "Replace the batteries if it has them, even if the screen is on. Set Cool, fan Auto, and a temperature well below the room. Turn off any schedule or vacation hold. Smart thermostats can lose their connection to the system; check the app for an error." },
+      { title: "Wait for the restart delay", text: "Give it 5–10 minutes. Many thermostats and outdoor units wait before starting to protect the compressor, and it's easy to mistake that for a fault." },
+      { title: "Reset breakers once", text: "Find the breakers for the indoor and outdoor units. A tripped breaker sits in the middle; push it fully off, then on. Reset only once. If it trips again, leave it off and call a technician." },
+      { title: "Check the switches", text: "Make sure the service switch near the indoor unit is on, and that the blower compartment door is fully seated. Outside, check that the disconnect box beside the outdoor unit is switched on or its pull-out block is fully inserted." },
+      { title: "Look in the drain pan", text: "If there's standing water in the pan under the indoor unit, or in the secondary pan beneath it, the float switch has probably shut the system off. Clearing the drain line usually brings it back. See the leaking water page for how." }
+    ],
+    callPro: [
+      "A breaker trips again after one reset",
+      "You smell burning, or see scorch marks in the disconnect box or panel",
+      "The thermostat has power and the right settings, but the system doesn't respond",
+      "You hear clicking or humming, but nothing starts"
+    ],
+    quoteFlags: [
+      "A new thermostat recommended without checking the fuse and transformer",
+      "A diagnostic fee above $200 outside a major city",
+      "Pressure to replace the system for a no-start problem before the basics are tested"
+    ],
+    faqs: [
+      { q: "Why won't my AC turn on even though the thermostat is on?", a: "The most common reasons are a tripped breaker, the service switch near the indoor unit being off, the blower door not being closed, or a full drain pan tripping the float switch. If all of those check out, the low-voltage fuse or transformer may have failed, which needs a technician." },
+      { q: "Is there a reset button on an air conditioner?", a: "Most central systems don't have a single reset button. The equivalent is turning the system off at the thermostat, switching off both breakers for a minute, then turning them back on and waiting 5–10 minutes. Some units have a reset on the control board or a high-pressure switch, but those should be left to a technician, because a tripped safety switch means something caused it." },
+      { q: "Can a clogged drain stop the AC from turning on?", a: "Yes. Many systems have a float switch in the drain pan or drain line that shuts the AC off when water backs up, to stop it flooding the house. Clearing the drain line usually lets it restart." }
+    ],
+    related: ["ac-leaking-water", "ac-outdoor-unit-not-running", "ac-not-working-after-power-outage"]
+  },
+  {
+    slug: "ac-frozen-coil",
+    fromExperience: "Filters in awkward, out-of-the-way spots are the ones that get forgotten. In our stores, every filter is on a rotation, with a schedule to check and replace it, because a clogged filter costs efficiency and can ice up the coil.",
+    updated: "2026-10-26",
+    name: "AC frozen up",
+    title: "AC Frozen Up? Ice on the Coil or Lines: Causes and Fixes",
+    h1: "AC Frozen Up? Why There's Ice on the Coil or Lines and How to Fix It",
+    description: "Ice on your air conditioner's copper lines or indoor coil? How to thaw it safely, the causes from a dirty filter to low refrigerant, and what each repair costs.",
+    group: "water-ice",
+    summary: "Ice on the copper lines or indoor coil, weak airflow, water as it melts.",
+    quick: [
+      "A clogged filter or blocked return vents restricting airflow",
+      "Closed or blocked supply vents",
+      "Low refrigerant from a leak",
+      "A dirty indoor (evaporator) coil",
+      "A weak or failing blower motor",
+      "Running the AC on cool nights (below about 60°F outside; check your manual for your unit's limit)"
+    ],
+    firstChecks: [
+      "Turn cooling off now. Running a frozen coil can send liquid refrigerant back to the compressor and damage it.",
+      "Air filter: replace it if it's dirty.",
+      "Vents: open supply registers and clear furniture or curtains away from return grilles.",
+      "Indoor fan: is air coming out of the vents at all when the fan runs?"
+    ],
+    causes: [
+      { cause: "Clogged filter or blocked returns", signs: "Weak airflow everywhere, filter gray", who: "DIY", cost: COST.filter },
+      { cause: "Closed supply vents", signs: 'Several rooms with vents shut; often done to "save energy"', who: "DIY", cost: "$0" },
+      { cause: "Low refrigerant (a leak)", signs: "Freezing keeps coming back with a clean filter; cooling has gotten worse over time", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: "Dirty indoor coil", signs: "Old system, filters often skipped; dust matted on the coil", who: "Pro", cost: `${COST.serviceCall} service call plus cleaning` },
+      { cause: "Weak or failing blower motor", signs: "Fan sounds slow or laboring; airflow weak with a clean filter", who: "Pro", cost: COST.blower },
+      { cause: "Running in cool weather", signs: "Freezes on mild nights, fine on hot days", who: "DIY", cost: "$0" }
+    ],
+    steps: [
+      { title: "Switch cooling off and the fan on", text: "Set the thermostat to Off and the fan to On. Blowing room air across the coil thaws it much faster than leaving everything off. Expect a few hours, longer for heavy ice. Don't chip or scrape the ice; the coil fins and tubes are easily damaged." },
+      { title: "Protect against the melt water", text: "A lot of water comes off a thawing coil at once. Put towels around the indoor unit and check that the drain pan isn't overflowing." },
+      { title: "Fix the airflow", text: "Fit a new filter, open all supply vents and clear the return grilles. These are the most common causes, and the only ones you can fix yourself." },
+      { title: "Restart and watch", text: "When the coil and lines are completely clear and dry, switch back to Cool. Check the large copper line at the outdoor unit after an hour: cold and sweating is normal, frost or ice is not." }
+    ],
+    safetyNote: "Don't use a hair dryer or heat gun on the coil, and never try to add refrigerant yourself. Newer systems use mildly flammable refrigerants (R-454B, R-32), and handling refrigerant requires EPA certification.",
+    callPro: [
+      "Ice comes back within a day or two after thawing with a clean filter and open vents",
+      "Airflow from the vents is weak even with a new filter",
+      "You hear hissing or see oily spots on the lines (signs of a leak)"
+    ],
+    quoteFlags: [
+      "A refrigerant recharge with no leak search or repair: it will freeze again",
+      "A new coil quoted before anyone has checked airflow and the refrigerant charge"
+    ],
+    faqs: [
+      { q: "Why is my AC freezing up?", a: "An evaporator coil freezes when it gets too cold, which happens when too little warm air passes over it (a dirty filter, blocked vents, a failing blower) or when there's too little refrigerant. Airflow problems are the most common and the easiest to fix." },
+      { q: "How long does it take for a frozen AC to thaw?", a: "Usually a few hours with the fan on and cooling off, and up to a day for heavy ice. Don't restart cooling until the coil and copper lines are completely clear." },
+      { q: "Can I run my AC while it's frozen?", a: "No. A frozen coil cools almost nothing, and running it can push liquid refrigerant back to the compressor, which can damage it. Turn cooling off and run the fan until the ice is gone." }
+    ],
+    related: ["ac-blowing-warm-air", "ac-leaking-water", "ac-not-turning-on"]
+  },
+  {
+    slug: "ac-leaking-water",
+    fromExperience: [
+      "In one of our stores, the condensate pump failed, and the float switch, which is wired separately and should have shut the unit off, failed too. The AC kept running overnight and the water came through the ceiling. Staff arrived in the morning to a soaking-wet floor, gallons of water and a long cleanup, and the drywall repair and repainting cost over $1,000. The fix to the AC itself was cleaning the drain line and replacing the float switch.",
+      "My son has replaced condensate pumps on our units. It's a manageable job for someone handy, as long as the power is off and the new pump matches the old one's capacity and connections. If water keeps appearing after the drain line is clear, check the pump."
+    ],
+    fromExperienceLink: { to: "/blog/ac-float-switch-flood", label: "What happened, and how to test your float switch" },
+    updated: "2026-10-26",
+    name: "AC leaking water",
+    title: "AC Leaking Water Inside? Causes, Fixes and Costs",
+    h1: "AC Leaking Water Inside? Causes and How to Fix It",
+    description: "Water around your indoor AC unit usually means a clogged condensate drain. How to clear it yourself, the other causes (pan, pump, frozen coil) and what repairs cost.",
+    group: "water-ice",
+    summary: "Water around the indoor unit, a dripping ceiling or a full drain pan.",
+    quick: [
+      "A clogged condensate drain line (algae and dirt), the most common cause by far",
+      "A frozen coil melting faster than the drain can carry it away",
+      "A failed condensate pump",
+      "A cracked or rusted drain pan",
+      "A drain line that has come loose"
+    ],
+    firstChecks: [
+      "Turn the system off at the thermostat to stop more water being produced.",
+      "Look for ice on the indoor coil or copper lines. If there is any, the coil is freezing.",
+      "Check the drain pan under the indoor unit for standing water.",
+      "If you have a condensate pump (a small box with a tube, near the unit), check whether it's full."
+    ],
+    causes: [
+      { cause: "Clogged drain line", signs: "Standing water in the pan, overflow, system shut off by a float switch", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro` },
+      { cause: "Frozen coil melting", signs: "Ice on the coil or lines, weak airflow", who: "DIY or pro", cost: "Depends on the cause", see: "ac-frozen-coil" },
+      { cause: "Failed condensate pump", signs: "Pump reservoir full, pump doesn't switch on, water around it", who: "DIY or pro", cost: COST.condensatePump },
+      { cause: "Cracked or rusted drain pan", signs: "Drain clear but water still drips from under the unit", who: "Pro", cost: COST.drainPan },
+      { cause: "Loose or disconnected drain line", signs: "Water at a joint in the PVC line", who: "DIY", cost: "$0–$20" }
+    ],
+    steps: [
+      { title: "Turn the system off and dry up", text: "Switch off cooling at the thermostat and turn off power to the indoor unit. Soak up water around the unit, and use a wet/dry vacuum to empty the drain pan." },
+      { title: "Find the drain line", text: "It's usually a 3/4-inch PVC pipe leaving the indoor unit, often with a T-shaped fitting and a cap (the cleanout) near the unit. Follow it to where it ends outside or at a floor drain." },
+      { title: "Clear the clog from outside", text: "Hold a wet/dry vacuum hose over the outside end of the line, seal it with your hand or a rag, and run it for a minute or two. You'll often pull out a plug of slime." },
+      { title: "Flush from the cleanout", text: "Remove the cap and pour in a cup of distilled white vinegar, then some water to check it flows freely. Check your unit's manual first: a few manufacturers recommend against certain cleaners." },
+      { title: "Check the pump and switch", text: "If you have a condensate pump, pour a little water into its reservoir: it should switch on and pump it away. Restore power, set the thermostat to Cool, and check the pan stays dry after an hour." }
+    ],
+    callPro: [
+      "Water keeps coming back after clearing the drain",
+      "Water is dripping through a ceiling (an attic unit's pan may be overflowing or rusted through)",
+      "The condensate pump doesn't switch on",
+      "The coil is freezing"
+    ],
+    quoteFlags: [
+      "A new coil or system for a leak that a drain clearing would fix",
+      "Drain clearing priced well above $200 without other work"
+    ],
+    faqs: [
+      { q: "Why is my AC leaking water inside the house?", a: "Air conditioners pull moisture out of the air and drain it away through a condensate line. If that line clogs with algae and dirt, the water backs up and overflows the drain pan. That's the cause most of the time. A frozen coil, a failed condensate pump or a cracked pan are the other usual suspects." },
+      { q: "How do I unclog my AC drain line?", a: "Turn off the system, then use a wet/dry vacuum on the outside end of the drain line for a minute or two to pull out the clog. Then pour a cup of distilled white vinegar into the cleanout near the indoor unit, followed by water to check it flows." },
+      { q: "How often should I clean the AC drain line?", a: "Pour vinegar into the cleanout every month or two during the cooling season. In hot, humid places where the AC runs most of the year, algae grows fast and monthly is worth it." }
+    ],
+    related: ["ac-frozen-coil", "ac-not-turning-on", "ac-blowing-warm-air"]
+  },
+  {
+    slug: "ac-outdoor-unit-not-running",
+    fromExperience: [
+      "We've had several capacitors fail across our stores. One lesson: don't judge a unit by how it looks. An old, rusty-looking outdoor unit can still be working fine, with the capacitor as the only part that has gone.",
+      "My son, who's studying for his HVAC certification, has identified failed capacitors on our units. It's one of the cheapest repairs on this list and a common reason an outdoor unit hums without starting, so ask the technician to test it before anything more expensive. A capacitor holds a dangerous charge, so the replacement itself is a job for someone trained."
+    ],
+    updated: "2026-10-26",
+    name: "Outdoor unit not running",
+    title: "AC Outdoor Unit Not Running? Causes and Repair Costs",
+    h1: "AC Outdoor Unit Not Running? Why the Fan or Compressor Won't Start",
+    description: "Indoor fan running but the outdoor AC unit is silent, humming or the fan won't spin? The causes (capacitor, contactor, breaker, fan motor) and what each repair costs.",
+    group: "wont-run",
+    summary: "The indoor fan blows but the outside unit is silent, humming or its fan is still.",
+    quick: [
+      "A tripped breaker or blown fuse in the outdoor disconnect",
+      "A failed capacitor (often humming with the fan still)",
+      "A failed or stuck contactor (silent, or clicks without starting)",
+      "A failed condenser fan motor (compressor runs, fan doesn't)",
+      "The compressor's overload protector has tripped from heat"
+    ],
+    firstChecks: [
+      "Thermostat: set to Cool and below room temperature, so it's actually calling for cooling.",
+      "Breaker for the outdoor unit, and the disconnect box beside it.",
+      "Listen: is it silent, humming, or clicking? It narrows the cause down.",
+      "Look: is the fan on top spinning? Is the compressor (the round tank inside) running?"
+    ],
+    causes: [
+      { cause: "Tripped breaker", signs: "Completely silent, breaker tripped", who: "DIY", cost: "$0 to reset once; service call if it trips again", see: "ac-tripping-breaker" },
+      { cause: "Blown fuse in the disconnect box", signs: "Completely silent, breaker fine; fuses in the disconnect box beside the unit", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
+      { cause: "Failed capacitor", signs: "Humming, fan not spinning or starting slowly; a bulging or leaking capacitor", who: "Pro", cost: COST.capacitor },
+      { cause: "Failed or stuck contactor", signs: "Silent while the thermostat calls, or a click with no start; burnt or pitted contacts, sometimes ants", who: "Pro", cost: COST.contactor },
+      { cause: "Failed condenser fan motor", signs: "Compressor runs but the fan doesn't spin; unit gets very hot and shuts off", who: "Pro", cost: COST.condenserFan },
+      { cause: "Compressor overload tripped", signs: "Unit shuts off on hot days and restarts later; often a dirty coil or bad fan behind it", who: "DIY or pro", cost: `${COST.condenserClean} coil cleaning, or the underlying repair` },
+      { cause: "Failed compressor", signs: "Fan runs, compressor won't start, breaker trips; usually on older systems", who: "Pro", cost: COST.compressor }
+    ],
+    steps: [
+      { title: "Confirm it's being asked to run", text: "Set the thermostat to Cool, well below room temperature, and wait 5–10 minutes for any restart delay. If the indoor fan runs, the thermostat is calling." },
+      { title: "Check the breaker and disconnect", text: "Reset a tripped breaker once. Check the disconnect box beside the unit is on. If it has fuses, a technician can test them." },
+      { title: "Listen and look", text: "Silent usually points to power or the contactor. Humming with a still fan usually points to the capacitor. Fan off but compressor running points to the fan motor. Tell the technician what you heard; it speeds up the diagnosis." },
+      { title: "Turn it off if it hums", text: "If the unit hums without starting, switch it off at the thermostat and the disconnect. A motor trying to start against a failed capacitor overheats quickly." },
+      { title: "Clean around it", text: "With power off, clear leaves, grass and debris, and rinse the fins from the outside. A clogged coil makes the compressor overheat and trip its overload." }
+    ],
+    safetyNote: "Don't push the fan blades with a stick to get them started. It's a common tip online, but the fan can start suddenly. And don't touch the capacitor: it stores a dangerous charge even with the power off.",
+    callPro: [
+      "The unit hums but doesn't start",
+      "The fan doesn't spin while the compressor runs",
+      "The breaker trips again after one reset",
+      "You see burn marks on wires or the contactor"
+    ],
+    quoteFlags: [
+      "A capacitor priced well above $400 installed. The part itself is inexpensive.",
+      "A compressor or full system recommended without testing the capacitor and contactor first",
+      "For a compressor on a system over about 10 years old, compare the quote with replacement using the repair vs replace calculator before agreeing"
+    ],
+    faqs: [
+      { q: "Why is my AC outdoor unit not running but the indoor fan is?", a: "The most common causes are a tripped breaker, a failed capacitor or a failed contactor. A capacitor failure usually makes the unit hum without the fan spinning; a contactor problem usually leaves it silent. Both are common, relatively cheap repairs ($150–$400)." },
+      { q: "Why is my AC outdoor unit humming but not running?", a: "Usually the capacitor that gives the fan motor and compressor their starting boost has failed. Turn the system off: a motor straining to start will overheat. A capacitor replacement typically costs $150–$400 installed." },
+      { q: "Should I keep running the AC if the outdoor fan doesn't spin?", a: "No. Without the fan, the compressor can't get rid of heat and will overheat, trip its overload and, over time, fail. Turn it off and have the fan motor or capacitor checked." }
+    ],
+    related: ["ac-blowing-warm-air", "ac-not-turning-on", "ac-not-working-after-power-outage"]
+  },
+  {
+    slug: "ac-not-working-after-power-outage",
+    name: "AC not working after a power outage",
+    title: "AC Not Working After a Power Outage? What to Check",
+    h1: "AC Not Working After a Power Outage? What to Check and How to Prevent It",
+    description: "Power's back but the air conditioner isn't? The restart delay, thermostat and breaker checks, signs of surge damage, mini-split resets, and how to protect the system next time.",
+    group: "wont-run",
+    summary: "Power is back on, but the AC won't start or doesn't cool.",
+    quick: [
+      "A built-in restart delay: it hasn't started yet",
+      "The thermostat lost its settings or schedule",
+      "A breaker tripped when power came back",
+      "A blown low-voltage fuse or transformer from a surge",
+      "A failed capacitor or control board from a surge or brownout"
+    ],
+    firstChecks: [
+      "Wait 10 minutes. Many systems hold off restarting to protect the compressor.",
+      "Thermostat: check the mode, temperature and clock, and replace the batteries.",
+      "Breakers: check both the indoor and outdoor unit breakers.",
+      "Smell: any burning smell at the indoor unit, outdoor unit or panel means leave it off and call."
+    ],
+    causes: [
+      { cause: "Restart delay", signs: "Indoor fan may run; outdoor unit starts after a few minutes", who: "DIY", cost: "$0" },
+      { cause: "Thermostat reset or lost settings", signs: "Blank or flashing screen, wrong mode or clock", who: "DIY", cost: "$0–$10" },
+      { cause: "Tripped breaker", signs: "Breaker in the middle position", who: "DIY or pro", cost: "$0 to reset; service call if it trips again", see: "ac-tripping-breaker" },
+      { cause: "Blown low-voltage fuse or transformer", signs: "Thermostat has no power even with new batteries", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
+      { cause: "Failed capacitor", signs: "Outdoor unit hums but doesn't start", who: "Pro", cost: COST.capacitor, see: "ac-outdoor-unit-not-running" },
+      { cause: "Damaged control board", signs: "Blinking error lights on the board, no response to the thermostat; common after lightning or surges", who: "Pro", cost: `${COST.serviceCall} service call plus the board` }
+    ],
+    steps: [
+      { title: "Give it 10 minutes", text: "Leave the thermostat calling for cooling and wait. Restart delays of 3–5 minutes are common, and some units wait longer after a power cut." },
+      { title: "Reset the thermostat", text: "Check the mode, set temperature and clock, and replace the batteries. Smart thermostats may need to reconnect to Wi-Fi before a schedule works again." },
+      { title: "Power-cycle the system", text: "Turn the thermostat off, switch off both breakers for a minute, then turn them back on and set the thermostat to Cool. This clears many control-board lockouts." },
+      { title: "Reset a mini-split", text: "For a ductless system, turn it off at the breaker for a minute, then restart it with the remote. If the indoor unit shows a blinking light or error code, note the code and pattern; it tells the technician what failed." },
+      { title: "Stop if anything is wrong", text: "If a breaker trips again, you smell burning, or the outdoor unit hums without starting, switch everything off and call. Repeated restarts on a damaged part can turn a small repair into a compressor replacement." }
+    ],
+    callPro: [
+      "A breaker trips again after one reset",
+      "There's a burning smell, or scorch marks on wiring",
+      "The thermostat has no power with fresh batteries",
+      "The outdoor unit hums but won't start"
+    ],
+    quoteFlags: [
+      "A new system recommended for surge damage before the capacitor, fuse and board are tested",
+      "Ask whether your homeowner's insurance covers surge or lightning damage before paying for a large repair"
+    ],
+    faqs: [
+      { q: "Why won't my AC turn back on after a power outage?", a: "Often it just hasn't restarted yet: many systems wait several minutes after power returns. If it still won't run after 10 minutes, check the thermostat settings and batteries, then the breakers. A surge when power comes back can also blow the low-voltage fuse or damage a capacitor or control board." },
+      { q: "How do I reset my AC after a power outage?", a: "Turn the thermostat off, switch off the breakers for the indoor and outdoor units for about a minute, turn them back on, then set the thermostat to Cool and wait 5–10 minutes." },
+      { q: "Should I turn off my AC during a power outage?", a: "Yes. Turning the system off at the thermostat (and the breakers, if a storm is coming) means it won't try to start during the surges and brownouts that often come when power is restored. Wait a few minutes after power is stable before turning it back on." }
+    ],
+    related: ["ac-not-turning-on", "ac-outdoor-unit-not-running", "ac-blowing-warm-air"],
+    extra: {
+      heading: "How to protect your AC next time",
+      paragraphs: [
+        "Where I run my stores, outages and brownouts are part of normal life, and I've lost refrigeration compressors to brownouts. Those units now run on protectors that cut power when the voltage drops and wait before reconnecting. For the air conditioners, we stagger the restarts so the units don't all start at once when power comes back, and before a hurricane every unit and its breaker gets switched off.",
+        "Most of that is free: turn the AC off when the power goes out, and wait a few minutes after it's stable before turning it back on. Beyond that, a voltage monitor at the outdoor unit and a whole-house surge protector are the main options."
+      ],
+      link: { to: "/blog/protect-air-conditioner-power-surges-outages", label: "How to protect your AC from power surges, brownouts and outages" }
+    }
+  },
+  {
+    slug: "ac-making-noise",
+    published: "2026-10-17",
+    updated: "2026-10-17",
+    name: "AC making noise",
+    title: "AC Making Noise? What Buzzing, Banging and Hissing Mean",
+    h1: "AC Making a Strange Noise? What Each Sound Means and What to Do",
+    description: "Buzzing, clicking, hissing, banging, squealing or rattling from your air conditioner? What each sound usually means, which ones to turn the AC off for, and what repairs cost.",
+    group: "noise-smell",
+    summary: "Buzzing, clicking, hissing, banging, squealing or rattling from the indoor or outdoor unit.",
+    quick: [
+      "Buzzing or humming at the outdoor unit: a failing capacitor or contactor, or a motor that can't start",
+      "Rattling: a loose panel or screw, or debris in the fan",
+      "Squealing or grinding: worn fan or blower motor bearings, or a slipping belt on older blowers",
+      "Hissing: a refrigerant leak (a short hiss right after shut-off is normal)",
+      "Gurgling or bubbling: a partly clogged or dried-out condensate drain",
+      "Banging or clanking: a loose or broken part, or a failing compressor",
+      "Screaming or loud whistling from the outdoor unit: dangerously high pressure. Turn it off now."
+    ],
+    firstChecks: [
+      "Find where it comes from: the outdoor unit, the indoor unit (air handler or furnace), the ducts or one vent.",
+      "Notice when: only at start-up or shut-down, the whole time it runs, or only on hot afternoons.",
+      "With power off at the disconnect, look through the outdoor unit's top grille for sticks, leaves or anything touching the fan.",
+      "Check that the filter door and the indoor unit's panels are seated and their screws are tight."
+    ],
+    causes: [
+      { cause: "Normal operating sounds", signs: "A click at the thermostat or outdoor unit when it starts and stops, a short whoosh or hiss as pressures even out after shut-off, a steady hum while running, ducts ticking as they cool", who: "DIY", cost: "$0" },
+      { cause: "Failing capacitor", signs: "Outdoor unit hums or buzzes but the fan doesn't spin, or starts slowly", who: "Pro", cost: COST.capacitor, see: "ac-outdoor-unit-not-running" },
+      { cause: "Failing contactor or loose wiring", signs: "Buzzing or chattering at the outdoor unit, rapid clicking, sometimes insects nesting in the contactor", who: "Pro", cost: COST.electrical },
+      { cause: "Loose panel, screw or debris", signs: "Rattling or vibration that stops when you press on a panel; sticks or leaves in the fan", who: "DIY", cost: "$0" },
+      { cause: "Worn outdoor fan motor", signs: "Squealing, screeching or grinding from the top of the outdoor unit; fan slow to get up to speed", who: "Pro", cost: COST.condenserFan },
+      { cause: "Worn blower motor or belt (indoor)", signs: "Squealing or grinding from the indoor unit whenever the fan runs; belt-drive blowers on older systems squeal when the belt slips", who: "Pro", cost: `${COST.serviceCall} for a belt, ${COST.blower} for a motor` },
+      { cause: "Refrigerant leak", signs: "Continuous hissing near the copper lines or coil, cooling getting worse, ice on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: "Partly clogged or dried-out drain", signs: "Gurgling or bubbling near the indoor unit while it runs", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
+      { cause: "Ducts flexing or a restricted return", signs: "Popping or booming in the ducts when the blower starts or stops; whistling at a grille", who: "DIY or pro", cost: "$0 (new filter, open vents) to duct work" },
+      { cause: "Failing compressor or a broken internal part", signs: "Loud banging, clanking or knocking from the outdoor unit, often at start-up", who: "Pro", cost: COST.compressor },
+      { cause: "Dangerously high pressure", signs: "Screaming or a high-pitched whistle from the outdoor unit", who: "Pro", cost: "Depends on the cause; turn it off first" }
+    ],
+    steps: [
+      { title: "Pin down where and when", text: "Stand by each part of the system while it runs. Note whether the sound comes at start-up, the whole time, or at shut-off. That alone narrows most noises to one or two causes." },
+      { title: "Turn it off for the serious ones", text: "Screaming, grinding, banging, or buzzing while the outdoor fan sits still: switch the system off at the thermostat and the disconnect. Those sounds mean a part is failing, and running it can damage the compressor." },
+      { title: "Clear the outdoor unit", text: "With power off at the disconnect, clear leaves, grass and sticks from around and on top of the unit. Don't reach into the fan or take the top grille off. Keep plants at least 2 feet away." },
+      { title: "Tighten what you can reach", text: "Press on the outdoor unit's side panels and the indoor unit's doors while it runs. If the rattle stops, a panel is loose; tighten its screws with the power off. Make sure the filter is seated and its door closed." },
+      { title: "Record it for the technician", text: "Take a short video with sound, and note when it happens. A technician who hears the sound before arriving can bring the likely part and diagnose it faster." }
+    ],
+    safetyNote: "Never reach into the outdoor fan or remove its grille with the power on. Turn off the disconnect first and wait for the blades to stop completely.",
+    callPro: [
+      "Screaming, grinding, banging or clanking",
+      "Buzzing or humming while the outdoor fan doesn't spin",
+      "Continuous hissing near the refrigerant lines",
+      "Any noise that comes with a tripped breaker or a burning smell"
+    ],
+    quoteFlags: [
+      "A new compressor or system quoted for a buzz before anyone has tested the capacitor and contactor",
+      "A refrigerant recharge for a hiss with no leak search",
+      "A fan motor replaced without testing the capacitor that starts it"
+    ],
+    faqs: [
+      { q: "Why is my AC making a buzzing noise?", a: "Most often it's an electrical part at the outdoor unit: a failing capacitor or contactor, or loose wiring. If the fan isn't spinning while it buzzes, turn the system off, because the motor is trying and failing to start and will overheat. Electrical repairs like these typically cost $150–$600." },
+      { q: "Is it normal for an AC to click?", a: "A single click when the system starts and stops is normal: it's the thermostat and a relay switching. Rapid or continuous clicking, or a click with nothing starting, points to a failing contactor, relay or control board." },
+      { q: "Why is my AC making a hissing sound?", a: "A short hiss or whoosh right after the system shuts off is usually normal, as the refrigerant pressures even out. A continuous hiss near the lines or coil can be a refrigerant leak, especially if cooling is getting worse or ice forms on the lines. Have it checked." },
+      { q: "What does it mean when an AC is screaming?", a: "A scream or high-pitched whistle from the outdoor unit can mean dangerously high pressure inside the compressor or a serious refrigerant leak. Turn the system off at the thermostat and the disconnect right away and call a technician." }
+    ],
+    related: ["ac-outdoor-unit-not-running", "ac-smells", "ac-short-cycling"]
+  },
+  {
+    slug: "ac-smells",
+    published: "2026-10-17",
+    updated: "2026-10-17",
+    name: "AC smells bad",
+    title: "AC Smells Bad? Musty, Burning and Other Odors Explained",
+    h1: "Bad Smell From Your AC? What Musty, Burning and Other Odors Mean",
+    description: "What a musty, burning, rotten-egg, sewage or chemical smell from your air conditioner usually means, which smells are an emergency, and how to get rid of the rest.",
+    group: "noise-smell",
+    summary: "A musty, burning, rotten-egg, sour or chemical smell when the AC runs.",
+    quick: [
+      "Musty or mildew: mold or bacteria on the indoor coil, in the drain pan, on the filter or in the ducts",
+      "Burning or electrical: an overheating motor or wiring. Turn the system off.",
+      "Rotten eggs: a natural gas leak (from a gas furnace or another appliance) or a dead animal in the ducts",
+      "Dirty socks: bacteria growing on the indoor coil, common on heat pumps",
+      "Sewage: a dried-out drain trap letting sewer gas in",
+      "Dusty burning on the first heating day of the season: dust burning off, usually gone within an hour"
+    ],
+    firstChecks: [
+      "Burning, electrical or rotten-egg smell: follow the safety box above before doing anything else.",
+      "Air filter: a damp, dirty filter can smell musty. Replace it.",
+      "Drain pan and drain line: standing water under the indoor unit grows mold and bacteria.",
+      "Every vent, or one room? A smell at every vent points to the indoor unit; one vent points to that duct."
+    ],
+    causes: [
+      { cause: "Mold or mildew on the coil, pan or ducts", signs: "Musty smell, strongest when the system starts; visible dark growth on the coil or in the pan", who: "DIY or pro", cost: `$0 (filter, drain) to ${COST.coilDuctCleaning} cleaning` },
+      { cause: "Clogged drain or standing water", signs: "Musty or sour smell, water in the drain pan", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
+      { cause: "Dirty filter", signs: "Musty or dusty smell, filter gray or damp", who: "DIY", cost: COST.filter },
+      { cause: "Overheating motor or wiring", signs: "Burning plastic or electrical smell, sometimes with buzzing or a tripped breaker", who: "Pro", cost: COST.burningRepair },
+      { cause: "Dust burning off heating parts", signs: "Dusty burning smell the first time the heat runs each season, fading within an hour", who: "DIY", cost: "$0" },
+      { cause: "Natural gas leak (not from the AC)", signs: "Rotten-egg smell near a gas furnace, water heater or other gas appliance", who: "Pro", cost: "Call your gas utility first" },
+      { cause: "Dead animal in the ducts or unit", signs: "Rotten smell getting stronger, often worst at one vent", who: "Pro", cost: `${COST.serviceCall} service call plus removal and cleaning` },
+      { cause: '"Dirty sock" bacteria on the coil', signs: "Smell of dirty socks or sweat, often when a heat pump switches modes", who: "Pro", cost: COST.coilDuctCleaning },
+      { cause: "Sewer gas from a dry drain trap", signs: "Sewage smell near the indoor unit or a floor drain the condensate runs to", who: "DIY or pro", cost: "$0 (refill the trap) to a plumber's visit" },
+      { cause: "Refrigerant leak", signs: "A faint sweet or chemical smell with cooling getting worse; many refrigerants have little smell, so this is a weak sign", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` }
+    ],
+    steps: [
+      { title: "Rule out the dangerous smells", text: "Burning or electrical: turn the system off at the thermostat and the breaker, and call. Rotten eggs: don't touch switches; leave and call the gas utility from outside. Then come back to the rest of these steps." },
+      { title: "Replace the filter", text: "A damp, dirty filter is the cheapest cause to rule out. If the smell fades within a day, that was it." },
+      { title: "Check the drain pan and line", text: "With power off, look in the pan under the indoor unit. Standing water means the drain is clogged: clear it with a wet/dry vacuum on the outside end, then pour a cup of distilled white vinegar into the cleanout. See the leaking water page for details." },
+      { title: "Look at the coil if you can", text: "Many indoor units have a removable access panel in front of the coil. With power off, look for dark growth on the coil or in the pan. Visible mold on the coil is a job for a professional cleaning." },
+      { title: "Refill dry drain traps", text: "For a sewage smell, pour a quart of water into any floor drain near the indoor unit, and into the condensate line's trap if it has one. Traps that dry out let sewer gas back into the house." }
+    ],
+    safetyNote: "If you smell rotten eggs (natural gas), don't switch anything on or off. Get everyone out, then call your gas utility or 911 from outside. If a carbon monoxide alarm sounds, get outside and call for help. Your air conditioner doesn't burn gas, but a gas furnace often shares the same ducts and blower.",
+    callPro: [
+      "Any burning or electrical smell",
+      "A rotten smell that keeps getting stronger, especially at one vent",
+      "A musty smell that returns after a new filter and a clear drain",
+      "Visible mold on the coil, in the pan or inside the ducts"
+    ],
+    quoteFlags: [
+      "Whole-house duct cleaning sold as the cure for a musty smell before anyone checks the coil, drain pan and drain line",
+      "A UV light or air purifier sold as the only fix for mold, without fixing the moisture that feeds it",
+      "Refrigerant added for a smell, with no leak search"
+    ],
+    faqs: [
+      { q: "Why does my AC smell musty?", a: "Usually because mold or bacteria are growing where moisture collects: on the indoor coil, in the drain pan, on a damp filter or in the ducts. Replace the filter, clear the drain and check the pan. If the smell comes back, have the coil cleaned. Keeping indoor humidity below 60% (EPA's guideline) slows the growth." },
+      { q: "Is a burning smell from my AC dangerous?", a: "It can be. An electrical or burning-plastic smell can mean an overheating motor or wiring, so turn the system off at the thermostat and breaker and call a technician. The one usually harmless exception is a dusty smell the first time the heat runs each season." },
+      { q: "Why does my AC smell like rotten eggs?", a: "Natural gas has a rotten-egg odor added to it, so treat that smell as a possible gas leak: leave the house and call your gas utility from outside. Your AC doesn't use gas, but a gas furnace often shares its ducts. If the gas company finds no leak, a dead animal in the ductwork is the next most likely cause." },
+      { q: "Should I get my air ducts cleaned for a bad smell?", a: "Usually not first. The EPA says duct cleaning isn't something most homes need routinely, and suggests considering it when there's visible mold growth inside the ducts, signs of rodents or insects, or so much dust and debris that it blows out of the vents. Most AC smells come from the coil, drain pan or filter." }
+    ],
+    related: ["ac-leaking-water", "ac-high-humidity", "ac-making-noise"]
+  },
+  {
+    slug: "ac-short-cycling",
+    published: "2026-10-17",
+    updated: "2026-10-17",
+    name: "AC short cycling",
+    title: "AC Short Cycling? Why It Turns On and Off Too Often",
+    h1: "AC Short Cycling? Why Your Air Conditioner Keeps Turning On and Off",
+    description: "AC runs a few minutes, shuts off, then starts again? The causes, from an oversized unit to a dirty coil or a badly placed thermostat, what to check first and what fixes cost.",
+    group: "cycling",
+    summary: "It runs for a few minutes, shuts off, then starts again soon after.",
+    quick: [
+      "An oversized system that cools the air near the thermostat too fast",
+      "A clogged filter or a frozen coil",
+      "The thermostat sits near a supply vent, a sunny window or a heat source",
+      "A dirty outdoor coil making the system overheat and trip a safety switch",
+      "Low refrigerant tripping the low-pressure switch",
+      "A backed-up drain tripping the float switch",
+      "An electrical fault: capacitor, contactor or control board"
+    ],
+    firstChecks: [
+      "Time it on a warm afternoon: how long it runs, how long it stays off. Repeated runs of under about 10 minutes, while the house still isn't at the set temperature, are the classic sign (a rule of thumb, not a precise limit).",
+      "Air filter: replace it if it's dirty.",
+      "Thermostat: is it in sunlight, above a lamp or TV, near the kitchen, or in the path of a supply vent?",
+      "Look for ice on the copper lines, and check the outdoor coil is clean and clear."
+    ],
+    causes: [
+      { cause: "Oversized system", signs: "Cools fast then shuts off, house feels clammy, has done it since the system was installed", who: "Pro", cost: "$0 now; size correctly when you replace it" },
+      { cause: "Clogged filter", signs: "Weak airflow, filter gray or matted", who: "DIY", cost: COST.filter },
+      { cause: "Frozen coil", signs: "Ice on the lines, weak airflow, shuts off and on", who: "DIY or pro", cost: "Depends on the cause", see: "ac-frozen-coil" },
+      { cause: "Thermostat location or a failing thermostat", signs: "Shuts off while other rooms are still warm; thermostat in sun, near a vent or a heat source", who: "DIY or pro", cost: `$0 (move the heat source) to ${COST.thermostat}` },
+      { cause: "Dirty outdoor coil (overheating)", signs: "Shuts off on hot afternoons and restarts later; fins matted with dirt or grass", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
+      { cause: "Low refrigerant (low-pressure switch)", signs: "Cooling getting worse over weeks, ice, short runs", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: "Float switch on a backed-up drain", signs: "Shuts off with water in the pan, restarts as it drains", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
+      { cause: "Electrical fault", signs: "Starts and stops at random, clicking or buzzing at the outdoor unit", who: "Pro", cost: `${COST.capacitor} capacitor, ${COST.contactor} contactor, more for a control board` }
+    ],
+    steps: [
+      { title: "Time the cycles", text: "On a warm afternoon, note when it starts and stops for an hour. Write down the indoor temperature too. Short runs while the house is still warm point to a fault; short runs once it's at the set temperature point to oversizing or the thermostat." },
+      { title: "Fix the airflow", text: "Fit a new filter, open all supply vents and clear the return grilles. Restricted airflow is a common cause and the cheapest to fix." },
+      { title: "Check the thermostat", text: "Replace its batteries and look at where it sits. A thermostat in sunlight or in the stream of a supply vent shuts the system off early. Some thermostats have a cycle-rate (cycles per hour) setting; check it against the thermostat's manual for air conditioning." },
+      { title: "Clean the outdoor coil", text: "With power off at the disconnect, clear debris and rinse the fins gently from the outside with a garden hose. A coil that can't shed heat trips the system's high-pressure or overload protection." },
+      { title: "Look for ice and water", text: "Ice on the copper lines means a frozen coil. Water in the drain pan means the float switch may be cutting the power. Each has its own page linked in the table above." }
+    ],
+    callPro: [
+      "Short cycling continues with a new filter, a clean coil and the thermostat ruled out",
+      "Ice on the lines or the coil",
+      "The outdoor unit shuts off on hot afternoons and restarts later",
+      "Clicking or buzzing each time it starts or stops"
+    ],
+    quoteFlags: [
+      "A new system quoted for short cycling before the filter, refrigerant charge, safety switches and thermostat are checked",
+      "A bigger unit recommended to fix comfort problems: an oversized system short cycles more, not less",
+      "A refrigerant top-up with no leak search"
+    ],
+    faqs: [
+      { q: "What causes an AC to short cycle?", a: "The most common causes are a clogged filter or frozen coil, a thermostat in a bad spot, a dirty outdoor coil tripping a safety switch, low refrigerant, and a system that is too big for the house. Start with the filter, the thermostat location and the outdoor coil, which you can check yourself." },
+      { q: "How long should an AC run each cycle?", a: "It depends on the weather. As a rough guide, a correctly sized single-stage system on a warm day runs at least 10 minutes at a time, longer as it gets hotter, and on the hottest days it may run almost nonstop. Variable-speed systems are designed to run for long periods at low speed." },
+      { q: "Is short cycling bad for my AC?", a: "Yes. Starting is the hardest moment for a compressor, so frequent starts wear it faster. Short runs also waste energy and remove little humidity, because the coil shuts off before it has drained much moisture." },
+      { q: "Can an oversized AC cause short cycling?", a: "Yes. An oversized system cools the air near the thermostat quickly and shuts off before the rest of the house, and before it has removed much humidity. There's no cheap fix; the answer is a correctly sized system (a Manual J load calculation) at replacement. Check yours with the AC sizing calculator." }
+    ],
+    related: ["ac-running-constantly", "ac-high-humidity", "ac-frozen-coil"],
+    extra: {
+      heading: "If your system is oversized",
+      paragraphs: [
+        "Oversizing is common, because replacing a unit with one the same size as the old one (or bigger, to be safe) skips the load calculation. If your system has short cycled since the day it was installed and everything else checks out, it's probably too big for the house.",
+        "You can soften the effect: keep the fan on Auto, use a thermostat with a dehumidify setting, and keep the filter and coil clean. At replacement, ask for a Manual J load calculation, and consider a two-stage or variable-speed system, which runs at low output most of the time."
+      ],
+      link: { to: "/calculators/ac-sizing", label: "the AC sizing calculator" }
+    }
+  },
+  {
+    slug: "ac-running-constantly",
+    published: "2026-10-17",
+    updated: "2026-10-26",
+    fromExperience: "We've lost efficiency in our stores to damaged duct insulation in the ceiling, including tears made by other workmen doing unrelated jobs up there. A thermal camera that plugs into a phone makes it easy to find: damaged or missing insulation shows up clearly against the sections that are still covered. After anyone has worked in your ceiling or attic, it's worth a look.",
+    name: "AC running nonstop",
+    title: "AC Running Constantly? When It's Normal and When It's Not",
+    h1: "AC Running Nonstop? When It's Normal and How to Find the Problem",
+    description: "Air conditioner never shuts off? When nonstop running is normal on hot days, the checks that find the problem when it isn't, a simple thermometer test, and what fixes cost.",
+    group: "cycling",
+    summary: "It runs and runs without shutting off, or never reaches the set temperature.",
+    quick: [
+      "Very hot weather: on the hottest days a correctly sized system can run almost nonstop",
+      "The thermostat set very low, or the fan set to On",
+      "A clogged filter or a dirty outdoor coil",
+      "Low refrigerant from a leak",
+      "Leaky ducts in a hot attic or crawlspace",
+      "A system that is too small or worn out",
+      "A stuck contactor: the outdoor unit keeps running even with the thermostat off"
+    ],
+    firstChecks: [
+      "Fan or whole system? If only the indoor fan runs, set the thermostat fan to Auto instead of On.",
+      "Set the thermostat to Off. If the outdoor unit keeps running, switch it off at the disconnect and call: the contactor is stuck.",
+      "Check the weather. Systems are sized for typical hot days where you live; on hotter days it's normal for them to run for long stretches and for the house to sit a few degrees above the setting.",
+      "Filter and outdoor coil: replace a dirty filter, and look for matted fins outside."
+    ],
+    causes: [
+      { cause: "Extreme heat", signs: "Runs nonstop only on the hottest afternoons and catches up in the evening", who: "DIY", cost: "$0" },
+      { cause: "Thermostat set very low, or fan on On", signs: "Set more than about 20°F below the outdoor temperature, or the fan never stops between cycles", who: "DIY", cost: "$0" },
+      { cause: "Clogged filter", signs: "Weak airflow, filter gray or matted", who: "DIY", cost: COST.filter },
+      { cause: "Dirty outdoor coil", signs: "Fins matted with dirt, grass or lint; struggles most on hot afternoons", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
+      { cause: "Low refrigerant (a leak)", signs: "Air not very cold, cooling worse over weeks, ice on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: "Leaky or uninsulated ducts", signs: "Rooms far from the unit stay warm; ducts in a hot attic; dust streaks at duct joints", who: "Pro", cost: `${COST.ductSealing} duct sealing` },
+      { cause: "Stuck contactor", signs: "Outdoor unit keeps running with the thermostat off", who: "Pro", cost: COST.contactor },
+      { cause: "Undersized or worn-out system", signs: "Never keeps up on ordinary summer days; system old or added rooms since it was sized", who: "Pro", cost: "Replacement; compare with the repair vs replace calculator" },
+      { cause: "Heat coming in", signs: "Sun on big windows, a hot attic with little insulation, oven or dryer running in the afternoon", who: "DIY", cost: "$0 (blinds) and up" }
+    ],
+    steps: [
+      { title: "Check the settings", text: "Cool, fan on Auto, and a sensible temperature. Each degree lower adds run time, and setting it very low doesn't cool the house faster." },
+      { title: "Do the Off test", text: "Set the thermostat to Off and go outside. If the outdoor unit is still running after a minute, turn it off at the disconnect. A stuck contactor runs the compressor nonstop and needs a technician." },
+      { title: "Replace the filter and rinse the coil", text: "A new filter and a clean outdoor coil restore airflow and heat transfer, the two things a system needs to keep up." },
+      { title: "Measure the temperature split", text: "After 15 minutes of running, put a thermometer at a return grille and at the supply vent nearest the indoor unit. A difference of roughly 15–20°F is typical (a rule of thumb; humid weather lowers it). Much less points to low refrigerant, a dirty coil or a failing compressor; much more points to low airflow." },
+      { title: "Cut the heat coming in", text: "Close blinds on sunny windows, avoid the oven and dryer in the afternoon, and check that the attic has insulation. Less heat in means shorter run times." }
+    ],
+    callPro: [
+      "The outdoor unit runs with the thermostat off",
+      "The temperature split is well under about 15°F",
+      "Ice on the lines or the coil",
+      "It runs nonstop on mild days and still doesn't reach the setting"
+    ],
+    quoteFlags: [
+      "A bigger system recommended before anyone checks the refrigerant charge, airflow and ducts",
+      "A refrigerant top-up with no leak search",
+      "Duct cleaning sold as the fix for long run times: cleaning doesn't seal leaks"
+    ],
+    faqs: [
+      { q: "Is it normal for my AC to run all day in hot weather?", a: "Yes, on the hottest days. Air conditioners are sized for typical hot weather where you live, so above that they run for long stretches and the house may sit a few degrees above the setting until evening. It's a problem if it also runs nonstop on ordinary days." },
+      { q: "How do I know if my AC running constantly is a problem?", a: "Signs of a real fault: it runs nonstop on mild days, never gets within a few degrees of the setting, the air from the vents isn't much colder than the room (a split well under about 15°F), there's ice on the lines, or the outdoor unit keeps running with the thermostat off." },
+      { q: "Does running nonstop damage an AC?", a: "Long runs aren't harmful in themselves; starting and stopping is harder on a compressor than running. But nonstop running costs more, and if it's caused by low refrigerant, a dirty coil or a stuck contactor, that underlying fault can damage the compressor." },
+      { q: "Why does my outdoor unit keep running when the thermostat is off?", a: "Usually the contactor, the switch that turns the outdoor unit on and off, has stuck closed. Turn the unit off at the disconnect beside it and call a technician. A contactor typically costs $150–$300 to replace." }
+    ],
+    related: ["ac-blowing-warm-air", "ac-short-cycling", "ac-frozen-coil"]
+  },
+  {
+    slug: "ac-tripping-breaker",
+    published: "2026-10-17",
+    updated: "2026-10-17",
+    name: "AC tripping the breaker",
+    title: "AC Keeps Tripping the Breaker? Causes and What to Do",
+    h1: "AC Keeps Tripping the Breaker? Why It Happens and What to Do",
+    description: "AC keeps tripping its breaker? What the timing tells you, the causes from a dirty coil to a failing capacitor or compressor, and why you shouldn't keep resetting it.",
+    group: "wont-run",
+    summary: "The breaker for the AC trips when it starts, after it runs a while, or on hot afternoons.",
+    quick: [
+      "A dirty outdoor coil or blocked airflow making the compressor draw more current",
+      "A failing capacitor, so the motors struggle to start",
+      "A compressor that is hard to start or failing",
+      "A failed outdoor fan motor",
+      "A short in the wiring or a motor (trips instantly)",
+      "A worn breaker or a loose connection at the panel"
+    ],
+    firstChecks: [
+      "Which breaker: the outdoor unit, or the indoor unit (air handler or furnace)?",
+      "When it trips: the instant you reset it, when the compressor starts, or after running for a while on hot afternoons.",
+      "Look at the panel and the disconnect beside the outdoor unit: scorch marks, a burning smell or a hot breaker mean stop and call.",
+      "Outdoor coil and filter: matted fins outside or a clogged filter inside make the motors work harder."
+    ],
+    causes: [
+      { cause: "Dirty outdoor coil or blocked airflow", signs: "Trips after running a while, mostly on hot afternoons; fins matted or plants crowding the unit", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
+      { cause: "Failing capacitor", signs: "Trips as the outdoor unit tries to start; humming before it trips", who: "Pro", cost: COST.capacitor },
+      { cause: "Hard-starting or failing compressor", signs: "Trips the moment the compressor starts; lights dim; system over about 10 years old", who: "Pro", cost: `$30–$80 hard-start kit part plus labor; ${COST.compressor} for a compressor` },
+      { cause: "Failed outdoor fan motor", signs: "Fan doesn't spin, unit gets very hot, then the breaker trips", who: "Pro", cost: COST.condenserFan },
+      { cause: "Short in wiring or a motor", signs: "Trips instantly every time you reset it", who: "Pro", cost: `${COST.breakerTrip} to find and repair` },
+      { cause: "Worn breaker or loose connection", signs: "Breaker warm, buzzing or tripping with no other symptom; the system runs fine on a tester's meter", who: "Pro", cost: "An electrician's visit plus the breaker" },
+      { cause: "Indoor blower strain", signs: "The indoor unit's breaker trips; clogged filter or a failing blower motor", who: "DIY or pro", cost: `${COST.filter} filter, ${COST.blower} blower motor` }
+    ],
+    steps: [
+      { title: "Reset once, properly", text: "Turn the thermostat off. Push the tripped breaker firmly to Off, then back to On. Wait 5–10 minutes before setting the thermostat to Cool, so the compressor doesn't start against high pressure." },
+      { title: "Watch when it trips", text: "Instantly on reset points to a short: leave it off. At start-up points to the capacitor or compressor. After a while on hot afternoons points to a dirty coil, a failing fan motor or airflow. Tell the technician which it was." },
+      { title: "Clean the coil and replace the filter", text: "With power off at the disconnect, rinse the outdoor coil from the outside and clear plants back 2 feet. Fit a new indoor filter. These are the only causes you can fix yourself." },
+      { title: "If it trips again, leave it off", text: "A breaker trips to protect the wiring from overheating. Resetting it over and over can damage the compressor and, in the worst case, start a fire. One reset, then call." },
+      { title: "Check the breaker size, not by guessing", text: `The outdoor unit's nameplate lists the maximum fuse or breaker size (often "MAX FUSE/BKR"). The breaker should not be larger than that. Never fit a bigger breaker to stop the trips; that only removes the protection.` }
+    ],
+    safetyNote: "Never replace the breaker with a larger one to stop it tripping. Breakers are sized to the wiring and the unit; a bigger one lets the wires overheat. Panel work is for a licensed electrician.",
+    callPro: [
+      "It trips again after one reset",
+      "It trips the instant you reset it",
+      "A burning smell, scorch marks, or a breaker that feels hot or buzzes",
+      "The lights dim and it trips as the compressor starts"
+    ],
+    quoteFlags: [
+      "A new system quoted before the capacitor, fan motor and compressor have been tested",
+      "A larger breaker offered as the fix",
+      "For a failed compressor on a system over about 10 years old, compare the quote with replacement before agreeing"
+    ],
+    faqs: [
+      { q: "Why does my AC keep tripping the breaker?", a: "Most often because the outdoor unit is drawing more current than it should: a dirty coil or blocked airflow on hot days, a failing capacitor that makes the motors struggle to start, or a compressor that is wearing out. A breaker that trips instantly on reset usually means a short circuit." },
+      { q: "Is it safe to keep resetting the AC breaker?", a: "No. Reset it once. If it trips again, leave it off and call a technician. The breaker is doing its job by cutting power to something that's overheating or shorted, and repeated resets can damage the compressor or start a fire." },
+      { q: "Can a dirty filter cause the AC breaker to trip?", a: "It can strain the indoor blower motor, which can trip the indoor unit's breaker. A dirty outdoor coil is the more common cause of the outdoor unit's breaker tripping, especially on hot afternoons." },
+      { q: "What size breaker does my AC need?", a: "The outdoor unit's nameplate lists the minimum circuit ampacity and the maximum fuse or breaker size. The breaker must not exceed that maximum. If you think the breaker is the wrong size, have an electrician check it against the nameplate and the wiring." }
+    ],
+    related: ["ac-outdoor-unit-not-running", "ac-not-turning-on", "ac-not-working-after-power-outage"]
+  },
+  {
+    slug: "ac-high-humidity",
+    published: "2026-10-17",
+    updated: "2026-10-17",
+    name: "House humid with the AC on",
+    title: "AC Not Removing Humidity? Why the House Feels Clammy",
+    h1: "House Humid With the AC On? Why It Feels Clammy and How to Fix It",
+    description: "The temperature is fine but the house feels damp and sticky? Why an air conditioner stops removing humidity, the free fixes to try first, and when a dehumidifier makes sense.",
+    group: "cycling",
+    summary: "The temperature is fine, but the air feels damp, sticky or cold and clammy.",
+    quick: [
+      "The thermostat fan set to On, which blows the moisture on the coil back into the house",
+      "An oversized system that shuts off before it removes much moisture",
+      "A clogged filter or a dirty indoor coil",
+      "The blower set to a high speed that suits dry climates",
+      "Leaky return ducts pulling in humid air from an attic, crawlspace or outdoors",
+      "Low refrigerant",
+      "Moisture from inside: showers, cooking, laundry, a damp crawlspace or basement"
+    ],
+    firstChecks: [
+      "Measure it: a digital hygrometer costs about $10–$20. The EPA recommends keeping indoor humidity below 60%, ideally 30–50%.",
+      "Thermostat fan on Auto, not On.",
+      "Air filter: replace it if it's dirty.",
+      "Run bathroom and kitchen exhaust fans, and look for damp in a crawlspace or basement."
+    ],
+    causes: [
+      { cause: "Fan set to On", signs: "Humidity rises soon after the compressor stops; fan never stops", who: "DIY", cost: "$0" },
+      { cause: "Oversized system", signs: "Short runs, cool but clammy, has done it since installation", who: "Pro", cost: "$0 now; size correctly when you replace it", see: "ac-short-cycling" },
+      { cause: "Clogged filter or dirty indoor coil", signs: "Weak airflow, filter gray, musty smell", who: "DIY or pro", cost: `${COST.filter} filter, ${COST.coilDuctCleaning} coil cleaning` },
+      { cause: "Blower speed set too high", signs: "Strong airflow, cool air, but humidity stays high; common when installers use one setting everywhere", who: "Pro", cost: `${COST.serviceCall} service call to adjust` },
+      { cause: "Leaky return ducts", signs: "Ducts in an attic or crawlspace; humidity high even with long run times", who: "Pro", cost: `${COST.ductSealing} duct sealing` },
+      { cause: "Low refrigerant (a leak)", signs: "Cooling weaker than it used to be, ice on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: "Moisture sources indoors", signs: "Worst after showers or cooking; damp crawlspace or basement; condensation on windows", who: "DIY or pro", cost: "$0 (exhaust fans) and up" },
+      { cause: "A climate that needs more dehumidification", signs: "Mild, humid days when the AC barely needs to run", who: "Pro", cost: `${COST.dehumidifier} installed whole-house dehumidifier` }
+    ],
+    steps: [
+      { title: "Measure for a day", text: "Put a hygrometer in a couple of rooms and check it morning, afternoon and night. You want a number to compare after each fix, not a feeling." },
+      { title: "Set the fan to Auto and wait", text: "With the fan on Auto, water that collects on the coil drains away instead of being blown back into the house. Give it two days before judging." },
+      { title: "Replace the filter", text: "A clogged filter reduces airflow and lets the coil get dirty, and a dirty coil removes less moisture." },
+      { title: "Use the dehumidify settings you have", text: 'Many thermostats have a dehumidify or "overcool" setting, and many ductless mini-splits have a Dry mode. Check your manuals; these settings run the system in a way that removes more moisture.' },
+      { title: "Cut the moisture coming in", text: "Run the bathroom fan during and after showers and the range hood while cooking. Vent the dryer outside. A damp crawlspace or basement often needs a vapor barrier or its own dehumidifier." },
+      { title: "Ask the technician the right questions", text: "If humidity stays above 60%, ask about the refrigerant charge, the blower speed, return duct leaks, and whether the system is oversized. A whole-house dehumidifier comes after those, not before." }
+    ],
+    callPro: [
+      "Humidity stays above 60% with the fan on Auto and a clean filter",
+      "Condensation on vents or windows, or mold growing indoors",
+      "The system short cycles",
+      "Ice on the lines or the coil"
+    ],
+    quoteFlags: [
+      "A bigger air conditioner to fix humidity: oversizing makes it worse",
+      "A whole-house dehumidifier sold before anyone checks the fan setting, blower speed, refrigerant charge and duct leaks",
+      "Duct cleaning sold as a humidity fix: it doesn't change how much moisture the system removes"
+    ],
+    faqs: [
+      { q: "Why is my house humid when the AC is running?", a: "The most common reasons are the fan set to On (which re-evaporates water from the coil), a system that is too big and shuts off before removing much moisture, a dirty filter or coil, and humid air leaking in through return ducts. Indoor moisture from showers, cooking or a damp crawlspace adds to it." },
+      { q: "What humidity should my house be with the AC on?", a: "The EPA recommends keeping indoor relative humidity below 60%, ideally between 30% and 50%. Above 60% for long periods, mold and dust mites thrive and the house feels clammy even at a cool temperature." },
+      { q: "Does running the AC fan on On increase humidity?", a: "It can, by a lot. When the compressor stops, the fan keeps blowing across the wet coil and puts that moisture back into the house. In one test by building scientist Allison Bailes in his own home, switching the fan from Auto to On raised indoor humidity from about 58% to about 70%." },
+      { q: "Do I need a dehumidifier if I have air conditioning?", a: "Often not. Air conditioners remove moisture as they cool, and fixing the fan setting, airflow and duct leaks usually brings humidity down. A dehumidifier makes sense in very humid climates, in homes with an oversized system you're not ready to replace, or for a damp basement. Whole-house units typically cost about $2,800–$3,300 installed." }
+    ],
+    related: ["ac-short-cycling", "ac-smells", "ac-running-constantly"]
+  },
+  {
+    slug: "mini-split-error-codes",
+    published: "2026-10-17",
+    updated: "2026-10-17",
+    name: "Mini-split error code or blinking light",
+    title: "Mini-Split Error Code or Blinking Light? What to Do",
+    h1: "Mini-Split Error Code or Blinking Light? What It Means and What to Do",
+    description: "Ductless mini-split showing an error code or flashing a light? How to read it, how to reset the unit safely, what the main kinds of codes mean, and when it needs a technician.",
+    group: "mini-split",
+    summary: "The indoor unit shows a code or flashes a light, and the system stops or won't cool.",
+    quick: [
+      "A power glitch or surge that left the control board locked out (a reset often clears it)",
+      "Dirty filters or a blocked outdoor unit, so the system shuts down to protect itself",
+      "A communication error between the indoor and outdoor units (wiring, a surge or a board)",
+      "A failed temperature sensor (thermistor)",
+      "A drain or condensate pump problem on units with a float switch",
+      "Low refrigerant",
+      "A fault in the outdoor unit's inverter board or compressor"
+    ],
+    firstChecks: [
+      "Write the code down exactly, or count the blinks: how many, which light (often Operation or Timer), and whether the pattern repeats. A short phone video helps.",
+      "Find your exact model numbers on the labels of the indoor and outdoor units. Codes differ between brands and even between a brand's own product lines.",
+      "Look it up in the owner's or installation manual for that model (most are on the manufacturer's website). Some units also have a code list on a label inside the front panel or the outdoor unit's service cover.",
+      "Check the filters behind the front panel, and make sure nothing blocks the outdoor unit."
+    ],
+    causes: [
+      { cause: "Power glitch or lockout", signs: "Code appeared after an outage, storm or flicker", who: "DIY", cost: "$0 (reset)" },
+      { cause: "Dirty filters or blocked outdoor unit", signs: "Protection codes for high temperature or pressure, or freeze protection; dusty mesh filters", who: "DIY or pro", cost: `$0 to clean filters, ${COST.condenserClean} pro cleaning` },
+      { cause: "Communication error", signs: "Indoor and outdoor units can't talk to each other. Common examples: U4 on many Daikin units, E6 on many Mitsubishi units", who: "Pro", cost: `${COST.serviceCall} service call plus wiring or a board` },
+      { cause: "Failed temperature sensor", signs: "Sensor or thermistor code; unit stops or runs oddly", who: "Pro", cost: `${COST.serviceCall} service call plus the sensor` },
+      { cause: "Drain or condensate pump problem", signs: "Water dripping from the indoor unit; float or drain code", who: "DIY or pro", cost: `${COST.drainClear} drain clearing, ${COST.condensatePump} pump`, see: "ac-leaking-water" },
+      { cause: "Low refrigerant (a leak)", signs: "Weak cooling, ice on the lines, low-pressure or refrigerant code", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
+      { cause: "Inverter board or compressor fault", signs: "Outdoor unit code that returns after every reset", who: "Pro", cost: `${COST.serviceCall} plus the board (often several hundred dollars); ${COST.compressor} for a compressor` }
+    ],
+    steps: [
+      { title: "Record the code", text: "Note the code or blink pattern, the time, the mode (cool, heat, dry) and what the unit was doing. Take a photo or short video." },
+      { title: "Look it up for your exact model", text: "Use the model numbers from the unit's labels to find the manual. Generic online lists often conflict, because the same code can mean different things on different product lines." },
+      { title: "Reset once", text: "Turn the unit off with the remote, switch off its breaker or outdoor disconnect, wait about 5 minutes, then restore power and restart with the remote. If the code comes straight back, stop resetting it." },
+      { title: "Clean the filters and clear the outdoor unit", text: "Lift the front panel, slide out the mesh filters and rinse them in lukewarm water. Let them dry fully before refitting. Outside, clear leaves, snow or plants away from the unit." },
+      { title: "Rule out the normal blinks", text: "In heating mode, many mini-splits blink a light while the outdoor unit defrosts, and stop after several minutes. Some also blink while they warm up. Check the remote's batteries and mode too." },
+      { title: "Call with the details", text: "Give the technician the brand, both model numbers, the exact code, when it started and what you have tried. They can often tell which part to bring." }
+    ],
+    safetyNote: "Don't open the outdoor unit's covers. Mini-split outdoor units contain inverter boards with capacitors that stay charged at high voltage for several minutes after the power is off.",
+    callPro: [
+      "The code comes back after one reset",
+      "A communication, sensor, inverter or compressor code",
+      "Water dripping from the indoor unit",
+      "Ice on the copper lines"
+    ],
+    quoteFlags: [
+      "A new system quoted for a communication error before the connecting wiring and terminals are checked",
+      "A board replaced without explaining what the code and the test readings showed",
+      "A refrigerant recharge with no leak search"
+    ],
+    faqs: [
+      { q: "What does a blinking light on my mini-split mean?", a: "Usually that the unit has detected a fault and stopped. The number of blinks, and which light blinks, is a code you can look up in the manual for your exact model. In heating mode, a blinking light can also just mean the unit is defrosting, which is normal and stops after several minutes." },
+      { q: "How do I reset a mini-split error code?", a: "Turn the unit off with the remote, switch off its breaker or outdoor disconnect for about 5 minutes, then turn the power back on and restart it with the remote. If the code returns, don't keep resetting: the fault is still there." },
+      { q: "What is a communication error on a mini-split?", a: "It means the indoor and outdoor units can't exchange signals. Causes include loose or corroded connecting wires, a surge that damaged a board, or a failed board. On many Daikin units it shows as U4, and on many Mitsubishi units as E6, but check your manual: codes vary by model." },
+      { q: "Can I trust mini-split error code lists online?", a: "Use them as a starting point only. Codes differ between brands and between product lines from the same brand, and generic lists often disagree. The manual for your exact model number, or the manufacturer's support line, is the reliable source." }
+    ],
+    related: ["ac-not-working-after-power-outage", "ac-leaking-water", "ac-frozen-coil"]
+  },
+  {
+    slug: "heat-pump-not-heating",
+    name: "Heat pump not heating",
+    title: "Heat Pump Not Heating? Causes, Checks and Repair Costs",
+    h1: "Heat Pump Not Heating or Blowing Cold Air? What to Check First",
+    description: "Heat pump running but the house won't warm up, or air from the vents feels cool? What's normal (defrost, lukewarm air), the free checks, likely causes and repair costs.",
+    group: "heat-pump",
+    summary: "It runs in winter, but the house stays cold or the vents blow cool air.",
+    published: "2026-10-21",
+    updated: "2026-10-21",
+    quick: [
+      "Thermostat on Cool or Auto, or a schedule holding a low temperature",
+      "A defrost cycle in progress (cool air for a few minutes is normal)",
+      "A clogged air filter",
+      "The outdoor unit iced over or blocked by snow",
+      "Backup (auxiliary) heat not working on the coldest days",
+      "A reversing valve stuck in cooling mode, or low refrigerant"
+    ],
+    firstChecks: [
+      'Thermostat: mode on Heat, set at least 2–3°F above the room, schedule or "hold" off. A heat pump thermostat may show "Aux" or "Em Heat"; leave Emergency Heat off for now.',
+      "Feel the air at a vent after 10 minutes of running. Heat pump air feels lukewarm compared with a gas furnace; that's normal as long as the house slowly warms.",
+      "Outdoor unit: is the fan spinning and is it free of thick ice and snow? A short burst of steam with the fan stopped is a normal defrost.",
+      "Air filter: replace it if it's gray. Low airflow cuts heating just as it cuts cooling.",
+      "Breakers: there are usually separate breakers for the outdoor unit, the indoor air handler and the backup heat strips."
+    ],
+    causes: [
+      { cause: "Thermostat settings or schedule", signs: "Mode on Cool or Auto with a low setpoint, a schedule or vacation hold", who: "DIY", cost: "$0" },
+      { cause: "Normal defrost cycle", signs: "Cool air for a few minutes, outdoor fan stopped, steam rising from the unit, then heat resumes", who: "DIY", cost: "$0 (normal)", see: "heat-pump-defrost-mode" },
+      { cause: "Clogged filter", signs: "Weak airflow from vents, filter visibly gray", who: "DIY", cost: COST.filter },
+      { cause: "Outdoor coil iced over or buried in snow", signs: "Coil encased in ice that doesn't clear, or snow drifted against the unit", who: "DIY or pro", cost: "$0 to clear snow; depends on the cause", see: "heat-pump-frozen-outdoor-unit" },
+      { cause: "Outdoor unit not running", signs: "Indoor fan runs, outdoor unit silent or humming; breaker off", who: "DIY or pro", cost: `$0 (breaker) to ${COST.capacitor} (capacitor)`, see: "ac-outdoor-unit-not-running" },
+      { cause: "Backup heat not working", signs: 'House falls behind only on the coldest days; "Aux" shows but the air stays lukewarm; heat-strip breaker tripped', who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
+      { cause: "Reversing valve stuck in cooling", signs: "Air from the vents is cold, not just lukewarm, all the time in Heat mode; the outdoor unit blows warm air", who: "Pro", cost: COST.reversingValve },
+      { cause: "Low refrigerant (a leak)", signs: "Heating has gotten weaker over weeks, frequent icing, hissing or oily spots on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` }
+    ],
+    steps: [
+      { title: "Set the thermostat correctly", text: "Set it to Heat, 2–3°F above the room temperature, fan on Auto, and turn off any schedule or hold. If it was on Cool or Auto with a low setting, that alone explains cold air." },
+      { title: "Rule out a defrost cycle", text: "In cold, damp weather a heat pump reverses for a few minutes to melt frost off the outdoor coil. During defrost the outdoor fan usually stops, the unit may steam, and the indoor air can feel cool. If heat returns within about 15 minutes, nothing is wrong." },
+      { title: "Replace the filter and open the vents", text: "A clogged filter or closed vents cut airflow, which makes a heat pump run hotter and less efficiently and can trip its safety controls. Fit a new filter and make sure supply and return grilles are open and clear." },
+      { title: "Clear the outdoor unit", text: "Brush snow off the top and sides and keep 2 feet clear around it. If the coil is solidly encased in ice that a defrost doesn't clear, see the frozen outdoor unit page. Don't chip ice off the coil." },
+      { title: "Use Emergency Heat only if the outdoor unit has failed", text: "Emergency Heat turns the heat pump off and heats with the backup heat alone, usually electric strips that cost about two to three times as much to run. It's the right setting to stay warm while you wait for a technician, not an everyday setting." }
+    ],
+    safetyNote: "Heat strips run on a separate high-voltage circuit; don't open the air handler to check them. Never add refrigerant yourself: it requires EPA certification, and newer systems use mildly flammable refrigerants.",
+    callPro: [
+      "The air is cold, not lukewarm, for more than 15 minutes in Heat mode",
+      "The outdoor unit stays encased in ice after a defrost cycle",
+      "The house can't keep up even on mild winter days",
+      "A breaker for the outdoor unit or the heat strips trips again after one reset"
+    ],
+    quoteFlags: [
+      "A refrigerant top-up with no leak search: heat pumps don't use up refrigerant",
+      "A reversing valve replacement quoted before anyone has checked the thermostat wiring and the valve's solenoid coil, which are cheaper fixes",
+      `A new system quoted because "heat pumps don't work in the cold": cold-climate models are rated to heat well below freezing`
+    ],
+    faqs: [
+      { q: "Why is my heat pump blowing cold air?", a: "Most often it's in a defrost cycle, which lasts a few minutes and then heat returns. If the air stays cold, check that the thermostat is on Heat and set above the room temperature. Air that is cold all the time in Heat mode can mean the reversing valve is stuck in cooling, which needs a technician." },
+      { q: "Is it normal for heat pump air to feel lukewarm?", a: "Yes. A heat pump delivers a larger volume of moderately warm air rather than short blasts of hot air like a gas furnace, so the air at the vent can feel only lukewarm against your hand. As long as the house reaches the set temperature, it's working." },
+      { q: "Should I switch my heat pump to Emergency Heat when it's very cold?", a: "Usually not. The thermostat brings in backup (auxiliary) heat automatically when the heat pump needs help. Emergency Heat turns the heat pump off entirely, which costs much more to run. Use it only when the outdoor unit has failed or is iced solid and you're waiting for a repair." },
+      { q: "At what temperature does a heat pump stop heating?", a: "It depends on the model. Older and standard heat pumps lose a lot of capacity below about freezing and lean on backup heat, while cold-climate models are designed to keep heating at 5°F (−15°C) and below. Check the low-temperature rating on your model's spec sheet." }
+    ],
+    related: ["heat-pump-defrost-mode", "heat-pump-frozen-outdoor-unit", "ac-outdoor-unit-not-running"],
+    extra: {
+      heading: "Is a heat pump worth it where you live?",
+      paragraphs: ["Whether a heat pump saves money over a furnace depends on what you heat with now and what you pay for electricity. Our heat pump vs central AC guide runs the numbers for gas, propane, oil and electric baseboard heat."],
+      link: { to: "/blog/heat-pump-vs-central-ac", label: "Heat pump vs central AC: what it costs to run" }
+    }
+  },
+  {
+    slug: "heat-pump-frozen-outdoor-unit",
+    name: "Heat pump iced up",
+    title: "Heat Pump Frozen in Winter? Ice on the Outdoor Unit",
+    h1: "Heat Pump Outdoor Unit Covered in Ice? What's Normal and What to Do",
+    description: "Some frost on a heat pump in winter is normal. Thick ice that doesn't clear isn't. How to tell the difference, the safe things to do, the causes and what repairs cost.",
+    group: "heat-pump",
+    summary: "Frost or thick ice on the outdoor unit that doesn't clear.",
+    published: "2026-10-21",
+    updated: "2026-10-21",
+    quick: [
+      "Normal frost between defrost cycles in cold, damp weather",
+      "Snow drifted against the unit or ice dripping onto it from a roof",
+      "Melt water refreezing under the unit because it sits too low",
+      "A failed defrost control board or sensor",
+      "An outdoor fan that has stopped",
+      "Low refrigerant from a leak"
+    ],
+    firstChecks: [
+      "How thick is it? A thin, even layer of white frost that clears every hour or so is normal. Clear ice that covers the coil and the top of the unit and never clears is not.",
+      "Watch for a defrost: within an hour or two, the outdoor fan should stop and the unit should steam for a few minutes, leaving the coil clear.",
+      "Look up: is water dripping onto the unit from a gutter or roof edge and freezing?",
+      "Look down: is the unit sitting in a puddle of ice, or buried in snow? It should be raised a few inches above the ground."
+    ],
+    causes: [
+      { cause: "Normal frost", signs: "Thin white frost that disappears during each defrost cycle", who: "DIY", cost: "$0 (normal)", see: "heat-pump-defrost-mode" },
+      { cause: "Snow, roof drip or poor drainage", signs: "Ice heaviest on the top or the bottom; unit sits low or under a roof edge", who: "DIY or pro", cost: "$0 to clear; a riser stand or gutter repair costs extra" },
+      { cause: "Failed defrost board or sensor", signs: "The unit never stops its fan or steams; ice keeps building", who: "Pro", cost: COST.defrostBoard },
+      { cause: "Outdoor fan not running", signs: "Compressor runs but the fan doesn't turn (outside defrost)", who: "Pro", cost: COST.condenserFan },
+      { cause: "Reversing valve sticking", signs: "Defrost starts but doesn't melt the ice; unit makes the defrost sound but the coil stays frozen", who: "Pro", cost: COST.reversingValve },
+      { cause: "Low refrigerant (a leak)", signs: "Icing has gotten worse over time, heating is weak, hissing or oily spots on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` }
+    ],
+    steps: [
+      { title: "Give it a defrost cycle", text: "If the frost is thin and even, leave it. The unit will reverse for a few minutes, the fan will stop and it will steam. That's normal and can happen every 30 to 90 minutes in freezing, damp weather." },
+      { title: "Clear snow, gently", text: "Brush snow off the top and away from the sides with a soft broom, and keep about 2 feet clear around the unit. Don't chip, scrape or hammer ice off the coil: the fins and tubes are thin and puncture easily." },
+      { title: "Melt heavy ice with water, not tools", text: "If thick ice won't clear and you're waiting for service, switch the system to Emergency Heat or off, then pour lukewarm (not hot) water over the coil from a watering can or hose. Never use a heat gun, open flame or chemical de-icer." },
+      { title: "Fix the drip and the drainage", text: "Water from a roof edge or a broken gutter freezes on the unit faster than any defrost can clear it. Redirect it, and if the unit sits on the ground, a riser or wall bracket keeps it above snow and melt water." },
+      { title: "Call if it ices up again", text: "If the coil ices solid again after you've cleared snow and fixed any drip, the defrost controls, fan or refrigerant charge need checking. Run it on Emergency Heat until then." }
+    ],
+    safetyNote: "Turn off power at the outdoor disconnect before touching the unit. Don't use sharp tools, heat guns or flames on ice.",
+    callPro: [
+      "The coil is encased in clear ice that doesn't clear after a defrost cycle",
+      "The unit never seems to go into defrost (no steam, the fan never stops)",
+      "The outdoor fan isn't spinning while the compressor runs",
+      "Ice comes back within a day of clearing it"
+    ],
+    quoteFlags: [
+      "A new outdoor unit quoted before the defrost board, sensor and fan have been tested",
+      "A refrigerant recharge with no leak search",
+      'A "winter cover" sold to keep a heat pump dry: covering a running heat pump blocks its airflow'
+    ],
+    faqs: [
+      { q: "Is it normal for a heat pump to have ice on it?", a: "A light, even layer of frost is normal in cold, damp weather; the defrost cycle clears it every so often. A heat pump encased in thick ice, especially on the top or with ice that never clears, isn't normal and points to snow, dripping water or a defrost problem." },
+      { q: "How do I defrost a frozen heat pump?", a: "Switch the thermostat to Emergency Heat or off, then pour lukewarm water over the coil to melt the ice. Don't chip it off. Once it's clear, return to Heat and watch whether it ices up again; if it does, call a technician." },
+      { q: "Can I cover my heat pump in winter?", a: "Not while it's in use. A heat pump needs air flowing through its coil to heat your house. A small roof or awning well above the unit can keep falling snow and ice off, as long as it doesn't restrict airflow." }
+    ],
+    related: ["heat-pump-defrost-mode", "heat-pump-not-heating", "ac-frozen-coil"]
+  },
+  {
+    slug: "heat-pump-defrost-mode",
+    name: "Heat pump steaming / defrost",
+    title: "Heat Pump Defrost Mode: Steam, Noises and Cool Air",
+    h1: "Heat Pump Steaming, Whooshing or Blowing Cool Air? Defrost Mode Explained",
+    description: "Steam from your heat pump, a loud whoosh, the fan stopping and cool air for a few minutes are usually just defrost mode. What's normal, how often, and when it's a problem.",
+    group: "heat-pump",
+    summary: "Steam from the outdoor unit, a whoosh, the fan stopping, cool air for a few minutes.",
+    published: "2026-10-21",
+    updated: "2026-10-21",
+    quick: [
+      "Normal defrost: the heat pump briefly runs in reverse to melt frost",
+      "Defrosting very often because of snow, dirt or poor airflow",
+      "A defrost cycle that doesn't end: a failed board or sensor",
+      "Backup heat not coming on during defrost, so the indoor air feels cold"
+    ],
+    firstChecks: [
+      "Time it: a normal defrost lasts about 2 to 10 minutes, up to about 15 in heavy frost.",
+      "Count them: in freezing, damp weather, defrosts every 30 to 90 minutes are normal. In mild, dry weather they should be rare.",
+      "Watch the outdoor fan: on most models it stops during defrost and starts again afterwards.",
+      "Look at the coil afterwards: it should be clear of frost."
+    ],
+    causes: [
+      { cause: "Normal defrost cycle", signs: "Whoosh, fan stops, steam for a few minutes, then normal heating resumes", who: "DIY", cost: "$0 (normal)" },
+      { cause: "Dirty coil or blocked airflow", signs: "Defrosts more often than usual; leaves or snow against the unit; a dirty indoor filter", who: "DIY", cost: `$0–${COST.filter.split("–")[1]}` },
+      { cause: "Backup heat not working during defrost", signs: "Indoor air is noticeably cold every time it defrosts", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
+      { cause: "Failed defrost board or sensor", signs: "Defrost cycles back to back, last well over 15 minutes, or never happen", who: "Pro", cost: COST.defrostBoard },
+      { cause: "Reversing valve or refrigerant problem", signs: "Defrost runs but doesn't clear the coil; heating weak afterwards", who: "Pro", cost: `${COST.reversingValve} valve, ${COST.refrigerant} leak repair` }
+    ],
+    steps: [
+      { title: "Let a cycle finish", text: "Don't switch the system off when you see steam. A defrost is the heat pump briefly running as an air conditioner so warm refrigerant melts frost off the outdoor coil. The steam is that melt water evaporating. Interrupting it leaves ice behind." },
+      { title: "Keep the outdoor unit clear", text: "Snow, leaves and dirt on the coil make frost build faster, so the unit defrosts more often. Keep 2 feet clear around it. In mild weather, a gentle rinse of the coil with the power off helps." },
+      { title: "Check the filter indoors", text: "A clogged filter makes the whole system work harder in heating, too. Replace it if it's gray." },
+      { title: "Note what's not normal", text: "Write down how long each defrost lasts and how often it happens. Cycles over 15 minutes, back-to-back cycles in dry weather, or no defrost at all while ice builds up are worth a service call, and the notes help the technician." }
+    ],
+    callPro: [
+      "Defrost cycles last much longer than 15 minutes or run back to back",
+      "Ice builds up and the unit never seems to defrost",
+      "You hear grinding or screeching, or smell burning (switch off and call)",
+      "The house gets cold every time it defrosts"
+    ],
+    quoteFlags: [
+      'A new system recommended because the unit "steams": steam during defrost is normal',
+      "A defrost board replaced without testing the coil sensor first"
+    ],
+    faqs: [
+      { q: "Why is steam coming out of my heat pump?", a: "It's almost always the defrost cycle. In cold weather, frost forms on the outdoor coil, and the heat pump periodically reverses to warm the coil and melt it. The melt water evaporates off the warm coil as steam. It's normal and stops within a few minutes." },
+      { q: "How often should a heat pump go into defrost?", a: "It depends on the weather and the controls. In freezing, damp weather, every 30 to 90 minutes is normal; in dry or milder weather it may rarely defrost at all. Each cycle usually lasts 2 to 10 minutes." },
+      { q: "Why does my heat pump blow cold air during defrost?", a: "During defrost the heat pump is moving heat to the outdoor coil, so it isn't heating the house for those few minutes. Most systems switch on backup heat to temper the air. If the air is noticeably cold every time, the backup heat may not be working." },
+      { q: "What is the loud whoosh from my heat pump?", a: "That's the reversing valve switching the direction of the refrigerant at the start and end of a defrost cycle. A short whoosh or hiss is normal. Grinding, screeching or banging isn't." }
+    ],
+    related: ["heat-pump-frozen-outdoor-unit", "heat-pump-not-heating", "ac-making-noise"]
+  }
+];
+function getSymptom(slug) {
+  return SYMPTOMS.find((s) => s.slug === slug);
+}
+const PATH$b = "/blog/ac-float-switch-flood";
+const PUBLISHED$2 = "2026-10-26";
+const TITLE$b = "AC Float Switch Failed? How Ours Flooded a Store Overnight";
+const HEADLINE$b = "The AC Leak That Flooded Our Store Overnight: Float Switches, Condensate Pumps and How to Test Them";
+const h2$i = "text-2xl font-bold text-gray-900 mt-10 mb-4";
+const p$i = "text-gray-700 leading-relaxed mb-4";
+const a$i = "text-teal-600 hover:text-teal-700 font-medium";
+const ext$2 = "text-teal-700 hover:underline";
+const th$i = "text-left p-3 font-semibold text-gray-900 border-b border-gray-200";
+const td$i = "p-3 border-b border-gray-100 text-gray-700 align-top";
+function BlogArticleFloatSwitchFlood() {
+  const description = "Our condensate pump failed and the float switch didn't shut the AC off. Over $1,000 of ceiling damage from a cheap part. What a float switch does, why it fails, and how to test yours.";
+  const faqs2 = [
+    {
+      q: "What does a float switch do on an air conditioner?",
+      a: "It watches for water backing up. A small float sits in the drain pan, the drain line or a secondary pan. If the drain clogs or the condensate pump fails, the water lifts the float, and the switch cuts the AC's control circuit so the unit stops making more water before it overflows."
+    },
+    {
+      q: "How do I know if my AC float switch is bad?",
+      a: "Test it. With the AC cooling, lift the float by hand or pour water into the pan it sits in until the float rises. The unit (or at least the outdoor unit) should shut off within a minute or so. If it keeps running, the switch is stuck, failed, wired wrong or bypassed, and it needs fixing before you rely on it."
+    },
+    {
+      q: "Will an AC run without a float switch?",
+      a: "Yes. That's the problem: a missing, disconnected or bypassed float switch doesn't stop the AC working, so nobody notices until the drain fails and there's nothing to shut the unit off. Never jumper a float switch out to get the AC running again; clear the drain instead."
+    },
+    {
+      q: "Does a condensate pump have its own safety switch?",
+      a: "Many do. Pumps such as Little Giant's VCMA-20ULS include an overflow safety switch that can be wired to shut down the air conditioner or to an alarm. It only protects you if someone actually connected it, so check whether the switch wires on your pump go anywhere."
+    },
+    {
+      q: "How often should I test the float switch?",
+      a: "Every time the unit is serviced, and every few months on units above a ceiling or anywhere a leak would do damage. It takes a couple of minutes. In hot, humid climates where the AC runs most of the year, check the drain and pump monthly."
+    },
+    {
+      q: "Why did my AC turn off and there's water in the drain pan?",
+      a: "That's a float switch doing its job: the drain or pump has failed and the switch shut the system off before it overflowed. Clear the drain line or fix the pump, empty the pan, and the AC should restart."
+    }
+  ];
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsxs(Helmet, { children: [
+      /* @__PURE__ */ jsx("title", { children: TITLE$b }),
+      /* @__PURE__ */ jsx("meta", { name: "description", content: description }),
+      /* @__PURE__ */ jsx("link", { rel: "canonical", href: `${SITE_URL}${PATH$b}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:type", content: "article" }),
+      /* @__PURE__ */ jsx("meta", { property: "og:url", content: `${SITE_URL}${PATH$b}` }),
+      /* @__PURE__ */ jsx("meta", { property: "og:title", content: HEADLINE$b }),
+      /* @__PURE__ */ jsx("meta", { property: "og:description", content: description }),
+      /* @__PURE__ */ jsx("meta", { property: "og:image", content: `${SITE_URL}/og-image.png` }),
+      /* @__PURE__ */ jsx("meta", { property: "article:author", content: `${SITE_URL}/about/mark-curant` }),
+      /* @__PURE__ */ jsx("meta", { property: "article:section", content: "Maintenance" }),
+      /* @__PURE__ */ jsx("meta", { name: "twitter:card", content: "summary_large_image" }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ path: PATH$b, headline: HEADLINE$b, description, datePublished: PUBLISHED$2, dateModified: PUBLISHED$2 })) }),
+      /* @__PURE__ */ jsx("script", { type: "application/ld+json", children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs2.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } }))
+      }) })
+    ] }),
+    /* @__PURE__ */ jsxs("main", { className: "max-w-4xl mx-auto px-4 py-12", children: [
+      /* @__PURE__ */ jsxs(Link, { to: "/blog", className: "inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 mb-8 transition-colors", children: [
+        /* @__PURE__ */ jsx(ArrowLeft, { className: "w-4 h-4" }),
+        "Back to Efficiency Hub"
+      ] }),
+      /* @__PURE__ */ jsxs("article", { className: "bg-white rounded-lg shadow-lg p-6 sm:p-8", children: [
+        /* @__PURE__ */ jsxs("header", { className: "mb-8", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-sm text-gray-500 mb-4", children: [
+            /* @__PURE__ */ jsx("span", { className: "bg-teal-100 text-teal-700 px-3 py-1 rounded-full font-medium", children: "Maintenance" }),
+            /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-1", children: [
+              /* @__PURE__ */ jsx(Clock, { className: "w-4 h-4" }),
+              " 7 min read"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsx("h1", { className: "text-3xl sm:text-4xl font-bold text-gray-900 mb-4", children: HEADLINE$b }),
+          /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-600", children: "A failed pump, a float switch that didn't do its job, and a ceiling that paid for both." }),
+          /* @__PURE__ */ jsx(ArticleByline, { updated: PUBLISHED$2 })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "rounded-lg border-2 border-teal-400 bg-teal-50 p-5 mb-8", children: [
+          /* @__PURE__ */ jsxs("p", { className: "flex items-center gap-2 text-lg font-bold text-gray-900 mb-2", children: [
+            /* @__PURE__ */ jsx(Droplets, { className: "w-6 h-6 text-teal-600" }),
+            " The short version"
+          ] }),
+          /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: "An air conditioner makes water, and a float switch is the part that shuts the AC off when that water can't get away. If it fails at the same time as the drain or condensate pump, nothing stops the unit, and the water ends up in your ceiling. Test the float switch whenever the unit is serviced: lift the float or fill the pan, and the AC should stop. It takes two minutes." })
+        ] }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "What happened in our store" }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "In one of our stores, the AC's condensate pump failed. That alone shouldn't have been a disaster, because the unit also has a float switch, wired separately from the pump, whose only job is to shut the AC off when water backs up. It failed too." }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "So the AC kept running all night, making water with nowhere to go, and it came through the ceiling. Staff arrived in the morning to a store floor that was sopping wet. There were gallons of water to clear, and it took a long while. Repairing the drywall and repainting came to over $1,000, before counting the cleanup." }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "The fix to the air conditioner itself was small: clean the condensate line and replace the float switch. The damage cost far more than the repair." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Where the water comes from, and where it's supposed to go" }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "As warm, humid air passes over the cold indoor coil, moisture condenses on it, the same way a cold drink sweats. In a humid climate a single unit can make gallons a day. The water drips into a drain pan under the coil and leaves through a drain line, either by gravity to the outside or a floor drain, or, where the unit sits too low or too far from a drain, through a condensate pump: a small box with a reservoir that switches on and pumps the water away when it fills." }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "Water backs up when something in that path stops working:" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "The drain line clogs" }),
+            " with algae and dirt. This is the most common cause, especially where the AC runs most of the year."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "The condensate pump fails" }),
+            ": the motor dies, its own float sticks, or the outlet tube blocks."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "The coil freezes" }),
+            " and then melts faster than the drain can carry the water away. See ",
+            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-frozen-coil", className: a$i, children: "AC frozen up" }),
+            "."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "The safety net: what a float switch does" }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "A float switch is a small float on a switch, mounted where backed-up water will reach it: in the main drain pan, in the drain line, or in a secondary pan under the unit. When the water rises, the float lifts and opens the switch, which breaks the low-voltage control circuit. The AC stops, so it stops making water. Depending on how it's wired, the whole system or just the outdoor unit shuts off. That's annoying, but it's the switch doing its job." }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "Many condensate pumps also have a safety switch of their own. Little Giant's VCMA-20ULS, for example, comes with one that can be wired to shut the air conditioner down or to an alarm. But the pump's switch is part of the pump: if the pump is the thing that fails, you want a separate switch too, and that's how our unit was set up. The separate switch is the one that has to work." }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "In the United States, the International Mechanical Code requires this kind of backup wherever an overflow could damage the building, which includes units above ceilings and in attics. The 2024 code lists four ways to do it: a secondary pan with its own drain to somewhere you'll see it, a separate overflow drain from the main pan, a secondary pan with a water-level switch that shuts the unit off, or a water-level switch in the main drain line or pan. Local codes vary, and older installations may have nothing at all." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Why float switches fail" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "The float sticks." }),
+            " The same algae and slime that clog drain lines can glue a float in place."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "It's mounted where the water can't reach it," }),
+            " or the pan isn't level, so water overflows on one side before the float lifts."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "It's not wired to anything," }),
+            " or it's wired so that it doesn't actually stop the unit."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Someone bypassed it." }),
+            " When a float switch keeps shutting the AC off, it's tempting to jumper it out to get the cooling back. That leaves the unit with no protection at all."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "It's old." }),
+            " Contacts corrode and plastic floats crack. It's a cheap part, so replace it if it's doubtful."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "None of these show up while everything else is working. A float switch only gets tested when the drain or pump fails, unless you test it on purpose." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "How to test a float switch and condensate pump" }),
+        /* @__PURE__ */ jsxs("ol", { className: "list-decimal pl-6 space-y-3 text-gray-700 mb-4", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Find the switch." }),
+            " Look in or on the drain pan, on the drain line near the unit (often a small cylinder on a T-fitting), and in any secondary pan. Some units have more than one."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Turn the AC on to cool" }),
+            " and wait until the outdoor unit is running."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Trip the switch." }),
+            " Lift the float gently by hand, or slowly pour water into the pan or fitting it sits in until the float rises."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Watch the unit." }),
+            " The outdoor unit (and often the indoor fan) should stop within a minute or so. If it keeps running, the switch isn't protecting you. Don't rely on it until a technician fixes or replaces it."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Reset." }),
+            " Lower the float or empty the water. The AC should restart after its usual delay."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Test the pump." }),
+            " Pour a cup or two of water into the pump's reservoir. It should switch on, empty the reservoir and switch off. Check that the outlet tube carries the water all the way to where it should go."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("p", { className: p$i, children: "Don't open electrical panels or pull wires to do this. Lifting the float and adding water are all you need. If a switch is missing, not wired or keeps tripping, that's a job for a technician." }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "The routine we'd recommend" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Clear the drain line regularly." }),
+            " Pour a cup of distilled white vinegar into the cleanout every month or two in the cooling season, monthly where the AC runs most of the year. Our ",
+            /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-leaking-water", className: a$i, children: "AC leaking water guide" }),
+            " shows how to clear a clog."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Test the float switch and pump" }),
+            " at every service visit, and ask the technician to show you. It takes two minutes."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Look in the secondary pan." }),
+            " Water there means the main drain is already backing up, even if nothing has leaked yet."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("strong", { children: "Pay most attention to units above ceilings." }),
+            " A unit in a closet leaks onto a floor; a unit above a ceiling leaks through it. A cheap battery water-leak alarm in the secondary pan or under the unit is extra warning if a switch ever fails."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "What it costs" }),
+        /* @__PURE__ */ jsx("div", { className: "overflow-x-auto mb-4", children: /* @__PURE__ */ jsxs("table", { className: "w-full min-w-[520px] text-sm border border-gray-200 rounded-lg", children: [
+          /* @__PURE__ */ jsx("thead", { className: "bg-gray-50", children: /* @__PURE__ */ jsxs("tr", { children: [
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "What" }),
+            /* @__PURE__ */ jsx("th", { className: th$i, children: "Typical cost" })
+          ] }) }),
+          /* @__PURE__ */ jsxs("tbody", { children: [
+            /* @__PURE__ */ jsxs("tr", { children: [
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Clearing a clogged drain line" }),
+              /* @__PURE__ */ jsxs("td", { className: td$i, children: [
+                "$10–$20 DIY (vinegar, wet/dry vacuum), ",
+                COST.drainClear,
+                " by a technician"
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxs("tr", { children: [
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Replacing a condensate pump" }),
+              /* @__PURE__ */ jsxs("td", { className: td$i, children: [
+                COST.condensatePump,
+                " installed"
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxs("tr", { children: [
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "A float switch (the part)" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "About $15–$75 for a basic switch" })
+            ] }),
+            /* @__PURE__ */ jsxs("tr", { children: [
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "A float switch installed, or a secondary pan retrofit" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "About $150–$550" })
+            ] }),
+            /* @__PURE__ */ jsxs("tr", { children: [
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "The water damage in our store (drywall repair and repainting)" }),
+              /* @__PURE__ */ jsx("td", { className: td$i, children: "Over $1,000, plus the cleanup" })
+            ] })
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxs("p", { className: "text-sm text-gray-500 mb-4", children: [
+          "U.S. prices. Drain clearing and pump costs match our ",
+          /* @__PURE__ */ jsx(Link, { to: "/blog/ac-repair-cost-2026", className: a$i, children: "AC repair cost guide" }),
+          "; float switch prices are PickComfort's May 2026 estimates. Our own figure is what we paid in the Caribbean."
+        ] }),
         /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Frequently asked questions" }),
         /* @__PURE__ */ jsx("div", { className: "space-y-5 mb-8", children: faqs2.map((f) => /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "text-lg font-bold text-gray-900 mb-1", children: f.q }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: f.a })
         ] }, f.q)) }),
+        /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Related" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-gray-700 mb-8", children: [
+          /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-leaking-water", className: a$i, children: "AC leaking water inside: causes and fixes" }) }),
+          /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-not-turning-on", className: a$i, children: "AC won't turn on (a tripped float switch is one reason)" }) }),
+          /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/troubleshooting/ac-frozen-coil", className: a$i, children: "AC frozen up" }) }),
+          /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: "/troubleshooting", className: a$i, children: "All AC troubleshooting guides" }) })
+        ] }),
         /* @__PURE__ */ jsx("h2", { className: h2$i, children: "Sources" }),
-        /* @__PURE__ */ jsx("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: /* @__PURE__ */ jsxs("li", { children: [
-          "Direction for summer and winter, raising the thermostat about ",
-          DEGREES_RAISED,
-          "°F, turning fans off in empty rooms: ",
-          /* @__PURE__ */ jsx("a", { href: "https://www.energy.gov/energysaver/fans-cooling", target: "_blank", rel: "noopener noreferrer", className: ext$2, children: "U.S. Department of Energy, Energy Saver: Fans for cooling" }),
-          "."
-        ] }) })
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            "Secondary condensate protection where overflow could damage the building (2024 International Mechanical Code, Section 307.2.3): ",
+            /* @__PURE__ */ jsx("a", { href: "https://open-exam-prep.com/study-guides/icc-commercial-mechanical/listings-access-safety/condensate-protection", target: "_blank", rel: "noopener noreferrer", className: ext$2, children: "ICC commercial mechanical study guide: condensate protection" }),
+            "; ",
+            /* @__PURE__ */ jsx("a", { href: "https://www.warrenforensics.com/2021/05/20/the-condensate-system-an-important-item-in-routine-hvac-maintenance/", target: "_blank", rel: "noopener noreferrer", className: ext$2, children: "Warren Forensics: the condensate system" }),
+            "."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            "Condensate pump safety switch that can shut down the AC or trigger an alarm: ",
+            /* @__PURE__ */ jsx("a", { href: "https://www.supplyhouse.com/Little-Giant-554425-VCMA-20ULS-80-GPH-Automatic-Condensate-Removal-Pump-w-Safety-Switch-14724000-p", target: "_blank", rel: "noopener noreferrer", className: ext$2, children: "Little Giant VCMA-20ULS product listing (SupplyHouse)" }),
+            "."
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            "Float switch part and installation prices (publisher's estimates, May 2026): ",
+            /* @__PURE__ */ jsx("a", { href: "https://www.pickcomfort.com/ac-float-switch-installation-cost-typical-pricing/", target: "_blank", rel: "noopener noreferrer", className: ext$2, children: "PickComfort: AC float switch installation cost" }),
+            "."
+          ] }),
+          /* @__PURE__ */ jsx("li", { children: "Our store flood: our own experience and repair bill." })
+        ] })
       ] }),
       /* @__PURE__ */ jsx(LeadMagnet, {})
     ] })
@@ -35846,1007 +37135,6 @@ function AcCostAsiaCountry() {
     ] })
   ] });
 }
-const TROUBLESHOOTING_UPDATED = "2026-10-21";
-const TROUBLESHOOTING_FIRST = "2026-10-14";
-const GROUPS = [
-  { id: "not-cooling", name: "Not cooling", blurb: "It runs, but the air isn't cold or the house won't cool down." },
-  { id: "wont-run", name: "Won't run", blurb: "Nothing happens, or part of the system stays off." },
-  { id: "cycling", name: "Runs too much or too little", blurb: "Short cycling, running nonstop, or a house that stays clammy." },
-  { id: "water-ice", name: "Water and ice", blurb: "Leaks, a full drain pan, or ice on the coil or lines." },
-  { id: "noise-smell", name: "Noises and smells", blurb: "Buzzing, banging, hissing, or a musty or burning smell." },
-  { id: "mini-split", name: "Ductless mini-splits", blurb: "Error codes, blinking lights and resets on wall-mounted units." },
-  { id: "heat-pump", name: "Heat pumps in winter", blurb: "Not heating, ice on the outdoor unit, steam and defrost cycles." }
-];
-const COST = {
-  serviceCall: "$75–$200",
-  capacitor: "$150–$400",
-  contactor: "$150–$300",
-  thermostat: "$100–$400",
-  condenserFan: "$400–$800",
-  blower: "$500–$1,200",
-  refrigerant: "$400–$2,400",
-  evapCoil: "$800–$1,600",
-  compressor: "$1,500–$3,000",
-  drainClear: "$75–$200",
-  drainPan: "$200–$600",
-  condensatePump: "$150–$400",
-  condenserClean: "$100–$300",
-  filter: "$5–$20",
-  electrical: "$150–$600",
-  coilDuctCleaning: "$100–$600",
-  burningRepair: "$150–$800",
-  breakerTrip: "$150–$1,000",
-  ductSealing: "$500–$2,000",
-  /** Homewyse national estimate, May 2026 ($2,774–$3,285 per unit installed) */
-  dehumidifier: "$2,800–$3,300",
-  /** PickHVAC heat pump parts guide, May 2026 ($350–$1,200 installed); also in /blog/ac-repair-cost-2026 */
-  reversingValve: "$350–$1,200",
-  /** HomeAdvisor heat pump repair cost guide, updated June 2026 */
-  defrostBoard: "$200–$650"
-};
-const SYMPTOMS = [
-  {
-    slug: "ac-blowing-warm-air",
-    fromExperience: "My son, who's studying for his HVAC certification, cleans our units: clearing debris from around the outdoor unit and rinsing the coil with the power off. It costs nothing, and a dirty coil is one of the most common reasons an AC struggles on hot afternoons.",
-    name: "AC blowing warm air",
-    title: "AC Blowing Warm Air? Causes, Fixes and Repair Costs",
-    h1: "AC Blowing Warm Air? Causes, What to Check and What Repairs Cost",
-    description: "Why your air conditioner is running but blowing warm air: the free checks to do first, the likely causes from thermostat to refrigerant, and typical repair costs.",
-    group: "not-cooling",
-    summary: "The fan runs but the air coming out of the vents is warm or barely cool.",
-    quick: [
-      "Thermostat set to Heat, or the fan set to On instead of Auto",
-      "A clogged air filter",
-      "The outdoor unit isn't running (tripped breaker, failed capacitor or contactor)",
-      "A dirty outdoor coil that can't get rid of heat",
-      "A frozen indoor coil",
-      "Low refrigerant from a leak"
-    ],
-    firstChecks: [
-      "Thermostat: mode on Cool, fan on Auto, temperature set at least 3°F below the room.",
-      "Air filter: if it's gray and you can't see light through it, replace it.",
-      "Outdoor unit: with the system calling for cooling, is the fan on top spinning and can you hear the compressor running?",
-      "Breakers: check both the indoor unit's breaker and the outdoor unit's breaker, plus the disconnect box beside the outdoor unit."
-    ],
-    causes: [
-      { cause: "Thermostat on Heat or fan on On", signs: "Air is warm between cooling cycles, or the fan never stops", who: "DIY", cost: "$0" },
-      { cause: "Clogged air filter", signs: "Weak airflow from vents, filter visibly gray or matted", who: "DIY", cost: COST.filter },
-      { cause: "Outdoor unit not running", signs: "Indoor fan blows, outdoor unit silent or humming with the fan still", who: "DIY or pro", cost: `$0 (breaker) to ${COST.capacitor} (capacitor)`, see: "ac-outdoor-unit-not-running" },
-      { cause: "Dirty outdoor (condenser) coil", signs: "Unit runs but struggles on hot afternoons; fins matted with dirt, grass or lint", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
-      { cause: "Frozen indoor coil", signs: "Ice on the large copper line, weak airflow, water as it thaws", who: "DIY or pro", cost: "$0 to thaw; depends on the cause", see: "ac-frozen-coil" },
-      { cause: "Low refrigerant (a leak)", signs: "Cooling has gotten worse over weeks, long run times, ice, hissing, oily spots on lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
-      { cause: "Failing compressor", signs: "Outdoor fan runs but no cooling, loud clanking or humming, breaker trips", who: "Pro", cost: COST.compressor }
-    ],
-    steps: [
-      { title: "Reset the thermostat", text: "Set it to Cool, fan on Auto, and 3–5°F below the current room temperature. If the screen is blank, replace the batteries. Wait 5–10 minutes: many systems have a built-in delay before the outdoor unit starts." },
-      { title: "Replace the filter", text: "A clogged filter starves the indoor coil of air, which cuts cooling and can freeze the coil. Note the size printed on the frame and the airflow arrow, which points toward the unit." },
-      { title: "Check the outdoor unit while it should be running", text: "Stand by it with the thermostat calling for cooling. You should hear the compressor and see the fan spinning, with warm air blowing out of the top. If it's silent or humming with the fan still, go to the outdoor unit page." },
-      { title: "Feel the copper lines", text: "After 15 minutes of running, the larger insulated copper line at the outdoor unit should feel cold and may sweat. If it's warm, the system isn't moving heat. If it has ice on it, the coil is freezing." },
-      { title: "Rinse the outdoor coil", text: "Turn off power at the disconnect beside the unit. Clear leaves and grass, then hose the fins gently from the outside. Don't use a pressure washer, and don't bend the fins. Keep plants and fences at least 2 feet away." }
-    ],
-    callPro: [
-      "The outdoor unit hums but the fan doesn't spin, or it doesn't start at all with the breaker on",
-      "Ice comes back after you've thawed the coil and replaced the filter",
-      "You hear hissing, or see oily residue on the copper lines or fittings",
-      "The breaker trips again after one reset"
-    ],
-    quoteFlags: [
-      `A refrigerant "top-up" without a leak search. Refrigerant doesn't get used up; if it's low, it's leaking.`,
-      "A new system recommended before anyone has checked the capacitor, contactor and airflow",
-      "A capacitor priced well above the typical $150–$400 installed"
-    ],
-    faqs: [
-      { q: "Why is my AC running but blowing warm air?", a: "Most often the thermostat is set wrong, the filter is clogged, or the outdoor unit isn't running, which leaves the indoor fan blowing uncooled air. Check those three first. If they're fine, the cause is usually a dirty outdoor coil, a frozen indoor coil or low refrigerant." },
-      { q: "Can low refrigerant make an AC blow warm air?", a: "Yes. With too little refrigerant the system can't absorb enough heat, so the air comes out barely cool, and the indoor coil often freezes. Air conditioners don't use up refrigerant, so low refrigerant means a leak. Finding and fixing it typically costs $400–$2,400 depending on the leak and the refrigerant." },
-      { q: "How long should I wait before calling for service?", a: "If the thermostat, filter and breakers check out, give it one more 15-minute run. If the air is still warm or the outdoor unit isn't running, turn the system off and call. Running it with a failed outdoor fan or low refrigerant can damage the compressor, which is the most expensive part." }
-    ],
-    related: ["ac-outdoor-unit-not-running", "ac-frozen-coil", "ac-not-turning-on"]
-  },
-  {
-    slug: "ac-not-turning-on",
-    name: "AC won't turn on",
-    title: "AC Won't Turn On? Causes, Checks and Repair Costs",
-    h1: "AC Won't Turn On? What to Check Before You Call",
-    description: "Air conditioner completely dead? The free checks that fix most no-start problems (thermostat, breakers, switches, a full drain pan) and what repairs cost when it's more.",
-    group: "wont-run",
-    summary: "Nothing happens when you lower the thermostat: no fan, no outdoor unit.",
-    quick: [
-      "Thermostat: dead batteries, wrong mode or a schedule overriding it",
-      "A tripped breaker or blown fuse",
-      "The service switch by the indoor unit is off, or the panel door isn't closed",
-      "A full drain pan has tripped the float (safety) switch",
-      "A blown low-voltage fuse or failed transformer"
-    ],
-    firstChecks: [
-      'Thermostat screen: blank means batteries or power. Set it to Cool, 3–5°F below room temperature, and switch off any schedule or "hold" setting.',
-      "Wait 5–10 minutes. Many systems have a restart delay after a setting change or power interruption.",
-      "Breakers: there are usually two, one for the indoor unit (furnace or air handler) and one for the outdoor unit.",
-      "Service switch: a light-style switch on or near the indoor unit. It's easy to flip off by mistake."
-    ],
-    causes: [
-      { cause: "Thermostat batteries, settings or schedule", signs: 'Blank screen, "Heat" or "Off" mode, a schedule holding a higher temperature', who: "DIY", cost: "$0–$10" },
-      { cause: "Failed thermostat", signs: "Screen on and set correctly, but nothing starts; works with a test jumper (pro)", who: "DIY or pro", cost: COST.thermostat },
-      { cause: "Tripped breaker", signs: "Breaker in the middle or off position", who: "DIY", cost: "$0 to reset once; service call if it trips again", see: "ac-tripping-breaker" },
-      { cause: "Blown fuse in the outdoor disconnect", signs: "Breaker fine but the outdoor unit has no power; the disconnect box holds cartridge fuses", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
-      { cause: "Service switch off or panel door open", signs: "Switch by the indoor unit off; the blower door has a safety switch that cuts power when it isn't seated", who: "DIY", cost: "$0" },
-      { cause: "Full drain pan (float switch)", signs: "Water in the drain pan or a secondary pan; the system shuts off to prevent a leak", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
-      { cause: "Blown low-voltage fuse or failed transformer", signs: "Thermostat dead even with fresh batteries; often after a surge or a wiring short", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
-      { cause: "Failed capacitor or contactor", signs: "Indoor fan runs but the outdoor unit doesn't", who: "Pro", cost: `${COST.capacitor} capacitor, ${COST.contactor} contactor`, see: "ac-outdoor-unit-not-running" }
-    ],
-    steps: [
-      { title: "Check the thermostat", text: "Replace the batteries if it has them, even if the screen is on. Set Cool, fan Auto, and a temperature well below the room. Turn off any schedule or vacation hold. Smart thermostats can lose their connection to the system; check the app for an error." },
-      { title: "Wait for the restart delay", text: "Give it 5–10 minutes. Many thermostats and outdoor units wait before starting to protect the compressor, and it's easy to mistake that for a fault." },
-      { title: "Reset breakers once", text: "Find the breakers for the indoor and outdoor units. A tripped breaker sits in the middle; push it fully off, then on. Reset only once. If it trips again, leave it off and call a technician." },
-      { title: "Check the switches", text: "Make sure the service switch near the indoor unit is on, and that the blower compartment door is fully seated. Outside, check that the disconnect box beside the outdoor unit is switched on or its pull-out block is fully inserted." },
-      { title: "Look in the drain pan", text: "If there's standing water in the pan under the indoor unit, or in the secondary pan beneath it, the float switch has probably shut the system off. Clearing the drain line usually brings it back. See the leaking water page for how." }
-    ],
-    callPro: [
-      "A breaker trips again after one reset",
-      "You smell burning, or see scorch marks in the disconnect box or panel",
-      "The thermostat has power and the right settings, but the system doesn't respond",
-      "You hear clicking or humming, but nothing starts"
-    ],
-    quoteFlags: [
-      "A new thermostat recommended without checking the fuse and transformer",
-      "A diagnostic fee above $200 outside a major city",
-      "Pressure to replace the system for a no-start problem before the basics are tested"
-    ],
-    faqs: [
-      { q: "Why won't my AC turn on even though the thermostat is on?", a: "The most common reasons are a tripped breaker, the service switch near the indoor unit being off, the blower door not being closed, or a full drain pan tripping the float switch. If all of those check out, the low-voltage fuse or transformer may have failed, which needs a technician." },
-      { q: "Is there a reset button on an air conditioner?", a: "Most central systems don't have a single reset button. The equivalent is turning the system off at the thermostat, switching off both breakers for a minute, then turning them back on and waiting 5–10 minutes. Some units have a reset on the control board or a high-pressure switch, but those should be left to a technician, because a tripped safety switch means something caused it." },
-      { q: "Can a clogged drain stop the AC from turning on?", a: "Yes. Many systems have a float switch in the drain pan or drain line that shuts the AC off when water backs up, to stop it flooding the house. Clearing the drain line usually lets it restart." }
-    ],
-    related: ["ac-leaking-water", "ac-outdoor-unit-not-running", "ac-not-working-after-power-outage"]
-  },
-  {
-    slug: "ac-frozen-coil",
-    name: "AC frozen up",
-    title: "AC Frozen Up? Ice on the Coil or Lines: Causes and Fixes",
-    h1: "AC Frozen Up? Why There's Ice on the Coil or Lines and How to Fix It",
-    description: "Ice on your air conditioner's copper lines or indoor coil? How to thaw it safely, the causes from a dirty filter to low refrigerant, and what each repair costs.",
-    group: "water-ice",
-    summary: "Ice on the copper lines or indoor coil, weak airflow, water as it melts.",
-    quick: [
-      "A clogged filter or blocked return vents restricting airflow",
-      "Closed or blocked supply vents",
-      "Low refrigerant from a leak",
-      "A dirty indoor (evaporator) coil",
-      "A weak or failing blower motor",
-      "Running the AC on cool nights (below about 60°F outside; check your manual for your unit's limit)"
-    ],
-    firstChecks: [
-      "Turn cooling off now. Running a frozen coil can send liquid refrigerant back to the compressor and damage it.",
-      "Air filter: replace it if it's dirty.",
-      "Vents: open supply registers and clear furniture or curtains away from return grilles.",
-      "Indoor fan: is air coming out of the vents at all when the fan runs?"
-    ],
-    causes: [
-      { cause: "Clogged filter or blocked returns", signs: "Weak airflow everywhere, filter gray", who: "DIY", cost: COST.filter },
-      { cause: "Closed supply vents", signs: 'Several rooms with vents shut; often done to "save energy"', who: "DIY", cost: "$0" },
-      { cause: "Low refrigerant (a leak)", signs: "Freezing keeps coming back with a clean filter; cooling has gotten worse over time", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
-      { cause: "Dirty indoor coil", signs: "Old system, filters often skipped; dust matted on the coil", who: "Pro", cost: `${COST.serviceCall} service call plus cleaning` },
-      { cause: "Weak or failing blower motor", signs: "Fan sounds slow or laboring; airflow weak with a clean filter", who: "Pro", cost: COST.blower },
-      { cause: "Running in cool weather", signs: "Freezes on mild nights, fine on hot days", who: "DIY", cost: "$0" }
-    ],
-    steps: [
-      { title: "Switch cooling off and the fan on", text: "Set the thermostat to Off and the fan to On. Blowing room air across the coil thaws it much faster than leaving everything off. Expect a few hours, longer for heavy ice. Don't chip or scrape the ice; the coil fins and tubes are easily damaged." },
-      { title: "Protect against the melt water", text: "A lot of water comes off a thawing coil at once. Put towels around the indoor unit and check that the drain pan isn't overflowing." },
-      { title: "Fix the airflow", text: "Fit a new filter, open all supply vents and clear the return grilles. These are the most common causes, and the only ones you can fix yourself." },
-      { title: "Restart and watch", text: "When the coil and lines are completely clear and dry, switch back to Cool. Check the large copper line at the outdoor unit after an hour: cold and sweating is normal, frost or ice is not." }
-    ],
-    safetyNote: "Don't use a hair dryer or heat gun on the coil, and never try to add refrigerant yourself. Newer systems use mildly flammable refrigerants (R-454B, R-32), and handling refrigerant requires EPA certification.",
-    callPro: [
-      "Ice comes back within a day or two after thawing with a clean filter and open vents",
-      "Airflow from the vents is weak even with a new filter",
-      "You hear hissing or see oily spots on the lines (signs of a leak)"
-    ],
-    quoteFlags: [
-      "A refrigerant recharge with no leak search or repair: it will freeze again",
-      "A new coil quoted before anyone has checked airflow and the refrigerant charge"
-    ],
-    faqs: [
-      { q: "Why is my AC freezing up?", a: "An evaporator coil freezes when it gets too cold, which happens when too little warm air passes over it (a dirty filter, blocked vents, a failing blower) or when there's too little refrigerant. Airflow problems are the most common and the easiest to fix." },
-      { q: "How long does it take for a frozen AC to thaw?", a: "Usually a few hours with the fan on and cooling off, and up to a day for heavy ice. Don't restart cooling until the coil and copper lines are completely clear." },
-      { q: "Can I run my AC while it's frozen?", a: "No. A frozen coil cools almost nothing, and running it can push liquid refrigerant back to the compressor, which can damage it. Turn cooling off and run the fan until the ice is gone." }
-    ],
-    related: ["ac-blowing-warm-air", "ac-leaking-water", "ac-not-turning-on"]
-  },
-  {
-    slug: "ac-leaking-water",
-    fromExperience: "My son has replaced condensate pumps on our units. It's a manageable job for someone handy, as long as the power is off and the new pump matches the old one's capacity and connections. If water keeps appearing after the drain line is clear, check the pump.",
-    name: "AC leaking water",
-    title: "AC Leaking Water Inside? Causes, Fixes and Costs",
-    h1: "AC Leaking Water Inside? Causes and How to Fix It",
-    description: "Water around your indoor AC unit usually means a clogged condensate drain. How to clear it yourself, the other causes (pan, pump, frozen coil) and what repairs cost.",
-    group: "water-ice",
-    summary: "Water around the indoor unit, a dripping ceiling or a full drain pan.",
-    quick: [
-      "A clogged condensate drain line (algae and dirt), the most common cause by far",
-      "A frozen coil melting faster than the drain can carry it away",
-      "A failed condensate pump",
-      "A cracked or rusted drain pan",
-      "A drain line that has come loose"
-    ],
-    firstChecks: [
-      "Turn the system off at the thermostat to stop more water being produced.",
-      "Look for ice on the indoor coil or copper lines. If there is any, the coil is freezing.",
-      "Check the drain pan under the indoor unit for standing water.",
-      "If you have a condensate pump (a small box with a tube, near the unit), check whether it's full."
-    ],
-    causes: [
-      { cause: "Clogged drain line", signs: "Standing water in the pan, overflow, system shut off by a float switch", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro` },
-      { cause: "Frozen coil melting", signs: "Ice on the coil or lines, weak airflow", who: "DIY or pro", cost: "Depends on the cause", see: "ac-frozen-coil" },
-      { cause: "Failed condensate pump", signs: "Pump reservoir full, pump doesn't switch on, water around it", who: "DIY or pro", cost: COST.condensatePump },
-      { cause: "Cracked or rusted drain pan", signs: "Drain clear but water still drips from under the unit", who: "Pro", cost: COST.drainPan },
-      { cause: "Loose or disconnected drain line", signs: "Water at a joint in the PVC line", who: "DIY", cost: "$0–$20" }
-    ],
-    steps: [
-      { title: "Turn the system off and dry up", text: "Switch off cooling at the thermostat and turn off power to the indoor unit. Soak up water around the unit, and use a wet/dry vacuum to empty the drain pan." },
-      { title: "Find the drain line", text: "It's usually a 3/4-inch PVC pipe leaving the indoor unit, often with a T-shaped fitting and a cap (the cleanout) near the unit. Follow it to where it ends outside or at a floor drain." },
-      { title: "Clear the clog from outside", text: "Hold a wet/dry vacuum hose over the outside end of the line, seal it with your hand or a rag, and run it for a minute or two. You'll often pull out a plug of slime." },
-      { title: "Flush from the cleanout", text: "Remove the cap and pour in a cup of distilled white vinegar, then some water to check it flows freely. Check your unit's manual first: a few manufacturers recommend against certain cleaners." },
-      { title: "Check the pump and switch", text: "If you have a condensate pump, pour a little water into its reservoir: it should switch on and pump it away. Restore power, set the thermostat to Cool, and check the pan stays dry after an hour." }
-    ],
-    callPro: [
-      "Water keeps coming back after clearing the drain",
-      "Water is dripping through a ceiling (an attic unit's pan may be overflowing or rusted through)",
-      "The condensate pump doesn't switch on",
-      "The coil is freezing"
-    ],
-    quoteFlags: [
-      "A new coil or system for a leak that a drain clearing would fix",
-      "Drain clearing priced well above $200 without other work"
-    ],
-    faqs: [
-      { q: "Why is my AC leaking water inside the house?", a: "Air conditioners pull moisture out of the air and drain it away through a condensate line. If that line clogs with algae and dirt, the water backs up and overflows the drain pan. That's the cause most of the time. A frozen coil, a failed condensate pump or a cracked pan are the other usual suspects." },
-      { q: "How do I unclog my AC drain line?", a: "Turn off the system, then use a wet/dry vacuum on the outside end of the drain line for a minute or two to pull out the clog. Then pour a cup of distilled white vinegar into the cleanout near the indoor unit, followed by water to check it flows." },
-      { q: "How often should I clean the AC drain line?", a: "Pour vinegar into the cleanout every month or two during the cooling season. In hot, humid places where the AC runs most of the year, algae grows fast and monthly is worth it." }
-    ],
-    related: ["ac-frozen-coil", "ac-not-turning-on", "ac-blowing-warm-air"]
-  },
-  {
-    slug: "ac-outdoor-unit-not-running",
-    fromExperience: "My son, who's studying for his HVAC certification, has identified failed capacitors on our units. It's one of the cheapest repairs on this list and a common reason an outdoor unit hums without starting, so ask the technician to test it before anything more expensive. A capacitor holds a dangerous charge, so the replacement itself is a job for someone trained.",
-    name: "Outdoor unit not running",
-    title: "AC Outdoor Unit Not Running? Causes and Repair Costs",
-    h1: "AC Outdoor Unit Not Running? Why the Fan or Compressor Won't Start",
-    description: "Indoor fan running but the outdoor AC unit is silent, humming or the fan won't spin? The causes (capacitor, contactor, breaker, fan motor) and what each repair costs.",
-    group: "wont-run",
-    summary: "The indoor fan blows but the outside unit is silent, humming or its fan is still.",
-    quick: [
-      "A tripped breaker or blown fuse in the outdoor disconnect",
-      "A failed capacitor (often humming with the fan still)",
-      "A failed or stuck contactor (silent, or clicks without starting)",
-      "A failed condenser fan motor (compressor runs, fan doesn't)",
-      "The compressor's overload protector has tripped from heat"
-    ],
-    firstChecks: [
-      "Thermostat: set to Cool and below room temperature, so it's actually calling for cooling.",
-      "Breaker for the outdoor unit, and the disconnect box beside it.",
-      "Listen: is it silent, humming, or clicking? It narrows the cause down.",
-      "Look: is the fan on top spinning? Is the compressor (the round tank inside) running?"
-    ],
-    causes: [
-      { cause: "Tripped breaker", signs: "Completely silent, breaker tripped", who: "DIY", cost: "$0 to reset once; service call if it trips again", see: "ac-tripping-breaker" },
-      { cause: "Blown fuse in the disconnect box", signs: "Completely silent, breaker fine; fuses in the disconnect box beside the unit", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
-      { cause: "Failed capacitor", signs: "Humming, fan not spinning or starting slowly; a bulging or leaking capacitor", who: "Pro", cost: COST.capacitor },
-      { cause: "Failed or stuck contactor", signs: "Silent while the thermostat calls, or a click with no start; burnt or pitted contacts, sometimes ants", who: "Pro", cost: COST.contactor },
-      { cause: "Failed condenser fan motor", signs: "Compressor runs but the fan doesn't spin; unit gets very hot and shuts off", who: "Pro", cost: COST.condenserFan },
-      { cause: "Compressor overload tripped", signs: "Unit shuts off on hot days and restarts later; often a dirty coil or bad fan behind it", who: "DIY or pro", cost: `${COST.condenserClean} coil cleaning, or the underlying repair` },
-      { cause: "Failed compressor", signs: "Fan runs, compressor won't start, breaker trips; usually on older systems", who: "Pro", cost: COST.compressor }
-    ],
-    steps: [
-      { title: "Confirm it's being asked to run", text: "Set the thermostat to Cool, well below room temperature, and wait 5–10 minutes for any restart delay. If the indoor fan runs, the thermostat is calling." },
-      { title: "Check the breaker and disconnect", text: "Reset a tripped breaker once. Check the disconnect box beside the unit is on. If it has fuses, a technician can test them." },
-      { title: "Listen and look", text: "Silent usually points to power or the contactor. Humming with a still fan usually points to the capacitor. Fan off but compressor running points to the fan motor. Tell the technician what you heard; it speeds up the diagnosis." },
-      { title: "Turn it off if it hums", text: "If the unit hums without starting, switch it off at the thermostat and the disconnect. A motor trying to start against a failed capacitor overheats quickly." },
-      { title: "Clean around it", text: "With power off, clear leaves, grass and debris, and rinse the fins from the outside. A clogged coil makes the compressor overheat and trip its overload." }
-    ],
-    safetyNote: "Don't push the fan blades with a stick to get them started. It's a common tip online, but the fan can start suddenly. And don't touch the capacitor: it stores a dangerous charge even with the power off.",
-    callPro: [
-      "The unit hums but doesn't start",
-      "The fan doesn't spin while the compressor runs",
-      "The breaker trips again after one reset",
-      "You see burn marks on wires or the contactor"
-    ],
-    quoteFlags: [
-      "A capacitor priced well above $400 installed. The part itself is inexpensive.",
-      "A compressor or full system recommended without testing the capacitor and contactor first",
-      "For a compressor on a system over about 10 years old, compare the quote with replacement using the repair vs replace calculator before agreeing"
-    ],
-    faqs: [
-      { q: "Why is my AC outdoor unit not running but the indoor fan is?", a: "The most common causes are a tripped breaker, a failed capacitor or a failed contactor. A capacitor failure usually makes the unit hum without the fan spinning; a contactor problem usually leaves it silent. Both are common, relatively cheap repairs ($150–$400)." },
-      { q: "Why is my AC outdoor unit humming but not running?", a: "Usually the capacitor that gives the fan motor and compressor their starting boost has failed. Turn the system off: a motor straining to start will overheat. A capacitor replacement typically costs $150–$400 installed." },
-      { q: "Should I keep running the AC if the outdoor fan doesn't spin?", a: "No. Without the fan, the compressor can't get rid of heat and will overheat, trip its overload and, over time, fail. Turn it off and have the fan motor or capacitor checked." }
-    ],
-    related: ["ac-blowing-warm-air", "ac-not-turning-on", "ac-not-working-after-power-outage"]
-  },
-  {
-    slug: "ac-not-working-after-power-outage",
-    name: "AC not working after a power outage",
-    title: "AC Not Working After a Power Outage? What to Check",
-    h1: "AC Not Working After a Power Outage? What to Check and How to Prevent It",
-    description: "Power's back but the air conditioner isn't? The restart delay, thermostat and breaker checks, signs of surge damage, mini-split resets, and how to protect the system next time.",
-    group: "wont-run",
-    summary: "Power is back on, but the AC won't start or doesn't cool.",
-    quick: [
-      "A built-in restart delay: it hasn't started yet",
-      "The thermostat lost its settings or schedule",
-      "A breaker tripped when power came back",
-      "A blown low-voltage fuse or transformer from a surge",
-      "A failed capacitor or control board from a surge or brownout"
-    ],
-    firstChecks: [
-      "Wait 10 minutes. Many systems hold off restarting to protect the compressor.",
-      "Thermostat: check the mode, temperature and clock, and replace the batteries.",
-      "Breakers: check both the indoor and outdoor unit breakers.",
-      "Smell: any burning smell at the indoor unit, outdoor unit or panel means leave it off and call."
-    ],
-    causes: [
-      { cause: "Restart delay", signs: "Indoor fan may run; outdoor unit starts after a few minutes", who: "DIY", cost: "$0" },
-      { cause: "Thermostat reset or lost settings", signs: "Blank or flashing screen, wrong mode or clock", who: "DIY", cost: "$0–$10" },
-      { cause: "Tripped breaker", signs: "Breaker in the middle position", who: "DIY or pro", cost: "$0 to reset; service call if it trips again", see: "ac-tripping-breaker" },
-      { cause: "Blown low-voltage fuse or transformer", signs: "Thermostat has no power even with new batteries", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
-      { cause: "Failed capacitor", signs: "Outdoor unit hums but doesn't start", who: "Pro", cost: COST.capacitor, see: "ac-outdoor-unit-not-running" },
-      { cause: "Damaged control board", signs: "Blinking error lights on the board, no response to the thermostat; common after lightning or surges", who: "Pro", cost: `${COST.serviceCall} service call plus the board` }
-    ],
-    steps: [
-      { title: "Give it 10 minutes", text: "Leave the thermostat calling for cooling and wait. Restart delays of 3–5 minutes are common, and some units wait longer after a power cut." },
-      { title: "Reset the thermostat", text: "Check the mode, set temperature and clock, and replace the batteries. Smart thermostats may need to reconnect to Wi-Fi before a schedule works again." },
-      { title: "Power-cycle the system", text: "Turn the thermostat off, switch off both breakers for a minute, then turn them back on and set the thermostat to Cool. This clears many control-board lockouts." },
-      { title: "Reset a mini-split", text: "For a ductless system, turn it off at the breaker for a minute, then restart it with the remote. If the indoor unit shows a blinking light or error code, note the code and pattern; it tells the technician what failed." },
-      { title: "Stop if anything is wrong", text: "If a breaker trips again, you smell burning, or the outdoor unit hums without starting, switch everything off and call. Repeated restarts on a damaged part can turn a small repair into a compressor replacement." }
-    ],
-    callPro: [
-      "A breaker trips again after one reset",
-      "There's a burning smell, or scorch marks on wiring",
-      "The thermostat has no power with fresh batteries",
-      "The outdoor unit hums but won't start"
-    ],
-    quoteFlags: [
-      "A new system recommended for surge damage before the capacitor, fuse and board are tested",
-      "Ask whether your homeowner's insurance covers surge or lightning damage before paying for a large repair"
-    ],
-    faqs: [
-      { q: "Why won't my AC turn back on after a power outage?", a: "Often it just hasn't restarted yet: many systems wait several minutes after power returns. If it still won't run after 10 minutes, check the thermostat settings and batteries, then the breakers. A surge when power comes back can also blow the low-voltage fuse or damage a capacitor or control board." },
-      { q: "How do I reset my AC after a power outage?", a: "Turn the thermostat off, switch off the breakers for the indoor and outdoor units for about a minute, turn them back on, then set the thermostat to Cool and wait 5–10 minutes." },
-      { q: "Should I turn off my AC during a power outage?", a: "Yes. Turning the system off at the thermostat (and the breakers, if a storm is coming) means it won't try to start during the surges and brownouts that often come when power is restored. Wait a few minutes after power is stable before turning it back on." }
-    ],
-    related: ["ac-not-turning-on", "ac-outdoor-unit-not-running", "ac-blowing-warm-air"],
-    extra: {
-      heading: "How to protect your AC next time",
-      paragraphs: [
-        "Where I run my stores, outages and brownouts are part of normal life, and I've lost refrigeration compressors to brownouts. Those units now run on protectors that cut power when the voltage drops and wait before reconnecting. For the air conditioners, we stagger the restarts so the units don't all start at once when power comes back, and before a hurricane every unit and its breaker gets switched off.",
-        "Most of that is free: turn the AC off when the power goes out, and wait a few minutes after it's stable before turning it back on. Beyond that, a voltage monitor at the outdoor unit and a whole-house surge protector are the main options."
-      ],
-      link: { to: "/blog/protect-air-conditioner-power-surges-outages", label: "How to protect your AC from power surges, brownouts and outages" }
-    }
-  },
-  {
-    slug: "ac-making-noise",
-    published: "2026-10-17",
-    updated: "2026-10-17",
-    name: "AC making noise",
-    title: "AC Making Noise? What Buzzing, Banging and Hissing Mean",
-    h1: "AC Making a Strange Noise? What Each Sound Means and What to Do",
-    description: "Buzzing, clicking, hissing, banging, squealing or rattling from your air conditioner? What each sound usually means, which ones to turn the AC off for, and what repairs cost.",
-    group: "noise-smell",
-    summary: "Buzzing, clicking, hissing, banging, squealing or rattling from the indoor or outdoor unit.",
-    quick: [
-      "Buzzing or humming at the outdoor unit: a failing capacitor or contactor, or a motor that can't start",
-      "Rattling: a loose panel or screw, or debris in the fan",
-      "Squealing or grinding: worn fan or blower motor bearings, or a slipping belt on older blowers",
-      "Hissing: a refrigerant leak (a short hiss right after shut-off is normal)",
-      "Gurgling or bubbling: a partly clogged or dried-out condensate drain",
-      "Banging or clanking: a loose or broken part, or a failing compressor",
-      "Screaming or loud whistling from the outdoor unit: dangerously high pressure. Turn it off now."
-    ],
-    firstChecks: [
-      "Find where it comes from: the outdoor unit, the indoor unit (air handler or furnace), the ducts or one vent.",
-      "Notice when: only at start-up or shut-down, the whole time it runs, or only on hot afternoons.",
-      "With power off at the disconnect, look through the outdoor unit's top grille for sticks, leaves or anything touching the fan.",
-      "Check that the filter door and the indoor unit's panels are seated and their screws are tight."
-    ],
-    causes: [
-      { cause: "Normal operating sounds", signs: "A click at the thermostat or outdoor unit when it starts and stops, a short whoosh or hiss as pressures even out after shut-off, a steady hum while running, ducts ticking as they cool", who: "DIY", cost: "$0" },
-      { cause: "Failing capacitor", signs: "Outdoor unit hums or buzzes but the fan doesn't spin, or starts slowly", who: "Pro", cost: COST.capacitor, see: "ac-outdoor-unit-not-running" },
-      { cause: "Failing contactor or loose wiring", signs: "Buzzing or chattering at the outdoor unit, rapid clicking, sometimes insects nesting in the contactor", who: "Pro", cost: COST.electrical },
-      { cause: "Loose panel, screw or debris", signs: "Rattling or vibration that stops when you press on a panel; sticks or leaves in the fan", who: "DIY", cost: "$0" },
-      { cause: "Worn outdoor fan motor", signs: "Squealing, screeching or grinding from the top of the outdoor unit; fan slow to get up to speed", who: "Pro", cost: COST.condenserFan },
-      { cause: "Worn blower motor or belt (indoor)", signs: "Squealing or grinding from the indoor unit whenever the fan runs; belt-drive blowers on older systems squeal when the belt slips", who: "Pro", cost: `${COST.serviceCall} for a belt, ${COST.blower} for a motor` },
-      { cause: "Refrigerant leak", signs: "Continuous hissing near the copper lines or coil, cooling getting worse, ice on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
-      { cause: "Partly clogged or dried-out drain", signs: "Gurgling or bubbling near the indoor unit while it runs", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
-      { cause: "Ducts flexing or a restricted return", signs: "Popping or booming in the ducts when the blower starts or stops; whistling at a grille", who: "DIY or pro", cost: "$0 (new filter, open vents) to duct work" },
-      { cause: "Failing compressor or a broken internal part", signs: "Loud banging, clanking or knocking from the outdoor unit, often at start-up", who: "Pro", cost: COST.compressor },
-      { cause: "Dangerously high pressure", signs: "Screaming or a high-pitched whistle from the outdoor unit", who: "Pro", cost: "Depends on the cause; turn it off first" }
-    ],
-    steps: [
-      { title: "Pin down where and when", text: "Stand by each part of the system while it runs. Note whether the sound comes at start-up, the whole time, or at shut-off. That alone narrows most noises to one or two causes." },
-      { title: "Turn it off for the serious ones", text: "Screaming, grinding, banging, or buzzing while the outdoor fan sits still: switch the system off at the thermostat and the disconnect. Those sounds mean a part is failing, and running it can damage the compressor." },
-      { title: "Clear the outdoor unit", text: "With power off at the disconnect, clear leaves, grass and sticks from around and on top of the unit. Don't reach into the fan or take the top grille off. Keep plants at least 2 feet away." },
-      { title: "Tighten what you can reach", text: "Press on the outdoor unit's side panels and the indoor unit's doors while it runs. If the rattle stops, a panel is loose; tighten its screws with the power off. Make sure the filter is seated and its door closed." },
-      { title: "Record it for the technician", text: "Take a short video with sound, and note when it happens. A technician who hears the sound before arriving can bring the likely part and diagnose it faster." }
-    ],
-    safetyNote: "Never reach into the outdoor fan or remove its grille with the power on. Turn off the disconnect first and wait for the blades to stop completely.",
-    callPro: [
-      "Screaming, grinding, banging or clanking",
-      "Buzzing or humming while the outdoor fan doesn't spin",
-      "Continuous hissing near the refrigerant lines",
-      "Any noise that comes with a tripped breaker or a burning smell"
-    ],
-    quoteFlags: [
-      "A new compressor or system quoted for a buzz before anyone has tested the capacitor and contactor",
-      "A refrigerant recharge for a hiss with no leak search",
-      "A fan motor replaced without testing the capacitor that starts it"
-    ],
-    faqs: [
-      { q: "Why is my AC making a buzzing noise?", a: "Most often it's an electrical part at the outdoor unit: a failing capacitor or contactor, or loose wiring. If the fan isn't spinning while it buzzes, turn the system off, because the motor is trying and failing to start and will overheat. Electrical repairs like these typically cost $150–$600." },
-      { q: "Is it normal for an AC to click?", a: "A single click when the system starts and stops is normal: it's the thermostat and a relay switching. Rapid or continuous clicking, or a click with nothing starting, points to a failing contactor, relay or control board." },
-      { q: "Why is my AC making a hissing sound?", a: "A short hiss or whoosh right after the system shuts off is usually normal, as the refrigerant pressures even out. A continuous hiss near the lines or coil can be a refrigerant leak, especially if cooling is getting worse or ice forms on the lines. Have it checked." },
-      { q: "What does it mean when an AC is screaming?", a: "A scream or high-pitched whistle from the outdoor unit can mean dangerously high pressure inside the compressor or a serious refrigerant leak. Turn the system off at the thermostat and the disconnect right away and call a technician." }
-    ],
-    related: ["ac-outdoor-unit-not-running", "ac-smells", "ac-short-cycling"]
-  },
-  {
-    slug: "ac-smells",
-    published: "2026-10-17",
-    updated: "2026-10-17",
-    name: "AC smells bad",
-    title: "AC Smells Bad? Musty, Burning and Other Odors Explained",
-    h1: "Bad Smell From Your AC? What Musty, Burning and Other Odors Mean",
-    description: "What a musty, burning, rotten-egg, sewage or chemical smell from your air conditioner usually means, which smells are an emergency, and how to get rid of the rest.",
-    group: "noise-smell",
-    summary: "A musty, burning, rotten-egg, sour or chemical smell when the AC runs.",
-    quick: [
-      "Musty or mildew: mold or bacteria on the indoor coil, in the drain pan, on the filter or in the ducts",
-      "Burning or electrical: an overheating motor or wiring. Turn the system off.",
-      "Rotten eggs: a natural gas leak (from a gas furnace or another appliance) or a dead animal in the ducts",
-      "Dirty socks: bacteria growing on the indoor coil, common on heat pumps",
-      "Sewage: a dried-out drain trap letting sewer gas in",
-      "Dusty burning on the first heating day of the season: dust burning off, usually gone within an hour"
-    ],
-    firstChecks: [
-      "Burning, electrical or rotten-egg smell: follow the safety box above before doing anything else.",
-      "Air filter: a damp, dirty filter can smell musty. Replace it.",
-      "Drain pan and drain line: standing water under the indoor unit grows mold and bacteria.",
-      "Every vent, or one room? A smell at every vent points to the indoor unit; one vent points to that duct."
-    ],
-    causes: [
-      { cause: "Mold or mildew on the coil, pan or ducts", signs: "Musty smell, strongest when the system starts; visible dark growth on the coil or in the pan", who: "DIY or pro", cost: `$0 (filter, drain) to ${COST.coilDuctCleaning} cleaning` },
-      { cause: "Clogged drain or standing water", signs: "Musty or sour smell, water in the drain pan", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
-      { cause: "Dirty filter", signs: "Musty or dusty smell, filter gray or damp", who: "DIY", cost: COST.filter },
-      { cause: "Overheating motor or wiring", signs: "Burning plastic or electrical smell, sometimes with buzzing or a tripped breaker", who: "Pro", cost: COST.burningRepair },
-      { cause: "Dust burning off heating parts", signs: "Dusty burning smell the first time the heat runs each season, fading within an hour", who: "DIY", cost: "$0" },
-      { cause: "Natural gas leak (not from the AC)", signs: "Rotten-egg smell near a gas furnace, water heater or other gas appliance", who: "Pro", cost: "Call your gas utility first" },
-      { cause: "Dead animal in the ducts or unit", signs: "Rotten smell getting stronger, often worst at one vent", who: "Pro", cost: `${COST.serviceCall} service call plus removal and cleaning` },
-      { cause: '"Dirty sock" bacteria on the coil', signs: "Smell of dirty socks or sweat, often when a heat pump switches modes", who: "Pro", cost: COST.coilDuctCleaning },
-      { cause: "Sewer gas from a dry drain trap", signs: "Sewage smell near the indoor unit or a floor drain the condensate runs to", who: "DIY or pro", cost: "$0 (refill the trap) to a plumber's visit" },
-      { cause: "Refrigerant leak", signs: "A faint sweet or chemical smell with cooling getting worse; many refrigerants have little smell, so this is a weak sign", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` }
-    ],
-    steps: [
-      { title: "Rule out the dangerous smells", text: "Burning or electrical: turn the system off at the thermostat and the breaker, and call. Rotten eggs: don't touch switches; leave and call the gas utility from outside. Then come back to the rest of these steps." },
-      { title: "Replace the filter", text: "A damp, dirty filter is the cheapest cause to rule out. If the smell fades within a day, that was it." },
-      { title: "Check the drain pan and line", text: "With power off, look in the pan under the indoor unit. Standing water means the drain is clogged: clear it with a wet/dry vacuum on the outside end, then pour a cup of distilled white vinegar into the cleanout. See the leaking water page for details." },
-      { title: "Look at the coil if you can", text: "Many indoor units have a removable access panel in front of the coil. With power off, look for dark growth on the coil or in the pan. Visible mold on the coil is a job for a professional cleaning." },
-      { title: "Refill dry drain traps", text: "For a sewage smell, pour a quart of water into any floor drain near the indoor unit, and into the condensate line's trap if it has one. Traps that dry out let sewer gas back into the house." }
-    ],
-    safetyNote: "If you smell rotten eggs (natural gas), don't switch anything on or off. Get everyone out, then call your gas utility or 911 from outside. If a carbon monoxide alarm sounds, get outside and call for help. Your air conditioner doesn't burn gas, but a gas furnace often shares the same ducts and blower.",
-    callPro: [
-      "Any burning or electrical smell",
-      "A rotten smell that keeps getting stronger, especially at one vent",
-      "A musty smell that returns after a new filter and a clear drain",
-      "Visible mold on the coil, in the pan or inside the ducts"
-    ],
-    quoteFlags: [
-      "Whole-house duct cleaning sold as the cure for a musty smell before anyone checks the coil, drain pan and drain line",
-      "A UV light or air purifier sold as the only fix for mold, without fixing the moisture that feeds it",
-      "Refrigerant added for a smell, with no leak search"
-    ],
-    faqs: [
-      { q: "Why does my AC smell musty?", a: "Usually because mold or bacteria are growing where moisture collects: on the indoor coil, in the drain pan, on a damp filter or in the ducts. Replace the filter, clear the drain and check the pan. If the smell comes back, have the coil cleaned. Keeping indoor humidity below 60% (EPA's guideline) slows the growth." },
-      { q: "Is a burning smell from my AC dangerous?", a: "It can be. An electrical or burning-plastic smell can mean an overheating motor or wiring, so turn the system off at the thermostat and breaker and call a technician. The one usually harmless exception is a dusty smell the first time the heat runs each season." },
-      { q: "Why does my AC smell like rotten eggs?", a: "Natural gas has a rotten-egg odor added to it, so treat that smell as a possible gas leak: leave the house and call your gas utility from outside. Your AC doesn't use gas, but a gas furnace often shares its ducts. If the gas company finds no leak, a dead animal in the ductwork is the next most likely cause." },
-      { q: "Should I get my air ducts cleaned for a bad smell?", a: "Usually not first. The EPA says duct cleaning isn't something most homes need routinely, and suggests considering it when there's visible mold growth inside the ducts, signs of rodents or insects, or so much dust and debris that it blows out of the vents. Most AC smells come from the coil, drain pan or filter." }
-    ],
-    related: ["ac-leaking-water", "ac-high-humidity", "ac-making-noise"]
-  },
-  {
-    slug: "ac-short-cycling",
-    published: "2026-10-17",
-    updated: "2026-10-17",
-    name: "AC short cycling",
-    title: "AC Short Cycling? Why It Turns On and Off Too Often",
-    h1: "AC Short Cycling? Why Your Air Conditioner Keeps Turning On and Off",
-    description: "AC runs a few minutes, shuts off, then starts again? The causes, from an oversized unit to a dirty coil or a badly placed thermostat, what to check first and what fixes cost.",
-    group: "cycling",
-    summary: "It runs for a few minutes, shuts off, then starts again soon after.",
-    quick: [
-      "An oversized system that cools the air near the thermostat too fast",
-      "A clogged filter or a frozen coil",
-      "The thermostat sits near a supply vent, a sunny window or a heat source",
-      "A dirty outdoor coil making the system overheat and trip a safety switch",
-      "Low refrigerant tripping the low-pressure switch",
-      "A backed-up drain tripping the float switch",
-      "An electrical fault: capacitor, contactor or control board"
-    ],
-    firstChecks: [
-      "Time it on a warm afternoon: how long it runs, how long it stays off. Repeated runs of under about 10 minutes, while the house still isn't at the set temperature, are the classic sign (a rule of thumb, not a precise limit).",
-      "Air filter: replace it if it's dirty.",
-      "Thermostat: is it in sunlight, above a lamp or TV, near the kitchen, or in the path of a supply vent?",
-      "Look for ice on the copper lines, and check the outdoor coil is clean and clear."
-    ],
-    causes: [
-      { cause: "Oversized system", signs: "Cools fast then shuts off, house feels clammy, has done it since the system was installed", who: "Pro", cost: "$0 now; size correctly when you replace it" },
-      { cause: "Clogged filter", signs: "Weak airflow, filter gray or matted", who: "DIY", cost: COST.filter },
-      { cause: "Frozen coil", signs: "Ice on the lines, weak airflow, shuts off and on", who: "DIY or pro", cost: "Depends on the cause", see: "ac-frozen-coil" },
-      { cause: "Thermostat location or a failing thermostat", signs: "Shuts off while other rooms are still warm; thermostat in sun, near a vent or a heat source", who: "DIY or pro", cost: `$0 (move the heat source) to ${COST.thermostat}` },
-      { cause: "Dirty outdoor coil (overheating)", signs: "Shuts off on hot afternoons and restarts later; fins matted with dirt or grass", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
-      { cause: "Low refrigerant (low-pressure switch)", signs: "Cooling getting worse over weeks, ice, short runs", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
-      { cause: "Float switch on a backed-up drain", signs: "Shuts off with water in the pan, restarts as it drains", who: "DIY or pro", cost: `$10–$20 DIY, ${COST.drainClear} pro`, see: "ac-leaking-water" },
-      { cause: "Electrical fault", signs: "Starts and stops at random, clicking or buzzing at the outdoor unit", who: "Pro", cost: `${COST.capacitor} capacitor, ${COST.contactor} contactor, more for a control board` }
-    ],
-    steps: [
-      { title: "Time the cycles", text: "On a warm afternoon, note when it starts and stops for an hour. Write down the indoor temperature too. Short runs while the house is still warm point to a fault; short runs once it's at the set temperature point to oversizing or the thermostat." },
-      { title: "Fix the airflow", text: "Fit a new filter, open all supply vents and clear the return grilles. Restricted airflow is a common cause and the cheapest to fix." },
-      { title: "Check the thermostat", text: "Replace its batteries and look at where it sits. A thermostat in sunlight or in the stream of a supply vent shuts the system off early. Some thermostats have a cycle-rate (cycles per hour) setting; check it against the thermostat's manual for air conditioning." },
-      { title: "Clean the outdoor coil", text: "With power off at the disconnect, clear debris and rinse the fins gently from the outside with a garden hose. A coil that can't shed heat trips the system's high-pressure or overload protection." },
-      { title: "Look for ice and water", text: "Ice on the copper lines means a frozen coil. Water in the drain pan means the float switch may be cutting the power. Each has its own page linked in the table above." }
-    ],
-    callPro: [
-      "Short cycling continues with a new filter, a clean coil and the thermostat ruled out",
-      "Ice on the lines or the coil",
-      "The outdoor unit shuts off on hot afternoons and restarts later",
-      "Clicking or buzzing each time it starts or stops"
-    ],
-    quoteFlags: [
-      "A new system quoted for short cycling before the filter, refrigerant charge, safety switches and thermostat are checked",
-      "A bigger unit recommended to fix comfort problems: an oversized system short cycles more, not less",
-      "A refrigerant top-up with no leak search"
-    ],
-    faqs: [
-      { q: "What causes an AC to short cycle?", a: "The most common causes are a clogged filter or frozen coil, a thermostat in a bad spot, a dirty outdoor coil tripping a safety switch, low refrigerant, and a system that is too big for the house. Start with the filter, the thermostat location and the outdoor coil, which you can check yourself." },
-      { q: "How long should an AC run each cycle?", a: "It depends on the weather. As a rough guide, a correctly sized single-stage system on a warm day runs at least 10 minutes at a time, longer as it gets hotter, and on the hottest days it may run almost nonstop. Variable-speed systems are designed to run for long periods at low speed." },
-      { q: "Is short cycling bad for my AC?", a: "Yes. Starting is the hardest moment for a compressor, so frequent starts wear it faster. Short runs also waste energy and remove little humidity, because the coil shuts off before it has drained much moisture." },
-      { q: "Can an oversized AC cause short cycling?", a: "Yes. An oversized system cools the air near the thermostat quickly and shuts off before the rest of the house, and before it has removed much humidity. There's no cheap fix; the answer is a correctly sized system (a Manual J load calculation) at replacement. Check yours with the AC sizing calculator." }
-    ],
-    related: ["ac-running-constantly", "ac-high-humidity", "ac-frozen-coil"],
-    extra: {
-      heading: "If your system is oversized",
-      paragraphs: [
-        "Oversizing is common, because replacing a unit with one the same size as the old one (or bigger, to be safe) skips the load calculation. If your system has short cycled since the day it was installed and everything else checks out, it's probably too big for the house.",
-        "You can soften the effect: keep the fan on Auto, use a thermostat with a dehumidify setting, and keep the filter and coil clean. At replacement, ask for a Manual J load calculation, and consider a two-stage or variable-speed system, which runs at low output most of the time."
-      ],
-      link: { to: "/calculators/ac-sizing", label: "the AC sizing calculator" }
-    }
-  },
-  {
-    slug: "ac-running-constantly",
-    published: "2026-10-17",
-    updated: "2026-10-17",
-    name: "AC running nonstop",
-    title: "AC Running Constantly? When It's Normal and When It's Not",
-    h1: "AC Running Nonstop? When It's Normal and How to Find the Problem",
-    description: "Air conditioner never shuts off? When nonstop running is normal on hot days, the checks that find the problem when it isn't, a simple thermometer test, and what fixes cost.",
-    group: "cycling",
-    summary: "It runs and runs without shutting off, or never reaches the set temperature.",
-    quick: [
-      "Very hot weather: on the hottest days a correctly sized system can run almost nonstop",
-      "The thermostat set very low, or the fan set to On",
-      "A clogged filter or a dirty outdoor coil",
-      "Low refrigerant from a leak",
-      "Leaky ducts in a hot attic or crawlspace",
-      "A system that is too small or worn out",
-      "A stuck contactor: the outdoor unit keeps running even with the thermostat off"
-    ],
-    firstChecks: [
-      "Fan or whole system? If only the indoor fan runs, set the thermostat fan to Auto instead of On.",
-      "Set the thermostat to Off. If the outdoor unit keeps running, switch it off at the disconnect and call: the contactor is stuck.",
-      "Check the weather. Systems are sized for typical hot days where you live; on hotter days it's normal for them to run for long stretches and for the house to sit a few degrees above the setting.",
-      "Filter and outdoor coil: replace a dirty filter, and look for matted fins outside."
-    ],
-    causes: [
-      { cause: "Extreme heat", signs: "Runs nonstop only on the hottest afternoons and catches up in the evening", who: "DIY", cost: "$0" },
-      { cause: "Thermostat set very low, or fan on On", signs: "Set more than about 20°F below the outdoor temperature, or the fan never stops between cycles", who: "DIY", cost: "$0" },
-      { cause: "Clogged filter", signs: "Weak airflow, filter gray or matted", who: "DIY", cost: COST.filter },
-      { cause: "Dirty outdoor coil", signs: "Fins matted with dirt, grass or lint; struggles most on hot afternoons", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
-      { cause: "Low refrigerant (a leak)", signs: "Air not very cold, cooling worse over weeks, ice on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
-      { cause: "Leaky or uninsulated ducts", signs: "Rooms far from the unit stay warm; ducts in a hot attic; dust streaks at duct joints", who: "Pro", cost: `${COST.ductSealing} duct sealing` },
-      { cause: "Stuck contactor", signs: "Outdoor unit keeps running with the thermostat off", who: "Pro", cost: COST.contactor },
-      { cause: "Undersized or worn-out system", signs: "Never keeps up on ordinary summer days; system old or added rooms since it was sized", who: "Pro", cost: "Replacement; compare with the repair vs replace calculator" },
-      { cause: "Heat coming in", signs: "Sun on big windows, a hot attic with little insulation, oven or dryer running in the afternoon", who: "DIY", cost: "$0 (blinds) and up" }
-    ],
-    steps: [
-      { title: "Check the settings", text: "Cool, fan on Auto, and a sensible temperature. Each degree lower adds run time, and setting it very low doesn't cool the house faster." },
-      { title: "Do the Off test", text: "Set the thermostat to Off and go outside. If the outdoor unit is still running after a minute, turn it off at the disconnect. A stuck contactor runs the compressor nonstop and needs a technician." },
-      { title: "Replace the filter and rinse the coil", text: "A new filter and a clean outdoor coil restore airflow and heat transfer, the two things a system needs to keep up." },
-      { title: "Measure the temperature split", text: "After 15 minutes of running, put a thermometer at a return grille and at the supply vent nearest the indoor unit. A difference of roughly 15–20°F is typical (a rule of thumb; humid weather lowers it). Much less points to low refrigerant, a dirty coil or a failing compressor; much more points to low airflow." },
-      { title: "Cut the heat coming in", text: "Close blinds on sunny windows, avoid the oven and dryer in the afternoon, and check that the attic has insulation. Less heat in means shorter run times." }
-    ],
-    callPro: [
-      "The outdoor unit runs with the thermostat off",
-      "The temperature split is well under about 15°F",
-      "Ice on the lines or the coil",
-      "It runs nonstop on mild days and still doesn't reach the setting"
-    ],
-    quoteFlags: [
-      "A bigger system recommended before anyone checks the refrigerant charge, airflow and ducts",
-      "A refrigerant top-up with no leak search",
-      "Duct cleaning sold as the fix for long run times: cleaning doesn't seal leaks"
-    ],
-    faqs: [
-      { q: "Is it normal for my AC to run all day in hot weather?", a: "Yes, on the hottest days. Air conditioners are sized for typical hot weather where you live, so above that they run for long stretches and the house may sit a few degrees above the setting until evening. It's a problem if it also runs nonstop on ordinary days." },
-      { q: "How do I know if my AC running constantly is a problem?", a: "Signs of a real fault: it runs nonstop on mild days, never gets within a few degrees of the setting, the air from the vents isn't much colder than the room (a split well under about 15°F), there's ice on the lines, or the outdoor unit keeps running with the thermostat off." },
-      { q: "Does running nonstop damage an AC?", a: "Long runs aren't harmful in themselves; starting and stopping is harder on a compressor than running. But nonstop running costs more, and if it's caused by low refrigerant, a dirty coil or a stuck contactor, that underlying fault can damage the compressor." },
-      { q: "Why does my outdoor unit keep running when the thermostat is off?", a: "Usually the contactor, the switch that turns the outdoor unit on and off, has stuck closed. Turn the unit off at the disconnect beside it and call a technician. A contactor typically costs $150–$300 to replace." }
-    ],
-    related: ["ac-blowing-warm-air", "ac-short-cycling", "ac-frozen-coil"]
-  },
-  {
-    slug: "ac-tripping-breaker",
-    published: "2026-10-17",
-    updated: "2026-10-17",
-    name: "AC tripping the breaker",
-    title: "AC Keeps Tripping the Breaker? Causes and What to Do",
-    h1: "AC Keeps Tripping the Breaker? Why It Happens and What to Do",
-    description: "AC keeps tripping its breaker? What the timing tells you, the causes from a dirty coil to a failing capacitor or compressor, and why you shouldn't keep resetting it.",
-    group: "wont-run",
-    summary: "The breaker for the AC trips when it starts, after it runs a while, or on hot afternoons.",
-    quick: [
-      "A dirty outdoor coil or blocked airflow making the compressor draw more current",
-      "A failing capacitor, so the motors struggle to start",
-      "A compressor that is hard to start or failing",
-      "A failed outdoor fan motor",
-      "A short in the wiring or a motor (trips instantly)",
-      "A worn breaker or a loose connection at the panel"
-    ],
-    firstChecks: [
-      "Which breaker: the outdoor unit, or the indoor unit (air handler or furnace)?",
-      "When it trips: the instant you reset it, when the compressor starts, or after running for a while on hot afternoons.",
-      "Look at the panel and the disconnect beside the outdoor unit: scorch marks, a burning smell or a hot breaker mean stop and call.",
-      "Outdoor coil and filter: matted fins outside or a clogged filter inside make the motors work harder."
-    ],
-    causes: [
-      { cause: "Dirty outdoor coil or blocked airflow", signs: "Trips after running a while, mostly on hot afternoons; fins matted or plants crowding the unit", who: "DIY or pro", cost: `$0 DIY rinse, ${COST.condenserClean} pro cleaning` },
-      { cause: "Failing capacitor", signs: "Trips as the outdoor unit tries to start; humming before it trips", who: "Pro", cost: COST.capacitor },
-      { cause: "Hard-starting or failing compressor", signs: "Trips the moment the compressor starts; lights dim; system over about 10 years old", who: "Pro", cost: `$30–$80 hard-start kit part plus labor; ${COST.compressor} for a compressor` },
-      { cause: "Failed outdoor fan motor", signs: "Fan doesn't spin, unit gets very hot, then the breaker trips", who: "Pro", cost: COST.condenserFan },
-      { cause: "Short in wiring or a motor", signs: "Trips instantly every time you reset it", who: "Pro", cost: `${COST.breakerTrip} to find and repair` },
-      { cause: "Worn breaker or loose connection", signs: "Breaker warm, buzzing or tripping with no other symptom; the system runs fine on a tester's meter", who: "Pro", cost: "An electrician's visit plus the breaker" },
-      { cause: "Indoor blower strain", signs: "The indoor unit's breaker trips; clogged filter or a failing blower motor", who: "DIY or pro", cost: `${COST.filter} filter, ${COST.blower} blower motor` }
-    ],
-    steps: [
-      { title: "Reset once, properly", text: "Turn the thermostat off. Push the tripped breaker firmly to Off, then back to On. Wait 5–10 minutes before setting the thermostat to Cool, so the compressor doesn't start against high pressure." },
-      { title: "Watch when it trips", text: "Instantly on reset points to a short: leave it off. At start-up points to the capacitor or compressor. After a while on hot afternoons points to a dirty coil, a failing fan motor or airflow. Tell the technician which it was." },
-      { title: "Clean the coil and replace the filter", text: "With power off at the disconnect, rinse the outdoor coil from the outside and clear plants back 2 feet. Fit a new indoor filter. These are the only causes you can fix yourself." },
-      { title: "If it trips again, leave it off", text: "A breaker trips to protect the wiring from overheating. Resetting it over and over can damage the compressor and, in the worst case, start a fire. One reset, then call." },
-      { title: "Check the breaker size, not by guessing", text: `The outdoor unit's nameplate lists the maximum fuse or breaker size (often "MAX FUSE/BKR"). The breaker should not be larger than that. Never fit a bigger breaker to stop the trips; that only removes the protection.` }
-    ],
-    safetyNote: "Never replace the breaker with a larger one to stop it tripping. Breakers are sized to the wiring and the unit; a bigger one lets the wires overheat. Panel work is for a licensed electrician.",
-    callPro: [
-      "It trips again after one reset",
-      "It trips the instant you reset it",
-      "A burning smell, scorch marks, or a breaker that feels hot or buzzes",
-      "The lights dim and it trips as the compressor starts"
-    ],
-    quoteFlags: [
-      "A new system quoted before the capacitor, fan motor and compressor have been tested",
-      "A larger breaker offered as the fix",
-      "For a failed compressor on a system over about 10 years old, compare the quote with replacement before agreeing"
-    ],
-    faqs: [
-      { q: "Why does my AC keep tripping the breaker?", a: "Most often because the outdoor unit is drawing more current than it should: a dirty coil or blocked airflow on hot days, a failing capacitor that makes the motors struggle to start, or a compressor that is wearing out. A breaker that trips instantly on reset usually means a short circuit." },
-      { q: "Is it safe to keep resetting the AC breaker?", a: "No. Reset it once. If it trips again, leave it off and call a technician. The breaker is doing its job by cutting power to something that's overheating or shorted, and repeated resets can damage the compressor or start a fire." },
-      { q: "Can a dirty filter cause the AC breaker to trip?", a: "It can strain the indoor blower motor, which can trip the indoor unit's breaker. A dirty outdoor coil is the more common cause of the outdoor unit's breaker tripping, especially on hot afternoons." },
-      { q: "What size breaker does my AC need?", a: "The outdoor unit's nameplate lists the minimum circuit ampacity and the maximum fuse or breaker size. The breaker must not exceed that maximum. If you think the breaker is the wrong size, have an electrician check it against the nameplate and the wiring." }
-    ],
-    related: ["ac-outdoor-unit-not-running", "ac-not-turning-on", "ac-not-working-after-power-outage"]
-  },
-  {
-    slug: "ac-high-humidity",
-    published: "2026-10-17",
-    updated: "2026-10-17",
-    name: "House humid with the AC on",
-    title: "AC Not Removing Humidity? Why the House Feels Clammy",
-    h1: "House Humid With the AC On? Why It Feels Clammy and How to Fix It",
-    description: "The temperature is fine but the house feels damp and sticky? Why an air conditioner stops removing humidity, the free fixes to try first, and when a dehumidifier makes sense.",
-    group: "cycling",
-    summary: "The temperature is fine, but the air feels damp, sticky or cold and clammy.",
-    quick: [
-      "The thermostat fan set to On, which blows the moisture on the coil back into the house",
-      "An oversized system that shuts off before it removes much moisture",
-      "A clogged filter or a dirty indoor coil",
-      "The blower set to a high speed that suits dry climates",
-      "Leaky return ducts pulling in humid air from an attic, crawlspace or outdoors",
-      "Low refrigerant",
-      "Moisture from inside: showers, cooking, laundry, a damp crawlspace or basement"
-    ],
-    firstChecks: [
-      "Measure it: a digital hygrometer costs about $10–$20. The EPA recommends keeping indoor humidity below 60%, ideally 30–50%.",
-      "Thermostat fan on Auto, not On.",
-      "Air filter: replace it if it's dirty.",
-      "Run bathroom and kitchen exhaust fans, and look for damp in a crawlspace or basement."
-    ],
-    causes: [
-      { cause: "Fan set to On", signs: "Humidity rises soon after the compressor stops; fan never stops", who: "DIY", cost: "$0" },
-      { cause: "Oversized system", signs: "Short runs, cool but clammy, has done it since installation", who: "Pro", cost: "$0 now; size correctly when you replace it", see: "ac-short-cycling" },
-      { cause: "Clogged filter or dirty indoor coil", signs: "Weak airflow, filter gray, musty smell", who: "DIY or pro", cost: `${COST.filter} filter, ${COST.coilDuctCleaning} coil cleaning` },
-      { cause: "Blower speed set too high", signs: "Strong airflow, cool air, but humidity stays high; common when installers use one setting everywhere", who: "Pro", cost: `${COST.serviceCall} service call to adjust` },
-      { cause: "Leaky return ducts", signs: "Ducts in an attic or crawlspace; humidity high even with long run times", who: "Pro", cost: `${COST.ductSealing} duct sealing` },
-      { cause: "Low refrigerant (a leak)", signs: "Cooling weaker than it used to be, ice on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
-      { cause: "Moisture sources indoors", signs: "Worst after showers or cooking; damp crawlspace or basement; condensation on windows", who: "DIY or pro", cost: "$0 (exhaust fans) and up" },
-      { cause: "A climate that needs more dehumidification", signs: "Mild, humid days when the AC barely needs to run", who: "Pro", cost: `${COST.dehumidifier} installed whole-house dehumidifier` }
-    ],
-    steps: [
-      { title: "Measure for a day", text: "Put a hygrometer in a couple of rooms and check it morning, afternoon and night. You want a number to compare after each fix, not a feeling." },
-      { title: "Set the fan to Auto and wait", text: "With the fan on Auto, water that collects on the coil drains away instead of being blown back into the house. Give it two days before judging." },
-      { title: "Replace the filter", text: "A clogged filter reduces airflow and lets the coil get dirty, and a dirty coil removes less moisture." },
-      { title: "Use the dehumidify settings you have", text: 'Many thermostats have a dehumidify or "overcool" setting, and many ductless mini-splits have a Dry mode. Check your manuals; these settings run the system in a way that removes more moisture.' },
-      { title: "Cut the moisture coming in", text: "Run the bathroom fan during and after showers and the range hood while cooking. Vent the dryer outside. A damp crawlspace or basement often needs a vapor barrier or its own dehumidifier." },
-      { title: "Ask the technician the right questions", text: "If humidity stays above 60%, ask about the refrigerant charge, the blower speed, return duct leaks, and whether the system is oversized. A whole-house dehumidifier comes after those, not before." }
-    ],
-    callPro: [
-      "Humidity stays above 60% with the fan on Auto and a clean filter",
-      "Condensation on vents or windows, or mold growing indoors",
-      "The system short cycles",
-      "Ice on the lines or the coil"
-    ],
-    quoteFlags: [
-      "A bigger air conditioner to fix humidity: oversizing makes it worse",
-      "A whole-house dehumidifier sold before anyone checks the fan setting, blower speed, refrigerant charge and duct leaks",
-      "Duct cleaning sold as a humidity fix: it doesn't change how much moisture the system removes"
-    ],
-    faqs: [
-      { q: "Why is my house humid when the AC is running?", a: "The most common reasons are the fan set to On (which re-evaporates water from the coil), a system that is too big and shuts off before removing much moisture, a dirty filter or coil, and humid air leaking in through return ducts. Indoor moisture from showers, cooking or a damp crawlspace adds to it." },
-      { q: "What humidity should my house be with the AC on?", a: "The EPA recommends keeping indoor relative humidity below 60%, ideally between 30% and 50%. Above 60% for long periods, mold and dust mites thrive and the house feels clammy even at a cool temperature." },
-      { q: "Does running the AC fan on On increase humidity?", a: "It can, by a lot. When the compressor stops, the fan keeps blowing across the wet coil and puts that moisture back into the house. In one test by building scientist Allison Bailes in his own home, switching the fan from Auto to On raised indoor humidity from about 58% to about 70%." },
-      { q: "Do I need a dehumidifier if I have air conditioning?", a: "Often not. Air conditioners remove moisture as they cool, and fixing the fan setting, airflow and duct leaks usually brings humidity down. A dehumidifier makes sense in very humid climates, in homes with an oversized system you're not ready to replace, or for a damp basement. Whole-house units typically cost about $2,800–$3,300 installed." }
-    ],
-    related: ["ac-short-cycling", "ac-smells", "ac-running-constantly"]
-  },
-  {
-    slug: "mini-split-error-codes",
-    published: "2026-10-17",
-    updated: "2026-10-17",
-    name: "Mini-split error code or blinking light",
-    title: "Mini-Split Error Code or Blinking Light? What to Do",
-    h1: "Mini-Split Error Code or Blinking Light? What It Means and What to Do",
-    description: "Ductless mini-split showing an error code or flashing a light? How to read it, how to reset the unit safely, what the main kinds of codes mean, and when it needs a technician.",
-    group: "mini-split",
-    summary: "The indoor unit shows a code or flashes a light, and the system stops or won't cool.",
-    quick: [
-      "A power glitch or surge that left the control board locked out (a reset often clears it)",
-      "Dirty filters or a blocked outdoor unit, so the system shuts down to protect itself",
-      "A communication error between the indoor and outdoor units (wiring, a surge or a board)",
-      "A failed temperature sensor (thermistor)",
-      "A drain or condensate pump problem on units with a float switch",
-      "Low refrigerant",
-      "A fault in the outdoor unit's inverter board or compressor"
-    ],
-    firstChecks: [
-      "Write the code down exactly, or count the blinks: how many, which light (often Operation or Timer), and whether the pattern repeats. A short phone video helps.",
-      "Find your exact model numbers on the labels of the indoor and outdoor units. Codes differ between brands and even between a brand's own product lines.",
-      "Look it up in the owner's or installation manual for that model (most are on the manufacturer's website). Some units also have a code list on a label inside the front panel or the outdoor unit's service cover.",
-      "Check the filters behind the front panel, and make sure nothing blocks the outdoor unit."
-    ],
-    causes: [
-      { cause: "Power glitch or lockout", signs: "Code appeared after an outage, storm or flicker", who: "DIY", cost: "$0 (reset)" },
-      { cause: "Dirty filters or blocked outdoor unit", signs: "Protection codes for high temperature or pressure, or freeze protection; dusty mesh filters", who: "DIY or pro", cost: `$0 to clean filters, ${COST.condenserClean} pro cleaning` },
-      { cause: "Communication error", signs: "Indoor and outdoor units can't talk to each other. Common examples: U4 on many Daikin units, E6 on many Mitsubishi units", who: "Pro", cost: `${COST.serviceCall} service call plus wiring or a board` },
-      { cause: "Failed temperature sensor", signs: "Sensor or thermistor code; unit stops or runs oddly", who: "Pro", cost: `${COST.serviceCall} service call plus the sensor` },
-      { cause: "Drain or condensate pump problem", signs: "Water dripping from the indoor unit; float or drain code", who: "DIY or pro", cost: `${COST.drainClear} drain clearing, ${COST.condensatePump} pump`, see: "ac-leaking-water" },
-      { cause: "Low refrigerant (a leak)", signs: "Weak cooling, ice on the lines, low-pressure or refrigerant code", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` },
-      { cause: "Inverter board or compressor fault", signs: "Outdoor unit code that returns after every reset", who: "Pro", cost: `${COST.serviceCall} plus the board (often several hundred dollars); ${COST.compressor} for a compressor` }
-    ],
-    steps: [
-      { title: "Record the code", text: "Note the code or blink pattern, the time, the mode (cool, heat, dry) and what the unit was doing. Take a photo or short video." },
-      { title: "Look it up for your exact model", text: "Use the model numbers from the unit's labels to find the manual. Generic online lists often conflict, because the same code can mean different things on different product lines." },
-      { title: "Reset once", text: "Turn the unit off with the remote, switch off its breaker or outdoor disconnect, wait about 5 minutes, then restore power and restart with the remote. If the code comes straight back, stop resetting it." },
-      { title: "Clean the filters and clear the outdoor unit", text: "Lift the front panel, slide out the mesh filters and rinse them in lukewarm water. Let them dry fully before refitting. Outside, clear leaves, snow or plants away from the unit." },
-      { title: "Rule out the normal blinks", text: "In heating mode, many mini-splits blink a light while the outdoor unit defrosts, and stop after several minutes. Some also blink while they warm up. Check the remote's batteries and mode too." },
-      { title: "Call with the details", text: "Give the technician the brand, both model numbers, the exact code, when it started and what you have tried. They can often tell which part to bring." }
-    ],
-    safetyNote: "Don't open the outdoor unit's covers. Mini-split outdoor units contain inverter boards with capacitors that stay charged at high voltage for several minutes after the power is off.",
-    callPro: [
-      "The code comes back after one reset",
-      "A communication, sensor, inverter or compressor code",
-      "Water dripping from the indoor unit",
-      "Ice on the copper lines"
-    ],
-    quoteFlags: [
-      "A new system quoted for a communication error before the connecting wiring and terminals are checked",
-      "A board replaced without explaining what the code and the test readings showed",
-      "A refrigerant recharge with no leak search"
-    ],
-    faqs: [
-      { q: "What does a blinking light on my mini-split mean?", a: "Usually that the unit has detected a fault and stopped. The number of blinks, and which light blinks, is a code you can look up in the manual for your exact model. In heating mode, a blinking light can also just mean the unit is defrosting, which is normal and stops after several minutes." },
-      { q: "How do I reset a mini-split error code?", a: "Turn the unit off with the remote, switch off its breaker or outdoor disconnect for about 5 minutes, then turn the power back on and restart it with the remote. If the code returns, don't keep resetting: the fault is still there." },
-      { q: "What is a communication error on a mini-split?", a: "It means the indoor and outdoor units can't exchange signals. Causes include loose or corroded connecting wires, a surge that damaged a board, or a failed board. On many Daikin units it shows as U4, and on many Mitsubishi units as E6, but check your manual: codes vary by model." },
-      { q: "Can I trust mini-split error code lists online?", a: "Use them as a starting point only. Codes differ between brands and between product lines from the same brand, and generic lists often disagree. The manual for your exact model number, or the manufacturer's support line, is the reliable source." }
-    ],
-    related: ["ac-not-working-after-power-outage", "ac-leaking-water", "ac-frozen-coil"]
-  },
-  {
-    slug: "heat-pump-not-heating",
-    name: "Heat pump not heating",
-    title: "Heat Pump Not Heating? Causes, Checks and Repair Costs",
-    h1: "Heat Pump Not Heating or Blowing Cold Air? What to Check First",
-    description: "Heat pump running but the house won't warm up, or air from the vents feels cool? What's normal (defrost, lukewarm air), the free checks, likely causes and repair costs.",
-    group: "heat-pump",
-    summary: "It runs in winter, but the house stays cold or the vents blow cool air.",
-    published: "2026-10-21",
-    updated: "2026-10-21",
-    quick: [
-      "Thermostat on Cool or Auto, or a schedule holding a low temperature",
-      "A defrost cycle in progress (cool air for a few minutes is normal)",
-      "A clogged air filter",
-      "The outdoor unit iced over or blocked by snow",
-      "Backup (auxiliary) heat not working on the coldest days",
-      "A reversing valve stuck in cooling mode, or low refrigerant"
-    ],
-    firstChecks: [
-      'Thermostat: mode on Heat, set at least 2–3°F above the room, schedule or "hold" off. A heat pump thermostat may show "Aux" or "Em Heat"; leave Emergency Heat off for now.',
-      "Feel the air at a vent after 10 minutes of running. Heat pump air feels lukewarm compared with a gas furnace; that's normal as long as the house slowly warms.",
-      "Outdoor unit: is the fan spinning and is it free of thick ice and snow? A short burst of steam with the fan stopped is a normal defrost.",
-      "Air filter: replace it if it's gray. Low airflow cuts heating just as it cuts cooling.",
-      "Breakers: there are usually separate breakers for the outdoor unit, the indoor air handler and the backup heat strips."
-    ],
-    causes: [
-      { cause: "Thermostat settings or schedule", signs: "Mode on Cool or Auto with a low setpoint, a schedule or vacation hold", who: "DIY", cost: "$0" },
-      { cause: "Normal defrost cycle", signs: "Cool air for a few minutes, outdoor fan stopped, steam rising from the unit, then heat resumes", who: "DIY", cost: "$0 (normal)", see: "heat-pump-defrost-mode" },
-      { cause: "Clogged filter", signs: "Weak airflow from vents, filter visibly gray", who: "DIY", cost: COST.filter },
-      { cause: "Outdoor coil iced over or buried in snow", signs: "Coil encased in ice that doesn't clear, or snow drifted against the unit", who: "DIY or pro", cost: "$0 to clear snow; depends on the cause", see: "heat-pump-frozen-outdoor-unit" },
-      { cause: "Outdoor unit not running", signs: "Indoor fan runs, outdoor unit silent or humming; breaker off", who: "DIY or pro", cost: `$0 (breaker) to ${COST.capacitor} (capacitor)`, see: "ac-outdoor-unit-not-running" },
-      { cause: "Backup heat not working", signs: 'House falls behind only on the coldest days; "Aux" shows but the air stays lukewarm; heat-strip breaker tripped', who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
-      { cause: "Reversing valve stuck in cooling", signs: "Air from the vents is cold, not just lukewarm, all the time in Heat mode; the outdoor unit blows warm air", who: "Pro", cost: COST.reversingValve },
-      { cause: "Low refrigerant (a leak)", signs: "Heating has gotten weaker over weeks, frequent icing, hissing or oily spots on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` }
-    ],
-    steps: [
-      { title: "Set the thermostat correctly", text: "Set it to Heat, 2–3°F above the room temperature, fan on Auto, and turn off any schedule or hold. If it was on Cool or Auto with a low setting, that alone explains cold air." },
-      { title: "Rule out a defrost cycle", text: "In cold, damp weather a heat pump reverses for a few minutes to melt frost off the outdoor coil. During defrost the outdoor fan usually stops, the unit may steam, and the indoor air can feel cool. If heat returns within about 15 minutes, nothing is wrong." },
-      { title: "Replace the filter and open the vents", text: "A clogged filter or closed vents cut airflow, which makes a heat pump run hotter and less efficiently and can trip its safety controls. Fit a new filter and make sure supply and return grilles are open and clear." },
-      { title: "Clear the outdoor unit", text: "Brush snow off the top and sides and keep 2 feet clear around it. If the coil is solidly encased in ice that a defrost doesn't clear, see the frozen outdoor unit page. Don't chip ice off the coil." },
-      { title: "Use Emergency Heat only if the outdoor unit has failed", text: "Emergency Heat turns the heat pump off and heats with the backup heat alone, usually electric strips that cost about two to three times as much to run. It's the right setting to stay warm while you wait for a technician, not an everyday setting." }
-    ],
-    safetyNote: "Heat strips run on a separate high-voltage circuit; don't open the air handler to check them. Never add refrigerant yourself: it requires EPA certification, and newer systems use mildly flammable refrigerants.",
-    callPro: [
-      "The air is cold, not lukewarm, for more than 15 minutes in Heat mode",
-      "The outdoor unit stays encased in ice after a defrost cycle",
-      "The house can't keep up even on mild winter days",
-      "A breaker for the outdoor unit or the heat strips trips again after one reset"
-    ],
-    quoteFlags: [
-      "A refrigerant top-up with no leak search: heat pumps don't use up refrigerant",
-      "A reversing valve replacement quoted before anyone has checked the thermostat wiring and the valve's solenoid coil, which are cheaper fixes",
-      `A new system quoted because "heat pumps don't work in the cold": cold-climate models are rated to heat well below freezing`
-    ],
-    faqs: [
-      { q: "Why is my heat pump blowing cold air?", a: "Most often it's in a defrost cycle, which lasts a few minutes and then heat returns. If the air stays cold, check that the thermostat is on Heat and set above the room temperature. Air that is cold all the time in Heat mode can mean the reversing valve is stuck in cooling, which needs a technician." },
-      { q: "Is it normal for heat pump air to feel lukewarm?", a: "Yes. A heat pump delivers a larger volume of moderately warm air rather than short blasts of hot air like a gas furnace, so the air at the vent can feel only lukewarm against your hand. As long as the house reaches the set temperature, it's working." },
-      { q: "Should I switch my heat pump to Emergency Heat when it's very cold?", a: "Usually not. The thermostat brings in backup (auxiliary) heat automatically when the heat pump needs help. Emergency Heat turns the heat pump off entirely, which costs much more to run. Use it only when the outdoor unit has failed or is iced solid and you're waiting for a repair." },
-      { q: "At what temperature does a heat pump stop heating?", a: "It depends on the model. Older and standard heat pumps lose a lot of capacity below about freezing and lean on backup heat, while cold-climate models are designed to keep heating at 5°F (−15°C) and below. Check the low-temperature rating on your model's spec sheet." }
-    ],
-    related: ["heat-pump-defrost-mode", "heat-pump-frozen-outdoor-unit", "ac-outdoor-unit-not-running"],
-    extra: {
-      heading: "Is a heat pump worth it where you live?",
-      paragraphs: ["Whether a heat pump saves money over a furnace depends on what you heat with now and what you pay for electricity. Our heat pump vs central AC guide runs the numbers for gas, propane, oil and electric baseboard heat."],
-      link: { to: "/blog/heat-pump-vs-central-ac", label: "Heat pump vs central AC: what it costs to run" }
-    }
-  },
-  {
-    slug: "heat-pump-frozen-outdoor-unit",
-    name: "Heat pump iced up",
-    title: "Heat Pump Frozen in Winter? Ice on the Outdoor Unit",
-    h1: "Heat Pump Outdoor Unit Covered in Ice? What's Normal and What to Do",
-    description: "Some frost on a heat pump in winter is normal. Thick ice that doesn't clear isn't. How to tell the difference, the safe things to do, the causes and what repairs cost.",
-    group: "heat-pump",
-    summary: "Frost or thick ice on the outdoor unit that doesn't clear.",
-    published: "2026-10-21",
-    updated: "2026-10-21",
-    quick: [
-      "Normal frost between defrost cycles in cold, damp weather",
-      "Snow drifted against the unit or ice dripping onto it from a roof",
-      "Melt water refreezing under the unit because it sits too low",
-      "A failed defrost control board or sensor",
-      "An outdoor fan that has stopped",
-      "Low refrigerant from a leak"
-    ],
-    firstChecks: [
-      "How thick is it? A thin, even layer of white frost that clears every hour or so is normal. Clear ice that covers the coil and the top of the unit and never clears is not.",
-      "Watch for a defrost: within an hour or two, the outdoor fan should stop and the unit should steam for a few minutes, leaving the coil clear.",
-      "Look up: is water dripping onto the unit from a gutter or roof edge and freezing?",
-      "Look down: is the unit sitting in a puddle of ice, or buried in snow? It should be raised a few inches above the ground."
-    ],
-    causes: [
-      { cause: "Normal frost", signs: "Thin white frost that disappears during each defrost cycle", who: "DIY", cost: "$0 (normal)", see: "heat-pump-defrost-mode" },
-      { cause: "Snow, roof drip or poor drainage", signs: "Ice heaviest on the top or the bottom; unit sits low or under a roof edge", who: "DIY or pro", cost: "$0 to clear; a riser stand or gutter repair costs extra" },
-      { cause: "Failed defrost board or sensor", signs: "The unit never stops its fan or steams; ice keeps building", who: "Pro", cost: COST.defrostBoard },
-      { cause: "Outdoor fan not running", signs: "Compressor runs but the fan doesn't turn (outside defrost)", who: "Pro", cost: COST.condenserFan },
-      { cause: "Reversing valve sticking", signs: "Defrost starts but doesn't melt the ice; unit makes the defrost sound but the coil stays frozen", who: "Pro", cost: COST.reversingValve },
-      { cause: "Low refrigerant (a leak)", signs: "Icing has gotten worse over time, heating is weak, hissing or oily spots on the lines", who: "Pro", cost: `${COST.refrigerant} to find, fix and recharge` }
-    ],
-    steps: [
-      { title: "Give it a defrost cycle", text: "If the frost is thin and even, leave it. The unit will reverse for a few minutes, the fan will stop and it will steam. That's normal and can happen every 30 to 90 minutes in freezing, damp weather." },
-      { title: "Clear snow, gently", text: "Brush snow off the top and away from the sides with a soft broom, and keep about 2 feet clear around the unit. Don't chip, scrape or hammer ice off the coil: the fins and tubes are thin and puncture easily." },
-      { title: "Melt heavy ice with water, not tools", text: "If thick ice won't clear and you're waiting for service, switch the system to Emergency Heat or off, then pour lukewarm (not hot) water over the coil from a watering can or hose. Never use a heat gun, open flame or chemical de-icer." },
-      { title: "Fix the drip and the drainage", text: "Water from a roof edge or a broken gutter freezes on the unit faster than any defrost can clear it. Redirect it, and if the unit sits on the ground, a riser or wall bracket keeps it above snow and melt water." },
-      { title: "Call if it ices up again", text: "If the coil ices solid again after you've cleared snow and fixed any drip, the defrost controls, fan or refrigerant charge need checking. Run it on Emergency Heat until then." }
-    ],
-    safetyNote: "Turn off power at the outdoor disconnect before touching the unit. Don't use sharp tools, heat guns or flames on ice.",
-    callPro: [
-      "The coil is encased in clear ice that doesn't clear after a defrost cycle",
-      "The unit never seems to go into defrost (no steam, the fan never stops)",
-      "The outdoor fan isn't spinning while the compressor runs",
-      "Ice comes back within a day of clearing it"
-    ],
-    quoteFlags: [
-      "A new outdoor unit quoted before the defrost board, sensor and fan have been tested",
-      "A refrigerant recharge with no leak search",
-      'A "winter cover" sold to keep a heat pump dry: covering a running heat pump blocks its airflow'
-    ],
-    faqs: [
-      { q: "Is it normal for a heat pump to have ice on it?", a: "A light, even layer of frost is normal in cold, damp weather; the defrost cycle clears it every so often. A heat pump encased in thick ice, especially on the top or with ice that never clears, isn't normal and points to snow, dripping water or a defrost problem." },
-      { q: "How do I defrost a frozen heat pump?", a: "Switch the thermostat to Emergency Heat or off, then pour lukewarm water over the coil to melt the ice. Don't chip it off. Once it's clear, return to Heat and watch whether it ices up again; if it does, call a technician." },
-      { q: "Can I cover my heat pump in winter?", a: "Not while it's in use. A heat pump needs air flowing through its coil to heat your house. A small roof or awning well above the unit can keep falling snow and ice off, as long as it doesn't restrict airflow." }
-    ],
-    related: ["heat-pump-defrost-mode", "heat-pump-not-heating", "ac-frozen-coil"]
-  },
-  {
-    slug: "heat-pump-defrost-mode",
-    name: "Heat pump steaming / defrost",
-    title: "Heat Pump Defrost Mode: Steam, Noises and Cool Air",
-    h1: "Heat Pump Steaming, Whooshing or Blowing Cool Air? Defrost Mode Explained",
-    description: "Steam from your heat pump, a loud whoosh, the fan stopping and cool air for a few minutes are usually just defrost mode. What's normal, how often, and when it's a problem.",
-    group: "heat-pump",
-    summary: "Steam from the outdoor unit, a whoosh, the fan stopping, cool air for a few minutes.",
-    published: "2026-10-21",
-    updated: "2026-10-21",
-    quick: [
-      "Normal defrost: the heat pump briefly runs in reverse to melt frost",
-      "Defrosting very often because of snow, dirt or poor airflow",
-      "A defrost cycle that doesn't end: a failed board or sensor",
-      "Backup heat not coming on during defrost, so the indoor air feels cold"
-    ],
-    firstChecks: [
-      "Time it: a normal defrost lasts about 2 to 10 minutes, up to about 15 in heavy frost.",
-      "Count them: in freezing, damp weather, defrosts every 30 to 90 minutes are normal. In mild, dry weather they should be rare.",
-      "Watch the outdoor fan: on most models it stops during defrost and starts again afterwards.",
-      "Look at the coil afterwards: it should be clear of frost."
-    ],
-    causes: [
-      { cause: "Normal defrost cycle", signs: "Whoosh, fan stops, steam for a few minutes, then normal heating resumes", who: "DIY", cost: "$0 (normal)" },
-      { cause: "Dirty coil or blocked airflow", signs: "Defrosts more often than usual; leaves or snow against the unit; a dirty indoor filter", who: "DIY", cost: `$0–${COST.filter.split("–")[1]}` },
-      { cause: "Backup heat not working during defrost", signs: "Indoor air is noticeably cold every time it defrosts", who: "Pro", cost: `${COST.serviceCall} service call plus parts` },
-      { cause: "Failed defrost board or sensor", signs: "Defrost cycles back to back, last well over 15 minutes, or never happen", who: "Pro", cost: COST.defrostBoard },
-      { cause: "Reversing valve or refrigerant problem", signs: "Defrost runs but doesn't clear the coil; heating weak afterwards", who: "Pro", cost: `${COST.reversingValve} valve, ${COST.refrigerant} leak repair` }
-    ],
-    steps: [
-      { title: "Let a cycle finish", text: "Don't switch the system off when you see steam. A defrost is the heat pump briefly running as an air conditioner so warm refrigerant melts frost off the outdoor coil. The steam is that melt water evaporating. Interrupting it leaves ice behind." },
-      { title: "Keep the outdoor unit clear", text: "Snow, leaves and dirt on the coil make frost build faster, so the unit defrosts more often. Keep 2 feet clear around it. In mild weather, a gentle rinse of the coil with the power off helps." },
-      { title: "Check the filter indoors", text: "A clogged filter makes the whole system work harder in heating, too. Replace it if it's gray." },
-      { title: "Note what's not normal", text: "Write down how long each defrost lasts and how often it happens. Cycles over 15 minutes, back-to-back cycles in dry weather, or no defrost at all while ice builds up are worth a service call, and the notes help the technician." }
-    ],
-    callPro: [
-      "Defrost cycles last much longer than 15 minutes or run back to back",
-      "Ice builds up and the unit never seems to defrost",
-      "You hear grinding or screeching, or smell burning (switch off and call)",
-      "The house gets cold every time it defrosts"
-    ],
-    quoteFlags: [
-      'A new system recommended because the unit "steams": steam during defrost is normal',
-      "A defrost board replaced without testing the coil sensor first"
-    ],
-    faqs: [
-      { q: "Why is steam coming out of my heat pump?", a: "It's almost always the defrost cycle. In cold weather, frost forms on the outdoor coil, and the heat pump periodically reverses to warm the coil and melt it. The melt water evaporates off the warm coil as steam. It's normal and stops within a few minutes." },
-      { q: "How often should a heat pump go into defrost?", a: "It depends on the weather and the controls. In freezing, damp weather, every 30 to 90 minutes is normal; in dry or milder weather it may rarely defrost at all. Each cycle usually lasts 2 to 10 minutes." },
-      { q: "Why does my heat pump blow cold air during defrost?", a: "During defrost the heat pump is moving heat to the outdoor coil, so it isn't heating the house for those few minutes. Most systems switch on backup heat to temper the air. If the air is noticeably cold every time, the backup heat may not be working." },
-      { q: "What is the loud whoosh from my heat pump?", a: "That's the reversing valve switching the direction of the refrigerant at the start and end of a defrost cycle. A short whoosh or hiss is normal. Grinding, screeching or banging isn't." }
-    ],
-    related: ["heat-pump-frozen-outdoor-unit", "heat-pump-not-heating", "ac-making-noise"]
-  }
-];
-function getSymptom(slug) {
-  return SYMPTOMS.find((s) => s.slug === slug);
-}
 const PATH$1 = "/troubleshooting";
 const TITLE$1 = "AC Troubleshooting: Fix Common Air Conditioner Problems";
 const HEADLINE$1 = "AC Troubleshooting: What's Wrong With Your Air Conditioner?";
@@ -37109,7 +37397,11 @@ function TroubleshootingSymptom() {
         ] }),
         s.fromExperience && /* @__PURE__ */ jsxs("div", { className: "rounded-lg border-l-4 border-[#17204d] bg-slate-50 p-5 mb-4", children: [
           /* @__PURE__ */ jsx("p", { className: "text-sm font-bold uppercase tracking-wide text-[#17204d] mb-1", children: "From our own units" }),
-          /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed", children: s.fromExperience })
+          (Array.isArray(s.fromExperience) ? s.fromExperience : [s.fromExperience]).map((t) => /* @__PURE__ */ jsx("p", { className: "text-gray-700 leading-relaxed mt-2 first:mt-0", children: t }, t)),
+          s.fromExperienceLink && /* @__PURE__ */ jsx("p", { className: "mt-3", children: /* @__PURE__ */ jsxs(Link, { to: s.fromExperienceLink.to, className: a$2, children: [
+            s.fromExperienceLink.label,
+            " →"
+          ] }) })
         ] }),
         /* @__PURE__ */ jsx("h2", { className: h2$2, children: "Step by step" }),
         /* @__PURE__ */ jsx("ol", { className: "space-y-4 mb-4", children: s.steps.map((st, i) => /* @__PURE__ */ jsxs("li", { className: "flex gap-4", children: [
@@ -37999,6 +38291,7 @@ function AppContent() {
       /* @__PURE__ */ jsx(Route, { path: "/blog/cost-to-run-a-fan", element: /* @__PURE__ */ jsx(BlogArticleFanCost, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/blog/ceiling-fan-buying-guide", element: /* @__PURE__ */ jsx(BlogArticleFanBuyingGuide, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/blog/ceiling-fan-direction", element: /* @__PURE__ */ jsx(BlogArticleFanDirection, {}) }),
+      /* @__PURE__ */ jsx(Route, { path: "/blog/ac-float-switch-flood", element: /* @__PURE__ */ jsx(BlogArticleFloatSwitchFlood, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/blog/home-airflow-fans", element: /* @__PURE__ */ jsx(BlogArticleHomeAirflow, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/blog/14-vs-16-seer", element: /* @__PURE__ */ jsx(BlogArticle14vs16Seer, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/blog/protect-air-conditioner-power-surges-outages", element: /* @__PURE__ */ jsx(BlogArticlePowerProtection, {}) }),
@@ -38102,6 +38395,7 @@ const routes = [
   "/blog/cost-to-run-a-fan",
   "/blog/ceiling-fan-buying-guide",
   "/blog/ceiling-fan-direction",
+  "/blog/ac-float-switch-flood",
   "/blog/home-airflow-fans",
   "/blog/14-vs-16-seer",
   "/blog/protect-air-conditioner-power-surges-outages",
