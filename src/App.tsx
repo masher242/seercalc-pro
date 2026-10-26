@@ -33,6 +33,7 @@ import BlogArticleFanVsAc from './pages/BlogArticleFanVsAc';
 import BlogArticleFanCost from './pages/BlogArticleFanCost';
 import BlogArticleFanBuyingGuide from './pages/BlogArticleFanBuyingGuide';
 import BlogArticleFanDirection from './pages/BlogArticleFanDirection';
+import BlogArticleFloatSwitchFlood from './pages/BlogArticleFloatSwitchFlood';
 import BlogArticleHomeAirflow from './pages/BlogArticleHomeAirflow';
 import BlogArticle14vs16Seer from './pages/BlogArticle14vs16Seer';
 import BlogArticlePowerProtection from './pages/BlogArticlePowerProtection';
@@ -113,6 +114,7 @@ function AppContent() {
           <Route path="/blog/cost-to-run-a-fan" element={<BlogArticleFanCost />} />
           <Route path="/blog/ceiling-fan-buying-guide" element={<BlogArticleFanBuyingGuide />} />
           <Route path="/blog/ceiling-fan-direction" element={<BlogArticleFanDirection />} />
+          <Route path="/blog/ac-float-switch-flood" element={<BlogArticleFloatSwitchFlood />} />
           <Route path="/blog/home-airflow-fans" element={<BlogArticleHomeAirflow />} />
           <Route path="/blog/14-vs-16-seer" element={<BlogArticle14vs16Seer />} />
           <Route path="/blog/protect-air-conditioner-power-surges-outages" element={<BlogArticlePowerProtection />} />
