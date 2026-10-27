@@ -8,14 +8,14 @@ import { cents } from '../data/acCost';
 import { PROVINCES, CANADA_RATES_DATE, CANADA_SOURCE, CANADA_SOURCE_URL, cad } from '../data/canada';
 import {
   CA_HEAT_KWH, CA_COP, CA_OIL_PER_L, CA_OIL_KWH_PER_L, CA_OIL_AS_OF, CA_OIL_SOURCE_URL, CA_GAS_KWH_PER_M3,
-  ENBRIDGE_PER_M3, ENBRIDGE_SOURCE_URL,
+  ENBRIDGE_PER_M3, ENBRIDGE_AS_OF, ENBRIDGE_SOURCE_URL,
 } from '../data/heating';
 
 const PATH = '/blog/heat-pump-canada';
 const TITLE = 'Heat Pumps in Canada: Costs by Province and 2026 Rebates';
 const HEADLINE = 'Heat Pumps in Canada (2026): What They Save in Every Province, and the Rebates Available';
 const PUBLISHED = '2026-10-21';
-const UPDATED = '2026-10-21';
+const UPDATED = '2026-10-27';
 
 const th = 'border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 align-bottom';
 const td = 'border border-gray-200 px-3 py-2.5 text-gray-700 align-top';
@@ -194,8 +194,8 @@ export default function BlogArticleHeatPumpCanada() {
           <h2 className={h2}>What about natural gas?</h2>
           <p className={p}>
             Gas got cheaper for households when the federal consumer carbon charge was removed in 2025. In the Toronto
-            area, Enbridge's price per extra cubic metre is about {(ENBRIDGE_PER_M3 * 100).toFixed(1)}¢ before HST from July
-            1, 2026 (delivery, transportation and supply; the monthly customer charge doesn't change with use). In a 95%
+            area, Enbridge's price per extra cubic metre is about {(ENBRIDGE_PER_M3 * 100).toFixed(1)}¢ before HST from{' '}
+            {ENBRIDGE_AS_OF} (delivery, transportation and supply; the monthly customer charge doesn't change with use). In a 95%
             furnace that's about <strong>{cents(gasOnPerKwh)} per kWh of heat</strong>, or {cad(gasOnYear)} a year for the
             same house. A heat pump at Toronto's price of {cents(on.price)} per extra kWh costs about{' '}
             <strong>{cents(on.price / CA_COP)} per kWh of heat</strong>, or {cad(on.hp)} a year.
@@ -283,7 +283,7 @@ export default function BlogArticleHeatPumpCanada() {
           <h2 className={h2}>Sources and method</h2>
           <ul className="list-disc pl-6 space-y-1 text-sm text-gray-600 mb-4">
             <li>Electricity: <a href={CANADA_SOURCE_URL} target="_blank" rel="noopener noreferrer" className={ext}>{CANADA_SOURCE}</a>, price of each kWh from 1,000 to 2,000 a month, before tax.</li>
-            <li>Gas: <a href={ENBRIDGE_SOURCE_URL} target="_blank" rel="noopener noreferrer" className={ext}>Ontario Energy Board, Enbridge Gas rate notice from July 1, 2026</a> (EGD rate zone), plus 13% HST; about {CA_GAS_KWH_PER_M3} kWh of heat per cubic metre.</li>
+            <li>Gas: <a href={ENBRIDGE_SOURCE_URL} target="_blank" rel="noopener noreferrer" className={ext}>Enbridge Gas Rate 1 notice from {ENBRIDGE_AS_OF}</a> (EGD rate zone, prices approved by the Ontario Energy Board), plus 13% HST; about {CA_GAS_KWH_PER_M3} kWh of heat per cubic metre.</li>
             <li>Oil: <a href={CA_OIL_SOURCE_URL} target="_blank" rel="noopener noreferrer" className={ext}>GlobalPetrolPrices</a>, {CA_OIL_AS_OF}; about {CA_OIL_KWH_PER_L} kWh per litre.</li>
             <li>Heat needed ({CA_HEAT_KWH.toLocaleString()} kWh a year) and the heat pump's seasonal efficiency ({CA_COP}) are our estimates.</li>
           </ul>
