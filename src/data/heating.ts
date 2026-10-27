@@ -89,12 +89,14 @@ export const CA_OIL_PER_L = 1.74;
 export const CA_OIL_AS_OF = 'February 9, 2026';
 export const CA_OIL_SOURCE_URL = 'https://www.globalpetrolprices.com/Canada/heating_oil_prices/';
 /**
- * Enbridge Gas (Toronto-area EGD rate zone) from July 1, 2026, OEB QRAM notice: delivery over 170 m³ 12.3904¢
- * + transportation 5.4267¢ + gas supply 9.0498¢ = 26.87¢/m³ before HST; no federal carbon charge.
+ * Enbridge Gas (Toronto-area EGD rate zone) from October 1, 2026, Enbridge Rate 1 notice under OEB decision
+ * EB-2026-0221 (Sept 24, 2026): delivery over 170 m³ 12.2850¢ + transportation 5.4818¢ + gas supply 9.1080¢
+ * (9.4741¢ less a 0.3661¢ cost adjustment) = 26.87¢/m³ before HST; no federal carbon charge.
  * The monthly customer charge ($27.69) doesn't change with use, so it's left out.
  */
 export const ENBRIDGE_PER_M3 = 0.2687;
-export const ENBRIDGE_SOURCE_URL = 'https://oeb.ca/sites/default/files/qram-enbridge-20260701-en.pdf';
+export const ENBRIDGE_AS_OF = 'October 1, 2026';
+export const ENBRIDGE_SOURCE_URL = 'https://www.enbridgegas.com/-/media/Extranet-Pages/ontario/residential/myaccount/rates/EGD---Rate-1---System-Notice.pdf';
 /** Same house everywhere: heat delivered per year, kWh (our estimate for a typical detached house). */
 export const CA_HEAT_KWH = 15000;
 /** Seasonal COP for a cold-climate heat pump in most of Canada, including backup heat on the coldest days (our estimate). */
