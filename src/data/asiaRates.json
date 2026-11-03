@@ -90,12 +90,12 @@
           "id": "clp",
           "name": "CLP Power",
           "area": "Kowloon, the New Territories and most outlying islands",
-          "rate": 1.699
+          "rate": 1.711
         }
       ],
-      "rateNote": "CLP Power's 2026 residential price for a home using 1,000 to 1,800 units every two months (the band most air-conditioned flats reach in summer): energy charge HK$1.237 plus the October 2026 fuel cost adjustment of HK$0.462 per unit.",
-      "asOf": "2026 tariff, fuel cost adjustment for October 2026",
-      "source": "CLP Power, 2026 residential tariff table (block of 1,001–1,800 units per two months, 123.7 cents per unit) and fuel cost adjustment from October 1, 2026 (46.2 cents per unit)",
+      "rateNote": "CLP Power's 2026 residential price for a home using 1,000 to 1,800 units every two months (the band most air-conditioned flats reach in summer): energy charge HK$1.237 plus the November 2026 fuel cost adjustment of HK$0.474 per unit.",
+      "asOf": "2026 tariff, fuel cost adjustment for November 2026",
+      "source": "CLP Power, 2026 residential tariff table (block of 1,001–1,800 units per two months, 123.7 cents per unit) and fuel cost adjustment from November 1, 2026 (47.4 cents per unit)",
       "sourceUrl": "https://www.clp.com.hk/en/help-support/bills-payment-tariffs/fuel-cost-adjustment",
       "cities": [
         {
@@ -108,7 +108,7 @@
       "units": "In Hong Kong, air conditioners are sold by horsepower or kW: a 1.5 hp unit is about 12,000 BTU (3.5 kW) of cooling.",
       "tariff": [
         "CLP charges more per unit the more you use. The basic energy charge is 94.5 cents for the first 400 units every two months, 107.9 cents for the next 600 and 123.7 cents for the next 800, rising to 189 cents above 4,200 units. Summer air conditioning pushes most flats into the higher blocks, so the units it adds cost more than the average.",
-        "On top of that is the fuel cost adjustment, revised monthly. It has risen through 2026, from 39.4 cents a unit in January to 46.2 cents in October. An 8-cent Special Fuel Rebate applied to eligible residential customers from August to October 2026.",
+        "On top of that is the fuel cost adjustment, revised monthly. It has risen through 2026, from 39.4 cents a unit in January to 47.4 cents in November. An 8-cent Special Fuel Rebate applied to eligible residential customers from August to October 2026.",
         "Hong Kong Island and Lamma are supplied by HK Electric, whose 2026 basic tariff averages 127.9 cents a unit, with a fuel clause charge of 60.7 cents in September 2026, so a unit there costs more than with CLP."
       ]
     },
@@ -121,7 +121,7 @@
           "id": "tepco",
           "name": "TEPCO (Tokyo Electric Power)",
           "area": "Tokyo and the Kanto region",
-          "rate": 38.87
+          "rate": 39.34
         },
         {
           "id": "kansai",
@@ -130,10 +130,10 @@
           "rate": 35.01
         }
       ],
-      "rateNote": "the price of each kWh above 300 kWh a month on the standard metered plan (TEPCO Juryo Dento B, Kansai Juryo Dento A), plus the October 2026 fuel cost adjustment before the temporary government discount, plus the 2026 renewable energy levy of ¥4.18, tax included",
-      "asOf": "October 2026",
-      "source": "TEPCO Energy Partner and Kansai Electric standard metered tariffs (third tier, above 300 kWh: TEPCO ¥40.49, Kansai ¥28.59), October 2026 fuel cost adjustment before the government discount (TEPCO −¥5.80, Kansai +¥2.24) and the FY2026 renewable energy levy (¥4.18), tax included",
-      "sourceUrl": "https://www.tepco.co.jp/ep/notice/pressrelease/2026/pdf/260828j0601.pdf",
+      "rateNote": "the price of each kWh above 300 kWh a month on the standard metered plan (TEPCO Juryo Dento B, Kansai Juryo Dento A), plus the November 2026 fuel cost adjustment, plus the 2026 renewable energy levy of ¥4.18, tax included",
+      "asOf": "November 2026",
+      "source": "TEPCO Energy Partner and Kansai Electric standard metered tariffs (third tier, above 300 kWh: TEPCO ¥40.49, Kansai ¥28.59), November 2026 fuel cost adjustment (TEPCO −¥5.33, Kansai +¥2.24; no government discount applies to November) and the FY2026 renewable energy levy (¥4.18), tax included",
+      "sourceUrl": "https://www.tepco.co.jp/en/ep/about/newsroom/press/archives/2026/pdf/260929e0101.pdf",
       "cities": [
         {
           "name": "Osaka",
@@ -184,7 +184,7 @@
       "rateNote": "what each kWh adds when air conditioning takes a home from 300 to 600 kWh a month, on TNB's domestic tariff (energy 27.03, capacity 4.55 and network 12.85 sen a kWh), after the Energy Efficiency Incentive rebate shrinks from 22.5 to 9.0 sen a kWh, under the September–December 2026 rules (no AFA, retail charge or service tax up to 800 kWh)",
       "asOf": "September–December 2026 rules",
       "source": "TNB domestic tariff from July 2025 (energy 27.03, capacity 4.55, network 12.85 sen/kWh up to 1,500 kWh; Energy Efficiency Incentive bands) and the September–December 2026 exemption up to 800 kWh; our calculation",
-      "sourceUrl": "https://paultan.org/2026/10/01/tnb-bill-afa-rate-october-2026-set-at-3-61-sen-kwh/",
+      "sourceUrl": "https://paultan.org/2026/11/02/tnb-bill-afa-rate-november-2026-set-at-3-60-sen-kwh/",
       "cities": [
         {
           "name": "George Town (Penang)",
@@ -212,7 +212,7 @@
       "tariff": [
         "Since July 2025, TNB bills households a generation charge, a capacity charge and a network charge for every kWh, plus a monthly fuel adjustment (AFA). Homes using under 1,000 kWh a month get an Energy Efficiency Incentive rebate, worked out from the home's total use: the more you use, the smaller the rebate on every kWh.",
         "That's why air conditioning costs more per kWh than the headline rate: going from 300 to 600 kWh a month cuts the rebate from 22.5 to 9.0 sen on every kWh, so each kWh the AC adds costs about 49 sen, not 44.",
-        "Until December 31, 2026, homes using up to 800 kWh a month pay no AFA (+3.61 sen in October 2026), retail charge or service tax. From January 2027 that limit drops back to 600 kWh, so a home using more than that will pay more for the same cooling. Sabah and Sarawak have their own utilities and tariffs."
+        "Until December 31, 2026, homes using up to 800 kWh a month pay no AFA (+3.60 sen in November 2026), retail charge or service tax. From January 2027 that limit drops back to 600 kWh, so a home using more than that will pay more for the same cooling. Sabah and Sarawak have their own utilities and tariffs."
       ]
     },
     {
