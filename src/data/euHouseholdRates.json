@@ -2,10 +2,10 @@
   "_readme": "Household electricity prices for the Europe map. Eurostat nrg_pc_204: households, band DC (2,500-4,999 kWh a year), all taxes and levies included, EUR per kWh. Keys are ISO 3166-1 alpha-2 (Greece is GR; Eurostat uses EL). Refresh with scripts/update-eu-rates.py, which picks the newest half-year that has all 27 EU countries. Country pages (europeRates.json) use the latest national tariff instead, so their figures can differ.",
   "period": "2026-S1",
   "periodLabel": "January to June 2026",
-  "updated": "2026-10-16",
+  "updated": "2026-11-05",
   "source": "Eurostat, Electricity prices for household consumers (nrg_pc_204)",
   "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?lang=en",
-  "euAverage": 0.2896,
+  "euAverage": 0.2832,
   "euAverageNote": "EU-27 average for the same period and band, as published by Eurostat",
   "countries": {
     "AT": {
@@ -70,9 +70,7 @@
     },
     "LV": {
       "name": "Latvia",
-      "price": 0.2452,
-      "period": "2025-S2",
-      "periodLabel": "July to December 2025"
+      "price": 0.2415
     },
     "LT": {
       "name": "Lithuania",
@@ -119,5 +117,5 @@
       "price": 0.3062
     }
   },
-  "euAveragePeriod": "2025-S2"
+  "euAveragePeriod": "2026-S1"
 }
