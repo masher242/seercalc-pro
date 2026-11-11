@@ -17511,7 +17511,8 @@ const CA_OIL_PER_L = 1.74;
 const CA_OIL_AS_OF = "February 9, 2026";
 const CA_OIL_SOURCE_URL = "https://www.globalpetrolprices.com/Canada/heating_oil_prices/";
 const ENBRIDGE_PER_M3 = 0.2687;
-const ENBRIDGE_SOURCE_URL = "https://oeb.ca/sites/default/files/qram-enbridge-20260701-en.pdf";
+const ENBRIDGE_AS_OF = "October 1, 2026";
+const ENBRIDGE_SOURCE_URL = "https://www.enbridgegas.com/-/media/Extranet-Pages/ontario/residential/myaccount/rates/EGD---Rate-1---System-Notice.pdf";
 const CA_HEAT_KWH = 15e3;
 const CA_COP = 2.5;
 const PATH$h = "/blog/heat-pump-vs-central-ac";
@@ -18227,7 +18228,7 @@ const PATH$g = "/blog/heat-pump-canada";
 const TITLE$g = "Heat Pumps in Canada: Costs by Province and 2026 Rebates";
 const HEADLINE$g = "Heat Pumps in Canada (2026): What They Save in Every Province, and the Rebates Available";
 const PUBLISHED$3 = "2026-10-21";
-const UPDATED$2 = "2026-10-21";
+const UPDATED$2 = "2026-10-27";
 const th$m = "border border-gray-200 px-3 py-2.5 text-left font-semibold text-gray-900 align-bottom";
 const td$m = "border border-gray-200 px-3 py-2.5 text-gray-700 align-top";
 const h2$n = "text-2xl font-bold text-gray-900 mt-10 mb-4";
@@ -18405,7 +18406,10 @@ function BlogArticleHeatPumpCanada() {
         /* @__PURE__ */ jsxs("p", { className: p$n, children: [
           "Gas got cheaper for households when the federal consumer carbon charge was removed in 2025. In the Toronto area, Enbridge's price per extra cubic metre is about ",
           (ENBRIDGE_PER_M3 * 100).toFixed(1),
-          "¢ before HST from July 1, 2026 (delivery, transportation and supply; the monthly customer charge doesn't change with use). In a 95% furnace that's about ",
+          "¢ before HST from",
+          " ",
+          ENBRIDGE_AS_OF,
+          " (delivery, transportation and supply; the monthly customer charge doesn't change with use). In a 95% furnace that's about ",
           /* @__PURE__ */ jsxs("strong", { children: [
             cents(gasOnPerKwh),
             " per kWh of heat"
@@ -18516,8 +18520,11 @@ function BlogArticleHeatPumpCanada() {
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             "Gas: ",
-            /* @__PURE__ */ jsx("a", { href: ENBRIDGE_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: "Ontario Energy Board, Enbridge Gas rate notice from July 1, 2026" }),
-            " (EGD rate zone), plus 13% HST; about ",
+            /* @__PURE__ */ jsxs("a", { href: ENBRIDGE_SOURCE_URL, target: "_blank", rel: "noopener noreferrer", className: ext$7, children: [
+              "Enbridge Gas Rate 1 notice from ",
+              ENBRIDGE_AS_OF
+            ] }),
+            " (EGD rate zone, prices approved by the Ontario Energy Board), plus 13% HST; about ",
             CA_GAS_KWH_PER_M3,
             " kWh of heat per cubic metre."
           ] }),
