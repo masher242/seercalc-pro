@@ -21,6 +21,25 @@ const DEFAULT_INPUTS: CalculatorInputs = {
   upgradeCost: 0
 };
 
+// The three articles that earned most of the old seercalc.pro search traffic.
+const FEATURED_GUIDES = [
+  {
+    to: '/blog/best-air-conditioner-brands-2026',
+    title: 'Best Air Conditioner Brands 2026',
+    blurb: 'Trane, Carrier, Lennox, Goodman and more, compared on reliability, efficiency, warranty and price.',
+  },
+  {
+    to: '/blog/what-is-seer-rating',
+    title: 'What Is a SEER Rating?',
+    blurb: 'What the number means and how much it changes your yearly cooling bill.',
+  },
+  {
+    to: '/blog/history-of-seer-ratings',
+    title: 'The History of SEER Ratings',
+    blurb: 'From the 1970s energy crisis to today’s minimums: how AC efficiency standards evolved.',
+  },
+];
+
 export default function Home() {
   const [inputs, setInputs] = useState<CalculatorInputs>(DEFAULT_INPUTS);
   const [results, setResults] = useState<CalculationResults | null>(null);
@@ -202,7 +221,20 @@ export default function Home() {
 
         <div className="mt-12 bg-teal-50 rounded-lg p-6 border border-teal-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Want to Learn More?</h2>
-          <p className="text-gray-700 mb-4">Check out our Efficiency Hub for detailed guides on SEER ratings, HVAC savings, and choosing the right system for your home.</p>
+          <p className="text-gray-700 mb-4">Start with our most-read guides:</p>
+          <div className="grid gap-3 md:grid-cols-3 mb-5">
+            {FEATURED_GUIDES.map(({ to, title, blurb }) => (
+              <Link
+                key={to}
+                to={to}
+                className="block rounded-lg bg-white p-4 border border-teal-100 hover:border-teal-300 hover:shadow-md transition-all"
+              >
+                <span className="block font-semibold text-gray-900 mb-1">{title}</span>
+                <span className="block text-sm text-gray-600">{blurb}</span>
+              </Link>
+            ))}
+          </div>
+          <p className="text-gray-700 mb-4">Or browse detailed guides on SEER ratings, HVAC savings, and choosing the right system for your home.</p>
           <Link
             to="/blog/hvac-seer-calculator-faq"
             className="inline-block bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors"
