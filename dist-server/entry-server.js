@@ -18266,7 +18266,7 @@ function BlogArticleHeatPumpCanada() {
     },
     {
       q: "What heat pump rebates are available in Canada in 2026?",
-      a: "A new federal heat pump rebate (up to $10,000 for households below the median income, $2,000 for others) was announced on October 8, 2026, with the application portal expected in early 2027. The federal Oil to Heat Pump Affordability program stopped taking applications on July 31, 2026. Provinces run their own programs, for example Ontario's Home Renovation Savings (up to $7,500 for a cold-climate air-source heat pump), Quebec's LogisVert and B.C.'s Energy Savings Program."
+      a: "The new federal National Heat Pump Rebate (up to $10,000 for households below the median income, $2,000 for others) was announced on October 8, 2026. Applications open through an online portal in early 2027, and heat pumps installed from November 1, 2026 may qualify once it opens. The federal Oil to Heat Pump Affordability program stopped taking applications on July 31, 2026. Provinces run their own programs, for example Ontario's Home Renovation Savings (up to $7,500 for a cold-climate air-source heat pump), Quebec's LogisVert and B.C.'s Energy Savings Program."
     }
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
@@ -18321,7 +18321,7 @@ function BlogArticleHeatPumpCanada() {
             " against baseboards for a typical house, and more against oil. If you heat with",
             " ",
             /* @__PURE__ */ jsx("strong", { children: "natural gas" }),
-            ", a heat pump costs more per unit of heat at current Ontario prices, so a dual-fuel setup is the usual choice. A federal rebate of up to $10,000 was announced in October 2026, with applications expected in early 2027."
+            ", a heat pump costs more per unit of heat at current Ontario prices, so a dual-fuel setup is the usual choice. The federal National Heat Pump Rebate pays up to $10,000, with applications opening in early 2027."
           ] })
         ] }),
         /* @__PURE__ */ jsxs("p", { className: p$n, children: [
@@ -18434,9 +18434,16 @@ function BlogArticleHeatPumpCanada() {
           ] }) }),
           /* @__PURE__ */ jsxs("tbody", { children: [
             /* @__PURE__ */ jsxs("tr", { children: [
-              /* @__PURE__ */ jsx("td", { className: td$m, children: /* @__PURE__ */ jsx("strong", { children: "New federal heat pump rebate" }) }),
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
+                /* @__PURE__ */ jsx("strong", { children: "National Heat Pump Rebate" }),
+                " (federal)"
+              ] }),
               /* @__PURE__ */ jsx("td", { className: td$m, children: "Up to $10,000 for households below the median income; $2,000 for other eligible households. Can be combined with provincial programs." }),
-              /* @__PURE__ */ jsx("td", { className: td$m, children: "Announced October 8, 2026; application portal expected early 2027." })
+              /* @__PURE__ */ jsxs("td", { className: td$m, children: [
+                "Announced October 8, 2026. Online portal opens early 2027 (no exact date yet); heat pumps installed from November 1, 2026 may qualify. Runs to March 2034. ",
+                /* @__PURE__ */ jsx("a", { href: "https://www.canada.ca/en/environment-climate-change/campaigns/one-million-home-energy-retrofits.html", target: "_blank", rel: "noopener noreferrer", className: ext$7, children: "Canada.ca details" }),
+                "."
+              ] })
             ] }),
             /* @__PURE__ */ jsxs("tr", { children: [
               /* @__PURE__ */ jsxs("td", { className: td$m, children: [
@@ -18474,7 +18481,7 @@ function BlogArticleHeatPumpCanada() {
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-6", children: "Programs change often; confirm amounts and pre-approval rules before you sign a contract. Sources: Natural Resources Canada (OHPA, Greener Homes), CTV News and Daily Hive (federal rebate announcement), Save on Energy (Ontario), Hydro-Québec LogisVert summary via Centris (June 2026), CleanBC Energy Savings Program update (June 2026)." }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-500 mb-6", children: "Programs change often; confirm amounts and pre-approval rules before you sign a contract. Sources: Natural Resources Canada (OHPA, Greener Homes), Canada.ca National Heat Pump Rebate page (updated November 13, 2026), Save on Energy (Ontario), Hydro-Québec LogisVert summary via Centris (June 2026), CleanBC Energy Savings Program update (June 2026)." }),
         /* @__PURE__ */ jsx("h2", { className: h2$n, children: "Getting a heat pump that works in your winter" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-6 space-y-2 text-gray-700 mb-4", children: [
           /* @__PURE__ */ jsxs("li", { children: [
@@ -34163,13 +34170,13 @@ const countries = [
         id: "meralco",
         name: "Meralco",
         area: "Metro Manila and nearby provinces (Bulacan, Cavite, Laguna, Rizal and parts of Batangas, Pampanga and Quezon)",
-        rate: 15.0615
+        rate: 15.551
       }
     ],
-    rateNote: "Meralco's overall residential rate for October 2026 bills, for a typical household using 200 kWh a month, including generation, transmission, distribution, taxes and other charges.",
-    asOf: "October 2026",
-    source: "Meralco, overall rate for a typical household in October 2026 (₱15.0615 per kWh, up ₱0.3191 from September)",
-    sourceUrl: "https://company.meralco.com.ph/news-and-advisories/higher-residential-rates-october-2026",
+    rateNote: "Meralco's overall residential rate for November 2026 bills, for a typical household using 200 kWh a month, including generation, transmission, distribution, taxes and other charges.",
+    asOf: "November 2026",
+    source: "Meralco, overall rate for a typical household in November 2026 (₱15.5510 per kWh, up ₱0.4895 from October), as announced November 13, 2026 and reported by the Daily Tribune",
+    sourceUrl: "https://tribune.net.ph/2026/11/13/heat-higher-demand-push-up-meralco-november-bill",
     cities: [
       {
         name: "Metro Manila",
@@ -34180,7 +34187,7 @@ const countries = [
     refCity: "Metro Manila",
     units: "In the Philippines, air conditioners are usually sold by horsepower: a 1.5 hp split or window unit is about 12,000 BTU (3.5 kW) of cooling.",
     tariff: [
-      "Meralco's rate changes every month, mostly because of the generation charge, which follows fuel costs and the wholesale market. October 2026's rate rose by about ₱0.32 a kWh. Your bill shows each month's rate.",
+      "Meralco's rate changes every month, mostly because of the generation charge, which follows fuel costs and the wholesale market. November 2026's rate rose by about ₱0.49 a kWh, mainly from higher generation charges. Your bill shows each month's rate.",
       "The rate here is for a typical household. Homes that use more pay a similar price per kWh, while very small users get a lifeline discount. Outside Meralco's franchise area, other distribution utilities and cooperatives (in Cebu, Davao and elsewhere) set their own rates.",
       "Window-type and older non-inverter units are still common in the Philippines. Replacing one with an inverter split is often the single biggest saving available, because the unit runs for so many hours."
     ]
