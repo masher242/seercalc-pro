@@ -61,7 +61,7 @@ export default function BlogArticleHeatPumpCanada() {
     },
     {
       q: 'What heat pump rebates are available in Canada in 2026?',
-      a: 'A new federal heat pump rebate (up to $10,000 for households below the median income, $2,000 for others) was announced on October 8, 2026, with the application portal expected in early 2027. The federal Oil to Heat Pump Affordability program stopped taking applications on July 31, 2026. Provinces run their own programs, for example Ontario\'s Home Renovation Savings (up to $7,500 for a cold-climate air-source heat pump), Quebec\'s LogisVert and B.C.\'s Energy Savings Program.',
+      a: 'The new federal National Heat Pump Rebate (up to $10,000 for households below the median income, $2,000 for others) was announced on October 8, 2026. Applications open through an online portal in early 2027, and heat pumps installed from November 1, 2026 may qualify once it opens. The federal Oil to Heat Pump Affordability program stopped taking applications on July 31, 2026. Provinces run their own programs, for example Ontario\'s Home Renovation Savings (up to $7,500 for a cold-climate air-source heat pump), Quebec\'s LogisVert and B.C.\'s Energy Savings Program.',
     },
   ];
 
@@ -117,8 +117,8 @@ export default function BlogArticleHeatPumpCanada() {
               sharply in every province: about <strong>{cad(rows[rows.length - 1].saveBaseboard)}–{cad(rows[0].saveBaseboard)} a
               year</strong> against baseboards for a typical house, and more against oil. If you heat with{' '}
               <strong>natural gas</strong>, a heat pump costs more per unit of heat at current Ontario prices, so a dual-fuel
-              setup is the usual choice. A federal rebate of up to $10,000 was announced in October 2026, with
-              applications expected in early 2027.
+              setup is the usual choice. The federal National Heat Pump Rebate pays up to $10,000, with
+              applications opening in early 2027.
             </p>
           </div>
 
@@ -220,9 +220,9 @@ export default function BlogArticleHeatPumpCanada() {
               </thead>
               <tbody>
                 <tr>
-                  <td className={td}><strong>New federal heat pump rebate</strong></td>
+                  <td className={td}><strong>National Heat Pump Rebate</strong> (federal)</td>
                   <td className={td}>Up to $10,000 for households below the median income; $2,000 for other eligible households. Can be combined with provincial programs.</td>
-                  <td className={td}>Announced October 8, 2026; application portal expected early 2027.</td>
+                  <td className={td}>Announced October 8, 2026. Online portal opens early 2027 (no exact date yet); heat pumps installed from November 1, 2026 may qualify. Runs to March 2034. <a href="https://www.canada.ca/en/environment-climate-change/campaigns/one-million-home-energy-retrofits.html" target="_blank" rel="noopener noreferrer" className={ext}>Canada.ca details</a>.</td>
                 </tr>
                 <tr>
                   <td className={td}><strong>Oil to Heat Pump Affordability</strong> (federal)</td>
@@ -254,7 +254,7 @@ export default function BlogArticleHeatPumpCanada() {
           </div>
           <p className="text-sm text-gray-500 mb-6">
             Programs change often; confirm amounts and pre-approval rules before you sign a contract. Sources: Natural
-            Resources Canada (OHPA, Greener Homes), CTV News and Daily Hive (federal rebate announcement), Save on Energy
+            Resources Canada (OHPA, Greener Homes), Canada.ca National Heat Pump Rebate page (updated November 13, 2026), Save on Energy
             (Ontario), Hydro-Québec LogisVert summary via Centris (June 2026), CleanBC Energy Savings Program update (June 2026).
           </p>
 
